@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Sociedad Digital — Material de repaso IB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<script>
+/* Este documento no contiene fórmulas matemáticas. Los "US$" son moneda, no delimitadores:
+   se registra un stub para que el conversor no inyecte KaTeX ni reescriba montos. */
+window.renderMathInElement = function () {};
+</script>
+<style>
+/* ═══════════ PÁGINAS ═══════════ */
+@page { size: 794px 1123px; margin: 48px 0 52px 0; }
+@page fullbleed { size: 794px 1123px; margin: 0; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #F8FAFC; --card: #FFFFFF; --ink: #1E293B; --muted: #64748B;
+  --line: #E2E8F0; --navy: #1E3A5F; --navy2: #2D4A6F;
+  --u1: #3B82F6; --u1-bg: #EFF6FF; --u1-tx: #1E40AF;
+  --u2: #8B5CF6; --u2-bg: #F5F3FF; --u2-tx: #5B21B6;
+  --u3: #14B8A6; --u3-bg: #F0FDFA; --u3-tx: #134E4A;
+  --u4: #F59E0B; --u4-bg: #FFF7ED; --u4-tx: #92400E;
+  --slate: #64748B; --slate-bg: #F1F5F9; --slate-tx: #334155;
+}
+html, body {
+  margin: 0; padding: 0; width: 794px;
+  background: var(--bg); color: var(--ink);
+  font-family: 'Inter', 'Liberation Sans', sans-serif;
+  font-size: 12.5px; line-height: 1.55;
+  overflow-wrap: break-word;
+}
+@media screen {
+  html { height: auto; display: flex; justify-content: center; background: #E2E8F0; }
+  body { transform: scale(1); transform-origin: top center; margin: 20px auto; box-shadow: 0 2px 24px rgba(15,23,42,.18); }
+}
+
+/* ═══════════ PORTADA / CIERRE (full-bleed) ═══════════ */
+.cover {
+  page: fullbleed; width: 794px; height: 1123px;
+  background: linear-gradient(158deg, #16283F 0%, #1E3A5F 46%, #2D4A6F 100%);
+  color: #F1F5F9; position: relative;
+  display: flex; flex-direction: column;
+  padding: 54px 58px; break-after: page;
+}
+.cover .deco-circle {
+  position: absolute; border-radius: 50%;
+  border: 1.5px solid rgba(148,163,184,.28);
+}
+.cover .dc1 { width: 300px; height: 300px; right: 40px; top: 60px; }
+.cover .dc2 { width: 190px; height: 190px; right: 118px; top: 138px; border-color: rgba(148,163,184,.18); }
+.cover .dc3 { width: 120px; height: 120px; left: 44px; bottom: 150px; border-color: rgba(148,163,184,.15); }
+.cover-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+  color: #93C5FD; text-transform: uppercase;
+}
+.cover-badge::before { content: ''; width: 34px; height: 2px; background: #3B82F6; }
+.cover-center { margin: auto 0; position: relative; z-index: 2; }
+.cover-kicker {
+  font-size: 12px; font-weight: 600; letter-spacing: 3px;
+  color: #A5B4CC; text-transform: uppercase; margin-bottom: 16px;
+}
+.cover-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 64px; font-weight: 800; line-height: 1.04;
+  color: #FFFFFF; margin-bottom: 10px;
+}
+.cover-sub {
+  font-size: 19px; font-weight: 500; color: #C7D2E4; margin-bottom: 6px;
+}
+.cover-sub-en { font-size: 13px; color: #8FA3C2; font-style: italic; margin-bottom: 30px; }
+.cover-chips { display: flex; flex-wrap: wrap; gap: 10px; max-width: 100%; }
+.cchip {
+  background: rgba(59,130,246,.13); border: 1px solid rgba(147,197,253,.35);
+  color: #DCE7F7; border-radius: 20px; padding: 7px 15px;
+  font-size: 11.5px; font-weight: 600;
+}
+.cchip b { color: #FFFFFF; font-weight: 800; }
+.cover-3cs {
+  margin-top: 34px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 16px 18px; border: 1px solid rgba(148,163,184,.25); border-radius: 12px;
+  background: rgba(15,23,42,.25); max-width: 100%;
+}
+.cover-3cs .box {
+  border-radius: 8px; padding: 8px 13px; font-size: 11.5px; font-weight: 700;
+  letter-spacing: .4px;
+}
+.cover-3cs .arrow { color: #64748B; font-size: 13px; font-weight: 400; }
+.bx1 { background: rgba(59,130,246,.22); color: #BFDBFE; }
+.bx2 { background: rgba(139,92,246,.22); color: #DDD6FE; }
+.bx3 { background: rgba(20,184,166,.22); color: #99F6E4; }
+.bx4 { background: rgba(245,158,11,.20); color: #FDE68A; }
+.cover-foot { position: relative; z-index: 2; }
+.cover-scope {
+  font-size: 11px; color: #94A7C4; line-height: 1.6;
+  border-top: 1px solid rgba(148,163,184,.22); padding-top: 16px;
+}
+.cover-scope b { color: #CBD8EC; font-weight: 600; }
+.cover-edition {
+  margin-top: 12px; font-size: 10.5px; color: #6E82A3; letter-spacing: 1.2px;
+  text-transform: uppercase; font-weight: 600;
+}
+
+/* ═══════════ CONTENIDO (flujo) ═══════════ */
+.main-content { padding: 0 56px; }
+.section-head { break-after: avoid; break-inside: avoid; margin-bottom: 14px; }
+.section-kicker {
+  font-size: 10.5px; font-weight: 800; letter-spacing: 2.2px;
+  text-transform: uppercase; color: var(--u1); margin-bottom: 4px;
+}
+.section-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 27px; font-weight: 800; color: var(--ink); line-height: 1.15;
+}
+.section-sub { font-size: 12.5px; color: var(--muted); margin-top: 5px; }
+.divider { height: 3px; width: 56px; background: var(--u1); border-radius: 2px; margin: 12px 0 4px; }
+
+p.body-text { font-size: 12.5px; color: #334155; margin-bottom: 9px; }
+p.body-text b { color: var(--ink); }
+.new-page { break-before: page; }
+.en-term { color: var(--muted); font-style: italic; }
+
+/* Tarjetas informativas */
+.info-card {
+  break-inside: avoid; background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; padding: 13px 16px; margin-bottom: 10px;
+}
+.info-card h4 { font-size: 13px; font-weight: 800; color: var(--navy); margin-bottom: 5px; }
+.info-card p { font-size: 12px; color: #475569; }
+.info-card .ic-sub { font-size: 11px; color: var(--muted); margin-top: 3px; }
+
+/* Las 3Cs tarjetas */
+.cs-grid { display: flex; flex-wrap: wrap; gap: 9px; max-width: 100%; margin: 4px 0 10px; }
+.cs-card {
+  flex: 1 1 150px; min-width: 140px; max-width: 100%;
+  border-radius: 10px; padding: 11px 13px; border: 1px solid var(--line);
+  break-inside: avoid;
+}
+.cs-card .cs-name { font-size: 12.5px; font-weight: 800; margin-bottom: 3px; }
+.cs-card p { font-size: 11px; line-height: 1.45; color: #475569; }
+.cs-1 { background: var(--u1-bg); } .cs-1 .cs-name { color: var(--u1-tx); }
+.cs-2 { background: var(--u2-bg); } .cs-2 .cs-name { color: var(--u2-tx); }
+.cs-3 { background: var(--u3-bg); } .cs-3 .cs-name { color: var(--u3-tx); }
+.cs-4 { background: var(--u4-bg); } .cs-4 .cs-name { color: var(--u4-tx); }
+
+/* Fases del inquiry */
+.phase-row { display: flex; flex-wrap: wrap; gap: 8px; max-width: 100%; margin: 6px 0 12px; }
+.phase {
+  flex: 1 1 118px; min-width: 112px; max-width: 100%;
+  background: var(--card); border: 1px solid var(--line); border-radius: 9px;
+  padding: 9px 11px; break-inside: avoid;
+}
+.phase .ph-n {
+  display: inline-block; font-size: 10px; font-weight: 800; color: #fff;
+  background: var(--navy); border-radius: 50%; width: 17px; height: 17px;
+  text-align: center; line-height: 17px; margin-bottom: 4px;
+}
+.phase .ph-t { font-size: 11.5px; font-weight: 700; color: var(--ink); }
+.phase p { font-size: 10.5px; color: var(--muted); line-height: 1.4; margin-top: 2px; }
+
+/* ═══════════ FICHAS DE REPASO ═══════════ */
+.ficha {
+  break-inside: avoid; background: var(--card);
+  border: 1px solid var(--line); border-left: 4px solid var(--u1);
+  border-radius: 10px; padding: 13px 16px 11px; margin-bottom: 11px;
+}
+.ficha.u2 { border-left-color: var(--u2); }
+.ficha.u3 { border-left-color: var(--u3); }
+.ficha.u4 { border-left-color: var(--u4); }
+.ficha-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+.ficha-num {
+  font-size: 10px; font-weight: 800; color: var(--u1-tx);
+  background: var(--u1-bg); border-radius: 5px; padding: 2px 7px;
+}
+.u2 .ficha-num { color: var(--u2-tx); background: var(--u2-bg); }
+.u3 .ficha-num { color: var(--u3-tx); background: var(--u3-bg); }
+.u4 .ficha-num { color: var(--u4-tx); background: var(--u4-bg); }
+.ficha-title { font-size: 15.5px; font-weight: 800; color: var(--ink); }
+.ficha-en { font-size: 11.5px; color: var(--muted); font-style: italic; }
+.ficha-def {
+  font-size: 12px; color: #334155; margin-bottom: 7px;
+  padding-bottom: 7px; border-bottom: 1px dashed var(--line);
+}
+.ficha-def b { color: var(--ink); }
+.ficha h5 {
+  font-size: 10px; font-weight: 800; letter-spacing: 1.6px;
+  text-transform: uppercase; color: var(--u1); margin: 7px 0 4px;
+}
+.u2 .ficha h5 { color: var(--u2); } .u3 .ficha h5 { color: var(--u3-tx); } .u4 .ficha h5 { color: var(--u4-tx); }
+.ficha ul { list-style: none; }
+.ficha li {
+  font-size: 11.5px; color: #475569; padding-left: 13px;
+  position: relative; margin-bottom: 2.5px; line-height: 1.42;
+}
+.ficha li::before {
+  content: ''; position: absolute; left: 0; top: 7px;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--u1);
+}
+.u2 .ficha li::before { background: var(--u2); }
+.u3 .ficha li::before { background: var(--u3); }
+.u4 .ficha li::before { background: var(--u4); }
+.ficha li b { color: var(--ink); font-weight: 700; }
+.vocab-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; max-width: 100%; }
+.chip {
+  font-size: 10px; font-weight: 600; color: #475569;
+  background: var(--slate-bg); border: 1px solid var(--line);
+  border-radius: 10px; padding: 2.5px 9px; white-space: nowrap;
+}
+.chip b { color: var(--navy); font-weight: 700; }
+
+/* Autoevaluación */
+.quiz-card {
+  break-inside: avoid; background: var(--u1-bg);
+  border: 1px solid #BFDBFE; border-radius: 10px; padding: 13px 16px; margin: 14px 0 6px;
+}
+.quiz-card.q2 { background: var(--u2-bg); border-color: #DDD6FE; }
+.quiz-card.q3 { background: var(--u3-bg); border-color: #99F6E4; }
+.quiz-card.q4 { background: var(--u4-bg); border-color: #FDE68A; }
+.quiz-card h4 {
+  font-size: 11px; font-weight: 800; letter-spacing: 1.8px;
+  text-transform: uppercase; color: var(--u1-tx); margin-bottom: 6px;
+}
+.quiz-card.q2 h4 { color: var(--u2-tx); } .quiz-card.q3 h4 { color: var(--u3-tx); } .quiz-card.q4 h4 { color: var(--u4-tx); }
+.quiz-card ol { margin-left: 16px; }
+.quiz-card li { font-size: 11.5px; color: #334155; margin-bottom: 3.5px; }
+
+/* ═══════════ PÁGINAS DE MAPAS (full-bleed) ═══════════ */
+.map-page {
+  page: fullbleed; width: 794px; height: 1123px;
+  break-after: page; padding: 26px 20px 20px;
+  background: #FFFFFF; position: relative;
+  display: flex; flex-direction: column;
+}
+.map-head { margin-bottom: 6px; padding: 0 6px; }
+.map-kicker {
+  display: inline-block; font-size: 10px; font-weight: 800;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--u1-tx); background: var(--u1-bg);
+  border: 1px solid #BFDBFE; border-radius: 12px; padding: 3px 11px;
+}
+.map-kicker.k2 { color: var(--u2-tx); background: var(--u2-bg); border-color: #DDD6FE; }
+.map-kicker.k3 { color: var(--u3-tx); background: var(--u3-bg); border-color: #99F6E4; }
+.map-kicker.k4 { color: var(--u4-tx); background: var(--u4-bg); border-color: #FDE68A; }
+.map-kicker.k0 { color: var(--navy); background: #EDF2F9; border-color: #C9D7E8; }
+.map-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 25px; font-weight: 800; color: var(--ink); margin-top: 7px; line-height: 1.1;
+}
+.map-intro { font-size: 11.5px; color: var(--muted); margin-top: 4px; max-width: 640px; }
+
+.mindmap { position: relative; break-inside: avoid; display: flex; justify-content: center; align-items: center; flex: 1 1 auto; padding: 10px 0 6px; }
+.mindmap > svg.lines { position: absolute; top: 0; left: 0; pointer-events: none; z-index: 0; }
+
+.root-node {
+  background: linear-gradient(135deg, #1E3A5F, #2D4A6F);
+  color: #fff; font-size: 16.5px; font-weight: 800; line-height: 1.2;
+  padding: 15px 17px; border-radius: 13px; text-align: center;
+  white-space: nowrap; flex-shrink: 0; align-self: center;
+  box-shadow: 0 4px 12px rgba(30,58,95,.25); position: relative; z-index: 2;
+}
+.root-node small { display: block; font-size: 10px; font-weight: 600; color: #B7C6DC; letter-spacing: 1.5px; margin-top: 2px; }
+
+.branch-node {
+  font-size: 12.5px; font-weight: 700; line-height: 1.2;
+  padding: 8px 12px; border-radius: 8px; border: 2px solid;
+  white-space: normal; max-width: 142px; text-align: center;
+  flex-shrink: 0; position: relative; z-index: 2;
+}
+.branch-node small { display: block; font-size: 10px; font-weight: 600; opacity: .8; }
+.leaf {
+  font-size: 11.5px; font-weight: 500; color: #475569;
+  padding: 4.5px 11px; background: #FAFBFC;
+  border-radius: 11px; border: 1px solid #E2E8F0;
+  line-height: 1.3; white-space: normal; max-width: 138px;
+  width: fit-content; position: relative; z-index: 2;
+}
+.children { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.right-branches { display: flex; flex-direction: column; gap: 18px; }
+.right-branch { display: flex; align-items: flex-start; }
+.right-branch > .children { margin-left: 16px; padding-left: 8px; align-items: flex-start; }
+.left-branches { display: flex; flex-direction: column; gap: 18px; }
+.left-branch { display: flex; align-items: flex-start; flex-direction: row-reverse; }
+.left-branch > .children { margin-right: 16px; padding-right: 8px; align-items: flex-end; }
+
+/* Colores por unidad (mapas) */
+.b-u1 { background: var(--u1-bg); border-color: var(--u1); color: var(--u1-tx); }
+.b-u2 { background: var(--u2-bg); border-color: var(--u2); color: var(--u2-tx); }
+.b-u3 { background: var(--u3-bg); border-color: var(--u3); color: var(--u3-tx); }
+.b-u4 { background: var(--u4-bg); border-color: var(--u4); color: var(--u4-tx); }
+.b-navy { background: #EDF2F9; border-color: var(--navy2); color: var(--navy); }
+.b-slate { background: var(--slate-bg); border-color: var(--slate); color: var(--slate-tx); }
+
+.map-legend {
+  position: absolute; left: 20px; right: 20px; bottom: 18px;
+  display: flex; flex-wrap: wrap; gap: 7px 14px; align-items: center;
+  font-size: 10px; color: var(--muted);
+  border-top: 1px solid var(--line); padding-top: 10px;
+}
+.map-legend .lg { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; }
+.map-legend .dot { width: 9px; height: 9px; border-radius: 3px; }
+
+/* ═══════════ TABLA EXÁMENES ═══════════ */
+table.exam {
+  width: 100%; border-collapse: collapse; margin: 8px 0 12px;
+  font-size: 11px; break-inside: avoid;
+}
+table.exam th {
+  background: var(--navy); color: #fff; font-weight: 700;
+  padding: 7px 9px; text-align: left; font-size: 10.5px;
+}
+table.exam td { border: 1px solid var(--line); padding: 6.5px 9px; color: #334155; vertical-align: top; }
+table.exam tr:nth-child(even) td { background: #F8FAFC; }
+table.exam td b { color: var(--ink); }
+
+/* Criterios HL tabla */
+table.crit { width: 100%; border-collapse: collapse; font-size: 11px; break-inside: avoid; margin: 6px 0 10px; }
+table.crit th { background: var(--u4); color: #fff; padding: 6px 9px; text-align: left; font-size: 10.5px; }
+table.crit td { border: 1px solid var(--line); padding: 6px 9px; color: #334155; }
+table.crit td b { color: var(--u4-tx); }
+
+/* Cierre */
+.ending {
+  page: fullbleed; width: 794px; height: 1123px; break-before: page;
+  background: linear-gradient(158deg, #16283F 0%, #1E3A5F 46%, #2D4A6F 100%);
+  color: #F1F5F9; display: flex; flex-direction: column; justify-content: center;
+  padding: 60px; position: relative;
+}
+.end-quote {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 26px; font-weight: 600; font-style: italic;
+  line-height: 1.4; color: #E2E8F0; max-width: 560px; margin-bottom: 34px;
+}
+.end-checks { display: flex; flex-direction: column; gap: 10px; max-width: 560px; }
+.end-check {
+  display: flex; gap: 11px; align-items: flex-start;
+  border: 1px solid rgba(148,163,184,.28); border-radius: 10px;
+  padding: 11px 14px; background: rgba(15,23,42,.28);
+}
+.end-check .tick {
+  width: 19px; height: 19px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(59,130,246,.25); border: 1.5px solid #60A5FA;
+  color: #BFDBFE; font-size: 11px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.end-check p { font-size: 12px; color: #C7D2E4; }
+.end-check p b { color: #fff; }
+.end-foot { position: absolute; bottom: 52px; left: 60px; right: 60px;
+  border-top: 1px solid rgba(148,163,184,.22); padding-top: 14px;
+  font-size: 10px; color: #7C90B0; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ PORTADA ═══════════════ -->
+<div class="cover">
+  <div class="deco-circle dc1"></div>
+  <div class="deco-circle dc2"></div>
+  <div class="deco-circle dc3"></div>
+  <div class="cover-badge">IB Diploma Programme &middot; Digital Society</div>
+  <div class="cover-center">
+    <div class="cover-kicker">Material de repaso completo &middot; Nivel Medio y Superior</div>
+    <div class="cover-title">Sociedad<br>Digital</div>
+    <div class="cover-sub">Guía de estudio visual: mapas mentales y fichas de repaso</div>
+    <div class="cover-sub-en">Digital Society course review &middot; SL + HL extension</div>
+    <div class="cover-chips">
+      <span class="cchip"><b>4</b> unidades de contenido</span>
+      <span class="cchip"><b>5</b> mapas mentales</span>
+      <span class="cchip"><b>21</b> fichas de repaso</span>
+      <span class="cchip"><b>4</b> autoevaluaciones</span>
+      <span class="cchip">Exámenes Paper 1 &amp; 2</span>
+    </div>
+    <div class="cover-3cs">
+      <span class="box bx1">Conceptos</span><span class="arrow">+</span>
+      <span class="box bx2">Contenido</span><span class="arrow">+</span>
+      <span class="box bx3">Contextos</span><span class="arrow">&rarr;</span>
+      <span class="box bx4">Impactos e implicaciones</span>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <div class="cover-scope">
+      <b>Alcance del material:</b> cubre los contenidos del curso (Secciones 1&ndash;6 del libro).
+      No incluye la monografía (extended essay), la evaluación interna (inquiry project) ni el Paper 3.
+    </div>
+    <div class="cover-edition">Basado en Bomfim et al. &middot; Digital Society &middot; Hodder Education 2022</div>
+  </div>
+</div>
+
+<!-- ═══════════════ CÓMO USAR ESTE MATERIAL ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Guía rápida</div>
+    <div class="section-title">Cómo usar este material</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text"><b>Sociedad digital (digital society)</b> es el estudio de los impactos e implicaciones del uso de sistemas y tecnologías digitales para las personas y las comunidades, a nivel local, regional y global. Es un campo en cambio constante: las tecnologías son ubicuas y están cada vez más conectadas, por lo que el curso te pide analizar <b>ejemplos reales</b> y transferir lo aprendido a situaciones nuevas. Este material condensa todo el contenido del curso en <b>5 mapas mentales</b> (para ver la estructura completa de un vistazo) y <b>21 fichas de repaso</b> (para memorizar definiciones, ideas clave y vocabulario bilingüe).</p>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-1">
+      <div class="cs-name">1 &middot; Conceptos <span class="en-term">(concepts)</span></div>
+      <p>Siete &ldquo;lentes&rdquo; para analizar cualquier ejemplo: cambio, expresión, identidad, poder, espacio, sistemas, valores y ética.</p>
+    </div>
+    <div class="cs-card cs-2">
+      <div class="cs-name">2 &middot; Contenido <span class="en-term">(content)</span></div>
+      <p>Siete sistemas digitales que debes conocer: datos, algoritmos, dispositivos, redes e internet, medios, IA y robótica.</p>
+    </div>
+    <div class="cs-card cs-3">
+      <div class="cs-name">3 &middot; Contextos <span class="en-term">(contexts)</span></div>
+      <p>Siete ámbitos del mundo real donde aplicar todo: cultural, económico, ambiental, salud, conocimiento, político y social.</p>
+    </div>
+    <div class="cs-card cs-4">
+      <div class="cs-name">4 &middot; Implicaciones <span class="en-term">(impacts &amp; implications)</span></div>
+      <p>El cuarto elemento: efectos positivos y negativos para los grupos de interés (stakeholders), de lo local a lo global.</p>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h4>El proceso de indagación <span class="en-term">(inquiry process)</span></h4>
+    <p>Es la herramienta de trabajo del curso y conecta todas las unidades. No es lineal: puedes volver a fases anteriores.</p>
+    <div class="phase-row">
+      <div class="phase"><span class="ph-n">1</span><div class="ph-t">Punto de partida <span class="en-term">(starting point)</span></div><p>Elegir tema y delimitar el enfoque con las 3Cs.</p></div>
+      <div class="phase"><span class="ph-n">2</span><div class="ph-t">Explorar <span class="en-term">(explore)</span></div><p>Buscar, recolectar y evaluar fuentes secundarias y primarias.</p></div>
+      <div class="phase"><span class="ph-n">3</span><div class="ph-t">Investigar <span class="en-term">(investigate)</span></div><p>Analizar hallazgos con las 3Cs: impactos positivos y negativos.</p></div>
+      <div class="phase"><span class="ph-n">4</span><div class="ph-t">Reflexionar <span class="en-term">(reflect)</span></div><p>Tendencias, futuro y recomendaciones de acción.</p></div>
+      <div class="phase"><span class="ph-n">5</span><div class="ph-t">Comunicar <span class="en-term">(share)</span></div><p>Presentar conclusiones: ensayo, presentación o debate.</p></div>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h4>Método de repaso sugerido (3 pasos)</h4>
+    <p><b>1) Mapa primero:</b> estudia el mapa mental de cada unidad para fijar la estructura general antes del detalle. &nbsp;<b>2) Fichas después:</b> memoriza definiciones y vocabulario EN&rarr;ES de cada ficha (los exámenes valoran la terminología precisa). &nbsp;<b>3) Autoevaluación al final:</b> responde las preguntas de cada unidad en voz alta o por escrito; si fallas alguna, vuelve a su ficha.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ MAPA GENERAL ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k0">Visión general</span>
+    <div class="map-title">El curso completo en un mapa</div>
+    <div class="map-intro">Estructura 3Cs del programa: 7 conceptos + 7 sistemas digitales + 7 contextos, más la extensión HL (desafíos e intervenciones) y el cuarto elemento del diagrama: impactos e implicaciones para los stakeholders.</div>
+  </div>
+
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u1">Conceptos <small>7 lentes de análisis</small></div>
+        <div class="children">
+          <div class="leaf">Cambio <span class="en-term">(change)</span></div>
+          <div class="leaf">Expresión <span class="en-term">(expression)</span></div>
+          <div class="leaf">Identidad <span class="en-term">(identity)</span></div>
+          <div class="leaf">Poder <span class="en-term">(power)</span></div>
+          <div class="leaf">Espacio <span class="en-term">(space)</span></div>
+          <div class="leaf">Sistemas <span class="en-term">(systems)</span></div>
+          <div class="leaf">Valores y ética <span class="en-term">(values &amp; ethics)</span></div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u3">Contextos <small>7 ámbitos reales</small></div>
+        <div class="children">
+          <div class="leaf">Cultural &middot; Económico</div>
+          <div class="leaf">Ambiental &middot; Salud</div>
+          <div class="leaf">Conocimiento humano</div>
+          <div class="leaf">Político &middot; Social</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="root-node">SOCIEDAD<br>DIGITAL<small>3Cs + impacts</small></div>
+
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u2">Contenido <small>7 sistemas digitales</small></div>
+        <div class="children">
+          <div class="leaf">Datos &middot; Algoritmos</div>
+          <div class="leaf">Dispositivos &middot; Redes</div>
+          <div class="leaf">Medios &middot; IA</div>
+          <div class="leaf">Robótica y autonomía</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u4">Extensión HL <small>desafíos e intervenciones</small></div>
+        <div class="children">
+          <div class="leaf">Bienestar global</div>
+          <div class="leaf">Gobernanza y DDHH</div>
+          <div class="leaf">Desarrollo sostenible</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-navy">Implicaciones <small>4.º elemento</small></div>
+        <div class="children">
+          <div class="leaf">Individuos y comunidades</div>
+          <div class="leaf">Impactos + y &minus;</div>
+          <div class="leaf">Local &rarr; regional &rarr; global</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:#3B82F6"></span> Unidad 1 &middot; Conceptos</span>
+    <span class="lg"><span class="dot" style="background:#8B5CF6"></span> Unidad 2 &middot; Contenido</span>
+    <span class="lg"><span class="dot" style="background:#14B8A6"></span> Unidad 3 &middot; Contextos</span>
+    <span class="lg"><span class="dot" style="background:#F59E0B"></span> Unidad 4 &middot; Extensión HL</span>
+    <span class="lg" style="margin-left:auto">343 combinaciones posibles de 3Cs &middot; usa el mapa para conectar ejemplos</span>
+  </div>
+</div>
+
+<!-- ═══════════════ UNIDAD 1: MAPA CONCEPTOS ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker">Unidad 1 &middot; Sección 2 del libro</span>
+    <div class="map-title">Los 7 conceptos <span class="en-term" style="font-size:15px">(the 7 concepts)</span></div>
+    <div class="map-intro">Los conceptos son ideas amplias y poderosas que funcionan como &ldquo;lentes&rdquo;: se aplican a cualquier sistema digital y a cualquier contexto para extraer implicaciones. El examen premia usarlos de forma explícita.</div>
+  </div>
+
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u1">Cambio <small>change</small></div>
+        <div class="children">
+          <div class="leaf">De forma y de estado</div>
+          <div class="leaf">De valores</div>
+          <div class="leaf">Evolutivo y adaptativo</div>
+          <div class="leaf">Transformacional y radical</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u1">Identidad <small>identity</small></div>
+        <div class="children">
+          <div class="leaf">Multifacética y dinámica</div>
+          <div class="leaf">Privacidad <span class="en-term">(privacy)</span></div>
+          <div class="leaf">Vigilancia <span class="en-term">(surveillance)</span></div>
+          <div class="leaf">Huella online permanente</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u1">Sistemas <small>systems</small></div>
+        <div class="children">
+          <div class="leaf">Pensamiento sistémico</div>
+          <div class="leaf">Partes interdependientes</div>
+          <div class="leaf">Consecuencias no previstas</div>
+          <div class="leaf">Modelos y simulaciones</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="root-node">LOS 7<br>CONCEPTOS<small>concept lenses</small></div>
+
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u1">Expresión <small>expression</small></div>
+        <div class="children">
+          <div class="leaf">Storytelling y activismo</div>
+          <div class="leaf">Censura <span class="en-term">(censorship)</span></div>
+          <div class="leaf">Cámaras de eco <span class="en-term">(echo chambers)</span></div>
+          <div class="leaf">Nuevos formatos (TikTok)</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u1">Poder <small>power</small></div>
+        <div class="children">
+          <div class="leaf">Coercitivo &middot; legítimo</div>
+          <div class="leaf">Recompensa &middot; experto</div>
+          <div class="leaf">Influencers y soft power</div>
+          <div class="leaf">Poder de los datos</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u1">Espacio <small>space</small></div>
+        <div class="children">
+          <div class="leaf">Físico vs virtual</div>
+          <div class="leaf">Escalas y flujos <span class="en-term">(flows)</span></div>
+          <div class="leaf">Fronteras digitales</div>
+          <div class="leaf">Cripto y cifrado</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u1">Valores y ética <small>values &amp; ethics</small></div>
+        <div class="children">
+          <div class="leaf">3 perspectivas éticas</div>
+          <div class="leaf">Responsabilidad &middot; rendición</div>
+          <div class="leaf">Ciudadanía digital</div>
+          <div class="leaf">Dilemas éticos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:#3B82F6"></span> 7 conceptos &middot; Sección 2</span>
+    <span class="lg" style="margin-left:auto">Regla de oro: todo ejemplo del examen se analiza con al menos 2 conceptos</span>
+  </div>
+</div>
+
+<!-- ═══════════════ UNIDAD 1: FICHAS ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Unidad 1 &middot; Fichas de repaso</div>
+    <div class="section-title">Fichas de los 7 conceptos</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">FICHA 1</span><span class="ficha-title">Cambio</span><span class="ficha-en">(change)</span></div>
+    <div class="ficha-def"><b>Definición:</b> la sociedad digital evoluciona constantemente; el cambio tecnológico genera consecuencias que se analizan desde múltiples perspectivas. Preguntas clave: ¿es progreso?, ¿es disruptivo?, ¿es beneficioso para todos?</div>
+    <ul>
+      <li><b>De forma (change of form):</b> teléfono &rarr; smartphone multifuncional.</li>
+      <li><b>De estado (change of state):</b> analógico &rarr; digital; juego físico &rarr; virtual.</li>
+      <li><b>De valores (change of values):</b> la privacidad y el anonimato se valoran más.</li>
+      <li><b>Incremental:</b> evolutivo (más rápido) y adaptativo (la tienda también vende online).</li>
+      <li><b>Radical:</b> transformacional (oficina &rarr; teletrabajo) y extiende/combina (trabajar desde cualquier lugar).</li>
+    </ul>
+    <h5>Ejemplo del libro</h5>
+    <ul><li>Auge del comercio online (Amazon, Netflix): cierre de tiendas físicas y reparto a domicilio.</li></ul>
+    <div class="vocab-row"><span class="chip"><b>evolutionary</b> &rarr; evolutivo</span><span class="chip"><b>adaptive</b> &rarr; adaptativo</span><span class="chip"><b>transformational</b> &rarr; transformacional</span><span class="chip"><b>disruption</b> &rarr; disrupción</span></div>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">FICHA 2</span><span class="ficha-title">Expresión</span><span class="ficha-en">(expression)</span></div>
+    <div class="ficha-def"><b>Definición:</b> acto de representar ideas, emociones y experiencias con distintos modos y medios; la tecnología amplió cómo pensamos, comunicamos, colaboramos y creamos.</div>
+    <ul>
+      <li><b>Propósitos:</b> narrar historias (storytelling), construir mundos, innovar artísticamente, activismo político.</li>
+      <li><b>Formas:</b> evolutiva (email vs carta), adaptativa (audiolibros), transformacional (videollamadas), radical (TikTok).</li>
+      <li>Une a personas y comunidades, pero la expresión también puede <b>causar daño</b>.</li>
+      <li>Dilema: ¿quién decide qué se controla? <b>Censura</b> vs libertad de expresión.</li>
+    </ul>
+    <h5>Ejemplo del libro</h5>
+    <ul><li>TikTok creó un formato nuevo de expresión (videos cortos para audiencias específicas); los emojis como lenguaje visual global.</li></ul>
+    <div class="vocab-row"><span class="chip"><b>censorship</b> &rarr; censura</span><span class="chip"><b>echo chamber</b> &rarr; cámara de eco</span><span class="chip"><b>content monitoring</b> &rarr; monitoreo de contenido</span></div>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">FICHA 3</span><span class="ficha-title">Identidad</span><span class="ficha-en">(identity)</span></div>
+    <div class="ficha-def"><b>Definición:</b> define quiénes somos y a qué grupos pertenecemos; se construye desde adentro (pensamientos propios) y desde afuera (relaciones y opiniones ajenas).</div>
+    <ul>
+      <li><b>Multifacética:</b> edad, nacionalidad, cultura, religión, género, etnia, clase social.</li>
+      <li><b>Dinámica:</b> cambia con el tiempo y el contexto; no es estática.</li>
+      <li>La identidad online queda <b>almacenada permanentemente</b> (huella digital activa y pasiva).</li>
+      <li><b>Privacidad:</b> decidir qué se comparte, cuándo y con quién; su pérdida daña la reputación, las finanzas y la salud mental.</li>
+      <li><b>Vigilancia:</b> spyware, CCTV, reconocimiento facial, ubicación de móviles.</li>
+    </ul>
+    <h5>Ejemplo del libro</h5>
+    <ul><li>Avatares en juegos online; Google rastrea tus movimientos; caricatura 1993 vs 2021: &ldquo;todos saben que eres un perro&rdquo;.</li></ul>
+    <div class="vocab-row"><span class="chip"><b>privacy</b> &rarr; privacidad</span><span class="chip"><b>surveillance</b> &rarr; vigilancia</span><span class="chip"><b>anonymity</b> &rarr; anonimato</span><span class="chip"><b>avatar</b> &rarr; avatar</span></div>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">FICHA 4</span><span class="ficha-title">Poder</span><span class="ficha-en">(power)</span></div>
+    <div class="ficha-def"><b>Definición:</b> capacidad de influir o controlar las acciones de otros; está en toda relación social y la tecnología digital la amplifica. Es desigual por definición.</div>
+    <ul>
+      <li><b>Coercitivo:</b> ciberacoso, chantaje tras invadir la privacidad.</li>
+      <li><b>De recompensa:</b> gastar dinero real para avanzar en juegos.</li>
+      <li><b>Legítimo:</b> reglas escolares sobre dispositivos; <b>experto:</b> conocimiento técnico.</li>
+      <li><b>De respeto:</b> influencers que impulsan compras; <b>informativo:</b> quien publica y recolecta datos.</li>
+      <li>Residencia: formal-estructural (gobiernos, plataformas) y <b>soft power</b> personal y cultural.</li>
+    </ul>
+    <h5>Ejemplo del libro</h5>
+    <ul><li>Influencers de redes sociales; cámaras con reconocimiento facial; apps de monitoreo infantil.</li></ul>
+    <div class="vocab-row"><span class="chip"><b>coercive</b> &rarr; coercitivo</span><span class="chip"><b>legitimate</b> &rarr; legítimo</span><span class="chip"><b>soft power</b> &rarr; poder blando</span><span class="chip"><b>stakeholders</b> &rarr; grupos de interés</span></div>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">FICHA 5</span><span class="ficha-title">Espacio</span><span class="ficha-en">(space)</span></div>
+    <div class="ficha-def"><b>Definición:</b> los humanos organizamos y representamos espacios físicos, geográficos, culturales y sociales; ahora surgen espacios virtuales cada vez más diversos.</div>
+    <ul>
+      <li><b>Escalas:</b> local, regional, nacional, global y virtual.</li>
+      <li><b>Flujos (flows):</b> personas, información y objetos circulan por espacios reales y virtuales.</li>
+      <li>Pregunta clave: ¿siguen teniendo sentido las fronteras físicas y políticas?</li>
+      <li>La <b>brecha digital</b> funciona como una nueva frontera entre conectados y no conectados.</li>
+    </ul>
+    <h5>Ejemplo del libro</h5>
+    <ul><li>Realidad virtual y aumentada crean espacios inmersivos; las criptomonedas y el cifrado operan sin territorio.</li></ul>
+    <div class="vocab-row"><span class="chip"><b>virtual space</b> &rarr; espacio virtual</span><span class="chip"><b>flows</b> &rarr; flujos</span><span class="chip"><b>cyberspace</b> &rarr; ciberespacio</span><span class="chip"><b>borders</b> &rarr; fronteras</span></div>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">FICHA 6</span><span class="ficha-title">Sistemas</span><span class="ficha-en">(systems)</span></div>
+    <div class="ficha-def"><b>Definición:</b> el pensamiento sistémico (systems thinking) analiza la estructura y el orden de entornos humanos, naturales y construidos, y el rol de las personas dentro de ellos.</div>
+    <ul>
+      <li>Combina <b>hardware + software + redes + personas</b> que procesan datos en información.</li>
+      <li>Sus elementos <b>interactúan y son interdependientes</b>; se estudian con modelos, mapas y visualizaciones.</li>
+      <li>Todo cambio produce consecuencias <b>previstas y no previstas</b> (intended / unintended).</li>
+      <li>Los modelos <b>simplifican la realidad</b>: tienen supuestos y limitaciones (clave en IA).</li>
+    </ul>
+    <h5>Ejemplo del libro</h5>
+    <ul><li>Modelos y simulaciones de clima, economía y tráfico; el ecosistema digital de una escuela.</li></ul>
+    <div class="vocab-row"><span class="chip"><b>systems thinking</b> &rarr; pensamiento sistémico</span><span class="chip"><b>unintended consequences</b> &rarr; consecuencias no previstas</span><span class="chip"><b>interdependent</b> &rarr; interdependiente</span></div>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">FICHA 7</span><span class="ficha-title">Valores y ética</span><span class="ficha-en">(values and ethics)</span></div>
+    <div class="ficha-def"><b>Definición:</b> criterios para distinguir lo correcto/incorrecto, justo/injusto y legal/ilegal en el uso de tecnologías digitales. Los valores son los principios que consideramos importantes.</div>
+    <ul>
+      <li><b>Fuentes:</b> experiencia personal y cultura (familia, religión, empresa, leyes).</li>
+      <li><b>3 perspectivas éticas:</b> virtud (quién actúa), deontológica (el acto en sí), consecuencialista (el resultado).</li>
+      <li><b>Responsabilidad</b> (decidir e implementar, mirando al futuro) vs <b>rendición de cuentas</b> (responder por lo ocurrido).</li>
+      <li><b>Ciudadanía digital:</b> uso responsable; netiquette; códigos de conducta profesional.</li>
+      <li><b>Dilema ético:</b> conflicto entre dos cursos de acción ambos éticamente correctos.</li>
+    </ul>
+    <h5>Ejemplo del libro</h5>
+    <ul><li>¿Cómo programar la ética en un coche autónomo?; hackers white hat vs black hat; código de conducta de la ACS.</li></ul>
+    <div class="vocab-row"><span class="chip"><b>ethical dilemma</b> &rarr; dilema ético</span><span class="chip"><b>accountability</b> &rarr; rendición de cuentas</span><span class="chip"><b>netiquette</b> &rarr; netiqueta</span><span class="chip"><b>digital citizenship</b> &rarr; ciudadanía digital</span></div>
+  </div>
+
+  <div class="quiz-card">
+    <h4>Autoevaluación rápida &middot; Unidad 1</h4>
+    <ol>
+      <li>Una tienda de ropa empieza a vender también por internet. ¿Qué tipo de cambio es: evolutivo, adaptativo o transformacional?</li>
+      <li>Menciona los 6 tipos de poder y un ejemplo digital de cada uno.</li>
+      <li>Explica la diferencia entre responsabilidad y rendición de cuentas con un ejemplo de IA médica.</li>
+      <li>¿Por qué se dice que la identidad online es &ldquo;permanente&rdquo;? ¿Qué concepto se relaciona con la huella digital?</li>
+      <li>Define el dilema ético de los coches autónomos usando las 3 perspectivas éticas (virtud, reglas, consecuencias).</li>
+      <li>¿Cómo se relacionan los conceptos de espacio y poder en el debate sobre la neutralidad de la red?</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ UNIDAD 2: MAPA CONTENIDOS ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k2">Unidad 2 &middot; Sección 3 del libro</span>
+    <div class="map-title">Contenido: los 7 sistemas digitales <span class="en-term" style="font-size:15px">(digital systems)</span></div>
+    <div class="map-intro">Los sistemas digitales son tecnologías, aplicaciones y plataformas que crean, almacenan, procesan y distribuyen datos e información. Para cada uno debes conocer tipos, características, evolución y dilemas.</div>
+  </div>
+
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u2">Datos <small>data &amp; analysis</small></div>
+        <div class="children">
+          <div class="leaf">Datos vs información</div>
+          <div class="leaf">Ciclo de vida (5 etapas)</div>
+          <div class="leaf">Cifrado y seguridad</div>
+          <div class="leaf">Big data: las 4V</div>
+          <div class="leaf">GDPR y privacidad</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u2">Dispositivos <small>computing devices</small></div>
+        <div class="children">
+          <div class="leaf">De embedded a mainframe</div>
+          <div class="leaf">CPU &middot; RAM &middot; GPU</div>
+          <div class="leaf">5 generaciones</div>
+          <div class="leaf">Ley de Moore</div>
+          <div class="leaf">Computación cuántica</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u2">Medios <small>media</small></div>
+        <div class="children">
+          <div class="leaf">Contenido del usuario (UGC)</div>
+          <div class="leaf">VR &middot; AR &middot; MR</div>
+          <div class="leaf">Desinformación</div>
+          <div class="leaf">Deepfakes</div>
+          <div class="leaf">Copyright y Creative Commons</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="root-node">SISTEMAS<br>DIGITALES<small>7 content topics</small></div>
+
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u2">Algoritmos <small>algorithms &amp; code</small></div>
+        <div class="children">
+          <div class="leaf">Características (6)</div>
+          <div class="leaf">Condicionales y bucles</div>
+          <div class="leaf">Flowchart &middot; código</div>
+          <div class="leaf">Sesgo algorítmico</div>
+          <div class="leaf">Caja negra <span class="en-term">(black box)</span></div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u2">Redes e internet <small>networks</small></div>
+        <div class="children">
+          <div class="leaf">PAN &rarr; LAN &rarr; MAN &rarr; WAN</div>
+          <div class="leaf">TCP/IP &middot; DNS &middot; router</div>
+          <div class="leaf">Web 1.0 &rarr; 2.0 &rarr; 3.0 + IoT</div>
+          <div class="leaf">Ciberseguridad y MFA</div>
+          <div class="leaf">Neutralidad de la red</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u2">Inteligencia artificial <small>AI</small></div>
+        <div class="children">
+          <div class="leaf">IA débil vs fuerte</div>
+          <div class="leaf">ML: 4 tipos de aprendizaje</div>
+          <div class="leaf">Redes neuronales</div>
+          <div class="leaf">De Turing a AlphaGo</div>
+          <div class="leaf">Sesgo y empleo</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u2">Robótica <small>robots &amp; autonomy</small></div>
+        <div class="children">
+          <div class="leaf">Tipos de robots</div>
+          <div class="leaf">Sensores y actuadores</div>
+          <div class="leaf">Niveles SAE 0&ndash;5</div>
+          <div class="leaf">Valle inquietante</div>
+          <div class="leaf">Desplazamiento laboral</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:#8B5CF6"></span> 7 sistemas digitales &middot; Sección 3</span>
+    <span class="lg" style="margin-left:auto">Patrón de estudio: tipos &rarr; características &rarr; evolución &rarr; dilemas</span>
+  </div>
+</div>
+
+<!-- ═══════════════ UNIDAD 2: FICHAS ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Unidad 2 &middot; Fichas de repaso</div>
+    <div class="section-title">Fichas de los 7 sistemas digitales</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="ficha u2">
+    <div class="ficha-head"><span class="ficha-num">FICHA 8</span><span class="ficha-title">Datos y análisis de datos</span><span class="ficha-en">(data and data analysis)</span></div>
+    <div class="ficha-def"><b>Definición:</b> los datos (data) son hechos y cifras crudos sin organizar; la información (information) es el resultado de procesarlos y darles contexto. Pirámide DIKW: datos &rarr; información &rarr; conocimiento &rarr; sabiduría.</div>
+    <h5>Tipos y ciclo de vida</h5>
+    <ul>
+      <li><b>Tipos:</b> financieros, médicos (EHR), meteorológicos, geoespaciales (GPS), científicos y metadatos (datos sobre datos).</li>
+      <li><b>Ciclo de vida:</b> creación &rarr; almacenamiento &rarr; uso &rarr; preservación &rarr; destrucción.</li>
+      <li><b>Organización:</b> bases de datos relacionales (primary/foreign key); validación y verificación antes de aceptar datos.</li>
+    </ul>
+    <h5>Seguridad y big data</h5>
+    <ul>
+      <li><b>Cifrado:</b> clave simétrica (AES) vs clave pública/privada (SSL/TLS, &ldquo;https&rdquo;); data masking y data erasure; blockchain como registro inalterable.</li>
+      <li><b>Big data (4V):</b> volume, velocity, variety, veracity; analytics detecta tendencias y fraude (Citibank en tiempo real).</li>
+      <li><b>GDPR (2018):</b> 7 principios europeos + derechos de acceso, rectificación y olvido.</li>
+    </ul>
+    <h5>Dilemas</h5>
+    <ul><li>Consentimiento y privacidad; data sets sesgados (reconocimiento facial, NIST 2019); fiabilidad (reliability) vs integridad (integrity); caso Surgisphere/COVID.</li></ul>
+    <div class="vocab-row"><span class="chip"><b>data mining</b> &rarr; minería de datos</span><span class="chip"><b>encryption</b> &rarr; cifrado</span><span class="chip"><b>data privacy</b> &rarr; privacidad de datos</span><span class="chip"><b>big data</b> &rarr; macrodatos</span></div>
+  </div>
+
+  <div class="ficha u2">
+    <div class="ficha-head"><span class="ficha-num">FICHA 9</span><span class="ficha-title">Algoritmos y código</span><span class="ficha-en">(algorithms and code)</span></div>
+    <div class="ficha-def"><b>Definición:</b> un algoritmo es una secuencia finita de pasos sin ambigüedad para resolver un problema (el primero: Ada Lovelace, 1840); el código es su implementación en un lenguaje de programación.</div>
+    <h5>Componentes y representación</h5>
+    <ul>
+      <li><b>Componentes:</b> instrucciones, variables, condicionales (if/then) y bucles (loops).</li>
+      <li><b>Representación:</b> lenguaje natural (receta), diagrama de flujo (flowchart: rectángulo = acción, rombo = decisión) y código (Python, C, Java).</li>
+      <li><b>Usos:</b> ordenar (sorting), buscar (PageRank de Google), priorizar, reglas de asociación (canasta de mercado), recomendación.</li>
+    </ul>
+    <h5>Dilemas</h5>
+    <ul>
+      <li><b>Sesgo algorítmico:</b> desarrolladores con sesgos o datos de entrenamiento incompletos (algoritmo renal que usaba la raza).</li>
+      <li><b>Caja negra:</b> resultados sin explicar el cómo; ¿quién responde, el programador o el data scientist?</li>
+      <li>Reemplazo del juicio humano: policía predictiva que penalizó a minorías de bajos ingresos.</li>
+    </ul>
+    <div class="vocab-row"><span class="chip"><b>flowchart</b> &rarr; diagrama de flujo</span><span class="chip"><b>loop</b> &rarr; bucle</span><span class="chip"><b>algorithmic bias</b> &rarr; sesgo algorítmico</span><span class="chip"><b>black box</b> &rarr; caja negra</span></div>
+  </div>
+
+  <div class="ficha u2">
+    <div class="ficha-head"><span class="ficha-num">FICHA 10</span><span class="ficha-title">Dispositivos de computación</span><span class="ficha-en">(computing devices)</span></div>
+    <div class="ficha-def"><b>Definición:</b> una computadora es una máquina que procesa datos y ejecuta instrucciones según algoritmos: entrada &rarr; proceso &rarr; salida (input-process-output).</div>
+    <h5>Tipos y hardware</h5>
+    <ul>
+      <li><b>Tipos:</b> integrados (embedded: lavadoras, autos), PC y laptops, tablets, móviles, wearables, mainframes y servidores (data centres).</li>
+      <li><b>Hardware:</b> placa base, CPU (velocidad, cache, núcleos), RAM (corto plazo), almacenamiento HDD/SSD, GPU, fuente de poder.</li>
+      <li><b>Software:</b> sistema operativo, utilidades, aplicaciones; malware: virus, ransomware, spyware.</li>
+    </ul>
+    <h5>Evolución (5 generaciones)</h5>
+    <ul>
+      <li>Tubos de vacío &rarr; transistores &rarr; circuitos integrados (nace la <b>Ley de Moore</b>, 1965: los transistores se duplican cada ~2 años) &rarr; microprocesadores &rarr; IA.</li>
+      <li><b>Frontera actual:</b> computación cuántica con qubits (superposición): problemas que tomarían siglos (Daimler, ExxonMobil-IBM).</li>
+    </ul>
+    <div class="vocab-row"><span class="chip"><b>embedded computer</b> &rarr; computadora integrada</span><span class="chip"><b>Moore's Law</b> &rarr; Ley de Moore</span><span class="chip"><b>wearable</b> &rarr; dispositivo vestible</span><span class="chip"><b>quantum computing</b> &rarr; computación cuántica</span></div>
+  </div>
+
+  <div class="ficha u2">
+    <div class="ficha-head"><span class="ficha-num">FICHA 11</span><span class="ficha-title">Redes e internet</span><span class="ficha-en">(networks and the internet)</span></div>
+    <div class="ficha-def"><b>Definición:</b> una red (network) es un conjunto de nodos interconectados que intercambian datos; internet es la red global de redes; la WWW son los sitios y servicios identificados por URL y accesibles con navegador.</div>
+    <h5>Tipos, componentes y protocolos</h5>
+    <ul>
+      <li><b>Alcance:</b> PAN (personal) &rarr; LAN (casa/oficina) &rarr; MAN (ciudad) &rarr; WAN (global); cableadas vs inalámbricas; client-server vs P2P.</li>
+      <li><b>Componentes:</b> NIC, dirección MAC, router, módem, punto de acceso, switch, servidor, IP y DNS (traduce dominios a IP).</li>
+      <li><b>Protocolos:</b> TCP/IP divide y reensambla paquetes; bandwidth (ancho de banda) vs velocidad; compresión lossy (JPG) vs lossless (PNG).</li>
+      <li><b>Seguridad:</b> autenticación multifactor (MFA), firewalls, VPN, cifrado WPA.</li>
+    </ul>
+    <h5>Evolución y dilemas</h5>
+    <ul>
+      <li>ARPANET (1969) &rarr; WWW (Berners-Lee, 1989) &rarr; Web 1.0 estática &rarr; 2.0 social &rarr; 3.0 semántica con IA e IoT (dispositivos conectados).</li>
+      <li><b>Dilemas:</b> spam y phishing, ransomware (WannaCry 2017), anonimato y ciberacoso, robo de identidad, vigilancia masiva (16 de las 20 ciudades más vigiladas están en China), neutralidad de la red, derecho al olvido.</li>
+    </ul>
+    <div class="vocab-row"><span class="chip"><b>router</b> &rarr; enrutador</span><span class="chip"><b>network protocol</b> &rarr; protocolo de red</span><span class="chip"><b>net neutrality</b> &rarr; neutralidad de la red</span><span class="chip"><b>IoT</b> &rarr; internet de las cosas</span><span class="chip"><b>firewall</b> &rarr; cortafuegos</span></div>
+  </div>
+
+  <div class="ficha u2">
+    <div class="ficha-head"><span class="ficha-num">FICHA 12</span><span class="ficha-title">Medios</span><span class="ficha-en">(media)</span></div>
+    <div class="ficha-def"><b>Definición:</b> los medios digitales son video, audio, imágenes y texto creados, codificados y compartidos; definen la convergencia de computación + comunicación + contenido.</div>
+    <h5>Tipos y características</h5>
+    <ul>
+      <li><b>Web 2.0:</b> blogs, podcasts, wikis y redes sociales impulsan el contenido generado por usuarios (UGC), influencers, memes virales y e-sports (Fortnite: torneos de US$100M).</li>
+      <li><b>Características:</b> compartir rápido, almacenamiento en la nube, interactividad, hipertexto, virtualidad, convergencia (texto + emoji + video).</li>
+      <li><b>Inmersivos:</b> VR (inmersión total con visor), AR (superposición: filtros de Snapchat), MR (mezcla real-digital: gemelos digitales de Shell).</li>
+    </ul>
+    <h5>Dilemas</h5>
+    <ul>
+      <li><b>Adicción:</b> ciclos de dopamina, FOMO, menos sueño y actividad física.</li>
+      <li><b>Misinformation</b> (engañar sin intención) vs <b>disinformation</b> (deliberada); las fake news se difunden más rápido que las verdaderas (MIT).</li>
+      <li><b>Deepfakes:</b> videos sintéticos que dañan reputaciones (CEO suplantado: £200.000).</li>
+      <li><b>Propiedad intelectual:</b> copyright, fair use, dominio público, licencias Creative Commons; censura digital y obsolescencia de formatos.</li>
+    </ul>
+    <div class="vocab-row"><span class="chip"><b>user-generated content</b> &rarr; contenido del usuario</span><span class="chip"><b>deepfake</b> &rarr; medio sintético</span><span class="chip"><b>mis/disinformation</b> &rarr; desinformación</span><span class="chip"><b>copyright</b> &rarr; derechos de autor</span></div>
+  </div>
+
+  <div class="ficha u2">
+    <div class="ficha-head"><span class="ficha-num">FICHA 13</span><span class="ficha-title">Inteligencia artificial</span><span class="ficha-en">(artificial intelligence)</span></div>
+    <div class="ficha-def"><b>Definición:</b> agentes o sistemas que se adaptan para realizar tareas que antes requerían procesos cognitivos y creativos humanos.</div>
+    <h5>Tipos y machine learning</h5>
+    <ul>
+      <li><b>Tipos:</b> débil/estrecha (Siri, Netflix), específica de dominio (AlphaGo), fuerte/AGI (consciente; no existe), super IA (singularidad, Kurzweil: 2045); sistemas expertos (base de conocimiento + motor de inferencia).</li>
+      <li><b>Aprendizaje automático:</b> supervisado (datos etiquetados: spam, fraude), no supervisado (patrones ocultos: segmentación), por refuerzo (recompensas: vehículos autónomos, juegos) y deep learning (redes de +3 capas: visión, voz, NLP).</li>
+      <li><b>Redes neuronales:</b> nodos que imitan neuronas; capas entrada &rarr; ocultas &rarr; salida; generalizan a datos no vistos.</li>
+    </ul>
+    <h5>Evolución y dilemas</h5>
+    <ul>
+      <li>Test de Turing (1950) &rarr; conferencia de Dartmouth (1956) &rarr; inviernos de la IA &rarr; Deep Blue (1997) &rarr; Watson (2011) &rarr; AlphaGo (2016) &rarr; boom con big data y GPUs.</li>
+      <li><b>Dilemas:</b> sesgo (Twitter favoreció pieles claras), accountability (¿quién responde por un fallo?), transparencia (caja negra, Apple Card), huella de carbono del entrenamiento, empleos (WEF: &minus;75M y +133M para 2025), regulación desigual (solo Bélgica regula armas autónomas).</li>
+    </ul>
+    <div class="vocab-row"><span class="chip"><b>narrow AI</b> &rarr; IA estrecha</span><span class="chip"><b>machine learning</b> &rarr; aprendizaje automático</span><span class="chip"><b>deep learning</b> &rarr; aprendizaje profundo</span><span class="chip"><b>neural network</b> &rarr; red neuronal</span><span class="chip"><b>training data</b> &rarr; datos de entrenamiento</span></div>
+  </div>
+
+  <div class="ficha u2">
+    <div class="ficha-head"><span class="ficha-num">FICHA 14</span><span class="ficha-title">Robótica y tecnologías autónomas</span><span class="ficha-en">(robotics and autonomous technologies)</span></div>
+    <div class="ficha-def"><b>Definición:</b> un robot es una máquina programable que completa tareas con poca o ninguna intervención humana (término de Čapek, 1921); una tecnología autónoma siente, piensa y actúa con cierto grado de independencia.</div>
+    <h5>Tipos y características</h5>
+    <ul>
+      <li><b>Tipos:</b> industriales (Foxconn reemplazó 60.000 empleos), de servicio (Flippy 2, cirugía), asistentes virtuales, robots sociales (Pepper, PARO), vehículos autónomos y drones (Zipline entrega sangre en Ghana).</li>
+      <li><b>Características:</b> sensores (cámaras, lidar, radar, GPS, infrarrojos), razonamiento con IA y machine vision, actuadores y efectores finales; semi-autónomos vs totalmente autónomos.</li>
+      <li><b>Vehículos autónomos:</b> niveles SAE 0&ndash;5 (L3 condicional, L4 alta: taxis sin conductor en Singapur, L5 total: no lograda).</li>
+    </ul>
+    <h5>Evolución y dilemas</h5>
+    <ul>
+      <li>Unimate (GM) &rarr; 3 leyes de Asimov (1941) &rarr; humanoides (ASIMO) &rarr; Sophia (2016, ciudadanía saudí): ¿derechos para robots?</li>
+      <li><b>Dilemas:</b> antropomorfismo y valle inquietante (Mori, 1970), accidentes de vehículos autónomos, leyes desiguales y hacking, desplazamiento laboral (&minus;20M empleos manufactureros a 2030, Oxford Economics).</li>
+    </ul>
+    <div class="vocab-row"><span class="chip"><b>actuator</b> &rarr; actuador</span><span class="chip"><b>end effector</b> &rarr; efector final</span><span class="chip"><b>autonomous vehicle</b> &rarr; vehículo autónomo</span><span class="chip"><b>uncanny valley</b> &rarr; valle inquietante</span></div>
+  </div>
+
+  <div class="quiz-card q2">
+    <h4>Autoevaluación rápida &middot; Unidad 2</h4>
+    <ol>
+      <li>Enumera las 5 etapas del ciclo de vida del dato y las 4V del big data.</li>
+      <li>¿Qué diferencia hay entre cifrado de clave simétrica y de clave pública? ¿Dónde se usa cada uno?</li>
+      <li>Explica qué es un algoritmo de caja negra y por qué complica la rendición de cuentas.</li>
+      <li>Ordena las generaciones de computadoras y explica la Ley de Moore.</li>
+      <li>Diferencia VR, AR y MR con un ejemplo real de cada una.</li>
+      <li>Compara aprendizaje supervisado, no supervisado y por refuerzo con una aplicación de cada uno.</li>
+      <li>¿Qué son los niveles SAE y hasta qué nivel llegó Singapur en 2016?</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ UNIDAD 3: MAPA CONTEXTOS ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k3">Unidad 3 &middot; Sección 4 del libro</span>
+    <div class="map-title">Los 7 contextos del mundo real <span class="en-term" style="font-size:15px">(real-world contexts)</span></div>
+    <div class="map-intro">Los contextos son los ámbitos donde los sistemas digitales producen impactos reales. Base de los Papers 1 y 2: cada escenario de examen pertenece a uno o varios de estos contextos.</div>
+  </div>
+
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u3">Cultural <small>cultural</small></div>
+        <div class="children">
+          <div class="leaf">Arte y cultura popular</div>
+          <div class="leaf">Hogar, ocio y turismo</div>
+          <div class="leaf">Patrimonio y tradiciones</div>
+          <div class="leaf">Subculturas y cancel culture</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u3">Ambiental <small>environmental</small></div>
+        <div class="children">
+          <div class="leaf">Recursos y ecosistemas</div>
+          <div class="leaf">E-waste y contaminación</div>
+          <div class="leaf">Ciudades inteligentes</div>
+          <div class="leaf">Agricultura digital</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u3">Conocimiento <small>human knowledge</small></div>
+        <div class="children">
+          <div class="leaf">Pedagogías digitales</div>
+          <div class="leaf">MOOC y autoaprendizaje</div>
+          <div class="leaf">Modelo SAMR</div>
+          <div class="leaf">Ciencia ciudadana</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u3">Social <small>social</small></div>
+        <div class="children">
+          <div class="leaf">Interseccionalidad</div>
+          <div class="leaf">Clase y brecha digital</div>
+          <div class="leaf">Familias y control</div>
+          <div class="leaf">Comunidades online</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="root-node">7<br>CONTEXTOS<small>real-world contexts</small></div>
+
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u3">Económico <small>economic</small></div>
+        <div class="children">
+          <div class="leaf">Negocios y sistemas</div>
+          <div class="leaf">Gig economy y teletrabajo</div>
+          <div class="leaf">E-commerce y criptomonedas</div>
+          <div class="leaf">Globalización</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u3">Salud <small>health</small></div>
+        <div class="children">
+          <div class="leaf">Diagnóstico con IA</div>
+          <div class="leaf">Telemedicina y wearables</div>
+          <div class="leaf">Cuerpo y transhumanismo</div>
+          <div class="leaf">Salud mental y adicción</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u3">Político <small>political</small></div>
+        <div class="children">
+          <div class="leaf">Voto y microtargeting</div>
+          <div class="leaf">Cambridge Analytica</div>
+          <div class="leaf">Ciber guerra y drones</div>
+          <div class="leaf">GDPR y regulación</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:#14B8A6"></span> 7 contextos &middot; Sección 4</span>
+    <span class="lg" style="margin-left:auto">En el examen: identifica contexto + stakeholders + impactos + y &minus;</span>
+  </div>
+</div>
+
+<!-- ═══════════════ UNIDAD 3: FICHAS ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Unidad 3 &middot; Fichas de repaso</div>
+    <div class="section-title">Fichas de los 7 contextos</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="ficha u3">
+    <div class="ficha-head"><span class="ficha-num">FICHA 15</span><span class="ficha-title">Contexto cultural</span><span class="ficha-en">(cultural)</span></div>
+    <div class="ficha-def"><b>Qué abarca:</b> las &ldquo;maneras de vivir&rdquo; en la sociedad digital: creación y difusión cultural, ocio, tradiciones y subculturas. La tecnología es a la vez motor y amenaza para las tradiciones.</div>
+    <ul>
+      <li><b>Arte y cultura popular:</b> acceso global (Spotify, Google Arts &amp; Culture), memes e influencers; fotografiar todo reduce la memoria (Henkel, 2013); Ice Bucket Challenge: +US$220M.</li>
+      <li><b>Hogar, ocio y turismo:</b> smart homes con IoT (riesgo: 5.000 accesos hackeados en Leeds, 2018), wearables deportivos, reviews (Tripadvisor), traducción instantánea con IA.</li>
+      <li><b>Patrimonio:</b> digitalización UNESCO de +1.000 sitios; nuevos ritos de paso digitales (primer smartphone, primera cuenta).</li>
+      <li><b>Subculturas:</b> comunidades online con gran fluidez; culturas juveniles (150&ndash;300 desbloqueos/día); cancel culture: ¿accountability o linchamiento digital?</li>
+    </ul>
+    <div class="vocab-row"><span class="chip"><b>streaming</b> &rarr; transmisión en continuo</span><span class="chip"><b>heritage</b> &rarr; patrimonio</span><span class="chip"><b>rite of passage</b> &rarr; rito de paso</span><span class="chip"><b>cancel culture</b> &rarr; cultura de la cancelación</span></div>
+  </div>
+
+  <div class="ficha u3">
+    <div class="ficha-head"><span class="ficha-num">FICHA 16</span><span class="ficha-title">Contexto económico</span><span class="ficha-en">(economic)</span></div>
+    <div class="ficha-def"><b>Qué abarca:</b> cómo las herramientas digitales transforman negocios, empleo, mercados e intercambio internacional; crean empleos nuevos y obsoletizan otros.</div>
+    <ul>
+      <li><b>Negocios:</b> sistemas empresariales (transacciones, automatización de oficinas, BD corporativas); diversificación en 4 tipos; IA de contratación de Amazon sesgada contra mujeres (2014).</li>
+      <li><b>Empleo:</b> gig economy (Uber, Etsy), teletrabajo post-COVID, nómadas digitales, crowdsourcing y microwork; 1 de cada 3 empleos con riesgo de automatización parcial.</li>
+      <li><b>Bienes y dinero:</b> e-commerce (B2B, B2C, C2C), microtargeting publicitario, criptomonedas y NFTs (Nyan Cat: +US$500.000), cashless society (Suecia, AliPay), loot boxes criticadas como apuestas.</li>
+      <li><b>Globalización:</b> ventas sin fronteras, global sourcing, offshoring/outsourcing, nearsourcing.</li>
+    </ul>
+    <h5>Ejemplo del libro</h5>
+    <ul><li>GameStop (2021): Reddit llevó la acción de US$20 a US$350; el poder de las redes sobre los mercados.</li></ul>
+    <div class="vocab-row"><span class="chip"><b>gig economy</b> &rarr; economía de plataformas</span><span class="chip"><b>e-commerce</b> &rarr; comercio electrónico</span><span class="chip"><b>cryptocurrency</b> &rarr; criptomoneda</span><span class="chip"><b>offshoring</b> &rarr; deslocalización</span></div>
+  </div>
+
+  <div class="ficha u3">
+    <div class="ficha-head"><span class="ficha-num">FICHA 17</span><span class="ficha-title">Contexto ambiental</span><span class="ficha-en">(environmental)</span></div>
+    <div class="ficha-def"><b>Qué abarca:</b> los impactos de crear, usar y desechar tecnología digital, y el uso de la tecnología para monitorear la naturaleza y optimizar recursos.</div>
+    <ul>
+      <li><b>Recursos:</b> minería de cobalto en RDC (&gt;50% del suministro; trabajo infantil); Google consumió 12,4 TWh (2019); GPS y smartphones solares protegen especies (Rainforest Connection).</li>
+      <li><b>Contaminación y residuos:</b> e-waste &gt;40M toneladas/año (2% de residuos pero 70% de los tóxicos); obsolescencia programada (demanda francesa a Epson y HP; Apple ralentizó iPhones); green computing y economía circular (ecoATM).</li>
+      <li><b>Ciudades:</b> smart cities: Tengah (Singapur), semáforos inteligentes en Pittsburgh (&minus;41% tráfico, &minus;21% emisiones); GPS y GIS para orientarse.</li>
+      <li><b>Agricultura:</b> sensores por planta (agua y fertilizante exactos), robot FarmBot, cadenas de frío globales.</li>
+    </ul>
+    <div class="vocab-row"><span class="chip"><b>e-waste</b> &rarr; residuos electrónicos</span><span class="chip"><b>planned obsolescence</b> &rarr; obsolescencia programada</span><span class="chip"><b>smart city</b> &rarr; ciudad inteligente</span><span class="chip"><b>circular economy</b> &rarr; economía circular</span></div>
+  </div>
+
+  <div class="ficha u3">
+    <div class="ficha-head"><span class="ficha-num">FICHA 18</span><span class="ficha-title">Contexto salud</span><span class="ficha-en">(health)</span></div>
+    <div class="ficha-def"><b>Qué abarca:</b> la transformación digital de la medicina, la integración de tecnología con el cuerpo humano y la salud mental.</div>
+    <ul>
+      <li><b>Medicina:</b> diagnóstico con IA (detecta cáncer mejor que humanos, con falsos positivos), historiales digitales (ransomware golpeó al 40% de 600 hospitales de EE. UU.), telemedicina (32% &rarr; 90% de médicos en COVID), wearables y pastillas inteligentes, cirugía robótica (da Vinci).</li>
+      <li><b>Cuerpo:</b> transhumanismo, bio-hacking con chips RFID (miles de suecos), exoesqueletos para rehabilitación, impresión de órganos (bioprinting), tecnologías de asistencia.</li>
+      <li><b>Salud mental:</b> apps de terapia que reducen estigma; adicción a redes (dopamina tipo casino); gaming disorder reconocido por la OMS (2018); VRET contra el PTSD de veteranos.</li>
+    </ul>
+    <div class="vocab-row"><span class="chip"><b>telemedicine</b> &rarr; telemedicina</span><span class="chip"><b>transhumanism</b> &rarr; transhumanismo</span><span class="chip"><b>bioprinting</b> &rarr; impresión biológica</span><span class="chip"><b>gaming disorder</b> &rarr; trastorno por videojuegos</span></div>
+  </div>
+
+  <div class="ficha u3">
+    <div class="ficha-head"><span class="ficha-num">FICHA 19</span><span class="ficha-title">Contexto conocimiento humano</span><span class="ficha-en">(human knowledge)</span></div>
+    <div class="ficha-def"><b>Qué abarca:</b> cómo las tecnologías digitales redefinen el propósito, los métodos y los resultados de la educación formal e informal y de la innovación científica.</div>
+    <ul>
+      <li><b>Educación:</b> pedagogías digitales (aulas interactivas, aprendizaje socioemocional), remoto sincrónico vs asincrónico, MOOCs (Coursera, edX: democratizan pero con alta deserción).</li>
+      <li><b>Modelo SAMR:</b> sustitución &rarr; aumentación &rarr; modificación &rarr; redefinición: evalúa si la tecnología mejora realmente la lección.</li>
+      <li><b>Innovación:</b> innovación abierta (feedback externo en I+D), científicos ciudadanos (apps del Smithsonian), simulaciones con supercomputadoras y computación cuántica.</li>
+      <li><b>Ejemplo:</b> Sci-Hub distribuye el 85% de artículos académicos gratis vs paywalls que crean brecha de conocimiento.</li>
+    </ul>
+    <div class="vocab-row"><span class="chip"><b>MOOC</b> &rarr; curso masivo abierto</span><span class="chip"><b>remote learning</b> &rarr; aprendizaje remoto</span><span class="chip"><b>SAMR model</b> &rarr; modelo SAMR</span><span class="chip"><b>open innovation</b> &rarr; innovación abierta</span></div>
+  </div>
+
+  <div class="ficha u3">
+    <div class="ficha-head"><span class="ficha-num">FICHA 20</span><span class="ficha-title">Contexto político</span><span class="ficha-en">(political)</span></div>
+    <div class="ficha-def"><b>Qué abarca:</b> los procesos políticos (votar, hacer campaña), las instituciones de gobierno, los conflictos y la regulación legal de la tecnología.</div>
+    <ul>
+      <li><b>Procesos:</b> votación electrónica y online (agiliza pero genera dudas de exactitud), microtargeting con big data que deriva en propaganda, echo chambers y polarización.</li>
+      <li><b>Caso clave:</b> Cambridge Analytica: 87M de perfiles de Facebook, análisis psicográfico (modelo OCEAN), fake news; multa de ~US$5.000M a Facebook.</li>
+      <li><b>Gobierno y conflicto:</b> transparencia digital vs vigilancia estatal; cyberwarfare (DDoS, ransomware al oleoducto de EE. UU.: 4,4M en Bitcoin); drones armados Kargu-2 (Libia) y debate sobre &ldquo;robots asesinos&rdquo;.</li>
+      <li><b>Leyes:</b> GDPR (UE), &ldquo;Great Firewall&rdquo; de China, ciberdelincuencia +15% anual, reconocimiento facial (California lo prohibió a la policía).</li>
+    </ul>
+    <div class="vocab-row"><span class="chip"><b>microtargeting</b> &rarr; microsegmentación</span><span class="chip"><b>cyberwarfare</b> &rarr; guerra cibernética</span><span class="chip"><b>surveillance</b> &rarr; vigilancia</span><span class="chip"><b>GDPR</b> &rarr; reglamento de protección de datos</span></div>
+  </div>
+
+  <div class="ficha u3">
+    <div class="ficha-head"><span class="ficha-num">FICHA 21</span><span class="ficha-title">Contexto social</span><span class="ficha-en">(social)</span></div>
+    <div class="ficha-def"><b>Qué abarca:</b> los componentes sociales de la identidad, la clase social y la transformación digital de familias y relaciones.</div>
+    <ul>
+      <li><b>Identidad social:</b> interseccionalidad (marcadores que se solapan y multiplican la discriminación), discurso de odio y ciberacoso; Gamergate (2014): acoso masivo y doxing a mujeres gamers.</li>
+      <li><b>Clase social:</b> capital económico, social y cultural; brecha digital por clase (UK 2015); digital redlining (AT&T no invirtió en barrios pobres); algoritmo COMPAS y policía predictiva reproducen sesgos raciales.</li>
+      <li><b>Familias y relaciones:</b> Find My Friends (¿cuidado o control?), robots de compañía (ElliQ para mayores, Milo para autismo), comunidades online y silos culturales, apps de citas que filtran por religión o etnia.</li>
+    </ul>
+    <div class="vocab-row"><span class="chip"><b>intersectionality</b> &rarr; interseccionalidad</span><span class="chip"><b>filter bubble</b> &rarr; burbuja de filtro</span><span class="chip"><b>doxing</b> &rarr; publicar datos privados</span><span class="chip"><b>digital redlining</b> &rarr; exclusión digital sistémica</span></div>
+  </div>
+
+  <div class="quiz-card q3">
+    <h4>Autoevaluación rápida &middot; Unidad 3</h4>
+    <ol>
+      <li>Cita un ejemplo real de cada contexto (7 en total) que puedas reutilizar en el examen.</li>
+      <li>¿Qué es el e-waste y por qué se concentra su tratamiento en países en desarrollo?</li>
+      <li>Explica el caso Cambridge Analytica: ¿qué conceptos (Unidad 1) se relacionan?</li>
+      <li>Describe el modelo SAMR con un ejemplo educativo propio.</li>
+      <li>¿Cómo afecta la brecha digital a la clase social? Usa el término digital redlining.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ UNIDAD 4: MAPA HL ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k4">Unidad 4 &middot; Secciones 5&ndash;6 del libro &middot; solo HL</span>
+    <div class="map-title">Extensión HL: desafíos e intervenciones <span class="en-term" style="font-size:15px">(challenges &amp; interventions)</span></div>
+    <div class="map-intro">3 temas de desafío con 3 áreas de indagación prescritas cada uno (9 en total). Para cada subtema: identificar un ejemplo real, analizar impactos y evaluar una intervención con 6 criterios.</div>
+  </div>
+
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u4">Bienestar global <small>global well-being</small></div>
+        <div class="children">
+          <div class="leaf">Desigualdades locales y globales</div>
+          <div class="leaf">Poblaciones cambiantes</div>
+          <div class="leaf">El futuro del trabajo</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u4">Gobernanza y DDHH <small>governance &amp; human rights</small></div>
+        <div class="children">
+          <div class="leaf">Conflicto, paz y seguridad</div>
+          <div class="leaf">Participación y representación</div>
+          <div class="leaf">Diversidad y discriminación</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u4">Desarrollo sostenible <small>sustainable development</small></div>
+        <div class="children">
+          <div class="leaf">Cambio climático y acción</div>
+          <div class="leaf">Uso responsable de recursos</div>
+          <div class="leaf">Gestión de contaminación y residuos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="root-node">EXTENSIÓN<br>HL<small>challenges &amp; interventions</small></div>
+
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u4">Indagación extendida <small>extended inquiry</small></div>
+        <div class="children">
+          <div class="leaf">Foco &rarr; explorar &rarr; analizar</div>
+          <div class="leaf">Evaluar &rarr; recomendar</div>
+          <div class="leaf">Comunicar informe</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u4">Propósitos de intervención <small>intervention</small></div>
+        <div class="children">
+          <div class="leaf">Mitigate &middot; reducir daños</div>
+          <div class="leaf">Intercede &middot; intervenir</div>
+          <div class="leaf">Enhance &middot; resolve &middot; mejorar o eliminar</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u4">6 criterios de evaluación <small>evaluation criteria</small></div>
+        <div class="children">
+          <div class="leaf">Equity &middot; acceptability</div>
+          <div class="leaf">Cost &middot; feasibility</div>
+          <div class="leaf">Innovation &middot; ethics</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:#F59E0B"></span> Extensión HL &middot; Secciones 5&ndash;6</span>
+    <span class="lg" style="margin-left:auto">Fórmula HL: desafío &rarr; impacto &rarr; intervención real &rarr; 6 criterios &rarr; recomendación</span>
+  </div>
+</div>
+
+<!-- ═══════════════ UNIDAD 4: FICHAS ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Unidad 4 &middot; Fichas de repaso (solo HL)</div>
+    <div class="section-title">Fichas de la extensión HL</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num">FICHA 22</span><span class="ficha-title">Bienestar global</span><span class="ficha-en">(global well-being)</span></div>
+    <div class="ficha-def"><b>Qué estudia:</b> cómo los sistemas digitales afectan el bienestar físico y mental (empleo, ciberacoso, seguridad, privacidad) y qué intervenciones digitales responden a las desigualdades y a los cambios poblacionales.</div>
+    <ul>
+      <li><b>Desigualdades:</b> estratificación económica (salarios +2,3% vs +19% de directivos); inseguridad alimentaria respondida con SaaS agrícola, IoT y blockchain en la cadena de suministro; e-health y banda ancha como derecho.</li>
+      <li><b>Poblaciones:</b> megaciudades (&gt;10M) y smart cities; envejecimiento con smart homes, Apple Watch (ECG, caídas) y robots compañía; migración: biometría, blockchain para identidad, algoritmo de Stanford que reubica refugiados.</li>
+      <li><b>Futuro del trabajo:</b> automatización (50% parcial, solo 5% total); plataformas (LinkedIn, Uber); auditoría algorítmica en contratación; reentrenamiento y desequilibrio de poder trabajador-empresa.</li>
+    </ul>
+    <div class="vocab-row"><span class="chip"><b>stratification</b> &rarr; estratificación</span><span class="chip"><b>food security</b> &rarr; seguridad alimentaria</span><span class="chip"><b>e-health</b> &rarr; salud electrónica</span><span class="chip"><b>retraining</b> &rarr; recualificación</span></div>
+  </div>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num">FICHA 23</span><span class="ficha-title">Gobernanza y derechos humanos</span><span class="ficha-en">(governance and human rights)</span></div>
+    <div class="ficha-def"><b>Qué estudia:</b> la relación entre gobernanza y derechos humanos en la era digital: conflicto y seguridad, participación política, y diversidad sin discriminación.</div>
+    <ul>
+      <li><b>Conflicto y paz:</b> crisis mapping y crowdsourcing acortan la alerta; ONU reticente a nuevas tecnologías en peacekeeping; drones armados y ciberdelincuencia; internet satelital como intervención.</li>
+      <li><b>Participación:</b> activismo digital y hacktivism (25M en protestas George Floyd, 2020); crowdsourcing cívico y transparencia; contracaras: echo chambers y desinformación; intervenciones: voto online, mensajería cifrada (Signal).</li>
+      <li><b>Diversidad:</b> brecha digital (43% global vs 9% en países menos desarrollados); mujeres &lt;1/3 del sector tech; reconocimiento facial erra hasta 34% en mujeres de piel oscura (Amazon Rekognition); tecnologías asistivas (Google Lookout, lectores de pantalla).</li>
+    </ul>
+    <div class="vocab-row"><span class="chip"><b>digital activism</b> &rarr; activismo digital</span><span class="chip"><b>hacktivism</b> &rarr; hacktivismo</span><span class="chip"><b>digital divide</b> &rarr; brecha digital</span><span class="chip"><b>facial recognition</b> &rarr; reconocimiento facial</span></div>
+  </div>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num">FICHA 24</span><span class="ficha-title">Desarrollo sostenible</span><span class="ficha-en">(sustainable development)</span></div>
+    <div class="ficha-def"><b>Qué estudia:</b> satisfacer las metas de desarrollo humano sin agotar los recursos naturales; conecta con los 17 ODS de la ONU. Ojo: la digitalización no es sostenible por sí sola (&gt;50M toneladas de e-waste al año).</div>
+    <ul>
+      <li><b>Clima:</b> modelos climáticos orientan políticas; renovables al 100% (Google, Apple), vehículos eléctricos, blockchain que verifica emisiones; contracara: data centres ~3% de la electricidad mundial.</li>
+      <li><b>Recursos (ODS 12):</b> solo 3% del agua es potable, 1/3 de la comida se desperdicia; ride-sharing, IA que predice fallos en redes de agua y luz, mercados virtuales de agricultores.</li>
+      <li><b>Contaminación:</b> contenedores inteligentes IoT, robots que clasifican residuos (&gt;90% de pureza), RFID que rastrea residuos hogareños y premia el comportamiento verde; reducción y reutilización de e-waste.</li>
+    </ul>
+    <div class="vocab-row"><span class="chip"><b>sustainable development</b> &rarr; desarrollo sostenible</span><span class="chip"><b>greenhouse gases</b> &rarr; gases invernadero</span><span class="chip"><b>carbon footprint</b> &rarr; huella de carbono</span><span class="chip"><b>supply chain</b> &rarr; cadena de suministro</span></div>
+  </div>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num">FICHA 25</span><span class="ficha-title">Método: indagación extendida e intervenciones</span><span class="ficha-en">(extended inquiry &amp; interventions)</span></div>
+    <div class="ficha-def"><b>Definiciones:</b> un <b>desafío (challenge)</b> es un problema complejo del mundo real vinculado a sistemas digitales; una <b>intervención (intervention)</b> es una solución digital (herramienta, política, práctica o ley) que responde a sus impactos.</div>
+    <ul>
+      <li><b>Pasos del extended inquiry:</b> punto de partida &rarr; delimitar foco &rarr; explorar (3Cs + fuentes) &rarr; analizar impactos y causa-efecto &rarr; evaluar con 6 criterios &rarr; reflexionar &rarr; recomendar acciones &rarr; comunicar.</li>
+      <li><b>Propósitos de una intervención:</b> mitigar (reducir daños), interceder (intervenir un proceso existente), mejorar (potenciar los positivos) o resolver (eliminar el problema).</li>
+      <li><b>Ejemplo del libro:</b> app QR de rastreo COVID (track and trace): smartphone + base de datos gubernamental; recomendaciones: trabajar con líderes comunitarios, comisionado de privacidad independiente y alternativas para quien no tiene smartphone.</li>
+    </ul>
+    <table class="crit">
+      <tr><th style="width:22%">Criterio</th><th>Pregunta clave</th></tr>
+      <tr><td><b>Equity</b></td><td>¿Atiende equitativamente las necesidades de todos los afectados?</td></tr>
+      <tr><td><b>Acceptability</b></td><td>¿Es aceptable para las comunidades, con transparencia y rendición de cuentas?</td></tr>
+      <tr><td><b>Cost</b></td><td>¿Costes financieros, sociales, culturales y ambientales frente a beneficios?</td></tr>
+      <tr><td><b>Feasibility</b></td><td>¿Es viable técnica, social y políticamente? ¿Qué barreras existen?</td></tr>
+      <tr><td><b>Innovation</b></td><td>¿Es evolutiva, adaptativa o transformacional?</td></tr>
+      <tr><td><b>Ethics</b></td><td>¿Produce daños? ¿Quién determina su estatus ético y con qué marco?</td></tr>
+    </table>
+  </div>
+
+  <div class="quiz-card q4">
+    <h4>Autoevaluación rápida &middot; Unidad 4</h4>
+    <ol>
+      <li>Enumera los 9 subtemas HL (3 por desafío) sin mirar el mapa.</li>
+      <li>Elige una intervención real (p. ej., internet satelital) y evalúala con los 6 criterios.</li>
+      <li>¿Qué diferencia hay entre mitigar, interceder, mejorar y resolver una intervención?</li>
+      <li>Explica la brecha digital con datos del libro (43% global vs 9%) y una intervención que la reduzca.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ EXÁMENES PAPER 1 Y 2 ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Repaso de evaluación &middot; solo Paper 1 y Paper 2</div>
+    <div class="section-title">Cómo son los exámenes Paper 1 y Paper 2</div>
+    <div class="divider"></div>
+  </div>
+
+  <table class="exam">
+    <tr><th style="width:13%">Componente</th><th style="width:15%">Duración</th><th style="width:17%">Peso SL / HL</th><th>Estructura</th></tr>
+    <tr>
+      <td><b>Paper 1</b></td><td>SL: 1h 30 &middot; HL: 2h 15</td><td>SL 40% &middot; HL 35%</td>
+      <td>SL: responde <b>2 de 4 preguntas</b> sobre escenarios, cada una con partes a (6 pts), b (6 pts) y c (8 pts). HL añade <b>Section B</b>: 1 de 2 preguntas de 12 pts sobre la extensión HL (con ejemplo real y counter-claims).</td>
+    </tr>
+    <tr>
+      <td><b>Paper 2</b></td><td>1h 15 (SL y HL)</td><td>SL 30% &middot; HL 20%</td>
+      <td><b>4 fuentes</b> sobre un tema común (artículos, datos, infografías, posts) y <b>4 preguntas obligatorias</b>: Q1 (2 pts, AO1), Q2 (4 pts, AO2), Q3 (6 pts: compare/contrast dos fuentes), Q4 (12 pts: respuesta extendida que integra las 3Cs).</td>
+    </tr>
+  </table>
+
+  <div class="info-card">
+    <h4>Command terms por nivel de pensamiento</h4>
+    <p><b>AO1 (conocimiento, 1&ndash;2 pts):</b> define, identify, describe, outline, state. &nbsp;<b>AO2 (aplicación, 2&ndash;6 pts):</b> analyse, distinguish, explain, suggest. &nbsp;<b>AO3 (evaluación, 6&ndash;12 pts, con markbands):</b> compare, contrast, discuss, examine, evaluate, justify, recommend, to what extent.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Método PEEL para respuestas extendidas</h4>
+    <p><b>P (Point):</b> afirma tu idea con terminología precisa. &nbsp;<b>E (Evidence):</b> apóyala con la fuente o un ejemplo real (quién, dónde, cuándo, qué). &nbsp;<b>E (Exploration):</b> desarrolla causas, efectos y conceptos de las 3Cs. &nbsp;<b>L (Link):</b> conecta con la pregunta y cierra con una conclusión.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>5 consejos de examen</h4>
+    <p><b>1)</b> Subraya en cada pregunta: command term + stakeholders + sistema digital + concepto implicado. &nbsp;<b>2)</b> Planifica 5&ndash;10 min con la hoja &ldquo;cloud&rdquo; (stakeholders, ventajas/desventajas, claims y counter-claims). &nbsp;<b>3)</b> En Paper 2, dedícale a la Q4 al menos 35 minutos: vale el 50% del examen. &nbsp;<b>4)</b> En Q3 cita siempre ambas fuentes (si solo discutes una, máximo 3/6 pts). &nbsp;<b>5)</b> Responde la pregunta formulada, no la que te gustaría; equilibra pros y contras y opina con criterio en la conclusión.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ CIERRE ═══════════════ -->
+<div class="ending">
+  <div class="end-quote">&ldquo;Exploramos los impactos e implicaciones de los sistemas digitales para las personas y las comunidades, en contextos diversos del mundo real.&rdquo;</div>
+  <div class="end-checks">
+    <div class="end-check"><span class="tick">1</span><p><b>Conceptos:</b> domino los 7 conceptos y puedo aplicarlos como lentes a cualquier ejemplo.</p></div>
+    <div class="end-check"><span class="tick">2</span><p><b>Contenidos:</b> sé tipos, características, evolución y dilemas de los 7 sistemas digitales.</p></div>
+    <div class="end-check"><span class="tick">3</span><p><b>Contextos:</b> tengo un ejemplo real memorizado para cada uno de los 7 contextos.</p></div>
+    <div class="end-check"><span class="tick">4</span><p><b>Extensión HL:</b> recuerdo los 9 subtemas y evalúo intervenciones con los 6 criterios.</p></div>
+    <div class="end-check"><span class="tick">5</span><p><b>Exámenes:</b> conozco la estructura de Paper 1 y Paper 2, los command terms y PEEL.</p></div>
+  </div>
+  <div class="end-foot">
+    Material de repaso de contenidos del curso IB Digital Society (SL + HL). Excluye por diseño: monografía (extended essay),
+    evaluación interna (inquiry project) y Paper 3 (pre-release HL). Fuente: Bomfim, Earle, Fitzpatrick, Hancox, Levin y Stefanics,
+    <i>Digital Society</i>, Hodder Education, 2022. Verifica siempre la guía oficial del IB para los requisitos vigentes de evaluación.
+  </div>
+</div>
+
+<script>
+/* ═══ Conectores recursivos para todos los mapas (adaptado de mindmap-css v4-fix) ═══ */
+function drawLinesForMap(map) {
+  if (!map) return;
+  const cRect = map.getBoundingClientRect();
+  const old = map.querySelector('svg.lines');
+  if (old) old.remove();
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.classList.add('lines');
+  svg.setAttribute('width', cRect.width);
+  svg.setAttribute('height', cRect.height);
+  svg.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:1;';
+  let lineCount = 0;
+
+  function rel(el) {
+    const r = el.getBoundingClientRect();
+    return { cy: r.top - cRect.top + r.height / 2,
+             left: r.left - cRect.left, right: r.right - cRect.left };
+  }
+  function drawLine(x1, y1, x2, y2, color, width) {
+    const l = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    l.setAttribute('x1', Math.round(x1)); l.setAttribute('y1', Math.round(y1));
+    l.setAttribute('x2', Math.round(x2)); l.setAttribute('y2', Math.round(y2));
+    l.setAttribute('stroke', color); l.setAttribute('stroke-width', width);
+    l.setAttribute('stroke-linecap', 'round');
+    svg.appendChild(l); lineCount++;
+  }
+  const lineStyles = [
+    { color: '#64748B', width: 2.5 },
+    { color: '#94A3B8', width: 2 },
+    { color: '#A8B4C2', width: 1.5 },
+    { color: '#B8C2CC', width: 1.2 },
+    { color: '#CBD5E1', width: 1 }
+  ];
+  function getLineStyle(depth) {
+    const s = lineStyles[Math.min(depth, lineStyles.length - 1)];
+    return { color: s.color, width: s.width };
+  }
+  function connect(parentEl, childEls, dir, depth) {
+    if (!childEls.length) return;
+    const style = getLineStyle(depth);
+    const p = rel(parentEl);
+    const startX = dir === 'left' ? p.left : p.right;
+    const startY = p.cy;
+    if (childEls.length === 1) {
+      const c = rel(childEls[0]);
+      const endX = dir === 'left' ? c.right : c.left;
+      const midY = Math.round((startY + c.cy) / 2);
+      drawLine(startX, midY, endX, midY, style.color, style.width);
+      return;
+    }
+    let closestEdge;
+    if (dir === 'left') closestEdge = Math.max.apply(null, childEls.map(ch => rel(ch).right));
+    else closestEdge = Math.min.apply(null, childEls.map(ch => rel(ch).left));
+    const childClearance = 14;
+    const midpoint = startX + (closestEdge - startX) / 2;
+    const midFromChild = dir === 'left' ? closestEdge + childClearance : closestEdge - childClearance;
+    const midX = dir === 'left' ? Math.min(midpoint, midFromChild) : Math.max(midpoint, midFromChild);
+    drawLine(startX, startY, midX, startY, style.color, style.width);
+    const allCYs = childEls.map(ch => rel(ch).cy);
+    const minY = Math.min.apply(null, [startY].concat(allCYs));
+    const maxY = Math.max.apply(null, [startY].concat(allCYs));
+    drawLine(midX, minY, midX, maxY, style.color, style.width);
+    childEls.forEach(ch => {
+      const c = rel(ch);
+      const endX = dir === 'left' ? c.right : c.left;
+      drawLine(midX, c.cy, endX, c.cy, style.color, style.width);
+    });
+  }
+  const NODE_SEL = '.branch-node, .sub-node, .leaf, .deep-node';
+  function processChildren(parentNodeEl, containerEl, depth, dir) {
+    if (!containerEl) return;
+    const childNodeEls = [];
+    for (const wrapper of containerEl.children) {
+      const nodeEl = wrapper.matches && wrapper.matches(NODE_SEL) ? wrapper : wrapper.querySelector(NODE_SEL);
+      if (nodeEl) childNodeEls.push(nodeEl);
+    }
+    if (!childNodeEls.length) return;
+    connect(parentNodeEl, childNodeEls, dir, depth);
+  }
+  const rootNode = map.querySelector('.root-node');
+  if (!rootNode) return;
+  const leftBranches = map.querySelectorAll('.left-branches > .left-branch');
+  const leftNodes = [];
+  leftBranches.forEach(b => { const n = b.querySelector('.branch-node'); if (n) leftNodes.push(n); });
+  if (leftNodes.length) connect(rootNode, leftNodes, 'left', 0);
+  leftBranches.forEach(b => {
+    const n = b.querySelector('.branch-node');
+    if (n) processChildren(n, b.querySelector(':scope > .children'), 1, 'left');
+  });
+  const rightBranches = map.querySelectorAll('.right-branches > .right-branch');
+  const rightNodes = [];
+  rightBranches.forEach(b => { const n = b.querySelector('.branch-node'); if (n) rightNodes.push(n); });
+  if (rightNodes.length) connect(rootNode, rightNodes, 'right', 0);
+  rightBranches.forEach(b => {
+    const n = b.querySelector('.branch-node');
+    if (n) processChildren(n, b.querySelector(':scope > .children'), 1, 'right');
+  });
+  map.insertBefore(svg, map.firstChild);
+}
+function drawAllMaps() {
+  document.querySelectorAll('.mindmap').forEach(m => drawLinesForMap(m));
+}
+window.addEventListener('load', () => {
+  setTimeout(drawAllMaps, 250);
+  setTimeout(drawAllMaps, 1200);
+});
+</script>
+
+</body>
+</html>
