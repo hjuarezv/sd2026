@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>ALGORITMOS Y CÓDIGO — Material de repaso IB Digital Society (NM)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<script>
+/* Este documento no contiene fórmulas matemáticas. Se registra un stub para que el conversor
+   no inyecte KaTeX ni reescriba textos con "$" o porcentajes como 89.5 %. */
+window.renderMathInElement = function () {};
+</script>
+<style>
+/* ═══════════ PÁGINAS ═══════════ */
+@page { size: 794px 1123px; margin: 48px 0 52px 0; }
+@page fullbleed { size: 794px 1123px; margin: 0; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #F8FAFC; --card: #FFFFFF; --ink: #1E293B; --muted: #64748B;
+  --line: #E2E8F0; --navy: #1E3A5F; --navy2: #2D4A6F;
+  --u1: #3B82F6; --u1-bg: #EFF6FF; --u1-tx: #1E40AF;
+  --u2: #8B5CF6; --u2-bg: #F5F3FF; --u2-tx: #5B21B6;
+  --u3: #14B8A6; --u3-bg: #F0FDFA; --u3-tx: #134E4A;
+  --u4: #F59E0B; --u4-bg: #FFF7ED; --u4-tx: #92400E;
+  --slate: #64748B; --slate-bg: #F1F5F9; --slate-tx: #334155;
+}
+html, body {
+  margin: 0; padding: 0; width: 794px;
+  background: var(--bg); color: var(--ink);
+  font-family: 'Inter', 'Liberation Sans', sans-serif;
+  font-size: 12.5px; line-height: 1.55;
+  overflow-wrap: break-word;
+}
+@media screen {
+  html { height: auto; display: flex; justify-content: center; background: #E2E8F0; }
+  body { transform: scale(1); transform-origin: top center; margin: 20px auto; box-shadow: 0 2px 24px rgba(15,23,42,.18); }
+}
+
+/* ═══════════ PORTADA / CIERRE (full-bleed) ═══════════ */
+.cover {
+  page: fullbleed; width: 794px; height: 1123px;
+  background: linear-gradient(158deg, #16283F 0%, #1E3A5F 46%, #2D4A6F 100%);
+  color: #F1F5F9; position: relative;
+  display: flex; flex-direction: column;
+  padding: 54px 58px; break-after: page;
+}
+.cover .deco-circle {
+  position: absolute; border-radius: 50%;
+  border: 1.5px solid rgba(148,163,184,.28);
+}
+.cover .dc1 { width: 300px; height: 300px; right: 40px; top: 60px; }
+.cover .dc2 { width: 190px; height: 190px; right: 118px; top: 138px; border-color: rgba(148,163,184,.18); }
+.cover .dc3 { width: 120px; height: 120px; left: 44px; bottom: 150px; border-color: rgba(148,163,184,.15); }
+.cover-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+  color: #93C5FD; text-transform: uppercase;
+}
+.cover-badge::before { content: ''; width: 34px; height: 2px; background: #3B82F6; }
+.cover-center { margin: auto 0; position: relative; z-index: 2; }
+.cover-kicker {
+  font-size: 12px; font-weight: 600; letter-spacing: 3px;
+  color: #A5B4CC; text-transform: uppercase; margin-bottom: 16px;
+}
+.cover-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 58px; font-weight: 800; line-height: 1.06;
+  color: #FFFFFF; margin-bottom: 10px;
+}
+.cover-sub {
+  font-size: 19px; font-weight: 500; color: #C7D2E4; margin-bottom: 6px;
+}
+.cover-sub-en { font-size: 13px; color: #8FA3C2; font-style: italic; margin-bottom: 30px; }
+.cover-chips { display: flex; flex-wrap: wrap; gap: 10px; max-width: 100%; }
+.cchip {
+  background: rgba(59,130,246,.13); border: 1px solid rgba(147,197,253,.35);
+  color: #DCE7F7; border-radius: 20px; padding: 7px 15px;
+  font-size: 11.5px; font-weight: 600;
+}
+.cchip b { color: #FFFFFF; font-weight: 800; }
+.cover-3cs {
+  margin-top: 34px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 16px 18px; border: 1px solid rgba(148,163,184,.25); border-radius: 12px;
+  background: rgba(15,23,42,.25); max-width: 100%;
+}
+.cover-3cs .box {
+  border-radius: 8px; padding: 8px 13px; font-size: 11.5px; font-weight: 700;
+  letter-spacing: .4px;
+}
+.cover-3cs .arrow { color: #64748B; font-size: 13px; font-weight: 400; }
+.bx1 { background: rgba(59,130,246,.22); color: #BFDBFE; }
+.bx2 { background: rgba(139,92,246,.22); color: #DDD6FE; }
+.bx3 { background: rgba(20,184,166,.22); color: #99F6E4; }
+.bx4 { background: rgba(245,158,11,.20); color: #FDE68A; }
+.cover-foot { position: relative; z-index: 2; }
+.cover-scope {
+  font-size: 11px; color: #94A7C4; line-height: 1.6;
+  border-top: 1px solid rgba(148,163,184,.22); padding-top: 16px;
+}
+.cover-scope b { color: #CBD8EC; font-weight: 600; }
+.cover-edition {
+  margin-top: 12px; font-size: 10.5px; color: #6E82A3; letter-spacing: 1.2px;
+  text-transform: uppercase; font-weight: 600;
+}
+
+/* ═══════════ CONTENIDO (flujo) ═══════════ */
+.main-content { padding: 0 56px; }
+.section-head { break-after: avoid; break-inside: avoid; margin-bottom: 14px; }
+.section-kicker {
+  font-size: 10.5px; font-weight: 800; letter-spacing: 2.2px;
+  text-transform: uppercase; color: var(--u1); margin-bottom: 4px;
+}
+.section-kicker.k2 { color: var(--u2); } .section-kicker.k3 { color: var(--u3); } .section-kicker.k4 { color: var(--u4); }
+.section-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 27px; font-weight: 800; color: var(--ink); line-height: 1.15;
+}
+.section-sub { font-size: 12.5px; color: var(--muted); margin-top: 5px; }
+.divider { height: 3px; width: 56px; background: var(--u1); border-radius: 2px; margin: 12px 0 4px; }
+.divider.d2 { background: var(--u2); } .divider.d3 { background: var(--u3); } .divider.d4 { background: var(--u4); }
+
+p.body-text { font-size: 12.5px; color: #334155; margin-bottom: 9px; }
+p.body-text b { color: var(--ink); }
+.new-page { break-before: page; }
+.en-term { color: var(--muted); font-style: italic; }
+
+/* Bloque numerado */
+.block-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 8px; color: #fff;
+  font-size: 13px; font-weight: 800; margin-right: 9px; vertical-align: middle;
+  background: var(--u1);
+}
+.bn2 { background: var(--u2); } .bn3 { background: var(--u3); } .bn4 { background: var(--u4); }
+
+/* Tarjetas 3Cs + 4 (panorama) */
+.cs-grid { display: flex; flex-wrap: wrap; gap: 9px; max-width: 100%; margin: 4px 0 10px; }
+.cs-card {
+  flex: 1 1 150px; min-width: 140px; max-width: 100%;
+  border-radius: 10px; padding: 11px 13px; border: 1px solid var(--line);
+  break-inside: avoid;
+}
+.cs-card .cs-name { font-size: 12.5px; font-weight: 800; margin-bottom: 3px; }
+.cs-card p { font-size: 11px; line-height: 1.45; color: #475569; }
+.cs-1 { background: var(--u1-bg); } .cs-1 .cs-name { color: var(--u1-tx); }
+.cs-2 { background: var(--u2-bg); } .cs-2 .cs-name { color: var(--u2-tx); }
+.cs-3 { background: var(--u3-bg); } .cs-3 .cs-name { color: var(--u3-tx); }
+.cs-4 { background: var(--u4-bg); } .cs-4 .cs-name { color: var(--u4-tx); }
+
+/* Tarjetas informativas */
+.info-card {
+  break-inside: avoid; background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; padding: 13px 16px; margin-bottom: 10px;
+}
+.info-card h4 { font-size: 13px; font-weight: 800; color: var(--navy); margin-bottom: 5px; }
+.info-card p { font-size: 12px; color: #475569; }
+.info-card .ic-sub { font-size: 11px; color: var(--muted); margin-top: 3px; }
+
+/* Cita */
+.quote {
+  break-inside: avoid; border-left: 3px solid var(--navy2); background: #EDF2F9;
+  padding: 9px 14px; border-radius: 0 8px 8px 0; font-size: 11.5px;
+  color: #334155; font-style: italic; margin: 8px 0 10px;
+}
+.quote b { color: var(--navy); font-style: normal; }
+
+/* Caso real */
+.case {
+  break-inside: avoid; background: var(--u4-bg); border: 1px solid #FDE68A;
+  border-radius: 10px; padding: 10px 14px 9px; margin: 8px 0 10px;
+}
+.case-tag {
+  display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: 1.6px;
+  color: var(--u4-tx); text-transform: uppercase; margin-bottom: 3px;
+}
+.case p { font-size: 11.5px; color: #4B5563; line-height: 1.5; }
+.case p b { color: var(--ink); }
+.case .case-src { font-size: 10px; color: #A16207; margin-top: 3px; }
+
+/* Grid de fichas a dos columnas */
+.fgrid { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; max-width: 100%; }
+.fgrid .ficha { flex: 1 1 320px; min-width: 300px; max-width: 100%; margin-bottom: 0; }
+
+/* ═══════════ FICHAS DE REPASO ═══════════ */
+.ficha {
+  break-inside: avoid; background: var(--card);
+  border: 1px solid var(--line); border-left: 4px solid var(--u1);
+  border-radius: 10px; padding: 12px 15px 10px; margin-bottom: 10px;
+}
+.ficha.u2 { border-left-color: var(--u2); }
+.ficha.u3 { border-left-color: var(--u3); }
+.ficha.u4 { border-left-color: var(--u4); }
+.ficha-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+.ficha-num {
+  font-size: 10px; font-weight: 800; color: var(--u1-tx);
+  background: var(--u1-bg); border-radius: 5px; padding: 2px 7px;
+}
+.u2 .ficha-num { color: var(--u2-tx); background: var(--u2-bg); }
+.u3 .ficha-num { color: var(--u3-tx); background: var(--u3-bg); }
+.u4 .ficha-num { color: var(--u4-tx); background: var(--u4-bg); }
+.ficha-title { font-size: 15px; font-weight: 800; color: var(--ink); }
+.ficha-en { font-size: 11.5px; color: var(--muted); font-style: italic; }
+.ficha-def {
+  font-size: 12px; color: #334155; margin-bottom: 7px;
+  padding-bottom: 7px; border-bottom: 1px dashed var(--line);
+}
+.ficha-def b { color: var(--ink); }
+.ficha h5 {
+  font-size: 10px; font-weight: 800; letter-spacing: 1.6px;
+  text-transform: uppercase; color: var(--u1); margin: 7px 0 4px;
+}
+.u2 .ficha h5 { color: var(--u2); } .u3 .ficha h5 { color: var(--u3-tx); } .u4 .ficha h5 { color: var(--u4-tx); }
+.ficha ul { list-style: none; }
+.ficha li {
+  font-size: 11.5px; color: #475569; padding-left: 13px;
+  position: relative; margin-bottom: 2.5px; line-height: 1.42;
+}
+.ficha li::before {
+  content: ''; position: absolute; left: 0; top: 7px;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--u1);
+}
+.u2 .ficha li::before { background: var(--u2); }
+.u3 .ficha li::before { background: var(--u3); }
+.u4 .ficha li::before { background: var(--u4); }
+.ficha li b { color: var(--ink); font-weight: 700; }
+.vocab-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; max-width: 100%; }
+.chip {
+  font-size: 10px; font-weight: 600; color: #475569;
+  background: var(--slate-bg); border: 1px solid var(--line);
+  border-radius: 10px; padding: 2.5px 9px; white-space: nowrap;
+}
+.chip b { color: var(--navy); font-weight: 700; }
+
+/* ═══════════ TARJETA DE TECNOLOGÍA ═══════════ */
+.tcard {
+  break-inside: avoid; background: var(--card);
+  border: 1px solid var(--line); border-left: 4px solid var(--u3);
+  border-radius: 10px; padding: 12px 15px 8px; margin-bottom: 11px;
+}
+.tcard-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 5px; }
+.tcard-num {
+  font-size: 10px; font-weight: 800; color: var(--u3-tx);
+  background: var(--u3-bg); border-radius: 5px; padding: 2px 7px;
+}
+.tcard-title { font-size: 15px; font-weight: 800; color: var(--ink); }
+.tcard-en { font-size: 11px; color: var(--muted); font-style: italic; }
+.trow { display: flex; gap: 10px; padding: 4.5px 0; }
+.trow + .trow { border-top: 1px dashed #EEF2F7; }
+.tlabel {
+  flex: 0 0 92px; font-size: 9px; font-weight: 800; letter-spacing: 1.1px;
+  text-transform: uppercase; color: var(--u3-tx); padding-top: 2.5px;
+}
+.tlabel.warn { color: var(--u4-tx); }
+.tbody { flex: 1; font-size: 11.5px; color: #475569; line-height: 1.45; }
+.tbody b { color: var(--ink); }
+.tbody ul { list-style: none; margin: 1px 0; }
+.tbody li {
+  font-size: 11.5px; color: #475569; padding-left: 12px;
+  position: relative; margin-bottom: 2px; line-height: 1.42;
+}
+.tbody li::before {
+  content: ''; position: absolute; left: 0; top: 7px;
+  width: 4.5px; height: 4.5px; border-radius: 50%; background: var(--u3);
+}
+.tbody li b { color: var(--ink); font-weight: 700; }
+
+/* ═══════════ DIAGRAMAS ═══════════ */
+/* Diagrama de flujo (receta de la torta, figura del libro) */
+.flow { display: flex; flex-direction: column; align-items: center; margin: 6px auto 0; break-inside: avoid; }
+.flow-step {
+  background: #fff; border: 1.5px solid var(--u1); border-radius: 6px;
+  padding: 2.5px 13px; font-size: 9.8px; font-weight: 700; color: var(--u1-tx); text-align: center;
+}
+.flow-decision {
+  background: var(--u4-bg); border: 1.5px solid var(--u4); border-radius: 10px;
+  padding: 3px 14px; font-size: 9.8px; font-weight: 800; color: var(--u4-tx); text-align: center;
+  margin-top: 1px;
+}
+.flow-arrow { color: #94A3B8; font-size: 10px; line-height: 1.05; margin: 0; font-weight: 700; }
+.flow-branch { display: flex; gap: 10px; margin-top: 1px; }
+.flow-out {
+  font-size: 8.8px; font-weight: 800; border-radius: 7px; padding: 2.5px 9px; text-align: center;
+}
+.flow-out.no { background: #FEF2F2; border: 1px dashed #FCA5A5; color: #991B1B; }
+.flow-out.yes { background: #F0FDF4; border: 1px solid #86EFAC; color: #166534; }
+.flow-cap { text-align: center; font-size: 9.5px; color: var(--muted); margin-top: 4px; }
+
+/* Bubble sort: una pasada */
+.bubble { display: flex; align-items: center; justify-content: center; gap: 7px; margin: 10px 0 2px; break-inside: avoid; flex-wrap: wrap; }
+.bub-seq { display: flex; gap: 4px; align-items: center; }
+.bub {
+  width: 26px; height: 26px; border-radius: 50%; background: #fff;
+  border: 1.5px solid var(--u2); color: var(--u2-tx);
+  font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center;
+}
+.bub.swapped { background: var(--u2-bg); border-color: var(--u2); box-shadow: 0 0 0 2px #DDD6FE; }
+.bub-arrow { color: #94A3B8; font-size: 12px; }
+.bub-cap { text-align: center; font-size: 10px; color: var(--muted); margin-top: 5px; }
+
+/* Pasos (priorización) */
+.lifecycle { display: flex; align-items: stretch; gap: 5px; margin: 12px 0 6px; break-inside: avoid; }
+.lc-step {
+  flex: 1 1 0; background: #fff; border: 1px solid var(--line);
+  border-top: 3px solid var(--u2); border-radius: 9px;
+  padding: 8px 7px 7px; text-align: center;
+}
+.lc-n {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; border-radius: 50%; background: var(--u2);
+  color: #fff; font-size: 10px; font-weight: 800; margin-bottom: 3px;
+}
+.lc-t { font-size: 10.5px; font-weight: 800; color: var(--ink); line-height: 1.2; }
+.lc-t small { display: block; font-weight: 600; color: var(--u2-tx); font-size: 8.5px; letter-spacing: .5px; }
+.lc-d { font-size: 9.5px; color: var(--muted); line-height: 1.35; margin-top: 3px; }
+.lc-arrow { align-self: center; color: #94A3B8; font-size: 13px; flex: 0 0 auto; }
+
+/* Cifras destacadas */
+.stat-row { display: flex; flex-wrap: wrap; gap: 9px; margin: 8px 0 10px; max-width: 100%; }
+.stat {
+  flex: 1 1 140px; min-width: 132px; max-width: 100%;
+  background: #fff; border: 1px solid var(--line); border-radius: 10px;
+  padding: 9px 12px; text-align: center; break-inside: avoid;
+}
+.stat .st-n { font-size: 19px; font-weight: 900; color: var(--u1-tx); line-height: 1.15; }
+.stat .st-t { font-size: 9.5px; color: var(--muted); line-height: 1.35; margin-top: 2px; }
+
+/* ═══════════ TABLAS ═══════════ */
+table.cmp { width: 100%; border-collapse: collapse; font-size: 11px; break-inside: avoid; margin: 8px 0 12px; }
+table.cmp th {
+  background: var(--navy); color: #fff; font-weight: 700;
+  padding: 6.5px 9px; text-align: left; font-size: 10.5px;
+}
+table.cmp td { border: 1px solid var(--line); padding: 6px 9px; color: #334155; vertical-align: top; }
+table.cmp tr:nth-child(even) td { background: #F8FAFC; }
+table.cmp td b { color: var(--navy); }
+table.cmp td .en-term { font-size: 10px; }
+table.cmp.d2 th { background: var(--u2); }
+table.cmp.d3 th { background: var(--u3); }
+table.cmp.d4 th { background: var(--u4); }
+table.cmp.bigtable { break-inside: auto; font-size: 10.2px; }
+table.cmp.bigtable tr { break-inside: avoid; }
+table.cmp.bigtable th { font-size: 9.6px; padding: 6px 7px; }
+table.cmp.bigtable td { padding: 5.5px 7px; }
+
+/* ═══════════ AUTOEVALUACIÓN ═══════════ */
+.quiz-card {
+  break-inside: avoid; background: var(--u1-bg);
+  border: 1px solid #BFDBFE; border-radius: 10px; padding: 12px 16px; margin: 12px 0 6px;
+}
+.quiz-card.q2 { background: var(--u2-bg); border-color: #DDD6FE; }
+.quiz-card.q3 { background: var(--u3-bg); border-color: #99F6E4; }
+.quiz-card.q4 { background: var(--u4-bg); border-color: #FDE68A; }
+.quiz-card h4 {
+  font-size: 11px; font-weight: 800; letter-spacing: 1.8px;
+  text-transform: uppercase; color: var(--u1-tx); margin-bottom: 6px;
+}
+.quiz-card.q2 h4 { color: var(--u2-tx); } .quiz-card.q3 h4 { color: var(--u3-tx); } .quiz-card.q4 h4 { color: var(--u4-tx); }
+.quiz-card ol { margin-left: 16px; }
+.quiz-card li { font-size: 11.5px; color: #334155; margin-bottom: 3.5px; }
+
+/* ═══════════ PÁGINAS DE MAPAS (full-bleed) ═══════════ */
+.map-page {
+  page: fullbleed; width: 794px; height: 1123px;
+  break-after: page; padding: 26px 20px 20px;
+  background: #FFFFFF; position: relative;
+  display: flex; flex-direction: column;
+}
+.map-head { margin-bottom: 6px; padding: 0 6px; }
+.map-kicker {
+  display: inline-block; font-size: 10px; font-weight: 800;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--u1-tx); background: var(--u1-bg);
+  border: 1px solid #BFDBFE; border-radius: 12px; padding: 3px 11px;
+}
+.map-kicker.k2 { color: var(--u2-tx); background: var(--u2-bg); border-color: #DDD6FE; }
+.map-kicker.k3 { color: var(--u3-tx); background: var(--u3-bg); border-color: #99F6E4; }
+.map-kicker.k4 { color: var(--u4-tx); background: var(--u4-bg); border-color: #FDE68A; }
+.map-kicker.k0 { color: var(--navy); background: #EDF2F9; border-color: #C9D7E8; }
+.map-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 25px; font-weight: 800; color: var(--ink); margin-top: 7px; line-height: 1.1;
+}
+.map-intro { font-size: 11.5px; color: var(--muted); margin-top: 4px; max-width: 660px; }
+
+.mindmap { position: relative; break-inside: avoid; display: flex; justify-content: center; align-items: center; flex: 1 1 auto; padding: 10px 0 6px; }
+
+.root-node {
+  background: linear-gradient(135deg, #1E3A5F, #2D4A6F);
+  color: #fff; font-size: 16.5px; font-weight: 800; line-height: 1.2;
+  padding: 15px 17px; border-radius: 13px; text-align: center;
+  white-space: nowrap; flex-shrink: 0; align-self: center;
+  box-shadow: 0 4px 12px rgba(30,58,95,.25); position: relative; z-index: 2;
+}
+.root-node small { display: block; font-size: 10px; font-weight: 600; color: #B7C6DC; letter-spacing: 1.5px; margin-top: 2px; }
+
+.branch-node {
+  font-size: 12.5px; font-weight: 700; line-height: 1.2;
+  padding: 8px 12px; border-radius: 8px; border: 2px solid;
+  white-space: normal; max-width: 142px; text-align: center;
+  flex-shrink: 0; position: relative; z-index: 2;
+}
+.branch-node small { display: block; font-size: 10px; font-weight: 600; opacity: .8; }
+.leaf {
+  font-size: 11.5px; font-weight: 500; color: #475569;
+  padding: 4.5px 11px; background: #FAFBFC;
+  border-radius: 11px; border: 1px solid #E2E8F0;
+  line-height: 1.3; white-space: normal; max-width: 138px;
+  width: fit-content; position: relative; z-index: 2;
+}
+.children { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.right-branches { display: flex; flex-direction: column; gap: 16px; }
+.right-branch { display: flex; align-items: flex-start; }
+.right-branch > .children { margin-left: 16px; padding-left: 8px; align-items: flex-start; }
+.left-branches { display: flex; flex-direction: column; gap: 16px; }
+.left-branch { display: flex; align-items: flex-start; flex-direction: row-reverse; }
+.left-branch > .children { margin-right: 16px; padding-right: 8px; align-items: flex-end; }
+
+/* Colores por bloque (mapas) */
+.b-u1 { background: var(--u1-bg); border-color: var(--u1); color: var(--u1-tx); }
+.b-u2 { background: var(--u2-bg); border-color: var(--u2); color: var(--u2-tx); }
+.b-u3 { background: var(--u3-bg); border-color: var(--u3); color: var(--u3-tx); }
+.b-u4 { background: var(--u4-bg); border-color: var(--u4); color: var(--u4-tx); }
+.b-navy { background: #EDF2F9; border-color: var(--navy2); color: var(--navy); }
+.b-slate { background: var(--slate-bg); border-color: var(--slate); color: var(--slate-tx); }
+
+.map-legend {
+  position: absolute; left: 20px; right: 20px; bottom: 18px;
+  display: flex; flex-wrap: wrap; gap: 7px 14px; align-items: center;
+  font-size: 10px; color: var(--muted);
+  border-top: 1px solid var(--line); padding-top: 10px;
+}
+.map-legend .lg { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; }
+.map-legend .dot { width: 9px; height: 9px; border-radius: 3px; }
+
+/* Cierre */
+.ending {
+  page: fullbleed; width: 794px; height: 1123px; break-before: page;
+  background: linear-gradient(158deg, #16283F 0%, #1E3A5F 46%, #2D4A6F 100%);
+  color: #F1F5F9; display: flex; flex-direction: column; justify-content: center;
+  padding: 60px; position: relative;
+}
+.end-quote {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 25px; font-weight: 600; font-style: italic;
+  line-height: 1.4; color: #E2E8F0; max-width: 560px; margin-bottom: 34px;
+}
+.end-checks { display: flex; flex-direction: column; gap: 10px; max-width: 560px; }
+.end-check {
+  display: flex; gap: 11px; align-items: flex-start;
+  border: 1px solid rgba(148,163,184,.28); border-radius: 10px;
+  padding: 11px 14px; background: rgba(15,23,42,.28);
+}
+.end-check .tick {
+  width: 19px; height: 19px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(59,130,246,.25); border: 1.5px solid #60A5FA;
+  color: #BFDBFE; font-size: 11px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.end-check p { font-size: 12px; color: #C7D2E4; }
+.end-check p b { color: #fff; }
+.end-foot { position: absolute; bottom: 52px; left: 60px; right: 60px;
+  border-top: 1px solid rgba(148,163,184,.22); padding-top: 14px;
+  font-size: 10px; color: #7C90B0; line-height: 1.6; }
+
+/* ═══════════ INTERACTIVIDAD Y NUEVOS COMPONENTES ═══════════ */
+.only-print { display: none; }
+@media print {
+  .only-print { display: block; }
+  .only-screen { display: none !important; }
+}
+
+/* Caso de práctica (inédito, estilo examen) */
+.practice {
+  break-inside: avoid; background: #FBFAFF;
+  border: 1.5px dashed #A78BFA; border-radius: 10px;
+  padding: 11px 14px 10px; margin: 9px 0 12px;
+}
+.practice-tag {
+  display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: 1.6px;
+  color: var(--u2-tx); text-transform: uppercase; margin-bottom: 3px;
+}
+.practice h4 { font-size: 13.5px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+.practice p.pctx { font-size: 11.4px; color: #475569; line-height: 1.5; margin-bottom: 6px; }
+.practice ol.pq { margin-left: 17px; margin-bottom: 3px; }
+.practice ol.pq li { font-size: 11.4px; color: #334155; margin-bottom: 3px; }
+.practice ol.pq i { color: var(--muted); }
+
+/* Botón de pauta + respuesta desplegable */
+.reveal-btn {
+  display: inline-block; margin-top: 5px; font-size: 10px; font-weight: 800;
+  letter-spacing: .8px; text-transform: uppercase; color: var(--u2-tx);
+  background: var(--u2-bg); border: 1px solid #DDD6FE; border-radius: 8px;
+  padding: 4px 12px; cursor: pointer; user-select: none;
+}
+.q-a {
+  display: none; background: #ECFDF5; border: 1px solid #A7F3D0;
+  border-radius: 8px; padding: 7px 11px; margin-top: 6px;
+  font-size: 10.6px; color: #065F46; line-height: 1.52; break-inside: avoid;
+}
+.q-a b { color: #064E3B; }
+.q-a.open { display: block; }
+@media print { .q-a { display: block !important; } .reveal-btn { display: none !important; } }
+
+/* Quiz: verdadero/falso */
+.qz-part {
+  font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase;
+  color: var(--navy); margin: 13px 0 4px; break-after: avoid;
+}
+.vf-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; break-inside: avoid; }
+.vf-row .vf-txt { flex: 1; font-size: 11.5px; color: #334155; }
+.vf-opts { display: flex; gap: 6px; flex: 0 0 auto; }
+.vf-btn {
+  font-size: 10px; font-weight: 800; border: 1.5px solid var(--line);
+  background: #fff; color: var(--muted); border-radius: 7px; padding: 2.5px 11px; cursor: pointer;
+}
+.vf-btn.sel { border-color: var(--u1); color: var(--u1-tx); background: var(--u1-bg); }
+.vf-row.ok .vf-btn.sel { border-color: #16A34A; color: #166534; background: #DCFCE7; }
+.vf-row.bad .vf-btn.sel { border-color: #DC2626; color: #991B1B; background: #FEE2E2; }
+
+/* Quiz: opción múltiple */
+.mc-q { padding: 5px 0; break-inside: avoid; }
+.mc-q .mc-txt { font-size: 11.5px; color: #334155; }
+.mc-q .opts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px; max-width: 100%; }
+.mc-opt {
+  font-size: 10.5px; border: 1.5px solid var(--line); background: #fff;
+  color: #475569; border-radius: 8px; padding: 3px 11px; cursor: pointer; white-space: nowrap;
+}
+.mc-opt.sel { border-color: var(--u1); color: var(--u1-tx); background: var(--u1-bg); font-weight: 700; }
+.mc-opt.right { border-color: #16A34A; background: #DCFCE7; color: #166534; font-weight: 700; }
+.mc-opt.wrong { border-color: #DC2626; background: #FEE2E2; color: #991B1B; }
+
+/* Fichas rápidas (flashcards) */
+.fc-grid { display: flex; flex-wrap: wrap; gap: 9px; margin: 10px 0 4px; max-width: 100%; }
+.fc { flex: 1 1 30.5%; min-width: 212px; max-width: 100%; break-inside: avoid; }
+.fc-inner { transform-style: preserve-3d; }
+.fc-face { border-radius: 10px; padding: 9px 12px; }
+.fc-front { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--u1); }
+.fc-back { background: var(--u1-bg); border: 1px solid #BFDBFE; border-top: 1px dashed #93C5FD; }
+.fc-q { font-size: 11.5px; font-weight: 700; color: var(--ink); line-height: 1.38; }
+.fc-a { font-size: 10.4px; color: #1E40AF; line-height: 1.42; }
+.fc-a b { color: #172554; }
+.fc-hint {
+  font-size: 8.5px; color: var(--muted); text-transform: uppercase;
+  letter-spacing: .9px; margin-top: 5px; font-weight: 700;
+}
+@media screen {
+  .fc { height: 134px; cursor: pointer; perspective: 1000px; }
+  .fc-inner { position: relative; width: 100%; height: 100%; transition: transform .45s; }
+  .fc.flipped .fc-inner { transform: rotateY(180deg); }
+  .fc-face {
+    position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .fc-back { transform: rotateY(180deg); }
+}
+@media print {
+  .fc-face + .fc-face { margin-top: 6px; }
+  .fc-hint { display: none; }
+}
+</style>
+</head>
+<body>
+<!-- ═══════════════ PORTADA ═══════════════ -->
+<div class="cover">
+  <div class="deco-circle dc1"></div>
+  <div class="deco-circle dc2"></div>
+  <div class="deco-circle dc3"></div>
+  <div class="cover-badge">IB Diploma Programme &middot; Digital Society</div>
+  <div class="cover-center">
+    <div class="cover-kicker">Material de repaso en profundidad &middot; Nivel Medio (NM/SL)</div>
+    <div class="cover-title">Algoritmos<br>y Código</div>
+    <div class="cover-sub">Contenido 3.2: definiciones, funcionamiento, casos, repercusiones y dilemas</div>
+    <div class="cover-sub-en">Algorithms and code &middot; course content 3.2 &middot; exam-focused review</div>
+    <div class="cover-chips">
+      <span class="cchip"><b>3</b> mapas mentales</span>
+      <span class="cchip"><b>9</b> bloques de repaso</span>
+      <span class="cchip"><b>30</b> fichas rápidas interactivas</span>
+      <span class="cchip"><b>16</b> preguntas de quiz</span>
+      <span class="cchip"><b>3</b> casos inéditos estilo Paper&nbsp;1</span>
+    </div>
+    <div class="cover-3cs">
+      <span class="box bx1">Conceptos</span><span class="arrow">+</span>
+      <span class="box bx2">Contenido 3.2</span><span class="arrow">+</span>
+      <span class="box bx3">Contextos</span><span class="arrow">&rarr;</span>
+      <span class="box bx4">Impactos e implicaciones</span>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <div class="cover-scope">
+      <b>Alcance del material:</b> cubre únicamente la sección 3.2 <i>Algorithms and code</i> (pp.&nbsp;80&ndash;91 del libro).
+      No incluye la monografía (extended essay), la evaluación interna (inquiry project) ni el Paper&nbsp;3.
+    </div>
+    <div class="cover-edition">Basado en Bomfim et al. &middot; Digital Society &middot; Hodder Education 2022</div>
+  </div>
+</div>
+
+<!-- ═══════════════ PANORAMA ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Guía rápida</div>
+    <div class="section-title">Panorama del tema: algoritmos y código</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Un <b>algoritmo (algorithm)</b> es una secuencia de pasos o instrucciones definidas para resolver un problema específico o realizar una tarea. Los algoritmos existen desde hace <b>miles de años</b>, pero hoy escuchas la palabra más que nunca: deciden <b>qué ves en tus redes sociales</b> y <b>qué películas te recomienda Netflix</b>. El éxito de todos los sistemas informáticos depende de los algoritmos y de cómo se programan. Como verás en el examen, la idea clave del libro es doble: la <b>eficacia</b> de un algoritmo se evalúa según su <b>eficiencia</b>, y su uso plantea <b>oportunidades significativas y también dilemas</b> para la sociedad digital.</p>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-1">
+      <div class="cs-name">1 &middot; Lo esencial <span class="en-term">(understandings)</span></div>
+      <p>Las tres ideas que el libro quiere que domines: pasos secuenciales definidos, eficacia evaluada por eficiencia, y oportunidades + dilemas.</p>
+    </div>
+    <div class="cs-card cs-2">
+      <div class="cs-name">2 &middot; Qué debes saber hacer</div>
+      <p>Definir con palabras exactas del libro, identificar las 7 características y 4 componentes, comparar las 3 formas de representación y analizar los 3 dilemas.</p>
+    </div>
+    <div class="cs-card cs-3">
+      <div class="cs-name">3 &middot; Cómo se examina</div>
+      <p>Paper 1 (core): <i>outline</i> y <i>explain</i> sobre características, componentes y representaciones; <i>discuss</i> sobre los dilemas con ejemplos reales.</p>
+    </div>
+    <div class="cs-card cs-4">
+      <div class="cs-name">4 &middot; Conexiones del curso</div>
+      <p>Los algoritmos conectan con <b>datos (3.1)</b> —son su materia prima— y con <b>IA (3.6)</b> —el machine learning es algoritmos que aprenden de datos.</p>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h4>La cadena del contenido: datos &rarr; algoritmos &rarr; inteligencia artificial</h4>
+    <p>El libro lo dice explícitamente en las preguntas de reflexión: entiende la <b>relación entre los datos (3.1), los algoritmos (3.2) y la inteligencia artificial (3.6)</b>. Los algoritmos transforman los datos en resultados; cuando un algoritmo <b>aprende de conjuntos de datos históricos</b> hablamos de machine learning; y el aumento de los datos generados ha empujado a las empresas hacia <b>algoritmos de IA</b> para dar sentido a esa avalancha. Si en el examen te piden conectar contenidos, esta cadena es tu mejor hilo argumental.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Método de repaso sugerido (3 pasos)</h4>
+    <p><b>1) Mapa primero:</b> estudia el mapa mental general para fijar la estructura del tema (esencia &rarr; características &rarr; componentes &rarr; representaciones &rarr; usos &rarr; dilemas). &nbsp;<b>2) Fichas después:</b> memoriza las definiciones exactas del libro y el vocabulario EN&rarr;ES de cada ficha — los exámenes valoran la terminología precisa. &nbsp;<b>3) Autoevalúa al final:</b> usa las fichas rápidas, el quiz y los tres casos inéditos; si fallas algo, vuelve a la ficha correspondiente.</p>
+    <p class="ic-sub">En la versión HTML las fichas rápidas se voltean con un clic, las pautas se despliegan y el quiz se corrige solo. En la versión PDF cada pregunta lleva su respuesta impresa justo debajo.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ MAPA MENTAL GENERAL ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k0">Visión general</span>
+    <div class="map-title">ALGORITMOS Y CÓDIGO: el mapa completo del tema 3.2</div>
+    <div class="map-intro">Seis territorios que cubren todo el contenido del libro: la definición esencial, las características que debe cumplir, los componentes internos, las tres formas de representarlo, los usos reales y los tres grandes dilemas éticos.</div>
+  </div>
+
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u1">Características <small>3.2A &middot; 7 rasgos</small></div>
+        <div class="children">
+          <div class="leaf">No ambiguo <span class="en-term">(unambiguous)</span></div>
+          <div class="leaf">Finito <span class="en-term">(finite)</span></div>
+          <div class="leaf">Bien definido <span class="en-term">(well-defined)</span></div>
+          <div class="leaf">Entradas &middot; Salidas</div>
+          <div class="leaf">Factible &middot; Independiente</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u3">Componentes <small>3.2B &middot; 4 piezas</small></div>
+        <div class="children">
+          <div class="leaf">Instrucciones</div>
+          <div class="leaf">Variables</div>
+          <div class="leaf">Condicionales <span class="en-term">(if&hellip;)</span></div>
+          <div class="leaf">Bucles <span class="en-term">(loops)</span></div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-navy">Historia <small>origen</small></div>
+        <div class="children">
+          <div class="leaf">Ada Lovelace &middot; 1840s</div>
+          <div class="leaf">Motor Analítico</div>
+          <div class="leaf">Números de Bernoulli</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="root-node">ALGORITMOS<br>Y CÓDIGO<small>3.2 &middot; defined sequential steps</small></div>
+
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u2">Representación <small>3.2C &middot; 3 formas</small></div>
+        <div class="children">
+          <div class="leaf">Lenguaje natural</div>
+          <div class="leaf">Diagrama de flujo <span class="en-term">(flowchart)</span></div>
+          <div class="leaf">Código de programación</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u1">Usos <small>3.2D &middot; tecnología</small></div>
+        <div class="children">
+          <div class="leaf">Ordenar &middot; buscar &middot; filtrar &middot; contar</div>
+          <div class="leaf">PageRank (Google)</div>
+          <div class="leaf">Priorización</div>
+          <div class="leaf">Regla de asociación</div>
+          <div class="leaf">Machine learning</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u4">Dilemas <small>3.2E &middot; ética</small></div>
+        <div class="children">
+          <div class="leaf">Juicio humano &rarr; algoritmo</div>
+          <div class="leaf">Sesgo algorítmico <span class="en-term">(bias)</span></div>
+          <div class="leaf">Caja negra y transparencia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:#3B82F6"></span> Esencia y usos</span>
+    <span class="lg"><span class="dot" style="background:#8B5CF6"></span> Representación</span>
+    <span class="lg"><span class="dot" style="background:#14B8A6"></span> Componentes</span>
+    <span class="lg"><span class="dot" style="background:#F59E0B"></span> Dilemas</span>
+    <span class="lg" style="margin-left:auto">Estructura del libro pp.&nbsp;80&ndash;91 &middot; cada rama tiene su ficha en los bloques</span>
+  </div>
+</div>
+<!-- ═══════════════ BLOQUE 1 · LA ESENCIA ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Bloque 1 &middot; Fundamentos</div>
+    <div class="section-title"><span class="block-num">1</span>¿Qué es un algoritmo y por qué te rodean?</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">1.1</span><span class="ficha-title">Algoritmo</span><span class="ficha-en">algorithm</span></div>
+    <div class="ficha-def"><b>Definición del libro:</b> un <b>procedimiento o fórmula para resolver un problema</b> que se basa en una <b>secuencia de pasos</b> (sequence of steps).</div>
+    <ul>
+      <li>Es un conjunto de procedimientos <b>paso a paso</b> para resolver un problema o realizar una actividad específica.</li>
+      <li>En esencia (understanding 1): son <b>pasos o instrucciones secuenciales definidos</b> para resolver un problema específico o realizar una tarea.</li>
+      <li>El <b>éxito de todos los sistemas informáticos</b> depende de los algoritmos y de cómo se programan.</li>
+      <li>Pueden ser procesados por <b>matemáticos, científicos o informáticos</b>: no siempre necesita un ordenador.</li>
+    </ul>
+    <div class="vocab-row"><span class="chip"><b>EN</b> algorithm</span><span class="chip"><b>ES</b> algoritmo</span><span class="chip"><b>clave</b> secuencia de pasos</span></div>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">1.2</span><span class="ficha-title">Eficacia y eficiencia</span><span class="ficha-en">effectiveness &amp; efficiency</span></div>
+    <div class="ficha-def"><b>Idea del libro (understanding 2):</b> la <b>eficacia</b> de un algoritmo se evalúa a menudo según su <b>eficiencia</b>.</div>
+    <ul>
+      <li><b>Eficaz</b> = logra la actividad con <b>menos esfuerzo</b> y <b>resuelve el problema inicial</b>; un algoritmo eficaz hace la actividad más eficiente.</li>
+      <li>Por eso las <b>empresas buscan algoritmos</b> para ser más competitivas: menos pasos, menos recursos, mismo resultado.</li>
+      <li>Cuidado en el examen: <b>eficacia</b> es lograr el objetivo; <b>eficiencia</b> es lograrlo con el mínimo de recursos y pasos.</li>
+    </ul>
+    <div class="vocab-row"><span class="chip"><b>EN</b> effectiveness</span><span class="chip"><b>EN</b> efficiency</span><span class="chip"><b>ES</b> eficacia / eficiencia</span></div>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">1.3</span><span class="ficha-title">Ubicuidad: los algoritmos están en todas partes</span><span class="ficha-en">ubiquitous</span></div>
+    <ul>
+      <li>Seamos conscientes o no, son una parte <b>ubicua</b> de la sociedad actual (ejemplos del libro):</li>
+      <li>Deciden <b>qué vemos en el feed de nuestras redes sociales</b>.</li>
+      <li>Deciden <b>qué películas recomienda Netflix</b>.</li>
+      <li>Ayudan a <b>buscar y comprar en línea</b>; las pymes pueden <b>prever ventas</b> sin contratar expertos.</li>
+      <li>Los <b>gobiernos</b> las usan para analizar datos de salud, mejorar hospitales y hasta para la <b>IA en los tribunales</b>.</li>
+    </ul>
+  </div>
+
+  <div class="case">
+    <span class="case-tag">Historia &middot; el primer algoritmo informático</span>
+    <p><b>Ada Lovelace (década de 1840):</b> escribió el <b>primer algoritmo pensado para una máquina</b>, el <b>Motor Analítico (Analytical Engine)</b>. Su algoritmo calculaba una secuencia de números llamada los <b>números de Bernoulli</b>. Desde la llegada de los ordenadores, los algoritmos se han vuelto cada vez más complejos y sofisticados, pero muchos de los <b>mismos componentes</b> siguen apareciendo (los verás en el Bloque&nbsp;3).</p>
+    <p class="case-src">Fuente: sección 3.2B del libro</p>
+  </div>
+
+  <div class="quiz-card">
+    <h4>Autoevaluación &middot; Bloque 1</h4>
+    <ol>
+      <li><b>Define</b> el término algoritmo usando la definición del libro. <i>[2 marks]</i></li>
+      <li><b>Outline</b> por qué las empresas invierten en algoritmos para mejorar su eficiencia. <i>[2 marks]</i></li>
+      <li>Con tus palabras: ¿qué relación hay entre un algoritmo y los <b>datos</b> que consumes en tu feed? <i>[2 marks]</i></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 2 · CARACTERÍSTICAS ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Bloque 2 &middot; 3.2A del libro</div>
+    <div class="section-title"><span class="block-num">2</span>Las 7 características de un algoritmo</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Los algoritmos definen instrucciones que se ejecutan <b>en un orden específico</b> para obtener una salida prevista. Por eso el libro exige que cumplan <b>siete características</b>. Truco de repaso: <b>3 hablan de la calidad de los pasos</b> (no ambiguo, bien definido, finito), <b>2 de los datos</b> (entradas y salidas) y <b>2 de la ejecución</b> (factible e independiente del lenguaje).</p>
+
+  <div class="fgrid">
+    <div class="ficha">
+      <div class="ficha-head"><span class="ficha-num">2.1</span><span class="ficha-title">No ambiguo</span><span class="ficha-en">unambiguous</span></div>
+      <ul>
+        <li>Debe ser <b>claro y conciso</b>.</li>
+        <li>Las <b>entradas y salidas</b> deben ser claras.</li>
+        <li><b>Todos los pasos</b> del procedimiento deben ser explícitos.</li>
+      </ul>
+    </div>
+    <div class="ficha">
+      <div class="ficha-head"><span class="ficha-num">2.2</span><span class="ficha-title">Finito</span><span class="ficha-en">finite</span></div>
+      <ul>
+        <li>Número <b>finito de pasos</b> que terminan una vez completados.</li>
+        <li>Debe <b>detenerse en algún momento</b>: con la salida esperada o indicando que <b>no hay solución</b>.</li>
+      </ul>
+    </div>
+    <div class="ficha">
+      <div class="ficha-head"><span class="ficha-num">2.3</span><span class="ficha-title">Bien definido</span><span class="ficha-en">well-defined</span></div>
+      <ul>
+        <li>Cada paso debe estar <b>muy especificado</b>: qué hacer y en qué orden.</li>
+        <li>Los detalles de cada paso deben ser explícitos, incluido <b>cómo manejar los errores</b>.</li>
+      </ul>
+    </div>
+    <div class="ficha">
+      <div class="ficha-head"><span class="ficha-num">2.4</span><span class="ficha-title">Entradas</span><span class="ficha-en">inputs</span></div>
+      <ul>
+        <li>La entrada es el <b>dato que transformará el procedimiento</b>.</li>
+        <li>Un algoritmo puede tener <b>cero o más entradas</b> (¡cero es válido!).</li>
+      </ul>
+    </div>
+    <div class="ficha">
+      <div class="ficha-head"><span class="ficha-num">2.5</span><span class="ficha-title">Salidas</span><span class="ficha-en">outputs</span></div>
+      <ul>
+        <li>El dato <b>transformado por el proceso</b>; debe coincidir con la salida deseada.</li>
+        <li>Debe tener <b>una o más salidas bien definidas</b>.</li>
+      </ul>
+    </div>
+    <div class="ficha">
+      <div class="ficha-head"><span class="ficha-num">2.6</span><span class="ficha-title">Factible</span><span class="ficha-en">feasible</span></div>
+      <ul>
+        <li>El procedimiento debe ser <b>posible con los recursos disponibles</b>.</li>
+        <li>Sin <b>pasos redundantes o innecesarios</b>.</li>
+      </ul>
+    </div>
+    <div class="ficha">
+      <div class="ficha-head"><span class="ficha-num">2.7</span><span class="ficha-title">Independiente</span><span class="ficha-en">independent</span></div>
+      <ul>
+        <li>Instrucciones <b>paso a paso independientes de cualquier lenguaje de programación</b>.</li>
+        <li>Por eso puedes diseñar el algoritmo primero y programarlo después en tu lenguaje preferido.</li>
+      </ul>
+    </div>
+    <div class="ficha u4">
+      <div class="ficha-head"><span class="ficha-num">+</span><span class="ficha-title">La actividad ATL del libro</span><span class="ficha-en">el juego del diagrama</span></div>
+      <ul>
+        <li>En parejas, espalda con espalda: una persona describe un diagrama y la otra lo dibuja <b>solo con instrucciones verbales</b>.</li>
+        <li>El equipo ganador mostró las características de un buen algoritmo: pasos claros, orden explícito y manejo de errores.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="quiz-card">
+    <h4>Pregunta de examen del libro &middot; Paper 1 (core)</h4>
+    <ol>
+      <li><b>Outline</b> two characteristics of an algorithm. <i>[4 marks]</i></li>
+    </ol>
+    <span class="reveal-btn">Ver pauta</span>
+    <div class="q-a"><b>Pauta:</b> para 4 puntos, describe dos características con detalle: p.&nbsp;ej. <b>no ambiguo</b> — el algoritmo debe ser claro y conciso, con entradas, salidas y todos los pasos explícitos; y <b>finito</b> — debe tener un número finito de pasos y detenerse eventualmente con la salida esperada o indicando que no hay solución. También valen bien definido (pasos específicos y su orden, manejo de errores), entradas (cero o más), salidas (una o más bien definidas), factible (posible con los recursos disponibles, sin pasos redundantes) e independiente del lenguaje de programación.</div>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 3 · COMPONENTES ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Bloque 3 &middot; 3.2B del libro</div>
+    <div class="section-title"><span class="block-num">3</span>Los 4 componentes internos</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">A pesar de su creciente complejidad, la mayoría de los algoritmos comparten <b>cuatro componentes</b>. En el examen te pedirán identificarlos y dar el ejemplo del libro para cada uno.</p>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">3.1</span><span class="ficha-title">Instrucciones</span><span class="ficha-en">instructions</span></div>
+    <div class="ficha-def">Un algoritmo consiste en una serie de <b>sub-algoritmos</b>, cada uno realizando una pequeña actividad; cada conjunto de pasos para una actividad pequeña es una <b>instrucción</b>.</div>
+    <ul><li><b>Ejemplo del libro:</b> la <b>suma de dígitos</b> (digit addition).</li></ul>
+  </div>
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">3.2</span><span class="ficha-title">Variables</span><span class="ficha-en">variables</span></div>
+    <div class="ficha-def"><b>Almacenan temporalmente valores</b> mientras los pasos del algoritmo se ejecutan.</div>
+    <ul>
+      <li>Como el algoritmo se procesa <b>línea por línea</b>, la variable <b>cambia de valor</b> — de ahí su nombre.</li>
+      <li><b>Ejemplo del libro:</b> un algoritmo que calcula el beneficio usa la variable llamada <b>&ldquo;profit&rdquo;</b> para almacenar ese dato.</li>
+    </ul>
+  </div>
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">3.3</span><span class="ficha-title">Condicionales</span><span class="ficha-en">conditionals</span></div>
+    <div class="ficha-def">Uno de los pasos puede ser <b>tomar una decisión o elección</b> (decision or choice).</div>
+    <ul>
+      <li><b>Ejemplo del libro:</b> decidir si hubo beneficio:<br><b>if Sales &gt; Costs, then print &lsquo;We are profitable&rsquo;</b></li>
+      <li>Fíjate en la palabra clave en inglés <b>&ldquo;if&rdquo;</b>: la verás en casi todos los lenguajes (Bloque&nbsp;4).</li>
+    </ul>
+  </div>
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">3.4</span><span class="ficha-title">Bucles</span><span class="ficha-en">loops</span></div>
+    <div class="ficha-def">Los algoritmos serían muy limitados si solo pudieran ejecutar la secuencia <b>una vez</b>; los bucles permiten <b>repetir</b> un conjunto de instrucciones cuando se cumple cierta condición.</div>
+    <ul>
+      <li><b>Ejemplo del libro:</b> repetir <b>hasta que no haya más clientes</b>.</li>
+      <li>Palabra clave típica en inglés: <b>&ldquo;while&rdquo;</b> (mientras).</li>
+    </ul>
+  </div>
+
+  <div class="quiz-card">
+    <h4>Pregunta de examen del libro &middot; Paper 1 (core)</h4>
+    <ol>
+      <li><b>Outline</b> two common components found in an algorithm. <i>[4 marks]</i></li>
+    </ol>
+    <span class="reveal-btn">Ver pauta</span>
+    <div class="q-a"><b>Pauta:</b> describe dos componentes con su función y ejemplo: <b>variables</b> — almacenan temporalmente valores mientras se ejecutan los pasos y cambian de valor línea a línea (ej.: la variable &ldquo;profit&rdquo; guarda el beneficio); <b>condicionales</b> — permiten tomar una decisión o elección (ej.: <i>if Sales &gt; Costs, then print &lsquo;We are profitable&rsquo;</i>). También valen instrucciones (series de sub-algoritmos para actividades pequeñas, ej.: suma de dígitos) y bucles (repetir instrucciones mientras se cumpla una condición, ej.: repetir hasta que no haya más clientes).</div>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 4 · REPRESENTACIÓN ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Bloque 4 &middot; 3.2C del libro</div>
+    <div class="section-title"><span class="block-num bn2">4</span>Tres formas de representar un algoritmo</div>
+    <div class="divider d2"></div>
+  </div>
+
+  <p class="body-text">Los algoritmos se crean <b>independientemente del lenguaje de programación</b>: eso permite a los programadores escribir el código en su lenguaje preferido. Antes de programar, hay <b>tres formas principales</b> de representar un algoritmo.</p>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">4.1</span><span class="tcard-title">Lenguaje natural</span><span class="tcard-en">natural language</span></div>
+    <div class="trow"><div class="tlabel">Qué es</div><div class="tbody">Escribir los pasos en <b>lenguaje cotidiano</b>. Suele considerarse el <b>primer paso</b> del diseño de un programa.</div></div>
+    <div class="trow"><div class="tlabel">Ventaja</div><div class="tbody">Permite a los desarrolladores trabajar con <b>no programadores</b> (non-coders): todo el equipo entiende el proceso.</div></div>
+    <div class="trow"><div class="tlabel">Debilidad</div><div class="tbody">Tiende a ser <b>ambiguo</b> y a <b>carecer de claridad</b> — por eso se pasa después a un diagrama de flujo.</div></div>
+    <div class="trow"><div class="tlabel">Ejemplo</div><div class="tbody">Una <b>receta de cocina</b>: para hacer una torta sigues los pasos detallados, desde sacar los ingredientes del armario hasta sacarla del horno.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">4.2</span><span class="tcard-title">Diagrama de flujo</span><span class="tcard-en">flowchart</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><b>Representación visual de un algoritmo</b> que muestra una <b>visión general de principio a fin</b> (definición del glosario del libro).</div></div>
+    <div class="trow"><div class="tlabel">Símbolos</div><div class="tbody">Usa un <b>conjunto estándar de símbolos</b>: cada <b>rectángulo = una acción</b>; cada <b>rombo = una condición o un bucle</b>; las <b>flechas</b> muestran la dirección de los pasos.</div></div>
+    <div class="trow"><div class="tlabel">Para qué</div><div class="tbody">Ayuda a <b>visualizar</b> los pasos y <b>obliga a pensar en la secuencia y la selección</b>; es una <b>herramienta de planificación</b> útil antes de escribir código.</div></div>
+    <div class="trow"><div class="tlabel">Ejemplo</div><div class="tbody">El diagrama para <b>crear una torta</b> de la figura del libro (abajo): de START a STOP con un rombo de decisión y un bucle.</div></div>
+  </div>
+
+  <div class="info-card">
+    <h4>El flowchart de la torta &middot; figura del libro</h4>
+    <div class="flow">
+      <div class="flow-step">START</div>
+      <div class="flow-arrow">&darr;</div>
+      <div class="flow-step">Precalienta el horno</div>
+      <div class="flow-arrow">&darr;</div>
+      <div class="flow-step">Mezcla los ingredientes <span style="color:#64748B;font-weight:600">(rectángulo = acción)</span></div>
+      <div class="flow-arrow">&darr;</div>
+      <div class="flow-step">Vierte en el molde</div>
+      <div class="flow-arrow">&darr;</div>
+      <div class="flow-step">Mete en el horno &rarr; Hornea</div>
+      <div class="flow-arrow">&darr;</div>
+      <div class="flow-decision">¿Está listo? <span style="color:#A16207;font-weight:600">(rombo = condición/bucle)</span></div>
+      <div class="flow-branch">
+        <div class="flow-out no">NO &rarr; vuelve a HORNEAR (bucle / loop)</div>
+        <div class="flow-out yes">SÍ &rarr; continúa</div>
+      </div>
+      <div class="flow-arrow">&darr;</div>
+      <div class="flow-step">Saca del horno &rarr; Deja enfriar &rarr; ¡Come!</div>
+      <div class="flow-arrow">&darr;</div>
+      <div class="flow-step">STOP</div>
+    </div>
+    <div class="flow-cap">Recreación del diagrama &ldquo;Flowchart to create a cake&rdquo; (p.&nbsp;83 del libro). Los rombos siempre plantean una pregunta con dos salidas.</div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">4.3</span><span class="tcard-title">Código de programación</span><span class="tcard-en">programming code</span></div>
+    <div class="trow"><div class="tlabel">Cuándo</div><div class="tbody">Una vez <b>planificado</b> el algoritmo, se escribe el código para que el programa pueda <b>probarse e implementarse</b>.</div></div>
+    <div class="trow"><div class="tlabel">Datos</div><div class="tbody">Se han creado <b>muchísimos lenguajes</b> a lo largo de la historia: <b>más de un tercio</b> en países de lengua inglesa primaria.</div></div>
+    <div class="trow"><div class="tlabel">Palabras clave</div><div class="tbody">Aun con esa diversidad, muchas palabras clave están en inglés: <b>&ldquo;if&rdquo;</b> para condicionales y <b>&ldquo;while&rdquo;</b> para bucles.</div></div>
+    <div class="trow"><div class="tlabel">Popularidad</div><div class="tbody">Según el <b>TIOBE Index 2022</b> citado por el libro: <b>Python</b> es el lenguaje más popular, seguido de <b>C, Java y C++</b>. También importa la <b>lengua de la comunidad</b> de programadores.</div></div>
+  </div>
+
+  <table class="cmp d2">
+    <tr><th style="width:22%">Forma</th><th>Fortaleza</th><th>Debilidad</th><th>Úsala para&hellip;</th></tr>
+    <tr><td><b>Lenguaje natural</b></td><td>Todos la entienden, incluidos los no programadores</td><td>Ambigua, poca claridad</td><td>El primer borrador del diseño, en equipo</td></tr>
+    <tr><td><b>Diagrama de flujo</b></td><td>Visual, secuencia y selección claras, símbolos estándar</td><td>Lento de dibujar en detalle</td><td>Planificar antes de programar</td></tr>
+    <tr><td><b>Código</b></td><td>Se puede probar e implementar de verdad</td><td>Exige conocer un lenguaje</td><td>Construir el programa final</td></tr>
+  </table>
+
+  <div class="quiz-card q2">
+    <h4>Pregunta de examen del libro &middot; Paper 1 (core)</h4>
+    <ol>
+      <li><b>Explain</b> why programmers may prefer to plan out the algorithm using a flowchart compared to natural language. <i>[6 marks]</i></li>
+    </ol>
+    <span class="reveal-btn">Ver pauta</span>
+    <div class="q-a"><b>Pauta (estructura para 6 puntos):</b> el lenguaje natural es fácil de entender para todos, pero tiende a ser <b>ambiguo</b> y a carecer de claridad. El <b>diagrama de flujo</b> usa un <b>conjunto estándar de símbolos</b> (rectángulos = acciones, rombos = condiciones o bucles) y <b>flechas</b> que muestran la dirección de los pasos, por lo que: (1) permite <b>visualizar</b> el algoritmo completo de principio a fin; (2) <b>obliga al programador a pensar en la secuencia y la selección</b> de los pasos; (3) elimina la ambigüedad porque cada símbolo tiene un significado fijo; y (4) funciona como <b>herramienta de planificación</b> antes de escribir el código que luego se probará e implementará.</div>
+  </div>
+</div>
+<!-- ═══════════════ MAPA MENTAL 2 · USOS ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k2">Mapa 2 &middot; Sección 3.2D</span>
+    <div class="map-title">Usos de los algoritmos: de la hoja de cálculo a la IA</div>
+    <div class="map-intro">Tareas comunes que todo algoritmo realiza, más los algoritmos con nombre propio que el libro exige conocer: PageRank, priorización, regla de asociación y el machine learning con reconocimiento facial.</div>
+  </div>
+
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u1">Tareas comunes <small>4 verbos</small></div>
+        <div class="children">
+          <div class="leaf">Ordenar <span class="en-term">(sorting)</span></div>
+          <div class="leaf">Buscar <span class="en-term">(searching)</span></div>
+          <div class="leaf">Filtrar <span class="en-term">(filtering)</span></div>
+          <div class="leaf">Contar <span class="en-term">(counting)</span></div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u3">Quién las usa <small>contextos</small></div>
+        <div class="children">
+          <div class="leaf">Científico: hoja de cálculo</div>
+          <div class="leaf">Base de datos: query</div>
+          <div class="leaf">Empresas: competitividad</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="root-node">USOS DE LOS<br>ALGORITMOS<small>3.2D &middot; uses of algorithms</small></div>
+
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u2">Con nombre propio</div>
+        <div class="children">
+          <div class="leaf">Bubble sort <span class="en-term">(ordenamiento burbuja)</span></div>
+          <div class="leaf">PageRank &middot; Google</div>
+          <div class="leaf">Priorización</div>
+          <div class="leaf">Regla de asociación</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u4">Machine learning</div>
+        <div class="children">
+          <div class="leaf">Aprende de datos históricos</div>
+          <div class="leaf">Reconocimiento facial</div>
+          <div class="leaf">Caso: apariencia &rarr; rasgos (89,5&nbsp;%)</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-navy">Por qué crecen</div>
+        <div class="children">
+          <div class="leaf">Aumento de datos generados</div>
+          <div class="leaf">Empresas &rarr; IA para dar sentido a los datos</div>
+          <div class="leaf">Enlace con 3.1 y 3.6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:#3B82F6"></span> Tareas básicas</span>
+    <span class="lg"><span class="dot" style="background:#8B5CF6"></span> Algoritmos con nombre</span>
+    <span class="lg"><span class="dot" style="background:#F59E0B"></span> Machine learning</span>
+    <span class="lg" style="margin-left:auto">El mismo algoritmo puede servir en salud, comercio o justicia</span>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 5 · TAREAS COMUNES ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker k2">Bloque 5 &middot; 3.2D del libro</div>
+    <div class="section-title"><span class="block-num bn2">5</span>Las cuatro tareas comunes y el bubble sort</div>
+    <div class="divider d2"></div>
+  </div>
+
+  <p class="body-text">Tanto los procesen matemáticos, científicos o informáticos, los algoritmos suelen realizar las <b>mismas tareas comunes</b>. En una hoja de cálculo las usas todos los días sin llamarlas así.</p>
+
+  <div class="fgrid">
+    <div class="ficha u2">
+      <div class="ficha-head"><span class="ficha-num">5.1</span><span class="ficha-title">Ordenar</span><span class="ficha-en">sorting</span></div>
+      <ul>
+        <li>Poner los datos <b>en un orden determinado</b> (mayor&ndash;menor, alfabético&hellip;).</li>
+        <li>El <b>bubble sort</b> es uno de los algoritmos de ordenamiento <b>más básicos</b>: <b>corre en un bucle</b> e <b>intercambia elementos adyacentes</b> hasta que quedan en el orden correcto.</li>
+        <li>También existe como <b>función integrada</b> en hojas de cálculo y bases de datos.</li>
+      </ul>
+    </div>
+    <div class="ficha u2">
+      <div class="ficha-head"><span class="ficha-num">5.2</span><span class="ficha-title">Buscar</span><span class="ficha-en">searching</span></div>
+      <ul>
+        <li>Encontrar datos que cumplen un criterio.</li>
+        <li>En una base de datos se llama <b>&ldquo;query&rdquo;</b> (consulta).</li>
+        <li>Un científico puede buscar en una <b>base de datos de acceso abierto</b> resultados de investigaciones similares a la suya.</li>
+      </ul>
+    </div>
+    <div class="ficha u2">
+      <div class="ficha-head"><span class="ficha-num">5.3</span><span class="ficha-title">Filtrar</span><span class="ficha-en">filtering</span></div>
+      <ul>
+        <li><b>Selección de celdas según ciertos criterios</b> (definición del libro).</li>
+        <li>Ejemplo: filtrar la hoja de cálculo por una <b>variable específica</b> para acotar los resultados del experimento.</li>
+      </ul>
+    </div>
+    <div class="ficha u2">
+      <div class="ficha-head"><span class="ficha-num">5.4</span><span class="ficha-title">Contar</span><span class="ficha-en">counting</span></div>
+      <ul>
+        <li>Calcular <b>cuántas veces aparece un valor dado</b> en los resultados.</li>
+        <li>Ejemplo: contar las instancias de una lectura concreta en los datos de un experimento.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h4>El bubble sort en acción &middot; una pasada del bucle</h4>
+    <div class="bubble">
+      <div class="bub-seq"><span class="bub">4</span><span class="bub">2</span><span class="bub">3</span><span class="bub">1</span></div>
+      <span class="bub-arrow">&rarr;</span>
+      <div class="bub-seq"><span class="bub swapped">2</span><span class="bub swapped">4</span><span class="bub">3</span><span class="bub">1</span></div>
+      <span class="bub-arrow">&rarr;</span>
+      <div class="bub-seq"><span class="bub">2</span><span class="bub swapped">3</span><span class="bub swapped">4</span><span class="bub">1</span></div>
+      <span class="bub-arrow">&rarr;</span>
+      <div class="bub-seq"><span class="bub">2</span><span class="bub">3</span><span class="bub swapped">1</span><span class="bub swapped">4</span></div>
+    </div>
+    <div class="bub-cap">El bucle compara <b>elementos adyacentes</b> (pares sombreados) y los <b>intercambia</b> si están en el orden incorrecto; repite hasta que todo queda ordenado. Es lento pero fácil de entender: por eso es el primer algoritmo de ordenamiento que se aprende.</div>
+  </div>
+
+  <div class="info-card">
+    <h4>Ejemplo integrador del libro &middot; el científico y su hoja de cálculo</h4>
+    <p>Un científico analiza los resultados de un experimento: <b>ordena</b> (sort) para hallar los valores más altos o más bajos, <b>filtra</b> (filter) la hoja por una variable específica para acotar los resultados y <b>cuenta</b> (count) cuántas instancias de un valor aparecen. Tres algoritmos, un solo archivo. La actividad ATL del libro te pide repetirlo con datos meteorológicos descargados.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 6 · ALGORITMOS CON NOMBRE PROPIO ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker k2">Bloque 6 &middot; 3.2D del libro</div>
+    <div class="section-title"><span class="block-num bn2">6</span>De PageRank al machine learning</div>
+    <div class="divider d2"></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">6.1</span><span class="tcard-title">PageRank (búsqueda web)</span><span class="tcard-en">search algorithms</span></div>
+    <div class="trow"><div class="tlabel">Qué es</div><div class="tbody">El <b>algoritmo de búsqueda de Google</b>: uno de los más usados para encontrar las <b>páginas web más relevantes</b> para unos criterios de búsqueda dados.</div></div>
+    <div class="trow"><div class="tlabel">Cómo funciona</div><div class="tbody">Contiene <b>muchos sub-algoritmos</b> que examinan factores como: las <b>palabras de la consulta</b>, la <b>pericia de las fuentes</b>, la <b>calidad del contenido</b>, la <b>ubicación</b> y la <b>usabilidad</b> de las páginas web.</div></div>
+    <div class="trow"><div class="tlabel warn">Repercusión</div><div class="tbody">Decide qué información ve miles de millones de personas: quien aparece primero &ldquo;existe&rdquo;; quien aparece en la página 5, no.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilema</div><div class="tbody">Los criterios son <b>opacos y comerciales</b>: ¿cómo decides qué es &ldquo;pericia&rdquo; o &ldquo;calidad&rdquo; sin sesgar el debate público? Conexión directa con <b>poder</b> y con el <b>filter bubble</b> del glosario.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">6.2</span><span class="tcard-title">Algoritmo de priorización</span><span class="tcard-en">prioritization algorithm</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody">Un <b>algoritmo de ordenamiento usado para priorizar tareas</b> (definición del glosario del libro).</div></div>
+    <div class="trow"><div class="tlabel">Para qué</div><div class="tbody"><b>Priorizar pedidos de clientes</b>, solicitudes de <b>mesa de ayuda</b> (help desk) o incluso decidir <b>qué región priorizar en las ventas</b>.</div></div>
+    <div class="trow"><div class="tlabel">Cómo funciona</div><div class="tbody">En <b>tres pasos</b> (abajo). Un algoritmo eficaz hace la actividad más eficiente y <b>resuelve el problema inicial</b>: por eso las empresas lo adoptan para ser más competitivas.</div></div>
+    <div class="trow"><div class="tlabel warn">Repercusión</div><div class="tbody">Atiende más rápido lo urgente y ahorra recursos; pero <b>quién define la frecuencia</b> que da el ranking decide quién espera.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilema</div><div class="tbody">Un ranking &ldquo;objetivo&rdquo; puede <b>invisibilizar solicitudes poco frecuentes pero graves</b>: ¿eficiencia para la organización o justicia para la persona?</div></div>
+  </div>
+
+  <div class="info-card">
+    <h4>Los 3 pasos del algoritmo de priorización (según el libro)</h4>
+    <div class="lifecycle">
+      <div class="lc-step"><span class="lc-n">1</span><div class="lc-t">Contar la frecuencia<small>count frequency</small></div><div class="lc-d">De solicitudes de un cliente, departamento o área.</div></div>
+      <div class="lc-arrow">&rarr;</div>
+      <div class="lc-step"><span class="lc-n">2</span><div class="lc-t">Clasificar<small>sort &amp; classify</small></div><div class="lc-d">En frecuencia alta, media y baja.</div></div>
+      <div class="lc-arrow">&rarr;</div>
+      <div class="lc-step"><span class="lc-n">3</span><div class="lc-t">Ranquear<small>rank</small></div><div class="lc-d">El cliente, soporte, solicitud o región queda ordenado por prioridad.</div></div>
+    </div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">6.3</span><span class="tcard-title">Regla de asociación</span><span class="tcard-en">association rule</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><b>Descubre cómo se asocian los artículos entre sí</b> y revela <b>relaciones entre elementos de grandes bases de datos</b> (definición del glosario del libro).</div></div>
+    <div class="trow"><div class="tlabel">Dónde</div><div class="tbody">Se usa en <b>machine learning</b>, en el <b>análisis de la canasta de mercado</b> (market basket analysis) y en el <b>diagnóstico médico</b>.</div></div>
+    <div class="trow"><div class="tlabel">Cómo funciona</div><div class="tbody">Analizar los artículos de los carritos de compra determina <b>qué probabilidad hay de que un artículo se compre con otro</b>. Esa información sirve para decidir la <b>colocación de productos</b> en la tienda: ahorra tiempo al cliente y le <b>recuerda cosas que le interesan comprar</b>.</div></div>
+    <div class="trow"><div class="tlabel warn">Repercusión</div><div class="tbody">Mejora ventas y experiencia de compra; en salud, ayuda a detectar combinaciones de síntomas y diagnósticos asociados.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilema</div><div class="tbody">La &ldquo;colocación de productos&rdquo; es <b>persuasión diseñada con tus propios datos</b>: ¿sugerencia útil o manipulación del consumo?</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">6.4</span><span class="tcard-title">Machine learning y reconocimiento facial</span><span class="tcard-en">machine learning algorithms</span></div>
+    <div class="trow"><div class="tlabel">Contexto</div><div class="tbody">El <b>aumento de los datos generados</b> ha llevado a las empresas hacia <b>algoritmos de IA</b> para dar sentido a los datos (enlace con 3.1 y 3.6).</div></div>
+    <div class="trow"><div class="tlabel">Caso del libro</div><div class="tbody">Según <b>American Scientist</b>, se usan algoritmos de ML para <b>vincular la apariencia física con otros rasgos</b>, muchos de ellos con <b>afirmaciones falsas</b>. Ejemplos citados: un algoritmo que determinaba <b>rasgos de personalidad de candidatos a empleo</b> por sus expresiones faciales; otro que decidía si un estudiante <b>hacía trampa en un examen en línea</b> según cómo cambiaba su rostro al responder; y el uso notorio de <b>identificar a un &ldquo;criminal&rdquo; por la forma del rostro</b> con una supuesta precisión del <b>89,5&nbsp;%</b>.</div></div>
+    <div class="trow"><div class="tlabel warn">Repercusión</div><div class="tbody">Pseudo-ciencia con apariencia técnica: decisiones sobre <b>empleo, notas y libertad</b> basadas en el rostro de las personas.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilema</div><div class="tbody">¿Puede el uso de algoritmos para <b>predecir rasgos de comportamiento</b> estar alguna vez libre de sesgo humano? (pregunta TOK del libro). Conexión con el concepto <b>expresión</b> (inquiry 2.2 del libro).</div></div>
+  </div>
+
+  <div class="case">
+    <span class="case-tag">Indagación del libro &middot; 3.2 + concepto expresión (2.2)</span>
+    <p>Los <b>modelos de IA capturan expresiones humanas para hacer predicciones</b>: personalidad de candidatos, trampa en exámenes, supuesta criminalidad. Pregunta de indagación del libro: <b>¿qué impacto está teniendo esto en las personas?</b> Formula una pregunta de indagación concisa, busca un ejemplo real y conéctalo con las 3Cs.</p>
+    <p class="case-src">Fuente: americanscientist.org — &ldquo;The dark past of algorithms that associate appearance and criminality&rdquo; (citado en el libro, p.&nbsp;85)</p>
+  </div>
+
+  <div class="quiz-card q2">
+    <h4>Autoevaluación &middot; Bloques 5 y 6</h4>
+    <ol>
+      <li><b>Outline</b> cómo el bubble sort ordena una lista de números. <i>[2 marks]</i></li>
+      <li><b>Explain</b> los tres pasos del algoritmo de priorización con un ejemplo de mesa de ayuda. <i>[6 marks]</i></li>
+      <li><b>Explain</b> por qué una tienda usaría la regla de asociación y qué dilema plantea. <i>[6 marks]</i></li>
+      <li><b>Discuss</b> los riesgos de vincular apariencia facial con rasgos de personalidad. <i>[8 marks]</i></li>
+    </ol>
+  </div>
+</div>
+<!-- ═══════════════ MAPA MENTAL 3 · DILEMAS ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k4">Mapa 3 &middot; Sección 3.2E</span>
+    <div class="map-title">Dilemas algorítmicos: buenas intenciones, consecuencias no deseadas</div>
+    <div class="map-intro">Los algoritmos buscan facilitarnos la vida, operar con mayor eficiencia y que los gobiernos decidan mejor. Pero los creados con buenas intenciones a veces tienen consecuencias negativas, aunque no intencionadas. Estos son los tres dilemas del libro.</div>
+  </div>
+
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u4">Reemplazo del juicio humano</div>
+        <div class="children">
+          <div class="leaf">Pro: no se cansan, consistentes, precisos</div>
+          <div class="leaf">Contra: resultados inapropiados</div>
+          <div class="leaf">Caso: policía y tribunales de EE.&nbsp;UU.</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u1">Sesgo algorítmico <small>bias</small></div>
+        <div class="children">
+          <div class="leaf">Causa 1: el desarrollador introduce sesgo</div>
+          <div class="leaf">Causa 2: datos de entrenamiento sesgados o incompletos</div>
+          <div class="leaf">Caso: función renal y la raza (2020)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="root-node">DILEMAS<br>ALGORÍTMICOS<small>3.2E &middot; algorithmic dilemmas</small></div>
+
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u2">Caja negra <small>black box</small></div>
+        <div class="children">
+          <div class="leaf">Da conclusiones sin explicar cómo</div>
+          <div class="leaf">¿Quién responde: programador o data scientist?</div>
+          <div class="leaf">Casos: vehículos autónomos y Deep Patient</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u3">Transparencia <small>transparency</small></div>
+        <div class="children">
+          <div class="leaf">Entender y explicar el funcionamiento interno</div>
+          <div class="leaf">Clave en salud y finanzas</div>
+          <div class="leaf">3 obstáculos del libro</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-navy">Conexiones</div>
+        <div class="children">
+          <div class="leaf">Expresión (2.2) &middot; Sistemas (2.6)</div>
+          <div class="leaf">HL: bienestar global (5.1) y gobernanza/DDHH (5.2)</div>
+          <div class="leaf">TOK: ¿sesgo inevitable?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:#F59E0B"></span> Dilema 1</span>
+    <span class="lg"><span class="dot" style="background:#3B82F6"></span> Dilema 2</span>
+    <span class="lg"><span class="dot" style="background:#8B5CF6"></span> Dilema 3</span>
+    <span class="lg"><span class="dot" style="background:#14B8A6"></span> Respuestas y conceptos</span>
+    <span class="lg" style="margin-left:auto">Cada dilema = definición + caso real + pregunta de examen</span>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 7 · DILEMA 1 ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker k4">Bloque 7 &middot; Dilema 1 de 3.2E</div>
+    <div class="section-title"><span class="block-num bn4">7</span>Algoritmos que reemplazan el juicio humano</div>
+    <div class="divider d4"></div>
+  </div>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num">7.1</span><span class="ficha-title">El dilema en dos caras</span><span class="ficha-en">algorithms replacing human judgements</span></div>
+    <ul>
+      <li><b>A favor:</b> los algoritmos pueden ser <b>mejores decisores</b> que los humanos: <b>no se cansan</b>, las decisiones se aplican de forma <b>consistente y con precisión</b>, y <b>no son emocionales</b>.</li>
+      <li><b>En contra:</b> incluso los algoritmos lógicos pueden dar <b>resultados inapropiados</b>.</li>
+      <li><b>El problema principal:</b> muchos algoritmos juzgan a partir del <b>sesgo que ya existe en la sociedad</b>; el machine learning aprende de <b>conjuntos de datos históricos</b>, así que <b>hereda el sesgo de los juicios humanos anteriores</b>.</li>
+    </ul>
+  </div>
+
+  <div class="case">
+    <span class="case-tag">Caso real del libro &middot; policía y tribunales de EE.&nbsp;UU.</span>
+    <p><b>Harvard Gazette (2020):</b> en 2016 había unos <b>2,2 millones de adultos presos</b> en EE.&nbsp;UU. Bajo presión para reducir esa cifra, la <b>policía usó algoritmos predictivos</b> para decidir dónde ubicar al personal en las calles, y los <b>tribunales usaron algoritmos de evaluación de riesgo penal</b> para determinar la duración de las penas de prisión: el algoritmo creaba una <b>puntuación</b> para cada acusado según su perfil y su probabilidad de reincidencia (<i>recidivism: tendencia a reincidir</i>, glosario del libro).</p>
+    <p><b>El sesgo:</b> personas de <b>comunidades de bajos ingresos y minorías</b> tenían riesgo de puntuaciones más altas porque <b>históricamente venían de zonas con un número desproporcionado de casos judiciales</b> &rarr; condenas <b>menos favorables</b>. En otro caso, un tribunal condenó a un hombre a <b>18 meses de cárcel</b> porque el algoritmo dio <b>mayor peso a su edad</b>: si hubiera sido mayor, la pena habría sido mucho más corta.</p>
+    <p class="case-src">Fuente: news.harvard.edu/gazette (2020), citado en el libro, p.&nbsp;86</p>
+  </div>
+
+  <div class="case">
+    <span class="case-tag">Complemento del libro (sección IA) &middot; el algoritmo de reincidencia</span>
+    <p>El algoritmo de <b>riesgo de reincidencia</b> usa datos como el <b>código postal</b>, los <b>contactos en redes sociales</b> y las <b>respuestas a encuestas</b>. Una investigación de <b>2016</b> encontró que acusados blancos y negros tenían una <b>precisión similar (alrededor del 60&nbsp;%)</b>, pero los <b>errores se repartían de forma muy distinta</b>: los acusados blancos eran casi <b>el doble de propensos</b> a ser predichos como de bajo riesgo.</p>
+    <p class="case-src">Fuente: libro, capítulo de IA (paralelo al estudio ProPublica de 2016)</p>
+  </div>
+
+  <div class="quote">Pregunta de reflexión del libro: <b>¿hasta qué punto debería la sociedad permitir que los algoritmos reemplacen la toma de decisiones humana?</b> Formula un argumento razonado con dos ejemplos reales (actividad ATL).</div>
+
+  <div class="quiz-card q4">
+    <h4>Autoevaluación &middot; Bloque 7</h4>
+    <ol>
+      <li><b>Outline</b> dos ventajas de usar algoritmos en lugar de jueces para recomendar penas. <i>[4 marks]</i></li>
+      <li><b>Explain</b> por qué un algoritmo de riesgo penal perjudicó a comunidades de bajos ingresos. <i>[6 marks]</i></li>
+      <li><b>Discuss</b> si los gobiernos deberían usar algoritmos predictivos para asignar personal policial. <i>[8 marks]</i></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 8 · DILEMA 2 ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker k4">Bloque 8 &middot; Dilema 2 de 3.2E</div>
+    <div class="section-title"><span class="block-num bn4">8</span>Sesgo algorítmico: dos causas, casos reales</div>
+    <div class="divider d4"></div>
+  </div>
+
+  <p class="body-text">El libro da <b>dos razones principales</b> por las que los sistemas de IA llevan sesgo incorporado (built-in bias). Memorízalas: son la respuesta exacta a &ldquo;explain the causes of algorithmic bias&rdquo;.</p>
+
+  <div class="fgrid">
+    <div class="ficha u4">
+      <div class="ficha-head"><span class="ficha-num">8.1</span><span class="ficha-title">Causa 1 &middot; El desarrollador</span><span class="ficha-en">human bias</span></div>
+      <ul>
+        <li>Los <b>desarrolladores humanos</b> introducen sesgo en sus modelos <b>sin darse cuenta</b> (unknowingly).</li>
+        <li>Sus suposiciones sobre el mundo quedan &ldquo;escritas&rdquo; en el algoritmo.</li>
+      </ul>
+    </div>
+    <div class="ficha u4">
+      <div class="ficha-head"><span class="ficha-num">8.2</span><span class="ficha-title">Causa 2 &middot; Los datos de entrenamiento</span><span class="ficha-en">training data bias</span></div>
+      <ul>
+        <li>El <b>conjunto de datos de entrenamiento</b> incluye datos <b>sesgados</b> o está <b>incompleto</b>.</li>
+        <li>Resultado: <b>no es una representación fiel de la población</b>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="case">
+    <span class="case-tag">Caso real del libro &middot; función renal y raza (2020)</span>
+    <p>Un estudio publicado en <b>2020</b> reveló que el algoritmo usado para determinar la <b>salud de la función renal</b> de un paciente usaba la <b>raza como uno de los factores</b>. De los <b>57&nbsp;000 historiales médicos</b> revisados en Massachusetts, <b>un tercio de los pacientes negros</b> habría tenido su enfermedad <b>clasificada como más grave</b> si se hubiera aplicado la fórmula usada para los pacientes blancos.</p>
+    <p class="case-src">Fuente: wired.com — &ldquo;New formula helps black patients access kidney care&rdquo; (citado en el libro, p.&nbsp;87)</p>
+  </div>
+
+  <div class="case">
+    <span class="case-tag">Caso del libro (HL 5.2) &middot; atención médica y gasto histórico</span>
+    <p>Un algoritmo desarrollado para <b>predecir qué paciente necesitaría atención médica adicional</b> favoreció a los <b>pacientes blancos sobre los negros</b>: se había entrenado con <b>datos históricos del gasto en salud</b> e hizo <b>suposiciones erróneas</b> basadas en la <b>correlación entre ingresos y raza</b>. Es el desafío que el libro propone investigar bajo la pregunta: <b>¿hasta qué punto el sesgo algorítmico refuerza la discriminación racial y étnica?</b> (concepto gobernanza y derechos humanos).</p>
+    <p class="case-src">Fuente: actividad HL Extended Inquiry del libro, sección 5.2</p>
+  </div>
+
+  <div class="info-card">
+    <h4>El ciclo del sesgo &middot; por qué no se corrige solo</h4>
+    <p><b>Datos históricos sesgados</b> &rarr; <b>modelo entrenado</b> que hereda ese sesgo &rarr; <b>decisiones desiguales</b> (penas, diagnósticos, prioridades) &rarr; esas decisiones generan <b>nuevos datos históricos</b> &rarr; el siguiente modelo <b>vuelve a aprender del mismo sesgo</b>. Romper el ciclo exige revisar los <b>datos de entrenamiento</b>, auditar los modelos y supervisar las decisiones (ver Bloque&nbsp;9: auditación algorítmica).</p>
+  </div>
+
+  <div class="quiz-card q4">
+    <h4>Autoevaluación &middot; Bloque 8</h4>
+    <ol>
+      <li><b>Identify</b> las dos causas principales del sesgo incorporado en los sistemas de IA. <i>[2 marks]</i></li>
+      <li><b>Explain</b> cómo la raza llegó a ser un factor en el algoritmo de función renal y qué consecuencia tuvo. <i>[6 marks]</i></li>
+      <li><b>Discuss</b> hasta qué punto el sesgo algorítmico refuerza la desigualdad global (enlace HL 5.1). <i>[8 marks]</i></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 9 · DILEMA 3 ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker k4">Bloque 9 &middot; Dilema 3 de 3.2E</div>
+    <div class="section-title"><span class="block-num bn4">9</span>Caja negra y transparencia</div>
+    <div class="divider d4"></div>
+  </div>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num">9.1</span><span class="ficha-title">Algoritmo de caja negra</span><span class="ficha-en">black box algorithm</span></div>
+    <div class="ficha-def"><b>Definición del libro:</b> un algoritmo que <b>ofrece conclusiones sin claridad sobre cómo se llegó a ellas a partir de los datos de entrada</b>.</div>
+    <ul>
+      <li>La gente sabe que los algoritmos influyen en su mundo, pero <b>no sabe qué son ni cómo funcionan</b>.</li>
+      <li>La IA <b>aprende de la experiencia y mejora con el tiempo</b>: es muy difícil saber cómo decide.</li>
+      <li>Con el <b>deep learning</b>, los programadores tienen <b>menos control</b> sobre cómo evoluciona el aprendizaje.</li>
+      <li>Problema clave: <b>¿quién es responsable cuando el algoritmo no funciona como se esperaba?</b> ¿El programador o el científico de datos (data scientist)?</li>
+    </ul>
+  </div>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num">9.2</span><span class="ficha-title">Transparencia en los algoritmos</span><span class="ficha-en">transparency in algorithms</span></div>
+    <div class="ficha-def"><b>Definición del libro:</b> la capacidad de <b>entender y poder explicar el funcionamiento interno</b> del algoritmo.</div>
+    <ul>
+      <li>En industrias <b>altamente reguladas</b> —salud y servicios financieros— la transparencia es esencial: las personas <b>responden por las decisiones</b> de los sistemas de IA.</li>
+      <li><b>Los 3 obstáculos del libro:</b> (1) a menudo es <b>difícil explicar</b> cómo llegó a su conclusión; (2) <b>no siempre se puede saber cómo se seleccionaron los datos de entrenamiento</b>; (3) la <b>naturaleza evolutiva del machine learning</b> hace difícil seguirle el paso.</li>
+    </ul>
+  </div>
+
+  <div class="case">
+    <span class="case-tag">Caso real del libro &middot; vehículos autónomos</span>
+    <p><b>&ldquo;Predictive inequity in object detection&rdquo;</b> (Georgia Institute of Technology): el modelo de <b>visión por computadora con deep learning</b> tenía dificultades para <b>detectar a personas de piel oscura</b>. Si se usara en <b>vehículos autónomos</b>, difícilmente detectaría a un <b>peatón de piel más oscura</b> cruzando la calle. Por la naturaleza de <b>caja negra</b>, a los desarrolladores les resultó <b>mucho más difícil volver atrás y corregir</b> el algoritmo.</p>
+    <p class="case-src">Fuente: paper académico citado en el libro, p.&nbsp;88</p>
+  </div>
+
+  <div class="case">
+    <span class="case-tag">Caso real del libro &middot; Deep Patient (2015)</span>
+    <p>Un grupo de investigación entrenó el software <b>Deep Patient</b> para descubrir <b>patrones ocultos en datos hospitalarios</b> y predecir si un paciente probablemente desarrollaría problemas médicos. Era <b>especialmente bueno prediciendo trastornos psiquiátricos</b>, que suelen ser difíciles de anticipar para los médicos humanos. Sin embargo, por su naturaleza de <b>caja negra y falta de transparencia</b>, los médicos fueron <b>muy reticentes a usarlo</b>.</p>
+    <p class="case-src">Fuente: libro, p.&nbsp;88</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Ampliación &middot; la auditación algorítmica como respuesta</h4>
+    <p>Una posible solución es la <b>auditación algorítmica (algorithmic auditing)</b>: un proceso para <b>verificar que los algoritmos de decisión producen los resultados esperados sin violar límites legales o éticos</b>. Ojo al contraargumento del libro: la auditación <b>también recibe críticas</b> — por ser tan nueva, <b>carece de estándares</b> y está <b>abierta a la influencia de los proveedores</b> (vendor influence). Pregunta que lanza: <b>si las empresas no pueden confiar en el proceso de auditoría, ¿cómo pueden usar la IA?</b> Úsala como perspectiva crítica en un <i>discuss</i>.</p>
+    <p class="ic-sub">Fuente: techtarget.com, citado en el libro (contexto: sesgo de la IA en contratación).</p>
+  </div>
+
+  <div class="quote">Indagación del libro (3.2E + concepto <b>sistemas</b>, 2.6): ¿cómo ha producido el uso de algoritmos de caja negra <b>consecuencias no intencionadas</b> para la sociedad digital? Describe los componentes del sistema digital, explica cómo interactúan con las personas y evalúa las consecuencias previstas y no previstas.</div>
+
+  <div class="quiz-card q4">
+    <h4>Autoevaluación &middot; Bloque 9</h4>
+    <ol>
+      <li><b>Define</b> black box algorithm y transparency in algorithms (definiciones del libro). <i>[4 marks]</i></li>
+      <li><b>Explain</b> por qué los médicos fueron reticentes a usar Deep Patient pese a su precisión. <i>[6 marks]</i></li>
+      <li><b>Explain</b> los tres obstáculos para lograr transparencia en industrias reguladas. <i>[6 marks]</i></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ TABLA SÍNTESIS ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker k4">Síntesis</div>
+    <div class="section-title">Cada tecnología, sus dos caras</div>
+    <div class="divider d4"></div>
+  </div>
+
+  <p class="body-text">Tabla de repaso final: para cada tecnología o uso de 3.2, su repercusión positiva, su repercusión negativa y el dilema que plantea. Si dominas esta tabla, puedes responder a cualquier <i>discuss</i> del tema.</p>
+
+  <table class="cmp bigtable d4">
+    <tr><th style="width:17%">Tecnología / uso</th><th style="width:27%">Repercusión positiva</th><th style="width:27%">Repercusión negativa</th><th>Dilema central</th></tr>
+    <tr><td><b>Algoritmos de búsqueda</b> <span class="en-term">(PageRank)</span></td><td>Encuentra las páginas más relevantes entre miles de millones</td><td>Los criterios (pericia, calidad, ubicación) son opacos y deciden qué se ve</td><td>¿Quién define la &ldquo;relevancia&rdquo;? Conexión con <b>poder</b> y filter bubble</td></tr>
+    <tr><td><b>Priorización</b> <span class="en-term">(prioritization)</span></td><td>Ordena pedidos, solicitudes de soporte o regiones de venta; gana eficiencia</td><td>La frecuencia decide el ranking: lo raro pero grave puede esperar</td><td>Eficiencia de la organización vs justicia para la persona</td></tr>
+    <tr><td><b>Regla de asociación</b> <span class="en-term">(association rule)</span></td><td>Market basket analysis y diagnóstico médico; sugiere productos útiles</td><td>Coloca productos con tus propios datos para inducir compras</td><td>¿Sugerencia útil o manipulación del consumo?</td></tr>
+    <tr><td><b>Machine learning facial</b></td><td>Predictión de patrones a gran escala (ej.: detectar trampa en exámenes)</td><td>Vincula apariencia con rasgos con afirmaciones falsas (caso 89,5&nbsp;%)</td><td>¿Puede predecir rasgos de comportamiento sin sesgo humano? (TOK)</td></tr>
+    <tr><td><b>Algoritmos judiciales</b> <span class="en-term">(riesgo de reincidencia)</span></td><td>Decisiones consistentes, precisas, sin cansancio ni emociones</td><td>Puntuaciones más altas para comunidades de bajos ingresos y minorías; pena de 18 meses por la edad</td><td>¿Hasta qué punto deben reemplazar el juicio humano?</td></tr>
+    <tr><td><b>Algoritmos de salud</b> <span class="en-term">(función renal / atención extra)</span></td><td>Mejora servicios hospitalarios con datos de salud</td><td>Usó la raza como factor; favoreció a pacientes blancos por gasto histórico</td><td>Sesgo histórico en los datos de entrenamiento vs equidad</td></tr>
+    <tr><td><b>Visión autónoma</b> <span class="en-term">(object detection)</span></td><td>Percepción automática para vehículos autónomos</td><td>Dificultad para detectar personas de piel oscura; difícil de corregir por caja negra</td><td>¿Quién responde cuando la caja negra falla?</td></tr>
+    <tr><td><b>Deep Patient</b> <span class="en-term">(predicción clínica)</span></td><td>Excelente prediciendo trastornos psiquiátricos difíciles para médicos</td><td>Falta de transparencia: los médicos no confiaron en él</td><td>¿Aceptamos predicciones que nadie puede explicar?</td></tr>
+  </table>
+</div>
+<!-- ═══════════════ CASOS DE PRÁCTICA ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker k2">Preparación para el examen</div>
+    <div class="section-title">Tres casos inéditos al estilo Paper 1</div>
+    <div class="divider d2"></div>
+  </div>
+
+  <p class="body-text">En Paper 1 analizarás <b>fuentes que nunca has visto</b> (artículos, informes, gráficos) conectadas a un escenario real. Estos tres escenarios fueron <b>creados para este repaso</b>: no son casos reales ni provienen del libro, pero combinan tecnologías y dilemas de 3.2 exactamente como lo haría el examen. Responde primero tú y compara después con la <b>pauta</b>.</p>
+
+  <div class="info-card">
+    <h4>Método de 4 pasos ante cualquier caso nuevo</h4>
+    <p><b>1)</b> Identifica las <b>tecnologías algorítmicas</b> presentes (priorización, regla de asociación, machine learning, caja negra&hellip;) y el <b>contexto</b> del curso. &nbsp;<b>2)</b> Cita las <b>definiciones exactas</b> del libro para los términos que uses. &nbsp;<b>3)</b> Da <b>dos repercusiones</b> —una positiva y una negativa— y di a quién afectan (individuos, comunidades, mundo). &nbsp;<b>4)</b> Cierra con el <b>dilema ético</b> y un <b>concepto del curso</b> (poder, sistemas, expresión, valores y ética). Esa es la estructura que premian los criterios de evaluación.</p>
+  </div>
+
+  <div class="practice">
+    <span class="practice-tag">Caso de práctica 1 &middot; Escenario inédito &middot; contexto salud</span>
+    <h4>TriageIA: la sala de urgencias que decide sola</h4>
+    <p class="pctx">El hospital <b>San Rafael</b> implantó en 2025 el sistema <b>TriageIA</b>. Cada ingreso en urgencias alimenta un <b>algoritmo de priorización</b>: cuenta la frecuencia de visitas del paciente, clasifica a los pacientes en frecuencia <b>alta, media y baja</b> y ranquea quién pasa primero al consultorio. Un módulo de <b>machine learning</b> añade un <b>&ldquo;índice de riesgo&rdquo;</b> entrenado con <b>datos históricos de cinco años</b>: edad, código postal y gasto sanitario previo. Los médicos no reciben explicación del índice y el proveedor no comparte cómo se calcula; con el tiempo, los pacientes de <b>dos distritos de bajos ingresos</b> —que históricamente solo iban al hospital en casos graves— acumulan índices altos y esperan <b>más tiempo</b>, mientras los turnos se asignan casi <b>siempre a los mismos perfiles</b>. El hospital celebra: la sala &ldquo;es más eficiente&rdquo;. Un grupo de médicos exige poder <b>auditar</b> el sistema.</p>
+    <ol class="pq">
+      <li><b>Define</b> el término <i>algoritmo de priorización</i> y <b>outline</b> sus tres pasos tal como se aplican en TriageIA. <i>[4 marks]</i></li>
+      <li><b>Explain</b> por qué el índice de riesgo funciona como un <b>algoritmo de caja negra</b> y qué problema genera para la responsabilidad. <i>[6 marks]</i></li>
+      <li><b>Explain</b> cómo las <b>dos causas del sesgo algorítmico</b> del libro aparecen en este escenario. <i>[6 marks]</i></li>
+      <li><b>Discuss</b> si el hospital debería suspender TriageIA o auditarlo y mantenerlo. <i>[8 marks]</i></li>
+    </ol>
+    <span class="reveal-btn">Ver pauta</span>
+    <div class="q-a"><b>Pauta:</b> (1) definición: <b>algoritmo de ordenamiento usado para priorizar tareas</b>; pasos: <b>contar la frecuencia</b> de visitas por paciente &rarr; <b>clasificar</b> en alta/media/baja &rarr; <b>ranquear</b> quién pasa primero. (2) caja negra: da un <b>índice sin claridad sobre cómo llegó a él a partir de los datos de entrada</b>; el proveedor no explica y el ML evoluciona solo &rarr; nadie sabe <b>quién responde</b> (¿programador o data scientist?) y en una industria regulada como la salud la <b>transparencia</b> es esencial. (3) causa 1: los desarrolladores introdujeron sesgo <b>sin darse cuenta</b> al elegir factores como código postal; causa 2: los <b>datos históricos eran sesgados/incompletos</b> — los distritos pobres solo aparecían en casos graves, así que el modelo <b>no representa fielmente a la población</b> (paralelo: función renal 2020 y atención extra HL 5.2). (4) discusión: a favor de mantener con auditoría — eficiencia probada y la <b>auditación algorítmica</b> verifica resultados esperados sin violar límites éticos; a favor de suspender — la auditoría <b>carece de estándares</b> y depende del proveedor, y el daño actual es real (esperas desiguales); conceptos: <b>poder</b> y <b>sistemas</b>; conclusión matizada con criterio propio.</div>
+  </div>
+
+  <div class="practice">
+    <span class="practice-tag">Caso de práctica 2 &middot; Escenario inédito &middot; contexto educación</span>
+    <h4>VigíaExam: tu rostro, tu nota</h4>
+    <p class="pctx">La universidad <b>Los Andes</b> contrató <b>VigíaExam</b>, software de vigilancia de exámenes en línea. Su módulo usa <b>condicionales y bucles</b>: <i>si el rostro sale del encuadre durante más de 3 segundos, se registra una alerta; mientras el examen siga activo, el bucle repite el análisis</i>. Un módulo de <b>machine learning</b> evalúa <b>cómo cambia la expresión facial</b> del estudiante al responder para estimar si <b>consulta material prohibido</b>. En la primera aplicación, el <b>12&nbsp;% de los estudiantes</b> fue marcado &ldquo;en riesgo&rdquo;; los apelaron, pero la universidad no pudo explicar ninguna puntuación: el proveedor la considera <b>secreto comercial</b>. Estudiantes de <b>piel oscura</b> fueron marcados <b>el triple</b> que sus compañeros, y una estudiante con <b>parálisis facial</b> recibió el índice máximo. La universidad propone una <b>auditoría</b>; VigíaExam responde que nadie externo puede revisar su modelo.</p>
+    <ol class="pq">
+      <li><b>Identify</b> dos <b>componentes de un algoritmo</b> presentes en VigíaExam y justifica con el escenario. <i>[4 marks]</i></li>
+      <li><b>Outline</b> por qué el <b>secreto comercial</b> convierte al sistema en caja negra y afecta el derecho de apelación. <i>[4 marks]</i></li>
+      <li><b>Explain</b> dos <b>repercusiones</b> —una positiva y una negativa— del uso de ML de expresiones faciales en exámenes, usando el caso del libro. <i>[6 marks]</i></li>
+      <li><b>To what extent</b> debería una universidad aceptar algoritmos que no puede auditar para decidir sobre la honestidad académica? <i>[8 marks]</i></li>
+    </ol>
+    <span class="reveal-btn">Ver pauta</span>
+    <div class="q-a"><b>Pauta:</b> (1) <b>condicionales</b> (si el rostro sale &gt; 3 s &rarr; alerta: decisión/elección) y <b>bucles</b> (mientras el examen siga activo, repetir el análisis); también <b>variables</b> (el contador de segundos cambia de valor) o <b>instrucciones</b> (sub-algoritmos de detección). (2) sin explicación de la puntuación no se puede <b>entender ni explicar el funcionamiento interno</b> (def. de transparencia) &rarr; el estudiante no puede impugnar lo que nadie puede explicar; paralelo: <b>Deep Patient</b>, donde la falta de transparencia generó reticencia. (3) positiva: analiza a escala el riesgo de trampa como el módulo del libro (cómo cambia el rostro al responder); negativa: vincular <b>apariencia con rasgos</b> produjo afirmaciones falsas en el libro (caso 89,5&nbsp;%) y aquí sesga contra piel oscura y discapacidad &rarr; desigualdad de trato y desconfianza. (4) construir ambos lados: integridad académica vs decisiones inexplicables, sesgo documentado y negativa a auditar; usar <b>auditación algorítmica</b> (verificar resultados sin violar límites legales/éticos) y su crítica (sin estándares, influencia del proveedor); conceptos: <b>valores y ética</b>, <b>expresión</b> (2.2); conclusión con criterio: sin auditoría independiente no debería decidir sanciones.</div>
+  </div>
+
+  <div class="practice">
+    <span class="practice-tag">Caso de práctica 3 &middot; Escenario inédito &middot; contexto economía/comercio</span>
+    <h4>CestaAndina: el supermercado que sabe qué comprarás</h4>
+    <p class="pctx">La cadena <b>CestaAndina</b> (120 tiendas) aplica una <b>regla de asociación</b> sobre millones de tickets: descubre que <b>pan y mantequilla se compran juntos</b> el 71&nbsp;% de las veces y <b>reubica los productos</b> en los pasillos; su app envía cupones &ldquo;personalizados&rdquo; según cada historial. Los <b>pequeños productores</b> se quejan: sus artículos nunca aparecen en las combinaciones sugeridas porque <b>casi nadie los compra aún</b>, y pagar por aparecer cuesta lo que no tienen. Un análisis reveló además que los cupones de la app ofrecían <b>descuentos mayores a barrios de altos ingresos</b>, porque el modelo aprendió de <b>datos históricos de venta</b> donde esos barrios gastaban más. La gerencia responde que el algoritmo <b>no hace más que leer la realidad</b>.</p>
+    <ol class="pq">
+      <li><b>Define</b> <i>regla de asociación</i> (definición del libro) y da el ejemplo de este escenario. <i>[2 marks]</i></li>
+      <li><b>Explain</b> cómo el análisis de la canasta de mercado se convierte en <b>colocación de productos</b> y qué beneficio promete la cadena. <i>[4 marks]</i></li>
+      <li><b>Explain</b> por qué los pequeños productores quedan <b>excluidos</b> aunque el algoritmo sea técnicamente correcto. <i>[6 marks]</i></li>
+      <li><b>Discuss</b> la afirmación de la gerencia: &ldquo;el algoritmo no hace más que leer la realidad&rdquo;. <i>[8 marks]</i></li>
+    </ol>
+    <span class="reveal-btn">Ver pauta</span>
+    <div class="q-a"><b>Pauta:</b> (1) <b>descubre cómo se asocian los artículos y revela relaciones entre elementos de grandes bases de datos</b>; ejemplo: pan + mantequilla juntos el 71&nbsp;%. (2) la probabilidad de compra conjunta decide la <b>colocación de productos</b> en la tienda: <b>ahorra tiempo</b> al cliente y <b>le recuerda cosas que le interesan comprar</b> (beneficio: más ventas y mejor experiencia). (3) el algoritmo clasifica por <b>frecuencia pasada</b>: lo que casi no se compró no entra en las asociaciones &rarr; bucle de exclusión (sin visibilidad no hay ventas, sin ventas no hay visibilidad); conecta con el paso 1 del algoritmo de <b>priorización</b> (contar la frecuencia) y con el <b>ciclo del sesgo</b> del Bloque 8: los datos históricos reproducen la desigualdad inicial. (4) parcialmente cierto (los datos reflejan el pasado) pero incompleto: el modelo <b>completa la realidad</b> al decidir cupones desiguales aprendidos de gasto histórico (causa 2 del sesgo: datos sesgados/incompletos, no representación fiel de la población); también hubo decisiones humanas (causa 1) al elegir los factores; conceptos: <b>poder</b>, <b>cambio</b>, <b>valores y ética</b>; conclusión: la neutralidad técnica es una afirmación que debe evaluarse con evidencia de impacto.</div>
+  </div>
+</div>
+<!-- ═══════════════ FICHAS RÁPIDAS INTERACTIVAS ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Repaso interactivo</div>
+    <div class="section-title">30 fichas rápidas: pregunta y respuesta</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text only-screen" style="background:var(--u1-bg);border:1px solid #BFDBFE;border-radius:9px;padding:9px 13px;font-size:11.5px;color:#1E40AF"><b>Cómo usarlas en pantalla:</b> piensa la respuesta y <b>haz clic en la ficha</b> para voltearla; vuelve a hacer clic para regresar a la pregunta.</p>
+  <p class="body-text only-print">Versión impresa: cada ficha muestra la <b>pregunta arriba</b> y la <b>respuesta debajo</b> — cúbre la respuesta con una hoja para autoevaluarte.</p>
+
+  <div class="fc-grid">
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">1 &middot; Define algoritmo (def. del libro).</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Un <b>procedimiento o fórmula para resolver un problema</b> basado en una <b>secuencia de pasos</b>. Es decir: pasos o instrucciones secuenciales definidos para resolver un problema o realizar una tarea.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">2 &middot; ¿Cómo se evalúa la eficacia de un algoritmo?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">A menudo según su <b>eficiencia</b>: un algoritmo eficaz hace la actividad <b>más eficiente</b>, con menos esfuerzo, y <b>resuelve el problema inicial</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">3 &middot; Las 7 características (solo nombres)</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>No ambiguo</b> (unambiguous), <b>finito</b>, <b>bien definido</b>, <b>entradas</b>, <b>salidas</b>, <b>factible</b> e <b>independiente</b> del lenguaje de programación.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">4 &middot; ¿Qué significa que sea finito?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Tiene un <b>número finito de pasos</b> y debe <b>detenerse</b>: con la salida esperada <b>o</b> con una respuesta que indique que <b>no hay solución</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">5 &middot; ¿Cuántas entradas y salidas?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Cero o más entradas</b> (el dato que se transforma) y <b>una o más salidas bien definidas</b>, que deben coincidir con la salida deseada.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">6 &middot; Factible + independiente</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Factible:</b> posible con los <b>recursos disponibles</b>, sin pasos redundantes. <b>Independiente:</b> instrucciones paso a paso <b>independientes de cualquier lenguaje de programación</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">7 &middot; Los 4 componentes</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Instrucciones</b> (sub-algoritmos para actividades pequeñas, ej.: suma de dígitos), <b>variables</b>, <b>condicionales</b> y <b>bucles</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">8 &middot; ¿Qué es una variable?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Almacena temporalmente un valor</b> mientras se ejecutan los pasos; como el algoritmo se procesa <b>línea por línea</b>, la variable <b>cambia de valor</b>. Ej.: la variable <b>&ldquo;profit&rdquo;</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">9 &middot; Condicional del libro</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Decisión o elección dentro del algoritmo: <b>if Sales &gt; Costs, then print &lsquo;We are profitable&rsquo;</b>. Palabra clave: <b>&ldquo;if&rdquo;</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">10 &middot; Bucle del libro</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Repetir un conjunto de instrucciones</b> cuando se cumple cierta condición; ej.: repetir <b>hasta que no haya más clientes</b>. Palabra clave: <b>&ldquo;while&rdquo;</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">11 &middot; ¿Quién escribió el primer algoritmo informático?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Ada Lovelace</b>, en la <b>década de 1840</b>, para el <b>Motor Analítico</b>: calculaba los <b>números de Bernoulli</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">12 &middot; Las 3 formas de representación</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Lenguaje natural</b> (receta de cocina; fácil pero ambiguo) &rarr; <b>diagrama de flujo</b> (símbolos estándar y flechas) &rarr; <b>código de programación</b> (se prueba e implementa).</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">13 &middot; Define flowchart.</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Representación visual de un algoritmo</b> que muestra una <b>visión general de principio a fin</b> (def. del glosario del libro).</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">14 &middot; Símbolos del diagrama de flujo</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Rectángulo</b> = una <b>acción</b>; <b>rombo</b> = una <b>condición o un bucle</b>; <b>flechas</b> = la <b>dirección</b> de los pasos.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">15 &middot; Ventaja y defecto del lenguaje natural</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Ventaja: lo entienden todos, incluidos los <b>no programadores</b> (ideal para el primer diseño). Defecto: tiende a ser <b>ambiguo</b> y a <b>carecer de claridad</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">16 &middot; TIOBE Index 2022</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Python</b> es el lenguaje más popular, seguido de <b>C, Java y C++</b>. Más de un tercio de los lenguajes nació en países de lengua inglesa; palabras clave como <b>&ldquo;if&rdquo;</b> y <b>&ldquo;while&rdquo;</b> están en inglés.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">17 &middot; Las 4 tareas comunes</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Ordenar</b> (sorting), <b>buscar</b> (searching = &ldquo;query&rdquo; en una base de datos), <b>filtrar</b> (selección de celdas por criterios) y <b>contar</b> (cuántas veces aparece un valor).</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">18 &middot; ¿Cómo funciona el bubble sort?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Uno de los algoritmos de ordenamiento <b>más básicos</b>: <b>corre en un bucle</b> e <b>intercambia elementos adyacentes</b> hasta que quedan en el orden correcto.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">19 &middot; PageRank y sus factores</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">El algoritmo de búsqueda de <b>Google</b>: halla las páginas más relevantes con <b>sub-algoritmos</b> que miran las <b>palabras de la consulta</b>, la <b>pericia de las fuentes</b>, la <b>calidad del contenido</b>, la <b>ubicación</b> y la <b>usabilidad</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">20 &middot; Define prioritization algorithm.</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Un <b>algoritmo de ordenamiento usado para priorizar tareas</b> (def. del glosario): pedidos de clientes, solicitudes de <b>help desk</b> o qué región priorizar en ventas.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">21 &middot; Los 3 pasos de la priorización</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>1)</b> Contar la <b>frecuencia</b> de solicitudes (cliente, departamento o área); <b>2)</b> clasificar en <b>alta, media y baja</b>; <b>3)</b> <b>ranquear</b> el cliente, soporte, solicitud o región.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">22 &middot; Define association rule.</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Descubre cómo se asocian los artículos entre sí</b> y revela <b>relaciones entre elementos de grandes bases de datos</b>. Se usa en <b>market basket analysis</b> y <b>diagnóstico médico</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">23 &middot; ¿Para qué sirve la market basket analysis?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Determina la <b>probabilidad de que un artículo se compre con otro</b> &rarr; decide la <b>colocación de productos</b> en la tienda: ahorra tiempo y <b>recuerda</b> al cliente lo que le interesa.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">24 &middot; Caso de ML facial del libro</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Algoritmos que <b>vinculan apariencia con rasgos</b> con afirmaciones falsas: personalidad de candidatos por expresiones, trampa en exámenes por el rostro y &ldquo;criminalidad&rdquo; por la forma del rostro con <b>89,5&nbsp;%</b> supuestamente de precisión.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">25 &middot; Dilema 1: ¿pros del reemplazo humano?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Los algoritmos <b>no se cansan</b>, aplican decisiones de forma <b>consistente y precisa</b> y <b>no son emocionales</b>. Contra: pueden dar <b>resultados inapropiados</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">26 &middot; Caso de tribunales (Harvard Gazette 2020)</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Policía y tribunales de EE.&nbsp;UU. con <b>2,2 millones de presos</b> (2016): algoritmos predicen dónde patrullar y puntúan el <b>riesgo de reincidencia</b>; comunidades de <b>bajos ingresos y minorías</b> reciben puntuaciones más altas; un hombre recibió <b>18 meses</b> por el peso dado a su <b>edad</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">27 &middot; Las 2 causas del sesgo</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>1)</b> Los <b>desarrolladores humanos</b> introducen sesgo <b>sin darse cuenta</b>; <b>2)</b> los <b>datos de entrenamiento</b> son sesgados o incompletos: <b>no representan fielmente a la población</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">28 &middot; Caso renal (2020)</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">El algoritmo de <b>función renal</b> usaba la <b>raza</b> como factor: de <b>57&nbsp;000 historiales</b> en Massachusetts, <b>un tercio de los pacientes negros</b> habría sido clasificado con enfermedad <b>más grave</b> con la fórmula de los pacientes blancos.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">29 &middot; Define black box algorithm.</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Algoritmo que <b>ofrece conclusiones sin claridad sobre cómo llegó a ellas a partir de los datos de entrada</b>. Consecuencia: ¿quién responde, el <b>programador</b> o el <b>data scientist</b>?</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">30 &middot; Transparencia + 3 obstáculos</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Entender y poder explicar el funcionamiento interno</b> del algoritmo. Obstáculos: (1) difícil explicar la conclusión; (2) no se sabe cómo se eligieron los datos de entrenamiento; (3) el ML <b>evoluciona</b> y no se le puede seguir el paso.</div></div></div></div>
+  </div>
+</div>
+<!-- ═══════════════ QUIZ FINAL INTERACTIVO ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker k3">Autoevaluación final</div>
+    <div class="section-title">Quiz: 16 preguntas con corrección al instante</div>
+    <div class="divider d3"></div>
+  </div>
+
+  <p class="body-text only-screen">Responde y <b>haz clic en tu opción</b>: se pone verde si aciertas y roja si no, y se abre la explicación. También puedes abrir cada explicación con el botón <i>Ver respuesta</i>.</p>
+  <p class="body-text only-print">Versión impresa: responde en tu cuaderno; la <b>respuesta correcta y su explicación</b> aparecen en un recuadro verde debajo de cada pregunta.</p>
+
+  <div class="qz-part">Parte A &middot; Verdadero o falso</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt"><b>1.</b> Un algoritmo puede tener cero entradas, pero debe tener al menos una salida bien definida.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Verdadero.</b> El libro dice <b>&ldquo;cero o más entradas&rdquo;</b> y <b>&ldquo;una o más salidas bien definidas&rdquo;</b> que coincidan con la salida deseada.</div>
+
+  <div class="vf-row" data-ans="F"><div class="vf-txt"><b>2.</b> Un algoritmo debe escribirse en un lenguaje de programación específico para ser válido.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Falso.</b> Es justamente lo contrario: la característica <b>&ldquo;independiente&rdquo;</b> exige instrucciones paso a paso <b>independientes de cualquier lenguaje de programación</b>.</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt"><b>3.</b> En un diagrama de flujo, los rombos representan condiciones o bucles.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Verdadero.</b> Rectángulos = <b>acciones</b>; rombos = <b>condiciones o bucles</b>; las flechas muestran la dirección de los pasos.</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt"><b>4.</b> El machine learning hereda el sesgo humano porque aprende de conjuntos de datos históricos.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Verdadero.</b> Los algoritmos de ML aprenden de <b>conjuntos de datos históricos</b> y por eso <b>adoptan el sesgo</b> que ya existía en los juicios humanos anteriores (problema principal del Bloque 7). Es la razón por la que los algoritmos judiciales perjudicaron a comunidades históricamente sobrerrepresentadas en los tribunales.</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt"><b>5.</b> La regla de asociación se usa tanto en el análisis de la canasta de mercado como en el diagnóstico médico.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Verdadero.</b> Son los dos usos que cita el libro para las <b>association rules</b> (algoritmos de machine learning).</div>
+
+  <div class="vf-row" data-ans="F"><div class="vf-txt"><b>6.</b> Con el deep learning, los programadores tienen más control sobre cómo evoluciona el aprendizaje de la IA.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Falso.</b> El libro dice exactamente lo contrario: con el deep learning los programadores tienen <b>menos control</b>, y eso crea el problema de <b>quién responde</b> cuando el algoritmo no actúa como se esperaba.</div>
+</div>
+
+<div class="main-content new-page">
+  <div class="qz-part">Parte B &middot; Opción múltiple</div>
+
+  <div class="mc-q" data-ans="C"><div class="mc-txt"><b>7.</b> Un hospital ranquea solicitudes de mesa de ayuda contando su frecuencia y clasificándola en alta, media y baja. ¿Qué algoritmo es?</div>
+    <div class="opts"><span class="mc-opt" data-k="A">A · Bubble sort</span><span class="mc-opt" data-k="B">B · PageRank</span><span class="mc-opt" data-k="C">C · Priorización</span><span class="mc-opt" data-k="D">D · Regla de asociación</span></div></div>
+  <div class="q-a"><b>C.</b> Son los <b>tres pasos del algoritmo de priorización</b>: contar frecuencia &rarr; clasificar (alta/media/baja) &rarr; ranquear. El bubble sort solo intercambia adyacentes; PageRank busca páginas; la regla de asociación halla relaciones entre artículos.</div>
+
+  <div class="mc-q" data-ans="B"><div class="mc-txt"><b>8.</b> Según el TIOBE Index 2022 citado en el libro, el lenguaje de programación más popular es&hellip;</div>
+    <div class="opts"><span class="mc-opt" data-k="A">A · Java</span><span class="mc-opt" data-k="B">B · Python</span><span class="mc-opt" data-k="C">C · C</span><span class="mc-opt" data-k="D">D · C++</span></div></div>
+  <div class="q-a"><b>B.</b> <b>Python</b> encabeza, seguido de <b>C, Java y C++</b>. Dato extra: más de un tercio de los lenguajes se creó en países de lengua inglesa.</div>
+
+  <div class="mc-q" data-ans="A"><div class="mc-txt"><b>9.</b> Un modelo detecta peatones pero falla con personas de piel oscura y los desarrolladores no logran corregirlo fácilmente. ¿Qué dilema ilustra mejor?</div>
+    <div class="opts"><span class="mc-opt" data-k="A">A · Caja negra y falta de transparencia</span><span class="mc-opt" data-k="B">B · Priorización de tareas</span><span class="mc-opt" data-k="C">C · Ambigüedad del lenguaje natural</span><span class="mc-opt" data-k="D">D · Palabras clave en inglés</span></div></div>
+  <div class="q-a"><b>A.</b> Es el caso <b>&ldquo;Predictive inequity in object detection&rdquo;</b> (Georgia Tech) del libro: por la naturaleza de <b>caja negra</b> fue mucho más difícil <b>volver atrás y corregir</b> el algoritmo.</div>
+
+  <div class="mc-q" data-ans="D"><div class="mc-txt"><b>10.</b> El algoritmo de riesgo penal daba puntuaciones más altas a personas de comunidades de bajos ingresos porque venían de zonas con muchos casos judiciales. ¿Cuál de las dos causas del sesgo ilustra?</div>
+    <div class="opts"><span class="mc-opt" data-k="A">A · Que los algoritmos no son emocionales</span><span class="mc-opt" data-k="B">B · Que los desarrolladores no saben programar</span><span class="mc-opt" data-k="C">C · Que el algoritmo tiene demasiadas entradas</span><span class="mc-opt" data-k="D">D · Datos históricos sesgados: hereda el sesgo de los juicios humanos anteriores</span></div></div>
+  <div class="q-a"><b>D.</b> El ML aprende de <b>conjuntos de datos históricos</b> y adopta el <b>sesgo ya existente</b> en la sociedad (causa 2: datos de entrenamiento sesgados o incompletos). El caso completo está en el Bloque 7 (Harvard Gazette 2020).</div>
+</div>
+
+<div class="main-content">
+  <div class="qz-part">Parte C &middot; Relaciona</div>
+
+  <table class="cmp d3" style="max-width:100%">
+    <tr><th style="width:50%">Columna A</th><th>Columna B</th></tr>
+    <tr><td><b>1.</b> Ada Lovelace</td><td><b>a.</b> Condiciones o bucles en un flowchart</td></tr>
+    <tr><td><b>2.</b> Rombo (diamond)</td><td><b>b.</b> Primer algoritmo informático (1840s)</td></tr>
+    <tr><td><b>3.</b> Recidivism</td><td><b>c.</b> Ordenamiento más básico, intercambia adyacentes</td></tr>
+    <tr><td><b>4.</b> Bubble sort</td><td><b>d.</b> Tendencia a reincidir (glosario del libro)</td></tr>
+  </table>
+  <span class="reveal-btn">Ver pauta</span>
+  <div class="q-a"><b>Pauta:</b> 1&ndash;b (Ada Lovelace &rarr; primer algoritmo informático para el Motor Analítico), 2&ndash;a (rombo &rarr; condición o bucle), 3&ndash;d (recidivism &rarr; tendencia a reincidir), 4&ndash;c (bubble sort &rarr; intercambia elementos adyacentes en un bucle).</div>
+
+  <div class="qz-part">Parte D &middot; Las 3 preguntas de examen del libro (Paper 1, core)</div>
+  <div class="info-card">
+    <h4>Conjunto completo del libro, con pauta</h4>
+    <ol style="margin-left:17px">
+      <li style="font-size:11.5px;margin-bottom:4px;color:#334155"><b>Outline</b> two characteristics of an algorithm. <i>[4 marks]</i> — Pauta en el Bloque 2.</li>
+      <li style="font-size:11.5px;margin-bottom:4px;color:#334155"><b>Outline</b> two common components found in an algorithm. <i>[4 marks]</i> — Pauta en el Bloque 3.</li>
+      <li style="font-size:11.5px;color:#334155"><b>Explain</b> why programmers may prefer to plan out the algorithm using a flowchart compared to natural language. <i>[6 marks]</i> — Pauta en el Bloque 4.</li>
+    </ol>
+    <p class="ic-sub">Las pautas completas están desplegadas en su bloque correspondiente: vuelve a ellas después de responder.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ CIERRE ═══════════════ -->
+<div class="ending">
+  <div class="end-quote">&ldquo;¿Hasta qué punto debería la sociedad permitir que los algoritmos reemplacen la toma de decisiones humana?&rdquo;
+    <span style="display:block;font-size:12px;font-family:'Inter','Liberation Sans',sans-serif;margin-top:12px;font-style:normal;color:#93A9C9">— Pregunta de reflexión del libro (3.2, learner profile: <i>Inquirers</i>)</span></div>
+  <div class="end-checks">
+    <div class="end-check"><span class="tick">✓</span><p><b>Defino</b> algoritmo con las palabras del libro y explico eficacia frente a eficiencia.</p></div>
+    <div class="end-check"><span class="tick">✓</span><p><b>Listo</b> las 7 características y los 4 componentes, cada uno con su ejemplo del libro.</p></div>
+    <div class="end-check"><span class="tick">✓</span><p><b>Comparo</b> las 3 representaciones y dibujo un flowchart con rectángulos, rombos y flechas.</p></div>
+    <div class="end-check"><span class="tick">✓</span><p><b>Explico</b> PageRank, priorización (3 pasos) y regla de asociación con sus repercusiones y dilemas.</p></div>
+    <div class="end-check"><span class="tick">✓</span><p><b>Analizo</b> los 3 dilemas —juicio humano, sesgo (2 causas), caja negra— con los casos: tribunales, función renal, vehículos autónomos y Deep Patient.</p></div>
+    <div class="end-check"><span class="tick">✓</span><p><b>Resuelvo</b> un caso inédito con la cadena: tecnología &rarr; repercusiones &rarr; dilema &rarr; concepto del curso.</p></div>
+  </div>
+  <div class="end-foot">Material de repaso NM &middot; Sociedad Digital IB &middot; Contenido 3.2 <i>Algorithms and code</i> — basado en Bomfim et al., <i>Digital Society</i>, Hodder Education 2022 (pp.&nbsp;80&ndash;91). Excluye monografía, evaluación interna y Paper 3. Los tres casos de práctica son escenarios inéditos creados para este repaso. En la versión HTML las fichas rápidas, las pautas y el quiz son interactivos.</div>
+</div>
+
+<script>
+(function () {
+  // Fichas rápidas: clic para voltear
+  document.querySelectorAll('.fc').forEach(function (c) {
+    c.addEventListener('click', function () { c.classList.toggle('flipped'); });
+  });
+  // Pautas desplegables
+  document.querySelectorAll('.reveal-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var a = b.nextElementSibling;
+      if (!a || !a.classList.contains('q-a')) return;
+      var open = a.classList.toggle('open');
+      b.textContent = open ? 'Ocultar pauta' : 'Ver pauta';
+    });
+  });
+  // Verdadero / Falso
+  document.querySelectorAll('.vf-row').forEach(function (row) {
+    var ans = (row.getAttribute('data-ans') || '').trim().toUpperCase();
+    row.querySelectorAll('.vf-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        row.querySelectorAll('.vf-btn').forEach(function (x) { x.classList.remove('sel'); });
+        btn.classList.add('sel');
+        row.classList.remove('ok', 'bad');
+        void row.offsetWidth;
+        row.classList.add(btn.textContent.trim().toUpperCase() === ans ? 'ok' : 'bad');
+        var a = row.nextElementSibling;
+        if (a && a.classList.contains('q-a')) a.classList.add('open');
+      });
+    });
+  });
+  // Opción múltiple
+  document.querySelectorAll('.mc-q').forEach(function (q) {
+    var ans = (q.getAttribute('data-ans') || '').trim().toUpperCase();
+    var opts = q.querySelectorAll('.mc-opt');
+    opts.forEach(function (o) {
+      o.addEventListener('click', function () {
+        opts.forEach(function (x) { x.classList.remove('sel', 'right', 'wrong'); });
+        o.classList.add('sel');
+        opts.forEach(function (x) {
+          var xl = (x.getAttribute('data-k') || '').trim().toUpperCase();
+          if (xl === ans) x.classList.add('right');
+          else if (x === o) x.classList.add('wrong');
+        });
+        var a = q.nextElementSibling;
+        if (a && a.classList.contains('q-a')) a.classList.add('open');
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
