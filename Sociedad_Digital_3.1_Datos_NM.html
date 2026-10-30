@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>DATOS — Material de repaso IB Digital Society (NM)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<script>
+/* Este documento no contiene fórmulas matemáticas. Los "US$" son moneda, no delimitadores:
+   se registra un stub para que el conversor no inyecte KaTeX ni reescriba montos. */
+window.renderMathInElement = function () {};
+</script>
+<style>
+/* ═══════════ PÁGINAS ═══════════ */
+@page { size: 794px 1123px; margin: 48px 0 52px 0; }
+@page fullbleed { size: 794px 1123px; margin: 0; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #F8FAFC; --card: #FFFFFF; --ink: #1E293B; --muted: #64748B;
+  --line: #E2E8F0; --navy: #1E3A5F; --navy2: #2D4A6F;
+  --u1: #3B82F6; --u1-bg: #EFF6FF; --u1-tx: #1E40AF;
+  --u2: #8B5CF6; --u2-bg: #F5F3FF; --u2-tx: #5B21B6;
+  --u3: #14B8A6; --u3-bg: #F0FDFA; --u3-tx: #134E4A;
+  --u4: #F59E0B; --u4-bg: #FFF7ED; --u4-tx: #92400E;
+  --slate: #64748B; --slate-bg: #F1F5F9; --slate-tx: #334155;
+}
+html, body {
+  margin: 0; padding: 0; width: 794px;
+  background: var(--bg); color: var(--ink);
+  font-family: 'Inter', 'Liberation Sans', sans-serif;
+  font-size: 12.5px; line-height: 1.55;
+  overflow-wrap: break-word;
+}
+@media screen {
+  html { height: auto; display: flex; justify-content: center; background: #E2E8F0; }
+  body { transform: scale(1); transform-origin: top center; margin: 20px auto; box-shadow: 0 2px 24px rgba(15,23,42,.18); }
+}
+
+/* ═══════════ PORTADA / CIERRE (full-bleed) ═══════════ */
+.cover {
+  page: fullbleed; width: 794px; height: 1123px;
+  background: linear-gradient(158deg, #16283F 0%, #1E3A5F 46%, #2D4A6F 100%);
+  color: #F1F5F9; position: relative;
+  display: flex; flex-direction: column;
+  padding: 54px 58px; break-after: page;
+}
+.cover .deco-circle {
+  position: absolute; border-radius: 50%;
+  border: 1.5px solid rgba(148,163,184,.28);
+}
+.cover .dc1 { width: 300px; height: 300px; right: 40px; top: 60px; }
+.cover .dc2 { width: 190px; height: 190px; right: 118px; top: 138px; border-color: rgba(148,163,184,.18); }
+.cover .dc3 { width: 120px; height: 120px; left: 44px; bottom: 150px; border-color: rgba(148,163,184,.15); }
+.cover-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+  color: #93C5FD; text-transform: uppercase;
+}
+.cover-badge::before { content: ''; width: 34px; height: 2px; background: #3B82F6; }
+.cover-center { margin: auto 0; position: relative; z-index: 2; }
+.cover-kicker {
+  font-size: 12px; font-weight: 600; letter-spacing: 3px;
+  color: #A5B4CC; text-transform: uppercase; margin-bottom: 16px;
+}
+.cover-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 88px; font-weight: 800; line-height: 1.02;
+  color: #FFFFFF; margin-bottom: 12px;
+}
+.cover-sub {
+  font-size: 19px; font-weight: 500; color: #C7D2E4; margin-bottom: 6px;
+}
+.cover-sub-en { font-size: 13px; color: #8FA3C2; font-style: italic; margin-bottom: 30px; }
+.cover-chips { display: flex; flex-wrap: wrap; gap: 10px; max-width: 100%; }
+.cchip {
+  background: rgba(59,130,246,.13); border: 1px solid rgba(147,197,253,.35);
+  color: #DCE7F7; border-radius: 20px; padding: 7px 15px;
+  font-size: 11.5px; font-weight: 600;
+}
+.cchip b { color: #FFFFFF; font-weight: 800; }
+.cover-3cs {
+  margin-top: 34px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 16px 18px; border: 1px solid rgba(148,163,184,.25); border-radius: 12px;
+  background: rgba(15,23,42,.25); max-width: 100%;
+}
+.cover-3cs .box {
+  border-radius: 8px; padding: 8px 13px; font-size: 11.5px; font-weight: 700;
+  letter-spacing: .4px;
+}
+.cover-3cs .arrow { color: #64748B; font-size: 13px; font-weight: 400; }
+.bx1 { background: rgba(59,130,246,.22); color: #BFDBFE; }
+.bx2 { background: rgba(139,92,246,.22); color: #DDD6FE; }
+.bx3 { background: rgba(20,184,166,.22); color: #99F6E4; }
+.bx4 { background: rgba(245,158,11,.20); color: #FDE68A; }
+.cover-foot { position: relative; z-index: 2; }
+.cover-scope {
+  font-size: 11px; color: #94A7C4; line-height: 1.6;
+  border-top: 1px solid rgba(148,163,184,.22); padding-top: 16px;
+}
+.cover-scope b { color: #CBD8EC; font-weight: 600; }
+.cover-edition {
+  margin-top: 12px; font-size: 10.5px; color: #6E82A3; letter-spacing: 1.2px;
+  text-transform: uppercase; font-weight: 600;
+}
+
+/* ═══════════ CONTENIDO (flujo) ═══════════ */
+.main-content { padding: 0 56px; }
+.section-head { break-after: avoid; break-inside: avoid; margin-bottom: 14px; }
+.section-kicker {
+  font-size: 10.5px; font-weight: 800; letter-spacing: 2.2px;
+  text-transform: uppercase; color: var(--u1); margin-bottom: 4px;
+}
+.section-kicker.k2 { color: var(--u2); } .section-kicker.k3 { color: var(--u3); } .section-kicker.k4 { color: var(--u4); }
+.section-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 27px; font-weight: 800; color: var(--ink); line-height: 1.15;
+}
+.section-sub { font-size: 12.5px; color: var(--muted); margin-top: 5px; }
+.divider { height: 3px; width: 56px; background: var(--u1); border-radius: 2px; margin: 12px 0 4px; }
+.divider.d2 { background: var(--u2); } .divider.d3 { background: var(--u3); } .divider.d4 { background: var(--u4); }
+
+p.body-text { font-size: 12.5px; color: #334155; margin-bottom: 9px; }
+p.body-text b { color: var(--ink); }
+.new-page { break-before: page; }
+.en-term { color: var(--muted); font-style: italic; }
+
+/* Bloque numerado */
+.block-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 8px; color: #fff;
+  font-size: 13px; font-weight: 800; margin-right: 9px; vertical-align: middle;
+  background: var(--u1);
+}
+.bn2 { background: var(--u2); } .bn3 { background: var(--u3); } .bn4 { background: var(--u4); }
+
+/* Tarjetas informativas */
+.info-card {
+  break-inside: avoid; background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; padding: 13px 16px; margin-bottom: 10px;
+}
+.info-card h4 { font-size: 13px; font-weight: 800; color: var(--navy); margin-bottom: 5px; }
+.info-card p { font-size: 12px; color: #475569; }
+.info-card .ic-sub { font-size: 11px; color: var(--muted); margin-top: 3px; }
+
+/* Cita */
+.quote {
+  break-inside: avoid; border-left: 3px solid var(--navy2); background: #EDF2F9;
+  padding: 9px 14px; border-radius: 0 8px 8px 0; font-size: 11.5px;
+  color: #334155; font-style: italic; margin: 8px 0 10px;
+}
+.quote b { color: var(--navy); font-style: normal; }
+
+/* Caso real */
+.case {
+  break-inside: avoid; background: var(--u4-bg); border: 1px solid #FDE68A;
+  border-radius: 10px; padding: 10px 14px 9px; margin: 8px 0 10px;
+}
+.case-tag {
+  display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: 1.6px;
+  color: var(--u4-tx); text-transform: uppercase; margin-bottom: 3px;
+}
+.case p { font-size: 11.5px; color: #4B5563; line-height: 1.5; }
+.case p b { color: var(--ink); }
+.case .case-src { font-size: 10px; color: #A16207; margin-top: 3px; }
+
+/* Grid de fichas a dos columnas */
+.fgrid { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; max-width: 100%; }
+.fgrid .ficha { flex: 1 1 320px; min-width: 300px; max-width: 100%; margin-bottom: 0; }
+
+/* ═══════════ FICHAS DE REPASO ═══════════ */
+.ficha {
+  break-inside: avoid; background: var(--card);
+  border: 1px solid var(--line); border-left: 4px solid var(--u1);
+  border-radius: 10px; padding: 12px 15px 10px; margin-bottom: 10px;
+}
+.ficha.u2 { border-left-color: var(--u2); }
+.ficha.u3 { border-left-color: var(--u3); }
+.ficha.u4 { border-left-color: var(--u4); }
+.ficha-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+.ficha-num {
+  font-size: 10px; font-weight: 800; color: var(--u1-tx);
+  background: var(--u1-bg); border-radius: 5px; padding: 2px 7px;
+}
+.u2 .ficha-num { color: var(--u2-tx); background: var(--u2-bg); }
+.u3 .ficha-num { color: var(--u3-tx); background: var(--u3-bg); }
+.u4 .ficha-num { color: var(--u4-tx); background: var(--u4-bg); }
+.ficha-title { font-size: 15px; font-weight: 800; color: var(--ink); }
+.ficha-en { font-size: 11.5px; color: var(--muted); font-style: italic; }
+.ficha-def {
+  font-size: 12px; color: #334155; margin-bottom: 7px;
+  padding-bottom: 7px; border-bottom: 1px dashed var(--line);
+}
+.ficha-def b { color: var(--ink); }
+.ficha h5 {
+  font-size: 10px; font-weight: 800; letter-spacing: 1.6px;
+  text-transform: uppercase; color: var(--u1); margin: 7px 0 4px;
+}
+.u2 .ficha h5 { color: var(--u2); } .u3 .ficha h5 { color: var(--u3-tx); } .u4 .ficha h5 { color: var(--u4-tx); }
+.ficha ul { list-style: none; }
+.ficha li {
+  font-size: 11.5px; color: #475569; padding-left: 13px;
+  position: relative; margin-bottom: 2.5px; line-height: 1.42;
+}
+.ficha li::before {
+  content: ''; position: absolute; left: 0; top: 7px;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--u1);
+}
+.u2 .ficha li::before { background: var(--u2); }
+.u3 .ficha li::before { background: var(--u3); }
+.u4 .ficha li::before { background: var(--u4); }
+.ficha li b { color: var(--ink); font-weight: 700; }
+.vocab-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; max-width: 100%; }
+.chip {
+  font-size: 10px; font-weight: 600; color: #475569;
+  background: var(--slate-bg); border: 1px solid var(--line);
+  border-radius: 10px; padding: 2.5px 9px; white-space: nowrap;
+}
+.chip b { color: var(--navy); font-weight: 700; }
+
+/* ═══════════ TARJETA DE TECNOLOGÍA (seguridad) ═══════════ */
+.tcard {
+  break-inside: avoid; background: var(--card);
+  border: 1px solid var(--line); border-left: 4px solid var(--u3);
+  border-radius: 10px; padding: 12px 15px 8px; margin-bottom: 11px;
+}
+.tcard-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 5px; }
+.tcard-num {
+  font-size: 10px; font-weight: 800; color: var(--u3-tx);
+  background: var(--u3-bg); border-radius: 5px; padding: 2px 7px;
+}
+.tcard-title { font-size: 15px; font-weight: 800; color: var(--ink); }
+.tcard-en { font-size: 11px; color: var(--muted); font-style: italic; }
+.trow { display: flex; gap: 10px; padding: 4.5px 0; }
+.trow + .trow { border-top: 1px dashed #EEF2F7; }
+.tlabel {
+  flex: 0 0 92px; font-size: 9px; font-weight: 800; letter-spacing: 1.1px;
+  text-transform: uppercase; color: var(--u3-tx); padding-top: 2.5px;
+}
+.tlabel.warn { color: var(--u4-tx); }
+.tbody { flex: 1; font-size: 11.5px; color: #475569; line-height: 1.45; }
+.tbody b { color: var(--ink); }
+.tbody ul { list-style: none; margin: 1px 0; }
+.tbody li {
+  font-size: 11.5px; color: #475569; padding-left: 12px;
+  position: relative; margin-bottom: 2px; line-height: 1.42;
+}
+.tbody li::before {
+  content: ''; position: absolute; left: 0; top: 7px;
+  width: 4.5px; height: 4.5px; border-radius: 50%; background: var(--u3);
+}
+.tbody li b { color: var(--ink); font-weight: 700; }
+
+/* ═══════════ DIAGRAMAS ═══════════ */
+/* Pirámide DIKW */
+.dikw { margin: 10px auto 6px; max-width: 560px; break-inside: avoid; }
+.dikw-row {
+  margin: 0 auto 4px; border-radius: 8px; padding: 7px 12px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  color: #fff; text-align: center;
+}
+.dikw-w { font-weight: 800; font-size: 12.5px; white-space: nowrap; }
+.dikw-t { font-size: 10px; opacity: .92; }
+.dikw-1 { width: 46%; background: #16283F; }
+.dikw-2 { width: 64%; background: var(--navy2); }
+.dikw-3 { width: 82%; background: var(--u1); }
+.dikw-4 { width: 100%; background: var(--slate); }
+.dikw-cap { text-align: center; font-size: 10px; color: var(--muted); margin-top: 5px; }
+
+/* Ciclo de vida (5 etapas) */
+.lifecycle { display: flex; align-items: stretch; gap: 5px; margin: 12px 0 6px; break-inside: avoid; }
+.lc-step {
+  flex: 1 1 0; background: #fff; border: 1px solid var(--line);
+  border-top: 3px solid var(--u2); border-radius: 9px;
+  padding: 8px 7px 7px; text-align: center;
+}
+.lc-n {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; border-radius: 50%; background: var(--u2);
+  color: #fff; font-size: 10px; font-weight: 800; margin-bottom: 3px;
+}
+.lc-t { font-size: 10.5px; font-weight: 800; color: var(--ink); line-height: 1.2; }
+.lc-t small { display: block; font-weight: 600; color: var(--u2-tx); font-size: 8.5px; letter-spacing: .5px; }
+.lc-d { font-size: 9.5px; color: var(--muted); line-height: 1.35; margin-top: 3px; }
+.lc-arrow { align-self: center; color: #94A3B8; font-size: 13px; flex: 0 0 auto; }
+
+/* 4V de big data */
+.vgrid { display: flex; flex-wrap: wrap; gap: 9px; margin: 10px 0; max-width: 100%; }
+.vcard {
+  flex: 1 1 46%; min-width: 300px; max-width: 100%;
+  background: var(--u4-bg); border: 1px solid #FDE68A; border-radius: 9px;
+  padding: 9px 13px; break-inside: avoid;
+}
+.vcard .vletter { font-size: 19px; font-weight: 900; color: var(--u4); line-height: 1; }
+.vcard .vname { font-size: 12px; font-weight: 800; color: var(--u4-tx); }
+.vcard .ven { font-size: 10px; color: var(--muted); font-style: italic; }
+.vcard p { font-size: 11px; color: #4B5563; line-height: 1.45; margin-top: 3px; }
+
+/* Mini-ERD */
+.erd { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 8px 0 4px; break-inside: avoid; }
+.erd-table { border: 1.5px solid var(--u2); border-radius: 8px; overflow: hidden; font-size: 10px; min-width: 178px; background: #fff; }
+.erd-table .et-h {
+  background: var(--u2-bg); color: var(--u2-tx); font-weight: 800;
+  padding: 4px 10px; font-size: 10.5px; border-bottom: 1px solid var(--line);
+}
+.erd-table .et-r {
+  padding: 2.5px 10px; color: #475569; border-bottom: 1px dashed #EEF2F7;
+  display: flex; justify-content: space-between; gap: 8px;
+}
+.erd-table .et-r:last-child { border-bottom: none; }
+.erd-table .et-t { color: var(--muted); font-size: 9px; }
+.erd-link { font-size: 9px; color: var(--muted); text-align: center; line-height: 1.35; }
+.erd-line { width: 44px; border-top: 2px dashed #C7D2E4; position: relative; }
+.erd-line::after {
+  content: ''; position: absolute; right: -1px; top: -4.5px;
+  border-left: 7px solid #C7D2E4; border-top: 4.5px solid transparent; border-bottom: 4.5px solid transparent;
+}
+
+/* Clasificación de datos */
+.clasif { display: flex; flex-wrap: wrap; gap: 9px; margin: 8px 0 10px; max-width: 100%; }
+.cl-card {
+  flex: 1 1 46%; min-width: 300px; max-width: 100%;
+  background: #fff; border: 1px solid var(--line); border-radius: 9px;
+  padding: 9px 13px; break-inside: avoid;
+}
+.cl-card .cl-name { font-size: 12px; font-weight: 800; color: var(--navy); }
+.cl-card .cl-risk {
+  float: right; font-size: 8.5px; font-weight: 800; letter-spacing: .8px;
+  text-transform: uppercase; border-radius: 8px; padding: 2px 8px; margin-top: 1px;
+}
+.r-low { background: #DCFCE7; color: #166534; }
+.r-high { background: #FEE2E2; color: #991B1B; }
+.cl-card p { font-size: 10.5px; color: #475569; line-height: 1.45; margin-top: 3px; clear: none; }
+
+/* ═══════════ TABLAS ═══════════ */
+table.cmp { width: 100%; border-collapse: collapse; font-size: 11px; break-inside: avoid; margin: 8px 0 12px; }
+table.cmp th {
+  background: var(--navy); color: #fff; font-weight: 700;
+  padding: 6.5px 9px; text-align: left; font-size: 10.5px;
+}
+table.cmp td { border: 1px solid var(--line); padding: 6px 9px; color: #334155; vertical-align: top; }
+table.cmp tr:nth-child(even) td { background: #F8FAFC; }
+table.cmp td b { color: var(--navy); }
+table.cmp td .en-term { font-size: 10px; }
+table.cmp.d3 th { background: var(--u3); }
+table.cmp.d4 th { background: var(--u4); }
+
+/* ═══════════ AUTOEVALUACIÓN ═══════════ */
+.quiz-card {
+  break-inside: avoid; background: var(--u1-bg);
+  border: 1px solid #BFDBFE; border-radius: 10px; padding: 12px 16px; margin: 12px 0 6px;
+}
+.quiz-card.q2 { background: var(--u2-bg); border-color: #DDD6FE; }
+.quiz-card.q3 { background: var(--u3-bg); border-color: #99F6E4; }
+.quiz-card.q4 { background: var(--u4-bg); border-color: #FDE68A; }
+.quiz-card h4 {
+  font-size: 11px; font-weight: 800; letter-spacing: 1.8px;
+  text-transform: uppercase; color: var(--u1-tx); margin-bottom: 6px;
+}
+.quiz-card.q2 h4 { color: var(--u2-tx); } .quiz-card.q3 h4 { color: var(--u3-tx); } .quiz-card.q4 h4 { color: var(--u4-tx); }
+.quiz-card ol { margin-left: 16px; }
+.quiz-card li { font-size: 11.5px; color: #334155; margin-bottom: 3.5px; }
+
+/* ═══════════ PÁGINAS DE MAPAS (full-bleed) ═══════════ */
+.map-page {
+  page: fullbleed; width: 794px; height: 1123px;
+  break-after: page; padding: 26px 20px 20px;
+  background: #FFFFFF; position: relative;
+  display: flex; flex-direction: column;
+}
+.map-head { margin-bottom: 6px; padding: 0 6px; }
+.map-kicker {
+  display: inline-block; font-size: 10px; font-weight: 800;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--u1-tx); background: var(--u1-bg);
+  border: 1px solid #BFDBFE; border-radius: 12px; padding: 3px 11px;
+}
+.map-kicker.k2 { color: var(--u2-tx); background: var(--u2-bg); border-color: #DDD6FE; }
+.map-kicker.k3 { color: var(--u3-tx); background: var(--u3-bg); border-color: #99F6E4; }
+.map-kicker.k4 { color: var(--u4-tx); background: var(--u4-bg); border-color: #FDE68A; }
+.map-kicker.k0 { color: var(--navy); background: #EDF2F9; border-color: #C9D7E8; }
+.map-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 25px; font-weight: 800; color: var(--ink); margin-top: 7px; line-height: 1.1;
+}
+.map-intro { font-size: 11.5px; color: var(--muted); margin-top: 4px; max-width: 660px; }
+
+.mindmap { position: relative; break-inside: avoid; display: flex; justify-content: center; align-items: center; flex: 1 1 auto; padding: 10px 0 6px; }
+.mindmap > svg.lines { position: absolute; top: 0; left: 0; pointer-events: none; z-index: 0; }
+
+.root-node {
+  background: linear-gradient(135deg, #1E3A5F, #2D4A6F);
+  color: #fff; font-size: 16.5px; font-weight: 800; line-height: 1.2;
+  padding: 15px 17px; border-radius: 13px; text-align: center;
+  white-space: nowrap; flex-shrink: 0; align-self: center;
+  box-shadow: 0 4px 12px rgba(30,58,95,.25); position: relative; z-index: 2;
+}
+.root-node small { display: block; font-size: 10px; font-weight: 600; color: #B7C6DC; letter-spacing: 1.5px; margin-top: 2px; }
+
+.branch-node {
+  font-size: 12.5px; font-weight: 700; line-height: 1.2;
+  padding: 8px 12px; border-radius: 8px; border: 2px solid;
+  white-space: normal; max-width: 142px; text-align: center;
+  flex-shrink: 0; position: relative; z-index: 2;
+}
+.branch-node small { display: block; font-size: 10px; font-weight: 600; opacity: .8; }
+.leaf {
+  font-size: 11.5px; font-weight: 500; color: #475569;
+  padding: 4.5px 11px; background: #FAFBFC;
+  border-radius: 11px; border: 1px solid #E2E8F0;
+  line-height: 1.3; white-space: normal; max-width: 138px;
+  width: fit-content; position: relative; z-index: 2;
+}
+.children { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.right-branches { display: flex; flex-direction: column; gap: 16px; }
+.right-branch { display: flex; align-items: flex-start; }
+.right-branch > .children { margin-left: 16px; padding-left: 8px; align-items: flex-start; }
+.left-branches { display: flex; flex-direction: column; gap: 16px; }
+.left-branch { display: flex; align-items: flex-start; flex-direction: row-reverse; }
+.left-branch > .children { margin-right: 16px; padding-right: 8px; align-items: flex-end; }
+
+/* Colores por bloque (mapas) */
+.b-u1 { background: var(--u1-bg); border-color: var(--u1); color: var(--u1-tx); }
+.b-u2 { background: var(--u2-bg); border-color: var(--u2); color: var(--u2-tx); }
+.b-u3 { background: var(--u3-bg); border-color: var(--u3); color: var(--u3-tx); }
+.b-u4 { background: var(--u4-bg); border-color: var(--u4); color: var(--u4-tx); }
+.b-navy { background: #EDF2F9; border-color: var(--navy2); color: var(--navy); }
+.b-slate { background: var(--slate-bg); border-color: var(--slate); color: var(--slate-tx); }
+
+.map-legend {
+  position: absolute; left: 20px; right: 20px; bottom: 18px;
+  display: flex; flex-wrap: wrap; gap: 7px 14px; align-items: center;
+  font-size: 10px; color: var(--muted);
+  border-top: 1px solid var(--line); padding-top: 10px;
+}
+.map-legend .lg { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; }
+.map-legend .dot { width: 9px; height: 9px; border-radius: 3px; }
+
+/* Cierre */
+.ending {
+  page: fullbleed; width: 794px; height: 1123px; break-before: page;
+  background: linear-gradient(158deg, #16283F 0%, #1E3A5F 46%, #2D4A6F 100%);
+  color: #F1F5F9; display: flex; flex-direction: column; justify-content: center;
+  padding: 60px; position: relative;
+}
+.end-quote {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 25px; font-weight: 600; font-style: italic;
+  line-height: 1.4; color: #E2E8F0; max-width: 560px; margin-bottom: 34px;
+}
+.end-checks { display: flex; flex-direction: column; gap: 10px; max-width: 560px; }
+.end-check {
+  display: flex; gap: 11px; align-items: flex-start;
+  border: 1px solid rgba(148,163,184,.28); border-radius: 10px;
+  padding: 11px 14px; background: rgba(15,23,42,.28);
+}
+.end-check .tick {
+  width: 19px; height: 19px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(59,130,246,.25); border: 1.5px solid #60A5FA;
+  color: #BFDBFE; font-size: 11px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.end-check p { font-size: 12px; color: #C7D2E4; }
+.end-check p b { color: #fff; }
+.end-foot { position: absolute; bottom: 52px; left: 60px; right: 60px;
+  border-top: 1px solid rgba(148,163,184,.22); padding-top: 14px;
+  font-size: 10px; color: #7C90B0; line-height: 1.6; }
+
+/* ═══════════ INTERACTIVIDAD Y NUEVOS COMPONENTES ═══════════ */
+.only-print { display: none; }
+@media print {
+  .only-print { display: block; }
+  .only-screen { display: none !important; }
+}
+
+/* Tabla grande de síntesis (puede saltar de página) */
+table.cmp.bigtable { break-inside: auto; font-size: 10.2px; }
+table.cmp.bigtable tr { break-inside: avoid; }
+table.cmp.bigtable th { font-size: 9.6px; padding: 6px 7px; }
+table.cmp.bigtable td { padding: 5.5px 7px; }
+
+/* Caso de práctica (inédito, estilo examen) */
+.practice {
+  break-inside: avoid; background: #FBFAFF;
+  border: 1.5px dashed #A78BFA; border-radius: 10px;
+  padding: 11px 14px 10px; margin: 9px 0 12px;
+}
+.practice-tag {
+  display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: 1.6px;
+  color: var(--u2-tx); text-transform: uppercase; margin-bottom: 3px;
+}
+.practice h4 { font-size: 13.5px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+.practice p.pctx { font-size: 11.4px; color: #475569; line-height: 1.5; margin-bottom: 6px; }
+.practice ol.pq { margin-left: 17px; margin-bottom: 3px; }
+.practice ol.pq li { font-size: 11.4px; color: #334155; margin-bottom: 3px; }
+.practice ol.pq i { color: var(--muted); }
+
+/* Botón de pauta + respuesta desplegable */
+.reveal-btn {
+  display: inline-block; margin-top: 5px; font-size: 10px; font-weight: 800;
+  letter-spacing: .8px; text-transform: uppercase; color: var(--u2-tx);
+  background: var(--u2-bg); border: 1px solid #DDD6FE; border-radius: 8px;
+  padding: 4px 12px; cursor: pointer; user-select: none;
+}
+.q-a {
+  display: none; background: #ECFDF5; border: 1px solid #A7F3D0;
+  border-radius: 8px; padding: 7px 11px; margin-top: 6px;
+  font-size: 10.6px; color: #065F46; line-height: 1.52; break-inside: avoid;
+}
+.q-a b { color: #064E3B; }
+.q-a.open { display: block; }
+@media print { .q-a { display: block !important; } .reveal-btn { display: none !important; } }
+
+/* Quiz: verdadero/falso */
+.qz-part {
+  font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase;
+  color: var(--navy); margin: 13px 0 4px; break-after: avoid;
+}
+.vf-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; break-inside: avoid; }
+.vf-row .vf-txt { flex: 1; font-size: 11.5px; color: #334155; }
+.vf-opts { display: flex; gap: 6px; flex: 0 0 auto; }
+.vf-btn {
+  font-size: 10px; font-weight: 800; border: 1.5px solid var(--line);
+  background: #fff; color: var(--muted); border-radius: 7px; padding: 2.5px 11px; cursor: pointer;
+}
+.vf-btn.sel { border-color: var(--u1); color: var(--u1-tx); background: var(--u1-bg); }
+.vf-row.ok .vf-btn.sel { border-color: #16A34A; color: #166534; background: #DCFCE7; }
+.vf-row.bad .vf-btn.sel { border-color: #DC2626; color: #991B1B; background: #FEE2E2; }
+
+/* Quiz: opción múltiple */
+.mc-q { padding: 5px 0; break-inside: avoid; }
+.mc-q .mc-txt { font-size: 11.5px; color: #334155; }
+.mc-q .opts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px; max-width: 100%; }
+.mc-opt {
+  font-size: 10.5px; border: 1.5px solid var(--line); background: #fff;
+  color: #475569; border-radius: 8px; padding: 3px 11px; cursor: pointer; white-space: nowrap;
+}
+.mc-opt.sel { border-color: var(--u1); color: var(--u1-tx); background: var(--u1-bg); font-weight: 700; }
+.mc-opt.right { border-color: #16A34A; background: #DCFCE7; color: #166534; font-weight: 700; }
+.mc-opt.wrong { border-color: #DC2626; background: #FEE2E2; color: #991B1B; }
+
+/* Fichas rápidas (flashcards) */
+.fc-grid { display: flex; flex-wrap: wrap; gap: 9px; margin: 10px 0 4px; max-width: 100%; }
+.fc { flex: 1 1 30.5%; min-width: 212px; max-width: 100%; break-inside: avoid; }
+.fc-inner { transform-style: preserve-3d; }
+.fc-face { border-radius: 10px; padding: 9px 12px; }
+.fc-front { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--u1); }
+.fc-back { background: var(--u1-bg); border: 1px solid #BFDBFE; border-top: 1px dashed #93C5FD; }
+.fc-q { font-size: 11.5px; font-weight: 700; color: var(--ink); line-height: 1.38; }
+.fc-a { font-size: 10.4px; color: #1E40AF; line-height: 1.42; }
+.fc-a b { color: #172554; }
+.fc-hint {
+  font-size: 8.5px; color: var(--muted); text-transform: uppercase;
+  letter-spacing: .9px; margin-top: 5px; font-weight: 700;
+}
+@media screen {
+  .fc { height: 134px; cursor: pointer; perspective: 1000px; }
+  .fc-inner { position: relative; width: 100%; height: 100%; transition: transform .45s; }
+  .fc.flipped .fc-inner { transform: rotateY(180deg); }
+  .fc-face {
+    position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .fc-back { transform: rotateY(180deg); }
+}
+@media print {
+  .fc-face + .fc-face { margin-top: 6px; }
+  .fc-hint { display: none; }
+}
+</style>
+</head>
+<body>
+<!-- ═══════════════ PORTADA ═══════════════ -->
+<div class="cover">
+  <div class="deco-circle dc1"></div>
+  <div class="deco-circle dc2"></div>
+  <div class="deco-circle dc3"></div>
+  <div class="cover-badge">IB Diploma Programme &middot; Digital Society</div>
+  <div class="cover-center">
+    <div class="cover-kicker">Repaso profundo por tema &middot; Contenido 3.1 &middot; Nivel Medio (NM)</div>
+    <div class="cover-title">Datos</div>
+    <div class="cover-sub">Datos y análisis de datos: del bit al big data</div>
+    <div class="cover-sub-en">Data and data analysis &middot; definitions, characteristics, technologies, cases, repercussions and dilemmas</div>
+    <div class="cover-chips">
+      <span class="cchip"><b>10</b> bloques temáticos</span>
+      <span class="cchip"><b>3</b> mapas mentales</span>
+      <span class="cchip"><b>38</b> fichas de repaso</span>
+      <span class="cchip"><b>30</b> fichas rápidas interactivas</span>
+      <span class="cchip"><b>10</b> tecnologías explicadas</span>
+      <span class="cchip"><b>9</b> casos reales + <b>3</b> de práctica</span>
+      <span class="cchip">Quiz final interactivo</span>
+    </div>
+    <div class="cover-3cs">
+      <span class="box bx1">Conceptos</span><span class="arrow">+</span>
+      <span class="box bx2">Contenido: datos</span><span class="arrow">+</span>
+      <span class="box bx3">Contextos</span><span class="arrow">&rarr;</span>
+      <span class="box bx4">Impactos e implicaciones</span>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <div class="cover-scope">
+      <b>Qué incluye:</b> definiciones, características y funcionamiento de cada tecnología; ciclo de vida de los datos;
+      seguridad, big data, repercusiones y dilemas por etapa y por tecnología; privacidad y RGPD; tres casos inéditos
+      de práctica; 30 fichas rápidas interactivas; quiz final con corrección.<br>
+      <b>Qué excluye:</b> monografía (extended essay), evaluación interna (inquiry project) y Paper 3.
+    </div>
+    <div class="cover-edition">Basado en Bomfim et al., Digital Society, Hodder Education 2022 &middot; Cap. 3.1</div>
+  </div>
+</div>
+
+<!-- ═══════════════ GUÍA + PANORAMA ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Cómo usar este material</div>
+    <div class="section-title">Panorama del tema: datos y análisis de datos</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Los <b>datos (data)</b> están en el corazón de cualquier sociedad digital: pueden ser tan pequeños como <b>un bit</b> (1 o 0 en binario) o tan grandes como el <b>big data</b> que se procesa en análisis masivos. Este material profundiza en el contenido <b>3.1 Data and data analysis</b> del curso de Sociedad Digital NM: qué son los datos, qué tipos existen, cómo se recogen, organizan, representan y protegen, qué tecnologías los trabajan y qué <b>dilemas y repercusiones</b> genera cada una de ellas.</p>
+
+  <p class="body-text"><b>Al final del tema debes comprender (understandings oficiales):</b> (1) que existen muchos tipos, usos y formas de representar los datos; (2) que el big data y la analítica extraen y procesan información útil de formas que a menudo son <b>imposibles para los humanos</b>; y (3) que hay <b>oportunidades y dilemas significativos</b> asociados a los datos en la sociedad digital.</p>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-1">
+      <div class="cs-name">Contenido (qué estudias)</div>
+      <p>El concepto de datos: del bit individual a los conjuntos masivos; su ciclo de vida y las tecnologías que los crean, guardan, analizan y protegen.</p>
+    </div>
+    <div class="cs-card cs-2">
+      <div class="cs-name">Conceptos (las lentes)</div>
+      <p>Aplica cambio, identidad, poder, sistemas y valores y ética: ¿quién controla tus datos? ¿cómo te definen? ¿qué cambia con el big data?</p>
+    </div>
+    <div class="cs-card cs-3">
+      <div class="cs-name">Contextos (dónde se aplica)</div>
+      <p>Los tipos de datos se conectan con los contextos del curso: economía (financiero), salud (médico), entorno (meteorológico y geográfico) y más.</p>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h4>Ruta del material (10 bloques + extras de examen)</h4>
+    <p><b>1.</b> Fundamentos: dato, información, conocimiento y sabiduría (pirámide DIKW) &middot; <b>2.</b> Tipos de datos &middot; <b>3.</b> Usos: minería y cruce de datos &middot; <b>4.</b> Ciclo de vida (5 etapas) &middot; <b>5.</b> Recolección y organización: bases de datos &middot; <b>6.</b> Representación y visualización &middot; <b>7.</b> Tecnologías de seguridad &middot; <b>8.</b> Big data y analítica &middot; <b>9.</b> Dilemas, privacidad y RGPD &middot; <b>+</b> Tabla síntesis de repercusiones y dilemas por tecnología. Para el examen: <b>3 casos inéditos</b> con pauta, <b>30 fichas rápidas</b> y un <b>quiz final</b> de 14 preguntas.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Método de estudio en 3 pasos</h4>
+    <p><b>1)</b> Recorre primero el mapa mental general (página siguiente) para fijar la estructura. &nbsp;<b>2)</b> Estudia bloque a bloque: cada ficha tiene la <b>definición</b>, el <b>funcionamiento</b> y el <b>caso real</b>; los términos en inglés aparecen en cursiva porque el examen los usa en ese idioma. &nbsp;<b>3)</b> Responde las autoevaluaciones de cada bloque, los tres casos de práctica y el quiz final; todas las preguntas usan <b>command terms</b> reales de Paper 1 con sus puntuaciones. En la versión HTML, las <b>fichas rápidas se voltean al hacer clic</b> y el quiz se corrige al instante.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ MAPA MENTAL GENERAL ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k0">Mapa 1 &middot; Visión general</span>
+    <div class="map-title">DATOS: el mapa completo del tema 3.1</div>
+    <div class="map-intro">Nueve ramas organizan todo lo que debes dominar. Usa este mapa como índice: cada rama corresponde a un bloque del material.</div>
+  </div>
+  <div class="mindmap">
+    <div class="root-node">DATOS<small>DATA &amp; DATA ANALYSIS</small></div>
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-navy">Fundamentos<small>DIKW</small></div>
+        <div class="children">
+          <div class="leaf">Dato (bit)</div>
+          <div class="leaf">Información</div>
+          <div class="leaf">Conocimiento</div>
+          <div class="leaf">Sabiduría</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u1">Tipos de datos</div>
+        <div class="children">
+          <div class="leaf">Financiero</div>
+          <div class="leaf">Médico</div>
+          <div class="leaf">Meteorológico</div>
+          <div class="leaf">Geográfico (GPS)</div>
+          <div class="leaf">Científico y metadata</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u1">Usos</div>
+        <div class="children">
+          <div class="leaf">Minería de datos</div>
+          <div class="leaf">Cruce de datos</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u2">Ciclo de vida</div>
+        <div class="children">
+          <div class="leaf">Creación</div>
+          <div class="leaf">Almacenamiento</div>
+          <div class="leaf">Uso</div>
+          <div class="leaf">Preservación</div>
+          <div class="leaf">Destrucción</div>
+        </div>
+      </div>
+    </div>
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u2">Recolección y organización</div>
+        <div class="children">
+          <div class="leaf">Primario vs secundario</div>
+          <div class="leaf">Bases de datos</div>
+          <div class="leaf">Validación y verificación</div>
+          <div class="leaf">Clasificación</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u2">Representación</div>
+        <div class="children">
+          <div class="leaf">Visualización</div>
+          <div class="leaf">Gráficos y tablas</div>
+          <div class="leaf">Infografías</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u3">Seguridad</div>
+        <div class="children">
+          <div class="leaf">Cifrado simétrico</div>
+          <div class="leaf">Cifrado asimétrico</div>
+          <div class="leaf">Enmascaramiento</div>
+          <div class="leaf">Borrado seguro</div>
+          <div class="leaf">Blockchain</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u4">Big data</div>
+        <div class="children">
+          <div class="leaf">Las 4 V</div>
+          <div class="leaf">Analítica</div>
+          <div class="leaf">Banca y deporte</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u4">Dilemas y privacidad</div>
+        <div class="children">
+          <div class="leaf">Sesgo y consentimiento</div>
+          <div class="leaf">Fiabilidad e integridad</div>
+          <div class="leaf">Anonimato</div>
+          <div class="leaf">RGPD (GDPR)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:#1E3A5F"></span>Fundamentos</span>
+    <span class="lg"><span class="dot" style="background:#3B82F6"></span>Tipos y usos</span>
+    <span class="lg"><span class="dot" style="background:#8B5CF6"></span>Ciclo, organización y representación</span>
+    <span class="lg"><span class="dot" style="background:#14B8A6"></span>Seguridad</span>
+    <span class="lg"><span class="dot" style="background:#F59E0B"></span>Big data y dilemas</span>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 1 · FUNDAMENTOS ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Bloque 1 &middot; Fundamentos</div>
+    <div class="section-title"><span class="block-num">1</span>De los datos a la sabiduría: la pirámide DIKW</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">En el lenguaje cotidiano <b>dato</b> e <b>información</b> se usan como sinónimos, pero en el curso debes distinguirlos con precisión: la información surge de procesar los datos, y de ella se derivan el conocimiento y la sabiduría. La <b>pirámide DIKW</b> (data, information, knowledge, wisdom) representa esa relación: cada nivel se construye sobre el anterior y responde a preguntas distintas, añadiendo valor paso a paso.</p>
+
+  <div class="dikw">
+    <div class="dikw-row dikw-1"><span class="dikw-w">Sabiduría</span><span class="dikw-t">¿por qué? · decidir y predecir</span></div>
+    <div class="dikw-row dikw-2"><span class="dikw-w">Conocimiento</span><span class="dikw-t">¿cómo? · aplicar para lograr un objetivo</span></div>
+    <div class="dikw-row dikw-3"><span class="dikw-w">Información</span><span class="dikw-t">¿quién, qué, dónde, cuándo? · contexto</span></div>
+    <div class="dikw-row dikw-4"><span class="dikw-w">Dato</span><span class="dikw-t">hechos crudos sin significado · bits y bytes</span></div>
+    <div class="dikw-cap">Pirámide DIKW: cada bloque se construye sobre el anterior y añade valor a los datos iniciales.</div>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">1.1</span><span class="ficha-title">Dato</span><span class="ficha-en">data</span></div>
+    <div class="ficha-def"><b>Definición:</b> colección de hechos y cifras <b>crudos y sin organizar</b>, en forma de números, letras, caracteres o imágenes. Es la unidad individual de material bruto, <b>sin significado propio</b>, y se mide en <b>bits y bytes</b>.</div>
+    <h5>Características y ejemplo</h5>
+    <ul>
+      <li><b>Crudo:</b> no procesado; por sí solo no dice nada útil.</li>
+      <li><b>Ejemplo del libro:</b> el <b>50</b> que registra un sensor de calor, o la nota <b>75</b> de una prueba.</li>
+    </ul>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">1.2</span><span class="ficha-title">Información</span><span class="ficha-en">information</span></div>
+    <div class="ficha-def"><b>Definición:</b> la <b>salida tras procesar, organizar o estructurar</b> los datos, para convertirlos en algo más fiable, medible y listo para visualizarse o analizarse.</div>
+    <h5>Características y ejemplo</h5>
+    <ul>
+      <li>Responde a <b>quién, qué, dónde y cuándo</b>; aporta el <b>contexto</b> que el dato no tiene.</li>
+      <li>Se mide en unidades concretas: el 50 del sensor pasa a ser <b>50 &deg;C</b>; la nota, un <b>75&nbsp;%</b>.</li>
+    </ul>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">1.3</span><span class="ficha-title">Conocimiento</span><span class="ficha-en">knowledge</span></div>
+    <div class="ficha-def"><b>Definición:</b> el <b>significado</b> que se deriva de la información y que se <b>aplica para lograr un objetivo</b>; responde al <b>cómo</b> se usa la información.</div>
+    <h5>Características y ejemplo</h5>
+    <ul>
+      <li>Un <b>meteorólogo</b> usa la información de lluvia para determinar si es probable una inundación.</li>
+      <li>Un <b>docente</b> usa los resultados de las pruebas para valorar el progreso de un estudiante.</li>
+    </ul>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">1.4</span><span class="ficha-title">Sabiduría</span><span class="ficha-en">wisdom</span></div>
+    <div class="ficha-def"><b>Definición:</b> la <b>aplicación del conocimiento en acción</b>; permite preguntar el <b>porqué</b>, tomar decisiones, detectar patrones y hacer predicciones.</div>
+    <h5>Características y ejemplo</h5>
+    <ul>
+      <li>El meteorólogo <b>predice una ola de calor</b> para el país; el docente fija la <b>nota prevista</b> del estudiante.</li>
+      <li>Es el nivel más alto de valor: los datos se convierten en decisiones que afectan a personas y comunidades.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="info-card">
+    <h4>Ejemplo integrador: del sensor a la decisión</h4>
+    <p><b>Dato:</b> 50 (valor crudo del sensor). &rarr; <b>Información:</b> 50&nbsp;&deg;C (temperatura con unidad y contexto). &rarr; <b>Conocimiento:</b> con esa temperatura y los datos de lluvia, el meteorólogo estima el riesgo de inundación. &rarr; <b>Sabiduría:</b> emite la alerta de ola de calor y recomienda medidas a la población. La misma lógica aplica a la nota 75 &rarr; 75&nbsp;% &rarr; diagnóstico pedagógico &rarr; nota prevista.</p>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">1.5</span><span class="ficha-title">Del bit al byte: cómo se mide un dato</span><span class="ficha-en">bits &amp; bytes</span></div>
+    <div class="ficha-def"><b>Idea clave:</b> un dato puede ser tan pequeño como <b>un bit</b> — un 1 o un 0 en binario — y los IT systems almacenan y transmiten todo en bits y bytes.</div>
+    <h5>Funcionamiento</h5>
+    <ul>
+      <li><b>Digital vs analógico:</b> los sensores suelen producir una señal <b>analógica (continua)</b> que debe convertirse en señal <b>digital</b> para que el ordenador la entienda.</li>
+      <li>Esa conversión la hace un <b>convertidor analógico-digital (ADC, analogue-to-digital converter)</b>: es el puente entre el mundo físico y el mundo de los datos.</li>
+      <li>Ejemplo: sensores de <b>temperatura, luz, presión, humedad, químicos y gases</b> miden una propiedad específica y envían la señal al ordenador.</li>
+    </ul>
+  </div>
+
+  <div class="info-card">
+    <h4>Pensamiento profundo: ¿pueden los ordenadores tener sabiduría?</h4>
+    <p>Los sistemas con <b>inteligencia artificial</b> pueden analizar patrones mejor que los humanos, pero dependen de <b>enormes cantidades de datos</b>. Muchas personas no saben que su <b>huella digital (digital footprint)</b> permite recoger datos personales: ¿qué datos se recogen de ti?, ¿con qué métodos?, ¿esos datos dan una imagen completa de lo que significa ser humano? Estas preguntas conectan los datos con la Teoría del Conocimiento (TOK) y con el concepto de identidad.</p>
+    <p class="ic-sub">Debate del libro: ¿habrá alguna vez demasiados datos? ¿Es posible que un ordenador tenga sabiduría? ¿Cómo definen nuestros datos nuestra identidad?</p>
+  </div>
+
+  <div class="quote">&ldquo;Puedes tener datos sin información, pero no puedes tener información sin datos.&rdquo; &mdash; <b>Daniel Keys Moran</b></div>
+
+  <div class="quiz-card">
+    <h4>Autoevaluación &middot; Bloque 1</h4>
+    <ol>
+      <li><b>Outline</b> los pasos que se necesitan para que un humano alcance la sabiduría a partir del conocimiento. <i>[4 marks]</i></li>
+      <li><b>Distinguish</b> entre conocimiento y dato. <i>[4 marks]</i></li>
+      <li>Un sensor registra &ldquo;23&rdquo;. Explica qué sería ese valor como información, conocimiento y sabiduría en una estación meteorológica.</li>
+    </ol>
+  </div>
+</div>
+<!-- ═══════════════ BLOQUE 2 · TIPOS DE DATOS ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Bloque 2 &middot; Tipos de datos</div>
+    <div class="section-title"><span class="block-num bn2">2</span>Seis tipos de datos que debes conocer</div>
+    <div class="divider d2"></div>
+  </div>
+
+  <p class="body-text">Los sistemas de tecnología de la información (IT systems) operan en contextos muy diversos —cultural, económico, ambiental y de salud— y crean, recogen y almacenan <b>tipos de datos distintos</b>. Un sistema financiero guarda datos <b>cuantitativos</b> (números que se pueden calcular), mientras que una encuesta de marketing recoge datos <b>cualitativos</b> (descriptivos). Estos tipos reaparecen en los contextos del curso, así que asócialos desde ya con su contexto.</p>
+
+  <div class="fgrid">
+    <div class="ficha u2">
+      <div class="ficha-head"><span class="ficha-num">2.1</span><span class="ficha-title">Datos financieros</span><span class="ficha-en">financial data</span></div>
+      <div class="ficha-def"><b>Definición:</b> información relacionada con las finanzas de una empresa: <b>estados de flujo de caja</b>, <b>balances</b> y <b>cuentas de pérdidas y ganancias</b>.</div>
+      <ul>
+        <li><b>Funcionamiento:</b> software especializado para analizarlos, generar informes y visualizarlos; una buena gestión garantiza el cumplimiento de regulaciones y requisitos legales.</li>
+        <li><b>Contexto:</b> se conecta con el capítulo 4.2 <i>Economic</i>.</li>
+      </ul>
+    </div>
+    <div class="ficha u2">
+      <div class="ficha-head"><span class="ficha-num">2.2</span><span class="ficha-title">Datos médicos</span><span class="ficha-en">medical data</span></div>
+      <div class="ficha-def"><b>Definición:</b> datos recogidos, analizados y almacenados durante la <b>atención continua del paciente</b>.</div>
+      <ul>
+        <li><b>Funcionamiento:</b> los hospitales mantienen <b>historiales electrónicos de salud</b> actualizados en cada visita; existen <b>registros de enfermedades</b> (Alzheimer, cáncer, diabetes, asma) y <b>ensayos clínicos</b> para probar nuevos tratamientos.</li>
+        <li><b>Contexto:</b> se conecta con el capítulo 4.4 <i>Health</i>.</li>
+      </ul>
+    </div>
+    <div class="ficha u2">
+      <div class="ficha-head"><span class="ficha-num">2.3</span><span class="ficha-title">Datos meteorológicos</span><span class="ficha-en">meteorological data</span></div>
+      <div class="ficha-def"><b>Definición:</b> datos sobre el tiempo y el clima recogidos con <b>instrumentos</b> y tecnologías de observación.</div>
+      <ul>
+        <li><b>Básicos:</b> termómetros, pluviómetros, barómetros y anemómetros.</li>
+        <li><b>Avanzados:</b> <b>radar doppler</b> (precipitación, rotación de nubes de tormenta, escombros de tornado), <b>radiosondas</b> en globos (atmósfera superior) y <b>satélites</b> que monitorizan la Tierra desde el espacio.</li>
+        <li><b>Usos:</b> previsión meteorológica, predicción de fenómenos extremos y modelización climática (contexto 4.3 <i>Environmental</i>).</li>
+      </ul>
+    </div>
+    <div class="ficha u2">
+      <div class="ficha-head"><span class="ficha-num">2.4</span><span class="ficha-title">Datos geográficos</span><span class="ficha-en">geospatial / location data</span></div>
+      <div class="ficha-def"><b>Definición:</b> datos sobre la <b>posición de un objeto</b> en un espacio geográfico.</div>
+      <ul>
+        <li><b>Funcionamiento:</b> se recogen con tecnologías <b>GPS</b>, que alimentan los servicios de localización del teléfono y las aplicaciones de mapas; tienen un abanico enorme de usos.</li>
+        <li><b>Riesgo:</b> acceder a ellos sin autorización genera investigaciones (ver caso de la policía australiana).</li>
+      </ul>
+    </div>
+    <div class="ficha u2">
+      <div class="ficha-head"><span class="ficha-num">2.5</span><span class="ficha-title">Datos científicos</span><span class="ficha-en">scientific data</span></div>
+      <div class="ficha-def"><b>Definición:</b> datos de la investigación publicada en <b>revistas revisadas por pares</b>; para apoyar una hipótesis, el científico recoge datos por <b>experimento</b> o por <b>observación</b>.</div>
+      <ul>
+        <li><b>Funcionamiento:</b> para automatizar la recogida se usan <b>sensores</b> (temperatura, luz, presión, humedad, gases) cuya señal analógica se convierte con un <b>ADC</b>.</li>
+        <li><b>Ciencia ciudadana:</b> personas corrientes aportan datos a proyectos colectivos (ver caso de las aves).</li>
+      </ul>
+    </div>
+    <div class="ficha u2">
+      <div class="ficha-head"><span class="ficha-num">2.6</span><span class="ficha-title">Metadata</span><span class="ficha-en">metadata</span></div>
+      <div class="ficha-def"><b>Definición:</b> un conjunto de datos que <b>describe y da información sobre otros datos</b> — &ldquo;los datos sobre los datos&rdquo;.</div>
+      <ul>
+        <li><b>Ejemplo:</b> un documento guarda su autor, el tamaño del archivo y la fecha de creación; una foto, el dispositivo y el lugar.</li>
+        <li><b>Por qué importa:</b> facilita buscar, organizar y clasificar; también puede revelar información sensible (se conecta con el capítulo 3.5 <i>Media</i>).</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="case">
+    <span class="case-tag">Caso real &middot; datos geográficos</span>
+    <p><b>Acceso no autorizado a datos de localización — Policía Federal Australiana (AFP):</b> en 2021 la AFP fue investigada por acceder a datos de localización sin la autorización correcta. Entre <b>2015 y 2020</b> hubo <b>1700 accesos</b> a datos de localización, de los cuales solo <b>100</b> cumplían los requisitos. <b>Repercusión:</b> pérdida de confianza pública y revisión de la legalidad del uso de metadata por parte del Estado. <b>Dilema:</b> ¿cuándo es legítimo que las autoridades accedan a la ubicación de las personas?</p>
+    <p class="case-src">Fuente: Information Age, Australian Computer Society (ia.acs.org.au)</p>
+  </div>
+
+  <div class="case">
+    <span class="case-tag">Caso real &middot; datos científicos</span>
+    <p><b>El auge de la observación de aves (2020&ndash;21):</b> durante la pandemia, con el teletrabajo, se disparó el interés por observar aves y los proyectos de ciencia ciudadana <b>duplicaron</b> sus usuarios registrados y los datos subidos: <b>Project Safe Flight</b> pedía registrar aves heridas al chocar contra ventanas y <b>eBird</b> permitía actualizar avistamientos por especie. <b>Repercusión:</b> los científicos detectaron cambios en el comportamiento de las aves. <b>Dilema de veracidad:</b> ¿el cambio se debe a un comportamiento real o simplemente al aumento de observadores?</p>
+    <p class="case-src">Fuente: Wired (wired.com/story/pandemic-bird-watching-created-a-data-boom-and-a-conundrum)</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Conexión con los contextos del curso</h4>
+    <p>Memoriza el emparejamiento tipo examen: <b>financiero &rarr; economía</b> (4.2), <b>médico &rarr; salud</b> (4.4), <b>meteorológico y geográfico &rarr; medio ambiente</b> (4.3), <b>metadata &rarr; medios</b> (3.5), <b>científico &rarr; IoT y conocimiento humano</b> (3.6/3.7, 4.5). En Paper 2, identificar el contexto correcto demuestra conexión entre contenido y contexto.</p>
+  </div>
+
+  <div class="quiz-card q2">
+    <h4>Autoevaluación &middot; Bloque 2</h4>
+    <ol>
+      <li><b>Outline</b> dos características de los datos médicos. <i>[4 marks]</i></li>
+      <li><b>Explain</b> cómo se recogen los datos meteorológicos con tecnologías avanzadas. <i>[6 marks]</i></li>
+      <li>Un proyecto de ciencia ciudadana duplica sus datos en un año. <b>Discuss</b> por qué esos datos pueden no ser fiables. <i>[6 marks]</i></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 3 · USOS DE LOS DATOS ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Bloque 3 &middot; Usos de los datos</div>
+    <div class="section-title"><span class="block-num">3</span>Minería y cruce: convertir datos en decisiones</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Con los <b>costes de almacenamiento en descenso</b> y los avances en almacenamiento e inteligencia artificial, las organizaciones pueden identificar <b>tendencias y patrones</b> en sus datos para informar sus decisiones: lo que antes tomaba meses calcularlo, ahora se hace <b>a velocidad y con mayor precisión</b>. Dos procesos aparecen una y otra vez en el examen: <i>data mining</i> y <i>data matching</i>.</p>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">3.1</span><span class="ficha-title">Minería de datos</span><span class="ficha-en">data mining</span></div>
+    <div class="ficha-def"><b>Definición:</b> el proceso de encontrar <b>patrones y correlaciones</b>, así como <b>anomalías</b>, dentro de grandes conjuntos de datos.</div>
+    <h5>Funcionamiento y repercusiones</h5>
+    <ul>
+      <li>Analiza un solo gran conjunto de datos para descubrir lo oculto: tendencias de mercado, comportamientos de clientes, valores atípicos.</li>
+      <li><b>Repercusión positiva:</b> mejores decisiones y servicios; <b>repercusión negativa:</b> puede perfilar a las personas sin que lo sepan.</li>
+    </ul>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">3.2</span><span class="ficha-title">Cruce de datos</span><span class="ficha-en">data matching</span></div>
+    <div class="ficha-def"><b>Definición:</b> el proceso de <b>comparar dos conjuntos de datos diferentes</b> con el objetivo de encontrar datos sobre la <b>misma entidad</b>.</div>
+    <h5>Funcionamiento y ejemplos</h5>
+    <ul>
+      <li><b>Comercio:</b> comparar el precio del mismo producto en distintas plataformas.</li>
+      <li><b>Fraude:</b> identificar transacciones sospechosas cruzando registros.</li>
+      <li><b>Medicina:</b> conectar factores ambientales con enfermedades, como la <b>exposición al sol y el cáncer de piel</b>.</li>
+    </ul>
+  </div>
+
+  <div class="case">
+    <span class="case-tag">Caso real &middot; empleo y salud</span>
+    <p><b>Análisis de datos en el empleo:</b> la IA puede analizar los datos de cuestionarios detallados para identificar qué empleados encajan en nuevas oportunidades. En el sector salud, el análisis de datos determina los <b>niveles de personal</b>: demasiados empleados generan <b>sobrecoste laboral</b>; demasiados pocos generan un entorno estresante y <b>bajan la calidad de la atención médica</b>. <b>Dilema:</b> ¿es justo que un algoritmo decida quién consigue un puesto o cuántos enfermeros trabaja un turno?</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Para el examen: matching ≠ mining</h4>
+    <p>Los <i>top tips</i> del libro insisten: <b>data mining</b> busca patrones <i>dentro</i> de un gran conjunto; <b>data matching</b> compara <i>dos</i> conjuntos para hallar la misma entidad. Confundirlos en un <i>define</i> o <i>distinguish</i> cuesta puntos directos.</p>
+  </div>
+
+  <div class="quiz-card">
+    <h4>Autoevaluación &middot; Bloque 3</h4>
+    <ol>
+      <li><b>Define</b> data mining y da un ejemplo de anomalía que podría detectar. <i>[2 marks]</i></li>
+      <li><b>Distinguish</b> entre data mining y data matching. <i>[4 marks]</i></li>
+      <li><b>Explain</b> cómo usa el sector salud el análisis de datos para fijar niveles de personal y qué problema intenta evitar. <i>[6 marks]</i></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 4 · CICLO DE VIDA ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Bloque 4 &middot; Ciclo de vida de los datos</div>
+    <div class="section-title"><span class="block-num bn2">4</span>Las cinco etapas del data life cycle</div>
+    <div class="divider d2"></div>
+  </div>
+
+  <p class="body-text">El <b>ciclo de vida de los datos (data life cycle)</b> tiene <b>cinco etapas</b>. Las organizaciones y los <b>data scientists</b> lo usan para gestionar el flujo de datos: mejora la <b>eficiencia</b> y ayuda a cumplir las regulaciones de <b>gobernanza de datos (data governance)</b>. Memorízalo como una secuencia: <b>creación &rarr; almacenamiento &rarr; uso &rarr; preservación &rarr; destrucción</b>.</p>
+
+  <div class="lifecycle">
+    <div class="lc-step"><span class="lc-n">1</span><div class="lc-t">Creación<small>CREATION</small></div><div class="lc-d">Entrada manual, formularios en línea o sensores</div></div>
+    <div class="lc-arrow">&rarr;</div>
+    <div class="lc-step"><span class="lc-n">2</span><div class="lc-t">Almacenamiento<small>STORAGE</small></div><div class="lc-d">Guardar y proteger; derechos de acceso</div></div>
+    <div class="lc-arrow">&rarr;</div>
+    <div class="lc-step"><span class="lc-n">3</span><div class="lc-t">Uso<small>USAGE</small></div><div class="lc-d">Ver, procesar, analizar y compartir</div></div>
+    <div class="lc-arrow">&rarr;</div>
+    <div class="lc-step"><span class="lc-n">4</span><div class="lc-t">Preservación<small>PRESERVATION</small></div><div class="lc-d">Mantener para decisiones y reutilización</div></div>
+    <div class="lc-arrow">&rarr;</div>
+    <div class="lc-step"><span class="lc-n">5</span><div class="lc-t">Destrucción<small>DESTRUCTION</small></div><div class="lc-d">Borrado seguro al fin del periodo de retención</div></div>
+  </div>
+
+  <div class="fgrid">
+    <div class="ficha u2">
+      <div class="ficha-head"><span class="ficha-num">4.1</span><span class="ficha-title">Etapa 1 · Creación</span><span class="ficha-en">data creation</span></div>
+      <div class="ficha-def"><b>Funcionamiento:</b> los nuevos datos nacen por <b>entrada manual</b> de un miembro de la organización, al completar un <b>formulario en línea</b>, o se recogen <b>automáticamente con sensores</b>. Los datos pueden adoptar muchos formatos (texto, números, imágenes, audio).</div>
+    </div>
+    <div class="ficha u2">
+      <div class="ficha-head"><span class="ficha-num">4.2</span><span class="ficha-title">Etapa 2 · Almacenamiento</span><span class="ficha-en">storage</span></div>
+      <div class="ficha-def"><b>Funcionamiento:</b> los datos deben guardarse y <b>protegerse</b> con el nivel de seguridad adecuado. La organización define <b>quién accede a qué</b> y con qué <b>derechos</b>: leer, modificar o control total.</div>
+    </div>
+    <div class="ficha u2">
+      <div class="ficha-head"><span class="ficha-num">4.3</span><span class="ficha-title">Etapa 3 · Uso</span><span class="ficha-en">usage</span></div>
+      <div class="ficha-def"><b>Funcionamiento:</b> los datos se ven en bruto, se <b>procesan</b> para presentarlos mejor, se extrae información específica y luego se <b>analizan o comparten</b>. Un IT system puede necesitar datos recogidos por otra organización o para otro fin, o dar acceso a <b>terceros</b>.</div>
+    </div>
+    <div class="ficha u2">
+      <div class="ficha-head"><span class="ficha-num">4.4</span><span class="ficha-title">Etapa 4 · Preservación</span><span class="ficha-en">preservation</span></div>
+      <div class="ficha-def"><b>Funcionamiento:</b> tras el análisis, la organización <b>conserva</b> los datos: sostienen el análisis y la toma de decisiones actuales y permiten su <b>reutilización futura</b>.</div>
+    </div>
+    <div class="ficha u2" style="flex-basis:100%">
+      <div class="ficha-head"><span class="ficha-num">4.5</span><span class="ficha-title">Etapa 5 · Destrucción</span><span class="ficha-en">destruction</span></div>
+      <div class="ficha-def"><b>Funcionamiento:</b> aunque a las organizaciones les gustaría conservar los datos para siempre, a medida que <b>crece el volumen crece el coste</b> de almacenamiento. El cumplimiento de las <b>regulaciones de protección de datos</b> puede exigir destruirlos cuando termina el <b>periodo de retención</b> acordado. La destrucción segura se explica en el Bloque 7 (data erasure).</div>
+    </div>
+  </div>
+
+  <div class="quiz-card q2">
+    <h4>Autoevaluación &middot; Bloque 4</h4>
+    <ol>
+      <li><b>Outline</b> las cinco etapas del ciclo de vida de los datos. <i>[4 marks]</i></li>
+      <li><b>Explain</b> dos razones por las que una organización debe destruir datos al final del ciclo. <i>[6 marks]</i></li>
+      <li>Elige un archivo de tu papelera de reciclaje y recorre sus cinco etapas: ¿cómo se creó?, ¿dónde se guardaba?, ¿para qué se usó?, ¿cuánto se preservó?, ¿por qué se destruyó?</li>
+    </ol>
+  </div>
+</div>
+<!-- ═══════════════ BLOQUE 5 · RECOLECCIÓN Y ORGANIZACIÓN ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Bloque 5 &middot; Recolección y organización</div>
+    <div class="section-title"><span class="block-num bn2">5</span>Datos primarios, secundarios y bases de datos</div>
+    <div class="divider d2"></div>
+  </div>
+
+  <p class="body-text">En la etapa de creación hay <b>dos grandes categorías</b> de datos según su origen. Y una vez recogidos, hay que <b>organizarlos</b>: para eso existen las <b>bases de datos (databases)</b>, que almacenan grandes volúmenes en un solo lugar y estructuran los datos en tablas para encontrar información de forma rápida.</p>
+
+  <div class="fgrid">
+    <div class="ficha u2">
+      <div class="ficha-head"><span class="ficha-num">5.1</span><span class="ficha-title">Datos primarios</span><span class="ficha-en">primary data</span></div>
+      <div class="ficha-def"><b>Definición:</b> datos <b>originales</b>, recogidos <b>por primera vez y para un propósito específico</b>.</div>
+      <ul>
+        <li><b>Ejemplos:</b> una entrevista para tu monografía; los datos que recogen las cámaras de un sistema de reconocimiento facial.</li>
+      </ul>
+    </div>
+    <div class="ficha u2">
+      <div class="ficha-head"><span class="ficha-num">5.2</span><span class="ficha-title">Datos secundarios</span><span class="ficha-en">secondary data</span></div>
+      <div class="ficha-def"><b>Definición:</b> datos que <b>ya fueron recogidos por otra persona</b> y para un <b>propósito diferente</b>.</div>
+      <ul>
+        <li><b>Ejemplos:</b> un sitio web o artículo de noticias que usas en tu monografía; el conjunto de <b>datos de entrenamiento (training data)</b> de un sistema de reconocimiento facial.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ficha u2">
+    <div class="ficha-head"><span class="ficha-num">5.3</span><span class="ficha-title">La base de datos: tablas, campos y registros</span><span class="ficha-en">database</span></div>
+    <div class="ficha-def"><b>Funcionamiento:</b> los datos se organizan y estructuran en <b>tablas</b>, formadas por <b>columnas (nombres de campo)</b> y <b>filas (registros)</b>. Una base de datos organiza datos sobre <b>entidades</b>: un libro, una película, una casa o un país.</div>
+    <h5>Al diseñarla</h5>
+    <ul>
+      <li>Decide qué <b>atributos</b> guardar de cada entidad: de un estudiante (entidad) → nombre, fecha de nacimiento, teléfono y dirección (atributos).</li>
+      <li>Los campos se definen con un <b>tamaño y un tipo de datos</b>: enteros, coma flotante, caracteres, cadenas (strings), booleanos y fechas — nombre y dirección serían <i>string</i>; la fecha de nacimiento, <i>date</i>.</li>
+      <li>Ventajas: muchos usuarios pueden acceder a la vez; es fácil añadir y modificar; se puede <b>ordenar</b> para presentar, <b>buscar</b> información concreta y <b>analizar</b> tendencias.</li>
+    </ul>
+  </div>
+
+  <div class="ficha u2">
+    <div class="ficha-head"><span class="ficha-num">5.4</span><span class="ficha-title">Base de datos relacional y diagrama ERD</span><span class="ficha-en">relational database</span></div>
+    <div class="ficha-def"><b>Definición:</b> base de datos con <b>más de una tabla</b>, vinculadas por su <b>clave primaria (primary key)</b> — un campo con valores únicos — y su correspondiente <b>clave externa (foreign key)</b>. Cada registro necesita un <b>identificador único</b>.</div>
+    <div class="erd">
+      <div class="erd-table">
+        <div class="et-h">PERFIL_PERSONAL</div>
+        <div class="et-r"><span>PersonalID</span><span class="et-t">autonum · PK</span></div>
+        <div class="et-r"><span>PostID</span><span class="et-t">número · FK</span></div>
+        <div class="et-r"><span>FotoPerfil</span><span class="et-t">imagen</span></div>
+        <div class="et-r"><span>Biografía</span><span class="et-t">texto</span></div>
+      </div>
+      <div>
+        <div class="erd-line"></div>
+        <div class="erd-link">se vinculan<br>por PostID<br>(1 : N)</div>
+      </div>
+      <div class="erd-table">
+        <div class="et-h">PUBLICACIÓN</div>
+        <div class="et-r"><span>PostID</span><span class="et-t">autonum · PK</span></div>
+        <div class="et-r"><span>Contenido</span><span class="et-t">texto</span></div>
+      </div>
+    </div>
+    <p style="font-size:10px;color:var(--muted);text-align:center;margin-top:2px">ERD simplificado de una red social: el perfil se vincula a sus publicaciones por el campo PostID.</p>
+  </div>
+</div>
+
+<div class="main-content">
+  <table class="cmp">
+    <tr><th style="width:18%">Aspecto</th><th style="width:41%">Validación (validation)</th><th>Verificación (verification)</th></tr>
+    <tr><td><b>Qué es</b></td><td>Solo pueden introducirse datos <b>válidos (apropiados)</b>: se minimizan los errores en el momento de la entrada y el usuario recibe un <b>mensaje de error</b> si introduce datos inadecuados.</td><td>Comprueba que los datos introducidos son <b>los que realmente quieres</b>, o que <b>coinciden con la fuente original</b> de los datos.</td></tr>
+    <tr><td><b>Cómo se hace</b></td><td>Longitud de campo, tipos de datos asignados, <b>máscaras de entrada</b>, <b>comprobaciones de rango</b> y <b>tablas de búsqueda (lookup tables)</b>.</td><td><b>Doble entrada</b> (te piden la contraseña dos veces al registrarte) o <b>revisión visual</b> por una segunda persona.</td></tr>
+    <tr><td><b>Objetivo</b></td><td>Que el dato tenga el formato y rango correctos: reducir errores de entrada y promover la <b>integridad</b>.</td><td>Que el dato sea <b>fiel a la fuente</b>: evitar introducir un dato equivocado pero &ldquo;válido&rdquo;.</td></tr>
+  </table>
+
+  <p class="body-text">Además, los datos deben <b>clasificarse en categorías</b>: se hace definiendo campos en la base de datos o mediante <b>etiquetado de datos (data tagging)</b>. La clasificación facilita el acceso y la búsqueda, y sirve también para la seguridad (por ejemplo, marcar documentos como confidenciales). Estas son las categorías estándar del libro:</p>
+
+  <div class="clasif">
+    <div class="cl-card"><span class="cl-name">Información pública</span><span class="cl-risk r-low">Riesgo bajo</span><p>Ejemplo: el nombre, la dirección y el teléfono de una organización. Es fácil de recuperar si se pierde.</p></div>
+    <div class="cl-card"><span class="cl-name">Información confidencial</span><span class="cl-risk r-high">Riesgo alto</span><p>Ejemplo: los datos bancarios. Su exposición causa daños financieros directos.</p></div>
+    <div class="cl-card"><span class="cl-name">Información sensible</span><span class="cl-risk r-high">Riesgo alto</span><p>Ejemplo: los datos biométricos (huella, iris, rostro). Su filtrado no tiene remedio: no se pueden &ldquo;cambiar&rdquo; como una contraseña.</p></div>
+    <div class="cl-card"><span class="cl-name">Información personal</span><span class="cl-risk r-high">Riesgo alto</span><p>Ejemplo: el origen étnico o las opiniones políticas. Su mal uso vulnera derechos y puede dar lugar a discriminación.</p></div>
+  </div>
+
+  <div class="info-card">
+    <h4>Consultas e informes: la base de datos en acción</h4>
+    <p>Las búsquedas en una base de datos se llaman <b>consultas (queries)</b>: se diseñan, se guardan y se ejecutan cuando hacen falta. Los resultados suelen presentarse en un <b>informe (report)</b> diseñado para hacer la información más visual y atractiva para quien la recibe.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Clasificar = evaluar el riesgo</h4>
+    <p>Al clasificar hay que determinar el <b>riesgo relativo</b> de cada conjunto de datos: la información <b>pública</b>, fácil de recuperar, es de <b>bajo riesgo</b>; la información <b>sensible</b> o los datos <b>necesarios para que la organización funcione</b> son de <b>alto riesgo</b>. (Conecta con 4.7A, la identidad social.)</p>
+  </div>
+
+  <div class="quiz-card q2">
+    <h4>Autoevaluación &middot; Bloque 5</h4>
+    <ol>
+      <li><b>Distinguish</b> entre validación y verificación, con un ejemplo de cada una. <i>[4 marks]</i></li>
+      <li><b>Outline</b> la diferencia entre clave primaria y clave externa en una base de datos relacional. <i>[4 marks]</i></li>
+      <li><b>Explain</b> por qué un hospital clasifica los datos biométricos como información sensible de alto riesgo. <i>[6 marks]</i></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 6 · REPRESENTACIÓN ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Bloque 6 &middot; Representación de datos</div>
+    <div class="section-title"><span class="block-num">6</span>Visualizar para entender: gráficos e infografías</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Los datos recogidos pueden presentarse de formas distintas para que sean <b>más fáciles de entender y más interesantes de leer</b>. Los datos numéricos —financieros, meteorológicos, científicos y estadísticos— suelen presentarse visualmente en <b>gráficos y tablas</b>; el tipo de gráfico depende del <b>tipo de dato</b> que se representa.</p>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">6.1</span><span class="ficha-title">Visualización de datos</span><span class="ficha-en">data visualization</span></div>
+    <div class="ficha-def"><b>Definición:</b> el proceso de convertir grandes conjuntos de datos en <b>gráficos, diagramas u otras presentaciones visuales</b>.</div>
+    <h5>Qué gráfico usar (ejemplos del libro)</h5>
+    <ul>
+      <li><b>Gráfico de barras</b> &rarr; la lluvia (comparar cantidades discretas por periodo).</li>
+      <li><b>Gráfico de líneas</b> &rarr; la temperatura (mostrar la evolución continua en el tiempo).</li>
+      <li>Gráficos y tablas se <b>combinan con texto</b> para crear un informe.</li>
+    </ul>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">6.2</span><span class="ficha-title">Infografías</span><span class="ficha-en">infographics</span></div>
+    <div class="ficha-def"><b>Definición:</b> una alternativa para dar una <b>visión general fácil de entender</b> de un tema, combinando <b>imágenes, gráficos y texto</b>.</div>
+    <h5>Cuándo usarlas</h5>
+    <ul>
+      <li>Cuando el público no es técnico y necesitas comunicar un mensaje en segundos (p. ej., los hábitos de tiempo de pantalla de tu escuela).</li>
+      <li>Ejemplo de referencia: las infografías <b>&ldquo;Data Never Sleeps 7.0 y 8.0&rdquo;</b> de Domo comparan cuántos datos genera internet cada minuto; compararlas revela qué apps crecen y por qué.</li>
+    </ul>
+  </div>
+
+  <div class="info-card">
+    <h4>Habilidades prácticas que pide el curso</h4>
+    <p>Con una hoja de cálculo debes saber: importar datos descargados (p. ej., históricos del clima), darles <b>formato</b> (fuentes, colores, bordes), usar funciones simples (<b>promedio, mínimo, máximo</b>) y crear gráficos eligiendo tipo, ejes, títulos y leyenda. En la evaluación interna y en Paper 2, una visualización correcta y bien etiquetada vale tanto como el texto que la acompaña.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Repercusión y dilema de la visualización</h4>
+    <p><b>Repercusión:</b> una buena visualización democratiza la información y revela patrones invisibles. <b>Dilema:</b> ejes recortados, escalas exageradas o colores engañosos pueden <b>distorsionar la realidad</b> y manipular al lector: la misma gráfica puede defender conclusiones opuestas.</p>
+  </div>
+
+  <div class="quiz-card">
+    <h4>Autoevaluación &middot; Bloque 6</h4>
+    <ol>
+      <li><b>Define</b> data visualization. <i>[2 marks]</i></li>
+      <li><b>Suggest</b> qué tipo de gráfico usarías para presentar la temperatura mensual y cuál para la lluvia anual, y justifica cada elección. <i>[4 marks]</i></li>
+      <li><b>Examine</b> cómo una infografía puede informar o, al contrario, engañar a su audiencia. <i>[6 marks]</i></li>
+    </ol>
+  </div>
+</div>
+<!-- ═══════════════ MAPA MENTAL 2 · SEGURIDAD ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k3">Mapa 2 &middot; Tecnologías</span>
+    <div class="map-title">Seguridad de los datos: las cinco tecnologías</div>
+    <div class="map-intro">El libro presenta cinco tecnologías que protegen y verifican los datos a lo largo del ciclo de vida. Cada una tiene su ficha detallada en el Bloque 7.</div>
+  </div>
+  <div class="mindmap">
+    <div class="root-node">SEGURIDAD<small>DATA SECURITY</small></div>
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u3">Cifrado simétrico<small>symmetric key</small></div>
+        <div class="children">
+          <div class="leaf">Misma clave para codificar y decodificar</div>
+          <div class="leaf">AES de 128 / 256 bits</div>
+          <div class="leaf">WiFi y bases de datos</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u3">Cifrado asimétrico<small>public key</small></div>
+        <div class="children">
+          <div class="leaf">Clave pública + privada</div>
+          <div class="leaf">SSL / TLS · https</div>
+          <div class="leaf">WhatsApp y firmas digitales</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u3">Enmascaramiento<small>data masking</small></div>
+        <div class="children">
+          <div class="leaf">Datos ficticios funcionales</div>
+          <div class="leaf">Anonimiza antes de compartir</div>
+          <div class="leaf">Pruebas y análisis</div>
+        </div>
+      </div>
+    </div>
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u3">Borrado seguro<small>data erasure</small></div>
+        <div class="children">
+          <div class="leaf">Desmagnetizadoras y trituradoras</div>
+          <div class="leaf">Sobrescritura con 0 y 1</div>
+          <div class="leaf">&ne; eliminar a la papelera</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u3">Blockchain</div>
+        <div class="children">
+          <div class="leaf">Libro mayor distribuido</div>
+          <div class="leaf">Bloques encadenados y verificables</div>
+          <div class="leaf">IBM Food Trust</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u4">Riesgos y dilemas</div>
+        <div class="children">
+          <div class="leaf">Ataque de fuerza bruta</div>
+          <div class="leaf">Brechas y hardware sin borrar</div>
+          <div class="leaf">Privacidad vs seguridad</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:#14B8A6"></span>Tecnologías de protección y verificación</span>
+    <span class="lg"><span class="dot" style="background:#F59E0B"></span>Riesgos y dilemas asociados</span>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 7 · SEGURIDAD (TECNOLOGÍAS) ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Bloque 7 &middot; Seguridad de los datos</div>
+    <div class="section-title"><span class="block-num bn3">7</span>Cinco tecnologías, un objetivo: proteger</div>
+    <div class="divider d3"></div>
+  </div>
+
+  <p class="body-text">Es fundamental que los datos estén seguros <b>al almacenarlos y al transmitirlos</b> — cuando se recogen o se comparten entre sistemas y organizaciones. Las cinco tecnologías de este bloque aparecen en el examen con sus definiciones exactas; para cada una encontrarás su <b>definición</b>, su <b>funcionamiento</b>, un <b>caso real</b> y sus <b>repercusiones y dilemas</b>.</p>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">7.1</span><span class="tcard-title">Cifrado de clave simétrica</span><span class="tcard-en">symmetric key encryption</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody">Proceso de convertir datos legibles en <b>caracteres ilegibles</b> para impedir el acceso no autorizado, usando la <b>misma clave</b> para codificar y decodificar. Forma parte de la <b>criptografía</b>: un algoritmo transforma la información en <b>texto cifrado (ciphertext)</b>, y quien posee la clave la devuelve a su forma original, el <b>texto plano (plaintext)</b>.</div></div>
+    <div class="trow"><div class="tlabel">Cómo funciona</div><div class="tbody">Ambos ordenadores deben <b>conocer la clave</b> para comunicarse. El estándar <b>AES (advanced encryption standard)</b> usa claves de <b>128 o 256 bits</b>: una clave de 256 bits admite 2<sup>256</sup> combinaciones posibles, lo que hoy se considera suficiente para resistir un <b>ataque de fuerza bruta</b> (probar todas las combinaciones hasta dar con la clave).</div></div>
+    <div class="trow"><div class="tlabel">Casos de uso</div><div class="tbody"><b>Seguridad inalámbrica</b> (redes WiFi), seguridad de <b>datos archivados</b> y seguridad de <b>bases de datos</b>.</div></div>
+    <div class="trow"><div class="tlabel">Repercusiones</div><div class="tbody">Protege la confidencialidad tanto en tránsito como en reposo con un coste computacional bajo.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilema</div><div class="tbody">El punto débil es <b>distribuir la clave</b>: si se intercepta o se filtra, todo lo cifrado queda expuesto. ¿A quién se confía la clave?</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">7.2</span><span class="tcard-title">Cifrado de clave pública</span><span class="tcard-en">public key (asymmetric) encryption</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody">Cifrado que usa <b>dos claves distintas</b>: la <b>clave privada</b>, conocida solo por el ordenador receptor, y la <b>clave pública</b>, que se comparte con cualquier equipo con el que se quiera comunicar.</div></div>
+    <div class="trow"><div class="tlabel">Cómo funciona</div><div class="tbody">Para enviar datos se usa la <b>clave pública del destino</b>; en tránsito son ilegibles sin la clave privada; al llegar, el receptor las decodifica con su <b>clave privada</b>. Está detrás de los protocolos de seguridad <b>SSL (Secure Socket Layer)</b> y <b>TLS (Transport Layer Security)</b>: el &ldquo;http&rdquo; se convierte en <b>&ldquo;https&rdquo;</b> para transmisiones seguras.</div></div>
+    <div class="trow"><div class="tlabel">Casos de uso</div><div class="tbody"><b>Firmas digitales</b>, sellado de tiempo de documentos electrónicos, <b>transferencias de dinero</b>, correo electrónico, <b>WhatsApp</b>, <b>Instagram</b> y autenticación de tarjetas SIM.</div></div>
+    <div class="trow"><div class="tlabel">Repercusiones</div><div class="tbody">Es la base del comercio electrónico y de la mensajería privada: permite confiar en intercambios con desconocidos.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilema</div><div class="tbody">El mismo cifrado protege a usuarios honestos y a <b>delincuentes</b>: privacidad frente a la capacidad de investigación de las autoridades. ¿Dónde está el límite?</div></div>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">7.3</span><span class="tcard-title">Enmascaramiento de datos</span><span class="tcard-en">data masking</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody">Proceso de <b>reemplazar datos confidenciales por datos ficticios funcionales</b>, anonimizando finalmente los datos.</div></div>
+    <div class="trow"><div class="tlabel">Cómo funciona</div><div class="tbody">Los datos son un bien valioso: una vez recogidos se almacenan, usan y comparten. Pero hacerlo <b>sin consentimiento</b> genera problemas de privacidad. Al anonimizar, la organización protege la privacidad de sus clientes y a la vez puede <b>probar aplicaciones</b>, hacer <b>análisis de negocio</b> o <b>compartir datos con terceros</b>. <b>Clasificar los datos en la etapa 2 del ciclo de vida</b> facilita mucho el proceso.</div></div>
+    <div class="trow"><div class="tlabel">Repercusiones</div><div class="tbody">Equilibra el valor comercial de los datos con la legislación de protección, cada vez más estricta, y con las ciberamenazas existentes.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilema</div><div class="tbody">¿Es la anonimización realmente irreversible? ¿Puede un conjunto de datos &ldquo;enmascarados&rdquo; reidentificarse al cruzarse con otras fuentes? ¿Qué consentimiento cubre ese uso?</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">7.4</span><span class="tcard-title">Borrado seguro de datos</span><span class="tcard-en">data erasure</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody">La <b>destrucción de datos</b> al final del ciclo de vida, mediante métodos <b>físicos</b> o por <b>software</b>.</div></div>
+    <div class="trow"><div class="tlabel">Cómo funciona</div><div class="tbody"><b>Métodos físicos:</b> <b>desmagnetizadoras (degaussers)</b>, que usan potentes campos electromagnéticos para eliminar datos de medios magnéticos, y <b>trituradoras (shredders)</b>, que reducen el medio a partículas diminutas (eficaz con dispositivos de estado sólido y smartphones). <b>Por software:</b> sobrescribe permanentemente los datos originales con <b>ceros y unos</b>. <b>No confundir con data deletion:</b> enviar un archivo a la papelera (o reformatear) solo borra el icono y la ruta; con las herramientas adecuadas, esos datos <b>se pueden recuperar</b> y por tanto no es seguro.</div></div>
+    <div class="trow"><div class="tlabel">Repercusiones</div><div class="tbody">Impide filtraciones de información confidencial cuando se venden o desechan equipos; su ausencia cuesta sanciones millonarias y daños a personas reales.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilema</div><div class="tbody"><b>&ldquo;Eliminar&rdquo; no es &ldquo;borrar&rdquo;:</b> la responsabilidad sobre los datos sobrevive al hardware. ¿Quién responde cuando un equipo revendido still contiene historiales médicos?</div></div>
+  </div>
+
+  <div class="case">
+    <span class="case-tag">Caso real &middot; brechas por falta de borrado</span>
+    <p><b>Fotocopiadoras (2010):</b> fotocopiadoras usadas para copiar información médica sensible se enviaron a revender <b>sin borrar los discos duros</b>: en ellos quedaban <b>300 páginas de historiales individuales</b> con recetas de medicamentos y resultados de análisis de sangre. El propietario original acordó fuera de tribunales una sanción de <b>US$1,2 millones</b> por violar la ley HIPAA. <b>Loyola University (2015):</b> un ordenador con <b>nombres, números de seguridad social y datos financieros de 5800 estudiantes</b> fue desechado antes de borrar el disco.</p>
+    <p class="case-src">Fuente: njbmagazine.com — the challenge of recycling office electronics</p>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">7.5</span><span class="tcard-title">Blockchain</span><span class="tcard-en">blockchain</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody">Un <b>libro mayor digital de transacciones</b> que está <b>duplicado y distribuido</b> a través de una red de ordenadores.</div></div>
+    <div class="trow"><div class="tlabel">Cómo funciona</div><div class="tbody">Para participar hay que <b>unirse a la red</b> blockchain, lo que da acceso al <b>libro mayor distribuido (distributed ledger)</b>. Cada transacción se registra como un <b>bloque de datos</b>; los bloques forman una <b>cadena</b> a medida que la propiedad del activo cambia de manos, registrando detalles como la <b>hora y la secuencia</b>. <b>Cada bloque adicional refuerza la verificación del anterior</b>, lo que hace muy difícil alterar la transacción. Permite comerciar y rastrear cualquier cosa de valor: derechos de autor, propiedades, puntos de fidelización.</div></div>
+    <div class="trow"><div class="tlabel">Casos de uso</div><div class="tbody">La app <b>Microsoft Authenticator</b> (identidad digital); la <b>industria de la salud</b> para datos de pacientes; el <b>voto digital</b> con un único voto inalterable por persona; el <b>gobierno de EE.&nbsp;UU.</b> rastrea la propiedad de armas de fuego.</div></div>
+    <div class="trow"><div class="tlabel">Repercusiones</div><div class="tbody">Ante el aumento de los casos de hacking, ofrece un sistema <b>más seguro y transparente</b>, sin depender de un único intermediario de confianza.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilema</div><div class="tbody">La inmutabilidad choca con el <b>derecho a corregir o borrar</b> datos personales: ¿cómo se &ldquo;olvida&rdquo; algo grabado para siempre en una cadena pública?</div></div>
+  </div>
+
+  <div class="case">
+    <span class="case-tag">Caso real &middot; cadena de suministro</span>
+    <p><b>IBM Food Trust (2019):</b> IBM colaboró con <b>Raw Seafoods</b> (EE.&nbsp;UU.) para digitalizar la cadena de suministro del pescado. Los datos se subían a la plataforma en cada etapa: <b>hora y lugar de la captura</b>, atraque del barco en puerto, envasado, envío y entrega a supermercados y restaurantes, incluyendo <b>imágenes y vídeo</b>. Las tecnologías blockchain <b>redujeron el fraude</b> y aumentaron la confianza del cliente en la <b>calidad y frescura</b> del marisco.</p>
+    <p class="case-src">Fuente: pregunta de examen del libro, Paper 1 (core)</p>
+  </div>
+
+  <div class="quiz-card q3">
+    <h4>Autoevaluación &middot; Bloque 7</h4>
+    <ol>
+      <li><b>Outline</b> dos métodos de borrado seguro de datos. <i>[4 marks]</i></li>
+      <li><b>Explain</b> por qué una organización puede querer usar el enmascaramiento para anonimizar datos. <i>[6 marks]</i></li>
+      <li><b>Explain</b> paso a paso cómo la tecnología blockchain puede reducir el fraude. <i>[4 marks]</i></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 8 · BIG DATA ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Bloque 8 &middot; Big data y analítica</div>
+    <div class="section-title"><span class="block-num bn4">8</span>Big data: las 4 V y la analítica</div>
+    <div class="divider d4"></div>
+  </div>
+
+  <p class="body-text">El término <b>big data</b> se usa desde los <b>años 1990</b> y lo popularizó <b>John R. Mashey</b>, que trabajaba en Silicon Graphics. Designa <b>grandes volúmenes de datos</b> — tanto <b>estructurados como no estructurados</b> — y se caracteriza por las <b>4 V</b>. La <b>analítica de big data (big data analytics)</b> consiste en procesar esos conjuntos grandes y variados para identificar <b>tendencias y patrones</b> que a menudo son imposibles de ver para un humano.</p>
+
+  <div class="vgrid">
+    <div class="vcard"><span class="vletter">V</span> <span class="vname">Volumen</span> <span class="ven">volume</span><p>Volúmenes enormes de datos creados a diario desde fuentes muy diversas: interacciones humanas en redes sociales o datos recogidos en una red de <b>IoT (internet de las cosas)</b>.</p></div>
+    <div class="vcard"><span class="vletter">V</span> <span class="vname">Velocidad</span> <span class="ven">velocity</span><p>La <b>velocidad</b> a la que los datos se generan, se recogen y se analizan — en algunos casos, en <b>tiempo real (real-time)</b>.</p></div>
+    <div class="vcard"><span class="vletter">V</span> <span class="vname">Variedad</span> <span class="ven">variety</span><p>Una gran variedad de <b>tipos y formatos</b>: publicaciones de redes sociales, vídeos, fotos y archivos PDF.</p></div>
+    <div class="vcard"><span class="vletter">V</span> <span class="vname">Veracidad</span><span class="ven">veracity</span><p>La <b>exactitud y calidad</b> de los datos recogidos — sin veracidad, todo análisis posterior es dudoso.</p></div>
+  </div>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num">8.1</span><span class="ficha-title">Analítica de big data</span><span class="ficha-en">big data analytics</span></div>
+    <div class="ficha-def"><b>Definición:</b> el procesamiento de conjuntos de datos <b>grandes y variados</b> para identificar <b>tendencias y patrones</b>.</div>
+    <h5>Funcionamiento y usos</h5>
+    <ul>
+      <li>Analiza el <b>comportamiento pasado</b> para: mejorar el <b>servicio al cliente</b>, optimizar (streamline) las operaciones e identificar <b>nuevas fuentes de ingresos</b>.</li>
+      <li>Es la base de las megatendencias actuales — de lo social a lo móvil, de la nube al gaming (Chris Lynch).</li>
+    </ul>
+  </div>
+
+  <div class="case">
+    <span class="case-tag">Caso real &middot; banca y finanzas</span>
+    <p><b>American Express</b> usa big data para conocer a sus clientes con <b>modelos predictivos</b> que analizan transacciones. <b>JP Morgan</b> usó datos históricos de <b>miles de millones de transacciones</b> para automatizar la compraventa (trading). <b>Citibank</b> desarrolló un sistema de <b>machine learning y modelado predictivo en tiempo real</b> para detectar transacciones potencialmente fraudulentas. <b>Repercusión:</b> más eficiencia y seguridad; <b>dilema:</b> el perfil financiero tan detallado de cada cliente.</p>
+    <p class="case-src">Fuente: AlgorithmX Lab (algorithmxlab.com/blog/big-data)</p>
+  </div>
+</div>
+
+<div class="main-content new-page">
+  <div class="case">
+    <span class="case-tag">Caso real &middot; deporte</span>
+    <p><b>Bundesliga — Match Facts (2021):</b> la liga alemana de fútbol introdujo estadísticas de partido para los espectadores: <b>24 cámaras</b> posicionadas en el campo recogen y transmiten datos durante los <b>90 minutos</b> de juego. Los datos se convierten en <b>metadata</b> y se combinan con datos históricos para generar conclusiones: qué jugador está siendo más marcado o la <b>probabilidad de que se marque un gol</b>.</p>
+    <p class="case-src">Fuente: TechTarget (searchbusinessanalytics.techtarget.com)</p>
+  </div>
+
+  <div class="quote">&ldquo;El big data está en la base de todas las megatendencias que están sucediendo hoy: de lo social a lo móvil, de la nube al gaming.&rdquo; &mdash; <b>Chris Lynch</b></div>
+
+  <div class="info-card">
+    <h4>Pensamiento profundo: big data e inteligencia artificial</h4>
+    <p>El libro pregunta: ¿cuál es la <b>relación entre el big data y la inteligencia artificial</b>?, ¿cómo se usan juntos para mejorar la calidad de vida? La IA depende de <b>vastos conjuntos de datos</b> para encontrar patrones: sin volumen, velocidad, variedad y veracidad no hay aprendizaje posible. Y esa dependencia abre la pregunta ética del Bloque 9: <b>¿qué datos alimenta tu IA y con qué consentimiento?</b></p>
+  </div>
+
+  <div class="quiz-card q4">
+    <h4>Autoevaluación &middot; Bloque 8</h4>
+    <ol>
+      <li><b>Define</b> big data. <i>[2 marks]</i></li>
+      <li><b>Outline</b> las 4 V con un ejemplo para cada una. <i>[4 marks]</i></li>
+      <li><b>Explain</b> cómo la Bundesliga convierte las imágenes de 24 cámaras en conclusiones útiles para los aficionados. <i>[6 marks]</i></li>
+    </ol>
+  </div>
+</div>
+<!-- ═══════════════ BLOQUE 9 · DILEMAS (3.1I) ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker k4">Bloque 9 &middot; Dilemas de los datos (3.1I)</div>
+    <div class="section-title"><span class="block-num bn4">9</span>Repercusiones y dilemas etapa por etapa</div>
+    <div class="divider d4"></div>
+  </div>
+
+  <p class="body-text">Junto con la <b>propiedad de los datos (data ownership)</b> llega una enorme responsabilidad: abordar los dilemas en <b>todas y cada una</b> de las etapas del ciclo de vida. El libro recorre las cinco etapas con la misma pregunta de fondo: ¿se actuó de forma <b>ética</b>, se cumplió la <b>legislación de protección de datos</b> y se respetó a la persona que está detrás de cada dato?</p>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num">9.1</span><span class="ficha-title">Etapa 1 · Recolección: consentimiento y sesgo</span><span class="ficha-en">collection</span></div>
+    <div class="ficha-def"><b>Dilema:</b> ¿los datos se recogieron de forma <b>ética</b> y en cumplimiento de la normativa? No debe haber <b>recolección excesiva</b> y debe obtenerse el <b>consentimiento</b> de las personas.</div>
+    <ul>
+      <li>Hay que elegir con cuidado <b>qué datos</b> se recogen para evitar <b>conjuntos de datos sesgados (biased data sets)</b> que terminan distorsionando los resultados del <b>machine learning</b>.</li>
+      <li><b>Repercusión:</b> un dataset no diverso produce sistemas que discriminan a grupos enteros de personas.</li>
+    </ul>
+  </div>
+
+  <div class="case">
+    <span class="case-tag">Caso real · sesgo algorítmico</span>
+    <p><b>Sesgo en el reconocimiento facial — NIST (2019):</b> el instituto nacional de estándares de EE.&nbsp;UU. analizó la fiabilidad de los algoritmos de reconocimiento facial: muchos eran <b>menos fiables</b> al identificar rostros de personas <b>negras o de Asia oriental</b>, y los rostros de <b>indígenas americanos</b> eran los más frecuentemente mal identificados. El factor principal: <b>conjuntos de imágenes de entrenamiento no diversos</b>. <b>Dilema:</b> ¿quién responde cuando un sistema sesgado acusa, excluye o no reconoce a alguien?</p>
+    <p class="case-src">Fuente: NIST 2019, vía Harvard JOLT Digest (jolt.law.harvard.edu)</p>
+  </div>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num">9.2</span><span class="ficha-title">Etapa 2 · Almacenamiento: privacidad y fiabilidad</span><span class="ficha-en">storage</span></div>
+    <div class="ficha-def"><b>Dilema:</b> <b>dónde</b> se guardan los datos, <b>quién es su dueño</b>, quién responde por ellos, quién los controla y quién accede: todo impacta la <b>privacidad de los datos (data privacy)</b> — la capacidad de las personas de <b>controlar su información personal</b>.</div>
+    <ul>
+      <li>Las organizaciones deben cumplir la normativa del <b>país donde se almacenan</b> los datos; una <b>brecha (data breach)</b> cuesta honorarios legales y compensaciones millonarias.</li>
+      <li><b>Fiabilidad (data reliability):</b> datos <b>completos y exactos</b>. &nbsp;<b>Integridad (data integrity):</b> la <b>confianza</b> en los datos y si han sido <b>comprometidos</b> o no.</li>
+      <li>Un cambio no autorizado invalida los datos: se toman decisiones con ellos y se generan <b>predicciones y previsiones erróneas</b>.</li>
+    </ul>
+  </div>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num">9.3</span><span class="ficha-title">Las cinco causas de datos no fiables</span><span class="ficha-en">unreliable data</span></div>
+    <ul>
+      <li><b>1 · Datos sesgados:</b> por usar conjuntos sesgados o por el <b>sesgo humano</b> al seleccionar los datos.</li>
+      <li><b>2 · Virus y malware:</b> los datos almacenados pueden ser alterados (pierden integridad), corromperse o perderse.</li>
+      <li><b>3 · Fiabilidad y validez de las fuentes:</b> si las fuentes en línea no se evalúan, el sistema trabaja con datos no fiables.</li>
+      <li><b>4 · Datos desactualizados:</b> si no se actualizan dejan de servir (ejemplo del libro: los teléfonos de los padres en la escuela).</li>
+      <li><b>5 · Error humano y falta de precisión:</b> la entrada manual es propensa a errores; es fácil borrar o mover archivos sin querer: la <b>gestión de archivos</b> es esencial.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="case">
+    <span class="case-tag">Caso real · veracidad de los datos</span>
+    <p><b>Datos no fiables en la pandemia — Surgisphere (2020):</b> en junio de 2020 <i>The Guardian</i> informó sobre un estudio sobre el efecto de la <b>ivermectina</b> en pacientes de COVID-19. Los datos provenían de la base <b>QuartzClinical</b> de Surgisphere, que decía monitorizar <b>datos en tiempo real de 1200 hospitales internacionales</b>. Al usarlos, los médicos de todo el mundo detectaron <b>anomalías</b>; revistas médicas prestigiosas revisaron los estudios y la <b>OMS detuvo</b> su investigación sobre ese tratamiento. <b>Lección:</b> sin evaluar la fuente y la validez de los datos, incluso la medicina global puede decidir sobre información falsa.</p>
+    <p class="case-src">Fuente: The Guardian (junio 2020) — unreliable data &amp; Surgisphere</p>
+  </div>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num">9.4</span><span class="ficha-title">Etapa 3 · Uso: propósito, consentimiento y anonimato</span><span class="ficha-en">usage</span></div>
+    <div class="ficha-def"><b>Dilema:</b> el uso debe ser ético y legal: los datos solo se usan para su <b>propósito previsto</b> y <b>no se comparten sin el consentimiento</b> del usuario.</div>
+    <ul>
+      <li>Hay que preguntarse <b>con quién</b> se comparten los datos y <b>para qué</b>, y si se <b>anonimizaron</b> antes de entregarlos a terceros.</li>
+      <li><b>El anonimato tiene dos caras:</b> es legítimo para pedir <b>consejo sobre condiciones de salud embarazosas</b>, pero con demasiada frecuencia oculta a <b>delincuentes, terroristas o hackers</b>, se usa en el <b>ciberacoso (cyberbullying: acoso realizado en línea, por ejemplo, en redes sociales)</b> o para buscar en internet sin dejar rastro.</li>
+    </ul>
+  </div>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num">9.5</span><span class="ficha-title">Etapas 4 y 5 · Archivo y destrucción</span><span class="ficha-en">archiving &amp; destruction</span></div>
+    <div class="ficha-def"><b>Dilema:</b> las organizaciones deben cumplir la normativa sobre la <b>retención</b> y la <b>seguridad</b> de los datos archivados: ¿cuánto tiempo se conservan, dónde y protegidos de quién?</div>
+  </div>
+
+  <div class="quiz-card q4">
+    <h4>Autoevaluación · Bloque 9</h4>
+    <ol>
+      <li><b>Distinguish</b> entre fiabilidad de los datos e integridad de los datos. <i>[4 marks]</i></li>
+      <li><b>Explain</b> dos razones por las que un conjunto de datos de entrenamiento puede resultar sesgado. <i>[6 marks]</i></li>
+      <li><b>Discuss</b> si el anonimato en internet hace más bien o más daño. <i>[6 marks]</i></li>
+    </ol>
+  </div>
+</div>
+<!-- ═══════════════ BLOQUE 9b · PRIVACIDAD Y RGPD ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker k4">Bloque 9 &middot; continuación</div>
+    <div class="section-title"><span class="block-num bn4">+</span>Privacidad, brechas y el RGPD</div>
+    <div class="divider d4"></div>
+  </div>
+
+  <p class="body-text">Durante todo el curso aparecerá el impacto de una tecnología digital que <b>vulnera la privacidad</b> —por marketing intencional o por vigilancia—. El libro dedica su sección <i>&ldquo;Deeper thinking&rdquo;</i> a preguntarse: ¿qué significa realmente la privacidad, cómo se produce una brecha y cómo protegen las leyes a los ciudadanos?</p>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num">9.6</span><span class="ficha-title">Privacidad</span><span class="ficha-en">privacy</span></div>
+    <div class="ficha-def"><b>Definición del libro:</b> la capacidad de <b>individuos y grupos de decidir por sí mismos</b> cuándo, cómo y en qué medida se comparte con otros la información sobre ellos.</div>
+    <h5>Los tres aspectos clave</h5>
+    <ul>
+      <li><b>Libertad de intrusión (freedom from intrusion):</b> derecho a que te dejen en paz — si alguien toca tu puerta, no estás obligado a abrir.</li>
+      <li><b>Control de la información sobre uno mismo:</b> decides tú qué información se comparte y dónde — un aspecto central de la privacidad.</li>
+      <li><b>Libertad de vigilancia (freedom from surveillance):</b> tener privacidad significa que <b>nadie te está observando</b>.</li>
+    </ul>
+  </div>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num">9.7</span><span class="ficha-title">¿Cómo se produce una brecha de privacidad?</span><span class="ficha-en">data breach</span></div>
+    <ul>
+      <li><b>Uso no autorizado por personas internas (insiders):</b> incluso el personal de IT que mantiene los datos o los sistemas donde viven.</li>
+      <li><b>Fuga accidental por negligencia o descuido:</b> que acaba dando acceso a hackers o a terceros.</li>
+      <li><b>Una serie de errores</b> que termina exponiendo información sobre una persona.</li>
+    </ul>
+  </div>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num">9.8</span><span class="ficha-title">RGPD</span><span class="ficha-en">GDPR &middot; General Data Protection Regulation</span></div>
+    <div class="ficha-def"><b>Definición del libro:</b> legislación diseñada para <b>armonizar las leyes de privacidad de datos en la UE</b>. Se introdujo en <b>mayo de 2018</b>; es más estricta y actualizada que las leyes previas, y muchos otros países están adaptando las suyas en la misma dirección.</div>
+    <h5>Siete principios</h5>
+    <div class="vocab-row">
+      <span class="chip"><b>1</b> Licitud, lealtad y transparencia</span>
+      <span class="chip"><b>2</b> Limitación del propósito</span>
+      <span class="chip"><b>3</b> Minimización de datos</span>
+      <span class="chip"><b>4</b> Exactitud</span>
+      <span class="chip"><b>5</b> Limitación del almacenamiento</span>
+      <span class="chip"><b>6</b> Integridad y confidencialidad</span>
+      <span class="chip"><b>7</b> Responsabilidad (accountability)</span>
+    </div>
+    <h5>Derechos que otorga a las personas</h5>
+    <ul>
+      <li><b>A ser informado</b>, a <b>acceder</b> a tus datos, a que se <b>rectifiquen</b> y al <b>derecho al olvido (right to be forgotten)</b>.</li>
+      <li>El séptimo principio, la <b>responsabilidad</b>, es nuevo: obliga a las organizaciones a <b>demostrar</b> que cumplen los otros seis principios.</li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="main-content new-page">
+  <div class="info-card">
+    <h4>Pensamiento profundo: privacidad y redes sociales</h4>
+    <p>El libro pregunta: ¿qué información deberías mantener privada?, ¿deberías esperar privacidad cuando usas redes sociales?, ¿qué significa que una publicación sea &ldquo;anónima&rdquo;?, ¿cómo ha ayudado la tecnología digital a ser anónimo en internet? <b>Distingue siempre privacidad (controlar tu información) de anonimato (no ser identificable)</b>: es una confusión típica que cuesta puntos.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Top tips del libro: los pares que se confunden</h4>
+    <p><b>Fiabilidad</b> (¿completos y exactos?) &ne; <b>integridad</b> (¿han sido comprometidos?) &middot; <b>data matching</b> (comparar dos conjuntos) &ne; <b>data mining</b> (patrones en un conjunto grande) &middot; <b>validación</b> (¿el dato es apropiado?) &ne; <b>verificación</b> (¿es el dato correcto y fiel a la fuente?). Dominar estos tres pares protege puntos directos en <i>define</i> y <i>distinguish</i>.</p>
+  </div>
+
+  <div class="case">
+    <span class="case-tag">Actividad del libro &middot; privacidad en acción</span>
+    <p><b>&ldquo;Ordering Pizza&rdquo; (ACLU):</b> el libro propone escuchar el clásico anuncio de la pizzería que, al tomar tu pedido, ya sabe tu historial médico, tus calificaciones, tus deudas y tu rutina deportiva. <b>Tarea de repaso:</b> identifica qué datos se recogen sin consentimiento, qué aspectos de la privacidad se vulneran (intrusión, control, vigilancia) y qué principios del RGPD se incumplirían hoy (licitud y transparencia, limitación del propósito, minimización).</p>
+    <p class="case-src">Fuente: ATL Activity del libro — aclu.org/ordering-pizza</p>
+  </div>
+
+  <div class="quiz-card q4">
+    <h4>Autoevaluación · Privacidad y RGPD</h4>
+    <ol>
+      <li><b>Outline</b> los tres aspectos clave de la privacidad. <i>[4 marks]</i></li>
+      <li><b>Explain</b> cómo el principio de minimización de datos protege a los ciudadanos. <i>[6 marks]</i></li>
+      <li>Una app vende tu número de teléfono a un tercero sin avisarte. <b>Identify</b> dos principios del RGPD incumplidos y justifica. <i>[4 marks]</i></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ MAPA MENTAL 3 · DILEMAS ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k4">Mapa 3 &middot; Dilemas</span>
+    <div class="map-title">Dilemas de los datos: del consentimiento al RGPD</div>
+    <div class="map-intro">Cada rama conecta una etapa del ciclo de vida con su dilema, y las protecciones legales con los conceptos del curso. En el examen, ubica primero el dilema en su etapa; después discútelo.</div>
+  </div>
+  <div class="mindmap">
+    <div class="root-node">DILEMAS<small>DATA DILEMMAS · 3.1I</small></div>
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u4">Colección</div>
+        <div class="children">
+          <div class="leaf">Consentimiento</div>
+          <div class="leaf">Sin recolección excesiva</div>
+          <div class="leaf">Datasets sin sesgo</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u4">Almacenamiento</div>
+        <div class="children">
+          <div class="leaf">¿Quién controla y accede?</div>
+          <div class="leaf">Leyes del país del dato</div>
+          <div class="leaf">5 causas de no fiabilidad</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u4">Uso</div>
+        <div class="children">
+          <div class="leaf">Solo propósito previsto</div>
+          <div class="leaf">Anonimato: dos caras</div>
+          <div class="leaf">Ciberacoso</div>
+        </div>
+      </div>
+    </div>
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u4">Privacidad<small>privacy</small></div>
+        <div class="children">
+          <div class="leaf">Libertad de intrusión</div>
+          <div class="leaf">Control de tu información</div>
+          <div class="leaf">Libertad de vigilancia</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u4">RGPD<small>GDPR · 2018</small></div>
+        <div class="children">
+          <div class="leaf">7 principios</div>
+          <div class="leaf">Acceso y rectificación</div>
+          <div class="leaf">Derecho al olvido</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-navy">Conceptos clave</div>
+        <div class="children">
+          <div class="leaf">Poder: ¿quién posee?</div>
+          <div class="leaf">Valores y ética</div>
+          <div class="leaf">Identidad: tu huella</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:#F59E0B"></span>Etapa del ciclo de vida con su dilema</span>
+    <span class="lg"><span class="dot" style="background:#F59E0B"></span>Protección legal</span>
+    <span class="lg"><span class="dot" style="background:#1E3A5F"></span>Lentes conceptuales del curso</span>
+  </div>
+</div>
+<!-- ═══════════════ TABLA SÍNTESIS · REPERCUSIONES Y DILEMAS POR TECNOLOGÍA ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker k4">Síntesis &middot; Repercusiones y dilemas</div>
+    <div class="section-title">Cada tecnología, sus dos caras</div>
+    <div class="divider d4"></div>
+  </div>
+
+  <p class="body-text">Esta tabla responde directamente al corazón del tema: <b>cada tecnología de datos</b> planteada en el libro, <b>cómo funciona</b>, qué <b>repercusiones</b> trae —positivas y negativas— y el <b>dilema ético</b> que plantea. En el examen usa siempre esta estructura: tecnología &rarr; repercusión (positiva y negativa) &rarr; dilema &rarr; concepto del curso.</p>
+
+  <table class="cmp bigtable d4">
+    <tr><th style="width:16%">Tecnología</th><th style="width:24%">Cómo funciona</th><th style="width:20%">Repercusión positiva</th><th style="width:20%">Repercusión negativa</th><th>Dilema ético</th></tr>
+    <tr><td><b>Sensores e IoT</b></td><td>Miden una propiedad específica y envían una señal analógica que el <b>ADC</b> convierte en digital.</td><td>Recogida continua y automática: meteorología, ciencia, salud, sin intervención humana.</td><td>La persona no sabe qué se mide ni cuándo: <b>recolección excesiva</b> y silenciosa.</td><td>¿Existe <b>consentimiento</b> real para sensores que nunca dejan de recoger?</td></tr>
+    <tr><td><b>GPS y localización</b></td><td>Tecnologías GPS posicionan objetos en el espacio geográfico; alimentan mapas y servicios.</td><td>Navegación, emergencias, logística y estudios del territorio.</td><td>Rastreo constante; acceso estatal <b>sin autorización</b> (caso AFP, 1700 accesos irregulares).</td><td>¿Cuándo es legítimo que el Estado vigile la ubicación de las personas?</td></tr>
+    <tr><td><b>Minería y cruce de datos</b></td><td>Buscan patrones, correlaciones y anomalías en un gran conjunto (mining) o comparan dos conjuntos (matching).</td><td>Detección de fraude; conexiones médicas como exposición al sol &rarr; cáncer de piel.</td><td><b>Perfilamiento oculto</b> de personas y reidentificación al cruzar fuentes.</td><td>Utilidad analítica vs <b>privacidad</b> y vigilancia comercial.</td></tr>
+    <tr><td><b>Bases de datos</b></td><td>Tablas de campos y registros; claves primarias y externas; consultas (queries) e informes.</td><td>Orden, acceso simultáneo, búsqueda y análisis rápidos y reutilizables.</td><td>Concentran todo en un punto: <b>objetivo principal de las brechas</b>.</td><td>Centralización eficiente vs <b>control de acceso</b> y riesgo acumulado.</td></tr>
+    <tr><td><b>Cifrado</b> (simétrico y de clave pública)</td><td>Convierte datos legibles en ilegibles: clave única (AES 128/256 bits) o par pública/privada (SSL/TLS &rarr; https).</td><td>Confidencialidad en tránsito y en reposo; base de la confianza digital.</td><td>También protege a delincuentes; la clave simétrica es vulnerable <b>al distribuirse</b>.</td><td>¿Puede el Estado exigir <b>puertas traseras</b> sin debilitar la privacidad de todos?</td></tr>
+    <tr><td><b>Enmascaramiento</b></td><td>Reemplaza datos confidenciales por <b>ficticios funcionales</b> antes de probar, analizar o compartir.</td><td>Usar el valor de los datos protegiendo la privacidad del cliente.</td><td>Puede <b>reidentificarse</b> al cruzarse con otras fuentes.</td><td>¿Es la anonimización realmente irreversible? ¿Qué consentimiento la cubre?</td></tr>
+    <tr><td><b>Borrado seguro</b></td><td>Destruye datos con <b>desmagnetizadoras</b>, <b>trituradoras</b> o sobrescritura con 0 y 1 (&ne; papelera).</td><td>Cumple la retención legal; evita filtraciones al desechar o vender equipos.</td><td>Irreversible: un borrado erróneo destruye información valiosa.</td><td>La responsabilidad <b>sobrevive al hardware</b>: ¿quién responde al revender un equipo?</td></tr>
+    <tr><td><b>Blockchain</b></td><td>Libro mayor digital <b>duplicado y distribuido</b>; cada bloque refuerza la verificación del anterior.</td><td>Transparencia y antifraude (IBM Food Trust); salud, voto digital, identidad.</td><td><b>Inmutable</b>: choca con el derecho a corregir o borrar datos personales.</td><td>¿Cómo se aplica el <b>derecho al olvido</b> a una cadena que no olvida?</td></tr>
+    <tr><td><b>Big data y analítica</b></td><td>Procesa volúmenes masivos y variados (4 V) para hallar tendencias imposibles para un humano.</td><td>Fraude detectado en tiempo real (Citibank); insights deportivos; mejores decisiones.</td><td>Hereda <b>sesgos</b>, permite perfilamiento masivo y concentra poder.</td><td>¿Los <b>beneficios</b> de recoger, analizar y compartir datos superan las <b>preocupaciones éticas</b>?</td></tr>
+    <tr><td><b>Biometría y reconocimiento facial</b></td><td>Convierte rasgos del rostro en datos de identidad — <b>información sensible</b>.</td><td>Identificación rápida y segura en fronteras, bancos y dispositivos.</td><td><b>Sesgo</b> contra rostros negros, asiáticos e indígenas (NIST 2019).</td><td><b>Discriminación algorítmica:</b> un dato biométrico filtrado no se puede &ldquo;cambiar&rdquo; como una contraseña.</td></tr>
+  </table>
+
+  <div class="info-card">
+    <h4>Conecta con los siete conceptos del curso</h4>
+    <p><b>Cambio:</b> del bit al big data, el valor de los datos se transformó por completo &middot; <b>Expresión:</b> cada publicación deja datos que hablan de ti &middot; <b>Identidad:</b> tu huella digital te define y te sigue &middot; <b>Poder:</b> quien posee y analiza los datos decide &middot; <b>Espacio:</b> la localización convierte el espacio físico en dato &middot; <b>Sistemas:</b> el ciclo de vida conecta creación, almacenamiento, uso, preservación y destrucción &middot; <b>Valores y ética:</b> cada etapa esconde un dilema que exige una decisión.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Errores frecuentes que cuestan puntos</h4>
+    <p>1) Confundir <b>data mining</b> con <b>data matching</b> (revisa la ficha 3.1) &middot; 2) Creer que eliminar a la papelera es <b>borrado seguro</b> &middot; 3) Usar <b>fiabilidad</b> cuando te piden <b>integridad</b>, y al revés &middot; 4) Dar solo repercusiones positivas o solo negativas: el examen espera <b>ambas</b> &middot; 5) Describir la tecnología sin cerrar con el <b>dilema</b> y un <b>concepto</b> del curso.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Frases modelo para tu respuesta</h4>
+    <p>&ldquo;Una repercusión positiva de [tecnología] es&hellip; para [individuos/comunidades]&rdquo; &middot; &ldquo;Sin embargo, genera el dilema de&hellip;, porque&hellip;&rdquo; &middot; &ldquo;Esto conecta con el concepto de [poder / ética / identidad], ya que&hellip;&rdquo; &middot; &ldquo;Según el RGPD, el principio de [minimización] se incumpliría porque&hellip;&rdquo;. Cuatro frases, cuatro criterios de evaluación cubiertos.</p>
+  </div>
+
+  <div class="quiz-card q4">
+    <h4>Pregunta síntesis</h4>
+    <ol>
+      <li>Elige <b>dos</b> tecnologías de la tabla y <b>discuss</b> sus repercusiones para individuos y comunidades. <i>[6 marks]</i></li>
+      <li><b>To what extent</b> pueden la legislación y las tecnologías de seguridad resolver los dilemas de los datos? <i>[8 marks]</i></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ CASOS DE PRÁCTICA ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker k2">Preparación para el examen</div>
+    <div class="section-title">Tres casos inéditos al estilo Paper 1</div>
+    <div class="divider d2"></div>
+  </div>
+
+  <p class="body-text">En Paper 1 analizarás <b>fuentes que nunca has visto</b> (artículos, informes, gráficos) conectadas a un escenario real. Estos tres escenarios fueron <b>creados para este repaso</b>: no son casos reales ni provienen del libro, pero combinan tecnologías y dilemas de 3.1 exactamente como lo haría el examen. Responde primero tú y compara después con la <b>pauta</b>.</p>
+
+  <div class="info-card">
+    <h4>Método de 4 pasos ante cualquier caso nuevo</h4>
+    <p><b>1)</b> Identifica las <b>tecnologías de datos</b> presentes (sensores, GPS, big data, blockchain&hellip;) y el <b>contexto</b> del curso. &nbsp;<b>2)</b> Cita las <b>definiciones exactas</b> del libro para los términos que uses. &nbsp;<b>3)</b> Da <b>dos repercusiones</b> —una positiva y una negativa— y di a quién afectan (individuos, comunidades, mundo). &nbsp;<b>4)</b> Cierra con el <b>dilema ético</b> y un <b>concepto del curso</b> (poder, ética, identidad&hellip;). Esa es la estructura que premian los criterios de evaluación.</p>
+  </div>
+
+  <div class="practice">
+    <span class="practice-tag">Caso de práctica 1 · Escenario inédito · contexto salud</span>
+    <h4>TeleAndes: telemedicina y big data en los Andes</h4>
+    <p class="pctx">En 2025, la startup <b>TeleAndes</b> lanzó una app de telemedicina en tres países andinos. Los pacientes se registran con <b>validación biométrica facial</b>, suben sus historiales y conectan sus <b>wearables</b> (frecuencia cardiaca, sueño). Todo se almacena en <b>la nube de otro país</b>, y un modelo de <b>big data</b> predice brotes de dengue por barrio. Con fines de investigación, la app comparte datos <b>enmascarados</b> con aseguradoras y una universidad. En 2026, una auditoría reveló que el 40&nbsp;% de los formularios recogía <b>más datos de los necesarios</b> y que el modelo se había entrenado casi solo con pacientes urbanos: en las zonas rurales los <b>falsos negativos</b> se multiplicaron.</p>
+    <ol class="pq">
+      <li><b>Identify</b> dos tipos de datos recogidos por la app y clasifícalos según las categorías del libro. <i>[2 marks]</i></li>
+      <li><b>Outline</b> cómo el enmascaramiento de datos protege a los pacientes al compartir información con aseguradoras. <i>[4 marks]</i></li>
+      <li><b>Explain</b> dos dilemas de la etapa de <b>almacenamiento</b> presentes en este escenario. <i>[6 marks]</i></li>
+      <li><b>Discuss</b> las repercusiones del sesgo del modelo para los pacientes rurales. <i>[6 marks]</i></li>
+    </ol>
+    <span class="reveal-btn">Ver pauta</span>
+    <div class="q-a"><b>Pauta:</b> (1) datos <b>biométricos</b> (sensibles) y datos <b>médicos</b> (historiales); también geográficos si el barrio se registra. (2) reemplazar confidenciales por <b>ficticios funcionales</b> &rarr; la aseguradora analiza sin exponer identidades; mencionar que <b>clasificar los datos</b> en la etapa 2 facilita el proceso. (3) servidor en otro país &rarr; ¿qué regulación local aplica y quién la hace cumplir?; control y acceso (¿quién es dueño?, ¿quién responde?); riesgo de brecha &rarr; honorarios legales y compensación; fiabilidad e integridad de lo almacenado. (4) dataset no diverso (paralelo NIST 2019) &rarr; diagnósticos tardíos, desconfianza, desigualdad sanitaria; concepto: <b>poder</b> o <b>equidad</b>; dilema: ¿quién responde por el error del algoritmo?</div>
+  </div>
+
+  <div class="practice">
+    <span class="practice-tag">Caso de práctica 2 · Escenario inédito · contexto transporte urbano</span>
+    <h4>TransLucía: la ciudad que no olvida</h4>
+    <p class="pctx">La ciudad de <b>San Cristóbal</b> (2 millones de habitantes) modernizó su transporte en 2024: <b>5000 sensores IoT</b> miden flujo y calidad del aire, los buses reportan <b>GPS en tiempo real</b> y un modelo de <b>big data</b> recalcula rutas cada minuto. Para acceder a la &ldquo;tarifa plana&rdquo;, los pasajeros pueden registrarse &ldquo;voluntariamente&rdquo; con <b>reconocimiento facial</b>. Los datos de localización se <b>retienen 5 años</b> y se comparten con una empresa publicitaria. Un grupo de ciudadanos exige el <b>derecho al olvido</b>; el operador responde que la integridad del sistema está garantizada por una <b>blockchain</b> que registra cada viaje.</p>
+    <ol class="pq">
+      <li><b>Define</b> el término metadata y da un ejemplo en este sistema. <i>[2 marks]</i></li>
+      <li><b>Explain</b> por qué retener la localización durante 5 años y compartirla con anunciantes preocupa a los ciudadanos. <i>[6 marks]</i></li>
+      <li><b>Discuss</b> si la blockchain resuelve el conflicto o lo agrava. <i>[6 marks]</i></li>
+      <li><b>To what extent</b> debería un gobierno aceptar la vigilancia facial &ldquo;voluntaria&rdquo; a cambio de tarifas más baratas? <i>[8 marks]</i></li>
+    </ol>
+    <span class="reveal-btn">Ver pauta</span>
+    <div class="q-a"><b>Pauta:</b> (1) datos que <b>describen otros datos</b>; ejemplo: hora y ubicación de cada lectura de sensor, o el ID del bus que generó el registro. (2) los <b>3 aspectos de la privacidad</b>: intrusión (sensores y cámaras), control (nadie eligió ese uso) y vigilancia (los movimientos se pueden reconstruir); RGPD: <b>limitación del propósito</b> (se pidió para la tarifa, se usa para publicidad), <b>minimización</b> y <b>limitación del almacenamiento</b> (¿de verdad hacen falta 5 años?). (3) a favor: integridad y antimanipulación de los registros; en contra: la <b>inmutabilidad</b> hace imposible el olvido — el viaje queda grabado para siempre; dilema: transparencia vs derecho al olvido. (4) construir ambos lados: eficiencia y tarifas vs consentimiento condicionado (¿es voluntario si la alternativa es pagar más?) y exclusión de quienes no quieren dar su rostro; conceptos: <b>poder</b> y <b>espacio</b>; conclusión con criterio propio y matizado.</div>
+  </div>
+
+  <div class="practice">
+    <span class="practice-tag">Caso de práctica 3 · Escenario inédito · contexto economía</span>
+    <h4>CaféOrigen: blockchain para el café de altura</h4>
+    <p class="pctx">Una cooperativa de <b>Puno</b> registró su café en una plataforma <b>blockchain</b>: cada bolsa lleva un QR que muestra la finca, la altitud, la fecha de cosecha, la certificación y el <b>precio pagado al productor</b>; <b>sensores de humedad y temperatura</b> suben los datos del secado, y cada venta queda en un bloque con <b>hora y secuencia</b>. Un tostador europeo pide acceso a los <b>rendimientos por finca</b> para &ldquo;optimizar sus compras&rdquo;, y las familias temen que esos datos se usen para <b>presionar los precios a la baja</b>. La junta directiva debate si <b>enmascarar</b> los datos por finca antes de compartirlos.</p>
+    <ol class="pq">
+      <li><b>Identify</b> dos datos primarios y un dato secundario en este escenario. <i>[2 marks]</i></li>
+      <li><b>Explain</b> paso a paso cómo cada bloque refuerza la confianza del comprador. <i>[4 marks]</i></li>
+      <li><b>Outline</b> cómo el enmascaramiento podría equilibrar los intereses de ambas partes. <i>[4 marks]</i></li>
+      <li><b>Discuss</b> si la transparencia empodera al productor o lo expone. <i>[8 marks]</i></li>
+    </ol>
+    <span class="reveal-btn">Ver pauta</span>
+    <div class="q-a"><b>Pauta:</b> (1) primarios: humedad/temperatura de los sensores, registro de cosecha creado por la cooperativa; secundario: certificaciones o estándares de precio elaborados por terceros para otro propósito. (2) transacción &rarr; bloque con hora y secuencia &rarr; <b>cada bloque adicional refuerza la verificación del anterior</b> &rarr; alterar una venta exigiría romper toda la cadena distribuida &rarr; el comprador confía en el origen y la frescura (paralelo: IBM Food Trust). (3) reemplazar rendimientos exactos por <b>rangos ficticios funcionales</b>: el tostador analiza tendencias sin identificar fincas concretas; clasificar los datos (etapa 2) facilita decidir qué se comparte. (4) positivo: prueba de origen justifica un precio justo y da visibilidad a la finca; negativo: asimetría de poder — el eslabón más fuerte usa el dato para negociar a la baja; conceptos: <b>poder</b> y <b>equidad</b>; conclusión: la transparencia solo empodera si el productor controla <b>quién accede y para qué</b>.</div>
+  </div>
+</div>
+<!-- ═══════════════ FICHAS RÁPIDAS INTERACTIVAS ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Repaso interactivo</div>
+    <div class="section-title">30 fichas rápidas: pregunta y respuesta</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text only-screen" style="background:var(--u1-bg);border:1px solid #BFDBFE;border-radius:9px;padding:9px 13px;font-size:11.5px;color:#1E40AF"><b>Cómo usarlas en pantalla:</b> piensa la respuesta y <b>haz clic en la ficha</b> para voltearla; vuelve a hacer clic para regresar a la pregunta.</p>
+  <p class="body-text only-print">Versión impresa: cada ficha muestra la <b>pregunta arriba</b> y la <b>respuesta debajo</b> — cúbre la respuesta con una hoja para autoevaluarte.</p>
+
+  <div class="fc-grid">
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">1 · ¿Qué es un dato?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Hechos y cifras <b>crudos y sin organizar</b> (números, letras, caracteres, imágenes), sin significado propio, medidos en <b>bits y bytes</b>. Ej.: el 50 de un sensor.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">2 · ¿Qué es la información?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">La <b>salida tras procesar, organizar o estructurar</b> los datos; responde quién/qué/dónde/cuándo y aporta contexto y unidades: <b>50&nbsp;&deg;C</b>, <b>75&nbsp;%</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">3 · ¿Qué es el conocimiento?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">El <b>significado derivado de la información</b>, aplicado para lograr un objetivo (el &ldquo;cómo&rdquo;): el meteorólogo estima el riesgo de inundación con la lluvia.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">4 · ¿Qué es la sabiduría?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">La <b>aplicación del conocimiento en acción</b> (el &ldquo;porqué&rdquo;): decidir, detectar patrones y <b>predecir</b> — predecir una ola de calor, fijar la nota prevista.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">5 · Define metadata.</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Conjunto de datos que <b>describe y da información sobre otros datos</b>. Ej.: autor, tamaño y fecha de creación de un documento.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">6 · Data mining vs data matching</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Mining:</b> hallar patrones, correlaciones y anomalías <b>dentro</b> de un gran conjunto. <b>Matching:</b> comparar <b>dos conjuntos</b> para encontrar datos sobre la <b>misma entidad</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">7 · Datos primarios vs secundarios</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Primarios:</b> originales, recogidos por primera vez para un propósito específico (cámaras de reconocimiento facial). <b>Secundarios:</b> ya recogidos por otro para otro fin (training data, artículos).</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">8 · Base de datos relacional</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Base de datos con <b>más de una tabla</b>, vinculadas por <b>clave primaria</b> (valores únicos) y <b>clave externa</b>; cada registro necesita un <b>identificador único</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">9 · Validación vs verificación</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Validación:</b> solo entran datos apropiados (longitud, tipos, máscaras, rangos, lookup). <b>Verificación:</b> comprobar que el dato coincide con la fuente (<b>doble entrada</b>, revisión visual).</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">10 · Etapas del ciclo de vida</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Creaci&oacute;n &rarr; almacenamiento &rarr; uso &rarr; preservaci&oacute;n &rarr; destrucci&oacute;n.</b> Las organizaciones lo usan para gestionar el flujo de datos y cumplir la <b>gobernanza de datos</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">11 · Cuatro categorías de clasificación</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Pública</b> (nombre y teléfono de la org.), <b>confidencial</b> (datos bancarios), <b>sensible</b> (biométricos) y <b>personal</b> (origen étnico, opiniones políticas).</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">12 · Cifrado de clave simétrica</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Misma clave</b> para codificar y decodificar; <b>AES 128/256 bits</b> resiste la fuerza bruta (2<sup>256</sup> combinaciones). Se usa en WiFi, datos archivados y bases de datos.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">13 · Cifrado de clave pública</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Dos claves:</b> la pública se comparte, la privada guarda el receptor; envías con la pública del destino y descifras con la privada. Base de <b>SSL/TLS</b> (https), WhatsApp y firmas digitales.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">14 · Enmascaramiento (data masking)</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Reemplazar datos confidenciales por <b>ficticios funcionales</b>, anonimizando: permite probar apps, analizar y compartir con terceros protegiendo la privacidad.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">15 · Data erasure vs data deletion</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Erasure:</b> destrucción definitiva — <b>desmagnetizadoras</b>, <b>trituradoras</b> o sobrescritura con 0/1. <b>Deletion:</b> papelera o reformateo; con herramientas, <b>los datos se recuperan</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">16 · ¿Qué es blockchain?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Libro mayor digital de transacciones <b>duplicado y distribuido</b> en una red; cada transacción es un <b>bloque</b> (hora y secuencia) y <b>cada bloque refuerza la verificación del anterior</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">17 · Define big data.</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Término para <b>grandes volúmenes de datos estructurados y no estructurados</b>. Popularizado por <b>John R. Mashey</b> (Silicon Graphics) en los años 1990.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">18 · Las 4 V del big data</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Volumen</b> (fuentes masivas: redes, IoT), <b>velocidad</b> (generación y análisis), <b>variedad</b> (posts, vídeo, fotos, PDF) y <b>veracidad</b> (exactitud y calidad).</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">19 · Big data analytics</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Procesar conjuntos <b>grandes y variados</b> para identificar <b>tendencias y patrones</b>; analiza el pasado para mejorar servicio, optimizar operaciones y hallar nuevos ingresos.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">20 · Data privacy (def. del libro)</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">La capacidad de las personas para <b>controlar su información personal</b>. En el almacenamiento depende de dónde, quién es dueño, quién controla y quién accede.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">21 · Fiabilidad vs integridad</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Reliability:</b> datos <b>completos y exactos</b>. <b>Integrity:</b> la <b>confianza</b> en los datos y si han sido <b>comprometidos</b>. Un cambio no autorizado &rarr; decisiones y predicciones erróneas.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">22 · Los 3 aspectos de la privacidad</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Libertad de intrusión</b> (que te dejen en paz), <b>control de la información sobre uno mismo</b> y <b>libertad de vigilancia</b> (que nadie te observe).</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">23 · RGPD: cuándo y qué</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Mayo de 2018, UE</b>: armoniza las leyes de privacidad. <b>7 principios</b> (licitud, propósito, minimización, exactitud, almacenamiento, integridad, responsabilidad) y derechos: <b>información, acceso, rectificación y olvido</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">24 · 5 causas de datos no fiables</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Sesgo</b>, <b>virus y malware</b>, <b>fuentes no evaluadas</b>, <b>datos desactualizados</b> y <b>error humano</b> (entrada manual, gestión de archivos deficiente).</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">25 · Define ciberacoso.</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Cyberbullying:</b> acoso realizado <b>en línea</b>, por ejemplo en redes sociales. Es una de las caras oscuras del <b>anonimato</b> en la etapa de uso de los datos.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">26 · Usos de blockchain citados en el libro</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Microsoft Authenticator</b> (identidad digital), datos de <b>pacientes</b> en salud, <b>voto digital</b> único e inalterable y rastreo de <b>armas</b> del gobierno de EE.&nbsp;UU.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">27 · Big data en la banca</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>American Express:</b> modelos predictivos sobre transacciones. <b>JP Morgan:</b> trading automatizado con miles de millones. <b>Citibank:</b> detección de fraude en <b>tiempo real</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">28 · Bundesliga: ¿cómo funciona Match Facts?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>24 cámaras</b> recogen y transmiten datos durante <b>90 minutos</b> &rarr; se convierten en <b>metadata</b> &rarr; se combinan con datos históricos &rarr; probabilidad de gol, presión sobre un jugador.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">29 · DIKW: ¿qué pregunta responde cada nivel?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Dato (sin pregunta: crudo) &rarr; información (<b>quién/qué/dónde/cuándo</b>) &rarr; conocimiento (<b>cómo</b> usarlo) &rarr; sabiduría (<b>por qué</b>: decidir y predecir).</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">30 · ¿Qué es un sensor y qué hace el ADC?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Dispositivo pequeño que <b>mide una propiedad</b> y envía la señal al ordenador. La señal <b>analógica</b> se convierte en <b>digital</b> con el <b>ADC</b> (ej.: temperatura, luz, presión, humedad, gases).</div></div></div></div>
+  </div>
+</div>
+<!-- ═══════════════ QUIZ FINAL INTERACTIVO ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker k3">Autoevaluación final</div>
+    <div class="section-title">Quiz: 14 preguntas con corrección al instante</div>
+    <div class="divider d3"></div>
+  </div>
+
+  <p class="body-text only-screen">Responde y <b>haz clic en tu opción</b>: se pone verde si aciertas y roja si no, y se abre la explicación. También puedes abrir cada explicación con el botón <i>Ver respuesta</i>.</p>
+  <p class="body-text only-print">Versión impresa: responde en tu cuaderno; la <b>respuesta correcta y su explicación</b> aparecen en un recuadro verde debajo de cada pregunta.</p>
+
+  <div class="qz-part">Parte A &middot; Verdadero o falso</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt"><b>1.</b> La información aporta contexto y unidades que el dato crudo no tiene.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Verdadero.</b> El dato 50 no significa nada; la información lo convierte en 50&nbsp;&deg;C (unidad + contexto). Esa es la frontera DIKW del Bloque 1.</div>
+
+  <div class="vf-row" data-ans="F"><div class="vf-txt"><b>2.</b> Enviar un archivo a la papelera es un método seguro de borrado de datos.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Falso.</b> Eso es <b>data deletion</b> (solo borra icono y ruta): con las herramientas adecuadas los datos <b>se recuperan</b>. El borrado seguro (erasure) exige desmagnetizadora, trituradora o sobrescritura.</div>
+
+  <div class="vf-row" data-ans="F"><div class="vf-txt"><b>3.</b> En el cifrado de clave pública, la clave privada se comparte con cualquier ordenador.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Falso.</b> Se comparte la <b>clave pública</b>; la privada la conoce solo el ordenador receptor, y con ella se decodifican los datos recibidos.</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt"><b>4.</b> La veracidad es la V que se refiere a la exactitud y calidad de los datos recogidos.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Verdadero.</b> <b>Veracity</b> = exactitud y calidad; sin ella, todo análisis posterior (velocidad, volumen) es dudoso.</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt"><b>5.</b> El RGPD otorga a las personas el derecho a ser olvidadas.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Verdadero.</b> Junto con el derecho a ser informado, a acceder y a la rectificación. Recuerda el dilema: choca con la inmutabilidad de la blockchain.</div>
+
+  <div class="vf-row" data-ans="F"><div class="vf-txt"><b>6.</b> El enmascaramiento mantiene los datos originales intactos en el conjunto que se comparte.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Falso.</b> El masking <b>reemplaza</b> los datos confidenciales por <b>ficticios funcionales</b>: el conjunto compartido ya no contiene los datos reales.</div>
+</div>
+
+<div class="main-content new-page">
+  <div class="qz-part">Parte B &middot; Opción múltiple</div>
+
+  <div class="mc-q" data-ans="B"><div class="mc-txt"><b>7.</b> Comparar dos conjuntos de datos diferentes para encontrar datos sobre la misma entidad se llama&hellip;</div>
+    <div class="opts"><span class="mc-opt" data-k="A">A · Data mining</span><span class="mc-opt" data-k="B">B · Data matching</span><span class="mc-opt" data-k="C">C · Data masking</span><span class="mc-opt" data-k="D">D · Data erasure</span></div></div>
+  <div class="q-a"><b>B.</b> <b>Data matching</b> compara dos conjuntos (precios entre plataformas, fraude, sol &rarr; cáncer de piel). Mining busca patrones dentro de un conjunto; masking anonimiza; erasure destruye.</div>
+
+  <div class="mc-q" data-ans="C"><div class="mc-txt"><b>8.</b> Vas a desechar un smartphone con datos confidenciales. Según el libro, el método físico eficaz es&hellip;</div>
+    <div class="opts"><span class="mc-opt" data-k="A">A · Desmagnetizadora</span><span class="mc-opt" data-k="B">B · Sobrescritura con 0 y 1</span><span class="mc-opt" data-k="C">C · Trituradora</span><span class="mc-opt" data-k="D">D · Enviarlo a la papelera</span></div></div>
+  <div class="q-a"><b>C.</b> Las <b>trituradoras</b> reducen el medio a partículas y son eficaces con <b>estado sólido y smartphones</b>; las desmagnetizadoras se usan para medios magnéticos. La sobrescritura es software, no método físico.</div>
+
+</div>
+
+<div class="main-content">
+  <div class="mc-q" data-ans="A"><div class="mc-txt"><b>9.</b> En el cifrado de clave pública (SSL/TLS), para enviar datos de forma segura se usa&hellip;</div>
+    <div class="opts"><span class="mc-opt" data-k="A">A · La clave pública del destino</span><span class="mc-opt" data-k="B">B · La clave privada del remitente</span><span class="mc-opt" data-k="C">C · Una clave simétrica AES</span><span class="mc-opt" data-k="D">D · El mismo texto plano</span></div></div>
+  <div class="q-a"><b>A.</b> Se cifra con la <b>clave pública del destino</b>; en tránsito es ilegible y solo la <b>clave privada</b> del receptor lo decodifica. Así funciona https.</div>
+
+  <div class="mc-q" data-ans="B"><div class="mc-txt"><b>10.</b> ¿Qué principio del RGPD prohíbe recoger más información personal de la necesaria?</div>
+    <div class="opts"><span class="mc-opt" data-k="A">A · Limitación del propósito</span><span class="mc-opt" data-k="B">B · Minimización de datos</span><span class="mc-opt" data-k="C">C · Exactitud</span><span class="mc-opt" data-k="D">D · Responsabilidad</span></div></div>
+  <div class="q-a"><b>B.</b> <b>Data minimization</b>: las organizaciones no deben recoger más información personal que la necesaria. La limitación del propósito trata sobre el uso que se da a los datos.</div>
+
+  <div class="qz-part">Parte C &middot; Relaciona</div>
+
+  <table class="cmp d3" style="max-width:100%">
+    <tr><th style="width:50%">Columna A</th><th>Columna B</th></tr>
+    <tr><td><b>1.</b> Trituradora (shredder)</td><td><b>a.</b> La V de la exactitud y calidad</td></tr>
+    <tr><td><b>2.</b> Radiosonda en globo</td><td><b>b.</b> Información confidencial de alto riesgo</td></tr>
+    <tr><td><b>3.</b> Datos bancarios</td><td><b>c.</b> Método físico de borrado</td></tr>
+    <tr><td><b>4.</b> Veracidad (veracity)</td><td><b>d.</b> Datos de la atmósfera superior</td></tr>
+  </table>
+  <span class="reveal-btn">Ver pauta</span>
+  <div class="q-a"><b>Pauta:</b> 1&ndash;c (trituradora &rarr; borrado físico), 2&ndash;d (radiosonda &rarr; atmósfera superior), 3&ndash;b (datos bancarios &rarr; confidenciales de alto riesgo), 4&ndash;a (veracidad &rarr; exactitud y calidad).</div>
+</div>
+
+<!-- ═══════════════ CIERRE ═══════════════ -->
+<div class="ending">
+  <div class="end-quote">&ldquo;¿Los beneficios de recoger, analizar y compartir datos superan las preocupaciones éticas que plantean?&rdquo;
+    <span style="display:block;font-size:12px;font-family:'Inter','Liberation Sans',sans-serif;margin-top:12px;font-style:normal;color:#93A9C9">— Pregunta de reflexión del libro (learner profile: <i>Thinker</i>)</span></div>
+  <div class="end-checks">
+    <div class="end-check"><span class="tick">✓</span><p><b>Distingo</b> dato, información, conocimiento y sabiduría, y construyo mi propio ejemplo DIKW.</p></div>
+    <div class="end-check"><span class="tick">✓</span><p><b>Recito</b> las cinco etapas del ciclo de vida y doy un dilema para cada una.</p></div>
+    <div class="end-check"><span class="tick">✓</span><p><b>Defino</b> las cinco tecnologías de seguridad y su dilema: cifrado simétrico, clave pública, enmascaramiento, borrado seguro y blockchain.</p></div>
+    <div class="end-check"><span class="tick">✓</span><p><b>Explico</b> las 4 V del big data con los casos de la banca y la Bundesliga.</p></div>
+    <div class="end-check"><span class="tick">✓</span><p><b>Aplico</b> el RGPD: siete principios, derechos y los tres aspectos de la privacidad.</p></div>
+    <div class="end-check"><span class="tick">✓</span><p><b>Analizo</b> un caso inédito con la cadena: tecnología &rarr; repercusiones &rarr; dilema &rarr; concepto del curso.</p></div>
+  </div>
+  <div class="end-foot">Material de repaso NM &middot; Sociedad Digital IB &middot; Contenido 3.1 <i>Data and data analysis</i> — basado en Bomfim et al., <i>Digital Society</i>, Hodder Education 2022 (pp.&nbsp;56&ndash;80). Excluye monografía, evaluación interna y Paper 3. En la versión HTML las fichas rápidas, las pautas y el quiz son interactivos.</div>
+</div>
+
+<script>
+(function () {
+  // Fichas rápidas: clic para voltear
+  document.querySelectorAll('.fc').forEach(function (c) {
+    c.addEventListener('click', function () { c.classList.toggle('flipped'); });
+  });
+  // Pautas desplegables
+  document.querySelectorAll('.reveal-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var a = b.nextElementSibling;
+      if (!a || !a.classList.contains('q-a')) return;
+      var open = a.classList.toggle('open');
+      b.textContent = open ? 'Ocultar pauta' : 'Ver pauta';
+    });
+  });
+  // Verdadero / Falso
+  document.querySelectorAll('.vf-row').forEach(function (row) {
+    var ans = (row.getAttribute('data-ans') || '').trim().toUpperCase();
+    row.querySelectorAll('.vf-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        row.querySelectorAll('.vf-btn').forEach(function (x) { x.classList.remove('sel'); });
+        btn.classList.add('sel');
+        row.classList.remove('ok', 'bad');
+        void row.offsetWidth;
+        row.classList.add(btn.textContent.trim().toUpperCase() === ans ? 'ok' : 'bad');
+        var a = row.nextElementSibling;
+        if (a && a.classList.contains('q-a')) a.classList.add('open');
+      });
+    });
+  });
+  // Opción múltiple
+  document.querySelectorAll('.mc-q').forEach(function (q) {
+    var ans = (q.getAttribute('data-ans') || '').trim().toUpperCase();
+    var opts = q.querySelectorAll('.mc-opt');
+    opts.forEach(function (o) {
+      o.addEventListener('click', function () {
+        opts.forEach(function (x) { x.classList.remove('sel', 'right', 'wrong'); });
+        o.classList.add('sel');
+        opts.forEach(function (x) {
+          var xl = (x.getAttribute('data-k') || '').trim().toUpperCase();
+          if (xl === ans) x.classList.add('right');
+          else if (x === o) x.classList.add('wrong');
+        });
+        var a = q.nextElementSibling;
+        if (a && a.classList.contains('q-a')) a.classList.add('open');
+      });
+    });
+  });
+})();
+</script>
+
