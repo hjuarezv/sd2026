@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>3.5 Medios — Material de repaso IB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<script>
+/* Este documento no contiene fórmulas matemáticas. Los "US$"/"£" son moneda, no delimitadores:
+   se registra un stub para que el conversor no inyecte KaTeX ni reescriba montos. */
+window.renderMathInElement = function () {};
+</script>
+<style>
+/* ═══════════ PÁGINAS ═══════════ */
+@page { size: 794px 1123px; margin: 48px 0 52px 0; }
+@page fullbleed { size: 794px 1123px; margin: 0; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #F8FAFC; --card: #FFFFFF; --ink: #1E293B; --muted: #64748B;
+  --line: #E2E8F0; --navy: #1E3A5F; --navy2: #2D4A6F;
+  --u1: #3B82F6; --u1-bg: #EFF6FF; --u1-tx: #1E40AF;
+  --u2: #8B5CF6; --u2-bg: #F5F3FF; --u2-tx: #5B21B6;
+  --u3: #14B8A6; --u3-bg: #F0FDFA; --u3-tx: #134E4A;
+  --u4: #F59E0B; --u4-bg: #FFF7ED; --u4-tx: #92400E;
+  --slate: #64748B; --slate-bg: #F1F5F9; --slate-tx: #334155;
+}
+html, body {
+  margin: 0; padding: 0; width: 794px;
+  background: var(--bg); color: var(--ink);
+  font-family: 'Inter', 'Liberation Sans', sans-serif;
+  font-size: 12.5px; line-height: 1.55;
+  overflow-wrap: break-word;
+}
+@media screen {
+  html { height: auto; display: flex; justify-content: center; background: #E2E8F0; }
+  body { transform: scale(1); transform-origin: top center; margin: 20px auto; box-shadow: 0 2px 24px rgba(15,23,42,.18); }
+}
+svg text { font-family: 'Inter', 'Liberation Sans', sans-serif; }
+
+/* ═══════════ PORTADA / CIERRE (full-bleed) ═══════════ */
+.cover {
+  page: fullbleed; width: 794px; height: 1123px;
+  background: linear-gradient(158deg, #16283F 0%, #1E3A5F 46%, #2D4A6F 100%);
+  color: #F1F5F9; position: relative;
+  display: flex; flex-direction: column;
+  padding: 54px 58px; break-after: page;
+}
+.cover .deco-circle { position: absolute; border-radius: 50%; border: 1.5px solid rgba(148,163,184,.28); }
+.cover .dc1 { width: 300px; height: 300px; right: 40px; top: 60px; }
+.cover .dc2 { width: 190px; height: 190px; right: 118px; top: 138px; border-color: rgba(148,163,184,.18); }
+.cover .dc3 { width: 120px; height: 120px; left: 44px; bottom: 150px; border-color: rgba(148,163,184,.15); }
+.cover-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+  color: #93C5FD; text-transform: uppercase;
+}
+.cover-badge::before { content: ''; width: 34px; height: 2px; background: #3B82F6; }
+.cover-center { margin: auto 0; position: relative; z-index: 2; }
+.cover-kicker { font-size: 12px; font-weight: 600; letter-spacing: 3px; color: #A5B4CC; text-transform: uppercase; margin-bottom: 16px; }
+.cover-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 64px; font-weight: 800; line-height: 1.04; color: #FFFFFF; margin-bottom: 10px;
+}
+.cover-sub { font-size: 19px; font-weight: 500; color: #C7D2E4; margin-bottom: 6px; }
+.cover-sub-en { font-size: 13px; color: #8FA3C2; font-style: italic; margin-bottom: 30px; }
+.cover-chips { display: flex; flex-wrap: wrap; gap: 10px; max-width: 100%; }
+.cchip {
+  background: rgba(59,130,246,.13); border: 1px solid rgba(147,197,253,.35);
+  color: #DCE7F7; border-radius: 20px; padding: 7px 15px;
+  font-size: 11.5px; font-weight: 600;
+}
+.cchip b { color: #FFFFFF; font-weight: 800; }
+.cover-3cs {
+  margin-top: 34px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 16px 18px; border: 1px solid rgba(148,163,184,.25); border-radius: 12px;
+  background: rgba(15,23,42,.25); max-width: 100%;
+}
+.cover-3cs .box { border-radius: 8px; padding: 8px 13px; font-size: 11.5px; font-weight: 700; letter-spacing: .4px; }
+.cover-3cs .arrow { color: #64748B; font-size: 13px; font-weight: 400; }
+.bx1 { background: rgba(59,130,246,.22); color: #BFDBFE; }
+.bx2 { background: rgba(139,92,246,.22); color: #DDD6FE; }
+.bx3 { background: rgba(20,184,166,.22); color: #99F6E4; }
+.bx4 { background: rgba(245,158,11,.20); color: #FDE68A; }
+.cover-foot { position: relative; z-index: 2; }
+.cover-scope { font-size: 11px; color: #94A7C4; line-height: 1.6; border-top: 1px solid rgba(148,163,184,.22); padding-top: 16px; }
+.cover-scope b { color: #CBD8EC; font-weight: 600; }
+.cover-edition { margin-top: 12px; font-size: 10.5px; color: #6E82A3; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 600; }
+
+/* ═══════════ CONTENIDO (flujo) ═══════════ */
+.main-content { padding: 0 56px; }
+.section-head { break-after: avoid; break-inside: avoid; margin-bottom: 10px; }
+.section-kicker { font-size: 10.5px; font-weight: 800; letter-spacing: 2.2px; text-transform: uppercase; color: var(--u1); margin-bottom: 4px; }
+.section-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 25px; font-weight: 800; color: var(--ink); line-height: 1.12;
+}
+.section-sub { font-size: 12.5px; color: var(--muted); margin-top: 5px; }
+.divider { height: 3px; width: 56px; background: var(--u1); border-radius: 2px; margin: 9px 0 3px; }
+p.body-text { font-size: 12px; color: #334155; margin-bottom: 7px; }
+p.body-text b { color: var(--ink); }
+.new-page { break-before: page; }
+.en-term { color: var(--muted); font-style: italic; }
+
+/* Tarjetas informativas */
+.info-card {
+  break-inside: avoid; background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; padding: 11px 14px; margin-bottom: 8px;
+}
+.info-card h4 { font-size: 12.5px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+.info-card p { font-size: 11.5px; color: #475569; }
+.info-card .ic-sub { font-size: 10.8px; color: var(--muted); margin-top: 3px; }
+
+/* Tarjetas de concepto en grilla */
+.cs-grid { display: flex; flex-wrap: wrap; gap: 9px; max-width: 100%; margin: 4px 0 10px; }
+.cs-card {
+  flex: 1 1 150px; min-width: 140px; max-width: 100%;
+  border-radius: 10px; padding: 11px 13px; border: 1px solid var(--line); break-inside: avoid;
+}
+.cs-card .cs-name { font-size: 12.5px; font-weight: 800; margin-bottom: 3px; }
+.cs-card p { font-size: 11px; line-height: 1.45; color: #475569; }
+.cs-1 { background: var(--u1-bg); } .cs-1 .cs-name { color: var(--u1-tx); }
+.cs-2 { background: var(--u2-bg); } .cs-2 .cs-name { color: var(--u2-tx); }
+.cs-3 { background: var(--u3-bg); } .cs-3 .cs-name { color: var(--u3-tx); }
+.cs-4 { background: var(--u4-bg); } .cs-4 .cs-name { color: var(--u4-tx); }
+
+/* ═══════════ TARJETA DE TECNOLOGÍA (definición + funcionamiento + oportunidades/impactos/dilemas) ═══════════ */
+.tcard {
+  break-inside: avoid; background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 9px 13px; margin-bottom: 7px;
+}
+.tcard-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 3px; }
+.tcard-num {
+  font-size: 9.5px; font-weight: 800; letter-spacing: .6px; color: #fff;
+  background: var(--u1); border-radius: 5px; padding: 2px 7px;
+}
+.tcard.u2 .tcard-num { background: var(--u2); }
+.tcard.u3 .tcard-num { background: var(--u3); }
+.tcard.u4 .tcard-num { background: var(--u4); }
+.tcard-title { font-size: 15px; font-weight: 800; color: var(--ink); }
+.tcard-en { font-size: 11px; color: var(--muted); font-style: italic; }
+.trow { display: flex; gap: 9px; padding: 3.5px 0; }
+.trow + .trow { border-top: 1px dashed #EEF2F7; }
+.tlabel {
+  flex: 0 0 94px; font-size: 9px; font-weight: 800; letter-spacing: .7px;
+  text-transform: uppercase; color: var(--u1-tx); padding-top: 2px;
+}
+.tlabel.fun { color: var(--u2-tx); }
+.tlabel.opp { color: var(--u3-tx); }
+.tlabel.imp { color: var(--navy); }
+.tlabel.warn { color: var(--u4-tx); }
+.tlabel.case { color: var(--u3-tx); }
+.tbody { flex: 1; font-size: 11px; color: #475569; line-height: 1.42; }
+.tbody b { color: var(--ink); }
+.tbody ul { list-style: none; margin: 1px 0; }
+.tbody li { padding-left: 12px; position: relative; margin-bottom: 2px; }
+.tbody li::before {
+  content: ''; position: absolute; left: 0; top: 7px;
+  width: 4px; height: 4px; border-radius: 50%; background: var(--u1);
+}
+.tbody li b { color: var(--ink); font-weight: 700; }
+
+/* ═══════════ GRÁFICOS ILUSTRATIVOS (SVG) ═══════════ */
+.svg-wrap {
+  break-inside: avoid; background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 8px 10px 5px; margin: 4px 0 8px;
+}
+.svg-wrap svg { display: block; width: 100%; height: auto; }
+.svg-cap { text-align: center; font-size: 9.5px; color: var(--muted); margin-top: 3px; }
+
+/* Tablas de examen */
+table.exam { width: 100%; border-collapse: collapse; margin: 6px 0 10px; font-size: 10.3px; break-inside: avoid; }
+table.exam th {
+  background: var(--navy); color: #fff; font-weight: 700;
+  padding: 6px 8px; text-align: left; font-size: 10px;
+}
+table.exam td { border: 1px solid var(--line); padding: 5px 8px; color: #334155; vertical-align: top; }
+table.exam tr:nth-child(even) td { background: #F8FAFC; }
+table.exam td b { color: var(--ink); }
+table.exam .en-term { font-size: 8.8px; white-space: nowrap; }
+table.tall { break-inside: auto; }
+table.tall tr { break-inside: avoid; }
+table.tall td { padding: 4px 7px; line-height: 1.35; font-size: 10px; }
+
+/* ═══════════ PÁGINAS DE MAPAS (full-bleed) ═══════════ */
+.map-page {
+  page: fullbleed; width: 794px; height: 1123px;
+  break-after: page; padding: 26px 20px 20px;
+  background: #FFFFFF; position: relative;
+  display: flex; flex-direction: column;
+}
+.map-head { margin-bottom: 6px; padding: 0 6px; }
+.map-kicker {
+  display: inline-block; font-size: 10px; font-weight: 800;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--u1-tx); background: var(--u1-bg);
+  border: 1px solid #BFDBFE; border-radius: 12px; padding: 3px 11px;
+}
+.map-kicker.k2 { color: var(--u2-tx); background: var(--u2-bg); border-color: #DDD6FE; }
+.map-kicker.k3 { color: var(--u3-tx); background: var(--u3-bg); border-color: #99F6E4; }
+.map-kicker.k4 { color: var(--u4-tx); background: var(--u4-bg); border-color: #FDE68A; }
+.map-kicker.k0 { color: var(--navy); background: #EDF2F9; border-color: #C9D7E8; }
+.map-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 25px; font-weight: 800; color: var(--ink); margin-top: 7px; line-height: 1.1;
+}
+.map-intro { font-size: 11.5px; color: var(--muted); margin-top: 4px; max-width: 640px; }
+
+.mindmap { position: relative; break-inside: avoid; display: flex; justify-content: center; align-items: center; flex: 1 1 auto; padding: 10px 0 6px; }
+.mindmap > svg.lines { position: absolute; top: 0; left: 0; pointer-events: none; z-index: 0; }
+.root-node {
+  background: linear-gradient(135deg, #1E3A5F, #2D4A6F);
+  color: #fff; font-size: 16.5px; font-weight: 800; line-height: 1.2;
+  padding: 15px 17px; border-radius: 13px; text-align: center;
+  white-space: nowrap; flex-shrink: 0; align-self: center;
+  box-shadow: 0 4px 12px rgba(30,58,95,.25); position: relative; z-index: 2;
+}
+.root-node small { display: block; font-size: 10px; font-weight: 600; color: #B7C6DC; letter-spacing: 1.5px; margin-top: 2px; }
+.branch-node {
+  font-size: 12.5px; font-weight: 700; line-height: 1.2;
+  padding: 8px 12px; border-radius: 8px; border: 2px solid;
+  white-space: normal; max-width: 142px; text-align: center;
+  flex-shrink: 0; position: relative; z-index: 2;
+}
+.branch-node small { display: block; font-size: 10px; font-weight: 600; opacity: .8; }
+.leaf {
+  font-size: 11.5px; font-weight: 500; color: #475569;
+  padding: 4.5px 11px; background: #FAFBFC;
+  border-radius: 11px; border: 1px solid #E2E8F0;
+  line-height: 1.3; white-space: normal; max-width: 138px;
+  width: fit-content; position: relative; z-index: 2;
+}
+.children { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.right-branches { display: flex; flex-direction: column; gap: 18px; }
+.right-branch { display: flex; align-items: flex-start; }
+.right-branch > .children { margin-left: 16px; padding-left: 8px; align-items: flex-start; }
+.left-branches { display: flex; flex-direction: column; gap: 18px; }
+.left-branch { display: flex; align-items: flex-start; flex-direction: row-reverse; }
+.left-branch > .children { margin-right: 16px; padding-right: 8px; align-items: flex-end; }
+.b-u1 { background: var(--u1-bg); border-color: var(--u1); color: var(--u1-tx); }
+.b-u2 { background: var(--u2-bg); border-color: var(--u2); color: var(--u2-tx); }
+.b-u3 { background: var(--u3-bg); border-color: var(--u3); color: var(--u3-tx); }
+.b-u4 { background: var(--u4-bg); border-color: var(--u4); color: var(--u4-tx); }
+.b-navy { background: #EDF2F9; border-color: var(--navy2); color: var(--navy); }
+.b-slate { background: var(--slate-bg); border-color: var(--slate); color: var(--slate-tx); }
+.map-legend {
+  position: absolute; left: 20px; right: 20px; bottom: 18px;
+  display: flex; flex-wrap: wrap; gap: 7px 14px; align-items: center;
+  font-size: 10px; color: var(--muted);
+  border-top: 1px solid var(--line); padding-top: 10px;
+}
+.map-legend .lg { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; }
+.map-legend .dot { width: 9px; height: 9px; border-radius: 3px; }
+
+/* ═══════════ INTERACTIVIDAD Y NUEVOS COMPONENTES ═══════════ */
+.only-print { display: none; }
+@media print {
+  .only-print { display: block; }
+  .only-screen { display: none !important; }
+}
+
+/* Caso de práctica (inédito, estilo examen) */
+.practice {
+  break-inside: avoid; background: #FBFAFF;
+  border: 1.5px dashed #A78BFA; border-radius: 10px;
+  padding: 11px 14px 10px; margin: 9px 0 12px;
+}
+.practice-tag { display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: 1.6px; color: var(--u2-tx); text-transform: uppercase; margin-bottom: 3px; }
+.practice h4 { font-size: 13.5px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+.practice p.pctx { font-size: 11.4px; color: #475569; line-height: 1.5; margin-bottom: 6px; }
+.practice ol.pq { margin-left: 17px; margin-bottom: 3px; }
+.practice ol.pq li { font-size: 11.4px; color: #334155; margin-bottom: 3px; }
+.practice ol.pq i { color: var(--muted); }
+
+/* Botón de pauta + respuesta desplegable */
+.reveal-btn {
+  display: inline-block; margin-top: 5px; font-size: 10px; font-weight: 800;
+  letter-spacing: .8px; text-transform: uppercase; color: var(--u2-tx);
+  background: var(--u2-bg); border: 1px solid #DDD6FE; border-radius: 8px;
+  padding: 4px 12px; cursor: pointer; user-select: none;
+}
+.q-a {
+  display: none; background: #ECFDF5; border: 1px solid #A7F3D0;
+  border-radius: 8px; padding: 7px 11px; margin-top: 6px;
+  font-size: 10.6px; color: #065F46; line-height: 1.52; break-inside: avoid;
+}
+.q-a b { color: #064E3B; }
+.q-a.open { display: block; }
+@media print { .q-a { display: block !important; } .reveal-btn { display: none !important; } }
+
+/* Quiz: verdadero/falso */
+.qz-part { font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: var(--navy); margin: 13px 0 4px; break-after: avoid; }
+.vf-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; break-inside: avoid; }
+.vf-row .vf-txt { flex: 1; font-size: 11.5px; color: #334155; }
+.vf-opts { display: flex; gap: 6px; flex: 0 0 auto; }
+.vf-btn {
+  font-size: 10px; font-weight: 800; border: 1.5px solid var(--line);
+  background: #fff; color: var(--muted); border-radius: 7px; padding: 2.5px 11px; cursor: pointer;
+}
+.vf-btn.sel { border-color: var(--u1); color: var(--u1-tx); background: var(--u1-bg); }
+.vf-row.ok .vf-btn.sel { border-color: #16A34A; color: #166534; background: #DCFCE7; }
+.vf-row.bad .vf-btn.sel { border-color: #DC2626; color: #991B1B; background: #FEE2E2; }
+
+/* Quiz: opción múltiple */
+.mc-q { padding: 5px 0; break-inside: avoid; }
+.mc-q .mc-txt { font-size: 11.5px; color: #334155; }
+.mc-q .opts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px; max-width: 100%; }
+.mc-opt {
+  font-size: 10.5px; border: 1.5px solid var(--line); background: #fff;
+  color: #475569; border-radius: 8px; padding: 3px 11px; cursor: pointer; white-space: nowrap;
+}
+.mc-opt.sel { border-color: var(--u1); color: var(--u1-tx); background: var(--u1-bg); font-weight: 700; }
+.mc-opt.right { border-color: #16A34A; background: #DCFCE7; color: #166534; font-weight: 700; }
+.mc-opt.wrong { border-color: #DC2626; background: #FEE2E2; color: #991B1B; }
+
+/* Fichas rápidas (flashcards interactivas) */
+.fc-grid { display: flex; flex-wrap: wrap; gap: 6px; margin: 7px 0 3px; max-width: 100%; }
+.fc { flex: 1 1 30.5%; min-width: 212px; max-width: 100%; break-inside: avoid; }
+.fc-inner { transform-style: preserve-3d; }
+.fc-face { border-radius: 10px; padding: 6.5px 10px; }
+.fc-front { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--u1); }
+.fc-back { background: var(--u1-bg); border: 1px solid #BFDBFE; border-top: 1px dashed #93C5FD; }
+.fc.f2 .fc-front { border-top-color: var(--u2); }
+.fc.f2 .fc-back { background: var(--u2-bg); border-color: #DDD6FE; border-top-color: #C4B5FD; }
+.fc.f3 .fc-front { border-top-color: var(--u3); }
+.fc.f3 .fc-back { background: var(--u3-bg); border-color: #99F6E4; border-top-color: #5EEAD4; }
+.fc.f4 .fc-front { border-top-color: var(--u4); }
+.fc.f4 .fc-back { background: var(--u4-bg); border-color: #FDE68A; border-top-color: #FCD34D; }
+.fc-q { font-size: 10.6px; font-weight: 700; color: var(--ink); line-height: 1.33; }
+.fc-a { font-size: 9.7px; color: #1E40AF; line-height: 1.38; }
+.fc-a b { color: #172554; }
+.fc.f2 .fc-a { color: var(--u2-tx); } .fc.f2 .fc-a b { color: #4C1D95; }
+.fc.f3 .fc-a { color: var(--u3-tx); } .fc.f3 .fc-a b { color: #134E4A; }
+.fc.f4 .fc-a { color: var(--u4-tx); } .fc.f4 .fc-a b { color: #78350F; }
+.fc-hint { font-size: 8.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .9px; margin-top: 5px; font-weight: 700; }
+@media screen {
+  .fc { height: 134px; cursor: pointer; perspective: 1000px; }
+  .fc-inner { position: relative; width: 100%; height: 100%; transition: transform .45s; }
+  .fc.flipped .fc-inner { transform: rotateY(180deg); }
+  .fc-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; }
+  .fc-back { transform: rotateY(180deg); }
+}
+@media print {
+  .fc-face + .fc-face { margin-top: 3px; }
+  .fc-hint { display: none; }
+}
+
+/* Cierre */
+.ending {
+  page: fullbleed; width: 794px; height: 1123px; break-before: page;
+  background: linear-gradient(158deg, #16283F 0%, #1E3A5F 46%, #2D4A6F 100%);
+  color: #F1F5F9; display: flex; flex-direction: column; justify-content: center;
+  padding: 60px; position: relative;
+}
+.end-quote {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 26px; font-weight: 600; font-style: italic;
+  line-height: 1.4; color: #E2E8F0; max-width: 560px; margin-bottom: 34px;
+}
+.end-checks { display: flex; flex-direction: column; gap: 10px; max-width: 560px; }
+.end-check {
+  display: flex; gap: 11px; align-items: flex-start;
+  border: 1px solid rgba(148,163,184,.28); border-radius: 10px;
+  padding: 11px 14px; background: rgba(15,23,42,.28);
+}
+.end-check .tick {
+  width: 19px; height: 19px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(59,130,246,.25); border: 1.5px solid #60A5FA;
+  color: #BFDBFE; font-size: 11px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.end-check p { font-size: 12px; color: #C7D2E4; }
+.end-check p b { color: #fff; }
+.end-foot { position: absolute; bottom: 52px; left: 60px; right: 60px;
+  border-top: 1px solid rgba(148,163,184,.22); padding-top: 14px;
+  font-size: 10px; color: #7C90B0; line-height: 1.6; }
+</style>
+</head>
+<body>
+<!-- ═══════════════ PORTADA ═══════════════ -->
+<div class="cover">
+  <div class="deco-circle dc1"></div>
+  <div class="deco-circle dc2"></div>
+  <div class="deco-circle dc3"></div>
+  <div class="cover-badge">IB Diploma Programme &middot; Digital Society</div>
+  <div class="cover-center">
+    <div class="cover-kicker">Material de repaso integral &middot; Nivel Medio (NM/SL)</div>
+    <div class="cover-title">3.5<br>Medios</div>
+    <div class="cover-sub">Media: tipos, características, medios inmersivos y dilemas digitales</div>
+    <div class="cover-sub-en">Review guide with mind maps, illustrative charts, interactive flashcards &amp; new exam cases</div>
+    <div class="cover-chips">
+      <span class="cchip"><b>4</b> subsecciones (3.5A&ndash;D)</span>
+      <span class="cchip"><b>2</b> mapas mentales</span>
+      <span class="cchip"><b>7</b> gráficos ilustrativos</span>
+      <span class="cchip"><b>20</b> fichas interactivas</span>
+      <span class="cchip"><b>14</b> preguntas de quiz</span>
+      <span class="cchip"><b>3</b> casos nuevos para el examen</span>
+    </div>
+    <div class="cover-3cs">
+      <span class="box bx1">Tipos y evolución (3.5A)</span><span class="arrow">+</span>
+      <span class="box bx2">Características (3.5B)</span><span class="arrow">+</span>
+      <span class="box bx3">Medios inmersivos (3.5C)</span><span class="arrow">&rarr;</span>
+      <span class="box bx4">Dilemas (3.5D)</span>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <div class="cover-scope">
+      <b>Alcance del material:</b> solo la sección 3.5 <i>Media</i> del libro — tipos de medios digitales y su evolución con la web
+      (1.0 &rarr; 3.0), las características que los hacen únicos, los medios inmersivos (VR, AR, MR y gemelos digitales) y los
+      dilemas: adicción, periodismo, autenticidad, propiedad intelectual, censura y preservación. Cada tecnología incluye sus
+      <b>oportunidades, impactos y dilemas</b>, con casos del libro y tres escenarios inéditos estilo examen.
+      No incluye la monografía (extended essay), la evaluación interna ni el Paper 3.
+    </div>
+    <div class="cover-edition">Basado en Bomfim et al. &middot; Digital Society &middot; Hodder Education 2022 (pp.&nbsp;127&ndash;145)</div>
+  </div>
+</div>
+
+<!-- ═══════════════ INTRODUCCIÓN ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Guía rápida</div>
+    <div class="section-title">Cómo usar este material</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Para el libro, los <b>medios</b> (media) son <i>«cualquier canal de comunicación que sirve como medio para que la información llegue a un gran grupo de personas»</i>: los medios impresos (periódicos, revistas, libros), los <b>medios de masas</b> (canales de noticias de TV y radio) y los <b>medios digitales</b> (video, audio, imágenes y otro contenido que se consume en línea). Cada vez que abres un sitio web o una app, estás <b>consumiendo o creando</b> medios. Lo esencial para el examen: los medios digitales se definen por la <b>convergencia de la computación (3.3), la comunicación y el contenido</b> — tres áreas que se fusionan en una sola experiencia.</p>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-1">
+      <div class="cs-name">3.5A &middot; Tipos <span class="en-term">(types)</span></div>
+      <p>Medios y Web 1.0, 2.0 y 3.0: del texto estático a las redes sociales, los memes, los deepfakes, la IA y los e-sports.</p>
+    </div>
+    <div class="cs-card cs-2">
+      <div class="cs-name">3.5B &middot; Características <span class="en-term">(characteristics)</span></div>
+      <p>Las 7 propiedades únicas del medio digital: compartición rápida, almacenamiento, interactividad, no-linealidad, redes globales, virtualidad y convergencia.</p>
+    </div>
+    <div class="cs-card cs-3">
+      <div class="cs-name">3.5C &middot; Inmersivos <span class="en-term">(immersive)</span></div>
+      <p>VR, AR, MR y gemelos digitales: la interactividad llevada al extremo, con usos reales en formación, ventas, diseño e industria.</p>
+    </div>
+    <div class="cs-card cs-4">
+      <div class="cs-name">3.5D &middot; Dilemas <span class="en-term">(dilemmas)</span></div>
+      <p>Adicción y salud mental, periodismo y desinformación, autenticidad, propiedad intelectual, censura y preservación digital.</p>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h4>Objetivos del capítulo (understandings) y método de repaso en 3 pasos</h4>
+    <p>Al terminar este capítulo debes comprender que: <b>1)</b> los medios digitales se definen por la convergencia de computación, comunicación y contenido; <b>2)</b> se crean y distribuyen a través de múltiples canales y plataformas; <b>3)</b> traen consigo oportunidades y dilemas significativos para la sociedad digital.</p>
+    <p style="margin-top:5px"><b>Método:</b> <b>1) Mapa primero</b> — fija la estructura general con el mapa mental de la página siguiente. &nbsp;<b>2) Fichas después</b> — memoriza definiciones y términos EN&rarr;ES (los exámenes premian la terminología precisa del libro). &nbsp;<b>3) Quiz y casos al final</b> — responde el quiz interactivo y practica con los 3 escenarios inéditos: en el IB todo tema puede aparecer con <b>ejemplos nuevos</b>.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Datos clave para memorizar <span class="en-term">(cifras que el libro usa como evidencia)</span></h4>
+    <p><b>75%</b> de encuestados obtenía noticias de email o redes sociales (CNN, 2010) &middot; YouTube: <b>+2&nbsp;mil millones</b> de usuarios mensuales (creado en 2005) &middot; primer meme viral: <b>1996</b>, bebé bailando cha-cha &middot; fraude con deepfake de voz: <b>£200&nbsp;000</b> (~US$260&nbsp;000, 2019) &middot; <b>7&nbsp;964</b> videos deepfake en línea (Deeptrace, 2019) &middot; estudio del MIT: <b>126&nbsp;000</b> historias tuiteadas por <b>3&nbsp;millones</b> de personas (2006&ndash;2017) &middot; sentencia Blurred Lines: <b>US$5&nbsp;millones</b> &middot; Fortnite World Cup: <b>US$100&nbsp;millones</b> (2019) &middot; edad media de un gamer profesional: <b>24&ndash;27</b> años.</p>
+  </div>
+</div>
+<!-- ═══════════════ MAPA GENERAL ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k0">Visión general</span>
+    <div class="map-title">El capítulo 3.5 en un mapa</div>
+    <div class="map-intro">Cuatro subsecciones: los tipos de medios y su evolución con la web (A), las 7 características únicas del medio digital (B), los medios inmersivos (C) y los seis dilemas que generan (D). Memoriza esta estructura: en Paper 1 y 2 las preguntas combinan subsecciones con conceptos y contextos.</div>
+  </div>
+
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u1">Tipos <small>3.5A &middot; web</small></div>
+        <div class="children">
+          <div class="leaf">Web 1.0: texto e imágenes</div>
+          <div class="leaf">Web 2.0: UGC, redes, memes</div>
+          <div class="leaf">Web 3.0: IA y deepfakes</div>
+          <div class="leaf">E-sports y gaming</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u2">Características <small>3.5B &middot; 7 rasgos</small></div>
+        <div class="children">
+          <div class="leaf">Compartición rápida</div>
+          <div class="leaf">Almacenamiento eficiente</div>
+          <div class="leaf">Interactividad &middot; no lineal</div>
+          <div class="leaf">Redes globales &middot; virtual</div>
+          <div class="leaf">Convergencia de medios</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="root-node">3.5<br>MEDIOS<small>media</small></div>
+
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u3">Inmersivos <small>3.5C</small></div>
+        <div class="children">
+          <div class="leaf">VR: inmersión total (3DoF/6DoF)</div>
+          <div class="leaf">AR: capa sobre lo real</div>
+          <div class="leaf">MR: mezcla real + digital</div>
+          <div class="leaf">Gemelos digitales (Shell)</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u4">Dilemas <small>3.5D &middot; 6</small></div>
+        <div class="children">
+          <div class="leaf">Adicción y salud mental</div>
+          <div class="leaf">Periodismo y desinformación</div>
+          <div class="leaf">Autenticidad (fake news)</div>
+          <div class="leaf">Propiedad y copyright</div>
+          <div class="leaf">Censura y control</div>
+          <div class="leaf">Preservación digital</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:var(--u1)"></span>Tipos: qué medios existen y cómo cambian</span>
+    <span class="lg"><span class="dot" style="background:var(--u2)"></span>Características: por qué es único el medio digital</span>
+    <span class="lg"><span class="dot" style="background:var(--u3)"></span>Inmersivos: tecnologías XR</span>
+    <span class="lg"><span class="dot" style="background:var(--u4)"></span>Dilemas: tensiones éticas y sociales</span>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.5A · EVOLUCIÓN WEB ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.5A &middot; Types of digital media</div>
+    <div class="section-title">Medios digitales y evolución de la web</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">La tecnología digital cambió la <b>velocidad y el volumen</b> de los medios, pero estos siguen cumpliendo sus tres roles de siempre: <b>entretener, educar y ser un canal para la discusión pública</b>. A medida que la computación (3.3) y la World Wide Web (3.4) evolucionaron, los medios evolucionaron con ellas. El libro organiza esa evolución en tres etapas: <b>Web 1.0</b>, <b>Web 2.0</b> y <b>Web 3.0</b>.</p>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 168" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="210" height="146" rx="12" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.4"/>
+      <text x="109" y="26" font-size="11.5" font-weight="800" fill="#334155" text-anchor="middle">Web 1.0</text>
+      <text x="109" y="40" font-size="8.8" fill="#64748B" text-anchor="middle">años 1990 &middot; solo lectura</text>
+      <text x="109" y="66" font-size="9.8" fill="#475569" text-anchor="middle">Páginas con texto e imágenes</text>
+      <text x="109" y="84" font-size="9.8" fill="#475569" text-anchor="middle">Unidireccional: el usuario</text>
+      <text x="109" y="99" font-size="9.8" fill="#475569" text-anchor="middle">recibe pero no responde</text>
+      <text x="109" y="122" font-size="8.8" fill="#64748B" text-anchor="middle">al crecer el ancho de banda</text>
+      <text x="109" y="136" font-size="8.8" fill="#64748B" text-anchor="middle">llegan video y audio</text>
+      <polygon points="218,72 236,79 218,86" fill="#64748B"/>
+      <rect x="240" y="4" width="210" height="146" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.4"/>
+      <text x="345" y="26" font-size="11.5" font-weight="800" fill="#1E40AF" text-anchor="middle">Web 2.0</text>
+      <text x="345" y="40" font-size="8.8" fill="#64748B" text-anchor="middle">2000s &middot; el usuario crea</text>
+      <text x="345" y="66" font-size="9.8" fill="#475569" text-anchor="middle">Blogs, podcasts, wikis y</text>
+      <text x="345" y="81" font-size="9.8" fill="#475569" text-anchor="middle">redes sociales &rarr; contenido</text>
+      <text x="345" y="96" font-size="9.8" fill="#475569" text-anchor="middle">generado por usuarios (UGC)</text>
+      <text x="345" y="119" font-size="8.8" fill="#64748B" text-anchor="middle">2014: «trending» y «hashtag»</text>
+      <text x="345" y="133" font-size="8.8" fill="#64748B" text-anchor="middle">son de uso común; 2015: video en vivo</text>
+      <polygon points="454,72 472,79 454,86" fill="#64748B"/>
+      <rect x="476" y="4" width="202" height="146" rx="12" fill="#F0FDFA" stroke="#14B8A6" stroke-width="1.4"/>
+      <text x="577" y="26" font-size="11.5" font-weight="800" fill="#134E4A" text-anchor="middle">Web 3.0</text>
+      <text x="577" y="40" font-size="8.8" fill="#64748B" text-anchor="middle">hoy &middot; la IA media los medios</text>
+      <text x="577" y="66" font-size="9.8" fill="#475569" text-anchor="middle">Creación sintética: deepfakes</text>
+      <text x="577" y="81" font-size="9.8" fill="#475569" text-anchor="middle">Recomendaciones y experiencia</text>
+      <text x="577" y="96" font-size="9.8" fill="#475569" text-anchor="middle">personalizada (Netflix)</text>
+      <text x="577" y="119" font-size="8.8" fill="#64748B" text-anchor="middle">Predicción de demanda para</text>
+      <text x="577" y="133" font-size="8.8" fill="#64748B" text-anchor="middle">ajustar la producción</text>
+    </svg>
+    <div class="svg-cap">G1 &middot; Evolución de los medios con la web: de la página estática a la IA (adaptado del libro, 3.5A)</div>
+  </div>
+
+  <table class="exam">
+    <tr><th style="width:12%">Etapa</th><th style="width:37%">Qué cambió en los medios</th><th style="width:28%">Datos y casos del libro</th><th>Consecuencia clave</th></tr>
+    <tr><td><b>Web 1.0</b></td><td>Páginas con <b>texto e imágenes</b>; al aumentar el ancho de banda pudieron alojar <b>video, animaciones y audio</b>.</td><td>La web temprana replicaba el rol clásico: entretener, educar y abrir discusión pública.</td><td>Los medios llegan en línea, pero siguen siendo <b>unidireccionales</b>.</td></tr>
+    <tr><td><b>Web 2.0</b></td><td><b>Blogs, podcasts, wikis y redes sociales</b> disparan el <b>contenido generado por usuarios</b> (user-generated content) y cambian cómo el público recibe noticias locales y globales.</td><td>CNN (2010): <b>75%</b> obtenía noticias de email o redes sociales. 2014: «trending» y «hashtag» comunes; 2015: <b>video en vivo</b> dirigido a redes.</td><td>Las empresas de medios tradicionales tuvieron que <b>adaptarse para sobrevivir</b>.</td></tr>
+    <tr><td><b>Web 3.0</b></td><td>La <b>IA, la nube y los gráficos</b> transforman la creación (medios sintéticos) y la experiencia del consumidor (recomendaciones, personalización).</td><td><b>Deepfakes</b> creados con deep learning; <b>Netflix</b> como ejemplo de recomendación; face-swapping popularizado por Snapchat (2014).</td><td>Cuestiones nuevas de <b>autenticidad</b> y de <b>datos del público</b> para entrenar la IA.</td></tr>
+  </table>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.5A</span><span class="tcard-title">Redes sociales: la nueva puerta de las noticias</span><span class="tcard-en">social media &amp; user-generated content</span></div>
+    <div class="trow"><div class="tlabel">Definiciones</div><div class="tbody"><i>«<b>Trending</b>: tema que experimenta un repunte súbito de popularidad en plataformas de redes sociales por un tiempo limitado»</i> &middot; <i>«<b>Hashtag</b>: palabra o frase precedida del símbolo # para clasificar o categorizar el texto que la acompaña»</i>.</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">YouTube (2005) alcanzó <b>+2 mil millones de usuarios mensuales</b> y se volvió la plataforma de los <b>influencers</b>. Los términos trending y hashtag pasaron de jerga a vocabulario cotidiano, y la industria empezó a producir contenido <b>directamente para redes</b> (streaming en vivo).</div></div>
+    <div class="trow"><div class="tlabel case">Caso: memes</div><div class="tbody"><i>«<b>Meme</b>: imagen, video o texto — típicamente humorístico — que se copia y difunde rápidamente entre los usuarios de internet, a menudo con ligeras variaciones»</i>. El primer meme viral (1996) fue la animación de un <b>bebé bailando cha-cha</b>, creada por el diseñador Michael Girard para demostrar un software; compartida como <b>GIF por email</b>.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Cualquiera puede crear y distribuir a escala global sin editorial intermediaria; las noticias llegan en segundos a miles de seguidores; los memes permiten comentario cultural y político accesible.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Positivo: el público ganó control sobre qué consume (más voces locales y globales). Negativo: las empresas tradicionales perdieron su <b>monopolio informativo</b> y la atención se fragmentó; los enlaces del libro advierten riesgo de <b>adicción</b> (3.5D) y efectos en <b>salud mental</b> (4.4C).</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Poder</b>: ¿quién decide qué se hace trending — el público o el algoritmo? <b>Valores</b>: los memes evolucionaron de temas políticos/culturales a cualquier cosa «graciosa y relatable», difuminando la línea entre humor y burla o desinformación.</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.5A · WEB 3.0: DEEPFAKES E IA ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.5A &middot; Media and Web 3.0</div>
+    <div class="section-title">IA creativa: deepfakes y experiencia del consumidor</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">La IA influye hoy en la industria de los medios <b>desde dos extremos</b>: en la <b>creación de contenido</b> (medios sintéticos generados por deep learning) y en la <b>experiencia del consumidor</b> (predicción de demanda y recomendaciones). El libro da tres casos reales — uno positivo, uno fraudulento y uno educativo — que conviene memorizar: el examen suele pedir ejemplos de usos <b>constructivos y dañinos</b> de la misma tecnología.</p>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.5A</span><span class="tcard-title">Deepfakes: medios sintéticos con deep learning</span><span class="tcard-en">synthetic media</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«<b>Deepfake</b>: medio sintético (falso) creado con deep learning / inteligencia artificial»</i>. Herramientas de manipulación de imágenes, audio y video: <b>face-swapping</b> (superponer el rostro de una persona sobre otra) y <b>lip-syncing</b> (manipular la voz cambiando audio y labios a la vez).</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">Muchas herramientas están <b>disponibles en línea de forma gratuita</b> y son fáciles de usar. El uso «inocente» empezó como entretenimiento: Snapchat (2014) popularizó el face-swapping con <b>filtros</b> (orejas de gato, accesorios) que detectan el rostro en tiempo real.</div></div>
+    <div class="trow"><div class="tlabel case">Caso +</div><div class="tbody"><b>Uso creativo:</b> en 2021, <b>Duran Duran</b> creó el video de «INVISIBLE» con la IA «Huxley» (Nested Minds): la IA usó letras, fotos y música aportadas por la banda.</div></div>
+    <div class="trow"><div class="tlabel case">Caso &minus;</div><div class="tbody"><b>Uso fraudulento:</b> en marzo de 2019, una <b>empresa energética británica</b> transfirió unos <b>£200&nbsp;000 (≈US$260&nbsp;000)</b> a una cuenta húngara tras recibir una llamada con la <b>voz clonada de su CEO</b> mediante deepfake de audio.</div></div>
+    <div class="trow"><div class="tlabel case">Caso ±</div><div class="tbody"><b>Uso educativo:</b> en 2018, <b>Buzzfeed y Jordan Peele</b> crearon un deepfake de <b>Barack Obama</b> para advertir sobre el daño potencial de estos videos y su papel en la difusión de <b>fake news</b>.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Producción audiovisual sin rodaje (menor costo), doblaje y accesibilidad, educación que «muestra» la manipulación para formar criterio, creatividad artística nueva.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Positivos: democratización de la producción de medios. Negativos: el libro los llama usos «siniestros» — <b>fake news</b>, daño a reputaciones, <b>fabricación de evidencias</b> y <b>fraude al público</b>; cuanto mejora la IA, más difícil distinguir lo real de lo falso.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Valores y ética:</b> ¿debería prohibirse o regularse una tecnología de uso dual? <b>Poder:</b> quién verifica la autenticidad (3.5D) y con qué autoridad; <b>expresión</b>: crear con el rostro o la voz de otra persona sin su consentimiento.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.5A</span><span class="tcard-title">IA para la experiencia del consumidor</span><span class="tcard-en">recommendation systems</span></div>
+    <div class="trow"><div class="tlabel">Funcionamiento</div><div class="tbody">Las empresas de medios usan IA para <b>predecir la demanda</b> y ajustar su producción, y la combinan con <b>sistemas de recomendación</b> (como las de <b>Netflix</b>) para ofrecer una experiencia <b>personalizada</b>.</div></div>
+    <div class="trow"><div class="tlabel fun">Datos necesarios</div><div class="tbody">El reto: <b>gestionar los datos con que se entrena el algoritmo</b> para que sea fiable. Para mejorar la experiencia se recopilan datos del público: <b>dispositivo</b> elegido, <b>cuándo</b> ve contenido, sus <b>rutinas</b> y <b>qué ve</b> (content data).</div></div>
+    <div class="trow"><div class="tlabel case">Vinculo</div><div class="tbody">El libro propone investigar si la <b>salud</b> podría usar sistemas de recomendación para diseñar <b>mensajes de salud pública efectivos</b> — una oportunidad directa de indagación (contexto 4.4).</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Producción ajustada a la demanda real (menos desperdicio creativo), descubrimiento de contenido relevante, mensajería de salud adaptada al público.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Positivos: experiencia más relevante y a medida. Negativos: recolección masiva de hábitos (dispositivo, horarios, rutinas); el algoritmo solo es tan fiable como los <b>datos de entrenamiento</b>.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Espacio y poder:</b> la personalización puede encerrar al usuario en «burbujas» (ver solo lo que ya le gusta); <b>valores:</b> ¿sabe el usuario qué datos entrega y con qué fin? Transparencia vs. ventaja competitiva.</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.5A · E-SPORTS ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.5A &middot; Electronic games</div>
+    <div class="section-title">Videojuegos y e-sports: los medios que se juegan</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Las redes sociales no son el único medio digital que cambió: la <b>industria de los videojuegos</b> también evolucionó. Las <b>consolas y PCs conectadas a internet</b> añadieron una dimensión social al gaming y lo abrieron a nuevas audiencias: adultos mayores juegan bowling en residencias, y padres ocupados juegan en el teléfono mientras esperan a sus hijos. Lo que era un pasatiempo sin futuro profesional se convirtió en una <b>industria con influencers, torneos y premios millonarios</b>.</p>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.5A</span><span class="tcard-title">E-sports: el deporte electrónico</span><span class="tcard-en">electronic sports &middot; gaming influencers</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><b>E-sports</b>: competiciones organizadas de videojuegos que <b>ganan impulso desde el año 2000</b>, con torneos de varios tipos: <b>first-person shooter</b> (Call of Duty), <b>multijugador</b> (Dota 2) y <b>peleas</b> (Mortal Kombat).</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">Como en todo deporte: elegir un juego, <b>desarrollar habilidades</b>, encontrar una <b>comunidad</b> para practicar y <b>escalar posiciones</b>. Plataformas como <b>YouTube y Twitch</b> permiten a los influencers de gaming crecer en seguidores; los torneos ofrecen <b>grandes premios en efectivo</b> — en 2019 se destinaron <b>US$100 millones</b> a la <b>Fortnite World Cup</b>.</div></div>
+    <div class="trow"><div class="tlabel case">Dato clave</div><div class="tbody">La ventana profesional es corta: la <b>edad promedio es 24&ndash;27 años</b>. Hoy muchos equipos usan <b>análisis de datos y machine learning</b> para optimizar sus probabilidades de éxito.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Nuevas carreras (jugador pro, creador de contenido, analista de datos deportivos); el gaming conecta a audiencias excluidas (mayores, personas con movilidad limitada); economía de torneos y patrocinios.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Positivos: socialización en línea, industria cultural en crecimiento. Negativos: presión sobre jóvenes jugadores, vinculación con <b>adicción a medios</b> (3.5D) y con el contexto de ocio <b>hogar y tiempo libre</b> (4.1B).</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Identidad y valores:</b> ¿quién decide cuánto jugar es «demasiado»? ¿Es sostenible una carrera que termina a los 27? <b>Poder:</b> los datos de rendimiento son propiedad de los equipos — ¿y de los jugadores?</div></div>
+  </div>
+
+  <div class="info-card">
+    <h4>Preguntas de práctica del libro — Paper 1 (core) <span class="en-term">sobre 3.5B, típicas del examen</span></h4>
+    <p><b>1)</b> Identify two types of digital media. <i>[2 marks]</i> &nbsp;<b>2)</b> Explain three characteristics of digital media that have contributed to the growth in consumption of digital media. <i>[6 marks]</i> &nbsp;<b>3)</b> Using the concept <i>expression</i>, discuss how digital media is changing the way history is being recorded. <i>[8 marks]</i> — <span class="en-term">la 3 conecta 3.5A&ndash;B con el concepto de expresión: piensa en quién «escribe» la historia hoy (posts, videos, memes) y quién la leía antes.</span></p>
+  </div>
+</div>
+<!-- ═══════════════ 3.5B · CARACTERÍSTICAS ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.5B &middot; Characteristics of digital media</div>
+    <div class="section-title">Las 7 características de los medios digitales</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Los medios digitales cumplen el mismo propósito que los tradicionales — <b>entretener, educar y dar un foro de expresión</b> — pero tienen <b>siete características únicas</b> que explican su crecimiento. Esta es la lista más preguntada del capítulo: apréndela con ejemplos, no solo con nombres.</p>
+
+  <table class="exam">
+    <tr><th style="width:20%">Característica</th><th style="width:44%">Qué significa (según el libro)</th><th>Ejemplo rápido para el examen</th></tr>
+    <tr><td><b>1 &middot; Compartición rápida</b> <span class="en-term">rapid sharing</span></td><td>Es fácil compartir cualquier tipo de contenido: subir un video a YouTube o repitear un tuit.</td><td>Un video local llega a millones en horas; un post se repitea sin copiarlo de nuevo.</td></tr>
+    <tr><td><b>2 &middot; Almacenamiento eficiente</b> <span class="en-term">efficient storage</span></td><td>Los avances en almacenamiento permiten guardar <b>enormes cantidades de datos en un solo lugar</b>; el móvil con la nube guarda todo mientras usas redes sociales.</td><td>Una biblioteca entera cabe en un disco; las fotos viajan a la nube automáticamente.</td></tr>
+    <tr><td><b>3 &middot; Interactividad</b> <span class="en-term">interactivity</span></td><td>La media tradicional era <b>unidireccional</b>: se recibía sin poder responder. La media interactiva <b>compromete</b> al consumidor, lo motiva a volver, comentar y recomendar.</td><td>Comentar, dar like, votar en encuestas, sugerir contenido a amigos.</td></tr>
+    <tr><td><b>4 &middot; Contenido no lineal</b> <span class="en-term">non-linear / hypertextual</span></td><td>La media tradicional era <b>lineal</b>; los hipervínculos permiten visitar páginas <b>en cualquier orden</b>: navegas como quieres, no como la empresa decidió.</td><td>De un artículo saltas a un video y luego a otro tema: tú eliges el camino.</td></tr>
+    <tr><td><b>5 &middot; Redes globales</b> <span class="en-term">global networks</span></td><td>La interacción es global: se pueden <b>combinar recursos</b> fácilmente y acceder a <b>más fuentes de información</b> que antes.</td><td>Colaborar en un wiki con gente de tres continentes en tiempo real.</td></tr>
+    <tr><td><b>6 &middot; Virtual</b> <span class="en-term">virtual</span></td><td>La comunicación virtual a través de múltiples tecnologías cambia cómo nos comunicamos frente a frente: <b>cada persona elige cómo presentarse</b>.</td><td>Apagar la cámara, usar avatar o filtro; decidir qué versión de ti se muestra.</td></tr>
+    <tr><td><b>7 &middot; Convergencia</b> <span class="en-term">convergence of digital media</span></td><td>Comunicarse usando <b>varias formas de medios a la vez</b>: no solo voz, sino voz y video en vivo; no solo texto, sino voz, <b>emoji</b> o imagen en el mismo mensaje.</td><td>Un mismo chat reúne texto, audio, video y reacciones: tres medios antes separados.</td></tr>
+  </table>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 176" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="330" height="168" rx="12" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.4"/>
+      <text x="169" y="26" font-size="11.5" font-weight="800" fill="#334155" text-anchor="middle">Medios tradicionales</text>
+      <rect x="34" y="52" width="86" height="30" rx="7" fill="#334155"/>
+      <text x="77" y="71" font-size="9.5" font-weight="800" fill="#fff" text-anchor="middle">Emisor</text>
+      <rect x="218" y="52" width="86" height="30" rx="7" fill="#fff" stroke="#64748B" stroke-width="1.6"/>
+      <text x="261" y="71" font-size="9.5" font-weight="700" fill="#475569" text-anchor="middle">Audiencia</text>
+      <line x1="120" y1="67" x2="214" y2="67" stroke="#64748B" stroke-width="2.2"/>
+      <polygon points="214,67 204,62 204,72" fill="#64748B"/>
+      <text x="169" y="98" font-size="9" fill="#64748B" text-anchor="middle">unidireccional &middot; lineal &middot; un medio a la vez</text>
+      <text x="169" y="118" font-size="9" fill="#64748B" text-anchor="middle">TV, radio, periódico: no se puede responder</text>
+      <text x="169" y="146" font-size="9.3" font-weight="700" fill="#334155" text-anchor="middle">El emisor controla el recorrido</text>
+      <rect x="348" y="4" width="330" height="168" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.4"/>
+      <text x="513" y="26" font-size="11.5" font-weight="800" fill="#1E40AF" text-anchor="middle">Medios digitales (convergencia)</text>
+      <circle cx="420" cy="64" r="15" fill="#fff" stroke="#3B82F6" stroke-width="1.8"/>
+      <text x="420" y="68" font-size="8.6" fill="#1E40AF" text-anchor="middle" font-weight="700">texto</text>
+      <circle cx="513" cy="48" r="15" fill="#fff" stroke="#3B82F6" stroke-width="1.8"/>
+      <text x="513" y="52" font-size="8.6" fill="#1E40AF" text-anchor="middle" font-weight="700">voz</text>
+      <circle cx="606" cy="64" r="15" fill="#fff" stroke="#3B82F6" stroke-width="1.8"/>
+      <text x="606" y="68" font-size="8.6" fill="#1E40AF" text-anchor="middle" font-weight="700">video</text>
+      <circle cx="447" cy="120" r="15" fill="#fff" stroke="#3B82F6" stroke-width="1.8"/>
+      <text x="447" y="124" font-size="8.6" fill="#1E40AF" text-anchor="middle" font-weight="700">emoji</text>
+      <circle cx="579" cy="120" r="15" fill="#fff" stroke="#3B82F6" stroke-width="1.8"/>
+      <text x="579" y="124" font-size="8.6" fill="#1E40AF" text-anchor="middle" font-weight="700">imagen</text>
+      <rect x="486" y="102" width="56" height="32" rx="8" fill="#1E3A5F"/>
+      <text x="514" y="122" font-size="9.3" font-weight="800" fill="#fff" text-anchor="middle">Mensaje</text>
+      <line x1="433" y1="76" x2="492" y2="108" stroke="#3B82F6" stroke-width="1.5"/>
+      <line x1="513" y1="63" x2="513" y2="98" stroke="#3B82F6" stroke-width="1.5"/>
+      <line x1="593" y1="76" x2="536" y2="108" stroke="#3B82F6" stroke-width="1.5"/>
+      <line x1="460" y1="108" x2="484" y2="115" stroke="#3B82F6" stroke-width="1.5"/>
+      <line x1="566" y1="108" x2="544" y2="115" stroke="#3B82F6" stroke-width="1.5"/>
+      <text x="513" y="150" font-size="9.3" font-weight="700" fill="#1E40AF" text-anchor="middle">Todo en un solo canal &middot; el usuario responde</text>
+      <text x="513" y="165" font-size="9" fill="#64748B" text-anchor="middle">interactivo &middot; no lineal &middot; global y virtual</text>
+    </svg>
+    <div class="svg-cap">G2 &middot; Del flujo unidireccional a la convergencia: la característica 7 en acción (adaptado del libro, 3.5B)</div>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.5C · VR ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.5C &middot; Immersive digital media</div>
+    <div class="section-title">Realidad virtual (VR): inmersión completa</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">La interactividad lleva un paso más allá y el medio se vuelve una <b>experiencia inmersiva</b>: una vida virtual basada en <b>simulaciones</b>. Aquí entran las tecnologías que el examen llama <b>XR</b> (realidad extendida): VR, AR, MR y los gemelos digitales. El libro describe usos reales en petroleras, odontología, diseño y trabajo remoto — memoriza al menos dos por tecnología.</p>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.5C</span><span class="tcard-title">Realidad virtual</span><span class="tcard-en">virtual reality (VR)</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«<b>Realidad virtual (VR)</b>: simulación que proporciona un entorno <b>completamente inmersivo</b> para el usuario»</i>. Se usa con <b>visores</b>: desde la opción barata (un teléfono en una máscara de cartón, tipo Google Cardboard) hasta gafas VR de fabricación específica.</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">Se programan <b>objetos 3D que realizan acciones según cómo interactúa el usuario</b>. Esto implica <b>computación espacial (spatial computing)</b>: <i>«usar acciones físicas como entradas para recibir salidas en un espacio 3D»</i>. Puede ser en <b>3 grados de libertad (3DoF)</b> — como un video de 360°, donde solo miras alrededor — o <b>6 grados (6DoF)</b>, que permite <b>moverte</b> hacia adelante y hacia atrás en el espacio virtual.</div></div>
+    <div class="trow"><div class="tlabel case">Caso 1</div><div class="tbody"><b>Formación en seguridad:</b> las petroleras <b>BP y ExxonMobil</b> entrenan a empleados en procedimientos de emergencia: el empleado puede <b>equivocarse en un entorno controlado sin dañarse</b>.</div></div>
+    <div class="trow"><div class="tlabel case">Caso 2</div><div class="tbody"><b>Ventas y marketing:</b> <b>Zimmer Biomet</b>, proveedor de tecnología dental, creó un <b>laboratorio dental virtual</b> donde los dentistas experimentan cómo las nuevas tecnologías afectan los procedimientos rutinarios.</div></div>
+    <div class="trow"><div class="tlabel case">Caso 3</div><div class="tbody"><b>Decisiones de diseño</b> (visualizar opciones antes de elegir) y <b>espacios de trabajo virtuales</b>: oficinas inmersivas para teletrabajadores, que esperan promover conversaciones casuales, resolución de problemas y soluciones creativas.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Entrenamiento <b>más barato y seguro</b> que la realidad (sin riesgo físico ni equipos dañados); experiencias de producto antes de comprar; simular lo imposible o peligroso (cirugía, emergencias).</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Positivos: las experiencias inmersivas tienen <b>efecto fisiológico real</b> — valioso para preparar a médicos y militares. Negativos: costo de equipos, mareo/desorientación, y la línea entre simulación y realidad se difumina.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Espacio:</b> ¿sustituye la oficina virtual la socialización real? <b>Identidad:</b> en un entorno donde «cada quien elige cómo presentarse», ¿qué es auténtico? <b>Valores:</b> entrenamiento militar ultra-realista — ¿preparar o insensibilizar?</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.5C · AR, MR Y GEMELOS ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.5C &middot; AR, MR y gemelos digitales</div>
+    <div class="section-title">Del filtro al gemelo digital</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="tcard u3">
+    <div class="tcard-head"><span class="tcard-num">3.5C</span><span class="tcard-title">Realidad aumentada</span><span class="tcard-en">augmented reality (AR)</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«<b>Realidad aumentada (AR)</b>: contenido digital <b>superpuesto</b> a una experiencia del mundo real»</i>. Común en dispositivos móviles — el <b>filtro de Snapchat</b>: antes de tomar la foto ves el mundo real y eliges elementos digitales que lo realzan.</div></div>
+    <div class="trow"><div class="tlabel fun">Usos del libro</div><div class="tbody"><b>Industria</b> (manufactura, minería, marítima): inspección de maquinaria con <b>soporte remoto</b> para minimizar interrupciones. <b>Educación</b>: presentar situaciones reales con <b>modelado 3D</b>, aprendiendo de forma divertida y atractiva.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">No requiere aislar al usuario del mundo: guía un técnico con las manos libres, enriquece un museo o aula sin salir del entorno real; acceso desde el móvil que ya tienes.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Positivos: menos errores operativos, aprendizaje activo. Negativos: dependencia de la capa digital, distracción (AR mientras caminas o conduces) y privacidad de lo que la cámara «ve».</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Valores:</b> la AR altera cómo percibimos lo real (belleza filtrada); <b>poder:</b> ¿quién decide qué capa digital se muestra sobre un lugar o monumento — y con qué fin comercial o político?</div></div>
+  </div>
+
+  <div class="tcard u3">
+    <div class="tcard-head"><span class="tcard-num">3.5C</span><span class="tcard-title">Realidad mixta y gemelos digitales</span><span class="tcard-en">mixed reality (MR) &middot; digital twin</span></div>
+    <div class="trow"><div class="tlabel">Definiciones</div><div class="tbody"><i>«<b>MR</b>: mezcla del mundo real y del mundo digital para crear nuevas experiencias»</i>. Cuando la simulación representa un sistema real se llama <b>gemelo digital (digital twin)</b>: la usan industrias que quieren <b>visualizar, analizar, mantener y controlar sus activos valiosos</b>; su naturaleza <b>dinámica</b> ofrece más herramientas e información que los <b>modelos 3D estáticos</b>.</div></div>
+    <div class="trow"><div class="tlabel case">Caso Shell</div><div class="tbody"><b>Royal Dutch Shell</b> creó gemelos digitales de sus <b>plataformas petroleras en el mar</b>, desarrollados con <b>big data analytics e IA</b> e incorporando <b>sensores que recogen datos en tiempo real</b>: gestionar las plataformas, <b>mejorar la seguridad de los trabajadores</b> y hacer <b>mantenimiento predictivo</b> con datos accionables.</div></div>
+    <div class="trow"><div class="tlabel fun">Otros usos</div><div class="tbody"><b>Automotriz:</b> probar opciones antes de configurar el auto. <b>Medicina:</b> cirujanos entrenan en entornos 3D virtuales antes de operar. <b>Turismo:</b> recorridos virtuales antes de reservar.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Ver el efecto de decisiones <b>antes</b> de tomarlas; mantenimiento predictivo que evita accidentes; entornos de prueba idénticos al real para capacitación.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Positivos: seguridad industrial y eficiencia operativa. Negativos: si el gemelo depende de sensores y datos, un fallo o manipulación de los datos falsifica la «copia» de la realidad; alta inversión inicial.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Sistemas:</b> ¿confiar en el gemelo o en el activo físico cuando discrepan? <b>Poder:</b> los datos en tiempo real de infraestructura crítica — ¿quién puede acceder a ellos?</div></div>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 158" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="gradXR" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#F1F5F9"/>
+          <stop offset="100%" stop-color="#1E3A5F"/>
+        </linearGradient>
+      </defs>
+      <rect x="16" y="52" width="650" height="10" rx="5" fill="url(#gradXR)"/>
+      <polygon points="672,57 656,49 656,65" fill="#1E3A5F"/>
+      <rect x="28" y="20" width="150" height="26" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.3"/>
+      <text x="103" y="37" font-size="9.6" font-weight="800" fill="#334155" text-anchor="middle">Mundo real</text>
+      <rect x="196" y="20" width="150" height="26" rx="8" fill="#F0FDFA" stroke="#14B8A6" stroke-width="1.3"/>
+      <text x="271" y="37" font-size="9.6" font-weight="800" fill="#134E4A" text-anchor="middle">AR &middot; capa digital</text>
+      <rect x="364" y="20" width="150" height="26" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.3"/>
+      <text x="439" y="37" font-size="9.6" font-weight="800" fill="#1E40AF" text-anchor="middle">MR &middot; mezcla real+digital</text>
+      <rect x="532" y="20" width="122" height="26" rx="8" fill="#1E3A5F"/>
+      <text x="593" y="37" font-size="9.6" font-weight="800" fill="#fff" text-anchor="middle">VR &middot; inmersión total</text>
+      <text x="103" y="86" font-size="8.8" fill="#64748B" text-anchor="middle">sin capa digital</text>
+      <text x="271" y="86" font-size="8.8" fill="#64748B" text-anchor="middle">filtro Snapchat &middot; inspección remota</text>
+      <text x="439" y="86" font-size="8.8" fill="#64748B" text-anchor="middle">entornos combinados</text>
+      <text x="593" y="86" font-size="8.8" fill="#64748B" text-anchor="middle">visor &middot; simulación</text>
+      <rect x="16" y="102" width="325" height="44" rx="9" fill="#FFF7ED" stroke="#F59E0B" stroke-width="1.2"/>
+      <text x="178" y="119" font-size="9.4" font-weight="800" fill="#92400E" text-anchor="middle">3DoF &middot; mirar alrededor (360°)</text>
+      <text x="178" y="136" font-size="8.8" fill="#92400E" text-anchor="middle">girar la cabeza: izquierda&ndash;derecha, arriba&ndash;abajo</text>
+      <rect x="353" y="102" width="313" height="44" rx="9" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.2"/>
+      <text x="509" y="119" font-size="9.4" font-weight="800" fill="#1E40AF" text-anchor="middle">6DoF &middot; moverse en el espacio virtual</text>
+      <text x="509" y="136" font-size="8.8" fill="#1E40AF" text-anchor="middle">avanzar, retroceder, agacharse &middot; computación espacial</text>
+    </svg>
+    <div class="svg-cap">G3 &middot; El continuo de la realidad y los grados de libertad (adaptado del libro, 3.5C)</div>
+  </div>
+
+  <div class="info-card">
+    <h4>¿Por qué las empresas eligen medios inmersivos?</h4>
+    <p><b>1)</b> La VR es <b>atractiva y entretenida</b> — útil para que el consumidor decida comprar al visualizar e interactuar con el producto. &nbsp;<b>2)</b> Es una forma de entrenamiento <b>más barata y segura</b>. &nbsp;<b>3)</b> Tiene un <b>efecto fisiológico genuino</b>: el entrenamiento de médicos y militares debe acercarse a la realidad para que el cuerpo esté preparado. <span class="en-term">Los links del libro llevan a 4.5A educación y a la indagación: «¿qué historias hacen posibles AR/VR/MR?» (concepto expresión).</span></p>
+  </div>
+</div>
+<!-- ═══════════════ MAPA DE DILEMAS ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k4">3.5D &middot; Digital media dilemmas</span>
+    <div class="map-title">Los seis dilemas de los medios digitales</div>
+    <div class="map-intro">Antes de los dilemas, el libro recuerda las ventajas: noticias, información y entretenimiento casi instantáneos; gran parte del contenido es gratis o de costo mínimo; y los medios digitales son mucho más accesibles en el mundo. El precio de esas ventajas son estos seis dilemas — cada uno con su evidencia.</div>
+  </div>
+
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u4">Salud y bienestar <small>adicción</small></div>
+        <div class="children">
+          <div class="leaf">Adicción conductual &middot; dopamina</div>
+          <div class="leaf">Autoestima baja, ansiedad, depresión</div>
+          <div class="leaf">Sueño alterado &middot; FOMO</div>
+          <div class="leaf">Menos actividad física</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-navy">Control <small>censura</small></div>
+        <div class="children">
+          <div class="leaf">Político (Camboya 2018)</div>
+          <div class="leaf">Social (Uganda 2018)</div>
+          <div class="leaf">Conflicto y seguridad (Sri Lanka 2019)</div>
+          <div class="leaf">Herramientas: monitoreo de palabras clave</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="root-node">DILEMAS<br>3.5D<small>seis tensiones</small></div>
+
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u1">Verdad <small>periodismo y autenticidad</small></div>
+        <div class="children">
+          <div class="leaf">Misinfo vs. disinfo vs. fake news</div>
+          <div class="leaf">Fake news se difunde más rápido (MIT)</div>
+          <div class="leaf">7&nbsp;964 deepfakes (Deeptrace 2019)</div>
+          <div class="leaf">QAnon &middot; periodistas amateurs</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u3">Propiedad <small>IP y copyright</small></div>
+        <div class="children">
+          <div class="leaf">Copyright: permiso del dueño</div>
+          <div class="leaf">Dominio público &middot; fair use</div>
+          <div class="leaf">Copyleft &middot; Creative Commons</div>
+          <div class="leaf">Blurred Lines: US$5M</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u2">Memoria <small>preservación</small></div>
+        <div class="children">
+          <div class="leaf">Obsolescencia: cinta &rarr; DVD &rarr; ?</div>
+          <div class="leaf">Migrar a medios frescos</div>
+          <div class="leaf">Emuladores de software antiguo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:var(--u4)"></span>Adicción: el costo psicológico</span>
+    <span class="lg"><span class="dot" style="background:var(--u1)"></span>Verdad: quién distingue lo real</span>
+    <span class="lg"><span class="dot" style="background:var(--u3)"></span>Propiedad: quién es dueño del contenido</span>
+    <span class="lg"><span class="dot" style="background:var(--navy2)"></span>Control: quién decide qué se ve</span>
+    <span class="lg"><span class="dot" style="background:var(--u2)"></span>Memoria: qué sobrevive al cambio técnico</span>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.5D · ADICCIÓN ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.5D &middot; Dilema 1</div>
+    <div class="section-title">Adicción a los medios y salud psicológica</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Para muchas personas, consumir y crear contenido en redes es entretenimiento y una forma de conectar con amigos. Pero hay <b>cada vez más reportes de adicción y preocupaciones de bienestar</b>. El uso moderado probablemente no hace daño; el <b>uso excesivo</b>, sí.</p>
+
+  <div class="tcard u4">
+    <div class="tcard-head"><span class="tcard-num">3.5D</span><span class="tcard-title">La adicción a las redes sociales</span><span class="tcard-en">social media addiction</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«Es un ejemplo de <b>adicción conductual</b> (behavioural addiction): un impulso incontrolable de usar las redes sociales durante períodos prolongados»</i>.</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">Usar redes <b>influye en cómo funciona el cerebro</b>: se experimentan <b>picos de dopamina</b> (dopamine hits) que producen una recompensa temporal — los <b>likes</b> de una publicación o el contenido divertido. Como el efecto dura poco, el cerebro «anima» a seguir en redes para conseguir más dopamina: <b>así comienza la adicción</b>.</div></div>
+    <div class="trow"><div class="tlabel warn">Efectos del exceso</div><div class="tbody"><ul>
+      <li><b>Autoestima baja</b> (low self-esteem)</li>
+      <li><b>Ansiedad y depresión</b> (anxiety and depression)</li>
+      <li><b>Patrones de sueño alterados</b>, especialmente si se usa antes de dormir</li>
+      <li><b>FOMO</b>: miedo a perderse algo (fear of missing out)</li>
+      <li><b>Menos actividad física</b> y menos participación en actividades de la vida real</li>
+    </ul></div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidad de análisis</div><div class="tbody">Este dilema conecta 3.5B con 3.5D: las <b>características</b> (compartición rápida, interactividad, convergencia) son las mismas que hacen atractivo el medio y que facilitan el uso excesivo. Un buen examen usa esta doble cara.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Individuales (salud mental, sueño, rendimiento escolar) y comunitarios (link del libro a <b>4.4C Mental health</b>). Las plataformas diseñan para maximizar la interacción: el interés comercial puede chocar con el bienestar.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Valores y ética:</b> ¿es ético diseñar productos que exploten la dopamina? <b>Identidad:</b> la autoestima medida en likes; <b>poder:</b> ¿regulan los estados a las plataformas o educan a los usuarios?</div></div>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 150" xmlns="http://www.w3.org/2000/svg">
+      <rect x="60" y="18" width="120" height="34" rx="9" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.4"/>
+      <text x="120" y="32" font-size="9.2" font-weight="800" fill="#1E40AF" text-anchor="middle">Uso de redes</text>
+      <text x="120" y="45" font-size="8.2" fill="#64748B" text-anchor="middle">scroll, likes, contenido</text>
+      <rect x="280" y="18" width="122" height="34" rx="9" fill="#F0FDFA" stroke="#14B8A6" stroke-width="1.4"/>
+      <text x="341" y="32" font-size="9.2" font-weight="800" fill="#134E4A" text-anchor="middle">Pico de dopamina</text>
+      <text x="341" y="45" font-size="8.2" fill="#64748B" text-anchor="middle">recompensa breve</text>
+      <rect x="500" y="18" width="122" height="34" rx="9" fill="#FFF7ED" stroke="#F59E0B" stroke-width="1.4"/>
+      <text x="561" y="32" font-size="9.2" font-weight="800" fill="#92400E" text-anchor="middle">El cerebro pide más</text>
+      <text x="561" y="45" font-size="8.2" fill="#64748B" text-anchor="middle">efecto corto = volver</text>
+      <line x1="180" y1="35" x2="276" y2="35" stroke="#64748B" stroke-width="1.8"/>
+      <polygon points="276,35 266,30 266,40" fill="#64748B"/>
+      <line x1="402" y1="35" x2="496" y2="35" stroke="#64748B" stroke-width="1.8"/>
+      <polygon points="496,35 486,30 486,40" fill="#64748B"/>
+      <path d="M 561 52 C 561 92, 120 92, 120 52" fill="none" stroke="#F59E0B" stroke-width="1.8" stroke-dasharray="5 4"/>
+      <polygon points="120,52 114,63 126,63" fill="#F59E0B"/>
+      <text x="341" y="84" font-size="9" font-weight="700" fill="#92400E" text-anchor="middle">bucle de refuerzo &rarr; adicción conductual</text>
+      <rect x="60" y="104" width="562" height="34" rx="9" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.2"/>
+      <text x="341" y="118" font-size="9.2" font-weight="800" fill="#991B1B" text-anchor="middle">Efectos del uso excesivo: autoestima baja &middot; ansiedad y depresión &middot; sueño alterado &middot; FOMO &middot; menos actividad física</text>
+      <text x="341" y="132" font-size="8.2" fill="#991B1B" text-anchor="middle">el uso moderado probablemente no es dañino (3.5D)</text>
+    </svg>
+    <div class="svg-cap">G4 &middot; El bucle de la dopamina detrás de la adicción a redes (adaptado del libro, 3.5D)</div>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.5D · PERIODISMO ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.5D &middot; Dilema 2</div>
+    <div class="section-title">El impacto en el periodismo</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="tcard u4">
+    <div class="tcard-head"><span class="tcard-num">3.5D</span><span class="tcard-title">Del monopolio de masas al reportero con teléfono</span><span class="tcard-en">impact on journalism</span></div>
+    <div class="trow"><div class="tlabel">Transformación</div><div class="tbody">Los medios digitales rompieron <b>barreras culturales</b> y dieron al público <b>más control sobre lo que consume</b>. Las características de 3.5B transformaron el periodismo: reporteo <b>en línea y en tiempo real</b>, contenido <b>multimedia</b>, acceso a información <b>global</b> y <b>personalización</b> de noticias — desafiando el <b>monopolio</b> que tenían los medios de masas.</div></div>
+    <div class="trow"><div class="tlabel fun">Nuevo perfil</div><div class="tbody">El periodista hoy necesita <b>habilidades técnicas y de alfabetización digital</b>, además de escribir: publica con <b>plazos más cortos</b> y para <b>más de un tipo de medio</b>. Las redes son su herramienta: publica la noticia en <b>segundos</b> ante miles de seguidores y construye una <b>marca personal</b> que genera lealtad.</div></div>
+    <div class="trow"><div class="tlabel warn">Riesgo</div><div class="tbody">Salir primero siempre importó, pero <b>al publicar deprisa</b> crece la chance de no verificar: se propaga <b>misinformation</b> (<i>«información falsa o inexacta difundida por error o inadvertidamente; la intención no es engañar»</i>). Además, la misma tecnología permite a <b>periodistas amateurs</b> sin formación ni control editorial publicar como profesionales.</div></div>
+    <div class="trow"><div class="tlabel case">Caso QAnon</div><div class="tbody"><b>QAnon</b>: movimiento conspirativo estadounidense centrado en «Q», una persona anónima que en <b>2017</b> publicó mensajes («Q drops») en <b>4chan</b> alegando tener autorización de seguridad («Q clearance») dentro del gobierno de EE.&nbsp;UU. Miles de seguidores difunden las teorías por redes y <b>coordinan mensajes abusivos</b> contra «enemigos» percibidos (políticos, celebridades, periodistas). Las plataformas <b>eliminaron muchas cuentas</b>, pero quedan <b>millones de creyentes</b> en línea.</div></div>
+    <div class="trow"><div class="tlabel opp">Solución propuesta</div><div class="tbody">Formar una <b>red de revisión entre pares (peer-review network)</b>: periodistas que revisan y verifican el trabajo de otros. El libro la presenta como respuesta al daño que las fake news y las «alternative facts» hacen a la reputación del periodismo.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Velocidad vs. precisión:</b> ¿publicar primero o verificar? <b>Poder:</b> ¿quién es «periodista» y quién decide qué se publica? <b>Expresión:</b> la libertad de publicar de todos vs. el estándar profesional que protege la verdad.</div></div>
+  </div>
+
+  <div class="info-card">
+    <h4>Para el examen: la cadena del error informativo</h4>
+    <p><b>Misinformation</b> = error <i>sin</i> intención (compartir algo falso creyéndolo cierto) &rarr; <b>Disinformation</b> = falsedad <i>deliberada</i> para influir en la opinión pública u ocultar la verdad &rarr; <b>Fake news</b> = información falsa o engañosa <i>presentada como noticia</i>. <span class="en-term">El libro avisa: «asegúrate de haber repasado estos términos para usarlos correctamente en tus respuestas de examen».</span></p>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.5D · AUTENTICIDAD ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.5D &middot; Dilema 3</div>
+    <div class="section-title">Autenticidad de los medios</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Los avances en creación y distribución hacen <b>cada vez más difícil verificar la autenticidad</b> de lo que vemos. Las redes sociales son «una tienda única» para entretenimiento, amigos y noticias a la vez — y ahí está parte del problema.</p>
+
+  <div class="tcard u4">
+    <div class="tcard-head"><span class="tcard-num">3.5D</span><span class="tcard-title">Por qué caemos en las fake news</span><span class="tcard-en">media authenticity</span></div>
+    <div class="trow"><div class="tlabel fun">Mecanismo</div><div class="tbody">Estudio de <b>George Pearson (Ohio State University)</b>: cuando las personas usan la <b>misma fuente para noticias y entretenimiento</b>, prestan <b>menos atención al origen</b> del contenido; les cuesta más evaluar las fuentes y quedan <b>más vulnerables a las fake news</b>.</div></div>
+    <div class="trow"><div class="tlabel fun">Motivación</div><div class="tbody">Las fake news se fabrican <b>con intención de desinformar</b> y suelen ser de naturaleza <b>política o criminal</b>. Uno de sus objetivos: <b>viralizar</b> para <b>ganar dinero</b> o promover una <b>agenda política</b>.</div></div>
+    <div class="trow"><div class="tlabel case">Evidencia MIT</div><div class="tbody">Un investigador del <b>MIT</b> estudió cómo se difunden las historias en redes con datos de <b>126&nbsp;000 historias tuiteadas por 3 millones de personas (2006&ndash;2017)</b>: las <b>fake news se difunden más rápido</b> que las reales, porque estimulan emociones de <b>sorpresa, miedo y asco</b>, mientras las reales producen <b>tristeza, alegría, anticipación y confianza</b>. El estudio fue clave porque las fake news <b>habían distorsionado las elecciones de EE.&nbsp;UU. de 2016</b>.</div></div>
+    <div class="trow"><div class="tlabel case">Deepfakes hoy</div><div class="tbody">Informe de <b>Deeptrace (2019)</b>: <b>7&nbsp;964 videos deepfake</b> en línea y una cifra en aumento, porque las herramientas están <b>ampliamente disponibles y son fáciles de usar</b>. Todavía es posible detectar un video falso, pero <b>conforme mejora la tecnología será más difícil</b> distinguir lo real de lo falso — un riesgo directo para el periodismo.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidad</div><div class="tbody">Alfabetización mediática: enseñar a evaluar fuentes (el libro pide practicar distinguiendo noticias satíricas — como <b>The Onion</b> — de noticias reales) y herramientas de verificación forense de audio/video.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Valores:</b> la confianza en los medios como bien público. <b>Poder:</b> ¿quién etiqueta qué es «falso» — plataformas, gobiernos, verificadores independientes? <b>Expresión:</b> la sátira y el humor (memes) usan deliberadamente lo falso: ¿dónde termina el juego legítimo?</div></div>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 138" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="218" height="96" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.3"/>
+      <text x="113" y="24" font-size="10" font-weight="800" fill="#1E40AF" text-anchor="middle">MISINFORMATION</text>
+      <text x="113" y="42" font-size="8.8" fill="#475569" text-anchor="middle">falsa o inexacta, difundida</text>
+      <text x="113" y="56" font-size="8.8" fill="#475569" text-anchor="middle">por error o inadvertidamente</text>
+      <text x="113" y="76" font-size="8.8" font-weight="700" fill="#1E40AF" text-anchor="middle">sin intención de engañar</text>
+      <text x="113" y="90" font-size="8.2" fill="#64748B" text-anchor="middle">ej.: compartir un titular sin verificar</text>
+      <rect x="232" y="4" width="218" height="96" rx="10" fill="#FFF7ED" stroke="#F59E0B" stroke-width="1.3"/>
+      <text x="341" y="24" font-size="10" font-weight="800" fill="#92400E" text-anchor="middle">DISINFORMATION</text>
+      <text x="341" y="42" font-size="8.8" fill="#475569" text-anchor="middle">falsa y creada deliberadamente</text>
+      <text x="341" y="56" font-size="8.8" fill="#475569" text-anchor="middle">para influir en la opinión pública</text>
+      <text x="341" y="76" font-size="8.8" font-weight="700" fill="#92400E" text-anchor="middle">con intención: engañar</text>
+      <text x="341" y="90" font-size="8.2" fill="#64748B" text-anchor="middle">ej.: campaña coordinada de mentiras</text>
+      <rect x="460" y="4" width="218" height="96" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.3"/>
+      <text x="569" y="24" font-size="10" font-weight="800" fill="#991B1B" text-anchor="middle">FAKE NEWS</text>
+      <text x="569" y="42" font-size="8.8" fill="#475569" text-anchor="middle">información falsa o engañosa</text>
+      <text x="569" y="56" font-size="8.8" fill="#475569" text-anchor="middle">presentada como noticia</text>
+      <text x="569" y="76" font-size="8.8" font-weight="700" fill="#991B1B" text-anchor="middle">meta: viralizar &rarr; dinero o agenda</text>
+      <text x="569" y="90" font-size="8.2" fill="#64748B" text-anchor="middle">suele ser política o criminal</text>
+      <rect x="4" y="108" width="674" height="26" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1"/>
+      <text x="341" y="125" font-size="9" font-weight="700" fill="#334155" text-anchor="middle">MIT: las falsas viajan más rápido porque mueven sorpresa, miedo y asco; las reales mueven confianza, alegría, tristeza y anticipación</text>
+    </svg>
+    <div class="svg-cap">G5 &middot; Términos que el IB confunde a propósito: aprende a diferenciarlos (adaptado del libro, 3.5D)</div>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.5D · PROPIEDAD ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.5D &middot; Dilema 4</div>
+    <div class="section-title">Propiedad de los medios e intellectual property</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">La evolución de internet hizo <b>más fácil que nunca compartir y distribuir</b> medios digitales. Con la presencia adecuada en redes, un artista llega <b>instantáneamente a millones</b> — pero eso puede «venir a un precio»: obliga a replantear los modelos de negocio. Y como estudiante del IB, aplica directamente a la <b>honestidad académica</b>: citar fuentes y usar la propiedad intelectual de otros con licencia.</p>
+
+  <div class="tcard u4">
+    <div class="tcard-head"><span class="tcard-num">3.5D</span><span class="tcard-title">Propiedad intelectual, copyright y licencias</span><span class="tcard-en">IP &middot; copyright &middot; copyleft &middot; creative commons</span></div>
+    <div class="trow"><div class="tlabel">Definiciones</div><div class="tbody"><i>«<b>Propiedad intelectual</b>: resultado del pensamiento o esfuerzo intelectual — una invención nueva o un diseño original — y su <b>protección legal</b>»</i> (patentes, marcas, copyright). <i>«<b>Copyright</b>: protección legal para los creadores de obras literarias y artísticas — libros, música, pinturas, películas y programas informáticos, también digitales»</i>.</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">El copyright da derechos sobre la obra y protege contra el <b>uso no autorizado</b> durante un período definido; su objetivo es <b>premiar la creatividad</b> y animar a inventores a compartir innovaciones. El uso no autorizado es un <b>delito penal (robo)</b>. Para usar una obra: identificar al dueño y <b>obtener permiso</b> — un proceso lento que, según el libro, puede <b>restringir la creatividad</b>.</div></div>
+    <div class="trow"><div class="tlabel case">Excepciones</div><div class="tbody">Se puede usar <b>sin permiso</b> en dos casos: <b>dominio público</b> (obra disponible al público y no sujeta a copyright) y <b>fair use</b> (estudio o investigación, comentario o crítica). Si hay disputa, se considera: <b>1)</b> ¿crea algo nuevo o es copia directa? <b>2)</b> ¿afecta el valor de mercado del original? <b>3)</b> ¿cuánto del original se usa?</div></div>
+    <div class="trow"><div class="tlabel case">Caso</div><div class="tbody"><b>Blurred Lines:</b> la canción de Robin Thicke, Pharrell Williams y T.I. (2013) fue declarada — tras <b>cinco años de juicio</b> — infractora del copyright de <b>«Got to give it up» (Marvin Gaye, 1977)</b>: pagaron más de <b>US$5 millones</b> a la herencia de Gaye.</div></div>
+    <div class="trow"><div class="tlabel opp">Copyleft y CC</div><div class="tbody"><i>«<b>Copyleft</b>: los dueños permiten usar su obra protegida <b>libremente bajo condiciones específicas</b>»</i> — en software, copiar/modificar/compartir si el <b>código fuente sigue abierto</b>; busca construir <b>comunidades colaborativas</b>. <b>Creative Commons</b> estandariza esos permisos para cualquier obra.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Valores:</b> proteger al creador vs. acceso al conocimiento y creatividad derivada. <b>Cambio:</b> internet rompió el modelo de distribución (descargas, streaming, IA que aprende de obras protegidas) — ¿son las leyes actuales adecuadas?</div></div>
+  </div>
+
+  <table class="exam">
+    <tr><th style="width:22%">Licencia CC</th><th style="width:44%">Qué permite</th><th>Posición en el libro</th></tr>
+    <tr><td><b>CC BY</b></td><td>Distribuir, remezclar, adaptar y construir sobre la obra, <b>siempre que se credite al creador original</b>.</td><td>La <b>menos restrictiva</b> de las Creative Commons.</td></tr>
+    <tr><td><b>CC BY-NC-ND</b></td><td>Solo <b>descargar y compartir</b> acreditando al dueño: <b>no</b> se puede modificar ni usar <b>comercialmente</b>.</td><td>La <b>más restrictiva</b> de las Creative Commons.</td></tr>
+  </table>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 118" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="14" width="160" height="78" rx="10" fill="#F0FDFA" stroke="#14B8A6" stroke-width="1.3"/>
+      <text x="84" y="34" font-size="9.8" font-weight="800" fill="#134E4A" text-anchor="middle">Dominio público</text>
+      <text x="84" y="50" font-size="8.4" fill="#475569" text-anchor="middle">disponible para el público,</text>
+      <text x="84" y="63" font-size="8.4" fill="#475569" text-anchor="middle">no sujeta a copyright</text>
+      <text x="84" y="82" font-size="8.2" font-weight="700" fill="#134E4A" text-anchor="middle">uso libre total</text>
+      <rect x="176" y="14" width="160" height="78" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.3"/>
+      <text x="256" y="34" font-size="9.8" font-weight="800" fill="#1E40AF" text-anchor="middle">Fair use</text>
+      <text x="256" y="50" font-size="8.4" fill="#475569" text-anchor="middle">estudio, investigación,</text>
+      <text x="256" y="63" font-size="8.4" fill="#475569" text-anchor="middle">comentario o crítica</text>
+      <text x="256" y="82" font-size="8.2" font-weight="700" fill="#1E40AF" text-anchor="middle">uso limitado sin permiso</text>
+      <rect x="348" y="14" width="160" height="78" rx="10" fill="#FFF7ED" stroke="#F59E0B" stroke-width="1.3"/>
+      <text x="428" y="34" font-size="9.8" font-weight="800" fill="#92400E" text-anchor="middle">Copyright</text>
+      <text x="428" y="50" font-size="8.4" fill="#475569" text-anchor="middle">permiso del dueño:</text>
+      <text x="428" y="63" font-size="8.4" fill="#475569" text-anchor="middle">identificar + autorización</text>
+      <text x="428" y="82" font-size="8.2" font-weight="700" fill="#92400E" text-anchor="middle">uso no autorizado = robo</text>
+      <rect x="520" y="14" width="158" height="78" rx="10" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1.3"/>
+      <text x="599" y="34" font-size="9.8" font-weight="800" fill="#5B21B6" text-anchor="middle">Copyleft / CC</text>
+      <text x="599" y="50" font-size="8.4" fill="#475569" text-anchor="middle">uso libre bajo condiciones</text>
+      <text x="599" y="63" font-size="8.4" fill="#475569" text-anchor="middle">CC BY &hellip; CC BY-NC-ND</text>
+      <text x="599" y="82" font-size="8.2" font-weight="700" fill="#5B21B6" text-anchor="middle">permiso estandarizado</text>
+      <text x="341" y="108" font-size="9" fill="#64748B" text-anchor="middle">Cuanta más protección, más fricción para reutilizar; el copyleft busca comunidades que colaboren</text>
+    </svg>
+    <div class="svg-cap">G6 &middot; De la obra libre a la obra protegida: cuatro regímenes de uso (adaptado del libro, 3.5D)</div>
+  </div>
+
+  <div class="info-card">
+    <h4>Preguntas de práctica del libro — Paper 1 <span class="en-term">bloque copyright</span></h4>
+    <p><b>1)</b> Identify two works of art that are covered by copyright. <i>[2]</i> &nbsp;<b>2)</b> Explain two limitations of copyright laws. <i>[6]</i> &nbsp;<b>3)</b> The evolution of the internet and computing has made it easier for people to illegally copy and distribute works of art. Discuss the impact this is having on the music industry. <i>[8]</i> &nbsp;<b>HL:</b> Evaluate one intervention used in the music industry to advocate for better conditions for new music artists. <i>[12]</i></p>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.5D · CENSURA ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.5D &middot; Dilema 5</div>
+    <div class="section-title">Censura y control de los medios</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Los protocolos y estándares de internet hicieron posible el intercambio global de medios. Sin embargo, <b>no todos acceden a los mismos medios</b>: muchos gobiernos aplican <b>censura digital sofisticada</b> por razones en <b>cuatro categorías principales</b>. En cada una, el libro da un caso país-año: apréndelos juntos.</p>
+
+  <table class="exam">
+    <tr><th style="width:19%">Categoría</th><th style="width:41%">Qué se bloquea y por qué</th><th>Caso del libro</th></tr>
+    <tr><td><b>1 &middot; Contenido político</b> <span class="en-term">political content</span></td><td>Contenido de naturaleza política: se bloquea cuando las <b>opiniones de grupos minoritarios</b> chocan con las del gobierno.</td><td><b>Camboya, julio 2018:</b> bloqueo de varios <b>sitios de noticias independientes</b> dos días antes de una elección general.</td></tr>
+    <tr><td><b>2 &middot; Contenido social</b> <span class="en-term">social content</span></td><td>Contenido socialmente sensible u ofensivo, para «proteger» a los ciudadanos: sexualidad, <b>juegos de azar, alcohol, drogas ilegales</b>.</td><td><b>Uganda, julio 2018:</b> el regulador de comunicaciones ordenó a los <b>ISP bloquear sitios pornográficos</b>.</td></tr>
+    <tr><td><b>3 &middot; Conflicto y seguridad</b> <span class="en-term">conflict and security</span></td><td>Contenido sobre conflictos, grupos militantes y conflictos fronterizos, para que los ciudadanos <b>no contribuyan</b> al conflicto.</td><td><b>Sri Lanka, 2019:</b> tras una serie de atentados, se <b>cerró el acceso a redes sociales</b> para frenar la difusión de misinformation y más violencia.</td></tr>
+    <tr><td><b>4 &middot; Herramientas de internet</b> <span class="en-term">internet tools</span></td><td>Algunos países <b>monitorean las comunicaciones</b>: buscan <b>palabras clave</b> en emails, mensajes o búsquedas de internet.</td><td>Práctica estatal de vigilancia de comunicaciones (el libro pide buscar un caso noticioso reciente de «internet switch-off»).</td></tr>
+  </table>
+
+  <div class="info-card">
+    <h4>Ángulos de examen sobre censura <span class="en-term">concepto poder</span></h4>
+    <p><b>A favor del bloqueo:</b> frenar desinformación en crisis (Sri Lanka), proteger a menores, seguridad nacional. &nbsp;<b>En contra:</b> silencia minorías y prensa independiente (Camboya), prevalece en épocas clave (elecciones), el monitoreo viola privacidad. &nbsp;<b>Pregunta de discusión tipo:</b> <i>«¿hasta qué punto los gobiernos deberían controlar el acceso a los medios digitales?»</i> — equilibra ambos lados y concluye con criterio. El perfil del libro para este tema: <b>open-minded</b> — considera perspectivas y tradiciones de otros al discutir el filtrado de contenido.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.5D · PRESERVACIÓN ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.5D &middot; Dilema 6</div>
+    <div class="section-title">Preservación digital: la memoria que se borra</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="tcard u4">
+    <div class="tcard-head"><span class="tcard-num">3.5D</span><span class="tcard-title">La historia interminable de la obsolescencia</span><span class="tcard-en">digital media preservation</span></div>
+    <div class="trow"><div class="tlabel">Problema</div><div class="tbody">Cada cambio de tecnología provoca <b>obsolescencia de los medios de almacenamiento y de los formatos de datos</b>. El ejemplo del libro: un video familiar de los <b>años 1990 grabado en cinta magnética</b> &rarr; la videocámara queda obsoleta &rarr; la familia paga para convertir las cintas a <b>DVD</b> &rarr; una década después tira el reproductor de DVD &rarr; hay que transferir otra vez «y la historia continúa».</div></div>
+    <div class="trow"><div class="tlabel fun">No es solo hardware</div><div class="tbody">También se vuelven obsoletos los <b>formatos de archivo</b> y el <b>software necesario para leerlos</b>: un archivo antiguo puede sobrevivir, pero sin el programa que lo abre, es ilegible.</div></div>
+    <div class="trow"><div class="tlabel opp">Solución</div><div class="tbody"><i>«<b>Preservación digital</b>: esencial para la historia moderna; incluye prácticas para asegurar que la información esté a salvo de <b>fallas de medios y de la obsolescencia futura</b> de hardware y software»</i>. Dos prácticas: <b>transferir los datos a medios frescos</b> y usar <b>emuladores</b> que simulan el software antiguo para abrir el archivo y <b>guardarlo en un formato nuevo</b>.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Positivo: la memoria colectiva (videos familiares, archivos noticiosos, arte digital) puede sobrevivir. Negativo: costo y trabajo permanentes; si nadie migra a tiempo, el contenido se pierde para siempre.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Cambio:</b> ¿quién paga la preservación — familias, gobiernos, plataformas? <b>Valores:</b> ¿qué merece ser preservado como «historia moderna»? El ATL del libro propone explorar <b>Internet Archive WayBack Machine</b> para ver cómo cambió tu sitio web favorito.</div></div>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 116" xmlns="http://www.w3.org/2000/svg">
+      <line x1="40" y1="58" x2="642" y2="58" stroke="#94A3B8" stroke-width="2"/>
+      <circle cx="90" cy="58" r="7" fill="#F59E0B"/>
+      <circle cx="270" cy="58" r="7" fill="#F59E0B"/>
+      <circle cx="450" cy="58" r="7" fill="#F59E0B"/>
+      <circle cx="600" cy="58" r="7" fill="#1E3A5F"/>
+      <text x="90" y="34" font-size="9.6" font-weight="800" fill="#92400E" text-anchor="middle">Cinta magnética</text>
+      <text x="90" y="82" font-size="8.4" fill="#64748B" text-anchor="middle">videocámara de los 90</text>
+      <text x="90" y="95" font-size="8.4" fill="#64748B" text-anchor="middle">la cámara queda obsoleta</text>
+      <polygon points="164,54 180,58 164,62" fill="#CBD5E1"/>
+      <text x="270" y="34" font-size="9.6" font-weight="800" fill="#92400E" text-anchor="middle">DVD</text>
+      <text x="270" y="82" font-size="8.4" fill="#64748B" text-anchor="middle">conversión pagada</text>
+      <text x="270" y="95" font-size="8.4" fill="#64748B" text-anchor="middle">el reproductor se tira en ~10 años</text>
+      <polygon points="344,54 360,58 344,62" fill="#CBD5E1"/>
+      <text x="450" y="34" font-size="9.6" font-weight="800" fill="#92400E" text-anchor="middle">Disco / nube</text>
+      <text x="450" y="82" font-size="8.4" fill="#64748B" text-anchor="middle">nueva migración&hellip;</text>
+      <text x="450" y="95" font-size="8.4" fill="#64748B" text-anchor="middle">«y la historia continúa»</text>
+      <polygon points="524,54 540,58 524,62" fill="#CBD5E1"/>
+      <text x="600" y="34" font-size="9.6" font-weight="800" fill="#1E3A5F" text-anchor="middle">Preservación digital</text>
+      <text x="600" y="82" font-size="8.4" fill="#64748B" text-anchor="middle">migrar + emuladores de</text>
+      <text x="600" y="95" font-size="8.4" fill="#64748B" text-anchor="middle">software antiguo</text>
+    </svg>
+    <div class="svg-cap">G7 &middot; El ciclo de obsolescencia y la respuesta: migración y emulación (adaptado del libro, 3.5D)</div>
+  </div>
+
+  <div class="info-card">
+    <h4>Preguntas de reflexión del libro <span class="en-term">útiles para Paper 2 y para el cierre de unidades</span></h4>
+    <p>¿Qué medios consumes o creas a diario? &middot; ¿En qué medida cambiaron los medios en tu vida? &middot; ¿Cómo se diferencian los digitales de los tradicionales? &middot; ¿En qué contextos impactan los distintos formatos? &middot; ¿Cómo pueden los medios ser una <b>intervención</b> para mejorar el bienestar global? &middot; ¿En qué medida los dilemas impactan a individuos y sociedades? &middot; ¿Qué relación hay entre medios y <b>poder</b>? &middot; ¿Cómo influyen los medios en <b>lo que conocemos</b> (TOK: conocimiento y tecnología)?</p>
+  </div>
+</div>
+<!-- ═══════════════ SÍNTESIS OID ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Síntesis &middot; Oportunidades, impactos y dilemas</div>
+    <div class="section-title">Tabla maestra: cada tecnología en una fila</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Esta tabla condensa el capítulo completo para el repaso final: cada tecnología con sus <b>oportunidades</b> (lo nuevo que permite), sus <b>impactos</b> (efectos positivos y negativos para personas y comunidades) y sus <b>dilemas</b> (tensiones que no tienen respuesta única). Úsala para responder la pregunta «analiza y evalúa» de Paper 1.</p>
+
+  <table class="exam tall">
+    <tr><th style="width:17%">Tecnología / fenómeno</th><th style="width:26%">Oportunidades</th><th style="width:28%">Impactos</th><th>Dilemas</th></tr>
+    <tr><td><b>Redes sociales y UGC</b> <span class="en-term">Web 2.0</span></td><td>Crear y difundir sin editorial; noticias en segundos; marca personal del periodista.</td><td>+: el público controla lo que consume; −: monopolio informativo roto, adicción y salud mental (4.4C).</td><td>Poder: algoritmo vs. público; expresión vs. burla; velocidad vs. verificación.</td></tr>
+    <tr><td><b>Trending, hashtags y memes</b></td><td>Clasificar y viralizar causas; comentario cultural accesible; humor compartido globalmente.</td><td>+: visibilidad de temas locales y globales; −: contenido ofensivo o falso puede viralizar igual.</td><td>Valores: humor vs. daño; poder: quién impulsa lo que se hace trending.</td></tr>
+    <tr><td><b>Deepfakes / medios sintéticos</b> <span class="en-term">Web 3.0</span></td><td>Producción creativa barata (Duran Duran), educación (Obama/Peele), accesibilidad.</td><td>+: democratiza la creación; −: reputaciones dañadas, evidencias fabricadas, fraude (£200&nbsp;000).</td><td>Valores: tecnología de doble uso; poder: quién verifica la autenticidad.</td></tr>
+    <tr><td><b>IA de recomendación</b> <span class="en-term">personalización</span></td><td>Contenido relevante; predecir demanda; mensajes de salud efectivos.</td><td>+: experiencia a medida; −: recolección de rutinas y hábitos; fiabilidad según datos de entrenamiento.</td><td>Espacio: burbujas de contenido; transparencia de los datos usados.</td></tr>
+    <tr><td><b>E-sports y gaming</b></td><td>Carreras profesionales; torneos con premios (US$100M); audiencias nuevas (mayores, móviles).</td><td>+: socialización e industria cultural; −: presión y riesgo de adicción; ventana profesional corta (24&ndash;27).</td><td>Identidad: ¿cuánto jugar es demasiado? Propiedad de los datos de rendimiento.</td></tr>
+    <tr><td><b>Realidad virtual</b> <span class="en-term">VR &middot; 3DoF/6DoF</span></td><td>Formación segura y barata (BP, ExxonMobil); demos de producto; oficinas virtuales.</td><td>+: efecto fisiológico real que prepara (médicos, militares); −: costo, mareo, aislamiento.</td><td>Espacio: socialización virtual vs. real; identidad: cómo uno se presenta.</td></tr>
+    <tr><td><b>AR / MR</b></td><td>Guía con las manos libres (inspección); educación 3D; filtros y experiencias enriquecidas.</td><td>+: menos errores, aprendizaje activo; −: distracción, privacidad de la cámara, dependencia de la capa digital.</td><td>Valores: percepción alterada de lo real; poder: quién controla la capa digital.</td></tr>
+    <tr><td><b>Gemelos digitales</b></td><td>Mantenimiento predictivo (Shell); decisiones visualizadas antes de tomarlas.</td><td>+: seguridad industrial y eficiencia; −: alto costo; si fallan los sensores, la «copia» miente.</td><td>Sistemas: ¿confiar en el gemelo o en el activo? Acceso a datos críticos.</td></tr>
+    <tr><td><b>Medios y plataformas como totalidad</b></td><td>Acceso casi instantáneo, gratuito o barato y global a noticias, cultura y entretenimiento.</td><td>+ / −: los seis dilemas de 3.5D: adicción, periodismo, autenticidad, propiedad, censura, preservación.</td><td>El dilema paraguas: el mismo medio que educa y conecta es el que engaña y obsesiona.</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════ FICHAS INTERACTIVAS ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Fichas de repaso interactivas</div>
+    <div class="section-title">20 definiciones que caen en el examen</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text"><b>En el navegador:</b> haz clic en cada ficha para voltearla y comprobar tu respuesta. <b>En el PDF impreso:</b> tapa la parte inferior de cada tarjeta y responde en voz alta. Los términos en inglés son los que aparecen en los exámenes.</p>
+
+  <div class="fc-grid">
+    <div class="fc"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Qué son los «media» para el libro?</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Media:</b> cualquier canal de comunicación que sirve como medio para que la información llegue a <b>un gran grupo de personas</b> (impresos, de masas, digitales).</div></div>
+    </div></div>
+    <div class="fc"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Define digital media y «encoding».</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Digital media:</b> video, audio, imágenes y otro contenido creado, <b>codificado y almacenado</b> antes de compartirse. <b>Codificar</b> = convertir los medios a un formato legible por computadora.</div></div>
+    </div></div>
+    <div class="fc f4"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Qué significa trending?</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Trending:</b> tema que experimenta un <b>repunte súbito de popularidad</b> en plataformas de redes sociales <b>por un tiempo limitado</b>.</div></div>
+    </div></div>
+    <div class="fc f4"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Qué es un hashtag?</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Hashtag:</b> palabra o frase precedida del símbolo <b>#</b> para <b>clasificar o categorizar</b> el texto que la acompaña.</div></div>
+    </div></div>
+    <div class="fc"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Define meme y da su origen viral.</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Meme:</b> imagen, video o texto (humorístico) que se <b>copía y difunde rápidamente</b>, con variaciones. Primer viral: <b>1996</b>, bebé bailando cha-cha, difundido como GIF por email.</div></div>
+    </div></div>
+    <div class="fc f3"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Define deepfake.</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Deepfake:</b> <b>medio sintético (falso)</b> creado con <b>deep learning / IA</b>; incluye face-swapping y lip-syncing.</div></div>
+    </div></div>
+    <div class="fc f4"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Define fake news.</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Fake news:</b> información <b>falsa o engañosa presentada como noticia</b>; busca viralizar para ganar dinero o promover una agenda.</div></div>
+    </div></div>
+    <div class="fc f4"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Misinformation vs. disinformation.</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Misinformation:</b> falsa, difundida <b>por error, sin intención</b> de engañar. <b>Disinformation:</b> creada y difundida <b>deliberadamente</b> para influir en la opinión u ocultar la verdad.</div></div>
+    </div></div>
+    <div class="fc f3"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Define virtual reality (VR).</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>VR:</b> simulación que proporciona un entorno <b>completamente inmersivo</b>; se usa con visores, desde cartón (Cardboard) hasta gafas específicas.</div></div>
+    </div></div>
+    <div class="fc f3"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Qué es la computación espacial?</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Spatial computing:</b> usar <b>acciones físicas como entradas</b> para recibir salidas en un <b>espacio 3D</b> — en 3DoF (mirar 360°) o 6DoF (moverse).</div></div>
+    </div></div>
+    <div class="fc f3"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Define augmented reality (AR).</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>AR:</b> contenido digital <b>superpuesto a una experiencia del mundo real</b>; típico en móviles — el filtro de Snapchat.</div></div>
+    </div></div>
+    <div class="fc f3"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Define mixed reality (MR) y digital twin.</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>MR:</b> mezcla del mundo real y digital para crear <b>nuevas experiencias</b>. <b>Digital twin:</b> simulación <b>dinámica</b> de un sistema real, con sensores y datos en tiempo real (Shell).</div></div>
+    </div></div>
+    <div class="fc f4"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Qué es la adicción a redes sociales?</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Una <b>adicción conductual</b>: impulso <b>incontrolable</b> de usar redes durante períodos prolongados; el cerebro busca repetir los <b>picos de dopamina</b>.</div></div>
+    </div></div>
+    <div class="fc f4"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Qué significa FOMO?</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>FOMO (fear of missing out):</b> <b>miedo a perderse algo</b>; uno de los efectos del uso excesivo de redes junto a ansiedad, depresión y sueño alterado.</div></div>
+    </div></div>
+    <div class="fc f2"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Qué es la propiedad intelectual?</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Intellectual property:</b> resultado del <b>pensamiento o esfuerzo intelectual</b> (invención, diseño original) y su <b>protección legal</b>: patentes, marcas, copyright.</div></div>
+    </div></div>
+    <div class="fc f2"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Define copyright.</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Copyright:</b> protección legal de creadores de <b>obras literarias y artísticas</b> — libros, música, pinturas, películas, programas; el uso no autorizado es <b>robo (delito)</b>.</div></div>
+    </div></div>
+    <div class="fc f2"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Qué es el copyleft?</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Copyleft:</b> los dueños permiten usar su obra <b>libremente bajo condiciones específicas</b>; en software, si el <b>código fuente sigue abierto</b>. Fomenta comunidades colaborativas.</div></div>
+    </div></div>
+    <div class="fc f2"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">CC BY vs. CC BY-NC-ND.</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>CC BY:</b> la <b>menos restrictiva</b> — distribuir, remezclar, adaptar, construir, <b>acreditando</b> al creador. <b>CC BY-NC-ND:</b> la <b>más restrictiva</b> — solo descargar/compartir, sin modificar ni uso comercial.</div></div>
+    </div></div>
+    <div class="fc f4"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Qué es la preservación digital?</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Prácticas para asegurar que la información sobreviva a <b>fallas de medios y obsolescencia</b> de hardware/software: <b>migrar a medios frescos</b> + <b>emuladores</b> del software antiguo.</div></div>
+    </div></div>
+    <div class="fc"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Nombra las 7 características de 3.5B.</div><div class="fc-hint">clic &rarr; ver definición</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Compartición rápida &middot; almacenamiento eficiente &middot; interactividad &middot; contenido no lineal (hipertextual) &middot; redes globales &middot; virtual &middot; <b>convergencia</b>.</div></div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ QUIZ ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Autoevaluación interactiva</div>
+    <div class="section-title">Quiz: ¿dominas el capítulo 3.5?</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text"><b>En el navegador:</b> responde y verás la corrección al instante (verde = correcto, rojo = incorrecto) con la explicación desplegada. <b>En el PDF impreso:</b> las respuestas y explicaciones aparecen en recuadros verdes al pie de cada pregunta.</p>
+
+  <div class="qz-part">Parte 1 &middot; Verdadero o falso</div>
+
+  <div class="vf-row" data-ans="F"><div class="vf-txt">1. La desinformación (disinformation) se difunde siempre por error, sin intención de engañar.</div><div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div></div>
+  <div class="q-a"><b>Falso.</b> Eso describe la <b>misinformation</b>. La <b>disinformation</b> se crea y difunde <b>deliberadamente</b> para influir en la opinión pública u ocultar la verdad — la diferencia de intención es exactamente lo que el IB pregunta.</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt">2. Según el estudio del MIT, las noticias falsas se difunden más rápido que las reales porque estimulan sorpresa, miedo y asco.</div><div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div></div>
+  <div class="q-a"><b>Verdadero.</b> Datos de 126&nbsp;000 historias y 3 millones de personas (2006&ndash;2017): las falsas mueven sorpresa, miedo y asco; las reales, tristeza, alegría, anticipación y confianza. Contexto: fake news distorsionaron las elecciones de EE.&nbsp;UU. de 2016.</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt">3. La AR superpone contenido digital sobre el mundo real, mientras la VR reemplaza por completo el entorno.</div><div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div></div>
+  <div class="q-a"><b>Verdadero.</b> AR = capa sobre la experiencia real (filtro de Snapchat); VR = simulación <b>completamente inmersiva</b>. Entre ambas queda la MR, que mezcla mundo real y digital.</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt">4. El dominio público y el fair use permiten usar una obra sin pedir permiso a quien posee el copyright.</div><div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div></div>
+  <div class="q-a"><b>Verdadero.</b> Son las <b>dos únicas circunstancias</b> que menciona el libro para usar sin permiso: dominio público (obra disponible, sin copyright) y fair use (estudio/investigación, comentario o crítica).</div>
+
+  <div class="vf-row" data-ans="F"><div class="vf-txt">5. Un gemelo digital es un modelo 3D estático e inmutable de un activo.</div><div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div></div>
+  <div class="q-a"><b>Falso.</b> El libro subraya su naturaleza <b>dinámica</b>: sensores que recogen datos <b>en tiempo real</b>, lo que ofrece más herramientas e información que los modelos 3D estáticos.</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt">6. En el copyleft, el software puede copiarse, modificarse y compartirse si el código fuente permanece abierto y disponible públicamente.</div><div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div></div>
+  <div class="q-a"><b>Verdadero.</b> Es la condición específica del copyleft según el libro, cuyo objetivo es construir <b>comunidades que colaboren</b> para mejorar las obras creativas.</div>
+
+  <div class="vf-row" data-ans="F"><div class="vf-txt">7. CC BY-NC-ND es la licencia Creative Commons menos restrictiva.</div><div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div></div>
+  <div class="q-a"><b>Falso.</b> Es la <b>más restrictiva</b>: solo permite descargar y compartir acreditando al dueño, sin modificaciones ni uso comercial. La menos restrictiva es <b>CC BY</b>.</div>
+
+  <div class="qz-part">Parte 2 &middot; Opción múltiple</div>
+
+  <div class="mc-q" data-ans="C"><div class="mc-txt">8. ¿Cuál NO es una característica de los medios digitales según el libro (3.5B)?</div>
+    <div class="opts"><button class="mc-opt" data-k="A">Compartición rápida</button><button class="mc-opt" data-k="B">Convergencia de medios</button><button class="mc-opt" data-k="C">Contenido exclusivamente lineal</button><button class="mc-opt" data-k="D">Interactividad</button></div></div>
+  <div class="q-a"><b>C.</b> Es lo contrario: el medio digital es <b>no lineal (hipertextual)</b> — los hipervínculos permiten navegar en cualquier orden, mientras la media tradicional era lineal.</div>
+
+  <div class="mc-q" data-ans="B"><div class="mc-txt">9. En 2010, CNN reportó que el 75% de los encuestados obtenía sus noticias de&hellip;</div>
+    <div class="opts"><button class="mc-opt" data-k="A">Televisión</button><button class="mc-opt" data-k="B">Email o redes sociales</button><button class="mc-opt" data-k="C">Periódicos impresos</button><button class="mc-opt" data-k="D">Radio</button></div></div>
+  <div class="q-a"><b>B.</b> Dato del libro (3.5A) que ilustra el tránsito de las noticias hacia Facebook, Twitter y el email, y que obligó a las empresas de medios tradicionales a adaptarse.</div>
+
+  <div class="mc-q" data-ans="A"><div class="mc-txt">10. El primer meme viral (1996) fue&hellip;</div>
+    <div class="opts"><button class="mc-opt" data-k="A">Una animación de un bebé bailando cha-cha</button><button class="mc-opt" data-k="B">Un gato con texto</button><button class="mc-opt" data-k="C">Un baile viral de selfies</button><button class="mc-opt" data-k="D">Un video de un concierto</button></div></div>
+  <div class="q-a"><b>A.</b> Creada por el diseñador Michael Girard para demostrar un software; convertida en GIF y difundida por email — ejemplo de compartición rápida antes de las redes.</div>
+
+  <div class="mc-q" data-ans="B"><div class="mc-txt">11. El sistema 6DoF en realidad virtual significa que el usuario puede&hellip;</div>
+    <div class="opts"><button class="mc-opt" data-k="A">Solo mirar alrededor en 360°</button><button class="mc-opt" data-k="B">Moverse hacia adelante y hacia atrás en el espacio virtual</button><button class="mc-opt" data-k="C">Grabar video inmersivo</button><button class="mc-opt" data-k="D">Ver objetos 2D</button></div></div>
+  <div class="q-a"><b>B.</b> 6 grados de libertad = moverse en el espacio virtual (avanzar, retroceder); 3DoF = solo mirar alrededor (video 360°). Ambos usan computación espacial.</div>
+
+  <div class="mc-q" data-ans="C"><div class="mc-txt">12. En el caso Blurred Lines (2013), el tribunal determinó que&hellip;</div>
+    <div class="opts"><button class="mc-opt" data-k="A">Era fair use</button><button class="mc-opt" data-k="B">La canción era de dominio público</button><button class="mc-opt" data-k="C">Infringía el copyright de Marvin Gaye</button><button class="mc-opt" data-k="D">Aplicaba copyleft</button></div></div>
+  <div class="q-a"><b>C.</b> Tras cinco años de juicio, Thicke y Williams pagaron <b>más de US$5 millones</b> a la herencia de Gaye por la similitud con «Got to give it up» (1977).</div>
+
+  <div class="mc-q" data-ans="A"><div class="mc-txt">13. Camboya bloqueó sitios de noticias independientes dos días antes de una elección (julio 2018). ¿Qué tipo de censura es?</div>
+    <div class="opts"><button class="mc-opt" data-k="A">Contenido político</button><button class="mc-opt" data-k="B">Contenido social</button><button class="mc-opt" data-k="C">Conflicto y seguridad</button><button class="mc-opt" data-k="D">Herramientas de internet</button></div></div>
+  <div class="q-a"><b>A.</b> Bloqueo de contenido <b>político</b>: opiniones de grupos (prensa independiente) que chocaban con las del gobierno. Uganda 2018 es el ejemplo social, Sri Lanka 2019 el de conflicto/seguridad.</div>
+
+  <div class="mc-q" data-ans="D"><div class="mc-txt">14. Deeptrace (2019) estimó en línea&hellip;</div>
+    <div class="opts"><button class="mc-opt" data-k="A">75 deepfakes</button><button class="mc-opt" data-k="B">796 deepfakes</button><button class="mc-opt" data-k="C">126&nbsp;000 deepfakes</button><button class="mc-opt" data-k="D">7&nbsp;964 deepfakes</button></div></div>
+  <div class="q-a"><b>D.</b> 7&nbsp;964 videos deepfake y en aumento, porque las herramientas están ampliamente disponibles y son fáciles de usar; detectarlos será cada vez más difícil.</div>
+</div>
+
+<!-- ═══════════════ NUEVOS CASOS PARA EL EXAMEN ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Casos inéditos &middot; estilo Paper 1 y Paper 2</div>
+    <div class="section-title">Nuevos escenarios sobre 3.5 Medios</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Tres situaciones <b>creadas para este repaso</b> (no están en el libro) pero diseñadas con el estilo del IB: contexto realista, stakeholders múltiples, un concepto del curso y preguntas con la escala de puntuación habitual (a: identificar/definir, b: explicar, c: discutir). <b>En el navegador</b>, el botón despliega la pauta orientada por las 3Cs; <b>en el PDF</b>, la pauta aparece debajo. Practica primero sin mirarla.</p>
+
+  <div class="practice">
+    <span class="practice-tag">Caso nuevo 1 &middot; contexto político &middot; concepto: poder</span>
+    <h4>El deepfake que sacudió una campaña</h4>
+    <p class="pctx">En octubre de 2025, durante la campaña presidencial de la (ficticia) República de Valdoria, un video se viraliza en TikTok y WhatsApp: el candidato R. Salas «aparece» aceptando un soborno de una empresa minera. El audio fue clonado con tecnología de <i>lip-syncing</i> por una cuenta anónima y compartido como «filtración exclusiva». En 12 horas acumuló 2,4 millones de reproducciones y el hashtag #SalasCorrupto fue <i>trending</i> nacional. La autoridad electoral tardó 36 horas en confirmar que era un deepfake; para entonces, las encuestas ya mostraban una caída de 9 puntos y Salas terminó perdiendo por 3. La firma forense demostró la manipulación, pero los desmentidos alcanzaron al 4% de quienes vieron el video original.</p>
+    <ol class="pq">
+      <li><b>a)</b> Define <i>deepfake</i> y <i>disinformation</i>. <i>[4 marks]</i></li>
+      <li><b>b)</b> Explain two characteristics of digital media (3.5B) that helped the deepfake spread so quickly. <i>[6 marks]</i></li>
+      <li><b>c)</b> Using the concept <i>power</i>, discuss who — platforms or governments — should be responsible for stopping deepfakes during election periods. <i>[8 marks]</i></li>
+    </ol>
+    <button class="reveal-btn">Ver pauta</button>
+    <div class="q-a"><b>a)</b> Deepfake: medio sintético creado con deep learning/IA. Disinformation: falsedad creada y difundida deliberadamente para influir en la opinión u ocultar la verdad (no confundir con misinformation).<br><b>b)</b> Elegir 2: <b>compartición rápida</b> (2,4M en 12 horas, reenvío sin fricción en WhatsApp/TikTok); <b>convergencia</b> (video + audio + texto viral en un mismo canal); <b>redes globales</b> (escala masiva sin frontera); <b>interactividad</b> (compartir/comentar amplifica; hashtag trending).<br><b>c)</b> Estructura PEEL: plataformas pueden detectar y desmontar rápido (pero su modelo de negocio premia el engagement — conflicto de interés); gobiernos pueden regular con marco legal (pero la censura electoral puede usarse contra la oposición — ver Camboya 2018); alternativas: verificación forense independiente, etiquetado obligatorio, alfabetización mediática. Conclusión ponderada: la responsabilidad es compartida, con transparencia y límites legales.</div>
+  </div>
+
+  <div class="practice">
+    <span class="practice-tag">Caso nuevo 2 &middot; contexto cultural &middot; conceptos: valores y ética + cambio</span>
+    <h4>El museo que se volvió inmersivo</h4>
+    <p class="pctx">El Museo Nacional de Arte Andino digitalizó en 2026 su colección de 500 obras. Creó <i>gemelos digitales</i> de sus textiles frágiles, con sensores de humedad que reportan datos en tiempo real para su conservación; ofrece visitas con <i>AR</i> que superponen las restauraciones originales sobre las obras dañadas, y tours en <i>VR</i> para escuelas rurales que no pueden viajar. Subió los modelos 3D con licencia <i>CC BY-NC-ND</i>. Un artista local descubrió que un e-commerce vende réplicas impresas de sus escaneos sin crédito ni permiso; además, el software propietario con que se escanearon las primeras 100 obras dejó de recibir soporte y sus archivos ya no abren en los equipos actuales.</p>
+    <ol class="pq">
+      <li><b>a)</b> Identify two immersive technologies used by the museum. <i>[2 marks]</i></li>
+      <li><b>b)</b> Explain two opportunities that immersive digital media offer to museums like this one. <i>[6 marks]</i></li>
+      <li><b>c)</b> Discuss, using the concepts <i>values and ethics</i> and <i>change</i>, whether the museum should keep restrictive licensing (CC BY-NC-ND) or move to more open licensing for its 3D models. <i>[8 marks]</i></li>
+    </ol>
+    <button class="reveal-btn">Ver pauta</button>
+    <div class="q-a"><b>a)</b> Gemelos digitales (con sensores en tiempo real), AR, VR (y MR si se argumenta).<br><b>b)</b> Conservación: el gemelo dinámico permite <b>monitorear y mantener</b> activos frágiles (como Shell con sus plataformas); acceso equitativo: AR/VR llevan el museo a escuelas rurales (oportunidad de 3.5C: experiencias antes de «ir» al lugar); difusión global del patrimonio.<br><b>c)</b> A favor de lo restrictivo: protege a los artistas del uso comercial no acreditado (recuerda Blurred Lines: el copyright premia la creatividad); a favor de lo abierto: el copyleft/CC busca comunidades colaborativas y el acceso cultural es un bien público; dilema central: ¿a quién beneficia la cultura digitalizada? <b>Cambio:</b> además, el caso pide resolver la obsolescencia (3.5D): migrar archivos a formatos abiertos y usar emuladores — la preservación es también una decisión ética sobre la memoria.</div>
+  </div>
+
+  <div class="practice">
+    <span class="practice-tag">Caso nuevo 3 &middot; contexto social / salud &middot; concepto: identidad</span>
+    <h4>Autoplay: la plataforma que no se detiene</h4>
+    <p class="pctx">StreamMax, plataforma de streaming y videos cortos, introduce en 2026 el <i>autoplay infinito</i> y «recompensas aleatorias» (insignias sorpresa) para aumentar el tiempo de uso. El promedio por usuario sube de 55 a 118 minutos diarios. Asociaciones de padres reportan insomnia, ansiedad y <i>FOMO</i> entre adolescentes, y una ONG exige un temporizador obligatorio de uso. La empresa responde que su IA de recomendación — entrenada con el dispositivo de cada usuario, sus horarios, rutinas y contenidos vistos — «personaliza la experiencia» y que eliminar el autoplay reduciría sus ingresos en 18%.</p>
+    <ol class="pq">
+      <li><b>a)</b> Outline what is meant by a <i>dopamine hit</i> and <i>FOMO</i>. <i>[4 marks]</i></li>
+      <li><b>b)</b> Explain how two characteristics of digital media contribute to excessive use among teenagers. <i>[6 marks]</i></li>
+      <li><b>c)</b> Using the concept <i>identity</i>, discuss whether StreamMax should be required to remove infinite autoplay. <i>[8 marks]</i></li>
+    </ol>
+    <button class="reveal-btn">Ver pauta</button>
+    <div class="q-a"><b>a)</b> Dopamine hit: recompensa temporal que produce el uso de redes (likes, contenido divertido) y que el cerebro busca repetir; FOMO: miedo a perderse algo, efecto del uso excesivo.<br><b>b)</b> Elegir 2: <b>compartición rápida</b> (flujo inagotable de nuevo contenido); <b>interactividad</b> (insignias, likes: refuerzo variable estilo dopamina); <b>convergencia</b> (todo en una sola app siempre a mano); <b>almacenamiento eficiente</b> (catálogo ilimitado en la nube).<br><b>c)</b> A favor de quitarlo: protege el bienestar (autoestima, sueño, actividad física) y la autonomía del usuario (decide cuándo parar); en contra: la personalización tiene valor real y los adultos pueden decidir por sí mismos; alternativa: límites por defecto solo para menores + transparencia sobre los datos usados por la IA. Concepto identidad: la autoestima medida en likes y el miedo a «perderse algo» moldean cómo los adolescentes se construyen a sí mismos; el diseño de la plataforma interviene en la identidad de sus usuarios — un poder que debe rendir cuentas.</div>
+  </div>
+</div>
+
+<!-- ═══════════════ CIERRE ═══════════════ -->
+<div class="ending">
+  <div class="end-quote">&laquo;Los medios digitales se definen por la convergencia de la computación, la comunicación y el contenido&raquo;.</div>
+  <div class="end-checks">
+    <div class="end-check"><span class="tick">1</span><p><b>Tipos (3.5A):</b> sé explicar Web 1.0 &rarr; 2.0 &rarr; 3.0 con casos: CNN 75%, YouTube, memes, deepfakes, e-sports.</p></div>
+    <div class="end-check"><span class="tick">2</span><p><b>Características (3.5B):</b> recito las 7 y las aplico a cualquier situación nueva del examen.</p></div>
+    <div class="end-check"><span class="tick">3</span><p><b>Inmersivos (3.5C):</b> distingo VR / AR / MR / gemelo digital y cito dos usos industriales (BP, Zimmer Biomet, Shell).</p></div>
+    <div class="end-check"><span class="tick">4</span><p><b>Dilemas (3.5D):</b> domino los 6 con su evidencia (MIT, Deeptrace, QAnon, Blurred Lines, Camboya/Uganda/Sri Lanka) y diferencio misinfo vs. disinfo.</p></div>
+    <div class="end-check"><span class="tick">5</span><p><b>Examen:</b> practiqué con 3 casos nuevos y sé estructurar respuestas de 2, 6 y 8 puntos con conceptos (poder, expresión, identidad, valores).</p></div>
+  </div>
+  <div class="end-foot">
+    Material de repaso de la sección 3.5 <i>Media</i> del curso IB Digital Society (Nivel Medio). Excluye por diseño: monografía (extended essay),
+    evaluación interna (inquiry project) y Paper 3 (pre-release HL). Los tres casos de práctica son inéditos y ficticios, creados para entrenar el formato del examen.
+    Fuente: Bomfim, Earle, Fitzpatrick, Hancox, Levin y Stefanics, <i>Digital Society</i>, Hodder Education, 2022, pp. 127&ndash;145.
+  </div>
+</div>
+
+<script>
+/* ═══ Conectores recursivos para los mapas mentales ═══ */
+function drawLinesForMap(map) {
+  if (!map) return;
+  const cRect = map.getBoundingClientRect();
+  const old = map.querySelector('svg.lines');
+  if (old) old.remove();
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.classList.add('lines');
+  svg.setAttribute('width', cRect.width);
+  svg.setAttribute('height', cRect.height);
+  svg.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:1;';
+  function rel(el) {
+    const r = el.getBoundingClientRect();
+    return { cy: r.top - cRect.top + r.height / 2,
+             left: r.left - cRect.left, right: r.right - cRect.left };
+  }
+  function drawLine(x1, y1, x2, y2, color, width) {
+    const l = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    l.setAttribute('x1', Math.round(x1)); l.setAttribute('y1', Math.round(y1));
+    l.setAttribute('x2', Math.round(x2)); l.setAttribute('y2', Math.round(y2));
+    l.setAttribute('stroke', color); l.setAttribute('stroke-width', width);
+    l.setAttribute('stroke-linecap', 'round');
+    svg.appendChild(l);
+  }
+  const lineStyles = [
+    { color: '#64748B', width: 2.5 },
+    { color: '#94A3B8', width: 2 },
+    { color: '#A8B4C2', width: 1.5 },
+    { color: '#B8C2CC', width: 1.2 },
+    { color: '#CBD5E1', width: 1 }
+  ];
+  function getLineStyle(depth) {
+    const s = lineStyles[Math.min(depth, lineStyles.length - 1)];
+    return { color: s.color, width: s.width };
+  }
+  function connect(parentEl, childEls, dir, depth) {
+    if (!childEls.length) return;
+    const style = getLineStyle(depth);
+    const p = rel(parentEl);
+    const startX = dir === 'left' ? p.left : p.right;
+    const startY = p.cy;
+    if (childEls.length === 1) {
+      const c = rel(childEls[0]);
+      const endX = dir === 'left' ? c.right : c.left;
+      const midY = Math.round((startY + c.cy) / 2);
+      drawLine(startX, midY, endX, midY, style.color, style.width);
+      return;
+    }
+    let closestEdge;
+    if (dir === 'left') closestEdge = Math.max.apply(null, childEls.map(ch => rel(ch).right));
+    else closestEdge = Math.min.apply(null, childEls.map(ch => rel(ch).left));
+    const childClearance = 14;
+    const midpoint = startX + (closestEdge - startX) / 2;
+    const midFromChild = dir === 'left' ? closestEdge + childClearance : closestEdge - childClearance;
+    const midX = dir === 'left' ? Math.min(midpoint, midFromChild) : Math.max(midpoint, midFromChild);
+    drawLine(startX, startY, midX, startY, style.color, style.width);
+    const allCYs = childEls.map(ch => rel(ch).cy);
+    const minY = Math.min.apply(null, [startY].concat(allCYs));
+    const maxY = Math.max.apply(null, [startY].concat(allCYs));
+    drawLine(midX, minY, midX, maxY, style.color, style.width);
+    childEls.forEach(ch => {
+      const c = rel(ch);
+      const endX = dir === 'left' ? c.right : c.left;
+      drawLine(midX, c.cy, endX, c.cy, style.color, style.width);
+    });
+  }
+  const NODE_SEL = '.branch-node, .sub-node, .leaf, .deep-node';
+  function processChildren(parentNodeEl, containerEl, depth, dir) {
+    if (!containerEl) return;
+    const childNodeEls = [];
+    for (const wrapper of containerEl.children) {
+      const nodeEl = wrapper.matches && wrapper.matches(NODE_SEL) ? wrapper : wrapper.querySelector(NODE_SEL);
+      if (nodeEl) childNodeEls.push(nodeEl);
+    }
+    if (!childNodeEls.length) return;
+    connect(parentNodeEl, childNodeEls, dir, depth);
+  }
+  const rootNode = map.querySelector('.root-node');
+  if (!rootNode) return;
+  const leftBranches = map.querySelectorAll('.left-branches > .left-branch');
+  const leftNodes = [];
+  leftBranches.forEach(b => { const n = b.querySelector('.branch-node'); if (n) leftNodes.push(n); });
+  if (leftNodes.length) connect(rootNode, leftNodes, 'left', 0);
+  leftBranches.forEach(b => {
+    const n = b.querySelector('.branch-node');
+    if (n) processChildren(n, b.querySelector(':scope > .children'), 1, 'left');
+  });
+  const rightBranches = map.querySelectorAll('.right-branches > .right-branch');
+  const rightNodes = [];
+  rightBranches.forEach(b => { const n = b.querySelector('.branch-node'); if (n) rightNodes.push(n); });
+  if (rightNodes.length) connect(rootNode, rightNodes, 'right', 0);
+  rightBranches.forEach(b => {
+    const n = b.querySelector('.branch-node');
+    if (n) processChildren(n, b.querySelector(':scope > .children'), 1, 'right');
+  });
+  map.insertBefore(svg, map.firstChild);
+}
+function drawAllMaps() {
+  document.querySelectorAll('.mindmap').forEach(m => drawLinesForMap(m));
+}
+window.addEventListener('load', () => {
+  setTimeout(drawAllMaps, 250);
+  setTimeout(drawAllMaps, 1200);
+});
+
+/* ═══ Interactividad (solo navegador; el PDF se genera en modo impresión) ═══ */
+document.querySelectorAll('.fc').forEach(function (c) {
+  c.addEventListener('click', function () { c.classList.toggle('flipped'); });
+});
+document.querySelectorAll('.reveal-btn').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var a = b.nextElementSibling;
+    if (!a || !a.classList.contains('q-a')) return;
+    var open = a.classList.toggle('open');
+    b.textContent = open ? 'Ocultar pauta' : 'Ver pauta';
+  });
+});
+document.querySelectorAll('.vf-row').forEach(function (row) {
+  var ans = (row.getAttribute('data-ans') || '').trim().toUpperCase();
+  row.querySelectorAll('.vf-btn').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      row.querySelectorAll('.vf-btn').forEach(function (x) { x.classList.remove('sel'); });
+      btn.classList.add('sel');
+      row.classList.remove('ok', 'bad');
+      void row.offsetWidth;
+      row.classList.add(btn.textContent.trim().toUpperCase() === ans ? 'ok' : 'bad');
+      var a = row.nextElementSibling;
+      if (a && a.classList.contains('q-a')) a.classList.add('open');
+    });
+  });
+});
+document.querySelectorAll('.mc-q').forEach(function (q) {
+  var ans = (q.getAttribute('data-ans') || '').trim().toUpperCase();
+  var opts = q.querySelectorAll('.mc-opt');
+  opts.forEach(function (o) {
+    o.addEventListener('click', function () {
+      opts.forEach(function (x) { x.classList.remove('sel', 'right', 'wrong'); });
+      o.classList.add('sel');
+      opts.forEach(function (x) {
+        var xl = (x.getAttribute('data-k') || '').trim().toUpperCase();
+        if (xl === ans) x.classList.add('right');
+        else if (x === o) x.classList.add('wrong');
+      });
+      var a = q.nextElementSibling;
+      if (a && a.classList.contains('q-a')) a.classList.add('open');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
