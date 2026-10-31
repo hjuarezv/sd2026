@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>3.7 Robótica y Tecnologías Autónomas — Material de repaso IB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<script>
+/* Este documento no contiene fórmulas matemáticas: se registra un stub para que
+   el conversor no inyecte KaTeX ni reescriba cifras como "20 millones" o "30%". */
+window.renderMathInElement = function () {};
+</script>
+<style>
+/* ═══════════ PÁGINAS ═══════════ */
+@page { size: 794px 1123px; margin: 48px 0 52px 0; }
+@page fullbleed { size: 794px 1123px; margin: 0; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #F8FAFC; --card: #FFFFFF; --ink: #1E293B; --muted: #64748B;
+  --line: #E2E8F0; --navy: #1E3A5F; --navy2: #2D4A6F;
+  --u1: #3B82F6; --u1-bg: #EFF6FF; --u1-tx: #1E40AF;
+  --u2: #8B5CF6; --u2-bg: #F5F3FF; --u2-tx: #5B21B6;
+  --u3: #14B8A6; --u3-bg: #F0FDFA; --u3-tx: #134E4A;
+  --u4: #F59E0B; --u4-bg: #FFF7ED; --u4-tx: #92400E;
+  --slate: #64748B; --slate-bg: #F1F5F9; --slate-tx: #334155;
+}
+html, body {
+  margin: 0; padding: 0; width: 794px;
+  background: var(--bg); color: var(--ink);
+  font-family: 'Inter', 'Liberation Sans', sans-serif;
+  font-size: 12.5px; line-height: 1.55;
+  overflow-wrap: break-word;
+}
+@media screen {
+  html { height: auto; display: flex; justify-content: center; background: #E2E8F0; }
+  body { transform: scale(1); transform-origin: top center; margin: 20px auto; box-shadow: 0 2px 24px rgba(15,23,42,.18); }
+}
+svg text { font-family: 'Inter', 'Liberation Sans', sans-serif; }
+
+/* ═══════════ PORTADA / CIERRE (full-bleed) ═══════════ */
+.cover {
+  page: fullbleed; width: 794px; height: 1123px;
+  background: linear-gradient(158deg, #16283F 0%, #1E3A5F 46%, #2D4A6F 100%);
+  color: #F1F5F9; position: relative;
+  display: flex; flex-direction: column;
+  padding: 54px 58px; break-after: page;
+}
+.cover .deco-circle { position: absolute; border-radius: 50%; border: 1.5px solid rgba(148,163,184,.28); }
+.cover .dc1 { width: 300px; height: 300px; right: 40px; top: 60px; }
+.cover .dc2 { width: 190px; height: 190px; right: 118px; top: 138px; border-color: rgba(148,163,184,.18); }
+.cover .dc3 { width: 120px; height: 120px; left: 44px; bottom: 150px; border-color: rgba(148,163,184,.15); }
+.cover-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+  color: #93C5FD; text-transform: uppercase;
+}
+.cover-badge::before { content: ''; width: 34px; height: 2px; background: #3B82F6; }
+.cover-center { margin: auto 0; position: relative; z-index: 2; }
+.cover-kicker { font-size: 12px; font-weight: 600; letter-spacing: 3px; color: #A5B4CC; text-transform: uppercase; margin-bottom: 16px; }
+.cover-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 54px; font-weight: 800; line-height: 1.08; color: #FFFFFF; margin-bottom: 10px;
+}
+.cover-sub { font-size: 18px; font-weight: 500; color: #C7D2E4; margin-bottom: 6px; }
+.cover-sub-en { font-size: 13px; color: #8FA3C2; font-style: italic; margin-bottom: 30px; }
+.cover-chips { display: flex; flex-wrap: wrap; gap: 10px; max-width: 100%; }
+.cchip {
+  background: rgba(59,130,246,.13); border: 1px solid rgba(147,197,253,.35);
+  color: #DCE7F7; border-radius: 20px; padding: 7px 15px;
+  font-size: 11.5px; font-weight: 600;
+}
+.cchip b { color: #FFFFFF; font-weight: 800; }
+.cover-3cs {
+  margin-top: 34px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 16px 18px; border: 1px solid rgba(148,163,184,.25); border-radius: 12px;
+  background: rgba(15,23,42,.25); max-width: 100%;
+}
+.cover-3cs .box { border-radius: 8px; padding: 8px 13px; font-size: 11.5px; font-weight: 700; letter-spacing: .4px; }
+.cover-3cs .arrow { color: #64748B; font-size: 13px; font-weight: 400; }
+.bx1 { background: rgba(59,130,246,.22); color: #BFDBFE; }
+.bx2 { background: rgba(139,92,246,.22); color: #DDD6FE; }
+.bx3 { background: rgba(20,184,166,.22); color: #99F6E4; }
+.bx4 { background: rgba(245,158,11,.20); color: #FDE68A; }
+.cover-foot { position: relative; z-index: 2; }
+.cover-scope { font-size: 11px; color: #94A7C4; line-height: 1.6; border-top: 1px solid rgba(148,163,184,.22); padding-top: 16px; }
+.cover-scope b { color: #CBD8EC; font-weight: 600; }
+.cover-edition { margin-top: 12px; font-size: 10.5px; color: #6E82A3; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 600; }
+
+/* ═══════════ CONTENIDO (flujo) ═══════════ */
+.main-content { padding: 0 56px; }
+.section-head { break-after: avoid; break-inside: avoid; margin-bottom: 10px; }
+.section-kicker { font-size: 10.5px; font-weight: 800; letter-spacing: 2.2px; text-transform: uppercase; color: var(--u1); margin-bottom: 4px; }
+.section-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 25px; font-weight: 800; color: var(--ink); line-height: 1.12;
+}
+.section-sub { font-size: 12.5px; color: var(--muted); margin-top: 5px; }
+.divider { height: 3px; width: 56px; background: var(--u1); border-radius: 2px; margin: 9px 0 3px; }
+p.body-text { font-size: 12px; color: #334155; margin-bottom: 7px; }
+p.body-text b { color: var(--ink); }
+.new-page { break-before: page; }
+.en-term { color: var(--muted); font-style: italic; }
+
+/* Tarjetas informativas */
+.info-card {
+  break-inside: avoid; background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; padding: 11px 14px; margin-bottom: 8px;
+}
+.info-card h4 { font-size: 12.5px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+.info-card p { font-size: 11.5px; color: #475569; }
+.info-card .ic-sub { font-size: 10.8px; color: var(--muted); margin-top: 3px; }
+
+/* Grilla densa para definiciones */
+.dense .cs-card { padding: 8px 11px; }
+.dense .cs-card .cs-name { font-size: 11px; margin-bottom: 2px; }
+.dense .cs-card p { font-size: 10.2px; line-height: 1.38; }
+.dense .cs-card .en-term { font-size: 8.4px; }
+
+/* Tarjetas de concepto en grilla */
+.cs-grid { display: flex; flex-wrap: wrap; gap: 9px; max-width: 100%; margin: 4px 0 10px; }
+.cs-card {
+  flex: 1 1 150px; min-width: 140px; max-width: 100%;
+  border-radius: 10px; padding: 11px 13px; border: 1px solid var(--line); break-inside: avoid;
+}
+.cs-card .cs-name { font-size: 12.5px; font-weight: 800; margin-bottom: 3px; }
+.cs-card p { font-size: 11px; line-height: 1.45; color: #475569; }
+.cs-1 { background: var(--u1-bg); } .cs-1 .cs-name { color: var(--u1-tx); }
+.cs-2 { background: var(--u2-bg); } .cs-2 .cs-name { color: var(--u2-tx); }
+.cs-3 { background: var(--u3-bg); } .cs-3 .cs-name { color: var(--u3-tx); }
+.cs-4 { background: var(--u4-bg); } .cs-4 .cs-name { color: var(--u4-tx); }
+
+/* ═══════════ TARJETA DE TECNOLOGÍA ═══════════ */
+.tcard {
+  break-inside: avoid; background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 9px 13px; margin-bottom: 7px;
+}
+.tcard-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 3px; }
+.tcard-num {
+  font-size: 9.5px; font-weight: 800; letter-spacing: .6px; color: #fff;
+  background: var(--u1); border-radius: 5px; padding: 2px 7px;
+}
+.tcard-num.u2 { background: var(--u2) !important; }
+.tcard-num.u3 { background: var(--u3) !important; }
+.tcard-num.u4 { background: var(--u4) !important; }
+.tcard-title { font-size: 15px; font-weight: 800; color: var(--ink); }
+.tcard-en { font-size: 11px; color: var(--muted); font-style: italic; }
+.trow { display: flex; gap: 9px; padding: 3.5px 0; }
+.trow + .trow { border-top: 1px dashed #EEF2F7; }
+.tlabel {
+  flex: 0 0 94px; font-size: 9px; font-weight: 800; letter-spacing: .7px;
+  text-transform: uppercase; color: var(--u1-tx); padding-top: 2px;
+}
+.tlabel.fun { color: var(--u2-tx); }
+.tlabel.opp { color: var(--u3-tx); }
+.tlabel.imp { color: var(--navy); }
+.tlabel.warn { color: var(--u4-tx); }
+.tlabel.case { color: var(--u3-tx); }
+.tbody { flex: 1; font-size: 11px; color: #475569; line-height: 1.42; }
+.tbody b { color: var(--ink); }
+.tbody ul { list-style: none; margin: 1px 0; }
+.tbody li { padding-left: 12px; position: relative; margin-bottom: 2px; }
+.tbody li::before {
+  content: ''; position: absolute; left: 0; top: 7px;
+  width: 4px; height: 4px; border-radius: 50%; background: var(--u1);
+}
+.tbody li b { color: var(--ink); font-weight: 700; }
+
+/* ═══════════ GRÁFICOS ILUSTRATIVOS (SVG) ═══════════ */
+.svg-wrap {
+  break-inside: avoid; background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 8px 10px 5px; margin: 4px 0 8px;
+}
+.svg-wrap svg { display: block; width: 100%; height: auto; }
+.svg-cap { text-align: center; font-size: 9.5px; color: var(--muted); margin-top: 3px; }
+
+/* Tablas de examen */
+table.exam { width: 100%; border-collapse: collapse; margin: 6px 0 10px; font-size: 10.3px; break-inside: avoid; }
+table.exam th {
+  background: var(--navy); color: #fff; font-weight: 700;
+  padding: 6px 8px; text-align: left; font-size: 10px;
+}
+table.exam td { border: 1px solid var(--line); padding: 5px 8px; color: #334155; vertical-align: top; }
+table.exam tr:nth-child(even) td { background: #F8FAFC; }
+table.exam td b { color: var(--ink); }
+table.exam .en-term { font-size: 8.8px; white-space: nowrap; }
+table.tall { break-inside: auto; }
+table.tall tr { break-inside: avoid; }
+table.tall td { padding: 4px 7px; line-height: 1.35; font-size: 10px; }
+
+/* ═══════════ PÁGINAS DE MAPAS (full-bleed) ═══════════ */
+.map-page {
+  page: fullbleed; width: 794px; height: 1123px;
+  padding: 26px 20px 20px;
+  background: #FFFFFF; position: relative;
+  display: flex; flex-direction: column;
+}
+.map-head { margin-bottom: 6px; padding: 0 6px; }
+.map-kicker {
+  display: inline-block; font-size: 10px; font-weight: 800;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--u1-tx); background: var(--u1-bg);
+  border: 1px solid #BFDBFE; border-radius: 12px; padding: 3px 11px;
+}
+.map-kicker.k2 { color: var(--u2-tx); background: var(--u2-bg); border-color: #DDD6FE; }
+.map-kicker.k3 { color: var(--u3-tx); background: var(--u3-bg); border-color: #99F6E4; }
+.map-kicker.k4 { color: var(--u4-tx); background: var(--u4-bg); border-color: #FDE68A; }
+.map-kicker.k0 { color: var(--navy); background: #EDF2F9; border-color: #C9D7E8; }
+.map-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 25px; font-weight: 800; color: var(--ink); margin-top: 7px; line-height: 1.1;
+}
+.map-intro { font-size: 11.5px; color: var(--muted); margin-top: 4px; max-width: 640px; }
+
+.mindmap { position: relative; break-inside: avoid; display: flex; justify-content: center; align-items: center; flex: 1 1 auto; padding: 10px 0 6px; }
+.mindmap > svg.lines { position: absolute; top: 0; left: 0; pointer-events: none; z-index: 0; }
+.root-node {
+  background: linear-gradient(135deg, #1E3A5F, #2D4A6F);
+  color: #fff; font-size: 16.5px; font-weight: 800; line-height: 1.2;
+  padding: 15px 17px; border-radius: 13px; text-align: center;
+  white-space: nowrap; flex-shrink: 0; align-self: center;
+  box-shadow: 0 4px 12px rgba(30,58,95,.25); position: relative; z-index: 2;
+}
+.root-node small { display: block; font-size: 10px; font-weight: 600; color: #B7C6DC; letter-spacing: 1.5px; margin-top: 2px; }
+.branch-node {
+  font-size: 12.5px; font-weight: 700; line-height: 1.2;
+  padding: 8px 12px; border-radius: 8px; border: 2px solid;
+  white-space: normal; max-width: 142px; text-align: center;
+  flex-shrink: 0; position: relative; z-index: 2;
+}
+.branch-node small { display: block; font-size: 10px; font-weight: 600; opacity: .8; }
+.leaf {
+  font-size: 11.5px; font-weight: 500; color: #475569;
+  padding: 4.5px 11px; background: #FAFBFC;
+  border-radius: 11px; border: 1px solid #E2E8F0;
+  line-height: 1.3; white-space: normal; max-width: 138px;
+  width: fit-content; position: relative; z-index: 2;
+}
+.children { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.right-branches { display: flex; flex-direction: column; gap: 18px; }
+.right-branch { display: flex; align-items: flex-start; }
+.right-branch > .children { margin-left: 16px; padding-left: 8px; align-items: flex-start; }
+.left-branches { display: flex; flex-direction: column; gap: 18px; }
+.left-branch { display: flex; align-items: flex-start; flex-direction: row-reverse; }
+.left-branch > .children { margin-right: 16px; padding-right: 8px; align-items: flex-end; }
+.b-u1 { background: var(--u1-bg); border-color: var(--u1); color: var(--u1-tx); }
+.b-u2 { background: var(--u2-bg); border-color: var(--u2); color: var(--u2-tx); }
+.b-u3 { background: var(--u3-bg); border-color: var(--u3); color: var(--u3-tx); }
+.b-u4 { background: var(--u4-bg); border-color: var(--u4); color: var(--u4-tx); }
+.b-navy { background: #EDF2F9; border-color: var(--navy2); color: var(--navy); }
+.b-slate { background: var(--slate-bg); border-color: var(--slate); color: var(--slate-tx); }
+.map-legend {
+  position: absolute; left: 20px; right: 20px; bottom: 18px;
+  display: flex; flex-wrap: wrap; gap: 7px 14px; align-items: center;
+  font-size: 10px; color: var(--muted);
+  border-top: 1px solid var(--line); padding-top: 10px;
+}
+.map-legend .lg { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; }
+.map-legend .dot { width: 9px; height: 9px; border-radius: 3px; }
+
+/* ═══════════ INTERACTIVIDAD Y NUEVOS COMPONENTES ═══════════ */
+.only-print { display: none; }
+@media print {
+  .only-print { display: block; }
+  .only-screen { display: none !important; }
+}
+
+/* Simulador sense-think-act */
+.sim-box { break-inside: avoid; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin: 4px 0 8px; }
+.sim-controls { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; margin: 8px 0 4px; max-width: 100%; }
+.sim-btn {
+  font-size: 10.5px; font-weight: 800; border: 1.5px solid var(--u1);
+  background: var(--u1-bg); color: var(--u1-tx); border-radius: 8px;
+  padding: 5px 12px; cursor: pointer;
+}
+.sim-btn.alt { border-color: var(--u3); background: var(--u3-bg); color: var(--u3-tx); }
+.sim-btn.warn { border-color: var(--u4); background: var(--u4-bg); color: var(--u4-tx); }
+.sim-chip {
+  font-size: 10px; font-weight: 700; border: 1.5px solid var(--line);
+  background: #fff; color: var(--muted); border-radius: 14px; padding: 3px 10px; cursor: pointer;
+}
+.sim-chip.sel { border-color: var(--u4); color: #fff; background: var(--u4); }
+.sim-stat {
+  display: inline-flex; flex-direction: column; background: #F8FAFC;
+  border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px; min-width: 88px;
+}
+.sim-stat .n { font-size: 13px; font-weight: 800; color: var(--navy); }
+.sim-stat .l { font-size: 8.5px; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); font-weight: 700; }
+table.sim-tb { width: 100%; border-collapse: collapse; font-size: 10.2px; margin-top: 4px; }
+table.sim-tb th { background: var(--navy); color: #fff; padding: 4px 8px; font-size: 9.5px; text-align: left; }
+table.sim-tb td { border: 1px solid var(--line); padding: 3.5px 8px; color: #334155; }
+.sim-note { font-size: 9.8px; color: var(--muted); margin-top: 5px; line-height: 1.45; }
+
+/* Caso de práctica (inédito, estilo examen) */
+.practice {
+  break-inside: avoid; background: #FBFAFF;
+  border: 1.5px dashed #A78BFA; border-radius: 10px;
+  padding: 11px 14px 10px; margin: 9px 0 12px;
+}
+.practice-tag { display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: 1.6px; color: var(--u2-tx); text-transform: uppercase; margin-bottom: 3px; }
+.practice h4 { font-size: 13.5px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+.practice p.pctx { font-size: 11.4px; color: #475569; line-height: 1.5; margin-bottom: 6px; }
+.practice ol.pq { margin-left: 17px; margin-bottom: 3px; }
+.practice ol.pq li { font-size: 11.4px; color: #334155; margin-bottom: 3px; }
+.practice ol.pq i { color: var(--muted); }
+
+/* Fuente estilo Paper 2 */
+.psource {
+  break-inside: avoid; background: #F8FAFC; border: 1px solid var(--line);
+  border-left: 4px solid var(--navy); border-radius: 8px;
+  padding: 9px 13px; margin: 7px 0;
+}
+.psource .ps-tag { font-size: 9px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--navy); margin-bottom: 2px; }
+.psource p { font-size: 10.8px; color: #475569; line-height: 1.5; }
+.psource .ps-src { font-size: 9px; color: var(--muted); font-style: italic; margin-top: 4px; }
+
+/* Botón de pauta + respuesta desplegable */
+.reveal-btn {
+  display: inline-block; margin-top: 5px; font-size: 10px; font-weight: 800;
+  letter-spacing: .8px; text-transform: uppercase; color: var(--u2-tx);
+  background: var(--u2-bg); border: 1px solid #DDD6FE; border-radius: 8px;
+  padding: 4px 12px; cursor: pointer; user-select: none;
+}
+.q-a {
+  display: none; background: #ECFDF5; border: 1px solid #A7F3D0;
+  border-radius: 8px; padding: 7px 11px; margin-top: 6px;
+  font-size: 10.6px; color: #065F46; line-height: 1.52; break-inside: avoid;
+}
+.q-a b { color: #064E3B; }
+.q-a.open { display: block; }
+@media print { .q-a { display: block !important; } .reveal-btn { display: none !important; } }
+
+/* Quiz: verdadero/falso */
+.qz-part { font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: var(--navy); margin: 13px 0 4px; break-after: avoid; }
+.vf-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; break-inside: avoid; }
+.vf-row .vf-txt { flex: 1; font-size: 11.5px; color: #334155; }
+.vf-opts { display: flex; gap: 6px; flex: 0 0 auto; }
+.vf-btn {
+  font-size: 10px; font-weight: 800; border: 1.5px solid var(--line);
+  background: #fff; color: var(--muted); border-radius: 7px; padding: 2.5px 11px; cursor: pointer;
+}
+.vf-btn.sel { border-color: var(--u1); color: var(--u1-tx); background: var(--u1-bg); }
+.vf-row.ok .vf-btn.sel { border-color: #16A34A; color: #166534; background: #DCFCE7; }
+.vf-row.bad .vf-btn.sel { border-color: #DC2626; color: #991B1B; background: #FEE2E2; }
+
+/* Quiz: opción múltiple */
+.mc-q { padding: 5px 0; break-inside: avoid; }
+.mc-q .mc-txt { font-size: 11.5px; color: #334155; }
+.mc-q .opts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px; max-width: 100%; }
+.mc-opt {
+  font-size: 10.5px; border: 1.5px solid var(--line); background: #fff;
+  color: #475569; border-radius: 8px; padding: 3px 11px; cursor: pointer; white-space: nowrap;
+}
+.mc-opt.sel { border-color: var(--u1); color: var(--u1-tx); background: var(--u1-bg); font-weight: 700; }
+.mc-opt.right { border-color: #16A34A; background: #DCFCE7; color: #166534; font-weight: 700; }
+.mc-opt.wrong { border-color: #DC2626; background: #FEE2E2; color: #991B1B; }
+
+/* Fichas rápidas (flashcards interactivas) */
+.fc-grid { display: flex; flex-wrap: wrap; gap: 6px; margin: 7px 0 3px; max-width: 100%; }
+.fc { flex: 1 1 30.5%; min-width: 212px; max-width: 100%; break-inside: avoid; }
+.fc-inner { transform-style: preserve-3d; }
+.fc-face { border-radius: 10px; padding: 6.5px 10px; }
+.fc-front { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--u1); }
+.fc-back { background: var(--u1-bg); border: 1px solid #BFDBFE; border-top: 1px dashed #93C5FD; }
+.fc.f2 .fc-front { border-top-color: var(--u2); }
+.fc.f2 .fc-back { background: var(--u2-bg); border-color: #DDD6FE; border-top-color: #C4B5FD; }
+.fc.f3 .fc-front { border-top-color: var(--u3); }
+.fc.f3 .fc-back { background: var(--u3-bg); border-color: #99F6E4; border-top-color: #5EEAD4; }
+.fc.f4 .fc-front { border-top-color: var(--u4); }
+.fc.f4 .fc-back { background: var(--u4-bg); border-color: #FDE68A; border-top-color: #FCD34D; }
+.fc-q { font-size: 10.6px; font-weight: 700; color: var(--ink); line-height: 1.33; }
+.fc-a { font-size: 9.7px; color: #1E40AF; line-height: 1.38; }
+.fc-a b { color: #172554; }
+.fc.f2 .fc-a { color: var(--u2-tx); } .fc.f2 .fc-a b { color: #4C1D95; }
+.fc.f3 .fc-a { color: var(--u3-tx); } .fc.f3 .fc-a b { color: #134E4A; }
+.fc.f4 .fc-a { color: var(--u4-tx); } .fc.f4 .fc-a b { color: #78350F; }
+.fc-hint { font-size: 8.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .9px; margin-top: 5px; font-weight: 700; }
+@media screen {
+  .fc { height: 128px; cursor: pointer; perspective: 1000px; }
+  .fc-inner { position: relative; width: 100%; height: 100%; transition: transform .45s; }
+  .fc.flipped .fc-inner { transform: rotateY(180deg); }
+  .fc-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; }
+  .fc-back { transform: rotateY(180deg); }
+}
+@media print {
+  .fc-face + .fc-face { margin-top: 3px; }
+  .fc-hint { display: none; }
+}
+
+/* Cierre */
+.ending {
+  page: fullbleed; width: 794px; height: 1123px; break-before: page;
+  background: linear-gradient(158deg, #16283F 0%, #1E3A5F 46%, #2D4A6F 100%);
+  color: #F1F5F9; display: flex; flex-direction: column; justify-content: center;
+  padding: 60px; position: relative;
+}
+.end-quote {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 25px; font-weight: 600; font-style: italic;
+  line-height: 1.4; color: #E2E8F0; max-width: 580px; margin-bottom: 34px;
+}
+.end-checks { display: flex; flex-direction: column; gap: 10px; max-width: 580px; }
+.end-check {
+  display: flex; gap: 11px; align-items: flex-start;
+  border: 1px solid rgba(148,163,184,.28); border-radius: 10px;
+  padding: 11px 14px; background: rgba(15,23,42,.28);
+}
+.end-check .tick {
+  width: 19px; height: 19px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(59,130,246,.25); border: 1.5px solid #60A5FA;
+  color: #BFDBFE; font-size: 11px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.end-check p { font-size: 12px; color: #C7D2E4; }
+.end-check p b { color: #fff; }
+.end-foot { position: absolute; bottom: 52px; left: 60px; right: 60px;
+  border-top: 1px solid rgba(148,163,184,.22); padding-top: 14px;
+  font-size: 10px; color: #7C90B0; line-height: 1.6; }
+</style>
+</head>
+<body>
+<!-- ═══════════════ PORTADA ═══════════════ -->
+<div class="cover">
+  <div class="deco-circle dc1"></div>
+  <div class="deco-circle dc2"></div>
+  <div class="deco-circle dc3"></div>
+  <div class="cover-badge">IB Diploma Programme &middot; Digital Society</div>
+  <div class="cover-center">
+    <div class="cover-kicker">Material de repaso integral &middot; Nivel Medio (NM/SL)</div>
+    <div class="cover-title">3.7<br>Robótica y Tecnologías<br>Autónomas</div>
+    <div class="cover-sub">Robots industriales, de servicio y sociales &middot; IoT &middot; vehículos autónomos &middot; drones</div>
+    <div class="cover-sub-en">Review guide with mind maps, charts, interactive flashcards, a sense&ndash;think&ndash;act simulator &amp; new exam cases</div>
+    <div class="cover-chips">
+      <span class="cchip"><b>6</b> tecnologías (3.7A)</span>
+      <span class="cchip"><b>4</b> características (3.7B)</span>
+      <span class="cchip"><b>12+</b> hitos de evolución (3.7C)</span>
+      <span class="cchip"><b>4</b> dilemas (3.7D)</span>
+      <span class="cchip"><b>2</b> mapas mentales</span>
+      <span class="cchip"><b>9</b> gráficos ilustrativos</span>
+      <span class="cchip"><b>16</b> fichas interactivas</span>
+      <span class="cchip"><b>14</b> preguntas de quiz</span>
+      <span class="cchip"><b>1</b> simulador sense&ndash;think&ndash;act</span>
+      <span class="cchip"><b>2</b> casos nuevos para el examen</span>
+    </div>
+    <div class="cover-3cs">
+      <span class="box bx1">Tipos (3.7A)</span><span class="arrow">+</span>
+      <span class="box bx2">Características (3.7B)</span><span class="arrow">+</span>
+      <span class="box bx3">Evolución (3.7C)</span><span class="arrow">&rarr;</span>
+      <span class="box bx4">Dilemas (3.7D)</span>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <div class="cover-scope">
+      <b>Alcance del material:</b> solo la sección 3.7 <i>Robotics and autonomous technologies</i> del libro — los robots y tecnologías autónomas
+      que <b>perciben, piensan y actúan</b> con cierto grado de independencia: los seis tipos con sus usos y casos (3.7A), las cuatro
+      características que los definen, con la tabla de sensores y un <b>simulador interactivo</b> del ciclo percibir&ndash;pensar&ndash;actuar (3.7B),
+      su evolución desde Karel Čapek hasta Amazon Astro (3.7C) y los cuatro dilemas: valle inquietante, complejidad de las interacciones,
+      leyes desiguales y desplazamiento de humanos (3.7D). Cada tecnología incluye sus <b>oportunidades, impactos y dilemas</b>, con los casos
+      del libro y dos escenarios inéditos estilo examen. No incluye la monografía (extended essay), la evaluación interna ni el Paper 3.
+    </div>
+    <div class="cover-edition">Basado en Bomfim et al. &middot; Digital Society &middot; Hodder Education 2022 (pp.&nbsp;166&ndash;185)</div>
+  </div>
+</div>
+
+<!-- ═══════════════ INTRODUCCIÓN ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Guía rápida</div>
+    <div class="section-title">Cómo usar este material</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">«Robot» es una palabra que <b>nació en la ciencia ficción</b> (obra de teatro de 1921) y hoy es una realidad cada vez más presente.
+  Para el libro, un <b>robot</b> <span class="en-term">(robot)</span> es una <b>máquina programable que puede completar una tarea establecida con poca o ninguna
+  intervención humana</b>. Los robots han <b>transformado la manufactura</b> aumentando la eficiencia, la seguridad y la precisión, pero a costa de
+  reemplazar empleos en la línea de producción; ahora los diseñadores se centran en robots de <b>servicio y sociales</b>, destinados a trabajar junto a
+  los humanos. Lo esencial para el examen: robots y tecnologías autónomas <b>demuestran capacidad de percibir, pensar y/o actuar
+  (sense, think, act) con algún grado de independencia</b>, están <b>entretejidos en la vida cotidiana</b> y generan <b>oportunidades y dilemas significativos</b>.</p>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-1">
+      <div class="cs-name">3.7A &middot; Tipos <span class="en-term">(types)</span></div>
+      <p>Robots industriales, de servicio, sociales, Internet de las cosas, vehículos autónomos y drones, con casos y datos reales.</p>
+    </div>
+    <div class="cs-card cs-2">
+      <div class="cs-name">3.7B &middot; Características</div>
+      <p>Entradas sensoriales, razonamiento con machine learning, movimiento físico (actuadores y efectores finales) y autonomía.</p>
+    </div>
+    <div class="cs-card cs-3">
+      <div class="cs-name">3.7C &middot; Evolución <span class="en-term">(evolution)</span></div>
+      <p>De Čapek y Asimov a Unimate, ASIMO y Astro; conciencia de máquina, robótica cognitiva y derechos de los robots.</p>
+    </div>
+    <div class="cs-card cs-4">
+      <div class="cs-name">3.7D &middot; Dilemas <span class="en-term">(dilemmas)</span></div>
+      <p>Antropomorfismo y valle inquietante; complejidad de las interacciones; leyes desiguales; desplazamiento de humanos.</p>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h4>Objetivos del capítulo (understandings) y método de repaso en 3 pasos</h4>
+    <p>Al terminar el capítulo debes comprender que: <b>1)</b> robots y tecnologías autónomas demuestran capacidad de <b>sentir, pensar y/o actuar</b> con algún grado de independencia; <b>2)</b> han <b>evolucionado</b> y son cada vez más <b>ubicuas y omnipresentes</b> (ubiquitous, pervasive), entretejidas en la vida cotidiana de personas y comunidades; <b>3)</b> introducen <b>oportunidades y dilemas significativos</b> para la sociedad digital.</p>
+    <p style="margin-top:5px"><b>Método:</b> <b>1) Mapa primero</b> — fija la estructura con el mapa mental de la página siguiente. &nbsp;<b>2) Simulador y fichas</b> — experimenta con el ciclo percibir&ndash;pensar&ndash;actuar (versión HTML) y memoriza las definiciones del libro. &nbsp;<b>3) Quiz y casos al final</b> — responde el quiz interactivo y practica los 2 escenarios inéditos: el IB puede presentar <b>ejemplos nuevos</b> del mismo contenido.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Datos clave para memorizar <span class="en-term">(cifras que el libro usa como evidencia)</span></h4>
+    <p>Término «robot»: <b>Karel Čapek, 1921</b> (<i>Rossum&rsquo;s Universal Robots</i>) &middot; 3 leyes de la robótica: <b>Isaac Asimov, 1941</b> &middot; robots autónomos Elmer y Elsie: <b>1948</b> &middot; SNARC (primer simulador de red neuronal): <b>1951</b> &middot; Unimate, primer robot industrial programable (General Motors): <b>1954&ndash;61</b> &middot; Shakey: <b>1958</b> &middot; Wabot-1, primer humanoide: <b>1973</b> &middot; IRB-6 de ABB: <b>1974</b> &middot; SCARA y Consight: <b>1981</b> &middot; ASIMO: <b>1986</b> &middot; Motoman MRC (21 ejes): <b>1994</b> &middot; AIBO: <b>1998</b> &middot; PARO: <b>2004</b> &middot; UR5, primer cobot: <b>2008</b> &middot; Baxter: <b>2013</b> &middot; Robear: <b>2015</b> &middot; Sophia y su ciudadanía saudí: <b>2016</b> &middot; Pepper: <b>2018</b> &middot; Astro («Alexa on wheels»): <b>2021</b>.</p>
+    <p style="margin-top:4px">Singapur, primer taxi sin conductor en vías públicas: <b>agosto de 2016</b> (Mitsubishi i-MiEV, 10 usuarios, 12 ubicaciones) &middot; Zipline entrega medicinas en Ghana a <b>≈2.000</b> centros médicos &middot; Aerobot (Estambul Sabiha Gökçen) habla <b>más de 20 idiomas</b> &middot; Foxconn: <b>+30%</b> de automatización y <b>60.000</b> empleos reemplazados &middot; Oxford Economics (junio 2019): hasta <b>20 millones</b> de empleos manufactureros reemplazados por robots <b>para 2030</b> &middot; accidente de Tempe, Arizona (Elaine Herzberg): <b>2018</b> &middot; valle inquietante: <b>Masahiro Mori, 1970</b> &middot; Carta de Ética de la Robótica de Corea del Sur: <b>2007</b> &middot; estándares del Reino Unido: <b>2016</b> &middot; proyecto RoboLaw (UE): <b>2014</b> &middot; borrador del Parlamento Europeo: <b>2017</b>.</p>
+  </div>
+</div>
+<!-- ═══════════════ MAPA GENERAL ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k0">Visión general</span>
+    <div class="map-title">El capítulo 3.7 en un mapa</div>
+    <div class="map-intro">Cuatro subsecciones: los seis tipos de robots y tecnologías autónomas (A), las cuatro características que los definen (B), su evolución histórica (C) y los cuatro dilemas que plantean (D). Memoriza esta estructura: en Paper 1 y 2 las preguntas combinan subsecciones con conceptos y contextos.</div>
+  </div>
+
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u1">Tipos <small>3.7A</small></div>
+        <div class="children">
+          <div class="leaf">Industriales: Foxconn, Great Wall</div>
+          <div class="leaf">Servicio: Flippy, aspiradoras</div>
+          <div class="leaf">Sociales: Jibo, Aerobot</div>
+          <div class="leaf">IoT: RFID, sensores</div>
+          <div class="leaf">Vehículos autónomos: SAE 0&ndash;5</div>
+          <div class="leaf">Drones: Zipline, Ghana</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u2">Características <small>3.7B</small></div>
+        <div class="children">
+          <div class="leaf">Sensores: visión, oído, tacto</div>
+          <div class="leaf">Razonar: ML, visión artificial</div>
+          <div class="leaf">Moverse: actuadores, efectores</div>
+          <div class="leaf">Autonomía: semi &harr; total</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="root-node">3.7<br>ROBÓTICA Y<br>TECNOLOGÍAS<br>AUTÓNOMAS<small>robotics &amp; autonomous technologies</small></div>
+
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u3">Evolución <small>3.7C</small></div>
+        <div class="children">
+          <div class="leaf">Čapek 1921 &middot; Asimov 1941</div>
+          <div class="leaf">Industria: Unimate &rarr; cobots</div>
+          <div class="leaf">Humanos: Wabot-1 &rarr; Astro</div>
+          <div class="leaf">Conciencia y derechos: Sophia</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u4">Dilemas <small>3.7D</small></div>
+        <div class="children">
+          <div class="leaf">Valle inquietante (Mori 1970)</div>
+          <div class="leaf">Interacciones: caso Herzberg</div>
+          <div class="leaf">Leyes: Pasquale, Carta 2007</div>
+          <div class="leaf">Desplazamiento: 20 M (2030)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:var(--u1)"></span>3.7A Tipos — qué existen y dónde se usan</span>
+    <span class="lg"><span class="dot" style="background:var(--u2)"></span>3.7B Características — cómo funcionan</span>
+    <span class="lg"><span class="dot" style="background:var(--u3)"></span>3.7C Evolución — de dónde vienen</span>
+    <span class="lg"><span class="dot" style="background:var(--u4)"></span>3.7D Dilemas — qué retos plantean</span>
+    <span class="lg" style="margin-left:auto">Basado en Digital Society (Hodder 2022), cap. 3.7</span>
+  </div>
+</div>
+
+<!-- ═══════════════ DEFINICIONES CLAVE ═══════════════ -->
+<div class="main-content">
+  <div>
+  <div class="section-head">
+    <div class="section-kicker">Vocabulario del libro</div>
+    <div class="section-title">Definiciones clave expuestas en el libro</div>
+    <div class="divider"></div>
+  </div>
+  <p class="body-text">Estas son las definiciones <b>textuales</b> que el libro marca con viñeta (◆) o presenta formalmente. En Paper 1, la pregunta «define el término…» vale 2 puntos: usa estas formulaciones.</p>
+
+  <div class="cs-grid dense">
+    <div class="cs-card cs-1">
+      <div class="cs-name">Robot</div>
+      <p><b>Máquina programable que puede completar una tarea establecida con poca o ninguna intervención humana</b> <span class="en-term">(programmable machine… little or no human intervention)</span>. El término nació en una obra de ciencia ficción de 1921.</p>
+    </div>
+    <div class="cs-card cs-1">
+      <div class="cs-name">Robot de servicio <span class="en-term">(service robot)</span></div>
+      <p>Robots desarrollados para <b>asistir a los humanos en tareas menos deseables</b>: trabajos <b>aburridos, sucios o peligrosos</b> <span class="en-term">(dull, dirty or dangerous)</span>. Pueden ser de uso doméstico o profesional.</p>
+    </div>
+    <div class="cs-card cs-1">
+      <div class="cs-name">Asistente personal virtual <span class="en-term">(virtual personal assistant)</span></div>
+      <p>Ayudante <b>controlado por voz</b> presente principalmente en <b>altavoces inteligentes o teléfonos móviles</b> <span class="en-term">(smart speakers)</span>: Google Home, Amazon Echo, Apple HomePod.</p>
+    </div>
+    <div class="cs-card cs-1">
+      <div class="cs-name">Robot de servicio profesional <span class="en-term">(professional service robot)</span></div>
+      <p>Robot <b>semiautónomo o totalmente autónomo</b> desarrollado para <b>asistir a humanos en entornos comerciales</b>: limpieza, entregas, inspecciones, cirugía.</p>
+    </div>
+    <div class="cs-card cs-4">
+      <div class="cs-name">Vehículo autónomo <span class="en-term">(autonomous vehicle, AV)</span></div>
+      <p><b>Vehículo con la capacidad de conducirse por sí mismo y operar sin intervención humana</b>. Los niveles de autonomía 0&ndash;5 los define la SAE.</p>
+    </div>
+    <div class="cs-card cs-4">
+      <div class="cs-name">Dron <span class="en-term">(drone / UAV)</span></div>
+      <p><b>Robot volador controlado remotamente o autónomo</b>, también llamado <b>vehículo aéreo no tripulado</b> <span class="en-term">(unmanned aerial vehicle)</span>. Dos funciones: vuelo y navegación.</p>
+    </div>
+    <div class="cs-card cs-2">
+      <div class="cs-name">Actuador <span class="en-term">(actuator)</span></div>
+      <p><b>Dispositivo que mueve o controla un mecanismo</b>. Tipos: motor eléctrico, sistema hidráulico (fluido incompresible) o neumático (gas comprimido).</p>
+    </div>
+    <div class="cs-card cs-2">
+      <div class="cs-name">Efector final <span class="en-term">(end effector)</span></div>
+      <p>Dispositivo periférico <b>mecánico o electromecánico que sujeta objetos y acopla herramientas o sensores</b> al final del brazo robótico: pinzas, herramientas de proceso, sensores.</p>
+    </div>
+    <div class="cs-card cs-2">
+      <div class="cs-name">Cobot <span class="en-term">(collaborative robot)</span></div>
+      <p>Robot diseñado para <b>trabajar de forma cohesionada con humanos y aumentar sus capacidades</b>: debe entender emociones, lenguaje y comportamiento humanos. Primer ejemplo: UR5 (2008).</p>
+    </div>
+    <div class="cs-card cs-2">
+      <div class="cs-name">Autonomía <span class="en-term">(autonomy)</span></div>
+      <p><b>Nivel de independencia</b> con el que opera un robot sin un controlador humano. <b>Semiautónomo</b>: reacciona sin dirección constante pero necesita humanos para ajustes; <b>totalmente autónomo</b>: opera de forma independiente.</p>
+    </div>
+    <div class="cs-card cs-3">
+      <div class="cs-name">Humanoide <span class="en-term">(humanoid)</span></div>
+      <p>Robot con <b>apariencia similar a la humana</b>: Wabot-1 (1973) fue el primero; Sophia (2016) la más famosa por su realismo y su ciudadanía saudí.</p>
+    </div>
+    <div class="cs-card cs-3">
+      <div class="cs-name">Conciencia de máquina <span class="en-term">(machine consciousness)</span></div>
+      <p>Requiere el desarrollo de <b>IA fuerte</b>. Los primeros robots con IA débil <b>no tenían conciencia: solo simulaban inteligencia</b>.</p>
+    </div>
+    <div class="cs-card cs-3">
+      <div class="cs-name">Robótica cognitiva <span class="en-term">(cognitive robotics)</span></div>
+      <p>Campo emergente para diseñar robots con <b>inteligencia similar a la humana</b>: percibir el entorno, <b>planificar</b>, manejar la <b>incertidumbre</b> mediante <b>aprendizaje continuo</b>, predecir y ver el mundo desde distintas perspectivas.</p>
+    </div>
+    <div class="cs-card cs-4">
+      <div class="cs-name">Antropomorfismo <span class="en-term">(anthropomorphism)</span></div>
+      <p><b>Atribución de características humanas a entidades no humanas</b>: Winnie the Pooh, Paddington, Pepper con sus expresiones «adorables».</p>
+    </div>
+    <div class="cs-card cs-4">
+      <div class="cs-name">Valle inquietante <span class="en-term">(uncanny valley)</span></div>
+      <p>Sensación <b>escalofriante e inquietante</b> que experimentan las personas al interactuar con robots <b>humanoides de apariencia casi humana</b>. Descrito por Masahiro Mori (1970).</p>
+    </div>
+    <div class="cs-card cs-1">
+      <div class="cs-name">Internet de las cosas <span class="en-term">(IoT)</span></div>
+      <p>Objetos equipados con <b>sensores conectados a la red</b> que recogen y analizan datos. Las formas tempranas usaban <b>etiquetas RFID</b> para rastrear activos o entregas. En la industria: eficiencia a gran escala (ver 3.4).</p>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h4>Truco de examen <span class="en-term">(top tips del libro)</span></h4>
+    <p>Conoce la <b>relación entre IA y robots</b> — unos «periodistas robot» pueden ser máquinas físicas o solo algoritmos — y tu <b>definición de robot</b>: estrictamente, un robot controlado a distancia por humanos <b>no es un robot</b>. Vínculos del curso: <b>2.5 Espacio</b> (AV y suelo urbano), <b>2.7 Valores y ética</b> (¿programar valores?), <b>4.2 Empleo</b> (desplazamiento), <b>4.4 El cuerpo humano</b> (prótesis).</p>
+  </div>
+  </div>
+
+<!-- ═══════════════ 3.7A-1: INDUSTRIALES + SERVICIO ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u1)">3.7A &middot; Tipos de robots y tecnologías autónomas (1/4)</div>
+    <div class="section-title">Robots industriales y robots de servicio</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">TIPO 1</span><span class="tcard-title">Robots industriales</span><span class="tcard-en">industrial robots</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody">Robots usados en <b>manufactura</b> para completar tareas como <b>perforación, pintura, soldadura, ensamblaje y manipulación de materiales</b> <span class="en-term">(material handling)</span>. Se distinguen de los robots de servicio <b>por su propósito</b>: reemplazan trabajadores en la línea de producción en lugar de asistirlos. La demanda en manufactura ha sido una de las <b>fuerzas impulsoras de la robótica desde los años 1960</b> hasta hoy.</div></div>
+    <div class="trow"><div class="tlabel case">Casos del libro</div><div class="tbody"><ul>
+      <li><b>Great Wall Motors</b> (fabricante automotriz de <b>China</b>, 2014): aumentó la automatización con robots colaborando en la línea — un robot <b>posiciona el panel</b> mientras un segundo robot <b>solda</b>.</li>
+      <li><b>Foxconn</b> (electrónica, <b>Taiwán</b>, plantas en China): según la <b>ASME</b>, anunció aumentar la automatización en <b>30%</b> para 2020, lo que reemplazaría <b>60.000 empleos</b>.</li>
+    </ul></div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Mayor <b>eficiencia, seguridad y precisión</b> en la línea de producción; las organizaciones buscan siempre más eficiencia y exactitud; avances continuos.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">La transformación de la manufactura se logró <b>a costa de reemplazar empleos</b> (Foxconn: 60.000). Tensión entre eficiencia y empleo — ver el dilema del desplazamiento en 3.7D.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">TIPO 2</span><span class="tcard-title">Robots de servicio</span><span class="tcard-en">service robots</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><b>Robots desarrollados para asistir a los humanos en tareas menos deseables: aburridas, sucias o peligrosas</b> <span class="en-term">(dull, dirty or dangerous jobs)</span>. Hay dos variantes: <b>personales</b> (hogar) y <b>profesionales</b> (entornos comerciales). A diferencia de los industriales, <b>asisten</b> a trabajadores o clientes (p. ej., en agricultura o construcción).</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody"><ul>
+      <li><b>Personales (hogar):</b> aspirar, limpiar la piscina, cortar el césped, sillas de ruedas robotizadas para personas mayores. Se programan y trabajan de forma autónoma; las aspiradoras modernas son asequibles y tienen <b>contenedores de autovaciado</b> <span class="en-term">(self-emptying bins)</span>.</li>
+      <li><b>Asistentes personales virtuales:</b> ayudantes controlados por voz en altavoces inteligentes o móviles — <b>Google Home, Amazon Echo, Apple HomePod</b> — conectados a la red del hogar: clima, temporizadores, noticias.</li>
+      <li><b>Profesionales:</b> <b>semiautónomos o totalmente autónomos</b>; limpian lugares públicos (ventanas y suelos), hacen entregas, realizan inspecciones de mantenimiento e incluso <b>asisten en cirugía</b>. Sectores: <b>comercio minorista, hostelería y salud</b>; también <b>espacio, defensa y agricultura</b>.</li>
+    </ul></div></div>
+    <div class="trow"><div class="tlabel case">Casos del libro</div><div class="tbody"><ul>
+      <li><b>Hampshire County Council</b> (<b>Reino Unido</b>, 2018): probó asistentes virtuales para personas <b>mayores y con discapacidad</b>; los usuarios con movilidad limitada encendían el hogar inteligente, buscaban información y activaban entretenimiento por voz, liberando a los cuidadores.</li>
+      <li><b>Flippy</b> («chef de parrilla», Miso Robotics): en <b>2017</b> se incorporó a la cadena <b>CaliBurger</b> (EE. UU.) para resolver su <b>problema de personal</b>; freír sobre una parrilla caliente todo el día es una tarea desagradable y repetitiva. <b>Flippy 2</b> se integra con el sistema de comandas y usa <b>sensores y machine learning</b> para freír «a la perfección».</li>
+    </ul></div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Liberan a los humanos para tareas <b>más desafiantes o más ocio</b>; asumen trabajos <b>peligrosos y repetitivos</b> (seguridad laboral); trabajan con <b>eficiencia, precisión y muy poco tiempo de inactividad</b> <span class="en-term">(downtime)</span>; apoyan a mayores y discapacitados.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">Cada robot de servicio que asume un puesto rutinario plantea la pregunta por el <b>empleo humano</b> (CaliBurger lo usó frente a un problema de personal); en el hogar, los asistentes de voz escuchan permanentemente — conexión con privacidad de datos (3.1).</div></div>
+  </div>
+  </div>
+
+<!-- ═══════════════ 3.7A-2: SOCIALES + IoT ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u1)">3.7A &middot; Tipos de robots y tecnologías autónomas (2/4)</div>
+    <div class="section-title">Robots sociales e Internet de las cosas</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">TIPO 3</span><span class="tcard-title">Robots sociales</span><span class="tcard-en">social robots</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody">Se distinguen de los robots de servicio por su <b>propósito</b>: están <b>diseñados para interactuar y comunicarse con los humanos de una manera socialmente aceptable</b> <span class="en-term">(in a socially acceptable manner)</span>. Demanda creciente: <b>robots de atención al cliente</b> y <b>robots acompañantes del hogar</b> para personas mayores <span class="en-term">(home companion robots)</span>.</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">Se programan para muchas tareas rutinarias, pero <b>pueden carecer de empatía o emoción</b> y <b>no siempre responden apropiadamente a situaciones desconocidas</b> — limitaciones que <b>plantean dilemas</b>, especialmente si estos robots se vuelven totalmente autónomos.</div></div>
+    <div class="trow"><div class="tlabel case">Casos del libro</div><div class="tbody"><ul>
+      <li><b>Jibo</b> (hogar, EE. UU.): cara de dibujo animado, sin piernas, cuerpo curvo; diseñado para dar <b>amistad y compañía</b>; usa <b>reconocimiento facial y de voz</b>, responde preguntas, lee noticias, da el clima y se conecta con dispositivos del hogar inteligente.</li>
+      <li><b>Aerobot</b> (aeropuerto <b>Sabiha Gökçen, Estambul, Turquía</b>): se comunica en <b>más de 20 idiomas</b>; usa <b>IA para perfilar a los pasajeros que se acercan</b> y personalizar la conversación; recuerda políticas sanitarias, lee códigos de barras, responde consultas de vuelos y guía a las puertas de embarque.</li>
+    </ul></div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Compañía y amistad (p. ej., adultos mayores); atención al cliente <b>multilingüe y personalizada</b> con IA; recordatorios y orientación en espacios públicos.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">Falta de <b>empatía y emoción</b>; respuestas inapropiadas ante lo desconocido. Pregunta del libro (Paper 1): ¿deberían usarse como <b>robots acompañantes de personas mayores</b>? Conexión con el valle inquietante (3.7D) y con el desafío de poblaciones que envejecen (5.1B, HL).</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">TIPO 4</span><span class="tcard-title">Internet de las cosas</span><span class="tcard-en">Internet of things (IoT)</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody">Objetos con <b>sensores conectados a internet</b> que recogen y analizan datos. Las <b>formas tempranas</b> eran <b>etiquetas RFID</b> <span class="en-term">(radio-frequency identification)</span> para rastrear activos o entregas; hoy los sensores se añaden a los componentes para <b>aumentar la eficiencia</b> de líneas de producción y servicios — como en el hogar (3.4) pero <b>a escala mucho mayor</b>.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Mantenimiento anticipado, localización rápida de recursos, ahorro de electricidad, respuesta rápida ante contaminación y optimización de operaciones — todo a partir de <b>datos en tiempo real</b>.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">Miles de sensores que recogen datos permanentemente plantean riesgos de <b>privacidad y seguridad</b> de los datos (3.1) y dependencia de la red (3.4); la analítica del lugar de trabajo puede convertir el rendimiento de los empleados en dato vigilado.</div></div>
+  </div>
+
+  <p class="body-text" style="margin-top:2px"><b>Los cinco principales usos industriales del IoT</b> (tabla del libro):</p>
+  <div class="cs-grid">
+    <div class="cs-card cs-1" style="flex:1 1 30%"><div class="cs-name">1 &middot; Mantenimiento predictivo <span class="en-term">(predictive maintenance)</span></div><p>Sensores inalámbricos <b>alertan a los empleados cuando una máquina necesita mantenimiento</b> — antes de que falle.</p></div>
+    <div class="cs-card cs-2" style="flex:1 1 30%"><div class="cs-name">2 &middot; Seguimiento de ubicación <span class="en-term">(location tracking)</span></div><p><b>GPS, RFID y otras tecnologías inalámbricas</b> rastrean existencias y equipos; datos en tiempo real para encontrar lo necesario <b>más rápido</b>.</p></div>
+    <div class="cs-card cs-3" style="flex:1 1 30%"><div class="cs-name">3 &middot; Optimización energética <span class="en-term">(energy optimization)</span></div><p>Miden el <b>consumo de energía</b> en la fabricación y <b>ajustan los equipos para usar menos electricidad</b>.</p></div>
+    <div class="cs-card cs-4" style="flex:1 1 30%"><div class="cs-name">4 &middot; Monitoreo remoto de calidad <span class="en-term">(remote quality monitoring)</span></div><p>Monitorean a distancia la <b>calidad del agua o del aire</b>; en la industria, respuesta <b>más rápida a la contaminación</b>.</p></div>
+    <div class="cs-card cs-1" style="flex:1 1 30%"><div class="cs-name">5 &middot; Analítica del lugar de trabajo <span class="en-term">(workplace analytics)</span></div><p>Software de analítica que da información para <b>optimizar operaciones y aumentar la eficiencia</b>.</p></div>
+    <div class="cs-card cs-2" style="flex:1 1 30%"><div class="cs-name">Actividad ATL &middot; tendencias de adopción</div><p>Investigar estadísticas de adopción y graficar la tendencia en un segmento: <b>utilities, seguridad, manufactura, transporte o retail</b> (4.3C ciudades).</p></div>
+  </div>
+  </div>
+<!-- ═══════════════ 3.7A-3: VEHÍCULOS AUTÓNOMOS ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u1)">3.7A &middot; Tipos de robots y tecnologías autónomas (3/4)</div>
+    <div class="section-title">Vehículos autónomos: los niveles SAE</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">TIPO 5</span><span class="tcard-title">Vehículos autónomos</span><span class="tcard-en">autonomous vehicles (AV)</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><b>Vehículo con la capacidad de conducirse por sí mismo y operar sin intervención humana</b> <span class="en-term">(a vehicle with the ability to drive itself and operate without human intervention)</span>. Muchos fabricantes tradicionales compiten por dominar el coche autónomo o semiautónomo frente a la competencia de <b>empresas tecnológicas</b> (Waymo, AutoZ). La <b>Society of Automotive Engineers (SAE)</b> define los <b>niveles de autonomía 0&ndash;5</b>: los niveles 0&ndash;3 tienen autonomía baja que <b>aumenta (augment)</b> la capacidad del conductor; los niveles <b>4 y 5 no requieren conductor</b> ni volante ni pedales.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody"><b>Menos accidentes de tráfico</b>, <b>menor congestión vehicular</b> y <b>ahorro de energía</b> con el uso generalizado; transformación de la <b>propiedad del coche</b> y del <b>uso del espacio urbano</b> (inquiry con el concepto 2.5 <i>Espacio</i>).</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Cinco obstáculos</b> enumerados por el libro: 1) <b>sensores</b>; 2) <b>machine learning</b>; 3) <b>deep learning</b>; 4) <b>regulaciones y estándares</b>; 5) <b>aceptabilidad social</b> — ver detalle en la página siguiente, junto con el accidente que sacudió la confianza pública (Herzberg, 2018).</div></div>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 268" xmlns="http://www.w3.org/2000/svg">
+      <text x="14" y="20" font-size="12" font-weight="800" fill="#1E293B">Niveles de autonomía de la SAE — de la asistencia al conductor a la automatización total</text>
+      <!-- escalera -->
+      <rect x="18"  y="212" width="98" height="34" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+      <rect x="126" y="178" width="98" height="68" rx="6" fill="#EFF6FF" stroke="#3B82F6"/>
+      <rect x="234" y="144" width="98" height="102" rx="6" fill="#DBEAFE" stroke="#3B82F6"/>
+      <rect x="342" y="110" width="98" height="136" rx="6" fill="#BFDBFE" stroke="#2563EB"/>
+      <rect x="450" y="70"  width="98" height="176" rx="6" fill="#60A5FA" stroke="#2563EB"/>
+      <rect x="558" y="44"  width="106" height="202" rx="6" fill="#1E40AF" stroke="#172554"/>
+      <!-- números y nombres -->
+      <text x="67"  y="234" font-size="13" font-weight="800" fill="#334155" text-anchor="middle">0</text>
+      <text x="175" y="200" font-size="13" font-weight="800" fill="#1E40AF" text-anchor="middle">1</text>
+      <text x="283" y="166" font-size="13" font-weight="800" fill="#1E40AF" text-anchor="middle">2</text>
+      <text x="391" y="132" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle">3</text>
+      <text x="499" y="92"  font-size="13" font-weight="800" fill="#FFFFFF" text-anchor="middle">4</text>
+      <text x="611" y="66"  font-size="13" font-weight="800" fill="#FFFFFF" text-anchor="middle">5</text>
+      <!-- descripciones -->
+      <text x="67"  y="203" font-size="8.2" fill="#475569" text-anchor="middle">Tradicional</text>
+      <text x="175" y="215" font-size="8.2" fill="#1E40AF" text-anchor="middle">Asistencia al</text>
+      <text x="175" y="226" font-size="8.2" fill="#1E40AF" text-anchor="middle">conductor</text>
+      <text x="175" y="237" font-size="7.6" fill="#64748B" text-anchor="middle">crucero adaptativo,</text>
+      <text x="175" y="245" font-size="7.6" fill="#64748B" text-anchor="middle">mantener carril</text>
+      <text x="283" y="181" font-size="8.2" fill="#1E40AF" text-anchor="middle">Automatización</text>
+      <text x="283" y="192" font-size="8.2" fill="#1E40AF" text-anchor="middle">parcial</text>
+      <text x="283" y="203" font-size="7.6" fill="#64748B" text-anchor="middle">dirección + velocidad;</text>
+      <text x="283" y="211" font-size="7.6" fill="#64748B" text-anchor="middle">manos al volante,</text>
+      <text x="283" y="219" font-size="7.6" fill="#64748B" text-anchor="middle">listo para retomar</text>
+      <text x="283" y="236" font-size="7.6" fill="#64748B" text-anchor="middle">(piloto automático)</text>
+      <text x="391" y="147" font-size="8.2" fill="#1E3A8A" text-anchor="middle">Automatización</text>
+      <text x="391" y="158" font-size="8.2" fill="#1E3A8A" text-anchor="middle">condicional</text>
+      <text x="391" y="169" font-size="7.6" fill="#64748B" text-anchor="middle">conduce solo bajo</text>
+      <text x="391" y="177" font-size="7.6" fill="#64748B" text-anchor="middle">ciertas condiciones;</text>
+      <text x="391" y="185" font-size="7.6" fill="#64748B" text-anchor="middle">conductor en su</text>
+      <text x="391" y="193" font-size="7.6" fill="#64748B" text-anchor="middle">asiento (p. ej.,</text>
+      <text x="391" y="201" font-size="7.6" fill="#64748B" text-anchor="middle">conducir en atasco)</text>
+      <text x="499" y="107" font-size="8.2" fill="#FFFFFF" text-anchor="middle">Alta</text>
+      <text x="499" y="118" font-size="8.2" fill="#FFFFFF" text-anchor="middle">automatización</text>
+      <text x="499" y="129" font-size="7.6" fill="#DBEAFE" text-anchor="middle">sin conductor en vías</text>
+      <text x="499" y="137" font-size="7.6" fill="#DBEAFE" text-anchor="middle">públicas, según la</text>
+      <text x="499" y="145" font-size="7.6" fill="#DBEAFE" text-anchor="middle">regulación de cada país;</text>
+      <text x="499" y="153" font-size="7.6" fill="#DBEAFE" text-anchor="middle">taxis sin conductor y</text>
+      <text x="499" y="161" font-size="7.6" fill="#DBEAFE" text-anchor="middle">transporte público entre</text>
+      <text x="499" y="169" font-size="7.6" fill="#DBEAFE" text-anchor="middle">dos puntos; solo opera</text>
+      <text x="499" y="177" font-size="7.6" fill="#DBEAFE" text-anchor="middle">si se cumplen condiciones</text>
+      <text x="499" y="185" font-size="7.6" fill="#DBEAFE" text-anchor="middle">(p. ej., buen clima)</text>
+      <text x="611" y="81"  font-size="8.2" fill="#FFFFFF" text-anchor="middle">Automatización</text>
+      <text x="611" y="92"  font-size="8.2" fill="#FFFFFF" text-anchor="middle">total</text>
+      <text x="611" y="103" font-size="7.6" fill="#BFDBFE" text-anchor="middle">el nivel más alto,</text>
+      <text x="611" y="111" font-size="7.6" fill="#BFDBFE" text-anchor="middle">sin restricciones:</text>
+      <text x="611" y="119" font-size="7.6" fill="#BFDBFE" text-anchor="middle">sensible a la vía y a los</text>
+      <text x="611" y="127" font-size="7.6" fill="#BFDBFE" text-anchor="middle">demás vehículos, viaja a</text>
+      <text x="611" y="135" font-size="7.6" fill="#BFDBFE" text-anchor="middle">cualquier lugar, cualquier</text>
+      <text x="611" y="143" font-size="7.6" fill="#BFDBFE" text-anchor="middle">clima</text>
+      <text x="611" y="158" font-size="8.6" font-weight="800" fill="#FDE68A" text-anchor="middle">aún no logrado</text>
+      <!-- flecha -->
+      <line x1="20" y1="258" x2="660" y2="258" stroke="#94A3B8" stroke-width="1.6"/>
+      <polygon points="666,258 656,254 656,262" fill="#94A3B8"/>
+      <text x="20" y="252" font-size="8.5" font-weight="700" fill="#64748B">AUMENTA la capacidad del conductor (0&ndash;3)</text>
+      <text x="662" y="252" font-size="8.5" font-weight="700" fill="#64748B" text-anchor="end">REEMPLAZA al conductor (4&ndash;5)</text>
+    </svg>
+    <div class="svg-cap">Gráfico 1 &middot; La escalera de autonomía SAE: los niveles 0&ndash;3 asisten al conductor; los niveles 4&ndash;5 no requieren volante ni pedales (elaborado a partir del libro).</div>
+  </div>
+
+  <div class="info-card">
+    <h4>Casos del libro para citar en el examen</h4>
+    <p><b>Mercedes-Benz &middot; autoestacionamiento:</b> el sistema <b>Active Parking Assist PARKTRONIC</b> usa una serie de sensores para determinar si el coche cabe en la plaza y dirige el vehículo automáticamente, mientras el humano controla <b>frenos y marchas</b> (nivel bajo: asiste, no reemplaza).</p>
+    <p style="margin-top:4px"><b>Singapur &middot; primer taxi sin conductor en vías públicas (agosto de 2016):</b> primer país del mundo en probarlo, con un <b>Mitsubishi i-MiEV eléctrico</b>; servicio limitado a <b>10 personas</b> que lo llamaban con una <b>app</b> hacia una de <b>12 ubicaciones</b>, solo en <b>horas no punta</b>; se preveía extenderlo al público en 2018. Pregunta del libro: ¿en qué medida se usan ahora los taxis sin conductor en Singapur?</p>
+  </div>
+  </div>
+
+<!-- ═══════════════ 3.7A-4: OBSTÁCULOS AV + DRONES ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u1)">3.7A &middot; Tipos de robots y tecnologías autónomas (4/4)</div>
+    <div class="section-title">Los cinco obstáculos de los AV y los drones</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">El libro enumera <b>cinco obstáculos</b> que frenan a los vehículos autónomos. Memorízalos: una pregunta clásica pide «explicar los desafíos de los vehículos autónomos».</p>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-1"><div class="cs-name">1 &middot; Sensores <span class="en-term">(sensors)</span></div><p>Usan una amplia gama para <b>«ver» el entorno</b> y alimentar el sistema de control. Los <b>desafían</b>: el mal tiempo, el tráfico denso y las señales viales con <b>grafitis</b>.</p></div>
+    <div class="cs-card cs-2"><div class="cs-name">2 &middot; Machine learning</div><p>Detecta y clasifica objetos en la trayectoria y decide cómo actuar (<b>frenar o esquivar</b>). Falta <b>acuerdo industrial sobre estándares</b> para entrenar y probar la IA.</p></div>
+    <div class="cs-card cs-3"><div class="cs-name">3 &middot; Deep learning</div><p>Los coches <b>aprenden continuamente en la carretera</b>; la industria debe determinar cómo garantizar que el vehículo <b>sigue siendo seguro mientras aprende</b>.</p></div>
+    <div class="cs-card cs-4"><div class="cs-name">4 &middot; Regulaciones <span class="en-term">(regulations)</span></div><p>Los gobiernos deben trabajar con los fabricantes en regulaciones para vías públicas y <b>estándares internacionales</b> para operar a través de fronteras.</p></div>
+    <div class="cs-card cs-1"><div class="cs-name">5 &middot; Aceptabilidad social <span class="en-term">(social acceptability)</span></div><p>Ha habido <b>varios accidentes de alto perfil</b> en las noticias; hay que <b>construir confianza</b> en la comunidad (ver caso Herzberg, 3.7D).</p></div>
+    <div class="cs-card cs-2"><div class="cs-name">Preguntas de examen (Paper 2) &middot; Fuente A</div><p>«Sensores usados en vehículos autónomos»: 1) Define el término <b>vehículo autónomo</b> [2]. 2) Explica cómo usarían los sensores los AV para <b>evitar obstáculos</b> en la vía [4].</p></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">TIPO 6</span><span class="tcard-title">Drones</span><span class="tcard-en">drones / unmanned aerial vehicles (UAV)</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><b>Robot volador controlado remotamente o autónomo</b> <span class="en-term">(a remote controlled or autonomous flying robot)</span>, también llamado <b>vehículo aéreo no tripulado</b> <span class="en-term">(UAV)</span>.</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody"><b>Dos funciones principales: vuelo y navegación</b>. Para el <b>vuelo</b>: debe ser ligero, incluir hélices y tener energía para todo el trayecto. Para la <b>navegación</b>: sistemas integrados como el <b>GPS</b> comunican su ubicación exacta al usuario. Los drones <b>totalmente automatizados</b> requieren una amplia gama de sensores para funcionar, además de alojar sensores para la <b>recogida de datos</b>.</div></div>
+    <div class="trow"><div class="tlabel imp">Origen militar</div><div class="tbody">En el pasado se asociaban con lo <b>militar</b> y tenían tres propósitos: <b>práctica antiaérea</b>, <b>recoger datos</b> de los sensores acoplados y <b>usarse con armas</b> para ataques militares. Hoy tienen usos <b>comerciales y privados</b>.</div></div>
+    <div class="trow"><div class="tlabel case">Caso del libro</div><div class="tbody"><b>Zipline</b> opera en <b>Ghana</b>: usa drones para <b>entregar suministros médicos a ≈2.000 centros médicos</b>. Otros usos comerciales: entregas a ubicaciones remotas, <b>fertilizar cultivos</b>, <b>monitoreo de tráfico</b>, vigilancia <span class="en-term">(surveillance)</span>, <b>búsqueda y rescate</b> y video personal.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Acceso a <b>medicinas en zonas remotas</b> (salud equitativa), eficiencia agrícola, vigilancia de desastres y rescate, sin riesgo para pilotos humanos.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">Su origen <b>militar y el uso con armas</b> anticipa el dilema de la carrera armamentista que retoma Pasquale (3.7D); el uso civil masivo plantea <b>privacidad</b> (vigilancia) y <b>seguridad del espacio aéreo</b>; sus leyes provienen de <b>autoridades distintas</b> a las de los robots de manufactura.</div></div>
+  </div>
+  </div>
+
+<!-- ═══════════════ MAPA 2: LOS SEIS TIPOS ═══════════════ -->
+</div>
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k0">Mapa 2 &middot; Síntesis visual</span>
+    <div class="map-title">Los seis tipos y sus casos para el examen</div>
+    <div class="map-intro">Cada tipo con su rasgo definitorio y los casos con cifras que el libro usa como evidencia. Recorre el mapa intentando recordar la definición, un caso y una oportunidad + un dilema de cada rama antes de girar a las fichas.</div>
+  </div>
+
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u1">Industriales <small>manufactura</small></div>
+        <div class="children">
+          <div class="leaf">Soldar, pintar, ensamblar</div>
+          <div class="leaf">Great Wall Motors (2014)</div>
+          <div class="leaf">Foxconn: 60.000 empleos</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u1">De servicio <small>dull, dirty, dangerous</small></div>
+        <div class="children">
+          <div class="leaf">Hogar: aspiradoras, Echo</div>
+          <div class="leaf">Flippy 2 &middot; CaliBurger</div>
+          <div class="leaf">Hampshire 2018 (voz)</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u2">Sociales <small>interacción aceptable</small></div>
+        <div class="children">
+          <div class="leaf">Jibo: rostro y voz</div>
+          <div class="leaf">Aerobot: 20+ idiomas</div>
+          <div class="leaf">Dilema: ¿acompañantes?</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="root-node">3.7A<br>SEIS TIPOS<br>DE TECNOLOGÍAS<br>AUTÓNOMAS<small>types &middot; opportunities &middot; dilemmas</small></div>
+
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u3">IoT <small>sensores en red</small></div>
+        <div class="children">
+          <div class="leaf">RFID &rarr; sensores hoy</div>
+          <div class="leaf">5 usos industriales</div>
+          <div class="leaf">Eficiencia a gran escala</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u4">Vehículos autónomos <small>SAE 0&ndash;5</small></div>
+        <div class="children">
+          <div class="leaf">4&ndash;5: sin conductor</div>
+          <div class="leaf">Singapur 2016 &middot; i-MiEV</div>
+          <div class="leaf">5 obstáculos</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u4">Drones <small>UAV</small></div>
+        <div class="children">
+          <div class="leaf">Vuelo + navegación (GPS)</div>
+          <div class="leaf">Zipline: &asymp;2.000 centros</div>
+          <div class="leaf">Origen militar &rarr; civil</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:var(--u1)"></span>Robots industriales y de servicio</span>
+    <span class="lg"><span class="dot" style="background:var(--u2)"></span>Robots sociales</span>
+    <span class="lg"><span class="dot" style="background:var(--u3)"></span>Internet de las cosas</span>
+    <span class="lg"><span class="dot" style="background:var(--u4)"></span>Vehículos autónomos y drones</span>
+    <span class="lg" style="margin-left:auto">En Paper 1&ndash;2, cita un caso con cifras por cada rama</span>
+  </div>
+</div>
+<div class="main-content">
+  <div>
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u2)">3.7B &middot; Características de robots y tecnologías autónomas (1/3)</div>
+    <div class="section-title">El ciclo percibir &rarr; pensar &rarr; actuar</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Los avances en IA hacen que los datos recogidos por los sensores sean <b>mejor percibidos y comprendidos</b>; las mejoras en agilidad y movilidad permiten a los robots <b>moverse con más fluidez</b> por su entorno físico. El libro destaca <b>cuatro características</b>:</p>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-2" style="flex:1 1 30%"><div class="cs-name">1 &middot; Entradas sensoriales <span class="en-term">(sensory inputs)</span></div><p>Para la <b>conciencia espacial, ambiental y operativa</b>: perciben el entorno de forma análoga a los <b>cinco sentidos humanos</b> (ver tabla de la página siguiente).</p></div>
+    <div class="cs-card cs-2" style="flex:1 1 30%"><div class="cs-name">2 &middot; Razonamiento lógico</div><p>Procesan las entradas con <b>visión artificial y/o machine learning</b>: el sistema de control decide la acción óptima y ordena a los actuadores.</p></div>
+    <div class="cs-card cs-2" style="flex:1 1 30%"><div class="cs-name">3 &middot; Interacción y movimiento</div><p><b>Partes móviles</b> que interactúan con el mundo físico: brazo robótico en la línea de producción; ruedas motorizadas del robot de servicio en un vestíbulo de hotel.</p></div>
+    <div class="cs-card cs-2" style="flex:1 1 30%"><div class="cs-name">4 &middot; Grado de autonomía</div><p>Demostración de <b>cierto grado de independencia</b>: de semiautónomo (aspiradora básica) a totalmente autónomo (opera tareas complejas sin dirección humana).</p></div>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 176" xmlns="http://www.w3.org/2000/svg">
+      <text x="14" y="20" font-size="12" font-weight="800" fill="#1E293B">Cómo funciona un robot: el bucle percibir&ndash;pensar&ndash;actuar (sense&ndash;think&ndash;act)</text>
+      <rect x="30" y="46" width="170" height="86" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+      <text x="115" y="78" font-size="13.5" font-weight="800" fill="#1E40AF" text-anchor="middle">PERCIBIR</text>
+      <text x="115" y="95" font-size="9" fill="#1E40AF" text-anchor="middle">sense</text>
+      <text x="115" y="112" font-size="8.6" fill="#475569" text-anchor="middle">sensores: cámaras, micrófonos,</text>
+      <text x="115" y="122" font-size="8.6" fill="#475569" text-anchor="middle">ultrasonidos, presión, GPS</text>
+      <rect x="256" y="46" width="170" height="86" rx="12" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="2"/>
+      <text x="341" y="78" font-size="13.5" font-weight="800" fill="#5B21B6" text-anchor="middle">PENSAR</text>
+      <text x="341" y="95" font-size="9" fill="#5B21B6" text-anchor="middle">think</text>
+      <text x="341" y="112" font-size="8.6" fill="#475569" text-anchor="middle">sistema de control computarizado:</text>
+      <text x="341" y="122" font-size="8.6" fill="#475569" text-anchor="middle">procesa datos, decide (IA/ML)</text>
+      <rect x="482" y="46" width="170" height="86" rx="12" fill="#F0FDFA" stroke="#14B8A6" stroke-width="2"/>
+      <text x="567" y="78" font-size="13.5" font-weight="800" fill="#134E4A" text-anchor="middle">ACTUAR</text>
+      <text x="567" y="95" font-size="9" fill="#134E4A" text-anchor="middle">act</text>
+      <text x="567" y="112" font-size="8.6" fill="#475569" text-anchor="middle">actuadores y efectores finales:</text>
+      <text x="567" y="122" font-size="8.6" fill="#475569" text-anchor="middle">motores, pinzas, herramientas</text>
+      <line x1="200" y1="89" x2="248" y2="89" stroke="#64748B" stroke-width="2.4"/>
+      <polygon points="252,89 243,84.5 243,93.5" fill="#64748B"/>
+      <line x1="426" y1="89" x2="474" y2="89" stroke="#64748B" stroke-width="2.4"/>
+      <polygon points="478,89 469,84.5 469,93.5" fill="#64748B"/>
+      <path d="M 567 136 L 567 158 L 115 158 L 115 140" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-dasharray="5 4"/>
+      <polygon points="115,136 111,145 119,145" fill="#94A3B8"/>
+      <text x="341" y="170" font-size="8.8" font-weight="700" fill="#64748B" text-anchor="middle">el bucle se repite continuamente: cada acción cambia el entorno y genera nuevas percepciones</text>
+    </svg>
+    <div class="svg-cap">Gráfico 2 &middot; El bucle sense&ndash;think&ndash;act: la base de las cuatro características de 3.7B (elaborado a partir del libro).</div>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 210" xmlns="http://www.w3.org/2000/svg">
+      <text x="14" y="20" font-size="12" font-weight="800" fill="#1E293B">La figura «Características de un robot» del libro, anotada</text>
+      <!-- robot -->
+      <rect x="252" y="52" width="180" height="118" rx="16" fill="#EDF2F9" stroke="#1E3A5F" stroke-width="2.5"/>
+      <rect x="292" y="72" width="100" height="52" rx="9" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+      <circle cx="320" cy="98" r="9" fill="#1E3A5F"/><circle cx="364" cy="98" r="9" fill="#1E3A5F"/>
+      <rect x="306" y="132" width="72" height="8" rx="4" fill="#94A3B8"/>
+      <!-- ruedas -->
+      <circle cx="292" cy="182" r="17" fill="#334155"/><circle cx="392" cy="182" r="17" fill="#334155"/>
+      <circle cx="292" cy="182" r="7" fill="#94A3B8"/><circle cx="392" cy="182" r="7" fill="#94A3B8"/>
+      <!-- pinza -->
+      <rect x="432" y="88" width="34" height="12" rx="5" fill="#334155"/>
+      <path d="M 466 86 q 14 4 16 14" fill="none" stroke="#334155" stroke-width="4" stroke-linecap="round"/>
+      <path d="M 466 102 q 14 -4 16 -14" fill="none" stroke="#334155" stroke-width="4" stroke-linecap="round"/>
+      <!-- etiquetas con líneas -->
+      <line x1="292" y1="60" x2="180" y2="44" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="176" y="42" font-size="9" font-weight="700" fill="#1E40AF" text-anchor="end">Cámaras con visión artificial (machine vision)</text>
+      <line x1="252" y1="120" x2="150" y2="120" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="146" y="118" font-size="9" font-weight="700" fill="#1E40AF" text-anchor="end">Sonar para detectar</text>
+      <text x="146" y="128" font-size="9" font-weight="700" fill="#1E40AF" text-anchor="end">si hay alguien cerca</text>
+      <line x1="330" y1="170" x2="240" y2="200" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="236" y="204" font-size="9" font-weight="700" fill="#1E40AF" text-anchor="end">Motores electrónicos activan las ruedas</text>
+      <line x1="422" y1="182" x2="480" y2="196" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="484" y="200" font-size="9" font-weight="700" fill="#134E4A">Batería: alimentación</text>
+      <text x="484" y="210" font-size="9" font-weight="700" fill="#134E4A">(battery powered)</text>
+      <line x1="466" y1="94" x2="560" y2="70" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="564" y="66" font-size="9" font-weight="700" fill="#134E4A">Efector final: pinza con</text>
+      <text x="564" y="76" font-size="9" font-weight="700" fill="#134E4A">sensor de presión</text>
+      <line x1="392" y1="72" x2="520" y2="40" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="524" y="38" font-size="9" font-weight="700" fill="#5B21B6">Micrófonos integrados +</text>
+      <text x="524" y="48" font-size="9" font-weight="700" fill="#5B21B6">reconocimiento de voz</text>
+    </svg>
+    <div class="svg-cap">Gráfico 3 &middot; Componentes anotados de un robot de servicio (según la figura «Characteristics of a robot» del libro).</div>
+  </div>
+  </div>
+
+<!-- ═══════════════ 3.7B-2: TABLA DE SENSORES ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u2)">3.7B &middot; Características de robots y tecnologías autónomas (2/3)</div>
+    <div class="section-title">Los «cinco sentidos» del robot: la tabla de sensores</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Los robots perciben el entorno <b>de forma análoga a los cinco sentidos humanos</b>. Pregunta de examen del libro: «explica <b>tres formas diferentes</b> en que un robot puede percibir su entorno» [6].</p>
+
+  <table class="exam tall">
+    <tr><th style="width:74px">Sentido</th><th style="width:190px">Tecnología del robot</th><th>Cómo funciona</th><th style="width:150px">Ejemplo del libro</th></tr>
+    <tr><td><b>Visión</b></td><td>Cámaras digitales; <b>dos cámaras = visión estéreo</b> <span class="en-term">(stereo vision)</span>; sensores de luz; infrarrojos o ultrasonidos; GPS; <b>lidar, sonar, radar</b></td>
+        <td>Se necesitan <b>dos cámaras</b> para el reconocimiento de imágenes: dan <b>percepción de profundidad</b>. Los sensores de luz detectan cambios de iluminación (día/noche) para realizar funciones distintas. Los robots más simples usan <b>infrarrojos o ultrasonidos</b>: emiten un haz o una señal y <b>calculan la distancia por el tiempo que tarda en rebotar</b>. El GPS informa la ubicación geográfica exacta. Robots sofisticados (AV) usan <b>lidar</b> (forma y contorno del terreno, altura de objetos), <b>sonar</b> (profundidad del agua) y <b>radar</b> (objetos en movimiento, mapeo del entorno).</td>
+        <td>Vehículos autónomos con lidar + radar</td></tr>
+    <tr><td><b>Oído</b></td><td>Micrófonos + <b>reconocimiento de voz</b> <span class="en-term">(voice recognition)</span></td>
+        <td>El micrófono recoge sonidos que se <b>convierten en señales eléctricas</b> para procesarlos; combinado con el reconocimiento de voz, el robot puede «entender» lo que se dice.</td>
+        <td>Jibo, asistentes virtuales</td></tr>
+    <tr><td><b>Olfato</b></td><td><b>Sensores químicos</b> + reconocimiento de patrones</td>
+        <td>Los sensores químicos adecuados recogen datos, los <b>convierten en señal eléctrica</b> y usan <b>reconocimiento de patrones</b> para identificar el origen del olor.</td>
+        <td>Robot de inspección de olores</td></tr>
+    <tr><td><b>Gusto</b></td><td>Sensores químicos, p. ej. <b>sensor de pH</b></td>
+        <td>Misma lógica: química &rarr; señal eléctrica &rarr; patrón reconocido.</td>
+        <td>Un <b>robot catador de alimentos</b> con sensor de pH</td></tr>
+    <tr><td><b>Tacto</b></td><td><b>Sensores de presión / táctiles resistivos</b>; <b>capacitivos</b>; <b>de temperatura</b></td>
+        <td>Según el efector final: los de presión/resistivos determinan la <b>fuerza de agarre</b> para no soltar ni romper el objeto; el <b>capacitivo</b> detecta objetos que conducen electricidad (incluido el <b>toque humano</b>); los de temperatura activan funciones ante temperaturas concretas.</td>
+        <td>Un <b>robot bombero</b> navega hacia la parte <b>más caliente</b> de la habitación</td></tr>
+  </table>
+
+  <div class="info-card">
+    <h4>Preguntas de examen del libro (Paper 1, núcleo NM)</h4>
+    <p>1) Identifica <b>dos características de un robot</b> [2]. &nbsp; 2) Explica <b>tres formas diferentes</b> en que un robot puede percibir su entorno [6].</p>
+    <p class="ic-sub" style="margin-top:4px"><b>Top tip del libro:</b> los «periodistas robot» en línea pueden ser robots físicos que escriben noticias <b>o</b> algoritmos de IA sin cuerpo — distingue siempre máquina física vs. software antes de responder.</p>
+  </div>
+  </div>
+
+<!-- ═══════════════ 3.7B-3: RAZONAMIENTO + ACTUADORES + AUTONOMÍA ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u2)">3.7B &middot; Características de robots y tecnologías autónomas (3/3)</div>
+    <div class="section-title">Razonar, moverse y decidir solo</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num u2">CAR. 2</span><span class="tcard-title">Razonar con las entradas</span><span class="tcard-en">logically reason with inputs</span></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">El <b>sistema de control computarizado</b> toma los datos de los sensores, los <b>procesa</b> y envía órdenes a los <b>actuadores</b> y efectores finales. Los robots con <b>IA básica</b> resuelven problemas en <b>dominios limitados</b>: recogen datos, los comparan con sus datos almacenados, evalúan escenarios y seleccionan la <b>acción óptima</b> — p. ej., un robot de inspección que determina si un producto está dentro de los límites aprobados de la línea de producción.</div></div>
+    <div class="trow"><div class="tlabel fun">Machine learning</div><div class="tbody"><ul>
+      <li>Los robots recientes usan <b>machine learning con capacidad limitada</b> — p. ej., el desarrollo del caminar de <b>ASIMO</b>.</li>
+      <li><b>Aprendizaje supervisado</b>: para los robots industriales más básicos (elegir los tipos de piezas con las que fueron <b>entrenados</b>).</li>
+      <li><b>Aprendizaje por refuerzo</b>: aprender, mejorar y <b>adaptarse al entorno</b> — el caso de los <b>vehículos autónomos</b>.</li>
+      <li>La <b>visión artificial</b> ha progresado gracias al <b>deep learning</b>: mejor percepción de profundidad y reconocimiento de imágenes, con mayor precisión en la línea de producción.</li>
+    </ul></div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num u2">CAR. 3</span><span class="tcard-title">Moverse en entornos físicos</span><span class="tcard-en">interact and move in physical environments</span></div>
+    <div class="trow"><div class="tlabel fun">Actuadores</div><div class="tbody"><b>Dispositivo que mueve o controla un mecanismo</b>. Tres tipos: <b>motor eléctrico</b>, <b>sistema hidráulico</b> (impulsado por fluido incompresible) y <b>sistema neumático</b> (gas comprimido). Necesitan energía: el robot <b>móvil</b> usa <b>batería</b>; el <b>estático</b>, la <b>red eléctrica</b>.</div></div>
+    <div class="trow"><div class="tlabel fun">Efectores finales</div><div class="tbody"><b>Dispositivo periférico mecánico o electromecánico que sujeta objetos y acopla herramientas o sensores</b>. Tres tipos: <b>pinzas/grippers</b> (las más comunes: recoger y manipular objetos, útiles en líneas de montaje), <b>herramientas de proceso</b> (soldadura, pintura por pulverización, taladrado) y <b>sensores</b> (p. ej., inspecciones robóticas).</div></div>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 150" xmlns="http://www.w3.org/2000/svg">
+      <text x="14" y="20" font-size="12" font-weight="800" fill="#1E293B">Del pensamiento a la acción: actuadores y efectores finales del brazo robótico</text>
+      <rect x="40" y="60" width="130" height="58" rx="8" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="2"/>
+      <text x="105" y="84" font-size="10" font-weight="800" fill="#5B21B6" text-anchor="middle">SISTEMA DE CONTROL</text>
+      <text x="105" y="99" font-size="8.4" fill="#475569" text-anchor="middle">«gira 45°, agarra con</text>
+      <text x="105" y="109" font-size="8.4" fill="#475569" text-anchor="middle">fuerza media»</text>
+      <rect x="230" y="46" width="190" height="86" rx="8" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+      <text x="325" y="64" font-size="10" font-weight="800" fill="#334155" text-anchor="middle">ACTUADORES (3 tipos)</text>
+      <rect x="244" y="74" width="50" height="20" rx="5" fill="#EDE9FE"/><text x="269" y="87" font-size="8" fill="#5B21B6" text-anchor="middle">eléctrico</text>
+      <rect x="300" y="74" width="50" height="20" rx="5" fill="#EDE9FE"/><text x="325" y="87" font-size="8" fill="#5B21B6" text-anchor="middle">hidráulico</text>
+      <rect x="356" y="74" width="50" height="20" rx="5" fill="#EDE9FE"/><text x="381" y="87" font-size="8" fill="#5B21B6" text-anchor="middle">neumático</text>
+      <text x="325" y="112" font-size="8.4" fill="#64748B" text-anchor="middle">fluido incompresible / gas comprimido &middot; energía: batería o red</text>
+      <rect x="478" y="40" width="176" height="98" rx="8" fill="#F0FDFA" stroke="#14B8A6" stroke-width="2"/>
+      <text x="566" y="58" font-size="10" font-weight="800" fill="#134E4A" text-anchor="middle">EFECTORES FINALES (3 tipos)</text>
+      <rect x="492" y="68" width="60" height="18" rx="5" fill="#CCFBF1"/><text x="522" y="80" font-size="8" fill="#134E4A" text-anchor="middle">pinzas</text>
+      <rect x="558" y="68" width="82" height="18" rx="5" fill="#CCFBF1"/><text x="599" y="80" font-size="7.6" fill="#134E4A" text-anchor="middle">herram. de proceso</text>
+      <rect x="492" y="92" width="60" height="18" rx="5" fill="#CCFBF1"/><text x="522" y="104" font-size="8" fill="#134E4A" text-anchor="middle">sensores</text>
+      <text x="566" y="126" font-size="8.4" fill="#64748B" text-anchor="middle">soldadura &middot; pintura &middot; taladro &middot; inspección</text>
+      <line x1="170" y1="89" x2="222" y2="89" stroke="#64748B" stroke-width="2.2"/>
+      <polygon points="226,89 217,84.5 217,93.5" fill="#64748B"/>
+      <line x1="420" y1="89" x2="470" y2="89" stroke="#64748B" stroke-width="2.2"/>
+      <polygon points="474,89 465,84.5 465,93.5" fill="#64748B"/>
+    </svg>
+    <div class="svg-cap">Gráfico 4 &middot; Cadena de acción del robot: control &rarr; actuador (eléctrico/hidráulico/neumático) &rarr; efector final.</div>
+  </div>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-2" style="flex:1 1 48%"><div class="cs-name">Semiautónomo <span class="en-term">(semi-autonomous)</span></div><p>Tienen <b>cierta inteligencia</b> y reaccionan a condiciones <b>sin dirección constante</b>. Ejemplo: una <b>aspiradora robótica básica</b> trabaja sola con sensores que evitan chocar y detectan el nivel de residuos, pero <b>cambiar sus ajustes requiere interacción humana</b>.</p></div>
+    <div class="cs-card cs-4" style="flex:1 1 48%"><div class="cs-name">Totalmente autónomo <span class="en-term">(fully autonomous)</span></div><p><b>Operan de forma independiente</b>, realizan tareas más complejas y suelen ser más móviles. Hoy suelen estar <b>restringidos a un entorno</b> (suelo de fábrica, centro comercial), pero con los avances digitales serán <b>más adaptables y autónomos</b>.</p></div>
+  </div>
+
+  <div class="info-card">
+    <h4>Matiz que vale puntos</h4>
+    <p>Estrictamente, los robots <b>controlados a distancia por humanos no son robots</b>: el <b>nivel de autonomía</b> define cuán independientemente opera sin un controlador. Y la autonomía es un <b>espectro</b>, no una casilla: el AV de nivel 3 aún exige al conductor en su asiento, mientras el nivel 5 lo elimina.</p>
+  </div>
+  </div>
+<!-- ═══════════════ SIMULADOR SENSE-THINK-ACT ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u2)">3.7B &middot; Simulador interactivo <span class="only-print">(versión impresa)</span></div>
+    <div class="section-title">Simulador: ¿cómo decide un robot autónomo?</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text only-screen" style="margin-bottom:4px"><b>Cómo funciona:</b> activa los sensores del robot (chips) para cambiar su percepción del entorno y pulsa <b>Ejecutar ciclo</b>. El sistema de control <b>prioriza reglas</b>: evalúa todas las entradas y elige la acción más importante. Observa cómo cada ciclo recorre <b>percibir &rarr; pensar &rarr; actuar</b> — exactamente las cuatro características de 3.7B.</p>
+
+  <!-- ── versión interactiva (solo pantalla) ── -->
+  <div class="only-screen">
+  <div class="sim-box">
+    <svg id="simSvg" viewBox="0 0 682 240" xmlns="http://www.w3.org/2000/svg">
+      <text x="14" y="18" font-size="11.5" font-weight="800" fill="#1E293B">«Robot patrulla»: un robot de servicio semiautónomo en un hotel</text>
+      <!-- entorno -->
+      <rect x="14" y="30" width="440" height="196" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <!-- obstáculo -->
+      <rect id="obstacle" x="252" y="96" width="44" height="34" rx="6" fill="#94A3B8" opacity="0.18"/>
+      <text id="obstacleLbl" x="274" y="118" font-size="8.5" fill="#94A3B8" text-anchor="middle">obstáculo</text>
+      <!-- robot -->
+      <g id="robot">
+        <rect x="120" y="86" width="84" height="56" rx="12" fill="#EDF2F9" stroke="#1E3A5F" stroke-width="2.5"/>
+        <circle cx="142" cy="152" r="13" fill="#334155"/><circle cx="182" cy="152" r="13" fill="#334155"/>
+        <circle cx="142" cy="152" r="5" fill="#94A3B8"/><circle cx="182" cy="152" r="5" fill="#94A3B8"/>
+        <rect id="lightBeam" x="204" y="96" width="44" height="34" rx="6" fill="#FDE68A" opacity="0"/>
+        <circle id="lamp" cx="188" cy="100" r="7" fill="#CBD5E1" stroke="#64748B" stroke-width="1.5"/>
+        <!-- ultrasonido -->
+        <path id="usWave" d="M 204 114 q 10 -14 22 0 q -12 14 -22 0" fill="none" stroke="#3B82F6" stroke-width="2" opacity="0.15"/>
+        <path id="usWave2" d="M 210 106 q 14 -22 32 0" fill="none" stroke="#3B82F6" stroke-width="1.6" opacity="0.12"/>
+        <text x="160" y="118" font-size="9.5" font-weight="800" fill="#1E3A5F" text-anchor="middle" id="robotMood">&iexcl;Listo!</text>
+      </g>
+      <!-- micrófono / voz -->
+      <g id="voiceIcon" opacity="0.25">
+        <circle cx="70" cy="60" r="13" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1.5"/>
+        <rect x="66" y="52" width="8" height="11" rx="4" fill="#8B5CF6"/>
+        <path d="M 63 62 q 7 8 14 0" fill="none" stroke="#8B5CF6" stroke-width="1.5"/>
+        <text x="70" y="88" font-size="8" fill="#8B5CF6" text-anchor="middle">orden de voz</text>
+      </g>
+      <!-- oscuridad -->
+      <rect id="darkness" x="14" y="30" width="440" height="196" rx="10" fill="#0F172A" opacity="0"/>
+      <!-- panel derecho: control -->
+      <rect x="470" y="30" width="198" height="196" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="484" y="50" font-size="9.5" font-weight="800" fill="#5B21B6">SISTEMA DE CONTROL</text>
+      <text x="484" y="64" font-size="8" fill="#64748B">evalúa entradas y aplica</text>
+      <text x="484" y="74" font-size="8" fill="#64748B">reglas por prioridad</text>
+      <text x="484" y="96" font-size="8.4" font-weight="700" fill="#64748B">SENSORES activos:</text>
+      <text id="sensList" x="484" y="112" font-size="8.6" fill="#334155">ninguno</text>
+      <text x="484" y="136" font-size="8.4" font-weight="700" fill="#64748B">REGLA elegida:</text>
+      <text id="ruleTxt" x="484" y="152" font-size="9" font-weight="800" fill="#1E40AF">explorar</text>
+      <text x="484" y="176" font-size="8.4" font-weight="700" fill="#64748B">ACCIÓN del actuador:</text>
+      <text id="actTxt" x="484" y="192" font-size="9" font-weight="800" fill="#134E4A">avanzar</text>
+      <text id="cycleNum" x="484" y="216" font-size="8.2" fill="#94A3B8">ciclo #0</text>
+    </svg>
+    <div class="sim-controls">
+      <span style="font-size:9.5px;font-weight:800;letter-spacing:.8px;color:#64748B">SENSORES:</span>
+      <button class="sim-chip" data-s="obstacle">&#128694; Obstáculo delante (ultrasonido)</button>
+      <button class="sim-chip" data-s="dark">&#127769; Oscuridad (sensor de luz)</button>
+      <button class="sim-chip" data-s="voice">&#127908; Orden de voz (micrófono)</button>
+      <span style="flex:1"></span>
+      <button class="sim-btn" id="stepBtn">&#9654; Ejecutar ciclo</button>
+      <button class="sim-btn alt" id="autoBtn">&#9851; Auto: 8 ciclos</button>
+      <button class="sim-btn warn" id="resetBtn">&#10007; Reiniciar</button>
+      <span class="sim-stat"><span class="n" id="statCycle">0</span><span class="l">ciclo</span></span>
+      <span class="sim-stat"><span class="n" id="statAction">&mdash;</span><span class="l">acción</span></span>
+    </div>
+    <table class="sim-tb">
+      <thead><tr><th style="width:56px">Ciclo</th><th style="width:220px">PERCIBIR (entradas sensoriales)</th><th style="width:230px">PENSAR (regla aplicada)</th><th>ACTUAR (efectores)</th></tr></thead>
+      <tbody id="simLog"><tr><td colspan="4" style="color:#94A3B8;font-style:italic">Activa sensores y ejecuta un ciclo para llenar el registro&hellip;</td></tr></tbody>
+    </table>
+    <p class="sim-note"><b>Qué demuestra:</b> el robot <b>percibe</b> con sensores análogos a los sentidos (ultrasonido = visión simple, micrófono = oído), <b>piensa</b> con un sistema de control que aplica <b>reglas priorizadas</b> (aquí programadas; en robots reales, muchas se aprenden con machine learning) y <b>actúa</b> con actuadores (motores de ruedas, faro LED, altavoz). Cuando varios sensores se activan a la vez, la <b>prioridad</b> evita conflictos — igual que un AV debe decidir entre frenar o esquivar. Es <b>semiautónomo</b>: decide solo dentro de sus reglas, pero un humano define la misión.</p>
+  </div>
+  </div>
+
+  <!-- ── versión impresa (estática) ── -->
+  <div class="only-print">
+    <div class="svg-wrap">
+      <svg viewBox="0 0 682 300" xmlns="http://www.w3.org/2000/svg">
+        <text x="14" y="20" font-size="12" font-weight="800" fill="#1E293B">«Robot patrulla» — un ciclo completo de decisión (ejemplo: obstáculo + oscuridad)</text>
+        <!-- robot y entorno -->
+        <rect x="14" y="36" width="320" height="240" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+        <rect x="70" y="96" width="84" height="56" rx="12" fill="#EDF2F9" stroke="#1E3A5F" stroke-width="2.5"/>
+        <circle cx="92" cy="162" r="13" fill="#334155"/><circle cx="132" cy="162" r="13" fill="#334155"/>
+        <rect x="154" y="106" width="52" height="36" rx="6" fill="#FDE68A" opacity="0.8"/>
+        <text x="180" y="128" font-size="7.5" fill="#92400E" text-anchor="middle">faro ON</text>
+        <rect x="230" y="106" width="44" height="36" rx="6" fill="#94A3B8"/>
+        <text x="252" y="128" font-size="7.5" fill="#FFFFFF" text-anchor="middle">obstáculo</text>
+        <path d="M 238 124 q -12 -18 -28 -18" fill="none" stroke="#3B82F6" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="252" y="106" font-size="7.5" fill="#64748B" text-anchor="middle">detectado por</text>
+        <text x="252" y="114" font-size="7.5" fill="#64748B" text-anchor="middle">ultrasonido</text>
+        <text x="174" y="196" font-size="8" fill="#64748B" text-anchor="middle">motores de ruedas: detenerse y girar 90°</text>
+        <text x="174" y="216" font-size="8" fill="#64748B" text-anchor="middle">sensor de luz: oscuridad &rarr; faro LED encendido</text>
+        <text x="174" y="66" font-size="8.4" font-weight="700" fill="#1E3A5F" text-anchor="middle">ROBOT (semiautónomo)</text>
+        <!-- panel derecho -->
+        <rect x="352" y="36" width="316" height="240" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+        <text x="368" y="58" font-size="10" font-weight="800" fill="#5B21B6">SISTEMA DE CONTROL — reglas por prioridad</text>
+        <rect x="368" y="70" width="284" height="26" rx="5" fill="#FEE2E2"/><text x="378" y="87" font-size="8.8" fill="#991B1B" font-weight="800">1. ¿Obstáculo delante? &rarr; DETENERSE + GIRAR 90°</text>
+        <rect x="368" y="100" width="284" height="26" rx="5" fill="#FEF3C7"/><text x="378" y="117" font-size="8.8" fill="#92400E" font-weight="800">2. ¿Oscuridad? &rarr; ENCENDER FARO</text>
+        <rect x="368" y="130" width="284" height="26" rx="5" fill="#EFF6FF"/><text x="378" y="147" font-size="8.8" fill="#1E40AF" font-weight="800">3. ¿Orden de voz? &rarr; RESPONDER (altavoz)</text>
+        <rect x="368" y="160" width="284" height="26" rx="5" fill="#F0FDFA"/><text x="378" y="177" font-size="8.8" fill="#134E4A" font-weight="800">4. Nada activo &rarr; AVANZAR explorando</text>
+        <line x1="368" y1="200" x2="652" y2="200" stroke="#E2E8F0"/>
+        <text x="368" y="218" font-size="8.8" font-weight="700" fill="#334155">RESULTADO del ciclo: regla 1 tiene prioridad</text>
+        <text x="368" y="232" font-size="8.8" fill="#475569">sobre la 2: el robot se detiene y gira, y también</text>
+        <text x="368" y="244" font-size="8.8" fill="#475569">enciende el faro (la regla 2 no se ignora: se suma).</text>
+        <text x="368" y="262" font-size="8.6" fill="#64748B">Así evita conflictos: un AV elige entre frenar o</text>
+        <text x="368" y="273" font-size="8.6" fill="#64748B">esquivar según la misma lógica de prioridades.</text>
+      </svg>
+      <div class="svg-cap">Gráfico 5 &middot; Versión impresa del simulador: un ciclo con dos sensores activos. En la versión HTML es interactivo: activa sensores y observa las decisiones.</div>
+    </div>
+    <table class="exam">
+      <tr><th style="width:56px">Ciclo</th><th style="width:215px">PERCIBIR (entradas sensoriales)</th><th style="width:225px">PENSAR (regla aplicada)</th><th>ACTUAR (efectores)</th></tr>
+      <tr><td>1</td><td>Ultrasonido: obstáculo a 40 cm; luz: oscuridad; micrófono: nada</td><td>Regla 1 (prioridad máxima) + regla 2</td><td>Motores: detenerse y girar 90°; faro LED: encendido</td></tr>
+      <tr><td>2</td><td>Ultrasonido: nada; luz: oscuridad; micrófono: «sala 3»</td><td>Regla 3</td><td>Ruedas: avanzar; altavoz: «iré a la sala 3»</td></tr>
+      <tr><td>3</td><td>Ultrasonido: nada; luz: día; micrófono: nada</td><td>Regla 4</td><td>Ruedas: avanzar explorando</td></tr>
+    </table>
+    <p class="body-text">El robot <b>percibe</b> con sensores análogos a los sentidos, <b>piensa</b> con un sistema de control de <b>reglas priorizadas</b> (programadas aquí; aprendidas con machine learning en los AV) y <b>actúa</b> con actuadores y efectores. Cuando varios sensores se activan a la vez, la <b>prioridad</b> evita conflictos. Es <b>semiautónomo</b>: decide solo dentro de sus reglas, pero un humano define la misión — exactamente las cuatro características de 3.7B en acción.</p>
+  </div>
+  </div>
+
+<!-- ═══════════════ 3.7C-1: ORÍGENES + CIENCIA FICCIÓN ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u3)">3.7C &middot; Evolución de robots y tecnologías autónomas (1/4)</div>
+    <div class="section-title">Orígenes: la ciencia ficción fundó la ciencia</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">La historia de los robots está entrelazada con la ciencia, la tecnología y la IA. <b>Antes</b> de los robots modernos, estaban las <b>máquinas imaginadas</b>:</p>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-3" style="flex:1 1 30%"><div class="cs-name">1500 a.C. &middot; Egipto</div><p><b>Relojes de agua</b> con figurillas humanas que hacían sonar una campana — autómatas rituales milenarios.</p></div>
+    <div class="cs-card cs-3" style="flex:1 1 30%"><div class="cs-name">≈400 a.C. &middot; Grecia</div><p>El matemático <b>Arquitas</b> construyó un <b>pájaro mecánico accionado por vapor</b> — el primer autómata documentado.</p></div>
+    <div class="cs-card cs-3" style="flex:1 1 30%"><div class="cs-name">1948 &middot; Elmer y Elsie</div><p><b>William Grey Walter</b> creó dos robots autónomos con <b>forma de tortuga</b>, tres ruedas y navegación propia: iban solos hasta su <b>estación de recarga</b>.</p></div>
+    <div class="cs-card cs-3" style="flex:1 1 30%"><div class="cs-name">1958 &middot; Shakey</div><p><b>Charles Rosen</b> lideró en el <b>Stanford Research Institute</b> a «Shakey»: rodaba, observaba con sus «ojos» de televisión, se movía por <b>entornos desconocidos</b> y respondía de forma simple.</p></div>
+    <div class="cs-card cs-4" style="flex:1 1 30%"><div class="cs-name">1921 &middot; Čapek acuña «robot»</div><p>El escritor checo <b>Karel Čapek</b> introduce la palabra <b>robot</b> en su obra <i>Rossum&rsquo;s Universal Robots</i>: un hombre crea un robot <b>y es asesinado por él</b> — tema recurrente de la ciencia ficción.</p></div>
+    <div class="cs-card cs-4" style="flex:1 1 30%"><div class="cs-name">1940&ndash;50 &middot; Asimov</div><p><b>Isaac Asimov</b> escribe numerosos relatos de robots y formula las <b>tres leyes de la robótica</b> (1941), después completadas con la <b>Ley 0</b>.</p></div>
+  </div>
+
+  <div class="info-card">
+    <h4>Las tres leyes de la robótica de Asimov (1941) + la Ley 0 — memorízalas textualmente</h4>
+    <p><b>Ley 1:</b> Un robot <b>no debe dañar a un ser humano</b> o, por inacción, permitir que un ser humano sufra daño. &nbsp; <b>Ley 2:</b> Un robot debe <b>obedecer las órdenes</b> de los seres humanos, excepto si entran en conflicto con la Ley 1. &nbsp; <b>Ley 3:</b> Un robot debe <b>proteger su propia existencia</b> mientras no entre en conflicto con las Leyes 1 y 2. &nbsp; <b>Ley 0 (añadida después):</b> Un robot no puede dañar a la <b>humanidad</b> ni, por inacción, permitir que la humanidad sufra daño.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Por qué importa para el examen</h4>
+    <p>Las leyes de Asimov <b>han resistido el paso del tiempo como principios rectores</b> de la ética robótica (el libro las retoma en 3.7D al discutir las regulaciones), pero son <b>literatura, no leyes reales</b>: los robots actuales son mucho más variados de lo que Asimov envisionó. El «tema del creador asesinado por su criatura» (Čapek, luego <i>Franken&shy;stein</i> en el cine) explica por qué la sociedad desconfía: la <b>aceptabilidad social</b> es uno de los cinco obstáculos de los AV.</p>
+  </div>
+  </div>
+
+<!-- ═══════════════ 3.7C-2: TIMELINE INDUSTRIAL ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u3)">3.7C &middot; Evolución de robots y tecnologías autónomas (2/4)</div>
+    <div class="section-title">Línea de tiempo: robots para la industria</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">La industria fue el punto de partida porque el propósito era evidente: <b>tareas repetitivas y levantar objetos pesados</b> hacían al robot ideal para la línea de producción.</p>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 430" xmlns="http://www.w3.org/2000/svg">
+      <text x="14" y="20" font-size="12" font-weight="800" fill="#1E293B">La figura «The development of robots» del libro, de 1951 a 2008</text>
+      <line x1="60" y1="60" x2="60" y2="400" stroke="#CBD5E1" stroke-width="3"/>
+      <!-- 1951 -->
+      <circle cx="60" cy="88" r="9" fill="#3B82F6"/>
+      <rect x="86" y="62" width="560" height="52" rx="8" fill="#EFF6FF" stroke="#BFDBFE"/>
+      <text x="98" y="80" font-size="10.5" font-weight="800" fill="#1E40AF">1951 &middot; SNARC — Marvin Minsky</text>
+      <text x="98" y="94" font-size="9.2" fill="#475569">El primer <tspan font-weight="700">simulador de red neuronal</tspan>: la conexión entre robótica e IA empieza aquí (puente con 3.6C).</text>
+      <!-- 1954-61 -->
+      <circle cx="60" cy="148" r="9" fill="#3B82F6"/>
+      <rect x="86" y="122" width="560" height="52" rx="8" fill="#EFF6FF" stroke="#BFDBFE"/>
+      <text x="98" y="140" font-size="10.5" font-weight="800" fill="#1E40AF">1954&ndash;61 &middot; Unimate — George Devol, EE. UU.</text>
+      <text x="98" y="154" font-size="9.2" fill="#475569">El <tspan font-weight="700">primer robot industrial verdaderamente programable</tspan>, para General Motors: transportaba piezas fundidas (diecasts)</text>
+      <text x="98" y="166" font-size="9.2" fill="#475569">y usaba piezas en la línea de montaje.</text>
+      <!-- 1974 -->
+      <circle cx="60" cy="208" r="9" fill="#3B82F6"/>
+      <rect x="86" y="182" width="560" height="52" rx="8" fill="#EFF6FF" stroke="#BFDBFE"/>
+      <text x="98" y="200" font-size="10.5" font-weight="800" fill="#1E40AF">1974 &middot; IRB-6 — ABB, Suecia</text>
+      <text x="98" y="214" font-size="9.2" fill="#475569">El <tspan font-weight="700">primer robot industrial eléctrico</tspan> controlado por un microordenador; se usó para <tspan font-weight="700">soldar y pulir tubos de acero</tspan>.</text>
+      <!-- 1981 -->
+      <circle cx="60" cy="268" r="9" fill="#8B5CF6"/>
+      <rect x="86" y="242" width="272" height="72" rx="8" fill="#F5F3FF" stroke="#DDD6FE"/>
+      <text x="98" y="260" font-size="10.5" font-weight="800" fill="#5B21B6">1981 &middot; SCARA — Japón</text>
+      <text x="98" y="274" font-size="9.2" fill="#475569"><tspan font-weight="700">Selective Compliance Robot Arm</tspan>: brazo diestro</text>
+      <text x="98" y="286" font-size="9.2" fill="#475569">con dos eslabones sobre base fija; cargaba y</text>
+      <text x="98" y="298" font-size="9.2" fill="#475569">descargaba piezas entre procesos de fabricación.</text>
+      <rect x="374" y="242" width="272" height="72" rx="8" fill="#F5F3FF" stroke="#DDD6FE"/>
+      <text x="386" y="260" font-size="10.5" font-weight="800" fill="#5B21B6">1981 &middot; Consight — General Motors</text>
+      <text x="386" y="274" font-size="9.2" fill="#475569"><tspan font-weight="700">Tres robots</tspan> en la línea con <tspan font-weight="700">sensores visuales</tspan>:</text>
+      <text x="386" y="286" font-size="9.2" fill="#475569">seleccionaban hasta <tspan font-weight="700">seis piezas distintas</tspan> de</text>
+      <text x="386" y="298" font-size="9.2" fill="#475569">automóvil sobre la cinta transportadora en marcha.</text>
+      <!-- 1994 -->
+      <circle cx="60" cy="348" r="9" fill="#8B5CF6"/>
+      <rect x="86" y="322" width="560" height="52" rx="8" fill="#F5F3FF" stroke="#DDD6FE"/>
+      <text x="98" y="340" font-size="10.5" font-weight="800" fill="#5B21B6">1994 &middot; Motoman MRC — Yaskawa America, Inc.</text>
+      <text x="98" y="354" font-size="9.2" fill="#475569">Brazos robóticos que soportaban hasta <tspan font-weight="700">21 ejes</tspan> y capacidad de <tspan font-weight="700">sincronizar dos robots</tspan> trabajando juntos.</text>
+      <!-- 2008 -->
+      <circle cx="60" cy="398" r="9" fill="#14B8A6"/>
+      <rect x="86" y="372" width="560" height="46" rx="8" fill="#F0FDFA" stroke="#99F6E4"/>
+      <text x="98" y="390" font-size="10.5" font-weight="800" fill="#134E4A">2008 &middot; UR5 — Universal Robots (en Linatex, Dinamarca)</text>
+      <text x="98" y="404" font-size="9.2" fill="#475569">El <tspan font-weight="700">primer robot colaborativo (cobot)</tspan> colocado en el suelo de producción: trabaja junto a humanos, sin jaula.</text>
+    </svg>
+    <div class="svg-cap">Gráfico 6 &middot; De la simulación neuronal (SNARC) al cobot (UR5): más rápidos, más carga, «ven» mejor y manejan más decisiones.</div>
+  </div>
+
+  <div class="info-card">
+    <h4>Idea clave del libro</h4>
+    <p>A medida que los robots industriales mejoraron, pudieron <b>moverse más rápido, cargar más peso, «ver» mejor y manejar más decisiones</b>. Hoy es habitual ver una <b>línea de montaje robótica</b> — y por eso el dilema del desplazamiento (3.7D) no es hipotético: Foxconn ya había anunciado 60.000 empleos reemplazados.</p>
+  </div>
+  </div>
+
+<!-- ═══════════════ 3.7C-3: TIMELINE HUMANOS ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u3)">3.7C &middot; Evolución de robots y tecnologías autónomas (3/4)</div>
+    <div class="section-title">Línea de tiempo: robots diseñados para interactuar con humanos</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Muchos investigadores desarrollaron robots más «parecidos a la vida»: <b>humanoides</b> y <b>mascotas robóticas</b> <span class="en-term">(robot pets)</span>. Esta es la figura «Robot evolution» del libro:</p>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 430" xmlns="http://www.w3.org/2000/svg">
+      <text x="14" y="20" font-size="12" font-weight="800" fill="#1E293B">La figura «Robot evolution» del libro, de 1973 a 2021</text>
+      <line x1="60" y1="52" x2="60" y2="400" stroke="#CBD5E1" stroke-width="3"/>
+      <!-- 1973 -->
+      <circle cx="60" cy="80" r="9" fill="#14B8A6"/>
+      <rect x="86" y="54" width="560" height="52" rx="8" fill="#F0FDFA" stroke="#99F6E4"/>
+      <text x="98" y="72" font-size="10.5" font-weight="800" fill="#134E4A">1973 &middot; Wabot-1 — Universidad Waseda, Japón</text>
+      <text x="98" y="86" font-size="9.2" fill="#475569">El <tspan font-weight="700">primer robot humanoide</tspan>: caminaba, agarraba y transportaba objetos, «veía» midiendo distancias y se comunicaba en <tspan font-weight="700">japonés</tspan>.</text>
+      <!-- 1986 -->
+      <circle cx="60" cy="140" r="9" fill="#14B8A6"/>
+      <rect x="86" y="114" width="560" height="52" rx="8" fill="#F0FDFA" stroke="#99F6E4"/>
+      <text x="98" y="132" font-size="10.5" font-weight="800" fill="#134E4A">1986 &middot; ASIMO — Honda («Advanced Step in Innovative Mobility»)</text>
+      <text x="98" y="146" font-size="9.2" fill="#475569">Podía <tspan font-weight="700">correr, caminar y subir escaleras</tspan>, patear un balón, cantar y responder a comandos de voz — ML con capacidad limitada (3.7B).</text>
+      <!-- 1998 -->
+      <circle cx="60" cy="200" r="9" fill="#14B8A6"/>
+      <rect x="86" y="174" width="560" height="52" rx="8" fill="#F0FDFA" stroke="#99F6E4"/>
+      <text x="98" y="192" font-size="10.5" font-weight="800" fill="#134E4A">1998 &middot; AIBO — Sony, Japón</text>
+      <text x="98" y="206" font-size="9.2" fill="#475569"><tspan font-weight="700">Mascota robótica</tspan> que imitaba comportamiento canino: actuadores para movimientos realistas de cabeza, cuello y cola; sensores de <tspan font-weight="700">tacto y visión</tspan>.</text>
+      <!-- 2004 -->
+      <circle cx="60" cy="260" r="9" fill="#14B8A6"/>
+      <rect x="86" y="234" width="560" height="52" rx="8" fill="#F0FDFA" stroke="#99F6E4"/>
+      <text x="98" y="252" font-size="10.5" font-weight="800" fill="#134E4A">2004 &middot; PARO — National Institute of Advanced Industrial Science &amp; Technology, Japón</text>
+      <text x="98" y="266" font-size="9.2" fill="#475569"><tspan font-weight="700">Foca bebé terapéutica</tspan>: robot acompañante usado para <tspan font-weight="700">reducir el estrés de los pacientes</tspan> — el antecedente del debate sobre robots acompañantes (3.7A/D).</text>
+      <!-- 2013 -->
+      <circle cx="60" cy="316" r="9" fill="#14B8A6"/>
+      <rect x="86" y="292" width="272" height="52" rx="8" fill="#F0FDFA" stroke="#99F6E4"/>
+      <text x="98" y="310" font-size="10.5" font-weight="800" fill="#134E4A">2013 &middot; Baxter — Rethink Robotics</text>
+      <text x="98" y="324" font-size="9.2" fill="#475569">Primer <tspan font-weight="700">robot industrial humanoide</tspan></text>
+      <text x="98" y="336" font-size="9.2" fill="#475569">desarrollado para <tspan font-weight="700">uso general</tspan>.</text>
+      <rect x="374" y="292" width="272" height="52" rx="8" fill="#F0FDFA" stroke="#99F6E4"/>
+      <text x="386" y="310" font-size="10.5" font-weight="800" fill="#134E4A">2015 &middot; Robear — RIKEN-SRK + Sumitomo Riko, Japón</text>
+      <text x="386" y="324" font-size="9.2" fill="#475569"><tspan font-weight="700">Oso gigante</tspan> de ayuda hospitalaria:</text>
+      <text x="386" y="336" font-size="9.2" fill="#475569">levantar y mover pacientes con seguridad.</text>
+      <!-- 2018 -->
+      <circle cx="60" cy="368" r="9" fill="#14B8A6"/>
+      <rect x="86" y="344" width="560" height="28" rx="8" fill="#F0FDFA" stroke="#99F6E4"/>
+      <text x="98" y="362" font-size="10.5" font-weight="800" fill="#134E4A">2018 &middot; Pepper — Softbank Group, Japón: tamaño infantil, baila, hace chistes; combina <tspan font-weight="700" font-size="9.2" fill="#475569">robótica, IA y servicios en la nube</tspan>.</text>
+      <!-- 2021 -->
+      <circle cx="60" cy="396" r="9" fill="#14B8A6"/>
+      <rect x="86" y="376" width="560" height="28" rx="8" fill="#F0FDFA" stroke="#99F6E4"/>
+      <text x="98" y="394" font-size="10.5" font-weight="800" fill="#134E4A">2021 &middot; Astro — Amazon Lab126, EE. UU.: asistente del hogar «<tspan font-weight="700" font-size="9.2" fill="#475569">Alexa on wheels</tspan>» — IA + monitorización del hogar + nube.</text>
+    </svg>
+    <div class="svg-cap">Gráfico 7 &middot; De Wabot-1 a Astro: la evolución hacia robots que conviven con humanos (elaborado a partir del libro).</div>
+  </div>
+
+  <div class="info-card">
+    <h4>Inquiry del libro (3.7C + contexto 4.4B El cuerpo humano)</h4>
+    <p><b>Enfoque:</b> ¿cómo se usan los robots para <b>aumentar (augment) las capacidades humanas</b>? Investiga una tecnología que mejore la calidad de vida — p. ej., <b>exoesqueletos para veteranos de guerra, prótesis robóticas o implantes tecnológicos</b> — y analiza su impacto en el usuario y su comunidad.</p>
+  </div>
+  </div>
+<!-- ═══════════════ 3.7C-4: CONCIENCIA + DERECHOS ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u3)">3.7C &middot; Evolución de robots y tecnologías autónomas (4/4)</div>
+    <div class="section-title">Conciencia de máquina, robótica cognitiva y derechos</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-3" style="flex:1 1 30%"><div class="cs-name">IA débil <span class="en-term">(weak AI)</span></div><p>Actuó en los primeros robots diseñados para interactuar con humanos: se asume que <b>no tenían conciencia</b> y solo <b>simulaban inteligencia</b> (ver 3.6A).</p></div>
+    <div class="cs-card cs-4" style="flex:1 1 30%"><div class="cs-name">Conciencia de máquina <span class="en-term">(machine consciousness)</span></div><p>Requiere el desarrollo de <b>IA fuerte</b> <span class="en-term">(strong AI)</span>: que la máquina tenga experiencia subjetiva, no solo la simule.</p></div>
+    <div class="cs-card cs-3" style="flex:1 1 30%"><div class="cs-name">Robótica cognitiva <span class="en-term">(cognitive robotics)</span></div><p>Campo emergente: robots con <b>inteligencia similar a la humana</b> que <b>perciben su entorno, planifican</b> y manejan la <b>incertidumbre del mundo real mediante aprendizaje continuo</b>; con <b>capacidades predictivas</b> y visión del mundo <b>desde distintas perspectivas</b>.</p></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num u3">CASO</span><span class="tcard-title">Sophia (2016) — la robot que recibió ciudadanía</span><span class="tcard-en">Hanson Robotics</span></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">Robot celebridad por su <b>apariencia humana</b>: con IA, <b>procesamiento de datos visuales y reconocimiento facial</b> imitaba gestos y expresiones; respondía a preguntas sobre <b>temas predefinidos</b> con <b>speech-to-text</b> y fue <b>diseñada para aprender</b>; creada para ayudar a <b>personas mayores en residencias</b>.</div></div>
+    <div class="trow"><div class="tlabel imp">Hitos</div><div class="tbody">Se hizo famosa al recibir la <b>ciudadanía de Arabia Saudí</b> (2016) — el <b>primer no humano con nacionalidad</b>. Muchos lo consideraron un <b>truco publicitario</b>, pero abrió la pregunta: <b>¿deberían concederse derechos a los robots?</b></div></div>
+    <div class="trow"><div class="tlabel warn">Debate</div><div class="tbody">A medida que los robots se sofistican, sus <b>derechos son un debate serio de políticas públicas</b>. La mayoría de las reivindicaciones de derechos (humanos o animales) se centran en la <b>conciencia</b>: tenemos derecho a derechos porque podemos sentir <b>dolor o placer</b>, y los derechos nos protegen de lo que nos causa dolor. ¿Y si un robot estuviera programado para reconocer la justicia? ¿Y si desarrollara esos rasgos por <b>deep learning</b>?</div></div>
+  </div>
+
+  <div class="info-card">
+    <h4>Preguntas TOK y de debate del libro</h4>
+    <p>¿Un robot <b>autoconsciente</b> merecería derechos? ¿Pueden sentir dolor o placer, aunque estén <b>programados</b> para ello? ¿Qué significa que un robot «sepa» algo — pueden adquirir conocimiento? Cuando un robot autónomo toma decisiones éticas, ¿quién es responsable? Estas preguntas conectan 3.7C con el concepto <b>2.7 Valores y ética</b> y con la inquiry «¿es posible programar valores y ética en un robot?».</p>
+  </div>
+
+  <div class="info-card">
+    <h4>ATL del libro: el debate</h4>
+    <p>Divide la clase: un grupo defiende que los robots deben <b>diseñarse para ser emocionales</b>; el otro, que deben diseñarse para que <b>los humanos tengan respuestas emocionales hacia ellos</b> (este es exactamente el dilema que el libro plantea en 3.7D sobre los cobots). Investiga, debate y vota.</p>
+  </div>
+  </div>
+
+<!-- ═══════════════ 3.7D-1: VALLE INQUIETANTE ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u4)">3.7D &middot; Robots y tecnologías autónomas: dilemas (1/4)</div>
+    <div class="section-title">Antropomorfismo y el valle inquietante</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="info-card">
+    <h4>El dilema en una frase</h4>
+    <p><b>Antropomorfismo</b> = atribuir características humanas a entidades no humanas (Winnie the Pooh, Paddington, Pepper con sus expresiones «adorables»). El <b>valle inquietante</b> <span class="en-term">(uncanny valley)</span> es la sensación <b>escalofriante e inquietante</b> que experimentamos ante robots de apariencia <b>casi</b> humana. <b>El dilema del diseñador:</b> cuanto más realista es un robot, más aceptado es en ciertas situaciones — los <b>niños autistas responden mejor</b> a robots más realistas y son más efectivos en entrenamiento — pero si son <b>demasiado realistas, serán menos aceptados por la sociedad</b>.</p>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 250" xmlns="http://www.w3.org/2000/svg">
+      <text x="14" y="20" font-size="12" font-weight="800" fill="#1E293B">La curva del valle inquietante — Masahiro Mori (1970), Instituto Tecnológico de Tokio</text>
+      <!-- ejes -->
+      <line x1="60" y1="40" x2="60" y2="212" stroke="#94A3B8" stroke-width="1.6"/>
+      <line x1="60" y1="212" x2="660" y2="212" stroke="#94A3B8" stroke-width="1.6"/>
+      <text x="24" y="126" font-size="9" font-weight="700" fill="#64748B" transform="rotate(-90 24 126)" text-anchor="middle">reacción emocional (atracción &harr; rechazo)</text>
+      <text x="360" y="232" font-size="9" font-weight="700" fill="#64748B" text-anchor="middle">parecido con los humanos &rarr;</text>
+      <text x="60" y="246" font-size="8.6" fill="#94A3B8" text-anchor="middle">50%</text>
+      <text x="660" y="246" font-size="8.6" fill="#94A3B8" text-anchor="end">100%</text>
+      <!-- curva -->
+      <path d="M 70 190 C 140 150, 200 96, 300 78 C 352 70, 388 74, 410 92 C 436 116, 470 196, 512 198 C 556 200, 600 120, 650 74"
+            fill="none" stroke="#F59E0B" stroke-width="3.2" stroke-linecap="round"/>
+      <!-- puntos -->
+      <circle cx="120" cy="163" r="5" fill="#3B82F6"/>
+      <text x="120" y="186" font-size="8.8" font-weight="700" fill="#1E40AF" text-anchor="middle">robot industrial</text>
+      <circle cx="196" cy="122" r="5" fill="#3B82F6"/>
+      <text x="196" y="112" font-size="8.8" font-weight="700" fill="#1E40AF" text-anchor="middle">animal de peluche</text>
+      <circle cx="286" cy="80" r="5" fill="#8B5CF6"/>
+      <text x="286" y="62" font-size="8.8" font-weight="700" fill="#5B21B6" text-anchor="middle">marioneta Bunraku</text>
+      <circle cx="382" cy="86" r="5" fill="#8B5CF6"/>
+      <text x="382" y="64" font-size="8.8" font-weight="700" fill="#5B21B6" text-anchor="middle">robot humanoide</text>
+      <circle cx="470" cy="180" r="5" fill="#DC2626"/>
+      <text x="470" y="166" font-size="8.8" font-weight="700" fill="#991B1B" text-anchor="middle">mano protésica</text>
+      <circle cx="512" cy="198" r="5" fill="#DC2626"/>
+      <text x="512" y="180" font-size="8.8" font-weight="700" fill="#991B1B" text-anchor="middle">zombi</text>
+      <circle cx="556" cy="182" r="5" fill="#DC2626"/>
+      <text x="560" y="200" font-size="8.8" font-weight="700" fill="#991B1B" text-anchor="middle">cadáver</text>
+      <circle cx="646" cy="76" r="5" fill="#16A34A"/>
+      <text x="640" y="58" font-size="8.8" font-weight="700" fill="#15803D" text-anchor="middle">persona real sana</text>
+      <!-- valle -->
+      <rect x="430" y="44" width="150" height="160" rx="8" fill="#FEF2F2" opacity="0.55"/>
+      <text x="505" y="60" font-size="9.4" font-weight="800" fill="#991B1B" text-anchor="middle">EL VALLE</text>
+      <text x="505" y="72" font-size="8.4" fill="#991B1B" text-anchor="middle">sensación escalofriante:</text>
+      <text x="505" y="82" font-size="8.4" fill="#991B1B" text-anchor="middle">«casi humano» desagrada</text>
+    </svg>
+    <div class="svg-cap">Gráfico 8 &middot; Conforme el robot se parece más a un humano su aceptación sube… hasta caer en el «valle»; superado el valle (persona real), vuelve a subir (elaborado a partir del libro).</div>
+  </div>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-3" style="flex:1 1 48%"><div class="cs-name">Argumento a favor del realismo</div><p>Los <b>niños autistas responden mejor a robots más realistas</b> y son más efectivos en situaciones de entrenamiento; los robots sociales con expresiones agradables (Pepper) facilitan la aceptación y el apego (ver dilema 2).</p></div>
+    <div class="cs-card cs-4" style="flex:1 1 48%"><div class="cs-name">Argumento de cautela</div><p>Son <b>demasiado realistas, serán menos aceptados por la sociedad</b>: Sophia tiene expresiones «inquietantemente realistas» y su ciudadanía saudí fue leída como truco publicitario; el realismo puede falsificar la humanidad (principio 2 de Pasquale, dilema 3).</p></div>
+  </div>
+
+  <div class="info-card">
+    <h4>Actividad ATL del libro + pregunta de examen</h4>
+    <p><b>Experimento:</b> muestra imágenes de robots de no realistas a realistas, pide calificar su atractivo y cuán «escalofriantes» son, analiza los resultados y concluye si tu clase <b>confirma la teoría de Mori</b>. <b>Examen (Paper 1):</b> define el término «valle inquietante» [2].</p>
+  </div>
+  </div>
+
+<!-- ═══════════════ 3.7D-2: INTERACCIONES ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u4)">3.7D &middot; Robots y tecnologías autónomas: dilemas (2/4)</div>
+    <div class="section-title">La complejidad de las interacciones humanas y ambientales</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="info-card">
+    <h4>El dilema en una frase</h4>
+    <p>Uno de los objetivos principales de la investigación robótica es crear robots que trabajen <b>junto a humanos impredecibles en entornos que cambian constantemente</b> — un desafío extremo. Y hay una pregunta abierta: ¿deben los robots <b>sentir</b> emociones o basta con que <b>provoquen</b> emociones en los humanos?</p>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num u4">DILEMA 2a</span><span class="tcard-title">Interacción humana: cobots y apego</span><span class="tcard-en">human interaction</span></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">Un <b>cobot</b> debe <b>entender emociones, lenguaje y comportamiento humanos</b>. El objetivo puede no ser un robot emocional, sino uno que genere un <b>apego emocional del humano hacia el robot</b>: los cobots serán más aceptados si hacen <b>contacto visual, sonríen o se comportan de forma más humana</b> — aquí reaparece el antropomorfismo del dilema 1.</div></div>
+    <div class="trow"><div class="tlabel case">Caso del libro</div><div class="tbody">En los <b>años 90</b>, <b>Cynthia Breazeal</b> desarrolló el «robot emocional» <b>Kismet</b>: no tenía inteligencia emocional propia, pero <b>provocaba reacciones emocionales auténticas en los humanos</b> que interactuaban con él.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num u4">DILEMA 2b</span><span class="tcard-title">Interacción ambiental: el entorno impredecible</span><span class="en-term" style="margin-left:6px">environmental interaction</span></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">Incluso algo tan simple como <b>caminar</b> exigió un enfoque intenso para imitar la <b>movilidad animal y humana</b> en distintos terrenos; se usan <b>machine learning y visión robótica</b> para sortear obstáculos. Aunque un robot se entrene en un entorno, la <b>mínima alteración</b> (un árbol caído, hielo en la carretera) <b>exige que reaprenda y se adapte</b>; siempre habrá situaciones nuevas para las que no está preparado, y debe operar en <b>entornos no cartografiados o desconocidos</b>.</div></div>
+  </div>
+
+  <div class="psource">
+    <div class="ps-tag">Caso real citado por el libro — memorízalo como evidencia</div>
+    <p><b>Tempe, Arizona, 2018:</b> <b>Elaine Herzberg</b> fue atropellada y muerta por un <b>coche autónomo</b> mientras cruzaba la calle empujando su bicicleta. El video de la cámara mostró que el <b>conductor de seguridad</b> <span class="en-term">(safety driver)</span> <b>no prestaba atención a la carretera</b> y por ello no tomó el volante para evitar el accidente.</p>
+    <p class="ps-src">El libro lo cita (BBC) como el accidente de alto perfil que explica el quinto obstáculo de los AV: la <b>aceptabilidad social</b>. Combina dos fallas: la interacción ambiental (una peatón con bicicleta, fuera del patrón previsto) y la humana (supervisión negligente).</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Preguntas de examen del libro</h4>
+    <p>Da <b>dos razones</b> por las que los desarrolladores desean que los humanos desarrollen una <b>relación emocional</b> con los robots [4]. <span class="en-term">Pista: aceptación de los cobots + confianza en situaciones de entrenamiento/asistencia.</span></p>
+  </div>
+  </div>
+
+<!-- ═══════════════ 3.7D-3: LEYES ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u4)">3.7D &middot; Robots y tecnologías autónomas: dilemas (3/4)</div>
+    <div class="section-title">Leyes, regulaciones y gobernanza desiguales</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="info-card">
+    <h4>El dilema en una frase</h4>
+    <p>Minimizar los riesgos de <b>privacidad y seguridad</b> desafía a desarrolladores y gobiernos: los <b>datos de entrenamiento</b> pueden <b>mal utilizarse</b> (causando fallos del robot) y el robot puede ser <b>hackeado</b> con fines maliciosos — poniendo en riesgo datos personales <b>y vidas humanas</b>. ¿Quién es el <b>dueño de los datos</b> que genera un robot: el usuario final, el fabricante o el desarrollador? ¿Cuánto podemos <b>depender</b> de los robots?</p>
+  </div>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-4" style="flex:1 1 48%"><div class="cs-name">¿Sirven las leyes de Asimov?</div><p>Han <b>resistido el tiempo como principios rectores</b>, pero los robots actuales son <b>más variados</b> de lo que envisionó; ¿debe existir un <b>nivel de complejidad</b> antes de que apliquen las reglas? ¿Hay una <b>definición acordada de «robot»</b>? Los <b>robots militares</b> podrían salvar vidas sin cumplir la Ley 1. Un <b>enfoque generalizado (blanket approach)</b> es difícil: las leyes de drones y AV provienen de <b>autoridades distintas</b> a las de la manufactura.</p></div>
+    <div class="cs-card cs-1" style="flex:1 1 48%"><div class="cs-name">¿Quién responde ante un tribunal?</div><p>Los robots se consideran <b>productos</b>: los cubre la <b>Directiva Europea de Responsabilidad por Productos</b> o el <b>Restatement of Torts, Third</b> (EE. UU.). Aceptable para una aspiradora «rogue» que daña una alfombra, pero <b>controvertido para vehículos autónomos y prótesis robóticas</b>. Las reglas de responsabilidad promueven calidad y seguridad, pero con robots complejos la legislación podría <b>disuadir el desarrollo</b>: se necesita un <b>equilibrio fino</b>.</p></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num u4">PROPUESTA</span><span class="tcard-title">Los 4 principios de Frank Pasquale</span><span class="tcard-en">experto en derecho de la IA — complementan a Asimov</span></div>
+    <div class="trow"><div class="tlabel fun">Principios</div><div class="tbody"><ul>
+      <li><b>1 &middot; Complementar, no reemplazar:</b> la IA debe <b>complementar a los profesionales</b>, no reemplazarlos — en tareas que requieren <b>juicio humano</b>.</li>
+      <li><b>2 &middot; No falsificar la humanidad:</b> la IA y la robótica no deben <b>imitar emociones humanas</b> para aparentar personas (conexión directa con el valle inquietante y Sophia).</li>
+      <li><b>3 &middot; No intensificar carreras armamentistas:</b> las <b>armas robóticas inteligentes</b> podrían descontrolarse (el origen militar de los drones anticipa esto).</li>
+      <li><b>4 &middot; Identidad siempre visible:</b> los sistemas robóticos deben <b>indicar la identidad de su creador, controlador y propietario</b> — transparencia y rendición de cuentas para disuadir actividades ilegales.</li>
+    </ul></div></div>
+  </div>
+
+  <table class="exam">
+    <tr><th style="width:110px">Año</th><th style="width:210px">Iniciativa</th><th>Qué estableció</th></tr>
+    <tr><td><b>2007</b></td><td><b>Carta de Ética de la Robótica</b> — Corea del Sur</td><td>Inspirada por Asimov: guía ética para el desarrollo y uso de robots, para mitigar problemas del <b>envejecimiento poblacional</b> y el crecimiento de robots de servicio y sociales.</td></tr>
+    <tr><td><b>2014</b></td><td><b>RoboLaw</b> — financiado por la UE</td><td>Proyecto concluido en 2014; resultado: <b>directrices sobre la regulación de la robótica</b>.</td></tr>
+    <tr><td><b>2016</b></td><td><b>Estándares británicos</b> — Reino Unido</td><td>Estándares para guiar el diseño y aplicación ética de robots; <b>no legalmente vinculantes</b>: recomiendan y concientizan sobre problemas éticos e impactos negativos.</td></tr>
+    <tr><td><b>2017</b></td><td><b>Parlamento Europeo</b> — UE</td><td>Borrador de informe que <b>urge a los gobiernos a discutir</b> los asuntos relacionados con el desarrollo de robots.</td></tr>
+  </table>
+
+  <div class="info-card">
+    <h4>Inquiry del libro + examen</h4>
+    <p><b>Inquiry:</b> elige un país e investiga cómo la regulación impacta un tipo de robot — p. ej., <b>vehículos autónomos en Singapur</b> o <b>robots de servicio en Corea del Sur</b> — reflexiona sobre implicaciones y da una opinión fundamentada sobre el futuro de la legislación. <b>Examen (Paper 1):</b> da <b>dos razones</b> por las que las leyes sobre robots están subdesarrolladas en algunos países [6]. <span class="en-term">Pistas: la tecnología avanza más rápido que la legislación; falta definición acordada de «robot»; los contextos difieren (drones vs. manufactura); regular demasiado puede disuadir la innovación.</span></p>
+  </div>
+  </div>
+
+<!-- ═══════════════ 3.7D-4: DESPLAZAMIENTO ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u4)">3.7D &middot; Robots y tecnologías autónomas: dilemas (4/4)</div>
+    <div class="section-title">El desplazamiento de humanos en múltiples contextos y roles</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="info-card">
+    <h4>El dilema en una frase</h4>
+    <p>Los robots de manufactura <b>reemplazan empleos en la línea de producción</b>; los robots de servicio y sociales <b>trabajan junto a humanos</b> en la industria de servicios. El gobierno enfrenta la tensión: <b>promover la innovación vs. atender el desempleo</b>.</p>
+  </div>
+
+  <div class="psource">
+    <div class="ps-tag">Dato clave del libro — memorízalo</div>
+    <p>En <b>junio de 2019</b>, <b>Oxford Economics</b> predijo que hasta <b>20 millones de empleos manufactureros</b> en el mundo podrían ser reemplazados por robots <b>para 2030</b>. La automatización reemplaza empleos de <b>baja cualificación</b>; los trabajadores se trasladan a <b>transporte, construcción y administración</b> — sectores que también sufrirán cierto nivel de automatización.</p>
+    <p class="ps-src">Cita del libro (BBC): «pérdidas acumuladas proyectadas de empleos por automatización hasta 2030». Conexión: contexto 4.2B <i>Empleo y trabajo</i> y HL 5.1B <i>Poblaciones cambiantes</i>.</p>
+  </div>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-4" style="flex:1 1 30%"><div class="cs-name">Empleos en riesgo alto</div><p><b>Industria alimentaria</b>: tareas físicas repetitivas en entorno predecible — el escenario ideal para robots industriales y de servicio.</p></div>
+    <div class="cs-card cs-3" style="flex:1 1 30%"><div class="cs-name">Terreno de los cobots</div><p><b>Educación y salud</b> (trabajo interpersonal): asistentes médicos que <b>monitorean la salud y alertan a enfermeras humanas</b>; <b>patrullaje</b> para fuerzas del orden o seguridad: derivan actividades sospechosas a un <b>oficial humano</b>.</p></div>
+    <div class="cs-card cs-2" style="flex:1 1 30%"><div class="cs-name">Roles que desaparecerían</div><p>Un futuro sin <b>taxistas</b> ni <b>vendedores de autos</b> — si ya no somos propietarios de coches (AV nivel 4&ndash;5, uso compartido).</p></div>
+    <div class="cs-card cs-1" style="flex:1 1 48%"><div class="cs-name">Empleos nuevos que nacerán</div><p><b>Asistentes de aprendizaje de robots, ingenieros de robots, técnicos robóticos, vendedores de robots, desarrolladores de software y operadores robóticos</b> — la pregunta del libro: ¿los desplazados podrán pasar a estos roles?</p></div>
+    <div class="cs-card cs-3" style="flex:1 1 48%"><div class="cs-name">Inquiry del libro (3.7D + 4.3D Agricultura)</div><p>¿Cómo se usan los robots en la <b>agricultura</b>? ¿Dónde <b>reemplazan</b> trabajadores y dónde <b>colaboran</b>? ¿Cómo afecta a la industria y a las comunidades rurales? Analiza impactos e implicaciones con evidencia.</p></div>
+  </div>
+
+  <div class="info-card">
+    <h4>Pregunta de examen del libro (evaluación, 8 puntos)</h4>
+    <p><b>Evalúa el uso de robots en una industria</b> con ejemplos reales [8]. Estructura sugerida: <b>1)</b> elige industria y robots concretos (Flippy en comida rápida; cobots UR5 en manufactura; asistentes médicos en salud); <b>2)</b> argumenta oportunidades (eficiencia, precisión, seguridad, poca inactividad); <b>3)</b> argumenta impactos negativos (desplazamiento — Oxford Economics 20 M; aceptabilidad social); <b>4)</b> dilemas asociados (leyes, valle inquietante); <b>5)</b> conclusión equilibrada con recomendación.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>HL Extended Inquiry del libro (3.7A + 5.1B Poblaciones cambiantes)</h4>
+    <p><b>Desafío global:</b> poblaciones que envejecen en países en desarrollo. <b>Tarea:</b> evaluar los <b>robots sociales</b> como intervención usando el marco del HL extended inquiry y recomendar pasos futuros, presentando un informe escrito.</p>
+  </div>
+  </div>
+<!-- ═══════════════ FICHAS DE REPASO INTERACTIVAS ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u2)">Autoevaluación (1/3)</div>
+    <div class="section-title">Fichas de repaso interactivas</div>
+    <div class="divider"></div>
+  </div>
+  <p class="body-text only-screen"><b>Cómo usarlas:</b> haz clic en cada ficha para girarla y comprobar tu respuesta. Repasa primero la azul (tipos), luego violeta (características), verde (evolución) y ámbar (dilemas). En el PDF, la respuesta aparece justo debajo de cada pregunta.</p>
+
+  <div class="fc-grid">
+    <div class="fc"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Define «robot» según el libro?</div><div class="fc-hint">clic para girar &darr;</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Máquina programable que puede completar una tarea establecida con poca o ninguna intervención humana.</b> El término nació en el teatro de ciencia ficción (Čapek, 1921).</div></div>
+    </div></div>
+    <div class="fc f2"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Qué es un robot de servicio y qué variantes tiene?</div><div class="fc-hint">clic para girar &darr;</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Robots que asisten a humanos en <b>tareas aburridas, sucias o peligrosas</b>; pueden ser <b>personales</b> (hogar) o <b>profesionales</b> (entornos comerciales, semiautónomos o totalmente autónomos).</div></div>
+    </div></div>
+    <div class="fc f3"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Qué distingue a un robot social de uno de servicio?</div><div class="fc-hint">clic para girar &darr;</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Su <b>propósito</b>: el social está diseñado para <b>interactuar y comunicarse con humanos de manera socialmente aceptable</b> (atención al cliente, compañía), no para trabajos desagradables.</div></div>
+    </div></div>
+    <div class="fc f4"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Qué es un vehículo autónomo (definición SAE)?</div><div class="fc-hint">clic para girar &darr;</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Vehículo con la capacidad de conducirse por sí mismo y operar sin intervención humana.</b> Niveles 0&ndash;5; los niveles <b>4 y 5 no requieren conductor</b> ni volante ni pedales.</div></div>
+    </div></div>
+    <div class="fc"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Qué es un dron y cuáles son sus dos funciones principales?</div><div class="fc-hint">clic para girar &darr;</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Robot volador controlado remotamente o autónomo</b> (UAV). Dos funciones: <b>vuelo</b> (ligero, hélices, energía) y <b>navegación</b> (GPS comunica su ubicación).</div></div>
+    </div></div>
+    <div class="fc f2"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Nombra los tres tipos de actuadores.</div><div class="fc-hint">clic para girar &darr;</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Motor eléctrico</b>, <b>sistema hidráulico</b> (fluido incompresible) y <b>sistema neumático</b> (gas comprimido). Energía: batería (móvil) o red eléctrica (estático).</div></div>
+    </div></div>
+    <div class="fc f2"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Nombra los tres tipos de efectores finales.</div><div class="fc-hint">clic para girar &darr;</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Pinzas/grippers</b> (recoger y manipular), <b>herramientas de proceso</b> (soldadura, pintura, taladrado) y <b>sensores</b> (inspecciones robóticas).</div></div>
+    </div></div>
+    <div class="fc f3"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Quién acuñó la palabra «robot» y cuándo?</div><div class="fc-hint">clic para girar &darr;</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Karel Čapek</b>, escritor checo, en su obra de <b>1921</b> <i>Rossum&rsquo;s Universal Robots</i> — el primer uso formal de la palabra.</div></div>
+    </div></div>
+    <div class="fc f3"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Recita las tres leyes de la robótica de Asimov (1941).</div><div class="fc-hint">clic para girar &darr;</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>1)</b> No dañar a un ser humano. <b>2)</b> Obedecer las órdenes humanas, salvo conflicto con la Ley 1. <b>3)</b> Proteger su propia existencia, salvo conflicto con las Leyes 1 y 2. (Después se añadió la <b>Ley 0</b>: no dañar a la humanidad.)</div></div>
+    </div></div>
+    <div class="fc f4"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Quién describió el valle inquietante y qué es?</div><div class="fc-hint">clic para girar &darr;</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Masahiro Mori, 1970</b> (Instituto Tecnológico de Tokio): la sensación <b>escalofriante e inquietante</b> ante robots de apariencia <b>casi humana</b>.</div></div>
+    </div></div>
+    <div class="fc f3"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Primer robot industrial programable y primer cobot: ¿quiénes y cuándo?</div><div class="fc-hint">clic para girar &darr;</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Unimate</b> (1954&ndash;61, George Devol, General Motors) fue el primer robot industrial programable; el <b>UR5</b> de Universal Robots (2008, Linatex, Dinamarca) fue el <b>primer cobot</b> en producción.</div></div>
+    </div></div>
+    <div class="fc f2"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Qué es un cobot y qué debe entender?</div><div class="fc-hint">clic para girar &darr;</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Robot diseñado para <b>trabajar de forma cohesionada con humanos y aumentar sus capacidades</b>; debe entender <b>emociones, lenguaje y comportamiento</b> humanos. Ejemplos: UR5, asistentes médicos.</div></div>
+    </div></div>
+    <div class="fc f3"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Qué requiere la conciencia de máquina y qué es la robótica cognitiva?</div><div class="fc-hint">clic para girar &darr;</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">La conciencia de máquina requiere <b>IA fuerte</b> (los robots con IA débil solo <b>simulan</b>). La robótica cognitiva busca robots que <b>perciban, planifiquen y aprendan continuamente</b> ante la incertidumbre.</div></div>
+    </div></div>
+    <div class="fc f4"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Qué pasó en Tempe, Arizona, en 2018?</div><div class="fc-hint">clic para girar &darr;</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Elaine Herzberg</b> murió atropellada por un <b>coche autónomo</b> mientras cruzaba empujando su bicicleta; el <b>safety driver</b> no prestaba atención. Es la evidencia del obstáculo de <b>aceptabilidad social</b>.</div></div>
+    </div></div>
+    <div class="fc f4"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">¿Qué predijo Oxford Economics y cuándo?</div><div class="fc-hint">clic para girar &darr;</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">En <b>junio de 2019</b> predijo que hasta <b>20 millones de empleos manufactureros</b> podrían ser reemplazados por robots <b>para 2030</b>; los trabajadores de baja cualificación migrarían a transporte, construcción y administración.</div></div>
+    </div></div>
+    <div class="fc"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Nombra los cinco usos industriales del IoT.</div><div class="fc-hint">clic para girar &darr;</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>1)</b> Mantenimiento predictivo; <b>2)</b> seguimiento de ubicación (GPS/RFID); <b>3)</b> optimización energética; <b>4)</b> monitoreo remoto de calidad (agua/aire); <b>5)</b> analítica del lugar de trabajo.</div></div>
+    </div></div>
+  </div>
+  </div>
+
+<!-- ═══════════════ QUIZ ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u2)">Autoevaluación (2/3)</div>
+    <div class="section-title">Quiz: ¿listo para el examen?</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text only-screen"><b>Instrucciones:</b> elige Verdadero o Falso, y una opción en cada pregunta de alternativa. Verás al instante si acertaste; la explicación aparece debajo de cada ítem. En el PDF las respuestas correctas están impresas en verde.</p>
+
+  <div class="qz-part">Parte 1 &middot; Verdadero o Falso (8 ítems)</div>
+
+  <div class="vf-row" data-ans="F"><div class="vf-txt">1. Un robot controlado a distancia por un humano sí es, estrictamente, un robot.</div><div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div></div>
+  <div class="q-a"><b>Falso.</b> Estrictamente, los robots controlados a distancia por humanos <b>no son robots</b>: el nivel de autonomía define cuán independientemente opera sin un controlador.</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt">2. En los niveles SAE 4 y 5 el vehículo no requiere volante ni pedales.</div><div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div></div>
+  <div class="q-a"><b>Verdadero.</b> Los niveles 4 (alta automatización, sujeta a regulación y condiciones) y 5 (automatización total, aún no lograda) <b>no requieren conductor</b>, ni volante ni pedales.</div>
+
+  <div class="vf-row" data-ans="F"><div class="vf-txt">3. El nivel 5 de autonomía ya se ha logrado en vehículos comerciales.</div><div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div></div>
+  <div class="q-a"><b>Falso.</b> El nivel 5 — <b>automatización total</b>, sin restricciones de clima o lugar — <b>aún no se ha logrado</b>: hasta la fecha, ningún vehículo lo alcanza.</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt">4. Jibo usa reconocimiento facial y de voz para dar compañía en el hogar.</div><div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div></div>
+  <div class="q-a"><b>Verdadero.</b> Jibo tiene cara de dibujo animado, usa <b>reconocimiento facial y de voz</b>, responde preguntas, lee noticias y se conecta con el hogar inteligente.</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt">5. Zipline usa drones en Ghana para entregar suministros médicos a unos 2.000 centros médicos.</div><div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div></div>
+  <div class="q-a"><b>Verdadero.</b> Es el caso del libro: <b>≈2.000 centros médicos</b> abastecidos por drones — acceso equitativo a medicinas en zonas remotas.</div>
+
+  <div class="vf-row" data-ans="F"><div class="vf-txt">6. Las leyes de Asimov son hoy la base legal vinculante de la robótica.</div><div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div></div>
+  <div class="q-a"><b>Falso.</b> Son <b>literatura</b> (1941) usadas como <b>principios rectores</b>; la regulación real es desigual: Carta de Corea del Sur (2007, no vinculante), estándares británicos (2016, <b>no legalmente vinculantes</b>), RoboLaw (UE, 2014).</div>
+
+  <div class="vf-row" data-ans="F"><div class="vf-txt">7. El UR5 fue el primer robot industrial programable de la historia.</div><div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div></div>
+  <div class="q-a"><b>Falso.</b> El primer robot industrial programable fue <b>Unimate</b> (1954&ndash;61, George Devol, General Motors). El UR5 (2008) fue el <b>primer cobot</b> — no confundirlos: distinción que valen puntos.</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt">8. La visión estéreo requiere dos cámaras y da percepción de profundidad.</div><div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div></div>
+  <div class="q-a"><b>Verdadero.</b> Se necesitan <b>dos cámaras</b> para el reconocimiento de imágenes, lo que da <b>percepción de profundidad</b> — como dos ojos humanos.</div>
+
+  <div class="qz-part">Parte 2 &middot; Opción múltiple (6 ítems)</div>
+
+  <div class="mc-q" data-ans="C"><div class="mc-txt">9. ¿Cuál de estas actividades NO es uno de los cinco usos industriales del IoT?</div>
+    <div class="opts"><button class="mc-opt" data-k="A">Mantenimiento predictivo</button><button class="mc-opt" data-k="B">Optimización energética</button><button class="mc-opt" data-k="C">Fertilizar cultivos</button><button class="mc-opt" data-k="D">Analítica del lugar de trabajo</button></div></div>
+  <div class="q-a"><b>C.</b> Fertilizar cultivos es un uso de los <b>drones</b>. Los cinco usos del IoT: mantenimiento predictivo, seguimiento de ubicación, optimización energética, monitoreo remoto de calidad y analítica del lugar de trabajo.</div>
+
+  <div class="mc-q" data-ans="B"><div class="mc-txt">10. En agosto de 2016, el primer país en probar un taxi sin conductor en vías públicas fue:</div>
+    <div class="opts"><button class="mc-opt" data-k="A">Estados Unidos</button><button class="mc-opt" data-k="B">Singapur</button><button class="mc-opt" data-k="C">Japón</button><button class="mc-opt" data-k="D">Reino Unido</button></div></div>
+  <div class="q-a"><b>B.</b> <b>Singapur</b>, con un <b>Mitsubishi i-MiEV</b> eléctrico: 10 usuarios, app, 12 ubicaciones, solo horas no punta.</div>
+
+  <div class="mc-q" data-ans="A"><div class="mc-txt">11. La foca bebé robótica terapéutica usada para reducir el estrés de pacientes es:</div>
+    <div class="opts"><button class="mc-opt" data-k="A">PARO</button><button class="mc-opt" data-k="B">AIBO</button><button class="mc-opt" data-k="C">Pepper</button><button class="mc-opt" data-k="D">Robear</button></div></div>
+  <div class="q-a"><b>A.</b> <b>PARO</b> (2004, AIST, Japón). AIBO es la mascota canina de Sony; Pepper el asistente de Softbank; Robear el oso hospitalario de RIKEN-SRK.</div>
+
+  <div class="mc-q" data-ans="D"><div class="mc-txt">12. ¿Quién propuso cuatro principios adicionales a las leyes de Asimov (complementar profesionales, no falsificar la humanidad…)?</div>
+    <div class="opts"><button class="mc-opt" data-k="A">Masahiro Mori</button><button class="mc-opt" data-k="B">Cynthia Breazeal</button><button class="mc-opt" data-k="C">George Devol</button><button class="mc-opt" data-k="D">Frank Pasquale</button></div></div>
+  <div class="q-a"><b>D.</b> <b>Frank Pasquale</b>, experto en derecho de la IA: 1) complementar no reemplazar, 2) no falsificar la humanidad, 3) no intensificar carreras armamentistas, 4) indicar siempre creador, controlador y propietario.</div>
+
+  <div class="mc-q" data-ans="A"><div class="mc-txt">13. Flippy 2 (Miso Robotics) fríe alimentos «a la perfección» gracias a:</div>
+    <div class="opts"><button class="mc-opt" data-k="A">Sensores y machine learning integrados al sistema de comandas</button><button class="mc-opt" data-k="B">GPS y control remoto</button><button class="mc-opt" data-k="C">Lidar y radar</button><button class="mc-opt" data-k="D">Una app del cliente</button></div></div>
+  <div class="q-a"><b>A.</b> Flippy 2 se integra con el <b>sistema de comandas de la cocina</b> y usa <b>sensores y machine learning</b>. Su predecesor Flippy entró en CaliBurger en 2017 para resolver el problema de personal.</div>
+
+  <div class="mc-q" data-ans="C"><div class="mc-txt">14. El robot asistente del hogar de Amazon (2021) apodado «Alexa on wheels» se llama:</div>
+    <div class="opts"><button class="mc-opt" data-k="A">Astro… ¡ups, es Pepper!</button><button class="mc-opt" data-k="B">Jibo</button><button class="mc-opt" data-k="C">Astro</button><button class="mc-opt" data-k="D">Baxter</button></div></div>
+  <div class="q-a"><b>C.</b> <b>Astro</b> (Amazon Lab126, 2021): combina IA, monitorización del hogar y servicios en la nube. Baxter (2013) fue el industrial humanoide de uso general; Pepper (2018) el niño robot de Softbank.</div>
+
+  <div class="info-card">
+    <h4>Puntuación y siguientes pasos</h4>
+    <p><b>13&ndash;14 correctas:</b> dominas 3.7 — pasa a los casos nuevos. <b>9&ndash;12:</b> repasa las tarjetas de la sección que fallaste. <b>&lt;9:</b> vuelve al mapa mental y repasa definiciones, características y dilemas en orden.</p>
+  </div>
+  </div>
+
+<!-- ═══════════════ CASOS NUEVOS PARA EL EXAMEN ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u2)">Autoevaluación (3/3) &middot; escenarios inéditos</div>
+    <div class="section-title">Nuevos casos que podrían venir en el examen</div>
+    <div class="divider"></div>
+  </div>
+  <p class="body-text">Dos escenarios <b>originales</b>, creados para este repaso siguiendo el estilo del IB (el libro repite: el examen puede traer <b>ejemplos nuevos</b> del mismo contenido). Resuélvelos por escrito antes de abrir la pauta.</p>
+
+  <div class="practice">
+    <span class="practice-tag">Caso inédito 1 &middot; estilo Paper 1 (núcleo NM) &middot; contexto 4.2 empleo</span>
+    <h4>«RoboLima»: robots de reparto en las calles de Lima</h4>
+    <p class="pctx">Desde 2025, la startup «RoboLima» opera robots de acera semiautónomos para entregas de última milla en Miraflores y San Isidro. Cada robot se desplaza por veredas y pasos de cebra a máxima velocidad de peatón, guiado por <b>cámaras estéreo, ultrasonidos y GPS</b>; un <b>sistema de control con machine learning</b> detecta peatones, perros y baches; un <b>compartimento con cierre</b> protege el pedido y se abre con un código QR. Cuando el ultrasonido detecta un obstáculo inesperado — un puesto de frutas ambulante — el robot se detiene, <b>enciende una señal luminosa</b> y pide por <b>altavoz</b> que le dejen pasar; si no, un <b>teleoperador remoto</b> lo guía desde un centro de control. Los <b>repartidores en moto</b> de la zona temen por sus ingresos: la empresa responde que cada robot requiere <b>tres teleoperadores por turno</b> y que cubren rutas nocturnas peligrosas que antes nadie quería.</p>
+    <ol class="pq">
+      <li>Define el término <b>robot semiautónomo</b>. <i>[2]</i></li>
+      <li>Identifica <b>dos características de un robot</b> presentes en RoboLima, citando el detalle del caso que las demuestra. <i>[2]</i></li>
+      <li>Explica <b>cómo usan los sensores</b> estos robots para evitar obstáculos en la vía. <i>[4]</i></li>
+      <li>Explica <b>dos impactos</b> de RoboLima para los repartidores de moto de la zona. <i>[4]</i></li>
+    </ol>
+    <button class="reveal-btn">Ver pauta</button>
+    <div class="q-a"><b>Pauta orientativa.</b> 1) Robot con cierta inteligencia que reacciona a condiciones sin dirección constante, pero que requiere interacción humana para ajustes/decisiones no previstas (aquí: el teleoperador) [definición de semiautonomía del libro, 2 pt]. 2) Cualquiera de: entradas sensoriales (cámaras estéreo, ultrasonidos, GPS), razonamiento con ML (detecta peatones y baches), movimiento en entorno físico (ruedas por veredas), grado de autonomía (se detiene y pide pasar solo) — cada una con su evidencia [2×1 pt]. 3) El ultrasonido emite una señal y <b>calcula la distancia por el tiempo de rebote</b>; las cámaras (dos = visión estéreo) dan <b>percepción de profundidad</b> y alimentan al ML que <b>clasifica el objeto</b> y decide <b>frenar o esquivar</b>; al no reconocer el patrón (puesto ambulante), aplica la regla de prioridad: detenerse, señalizar y <b>escalar al humano</b> [4 pt con terminología 3.7B]. 4) <b>Negativo:</b> desplazamiento de entregas que hoy hacen los motorizados (Oxford Economics: automatización de tareas de baja cualificación); <b>positivo/matiz:</b> nuevos empleos como teleoperadores (3 por robot y turno) y cobertura de rutas nocturnas peligrosas — dilema de servicios [2+2 pt].</div>
+  </div>
+
+  <div class="practice">
+    <span class="practice-tag">Caso inédito 2 &middot; estilo Paper 2 (fuente + preguntas) &middot; concepto 2.7 valores y ética</span>
+    <h4>Robots de compañía para adultos mayores en Corea del Sur</h4>
+    <div class="psource" style="margin-bottom:8px">
+      <div class="ps-tag">Fuente A (creada para este repaso)</div>
+      <p>«En las residencias de Seúl, los robots sociales <b>Hyodol</b> — un muñeco de 1,2 m que habla, canta y recuerda la medicación — acompañan a adultos mayores que viven solos. Los usuarios le cuentan su día y muchos lo tratan como a un nieto: le ponen nombre, le cepillan el pelo y se inquietan cuando "duerme". Los gestores de las residencias reportan menos episodios de soledad severa; las familias dicen llamar menos "porque el robot está con mamá". Un bioeticista advierte: "Hemos cruzado el valle inquietante hacia un valle afectivo: no molesta que parezca humano — molesta que los ancianos <b>saben</b> que no lo es y aun así lo aman. ¿Estamos sustituyendo contacto humano por aparatos? ¿Y los datos de conversación íntima, de quién son?"»</p>
+    </div>
+    <ol class="pq">
+      <li>Identifica <b>dos detalles de la Fuente A</b> que demuestren que Hyodol es un <b>robot social</b> según el libro. <i>[2]</i></li>
+      <li>Explica <b>dos características de un robot</b> que Hyodol demuestra. <i>[4]</i></li>
+      <li>Con referencia a la Fuente A y al libro, <b>evalúa</b> el uso de robots sociales como intervención para las <b>poblaciones que envejecen</b>. <i>[8]</i></li>
+    </ol>
+    <button class="reveal-btn">Ver pauta</button>
+    <div class="q-a"><b>Pauta orientativa.</b> 1) Diseñado para <b>interactuar y comunicarse de manera socialmente aceptable</b> (habla, canta, recuerda la medicación) y ser <b>robot acompañante</b> (home companion) — no hace trabajo físico sucio/peligroso [2×1 pt]. 2) Entradas sensoriales/procesamiento de voz (habla con él) y razonamiento programado (recuerda medicación); no se demuestra movilidad — decirlo da precisión [2×2 pt]. 3) Estructura de evaluación: <b>a favor</b> — compañía y menos soledad (como PARO, diseñado para reducir estrés; caso Hampshire 2018: asistentes de voz para mayores y discapacidad), útil ante el envejecimiento (motivo de la Carta de Ética de Corea del Sur, 2007; HL 5.1B); <b>en contra</b> — apego emocional que puede sustituir contacto humano (dilema 2: ¿robot emocional o humano que se emociona?), <b>propiedad de los datos</b> de conversaciones íntimas (dilema 3: ¿usuario, fabricante o desarrollador?), falta de <b>empatía real</b> y fallos ante situaciones desconocidas (3.7A), riesgo de <b>falsificar la humanidad</b> (Pasquale, principio 2); <b>conclusión equilibrada</b>: intervención válida si complementa — no reemplaza — el cuidado humano (principio 1 de Pasquale), con regulación de datos y contacto humano garantizado [8 pt: análisis sostenido con evidencia de la fuente y del libro, perspectivas múltiples, conclusión justificada].</div>
+  </div>
+
+  <div class="info-card">
+    <h4>Consejo final de método</h4>
+    <p>Fíjate cómo cada pauta usa <b>terminología exacta del libro</b> (semiautónomo, visión estéreo, cobot, robot acompañante) + <b>evidencia con cifras</b> (Oxford Economics 20 M, Hampshire 2018, Carta 2007) + <b>conexión con conceptos y contextos</b> (2.5 espacio, 2.7 valores, 4.2 empleo, 4.4 cuerpo). Esa tríada — término, evidencia, concepto — es lo que distingue las respuestas de 7.</p>
+  </div>
+  </div>
+
+<!-- ═══════════════ PREGUNTAS DE EXAMEN DEL LIBRO ═══════════════ -->
+  <div class="new-page">
+  <div class="section-head">
+    <div class="section-kicker" style="color:var(--u1)">Banco de preguntas del libro</div>
+    <div class="section-title">Todas las preguntas de práctica del capítulo 3.7</div>
+    <div class="divider"></div>
+  </div>
+  <p class="body-text">El libro incluye estas preguntas de examen en el capítulo. Úsalas como simulacro cronometrado: en Paper 1 calcula ≈1,5 min por punto; en Paper 2, lee la fuente antes de responder.</p>
+
+  <table class="exam">
+    <tr><th style="width:90px">Paper</th><th style="width:400px">Pregunta</th><th>Puntos</th></tr>
+    <tr><td><b>Paper 1</b> (3.7B)</td><td>Identifica <b>dos características</b> de un robot.</td><td>[2]</td></tr>
+    <tr><td><b>Paper 1</b> (3.7B)</td><td>Explica <b>tres formas diferentes</b> en que un robot puede percibir su entorno.</td><td>[6]</td></tr>
+    <tr><td><b>Paper 1</b> (3.7D)</td><td>Define el término <b>«valle inquietante»</b> (uncanny valley).</td><td>[2]</td></tr>
+    <tr><td><b>Paper 1</b> (3.7D)</td><td>Explica <b>dos razones</b> por las que los desarrolladores desean que los humanos desarrollen una <b>relación emocional</b> con los robots.</td><td>[4]</td></tr>
+    <tr><td><b>Paper 1</b> (3.7D)</td><td>Explica <b>dos razones</b> por las que las <b>leyes</b> sobre robots están <b>subdesarrolladas</b> en algunos países.</td><td>[6]</td></tr>
+    <tr><td><b>Paper 1</b> (3.7D)</td><td><b>Evalúa el uso de robots</b> en una industria con ejemplos reales.</td><td>[8]</td></tr>
+    <tr><td><b>Paper 2</b> (3.7A)</td><td>Con la fuente «Sensores usados en vehículos autónomos»: define el término <b>vehículo autónomo</b>.</td><td>[2]</td></tr>
+    <tr><td><b>Paper 2</b> (3.7A)</td><td>Explica cómo usarían los <b>sensores</b> los vehículos autónomos para <b>evitar obstáculos</b> en la vía.</td><td>[4]</td></tr>
+    <tr><td><b>Paper 1</b> (3.7A/D)</td><td>Discute si los <b>robots sociales</b> deberían usarse como <b>robots acompañantes</b> de personas mayores.</td><td>[discusión]</td></tr>
+  </table>
+
+  <div class="info-card">
+    <h4>Conexiones del capítulo con el resto del curso</h4>
+    <p><b>Contenido:</b> 3.1 (datos de entrenamiento y privacidad), 3.2 (algoritmos de control), 3.3 (dispositivos y sensores), 3.4 (redes del IoT), 3.6 (IA débil/fuerte, ML, deep learning). <b>Conceptos:</b> 2.5 espacio (AV y ciudades), 2.7 valores y ética (¿programar ética?). <b>Contextos:</b> 4.2B empleo (desplazamiento), 4.3C ciudades (IoT), 4.3D agricultura (robots agrícolas), 4.4B cuerpo humano (exoesqueletos y prótesis). <b>HL:</b> 5.1B poblaciones cambiantes (robots sociales como intervención).</p>
+  </div>
+  </div>
+</div>
+
+<!-- ═══════════════ CIERRE ═══════════════ -->
+<div class="ending">
+  <div class="end-quote">«El robot dejó la fábrica y entró en nuestras vidas: ahora la pregunta no es si convive con nosotros, sino en qué términos.»</div>
+  <div class="end-checks">
+    <div class="end-check"><span class="tick">✓</span><p><b>Definiciones:</b> robot, robot de servicio, asistente virtual, vehículo autónomo, dron, actuador, efector final, cobot, antropomorfismo, valle inquietante, conciencia de máquina, robótica cognitiva — todas con la redacción del libro.</p></div>
+    <div class="end-check"><span class="tick">✓</span><p><b>Características:</b> puedes explicar el ciclo <b>percibir &rarr; pensar &rarr; actuar</b>, la tabla de sensores (visión, oído, olfato, gusto, tacto), actuadores, efectores finales y el espectro semiautónomo &harr; totalmente autónomo.</p></div>
+    <div class="end-check"><span class="tick">✓</span><p><b>Tipos y casos:</b> los seis tipos con ejemplos — Foxconn 60.000, Flippy, Jibo, Aerobot, 5 usos del IoT, SAE 0&ndash;5, Singapur 2016, Zipline Ghana — con oportunidades, impactos y dilemas de cada uno.</p></div>
+    <div class="end-check"><span class="tick">✓</span><p><b>Evolución:</b> de Čapek (1921) y Asimov (1941) a Unimate, Wabot-1, ASIMO, PARO, UR5, Sophia y Astro; IA débil vs. fuerte y el debate de los derechos de los robots.</p></div>
+    <div class="end-check"><span class="tick">✓</span><p><b>Dilemas:</b> valle inquietante (Mori 1970), complejidad de interacciones (Kismet, Herzberg 2018), leyes desiguales (Pasquale, Carta 2007 &rarr; PE 2017) y desplazamiento (Oxford Economics: 20 M para 2030).</p></div>
+    <div class="end-check"><span class="tick">✓</span><p><b>Práctica:</b> 16 fichas repasadas, quiz resuelto (≥12/14) y los dos casos inéditos respondidos por escrito antes de leer la pauta.</p></div>
+  </div>
+  <div class="end-foot">Material de repaso — Sociedad Digital NM (SL) &middot; Sección 3.7 Robotics and autonomous technologies &middot; Basado en Bomfim et al., <i>Digital Society</i>, Hodder Education 2022, pp. 166&ndash;185 &middot; Incluye: 2 mapas mentales, 9 gráficos ilustrativos, 16 fichas interactivas, quiz de 14 ítems, simulador sense&ndash;think&ndash;act y 2 casos inéditos estilo examen.</div>
+</div>
+
+<!-- ═══════════════ JS ═══════════════ -->
+<script>
+/* ═══ Conectores recursivos para los mapas mentales ═══ */
+function drawLinesForMap(map) {
+  if (!map) return;
+  const cRect = map.getBoundingClientRect();
+  const old = map.querySelector('svg.lines');
+  if (old) old.remove();
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.classList.add('lines');
+  svg.setAttribute('width', cRect.width);
+  svg.setAttribute('height', cRect.height);
+  svg.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:1;';
+  function rel(el) {
+    const r = el.getBoundingClientRect();
+    return { cy: r.top - cRect.top + r.height / 2,
+             left: r.left - cRect.left, right: r.right - cRect.left };
+  }
+  function drawLine(x1, y1, x2, y2, color, width) {
+    const l = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    l.setAttribute('x1', Math.round(x1)); l.setAttribute('y1', Math.round(y1));
+    l.setAttribute('x2', Math.round(x2)); l.setAttribute('y2', Math.round(y2));
+    l.setAttribute('stroke', color); l.setAttribute('stroke-width', width);
+    l.setAttribute('stroke-linecap', 'round');
+    svg.appendChild(l);
+  }
+  const lineStyles = [
+    { color: '#64748B', width: 2.5 },
+    { color: '#94A3B8', width: 2 },
+    { color: '#A8B4C2', width: 1.5 },
+    { color: '#B8C2CC', width: 1.2 },
+    { color: '#CBD5E1', width: 1 }
+  ];
+  function getLineStyle(depth) {
+    const s = lineStyles[Math.min(depth, lineStyles.length - 1)];
+    return { color: s.color, width: s.width };
+  }
+  function connect(parentEl, childEls, dir, depth) {
+    if (!childEls.length) return;
+    const style = getLineStyle(depth);
+    const p = rel(parentEl);
+    const startX = dir === 'left' ? p.left : p.right;
+    const startY = p.cy;
+    if (childEls.length === 1) {
+      const c = rel(childEls[0]);
+      const endX = dir === 'left' ? c.right : c.left;
+      const midY = Math.round((startY + c.cy) / 2);
+      drawLine(startX, midY, endX, midY, style.color, style.width);
+      return;
+    }
+    let closestEdge;
+    if (dir === 'left') closestEdge = Math.max.apply(null, childEls.map(ch => rel(ch).right));
+    else closestEdge = Math.min.apply(null, childEls.map(ch => rel(ch).left));
+    const childClearance = 14;
+    const midpoint = startX + (closestEdge - startX) / 2;
+    const midFromChild = dir === 'left' ? closestEdge + childClearance : closestEdge - childClearance;
+    const midX = dir === 'left' ? Math.min(midpoint, midFromChild) : Math.max(midpoint, midFromChild);
+    drawLine(startX, startY, midX, startY, style.color, style.width);
+    const allCYs = childEls.map(ch => rel(ch).cy);
+    const minY = Math.min.apply(null, [startY].concat(allCYs));
+    const maxY = Math.max.apply(null, [startY].concat(allCYs));
+    drawLine(midX, minY, midX, maxY, style.color, style.width);
+    childEls.forEach(ch => {
+      const c = rel(ch);
+      const endX = dir === 'left' ? c.right : c.left;
+      drawLine(midX, c.cy, endX, c.cy, style.color, style.width);
+    });
+  }
+  const NODE_SEL = '.branch-node, .sub-node, .leaf, .deep-node';
+  function processChildren(parentNodeEl, containerEl, depth, dir) {
+    if (!containerEl) return;
+    const childNodeEls = [];
+    for (const wrapper of containerEl.children) {
+      const nodeEl = wrapper.matches && wrapper.matches(NODE_SEL) ? wrapper : wrapper.querySelector(NODE_SEL);
+      if (nodeEl) childNodeEls.push(nodeEl);
+    }
+    if (!childNodeEls.length) return;
+    connect(parentNodeEl, childNodeEls, dir, depth);
+  }
+  const rootNode = map.querySelector('.root-node');
+  if (!rootNode) return;
+  const leftBranches = map.querySelectorAll('.left-branches > .left-branch');
+  const leftNodes = [];
+  leftBranches.forEach(b => { const n = b.querySelector('.branch-node'); if (n) leftNodes.push(n); });
+  if (leftNodes.length) connect(rootNode, leftNodes, 'left', 0);
+  leftBranches.forEach(b => {
+    const n = b.querySelector('.branch-node');
+    if (n) processChildren(n, b.querySelector(':scope > .children'), 1, 'left');
+  });
+  const rightBranches = map.querySelectorAll('.right-branches > .right-branch');
+  const rightNodes = [];
+  rightBranches.forEach(b => { const n = b.querySelector('.branch-node'); if (n) rightNodes.push(n); });
+  if (rightNodes.length) connect(rootNode, rightNodes, 'right', 0);
+  rightBranches.forEach(b => {
+    const n = b.querySelector('.branch-node');
+    if (n) processChildren(n, b.querySelector(':scope > .children'), 1, 'right');
+  });
+  map.insertBefore(svg, map.firstChild);
+}
+function drawAllMaps() {
+  document.querySelectorAll('.mindmap').forEach(m => drawLinesForMap(m));
+}
+window.addEventListener('load', () => {
+  setTimeout(drawAllMaps, 250);
+  setTimeout(drawAllMaps, 1200);
+});
+
+/* ═══ Interactividad general (solo navegador; el PDF se genera en modo impresión) ═══ */
+document.querySelectorAll('.fc').forEach(function (c) {
+  c.addEventListener('click', function () { c.classList.toggle('flipped'); });
+});
+document.querySelectorAll('.reveal-btn').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var a = b.nextElementSibling;
+    if (!a || !a.classList.contains('q-a')) return;
+    var open = a.classList.toggle('open');
+    b.textContent = open ? 'Ocultar pauta' : 'Ver pauta';
+  });
+});
+document.querySelectorAll('.vf-row').forEach(function (row) {
+  var ans = (row.getAttribute('data-ans') || '').trim().toUpperCase();
+  row.querySelectorAll('.vf-btn').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      row.querySelectorAll('.vf-btn').forEach(function (x) { x.classList.remove('sel'); });
+      btn.classList.add('sel');
+      row.classList.remove('ok', 'bad');
+      void row.offsetWidth;
+      row.classList.add(btn.textContent.trim().toUpperCase() === ans ? 'ok' : 'bad');
+      var a = row.nextElementSibling;
+      if (a && a.classList.contains('q-a')) a.classList.add('open');
+    });
+  });
+});
+document.querySelectorAll('.mc-q').forEach(function (q) {
+  var ans = (q.getAttribute('data-ans') || '').trim().toUpperCase();
+  var opts = q.querySelectorAll('.mc-opt');
+  opts.forEach(function (o) {
+    o.addEventListener('click', function () {
+      opts.forEach(function (x) { x.classList.remove('sel', 'right', 'wrong'); });
+      o.classList.add('sel');
+      opts.forEach(function (x) {
+        var xl = (x.getAttribute('data-k') || '').trim().toUpperCase();
+        if (xl === ans) x.classList.add('right');
+        else if (x === o) x.classList.add('wrong');
+      });
+      var a = q.nextElementSibling;
+      if (a && a.classList.contains('q-a')) a.classList.add('open');
+    });
+  });
+});
+
+/* ═══════════════════════════════════════════════════════════════
+   SIMULADOR SENSE-THINK-ACT «Robot patrulla»
+   Objetivo didáctico: ver las 4 características de 3.7B en acción —
+   sensores (percibir), sistema de control con reglas priorizadas
+   (pensar) y actuadores/efectores (actuar) — ciclo a ciclo.
+   ═══════════════════════════════════════════════════════════════ */
+(function () {
+  var PRINT_MODE = window.matchMedia('print').matches;
+  if (PRINT_MODE) return;
+
+  var S = { obstacle: false, dark: false, voice: false };
+  var cycle = 0, timer = null;
+
+  var el = function (id) { return document.getElementById(id); };
+  var chips = document.querySelectorAll('.sim-chip');
+
+  function refreshVisuals() {
+    el('obstacle').setAttribute('opacity', S.obstacle ? '1' : '0.18');
+    el('obstacleLbl').setAttribute('fill', S.obstacle ? '#475569' : '#94A3B8');
+    el('darkness').setAttribute('opacity', S.dark ? '0.55' : '0');
+    el('voiceIcon').setAttribute('opacity', S.voice ? '1' : '0.25');
+    var act = [];
+    if (S.obstacle) act.push('ultrasonido');
+    if (S.dark) act.push('luz');
+    if (S.voice) act.push('voz');
+    el('sensList').textContent = act.length ? act.join(' · ') : 'ninguno';
+    chips.forEach(function (c) {
+      var k = c.getAttribute('data-s');
+      var on = (k === 'obstacle' && S.obstacle) || (k === 'dark' && S.dark) || (k === 'voice' && S.voice);
+      c.classList.toggle('sel', on);
+    });
+  }
+
+  /* Reglas por prioridad (el «pensar») */
+  function decide() {
+    if (S.obstacle) return {
+      rule: 'Regla 1: ¿obstáculo delante?',
+      act: 'detenerse + girar 90°' + (S.dark ? ' · faro ON' : '') + (S.voice ? ' · responder por altavoz' : ''),
+      mood: '¡Choque evitado!', action: 'girar 90°',
+      perc: 'ultrasonido: obstáculo' + (S.dark ? ' · oscuridad' : '') + (S.voice ? ' · orden de voz' : '')
+    };
+    if (S.dark && S.voice) return {
+      rule: 'Regla 2 + Regla 3',
+      act: 'faro LED encendido · altavoz responde',
+      mood: 'Con luz y escuchando', action: 'faro + hablar',
+      perc: 'oscuridad · orden de voz'
+    };
+    if (S.dark) return {
+      rule: 'Regla 2: ¿oscuridad?',
+      act: 'faro LED encendido · seguir avanzando',
+      mood: 'Modo noche', action: 'encender faro',
+      perc: 'oscuridad'
+    };
+    if (S.voice) return {
+      rule: 'Regla 3: ¿orden de voz?',
+      act: 'altavoz responde · ejecutar orden',
+      mood: 'Sí, enseguida', action: 'responder',
+      perc: 'orden de voz'
+    };
+    return {
+      rule: 'Regla 4: nada activo',
+      act: 'motores: avanzar explorando',
+      mood: '¡Listo!', action: 'avanzar',
+      perc: 'sin entradas relevantes'
+    };
+  }
+
+  function runCycle() {
+    cycle++;
+    var d = decide();
+    /* efecto visual de la acción */
+    el('lamp').setAttribute('fill', (S.dark || S.obstacle) ? '#FDE68A' : '#CBD5E1');
+    el('lamp').setAttribute('stroke', (S.dark || S.obstacle) ? '#F59E0B' : '#64748B');
+    el('lightBeam').setAttribute('opacity', (S.dark || S.obstacle) ? '0.75' : '0');
+    el('usWave').setAttribute('opacity', S.obstacle ? '0.9' : '0.15');
+    el('usWave2').setAttribute('opacity', S.obstacle ? '0.7' : '0.12');
+    el('robotMood').textContent = d.mood;
+    el('ruleTxt').textContent = d.rule;
+    el('actTxt').textContent = d.act;
+    el('cycleNum').textContent = 'ciclo #' + cycle;
+    el('statCycle').textContent = cycle;
+    el('statAction').textContent = d.action;
+    var log = el('simLog');
+    if (cycle === 1) log.innerHTML = '';
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td><b>' + cycle + '</b></td><td>' + d.perc + '</td><td>' + d.rule + '</td><td>' + d.act + '</td>';
+    log.insertBefore(tr, log.firstChild);
+    if (log.children.length > 8) log.removeChild(log.lastChild);
+  }
+
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      var k = c.getAttribute('data-s');
+      S[k] = !S[k];
+      refreshVisuals();
+    });
+  });
+  el('stepBtn').addEventListener('click', runCycle);
+  el('autoBtn').addEventListener('click', function () {
+    if (timer) return;
+    var n = 0;
+    timer = setInterval(function () {
+      runCycle(); n++;
+      if (n >= 8) { clearInterval(timer); timer = null; }
+    }, 700);
+  });
+  el('resetBtn').addEventListener('click', function () {
+    if (timer) { clearInterval(timer); timer = null; }
+    S.obstacle = S.dark = S.voice = false;
+    cycle = 0;
+    el('lamp').setAttribute('fill', '#CBD5E1');
+    el('lamp').setAttribute('stroke', '#64748B');
+    el('lightBeam').setAttribute('opacity', '0');
+    el('usWave').setAttribute('opacity', '0.15');
+    el('usWave2').setAttribute('opacity', '0.12');
+    el('robotMood').textContent = '¡Listo!';
+    el('ruleTxt').textContent = 'explorar';
+    el('actTxt').textContent = 'avanzar';
+    el('cycleNum').textContent = 'ciclo #0';
+    el('statCycle').textContent = '0';
+    el('statAction').textContent = '—';
+    el('simLog').innerHTML = '<tr><td colspan="4" style="color:#94A3B8;font-style:italic">Activa sensores y ejecuta un ciclo para llenar el registro…</td></tr>';
+    refreshVisuals();
+  });
+  refreshVisuals();
+})();
+</script>
+
+</body>
+</html>
