@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Sociedad Digital NM · 3.3 Dispositivos — Material de repaso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<script>
+/* Este documento no contiene fórmulas matemáticas. Los montos (US$, €) son moneda, no delimitadores:
+   se registra un stub para que el conversor no inyecte KaTeX ni reescriba textos. */
+window.renderMathInElement = function () {};
+</script>
+<style>
+/* ═══════════ PÁGINAS ═══════════ */
+@page { size: 794px 1123px; margin: 48px 0 52px 0; }
+@page fullbleed { size: 794px 1123px; margin: 0; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #F8FAFC; --card: #FFFFFF; --ink: #1E293B; --muted: #64748B;
+  --line: #E2E8F0; --navy: #1E3A5F; --navy2: #2D4A6F;
+  --u1: #3B82F6; --u1-bg: #EFF6FF; --u1-tx: #1E40AF;
+  --u2: #8B5CF6; --u2-bg: #F5F3FF; --u2-tx: #5B21B6;
+  --u3: #14B8A6; --u3-bg: #F0FDFA; --u3-tx: #134E4A;
+  --u4: #F59E0B; --u4-bg: #FFF7ED; --u4-tx: #92400E;
+  --slate: #64748B; --slate-bg: #F1F5F9; --slate-tx: #334155;
+}
+html, body {
+  margin: 0; padding: 0; width: 794px;
+  background: var(--bg); color: var(--ink);
+  font-family: 'Inter', 'Liberation Sans', sans-serif;
+  font-size: 12.5px; line-height: 1.55;
+  overflow-wrap: break-word;
+}
+@media screen {
+  html { height: auto; display: flex; justify-content: center; background: #E2E8F0; }
+  body { transform: scale(1); transform-origin: top center; margin: 20px auto; box-shadow: 0 2px 24px rgba(15,23,42,.18); }
+}
+
+/* ═══════════ PORTADA / CIERRE (full-bleed) ═══════════ */
+.cover {
+  page: fullbleed; width: 794px; height: 1123px;
+  background: linear-gradient(158deg, #16283F 0%, #1E3A5F 46%, #2D4A6F 100%);
+  color: #F1F5F9; position: relative;
+  display: flex; flex-direction: column;
+  padding: 54px 58px; break-after: page;
+}
+.cover .deco-circle {
+  position: absolute; border-radius: 50%;
+  border: 1.5px solid rgba(148,163,184,.28);
+}
+.cover .dc1 { width: 300px; height: 300px; right: 40px; top: 60px; }
+.cover .dc2 { width: 190px; height: 190px; right: 118px; top: 138px; border-color: rgba(148,163,184,.18); }
+.cover .dc3 { width: 120px; height: 120px; left: 44px; bottom: 150px; border-color: rgba(148,163,184,.15); }
+.cover-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+  color: #93C5FD; text-transform: uppercase;
+}
+.cover-badge::before { content: ''; width: 34px; height: 2px; background: #3B82F6; }
+.cover-center { margin: auto 0; position: relative; z-index: 2; }
+.cover-kicker {
+  font-size: 12px; font-weight: 600; letter-spacing: 3px;
+  color: #A5B4CC; text-transform: uppercase; margin-bottom: 16px;
+}
+.cover-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 64px; font-weight: 800; line-height: 1.04;
+  color: #FFFFFF; margin-bottom: 10px;
+}
+.cover-sub { font-size: 19px; font-weight: 500; color: #C7D2E4; margin-bottom: 6px; }
+.cover-sub-en { font-size: 13px; color: #8FA3C2; font-style: italic; margin-bottom: 30px; }
+.cover-chips { display: flex; flex-wrap: wrap; gap: 10px; max-width: 100%; }
+.cchip {
+  background: rgba(59,130,246,.13); border: 1px solid rgba(147,197,253,.35);
+  color: #DCE7F7; border-radius: 20px; padding: 7px 15px;
+  font-size: 11.5px; font-weight: 600;
+}
+.cchip b { color: #FFFFFF; font-weight: 800; }
+.cover-3cs {
+  margin-top: 34px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 16px 18px; border: 1px solid rgba(148,163,184,.25); border-radius: 12px;
+  background: rgba(15,23,42,.25); max-width: 100%;
+}
+.cover-3cs .box {
+  border-radius: 8px; padding: 8px 13px; font-size: 11.5px; font-weight: 700;
+  letter-spacing: .4px;
+}
+.cover-3cs .arrow { color: #64748B; font-size: 13px; font-weight: 400; }
+.bx1 { background: rgba(59,130,246,.22); color: #BFDBFE; }
+.bx2 { background: rgba(139,92,246,.22); color: #DDD6FE; }
+.bx3 { background: rgba(20,184,166,.22); color: #99F6E4; }
+.bx4 { background: rgba(245,158,11,.20); color: #FDE68A; }
+.cover-foot { position: relative; z-index: 2; }
+.cover-scope {
+  font-size: 11px; color: #94A7C4; line-height: 1.6;
+  border-top: 1px solid rgba(148,163,184,.22); padding-top: 16px;
+}
+.cover-scope b { color: #CBD8EC; font-weight: 600; }
+.cover-edition {
+  margin-top: 12px; font-size: 10.5px; color: #6E82A3; letter-spacing: 1.2px;
+  text-transform: uppercase; font-weight: 600;
+}
+
+/* ═══════════ CONTENIDO (flujo) ═══════════ */
+.main-content { padding: 0 56px; }
+.section-head { break-after: avoid; break-inside: avoid; margin-bottom: 14px; }
+.section-kicker {
+  font-size: 10.5px; font-weight: 800; letter-spacing: 2.2px;
+  text-transform: uppercase; color: var(--u1); margin-bottom: 4px;
+}
+.section-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 27px; font-weight: 800; color: var(--ink); line-height: 1.15;
+}
+.section-sub { font-size: 12.5px; color: var(--muted); margin-top: 5px; }
+.divider { height: 3px; width: 56px; background: var(--u1); border-radius: 2px; margin: 12px 0 4px; }
+
+p.body-text { font-size: 12.5px; color: #334155; margin-bottom: 9px; }
+p.body-text b { color: var(--ink); }
+.en-term { color: var(--muted); font-style: italic; }
+
+/* Tarjetas informativas */
+.info-card {
+  break-inside: avoid; background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; padding: 13px 16px; margin-bottom: 10px;
+}
+.info-card h4 { font-size: 13px; font-weight: 800; color: var(--navy); margin-bottom: 5px; }
+.info-card p { font-size: 12px; color: #475569; }
+.info-card .ic-sub { font-size: 11px; color: var(--muted); margin-top: 3px; }
+
+/* Tarjetas de concepto (4 colores) */
+.cs-grid { display: flex; flex-wrap: wrap; gap: 9px; max-width: 100%; margin: 4px 0 10px; }
+.cs-card {
+  flex: 1 1 150px; min-width: 140px; max-width: 100%;
+  border-radius: 10px; padding: 11px 13px; border: 1px solid var(--line);
+  break-inside: avoid;
+}
+.cs-card .cs-name { font-size: 12.5px; font-weight: 800; margin-bottom: 3px; }
+.cs-card p { font-size: 11px; line-height: 1.45; color: #475569; }
+.cs-1 { background: var(--u1-bg); } .cs-1 .cs-name { color: var(--u1-tx); }
+.cs-2 { background: var(--u2-bg); } .cs-2 .cs-name { color: var(--u2-tx); }
+.cs-3 { background: var(--u3-bg); } .cs-3 .cs-name { color: var(--u3-tx); }
+.cs-4 { background: var(--u4-bg); } .cs-4 .cs-name { color: var(--u4-tx); }
+
+/* Fichas de repaso */
+.ficha {
+  break-inside: avoid; background: var(--card);
+  border: 1px solid var(--line); border-left: 4px solid var(--u1);
+  border-radius: 10px; padding: 13px 16px 11px; margin-bottom: 11px;
+}
+.ficha.u2 { border-left-color: var(--u2); }
+.ficha.u3 { border-left-color: var(--u3); }
+.ficha.u4 { border-left-color: var(--u4); }
+.ficha-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+.ficha-num {
+  font-size: 10px; font-weight: 800; color: var(--u1-tx);
+  background: var(--u1-bg); border-radius: 5px; padding: 2px 7px;
+}
+.u2 .ficha-num { color: var(--u2-tx); background: var(--u2-bg); }
+.u3 .ficha-num { color: var(--u3-tx); background: var(--u3-bg); }
+.u4 .ficha-num { color: var(--u4-tx); background: var(--u4-bg); }
+.ficha-title { font-size: 15.5px; font-weight: 800; color: var(--ink); }
+.ficha-en { font-size: 11.5px; color: var(--muted); font-style: italic; }
+.ficha-def {
+  font-size: 12px; color: #334155; margin-bottom: 7px;
+  padding-bottom: 7px; border-bottom: 1px dashed var(--line);
+}
+.ficha-def b { color: var(--ink); }
+.ficha h5 {
+  font-size: 10px; font-weight: 800; letter-spacing: 1.6px;
+  text-transform: uppercase; color: var(--u1); margin: 7px 0 4px;
+}
+.u2 .ficha h5 { color: var(--u2); } .u3 .ficha h5 { color: var(--u3-tx); } .u4 .ficha h5 { color: var(--u4-tx); }
+.ficha ul { list-style: none; }
+.ficha li {
+  font-size: 11.5px; color: #475569; padding-left: 13px;
+  position: relative; margin-bottom: 2.5px; line-height: 1.42;
+}
+.ficha li::before {
+  content: ''; position: absolute; left: 0; top: 7px;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--u1);
+}
+.u2 .ficha li::before { background: var(--u2); }
+.u3 .ficha li::before { background: var(--u3); }
+.u4 .ficha li::before { background: var(--u4); }
+.ficha li b { color: var(--ink); font-weight: 700; }
+.vocab-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; max-width: 100%; }
+.chip {
+  font-size: 10px; font-weight: 600; color: #475569;
+  background: var(--slate-bg); border: 1px solid var(--line);
+  border-radius: 10px; padding: 2.5px 9px; white-space: nowrap;
+}
+.chip b { color: var(--navy); font-weight: 700; }
+
+/* ═══════════ TARJETA DE TECNOLOGÍA ═══════════ */
+.tcard {
+  break-inside: avoid; background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 11px 14px; margin-bottom: 9px;
+}
+.tcard-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 5px; }
+.tcard-num {
+  font-size: 9.5px; font-weight: 800; letter-spacing: .6px; color: #fff;
+  background: var(--u1); border-radius: 5px; padding: 2px 7px;
+}
+.tcard.u2 .tcard-num { background: var(--u2); }
+.tcard.u3 .tcard-num { background: var(--u3); }
+.tcard.u4 .tcard-num { background: var(--u4); }
+.tcard-title { font-size: 15px; font-weight: 800; color: var(--ink); }
+.tcard-en { font-size: 11px; color: var(--muted); font-style: italic; }
+.trow { display: flex; gap: 10px; padding: 4.5px 0; }
+.trow + .trow { border-top: 1px dashed #EEF2F7; }
+.tlabel {
+  flex: 0 0 92px; font-size: 9.5px; font-weight: 800; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--u1-tx); padding-top: 2px;
+}
+.tlabel.warn { color: var(--u4-tx); }
+.tbody { flex: 1; font-size: 11.5px; color: #475569; line-height: 1.45; }
+.tbody b { color: var(--ink); }
+.tbody ul { list-style: none; margin: 1px 0; }
+.tbody li { padding-left: 12px; position: relative; margin-bottom: 2px; }
+.tbody li::before {
+  content: ''; position: absolute; left: 0; top: 7px;
+  width: 4px; height: 4px; border-radius: 50%; background: var(--u1);
+}
+.tbody li b { color: var(--ink); font-weight: 700; }
+
+/* ═══════════ DIAGRAMAS ═══════════ */
+/* Modelo Entrada → Proceso → Salida */
+.lifecycle { display: flex; align-items: stretch; gap: 5px; margin: 12px 0 6px; break-inside: avoid; }
+.lc-step {
+  flex: 1; min-width: 90px; max-width: 100%; border-radius: 10px;
+  border: 1.5px solid var(--line); background: #fff; padding: 9px 11px;
+}
+.lc-n {
+  display: inline-block; font-size: 10px; font-weight: 800; color: #fff;
+  background: var(--navy); border-radius: 50%; width: 17px; height: 17px;
+  text-align: center; line-height: 17px; margin-bottom: 4px;
+}
+.lc-t { font-size: 11px; font-weight: 800; color: var(--ink); line-height: 1.2; }
+.lc-t small { display: block; font-weight: 600; color: var(--u2-tx); font-size: 8.5px; letter-spacing: .5px; }
+.lc-d { font-size: 9.5px; color: var(--muted); line-height: 1.35; margin-top: 3px; }
+.lc-arrow { align-self: center; color: #94A3B8; font-size: 13px; flex: 0 0 auto; }
+
+/* Flujo de compilación */
+.flow { display: flex; flex-direction: column; align-items: center; margin: 6px auto 0; break-inside: avoid; }
+.flow-step {
+  background: #fff; border: 1.5px solid var(--u3); color: var(--u3-tx);
+  border-radius: 9px; padding: 7px 16px; font-size: 11.5px; font-weight: 700; text-align: center;
+  max-width: 420px;
+}
+.flow-step small { display: block; font-weight: 500; color: var(--muted); font-size: 9.5px; margin-top: 1px; }
+.flow-arrow { color: #94A3B8; font-size: 11px; line-height: 1.3; margin: 2px 0; font-weight: 700; }
+.flow-cap { text-align: center; font-size: 9.5px; color: var(--muted); margin-top: 5px; }
+
+/* Línea de tiempo de dispositivos */
+.timeline { break-inside: avoid; margin: 10px 0 12px; }
+.tl-row { display: flex; gap: 10px; align-items: stretch; }
+.tl-year {
+  flex: 0 0 64px; font-size: 10.5px; font-weight: 900; color: var(--u1-tx);
+  background: var(--u1-bg); border: 1px solid #BFDBFE; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  padding: 6px 4px; line-height: 1.25;
+}
+.tl-body {
+  flex: 1; background: #fff; border: 1px solid var(--line); border-left: 3px solid var(--u1);
+  border-radius: 8px; padding: 8px 12px; margin-bottom: 7px;
+}
+.tl-body b { font-size: 12px; color: var(--ink); }
+.tl-body p { font-size: 11px; color: #475569; line-height: 1.45; margin-top: 1px; }
+
+/* Cifras destacadas */
+.stat-row { display: flex; flex-wrap: wrap; gap: 9px; margin: 8px 0 10px; max-width: 100%; }
+.stat {
+  flex: 1 1 150px; min-width: 140px; max-width: 100%; background: #fff;
+  border: 1px solid var(--line); border-top: 3px solid var(--u1);
+  border-radius: 10px; padding: 10px 12px; break-inside: avoid;
+}
+.stat .st-n { font-size: 19px; font-weight: 900; color: var(--u1-tx); line-height: 1.15; }
+.stat .st-t { font-size: 9.5px; color: var(--muted); line-height: 1.35; margin-top: 2px; }
+
+/* ═══════════ TABLAS ═══════════ */
+table.cmp { width: 100%; border-collapse: collapse; font-size: 11px; break-inside: avoid; margin: 8px 0 12px; }
+table.cmp th {
+  background: var(--navy); color: #fff; font-weight: 700;
+  padding: 7px 9px; text-align: left; font-size: 10.5px;
+}
+table.cmp td { border: 1px solid var(--line); padding: 6px 9px; color: #334155; vertical-align: top; }
+table.cmp tr:nth-child(even) td { background: #F8FAFC; }
+table.cmp td b { color: var(--navy); }
+table.cmp td .en-term { font-size: 10px; }
+table.cmp.d2 th { background: var(--u2); }
+table.cmp.d3 th { background: var(--u3); }
+table.cmp.d4 th { background: var(--u4); }
+table.cmp.bigtable { break-inside: auto; font-size: 10.2px; }
+table.cmp.bigtable tr { break-inside: avoid; }
+table.cmp.bigtable td, table.cmp.bigtable th { padding: 5px 7px; }
+
+table.exam {
+  width: 100%; border-collapse: collapse; margin: 8px 0 12px;
+  font-size: 11px; break-inside: avoid;
+}
+table.exam th {
+  background: var(--navy); color: #fff; font-weight: 700;
+  padding: 7px 9px; text-align: left; font-size: 10.5px;
+}
+table.exam td { border: 1px solid var(--line); padding: 6.5px 9px; color: #334155; vertical-align: top; }
+table.exam tr:nth-child(even) td { background: #F8FAFC; }
+table.exam td b { color: var(--ink); }
+
+/* Autoevaluación rápida */
+.quiz-card {
+  break-inside: avoid; background: var(--u1-bg);
+  border: 1px solid #BFDBFE; border-radius: 10px; padding: 13px 16px; margin: 14px 0 6px;
+}
+.quiz-card.q2 { background: var(--u2-bg); border-color: #DDD6FE; }
+.quiz-card.q3 { background: var(--u3-bg); border-color: #99F6E4; }
+.quiz-card.q4 { background: var(--u4-bg); border-color: #FDE68A; }
+.quiz-card h4 {
+  font-size: 11px; font-weight: 800; letter-spacing: 1.8px;
+  text-transform: uppercase; color: var(--u1-tx); margin-bottom: 6px;
+}
+.quiz-card.q2 h4 { color: var(--u2-tx); } .quiz-card.q3 h4 { color: var(--u3-tx); } .quiz-card.q4 h4 { color: var(--u4-tx); }
+.quiz-card ol { margin-left: 16px; }
+.quiz-card li { font-size: 11.5px; color: #334155; margin-bottom: 3.5px; }
+
+/* ═══════════ PÁGINAS DE MAPAS (full-bleed) ═══════════ */
+.map-page {
+  page: fullbleed; width: 794px; height: 1123px;
+  break-after: page; padding: 26px 20px 20px;
+  background: #FFFFFF; position: relative;
+  display: flex; flex-direction: column;
+}
+.map-head { margin-bottom: 6px; padding: 0 6px; }
+.map-kicker {
+  display: inline-block; font-size: 10px; font-weight: 800;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--u1-tx); background: var(--u1-bg);
+  border: 1px solid #BFDBFE; border-radius: 12px; padding: 3px 11px;
+}
+.map-kicker.k2 { color: var(--u2-tx); background: var(--u2-bg); border-color: #DDD6FE; }
+.map-kicker.k3 { color: var(--u3-tx); background: var(--u3-bg); border-color: #99F6E4; }
+.map-kicker.k4 { color: var(--u4-tx); background: var(--u4-bg); border-color: #FDE68A; }
+.map-kicker.k0 { color: var(--navy); background: #EDF2F9; border-color: #C9D7E8; }
+.map-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 25px; font-weight: 800; color: var(--ink); margin-top: 7px; line-height: 1.1;
+}
+.map-intro { font-size: 11.5px; color: var(--muted); margin-top: 4px; max-width: 640px; }
+
+.mindmap { position: relative; break-inside: avoid; display: flex; justify-content: center; align-items: center; flex: 1 1 auto; padding: 10px 0 6px; }
+.mindmap > svg.lines { position: absolute; top: 0; left: 0; pointer-events: none; z-index: 0; }
+
+.root-node {
+  background: linear-gradient(135deg, #1E3A5F, #2D4A6F);
+  color: #fff; font-size: 16.5px; font-weight: 800; line-height: 1.2;
+  padding: 15px 17px; border-radius: 13px; text-align: center;
+  white-space: nowrap; flex-shrink: 0; align-self: center;
+  box-shadow: 0 4px 12px rgba(30,58,95,.25); position: relative; z-index: 2;
+}
+.root-node small { display: block; font-size: 10px; font-weight: 600; color: #B7C6DC; letter-spacing: 1.5px; margin-top: 2px; }
+
+.branch-node {
+  font-size: 12.5px; font-weight: 700; line-height: 1.2;
+  padding: 8px 12px; border-radius: 8px; border: 2px solid;
+  white-space: normal; max-width: 142px; text-align: center;
+  flex-shrink: 0; position: relative; z-index: 2;
+}
+.branch-node small { display: block; font-size: 10px; font-weight: 600; opacity: .8; }
+.leaf {
+  font-size: 11.5px; font-weight: 500; color: #475569;
+  padding: 4.5px 11px; background: #FAFBFC;
+  border-radius: 11px; border: 1px solid #E2E8F0;
+  line-height: 1.3; white-space: normal; max-width: 138px;
+  width: fit-content; position: relative; z-index: 2;
+}
+.children { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.right-branches { display: flex; flex-direction: column; gap: 18px; }
+.right-branch { display: flex; align-items: flex-start; }
+.right-branch > .children { margin-left: 16px; padding-left: 8px; align-items: flex-start; }
+.left-branches { display: flex; flex-direction: column; gap: 18px; }
+.left-branch { display: flex; align-items: flex-start; flex-direction: row-reverse; }
+.left-branch > .children { margin-right: 16px; padding-right: 8px; align-items: flex-end; }
+
+/* Colores por unidad (mapas) */
+.b-u1 { background: var(--u1-bg); border-color: var(--u1); color: var(--u1-tx); }
+.b-u2 { background: var(--u2-bg); border-color: var(--u2); color: var(--u2-tx); }
+.b-u3 { background: var(--u3-bg); border-color: var(--u3); color: var(--u3-tx); }
+.b-u4 { background: var(--u4-bg); border-color: var(--u4); color: var(--u4-tx); }
+.b-navy { background: #EDF2F9; border-color: var(--navy2); color: var(--navy); }
+.b-slate { background: var(--slate-bg); border-color: var(--slate); color: var(--slate-tx); }
+
+.map-legend {
+  position: absolute; left: 20px; right: 20px; bottom: 18px;
+  display: flex; flex-wrap: wrap; gap: 7px 14px; align-items: center;
+  font-size: 10px; color: var(--muted);
+  border-top: 1px solid var(--line); padding-top: 10px;
+}
+.map-legend .lg { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; }
+.map-legend .dot { width: 9px; height: 9px; border-radius: 3px; }
+
+/* Cierre */
+.ending {
+  page: fullbleed; width: 794px; height: 1123px; break-before: page;
+  background: linear-gradient(158deg, #16283F 0%, #1E3A5F 46%, #2D4A6F 100%);
+  color: #F1F5F9; display: flex; flex-direction: column; justify-content: center;
+  padding: 60px; position: relative;
+}
+.end-quote {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 26px; font-weight: 600; font-style: italic;
+  line-height: 1.4; color: #E2E8F0; max-width: 560px; margin-bottom: 34px;
+}
+.end-checks { display: flex; flex-direction: column; gap: 10px; max-width: 560px; }
+.end-check {
+  display: flex; gap: 11px; align-items: flex-start;
+  border: 1px solid rgba(148,163,184,.28); border-radius: 10px;
+  padding: 11px 14px; background: rgba(15,23,42,.28);
+}
+.end-check .tick {
+  width: 19px; height: 19px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(59,130,246,.25); border: 1.5px solid #60A5FA;
+  color: #BFDBFE; font-size: 11px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.end-check p { font-size: 12px; color: #C7D2E4; }
+.end-check p b { color: #fff; }
+.end-foot { position: absolute; bottom: 52px; left: 60px; right: 60px;
+  border-top: 1px solid rgba(148,163,184,.22); padding-top: 14px;
+  font-size: 10px; color: #7C90B0; line-height: 1.6; }
+
+/* ═══════════ INTERACTIVIDAD Y NUEVOS COMPONENTES ═══════════ */
+.only-print { display: none; }
+@media print {
+  .only-print { display: block; }
+  .only-screen { display: none !important; }
+}
+
+/* Caso de práctica (inédito, estilo examen) */
+.practice {
+  break-inside: avoid; background: #FBFAFF;
+  border: 1.5px dashed #A78BFA; border-radius: 10px;
+  padding: 11px 14px 10px; margin: 9px 0 12px;
+}
+.practice-tag {
+  display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: 1.6px;
+  color: var(--u2-tx); text-transform: uppercase; margin-bottom: 3px;
+}
+.practice h4 { font-size: 13.5px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+.practice p.pctx { font-size: 11.4px; color: #475569; line-height: 1.5; margin-bottom: 6px; }
+.practice ol.pq { margin-left: 17px; margin-bottom: 3px; }
+.practice ol.pq li { font-size: 11.4px; color: #334155; margin-bottom: 3px; }
+.practice ol.pq i { color: var(--muted); }
+
+/* Botón de pauta + respuesta desplegable */
+.reveal-btn {
+  display: inline-block; margin-top: 5px; font-size: 10px; font-weight: 800;
+  letter-spacing: .8px; text-transform: uppercase; color: var(--u2-tx);
+  background: var(--u2-bg); border: 1px solid #DDD6FE; border-radius: 8px;
+  padding: 4px 12px; cursor: pointer; user-select: none;
+}
+.q-a {
+  display: none; background: #ECFDF5; border: 1px solid #A7F3D0;
+  border-radius: 8px; padding: 7px 11px; margin-top: 6px;
+  font-size: 10.6px; color: #065F46; line-height: 1.52; break-inside: avoid;
+}
+.q-a b { color: #064E3B; }
+.q-a.open { display: block; }
+@media print { .q-a { display: block !important; } .reveal-btn { display: none !important; } }
+
+/* Quiz: verdadero/falso */
+.qz-part {
+  font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase;
+  color: var(--navy); margin: 13px 0 4px; break-after: avoid;
+}
+.vf-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; break-inside: avoid; }
+.vf-row .vf-txt { flex: 1; font-size: 11.5px; color: #334155; }
+.vf-opts { display: flex; gap: 6px; flex: 0 0 auto; }
+.vf-btn {
+  font-size: 10px; font-weight: 800; border: 1.5px solid var(--line);
+  background: #fff; color: var(--muted); border-radius: 7px; padding: 2.5px 11px; cursor: pointer;
+}
+.vf-btn.sel { border-color: var(--u1); color: var(--u1-tx); background: var(--u1-bg); }
+.vf-row.ok .vf-btn.sel { border-color: #16A34A; color: #166534; background: #DCFCE7; }
+.vf-row.bad .vf-btn.sel { border-color: #DC2626; color: #991B1B; background: #FEE2E2; }
+
+/* Quiz: opción múltiple */
+.mc-q { padding: 5px 0; break-inside: avoid; }
+.mc-q .mc-txt { font-size: 11.5px; color: #334155; }
+.mc-q .opts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px; max-width: 100%; }
+.mc-opt {
+  font-size: 10.5px; border: 1.5px solid var(--line); background: #fff;
+  color: #475569; border-radius: 8px; padding: 3px 11px; cursor: pointer; white-space: nowrap;
+}
+.mc-opt.sel { border-color: var(--u1); color: var(--u1-tx); background: var(--u1-bg); font-weight: 700; }
+.mc-opt.right { border-color: #16A34A; background: #DCFCE7; color: #166534; font-weight: 700; }
+.mc-opt.wrong { border-color: #DC2626; background: #FEE2E2; color: #991B1B; }
+
+/* Fichas rápidas (flashcards) */
+.fc-grid { display: flex; flex-wrap: wrap; gap: 9px; margin: 10px 0 4px; max-width: 100%; }
+.fc { flex: 1 1 30.5%; min-width: 212px; max-width: 100%; break-inside: avoid; }
+.fc-inner { transform-style: preserve-3d; }
+.fc-face { border-radius: 10px; padding: 9px 12px; }
+.fc-front { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--u1); }
+.fc-back { background: var(--u1-bg); border: 1px solid #BFDBFE; border-top: 1px dashed #93C5FD; }
+.fc.f2 .fc-front { border-top-color: var(--u2); }
+.fc.f2 .fc-back { background: var(--u2-bg); border-color: #DDD6FE; border-top-color: #C4B5FD; }
+.fc.f3 .fc-front { border-top-color: var(--u3); }
+.fc.f3 .fc-back { background: var(--u3-bg); border-color: #99F6E4; border-top-color: #5EEAD4; }
+.fc.f4 .fc-front { border-top-color: var(--u4); }
+.fc.f4 .fc-back { background: var(--u4-bg); border-color: #FDE68A; border-top-color: #FCD34D; }
+.fc-q { font-size: 11.5px; font-weight: 700; color: var(--ink); line-height: 1.38; }
+.fc-a { font-size: 10.4px; color: #1E40AF; line-height: 1.42; }
+.fc-a b { color: #172554; }
+.fc.f2 .fc-a { color: var(--u2-tx); } .fc.f2 .fc-a b { color: #4C1D95; }
+.fc.f3 .fc-a { color: var(--u3-tx); } .fc.f3 .fc-a b { color: #134E4A; }
+.fc.f4 .fc-a { color: var(--u4-tx); } .fc.f4 .fc-a b { color: #78350F; }
+.fc-hint {
+  font-size: 8.5px; color: var(--muted); text-transform: uppercase;
+  letter-spacing: .9px; margin-top: 5px; font-weight: 700;
+}
+@media screen {
+  .fc { height: 134px; cursor: pointer; perspective: 1000px; }
+  .fc-inner { position: relative; width: 100%; height: 100%; transition: transform .45s; }
+  .fc.flipped .fc-inner { transform: rotateY(180deg); }
+  .fc-face {
+    position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .fc-back { transform: rotateY(180deg); }
+}
+@media print {
+  .fc-face + .fc-face { margin-top: 6px; }
+  .fc-hint { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ PORTADA ═══════════════ -->
+<div class="cover">
+  <div class="deco-circle dc1"></div>
+  <div class="deco-circle dc2"></div>
+  <div class="deco-circle dc3"></div>
+  <div class="cover-badge">IB Diploma Programme &middot; Digital Society</div>
+  <div class="cover-center">
+    <div class="cover-kicker">Material de repaso integral &middot; Nivel Medio (NM/SL)</div>
+    <div class="cover-title">3.3<br>Dispositivos</div>
+    <div class="cover-sub">Computing devices: tipos, componentes, código y evolución</div>
+    <div class="cover-sub-en">Review guide with mind maps, interactive flashcards &amp; new exam cases</div>
+    <div class="cover-chips">
+      <span class="cchip"><b>16</b> tarjetas de contenido</span>
+      <span class="cchip"><b>3</b> mapas mentales</span>
+      <span class="cchip"><b>21</b> fichas rápidas</span>
+      <span class="cchip"><b>14</b> preguntas de quiz</span>
+      <span class="cchip"><b>5</b> casos para el examen</span>
+    </div>
+    <div class="cover-3cs">
+      <span class="box bx1">Tipos (3.3A)</span><span class="arrow">+</span>
+      <span class="box bx2">Componentes (3.3B)</span><span class="arrow">+</span>
+      <span class="box bx3">Código (3.3C)</span><span class="arrow">+</span>
+      <span class="box bx4">Evolución (3.3D)</span><span class="arrow">&rarr;</span>
+      <span class="box bx4">Impactos y dilemas</span>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <div class="cover-scope">
+      <b>Alcance del material:</b> solo la sección 3.3 <i>Computing devices</i> del libro — tipos de computadoras,
+      componentes de hardware y software, formas de codificación y evolución de la computación, con las
+      repercusiones y dilemas de cada tecnología. No incluye la monografía (extended essay), la evaluación
+      interna (inquiry project) ni el Paper 3.
+    </div>
+    <div class="cover-edition">Basado en Bomfim et al. &middot; Digital Society &middot; Hodder Education 2022 (pp. 92&ndash;105)</div>
+  </div>
+</div>
+
+<!-- ═══════════════ PANORAMA ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Panorama de la sección</div>
+    <div class="section-title">Qué dice 3.3 y cómo estudiarlo</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">La sección 3.3 <b>Computing devices (dispositivos computacionales)</b> del libro responde a cuatro preguntas: <b>qué tipos de computadoras existen</b> (3.3A), <b>cómo funcionan por dentro</b> (3.3B), <b>cómo entienden el código</b> (3.3C) y <b>cómo han evolucionado</b> (3.3D). Según el libro, una <b>computadora</b> es una <i>«máquina o dispositivo que procesa datos, realiza cálculos y ejecuta operaciones basadas en algoritmos provistos por programas de software y hardware; puede introducir datos, procesarlos, almacenarlos y producir una salida»</i>. La idea clave es la <b>ubicuidad</b>: la computación ya no vive solo en el escritorio, sino en lavadoras, autos, relojes y centros de datos bajo el mar. En el examen, este contenido aparece en <b>Paper 1</b> (escenarios: identificar dispositivos, explicar componentes) y en <b>Paper 2</b> (fuentes con estadísticas de uso de dispositivos), siempre conectado con los <b>impactos e implicaciones</b> para personas y comunidades.</p>
+
+  <div class="stat-row">
+    <div class="stat"><div class="st-n">5</div><div class="st-t">generaciones de la computación, de los tubos de vacío (1940) a la IA y la computación cuántica (2010&ndash;hoy)</div></div>
+    <div class="stat"><div class="st-n">7</div><div class="st-t">tipos de computadoras descritos en 3.3A, de las embebidas a los mainframes</div></div>
+    <div class="stat"><div class="st-n">5,6 mil M</div><div class="st-t">ataques de malware registrados en 2020, con 678 millones de tipos distintos (Statista, citado en el libro)</div></div>
+    <div class="stat"><div class="st-n">200 TWh</div><div class="st-t">consumo anual aproximado de los centros de datos; ~0,3% de las emisiones globales de CO<sub>2</sub></div></div>
+  </div>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-1">
+      <div class="cs-name">3.3A &middot; Tipos <span class="en-term">(types of computers)</span></div>
+      <p>Embebidas, personales, portátiles, tabletas, móviles, wearables, mainframes y servidores. La misma operación básica en tamaños muy distintos.</p>
+    </div>
+    <div class="cs-card cs-2">
+      <div class="cs-name">3.3B &middot; Componentes <span class="en-term">(components)</span></div>
+      <p>Modelo entrada&ndash;proceso&ndash;salida; CPU, RAM, GPU, almacenamiento; sistema operativo, interfaces, software de utilidad y de aplicación; malware.</p>
+    </div>
+    <div class="cs-card cs-3">
+      <div class="cs-name">3.3C &middot; Código <span class="en-term">(uses and forms of coding)</span></div>
+      <p>De los lenguajes de alto nivel al binario: código de máquina, ensamblador y el compilador que traduce el código fuente en código objeto.</p>
+    </div>
+    <div class="cs-card cs-4">
+      <div class="cs-name">3.3D &middot; Evolución <span class="en-term">(evolution of computing)</span></div>
+      <p>Cinco generaciones, la Ley de Moore y la computación cuántica: qubits, superposición y sus aplicaciones reales (Daimler, ExxonMobil).</p>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h4>Cómo usar este material (ruta de estudio sugerida)</h4>
+    <p><b>1) Mapa primero:</b> estudia el mapa mental general para fijar la estructura completa del tema (tipos &rarr; componentes &rarr; código &rarr; evolución &rarr; impactos). &nbsp;<b>2) Fichas después:</b> memoriza las definiciones exactas del libro —los exámenes valoran la terminología precisa— y las conexiones con las 3Cs (conceptos, contenido, contextos). &nbsp;<b>3) Autoevalúa al final:</b> usa las fichas rápidas, el quiz y los cinco casos inéditos; si fallas algo, vuelve a la ficha correspondiente.</p>
+    <p class="ic-sub">En la versión HTML las fichas rápidas se voltean con un clic, las pautas se despliegan y el quiz se corrige solo. En la versión PDF cada pregunta lleva su respuesta impresa justo debajo.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Conexiones del curso que debes mencionar en el examen</h4>
+    <p>El libro enlaza 3.3 con: <b>4.1 Cultura</b> (wearables y ropa inteligente en el ocio), <b>4.4B El cuerpo humano</b> (diseño ergonómico y monitoreo de salud), <b>5.3B Uso responsable de los recursos</b> (energía y sostenibilidad de los centros de datos) y el concepto de <b>cambio</b> (evolución de las computadoras). Citar estos vínculos demuestra integración de las 3Cs en las preguntas extendidas.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ MAPA MENTAL GENERAL (full-bleed) ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k0">Mapa mental 1 de 3 &middot; Vista general</span>
+    <div class="map-title">3.3 Dispositivos computacionales en un vistazo</div>
+    <div class="map-intro">La estructura completa del tema: cuatro bloques de contenido y una capa transversal de impactos y dilemas que el IB espera que apliques a cualquier ejemplo.</div>
+  </div>
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u1">Tipos<small>3.3A</small></div>
+        <div class="children">
+          <div class="leaf">Embebidas (lavadora, auto)</div>
+          <div class="leaf">PC de escritorio</div>
+          <div class="leaf">Portátiles y tabletas</div>
+          <div class="leaf">Móviles inteligentes</div>
+          <div class="leaf">Wearables (relojes, VR)</div>
+          <div class="leaf">Mainframes y servidores</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u3">Código<small>3.3C</small></div>
+        <div class="children">
+          <div class="leaf">Alto nivel (Java, Python)</div>
+          <div class="leaf">Bajo nivel: binario y hex</div>
+          <div class="leaf">Lenguaje ensamblador</div>
+          <div class="leaf">Compilador: fuente &rarr; objeto</div>
+        </div>
+      </div>
+    </div>
+    <div class="root-node">3.3<br>DISPOSITIVOS<small>COMPUTING DEVICES</small></div>
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u2">Componentes<small>3.3B</small></div>
+        <div class="children">
+          <div class="leaf">Entrada &rarr; Proceso &rarr; Salida</div>
+          <div class="leaf">CPU: reloj, caché, núcleos</div>
+          <div class="leaf">RAM, SSD/HDD, GPU</div>
+          <div class="leaf">SO, interfaz, apps</div>
+          <div class="leaf">Malware y seguridad</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u4">Evolución<small>3.3D</small></div>
+        <div class="children">
+          <div class="leaf">5 generaciones (1940&ndash;hoy)</div>
+          <div class="leaf">Ley de Moore</div>
+          <div class="leaf">Cuántica: qubits</div>
+          <div class="leaf">Daimler y ExxonMobil</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-slate">Impactos y dilemas</div>
+        <div class="children">
+          <div class="leaf">Energía y e-waste</div>
+          <div class="leaf">Privacidad (wearables)</div>
+          <div class="leaf">Ciberseguridad</div>
+          <div class="leaf">Brecha digital</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:var(--u1)"></span> 3.3A Tipos</span>
+    <span class="lg"><span class="dot" style="background:var(--u2)"></span> 3.3B Componentes</span>
+    <span class="lg"><span class="dot" style="background:var(--u3)"></span> 3.3C Código</span>
+    <span class="lg"><span class="dot" style="background:var(--u4)"></span> 3.3D Evolución</span>
+    <span class="lg"><span class="dot" style="background:var(--slate)"></span> Capa transversal de impactos</span>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 1 · 3.3A ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Bloque 1 &middot; Contenido 3.3A</div>
+    <div class="section-title">Tipos de computadoras</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Las computadoras <b>vienen en todas las formas y tamaños</b>. Aunque parezcan muy distintas, casi todas comparten los mismos componentes básicos y realizan la misma tarea esencial: <b>introducir, procesar, almacenar y producir una salida</b>. El libro las organiza por <b>cuándo aparecieron</b> y por su <b>tamaño</b>: la PC entra al mercado doméstico a inicios de los 1980, la portátil supera en ventas a la de escritorio en 2005, la tableta llena el hueco entre portátil y teléfono en 2010, y los wearables —transformados desde el reloj calculadora de 1975— culminan con Google Glass (2013), Apple Watch (2015) y Oculus Rift (2016).</p>
+
+  <div class="ficha">
+    <div class="ficha-head"><span class="ficha-num">FICHA 1</span><span class="ficha-title">Computadora</span><span class="ficha-en">computer</span></div>
+    <div class="ficha-def"><b>Definición del libro:</b> máquina o dispositivo que <b>procesa datos, realiza cálculos y ejecuta operaciones</b> basadas en algoritmos provistos por programas de software y hardware; puede <b>introducir</b> datos, <b>procesarlos, almacenarlos y producir una salida</b>.</div>
+    <ul>
+      <li><b>Preguntas guía del libro:</b> ¿qué hace que una computadora sea una computadora?, ¿quién las usa y para qué?, ¿cómo ha cambiado con el tiempo?</li>
+      <li><b>Idea clave:</b> la computación es <b>ubicua</b> — está en la sala de clase, en la muñeca y en el fondo del mar.</li>
+    </ul>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.3A</span><span class="tcard-title">Computadoras embebidas</span><span class="tcard-en">embedded computers</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><b>Combinación de hardware y software diseñada para realizar una tarea específica, incorporada a un sistema electrónico o mecánico.</b></div></div>
+    <div class="trow"><div class="tlabel">Ejemplos</div><div class="tbody"><ul>
+      <li>Electrodomésticos: <b>lavadoras, hornos microondas</b>, consolas de video, cámaras digitales.</li>
+      <li>En un <b>auto</b>: diseñada para ser duradera y resistir el calor del motor.</li>
+    </ul></div></div>
+    <div class="trow"><div class="tlabel warn">Repercusiones y dilemas</div><div class="tbody">Invisibles y baratas, hacen <b>inteligentes</b> a miles de objetos, pero su seguridad suele descuidarse (contraseñas por defecto, sin actualizaciones) — véase el caso <b>Mirai</b> del Bloque 2. <b>Dilema:</b> conveniencia y automatización frente a vulnerabilidad masiva del <i>Internet de las Cosas</i>.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.3A</span><span class="tcard-title">Computadora personal (PC)</span><span class="tcard-en">personal computer (PC)</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><b>Computadora de propósito general diseñada para uso individual.</b></div></div>
+    <div class="trow"><div class="tlabel">Datos del libro</div><div class="tbody"><ul>
+      <li>Entró al <b>mercado del hogar a inicios de los 1980</b>; la de escritorio (unidad de sistema, monitor, teclado, ratón) fue el primer tipo de PC.</li>
+      <li>Hoy es menos común en el hogar, pero sigue popular en las <b>empresas</b>: es más fácil de personalizar y actualizar, y hace más difícil que los datos corporativos <i>«salgan por la puerta»</i>.</li>
+    </ul></div></div>
+    <div class="trow"><div class="tlabel warn">Repercusiones y dilemas</div><div class="tbody">Democratizó la computación personal (acceso a herramientas de trabajo y estudio), pero su <b>propósito general</b> también la convierte en blanco de malware. <b>Dilema:</b> flexibilidad del usuario frente a control y seguridad de la organización.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.3A</span><span class="tcard-title">Portátiles, tabletas y móviles inteligentes</span><span class="tcard-en">laptops &middot; tablets &middot; smart/mobile devices</span></div>
+    <div class="trow"><div class="tlabel">Portátil</div><div class="tbody">En enero de <b>2003 Steve Jobs</b> proclamó el «año de la notebook» para Apple; en <b>julio de 2005</b> las portátiles ya superaron en ventas a las de escritorio. Gracias a la Ley de Moore, hoy son <b>casi tan potentes</b> como aquellas, con la ventaja de la portabilidad.</div></div>
+    <div class="trow"><div class="tlabel">Tableta</div><div class="tbody">Su popularidad creció desde <b>2010</b>: las tabletas de alta calidad, como el <b>iPad</b> de Apple, <b>llenaron el hueco entre la portátil y el teléfono</b>.</div></div>
+    <div class="trow"><div class="tlabel">Móvil</div><div class="tbody">El libro los ubica cuarto en su lista <b>por tamaño</b>, no por antigüedad. Muchos tienen <b>servicios de ubicación y GPS</b> (funcionalidad de mapas), pero se limitan por <b>menor potencia de procesamiento y duración de la batería</b>.</div></div>
+    <div class="trow"><div class="tlabel warn">Repercusiones y dilemas</div><div class="tbody">La estadística del libro (Paper 2): en 2020 el <b>móvil ya concentraba ~68%</b> de las visitas web (2019: 63%), mientras el escritorio cayó de 32% a 29%; sin embargo, los usuarios de escritorio permanecen más tiempo en cada sitio (351 s frente a 160 s). <b>Dilemas:</b> ubicación (privacidad), obsolescencia programada y electrodomésticos desechados (e-waste) — véanse los casos del Bloque 7.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.3A</span><span class="tcard-title">Computadoras vestibles</span><span class="tcard-en">wearable computers</span></div>
+    <div class="trow"><div class="tlabel">Evolución</div><div class="tbody"><ul>
+      <li><b>1975:</b> primer reloj calculadora — la tecnología vestible ya era popular.</li>
+      <li><b>2013:</b> Google Glass &middot; <b>2015:</b> Apple Watch &middot; <b>2016:</b> visor de realidad virtual Oculus Rift.</li>
+    </ul></div></div>
+    <div class="trow"><div class="tlabel">Uso en salud</div><div class="tbody">Los relojes de <b>salud/deporte</b> se usan tanto para <b>monitorizar la actividad física</b> como para <b>controlar enfermedades crónicas como la diabetes</b> (enlace del libro con 4.4B El cuerpo humano).</div></div>
+    <div class="trow"><div class="tlabel">Inquiry del libro</div><div class="tbody"><b>Wearable technology in the leisure industry</b> (enlace con 4.1 Cultura): investigar la <b>ropa inteligente</b>, p. ej. <i>smart yoga pants</i>; describir la tecnología y analizar impactos positivos y negativos para <b>dos grupos de interés (stakeholders)</b>.</div></div>
+    <div class="trow"><div class="tlabel warn">Repercusiones y dilemas</div><div class="tbody">Salud preventiva y autonomía para pacientes, a cambio de <b>datos biométricos continuos</b> en manos de empresas. <b>Dilema:</b> ¿a quién pertenecen y quién puede vender los datos de tu cuerpo?</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.3A</span><span class="tcard-title">Mainframes y servidores</span><span class="tcard-en">mainframe computers &middot; servers</span></div>
+    <div class="trow"><div class="tlabel">Mainframe</div><div class="tbody"><b>Computadora grande usada por empresas para alojar bases de datos, servidores de transacciones y aplicaciones de negocio;</b> requiere <b>medidas de seguridad de alto nivel</b>. Puede atender <b>miles de usuarios</b> y soportar igual cantidad de aplicaciones y dispositivos a la vez. El libro evoca la imagen de las películas de James Bond: habitaciones gubernamentales llenas de tecnología de piso a techo.</div></div>
+    <div class="trow"><div class="tlabel">Servidor</div><div class="tbody"><b>Computadora grande dedicada a gestionar los recursos de una red;</b> puede ser hardware especializado o una computadora común con sistema operativo de servidor. Una empresa suele tener <b>servidor de impresión, de base de datos, de correo, web y de archivos</b>; las colecciones muy grandes son <b>granjas de servidores (server farms)</b> y algunos <b>centros de datos (data centres)</b> cubren áreas enormes.</div></div>
+    <div class="trow"><div class="tlabel warn">Repercusiones y dilemas</div><div class="tbody">Concentran servicios esenciales (banca, salud, gobierno) pero su consumo energético es enorme: <b>~200 TWh anuales, ~0,3% de las emisiones globales de carbono</b>; el conjunto de las TIC genera <b>más del 2%</b> (desafío HL del libro con 5.3B). <b>Dilema:</b> crecimiento digital frente a sostenibilidad ambiental.</div></div>
+  </div>
+
+  <div class="info-card">
+    <h4>Caso del libro &middot; Microsoft Project Natick: un centro de datos bajo el mar <span class="en-term">(real-world example, 2018)</span></h4>
+    <p>Microsoft sumergió un centro de datos a <b>117 pies (&asymp;36 m) de profundidad</b> cerca de las <b>islas Orkney, en Escocia</b>. Las aguas frías del fondo marino enfrían los servidores de forma natural, lo que hace la instalación <b>más eficiente en energía</b>; además, resultó <b>ocho veces más confiable</b> que los centros de datos instalados en tierra (menos humedad, oxígeno y personas que corrompan los equipos).</p>
+    <p class="ic-sub"><b>Análisis para el examen:</b> impactos positivos — eficiencia energética, confiabilidad, cercanía a ciudades costeras (latencia); counter-claim — recuperación y mantenimiento difíciles, impacto sobre ecosistemas marinos, y la pregunta de si «esfriar el mar» es una solución o una externalización del problema ambiental.</p>
+  </div>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num u4">FICHA 2</span><span class="ficha-title">Ley de Moore</span><span class="ficha-en">Moore's Law</span></div>
+    <div class="ficha-def"><b>Definición del libro:</b> <b>el número de transistores en un circuito integrado denso se duplica cada dos años.</b></div>
+    <ul>
+      <li>Formulada en <b>1965 por Gordon E. Moore</b> a partir de lo que observaba en la fabricación de chips de Intel; se convirtió en la «regla de oro» de la industria electrónica.</li>
+      <li><b>Efecto visible:</b> gracias a ella, las portátiles actuales son casi tan potentes como las de escritorio y los móviles caben en un bolsillo.</li>
+      <li><b>Contra-argumento para evaluar en el examen:</b> la miniaturización física tiene límites (calor, costos de fábrica de chips) y la ley ya se ralentiza; el crecimiento migra hacia GPU, computación paralela y cuántica.</li>
+    </ul>
+  </div>
+
+  <div class="quiz-card">
+    <h4>Autoevaluación rápida &middot; Bloque 1</h4>
+    <ol>
+      <li>¿Qué cuatro operaciones básicas realiza cualquier computadora según la definición del libro? <i>(introducir, procesar, almacenar, producir salida)</i></li>
+      <li>Nombra dos razones por las que las empresas siguen usando PC de escritorio. <i>(fácil de personalizar/actualizar; los datos no «salen por la puerta»)</i></li>
+      <li>¿Por qué el centro de datos sumergido de Microsoft fue más confiable? <i>(ambiente frío, estable, sin humedad/oxígeno/personas que dañen los equipos)</i></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 2 · 3.3B ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Bloque 2 &middot; Contenido 3.3B</div>
+    <div class="section-title">Componentes de una computadora</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">El libro subraya que <b>todas las computadoras modernas funcionan con el mismo modelo</b> — de la lavadora al mainframe. Conviene recitarlo en el examen: <b>Entrada &rarr; Proceso &rarr; Salida</b>, con el almacenamiento como cuarto apoyo. Dentro de ese modelo conviven dos planos: el <b>hardware</b> (los componentes físicos) y el <b>software</b> (los programas que le dan vida). El hardware «solo es útil cuando se usa con software», dice el libro: la definición de computadora exige ambos.</p>
+
+  <div class="lifecycle">
+    <div class="lc-step"><span class="lc-n">1</span><div class="lc-t">Entrada <small>INPUT</small></div><div class="lc-d">Introducir datos con <b>dispositivos de entrada</b>: teclado, ratón, pantalla táctil, micrófono, sensores.</div></div>
+    <div class="lc-arrow">&rarr;</div>
+    <div class="lc-step"><span class="lc-n">2</span><div class="lc-t">Proceso <small>PROCESS</small></div><div class="lc-d">La <b>CPU</b> («el cerebro») ejecuta y controla las instrucciones; los datos se sostienen en la <b>RAM</b> mientras se procesan.</div></div>
+    <div class="lc-arrow">&rarr;</div>
+    <div class="lc-step"><span class="lc-n">3</span><div class="lc-t">Salida <small>OUTPUT</small></div><div class="lc-d">El resultado aparece en <b>dispositivos de salida</b>: monitores, pantallas, impresoras, parlantes, luces LED.</div></div>
+  </div>
+  <p class="flow-cap">Modelo de funcionamiento común a todas las computadoras modernas (libro, 3.3B)</p>
+
+  <div class="tcard u2">
+    <div class="tcard-head"><span class="tcard-num">3.3B</span><span class="tcard-title">CPU: el cerebro que ejecuta instrucciones</span><span class="tcard-en">central processing unit / microprocessor</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><b>La parte de la computadora que ejecuta y controla las instrucciones.</b> También se la llama <b>microprocesador</b>; el libro la describe como «los cerebros principales».</div></div>
+    <div class="trow"><div class="tlabel">Rendimiento</div><div class="tbody"><ul>
+      <li><b>Velocidad de reloj (clock speed):</b> se mide en <b>hertz</b>; representa el número de pulsos que el reloj del CPU genera por segundo.</li>
+      <li><b>Caché (cache):</b> pequeña memoria integrada en el CPU que <b>guarda temporalmente los datos mientras se procesan</b>.</li>
+      <li><b>Núcleos (cores):</b> a más núcleos, más rápido procesa; muchos procesadores son <b>quad core</b> (cuatro núcleos).</li>
+    </ul></div></div>
+    <div class="trow"><div class="tlabel warn">Repercusiones y dilemas</div><div class="tbody">Más potencia permite IA, videojuegos y edición profesional, pero empuja ciclos de renovación (obsolescencia) y concentró la producción avanzada en pocas fábricas — véase el caso de la <b>escasez de chips</b> en el Bloque 4.</div></div>
+  </div>
+
+  <div class="tcard u2">
+    <div class="tcard-head"><span class="tcard-num">3.3B</span><span class="tcard-title">Placa madre, RAM, almacenamiento y GPU</span><span class="tcard-en">motherboard &middot; RAM &middot; secondary storage &middot; GPU</span></div>
+    <div class="trow"><div class="tlabel">Placa madre</div><div class="tbody"><b>La placa de circuitos que permite que los datos viajen hacia los distintos componentes</b> de la computadora. Algunas traen sonido y gráficos integrados.</div></div>
+    <div class="trow"><div class="tlabel">RAM</div><div class="tbody"><b>Memoria de corto plazo donde los datos se almacenan temporalmente mientras se procesan o se ven en pantalla.</b> Volátil: al apagar, se pierde.</div></div>
+    <div class="trow"><div class="tlabel">Almacenam.</div><div class="tbody"><b>Memoria secundaria no volátil y de largo plazo</b>, guarda programas y datos hasta que se los necesita: disco duro <b>HDD</b> o almacenamiento en estado sólido <b>SSD</b>. Los datos no siempre van directo a la salida: a menudo se guardan primero en la memoria.</div></div>
+    <div class="trow"><div class="tlabel">GPU</div><div class="tbody">La <b>unidad de procesamiento gráfico contiene un circuito que acelera el renderizado de imágenes y video</b>, liberando así al CPU para otras tareas. Quienes juegan con gráficos de alta calidad o editan video revisan estas especificaciones y <b>actualizan</b> su PC con tarjetas adicionales de gráficos y sonido.</div></div>
+    <div class="trow"><div class="tlabel warn">Repercusiones y dilemas</div><div class="tbody">El dilema clásico del gamer: <b>rendimiento frente a costo y consumo</b>. Actualizar componentes extiende la vida del equipo (sostenibilidad), pero las mejoras constantes alimentan el consumo; los SSD/HDD también fallan (respaldos, pérdida de datos).</div></div>
+  </div>
+
+  <div class="tcard u2">
+    <div class="tcard-head"><span class="tcard-num">3.3B</span><span class="tcard-title">Energía: de la corriente a la batería de litio</span><span class="tcard-en">power supply &middot; lithium-ion batteries</span></div>
+    <div class="trow"><div class="tlabel">Funcionamiento</div><div class="tbody">La energía es <b>esencial</b>: las PC tienen <b>fuentes de poder integradas que convierten la corriente alterna (AC) en corriente continua (DC)</b> y suministran el voltaje correcto. Cada país usa voltajes distintos: por eso se necesita el adaptador adecuado al viajar.</div></div>
+    <div class="trow"><div class="tlabel">Baterías</div><div class="tbody">Portátiles y teléfonos usan <b>baterías de iones de litio: pequeños contenedores de energía química</b>. Al cargar el teléfono, la electricidad <b>restablece una reacción química</b> dentro de la batería. Contienen mucha energía en poco tamaño — ideales para dispositivos portátiles.</div></div>
+    <div class="trow"><div class="tlabel warn">Repercusiones y dilemas</div><div class="tbody">El litio implica <b>minería intensiva</b> (agua, comunidades) y baterías que envejecen: ¿quién paga el reemplazo? (véase el caso <b>Batterygate</b> del Bloque 7). <b>Dilema:</b> movilidad y autonomía frente a huella ambiental del ciclo de vida completo.</div></div>
+  </div>
+
+  <div class="tcard u2">
+    <div class="tcard-head"><span class="tcard-num">3.3B</span><span class="tcard-title">Software: sistema operativo, interfaces y tipos</span><span class="tcard-en">operating system &middot; user interface &middot; utility &amp; application software</span></div>
+    <div class="trow"><div class="tlabel">Sistema oper.</div><div class="tbody"><b>Software que gestiona el hardware, el software y la memoria de la computadora, además de proveer una interfaz de usuario.</b> Populares: <b>Microsoft Windows, Linux, Apple MacOS, Android OS de Google y Apple iOS</b>. Gestiona la memoria moviendo datos entre <b>RAM y memoria virtual</b> (permite varias apps a la vez) y se comunica con el hardware mediante <b>controladores de dispositivo (device drivers)</b>: el software que le informa al SO cómo comunicarse con cada componente.</div></div>
+    <div class="trow"><div class="tlabel">Interfaz</div><div class="tbody"><b>El medio por el cual los usuarios humanos interactúan con una tecnología digital;</b> su intención es que la experiencia sea <b>sencilla, intuitiva y con el mínimo esfuerzo</b>. Tres formas: <b>GUI</b> (íconos y enlaces, como en tabletas y teléfonos), <b>por voz</b> (asistentes virtuales como <b>Alexa</b> de Amazon) y <b>háptica</b> (interacción por sensaciones corporales: sensores que envían señales eléctricas y reciben respuestas; en un juego virtual de carreras el guante hace vibrar la mano como en un auto real — común en realidad virtual).</div></div>
+    <div class="trow"><div class="tlabel">Utilidad</div><div class="tbody"><b>Software diseñado para realizar tareas útiles específicas que ayudan a analizar, configurar o mantener la computadora.</b> Puede venir con el SO (gestión de archivos) o instalarse aparte (compresión, antivirus).</div></div>
+    <div class="trow"><div class="tlabel">Aplicación</div><div class="tbody"><b>Software que sirve a un propósito específico, como un procesador de texto o un editor de video.</b> Un portátil nuevo trae apps del sistema, pero «para ser verdaderamente funcional necesita software de aplicación».</div></div>
+  </div>
+
+  <table class="cmp d2">
+    <tr><th style="width:26%">Criterio</th><th>Software de código abierto <span class="en-term">(open-source)</span></th><th>Software propietario <span class="en-term">(proprietary)</span></th></tr>
+    <tr><td><b>Costo y licencia</b></td><td>Gratuito y <b>libre de copyright</b></td><td>Se descarga tras <b>pagar una licencia o suscripción</b></td></tr>
+    <tr><td><b>Código fuente</b></td><td>Puede <b>modificarse</b>, a menudo por una comunidad open-source</td><td><b>Cerrado por copyright</b>: se niega el acceso al código y se restringe compartirlo</td></tr>
+    <tr><td><b>Soporte</b></td><td><b>Sin garantía</b> de que esté libre de errores ni de soporte disponible</td><td>A cambio del pago, el usuario espera <b>actualizaciones y ayuda</b> de la empresa</td></tr>
+    <tr><td><b>Ejemplos de uso</b></td><td>Linux (SO), suites comunitarias</td><td>Windows, MacOS, iOS, Android (como productos de empresa)</td></tr>
+  </table>
+
+  <div class="tcard u2">
+    <div class="tcard-head"><span class="tcard-num">3.3B</span><span class="tcard-title">Software malicioso (malware)</span><span class="tcard-en">malicious software</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><b>Software escrito con el propósito específico de robar datos o dañar computadoras y sistemas de TI.</b> Ejemplos del libro: <b>virus, gusanos (worms), spyware, adware y ransomware</b>.</div></div>
+    <div class="trow"><div class="tlabel">Cómo entra</div><div class="tbody"><b>Se disfraza de archivos o enlaces inofensivos</b> diseñados para engañar al usuario y hacer que los descargue. Dato del libro (Statista, 2020): <b>5 600 millones de ataques de malware en el mundo</b>, con <b>678 millones de tipos distintos</b> de software malicioso.</div></div>
+    <div class="trow"><div class="tlabel">Caso del libro</div><div class="tbody"><b>Apps maliciosas en Google Play (sept. 2021):</b> Google eliminó <b>200 apps</b> («Handy Translator Pro», «Rate and Pulse Tracker»); tras instalarlas, los usuarios recibían notificaciones de «premios» a cambio de su número de teléfono, con el que los inscribían en <b>servicios de SMS fraudulentos</b> que cobraban a las víctimas y rentaban a los operadores (campaña <i>Grifthorse</i>, según Wired).</div></div>
+    <div class="trow"><div class="tlabel warn">Repercusiones y dilemas</div><div class="tbody">Pérdida financiera y de privacidad a escala global; confianza erosionada en tiendas de apps. <b>Dilema:</b> ¿responsabilidad de la plataforma (que aloja y gana comisión), del desarrollador o del usuario que acepta permisos sin leer?</div></div>
+  </div>
+
+  <div class="info-card">
+    <h4>Caso inédito 1 &middot; Batterygate: actualizaciones que ralentizan el hardware <span class="en-tag" style="font-weight:600;color:#7C3AED">(para el examen)</span></h4>
+    <p>En <b>2020</b>, la autoridad antifraude francesa (DGCCRF) <b>multó a Apple con 25 millones de euros</b> por no informar a los usuarios que las actualizaciones de iOS podían <b>ralentizar los iPhone antiguos</b> para gestionar las baterías envejecidas; muchos usuarios, sin saberlo, reemplazaron el teléfono creyendo que era un problema de hardware (Apple pagó además hasta US$500 millones en un acuerdo colectivo en EE.&nbsp;UU.). En paralelo, la <b>Unión Europea</b> aprobó el cargador común <b>USB-C</b> (obligatorio en teléfonos y tabletas desde fines de 2024; portátiles desde 2026) para reducir residuos electrónicos.</p>
+    <ol class="pq">
+      <li><b>Explain</b> two repercussions of undisclosed software updates for owners of older devices. <i>[4 marks]</i></li>
+      <li><b>Discuss</b> whether manufacturers should be required to let users repair and upgrade the devices they own. <i>[8 marks]</i></li>
+    </ol>
+    <span class="reveal-btn">Ver pauta</span>
+    <div class="q-a"><b>Pauta (1):</b> ① costos: reemplazos innecesarios de un dispositivo funcional (obsolescencia percibida); ② confianza y autonomía: el usuario decide sin información completa sobre su propio hardware; además, más dispositivos desechados &rarr; más e-waste (enlace 5.3B). <b>Pauta (2):</b> PEEL con dos caras — a favor: derecho a reparación, sostenibilidad, menos e-waste, mercados de reacondicionados; en contra: seguridad (piezas no certificadas), propiedad intelectual, costos de garantía; conclusión equilibrada con ejemplo (USB-C obligatorio en la UE, multa DGCCRF).</div>
+  </div>
+
+  <div class="quiz-card q2">
+    <h4>Autoevaluación rápida &middot; Bloque 2</h4>
+    <ol>
+      <li>Cita los tres factores que afectan el rendimiento del CPU. <i>(velocidad de reloj en hertz, caché, número de núcleos)</i></li>
+      <li>¿Qué diferencia hay entre RAM y almacenamiento secundario? <i>(RAM: corto plazo, volátil, mientras se procesa; secundario: no volátil, largo plazo, guarda programas y datos)</i></li>
+      <li>Nombra las tres formas de interfaz de usuario con un ejemplo cada una. <i>(GUI — iconos en una tableta; voz — Alexa; háptica — guante con vibración en VR)</i></li>
+      <li>¿Qué hace un device driver? <i>(informa al SO cómo comunicarse con el hardware)</i></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 3 · 3.3C ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Bloque 3 &middot; Contenido 3.3C</div>
+    <div class="section-title">Usos y formas del código de computadora</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">En 3.2 estudiaste que los algoritmos se representan con código y que las aplicaciones se programan en <b>lenguajes de alto nivel</b>: están <b>diseñados para programadores y escritos en una lengua más cercana al lenguaje humano</b>. Pero esa <b>no es la forma en que las computadoras entienden el código</b>: a nivel de hardware usan <b>lenguajes de bajo nivel</b>. La frontera del bloque es la traducción: comprender quién traduce qué, y por qué cada nivel tiene ventajas y costos.</p>
+
+  <div class="tcard u3">
+    <div class="tcard-head"><span class="tcard-num">3.3C</span><span class="tcard-title">Código de máquina</span><span class="tcard-en">machine code / object code</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><b>A veces llamado código objeto, se escribe en instrucciones binarias (0 y 1) o hexadecimales que la computadora puede responder directamente.</b> <b>Cada tipo de computadora tiene su propio lenguaje de máquina.</b></div></div>
+    <div class="trow"><div class="tlabel warn">Repercusiones</div><div class="tbody">Es el único idioma que el hardware ejecuta — máxima velocidad y control —, pero <b>programar en binario es extremadamente difícil</b> para las personas (el libro recuerda que en la 1.ª generación «tomaba días programar en lenguaje máquina» y cualquier error era invisible).</div></div>
+  </div>
+
+  <div class="tcard u3">
+    <div class="tcard-head"><span class="tcard-num">3.3C</span><span class="tcard-title">Lenguaje ensamblador</span><span class="tcard-en">assembly language</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><b>Usado por programadores para escribir código para hardware especial o para que una tarea se realice muy rápidamente.</b> Pertenece a los lenguajes de bajo nivel y <b>necesita traducirse a código de máquina</b>.</div></div>
+    <div class="trow"><div class="tlabel warn">Repercusiones</div><div class="tbody">Apareció en la <b>2.ª generación</b> y facilitó la vida del programador frente a los punzones. Hoy se usa en nichos: controladores de dispositivos, firmware de dispositivos embebidos, sistemas donde cada microsegundo cuenta. <b>Dilema:</b> rendimiento máximo frente a legibilidad, mantenimiento y portabilidad.</div></div>
+  </div>
+
+  <div class="tcard u3">
+    <div class="tcard-head"><span class="tcard-num">3.3C</span><span class="tcard-title">Lenguajes de alto nivel y el compilador</span><span class="tcard-en">high-level languages &middot; compiler</span></div>
+    <div class="trow"><div class="tlabel">Alto nivel</div><div class="tbody"><b>Lenguajes diseñados para programadores, escritos más cerca del lenguaje humano</b> (Java, Python, C#, JavaScript). Es imposible programar todo en binario o ensamblador, así que se escribe en alto nivel y <b>se traduce para que la computadora ejecute el código</b>.</div></div>
+    <div class="trow"><div class="tlabel">Compilador</div><div class="tbody"><b>Un programa llamado compilador traduce el código escrito en el lenguaje fuente (por ejemplo Java) al código objeto en binario y lo almacena en un archivo de programa.</b> Cuando la computadora ejecuta ese archivo, <b>el sistema operativo lo abre, lee y ejecuta las instrucciones binarias</b>.</div></div>
+    <div class="trow"><div class="tlabel warn">Repercusiones y dilemas</div><div class="tbody">Los lenguajes de alto nivel democratizaron la programación (5.ª generación, Python), pero la capa de traducción añade <b>dependencia de herramientas</b>: un error del compilador o un lenguaje abandonado puede «congelar» software heredado. <b>Dilema:</b> productividad del programador frente a control fino del hardware.</div></div>
+  </div>
+
+  <div class="flow">
+    <div class="flow-step">Programador escribe en lenguaje de alto nivel<small>código fuente — p. ej. Java, legible para humanos</small></div>
+    <div class="flow-arrow">&darr;</div>
+    <div class="flow-step">El compilador traduce<small>lenguaje fuente &rarr; código objeto en binario; guarda un archivo de programa</small></div>
+    <div class="flow-arrow">&darr;</div>
+    <div class="flow-step">El sistema operativo abre el archivo<small>lee y ejecuta las instrucciones binarias en la CPU</small></div>
+    <div class="flow-cap">Ruta del código: de la intención humana a las instrucciones binarias (libro, 3.3C)</div>
+  </div>
+
+  <table class="cmp d3">
+    <tr><th style="width:22%">Forma de código</th><th style="width:30%">¿Qué es?</th><th style="width:24%">¿Quién lo entiende?</th><th>Ventaja / límite</th></tr>
+    <tr><td><b>Alto nivel</b> <span class="en-term">(Java, Python)</span></td><td>Cercano al lenguaje humano, diseñado para programadores</td><td>Humanos; necesita traducción</td><td>Fácil de escribir y mantener / no lo ejecuta el hardware directo</td></tr>
+    <tr><td><b>Ensamblador</b></td><td>Bajo nivel; para hardware especial o tareas muy rápidas</td><td>Programadores expertos; se traduce a máquina</td><td>Control y velocidad / difícil y no portable</td></tr>
+    <tr><td><b>Código de máquina</b></td><td>Binario (0 y 1) o hexadecimal; instrucciones directas</td><td>Solo la computadora</td><td>Ejecución inmediata / «tomaba días programar»; cada computadora tiene el suyo</td></tr>
+  </table>
+
+  <div class="quiz-card q3">
+    <h4>Autoevaluación rápida &middot; Bloque 3</h4>
+    <ol>
+      <li>¿Qué dos nombres recibe el código de máquina según el libro? <i>(machine code / object code)</i></li>
+      <li>¿Por qué se dice que cada computadora «tiene su propio lenguaje de máquina»? <i>(las instrucciones binarias que responde directamente dependen de su hardware)</i></li>
+      <li>Describe la ruta completa del código Java hasta su ejecución. <i>(fuente &rarr; compilador &rarr; código objeto binario en archivo &rarr; SO lo abre, lee y ejecuta)</i></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 4 · 3.3D ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Bloque 4 &middot; Contenido 3.3D</div>
+    <div class="section-title">Evolución de la computación</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">«Incluso en tu vida has visto cambios en la tecnología digital», plantea el libro en su actividad de reflexión: ¿qué tecnología recuerdas de tu infancia, sigue viva o desapareció? La historia de la computación se define por los <b>desgloses tecnológicos</b> de cada época, organizados en <b>cinco generaciones</b>. Fíjate en el patrón que el IB adora analizar con el concepto de <b>cambio</b>: cada generación hace el hardware <b>más pequeño, más fiable, más eficiente</b> y el software <b>más cercano al humano</b> — del lenguaje máquina de días enteros a Python, y de los punzones a la voz.</p>
+
+  <table class="cmp d4 bigtable">
+    <tr><th style="width:15%">Generación</th><th style="width:22%">Hardware clave</th><th style="width:35%">Qué aportó</th><th>Lenguajes / hito</th></tr>
+    <tr><td><b>1.ª</b> 1940&ndash;46</td><td><b>Tubos de vacío</b> para circuitos; tambores magnéticos de memoria (p. ej. UNIVAC)</td><td>Una sola actividad a la vez; <b>tomaba días programar en lenguaje máquina</b>; fallaba a menudo por el calor que emitían</td><td>Lenguaje máquina</td></tr>
+    <tr><td><b>2.ª</b> 1956&ndash;63</td><td><b>Transistores</b> sustituyen a los tubos</td><td>Computadoras <b>más pequeñas y fiables, más eficientes en energía</b>; aún usaban tarjetas perforadas y cintas de papel; la salida eran impresiones</td><td><b>Ensamblador</b> introducido; se desarrollan <b>COBOL y FORTRAN</b></td></tr>
+    <tr><td><b>3.ª</b> 1964&ndash;71</td><td><b>Circuitos integrados:</b> transistores miniaturizados en <b>chips de silicio</b> (semiconductores)</td><td>Más eficientes, fiables y rápidas; <b>ejecutan varias aplicaciones a la vez</b>; adiós a los punzones: entran <b>teclado, ratón y sistema operativo</b></td><td>FORTRAN, BASIC, COBOL, Pascal · <b>1965: Gordon E. Moore formula su ley en Intel</b></td></tr>
+    <tr><td><b>4.ª</b> 1971&ndash;2010</td><td><b>Microprocesadores:</b> miles de circuitos integrados en un solo chip de silicio</td><td>Aparecen componentes ya estudiados: <b>RAM, CPU y discos duros</b>; la <b>PC de escritorio con GUI</b> llega en esta generación; más potencia con menos tamaño</td><td><b>Python, C#, Java, JavaScript</b></td></tr>
+    <tr><td><b>5.ª</b> 2010&ndash;hoy</td><td><b>Superconductores</b> (millones de transistores por microchip), <b>procesamiento paralelo</b> (dos o más microprocesadores ejecutan tareas simultáneamente)</td><td>La tecnología que hace <b>posible la inteligencia artificial</b>; aún «la computación sigue cambiando radicalmente»: computación cuántica y nanotecnología</td><td>Meta del libro: que las computadoras usen <b>lenguaje natural</b> (reconocimiento de voz) y <b>aprendan por sí mismas</b></td></tr>
+  </table>
+
+  <div class="info-card">
+    <h4>Caso inédito 2 &middot; La escasez global de chips (2020&ndash;2022): cuando para un microprocesador se detiene el mundo <span class="en-tag" style="font-weight:600;color:#7C3AED">(para el examen)</span></h4>
+    <p>La pandemia disparó la demanda de dispositivos justo cuando las fábricas de semiconductores —concentradas en pocas empresas: se estima que <b>TSMC fabrica cerca del 90% de los chips más avanzados</b>— cerraban por confinamientos. El resultado: líneas de producción automotriz detenidas. La consultora AlixPartners estimó para 2021 unas <b>7,7 millones de unidades no producidas</b> y <b>US$210 000 millones en ventas perdidas</b> para la industria del automóvil (sus coches, recuerda 3.3A, dependen de computadoras embebidas que resisten el calor del motor).</p>
+    <ol class="pq">
+      <li><b>Explain</b> two reasons why a shortage of microprocessors can affect industries beyond computing. <i>[4 marks]</i></li>
+      <li><b>To what extent</b> should countries and companies reduce their dependence on a small number of chip manufacturers? <i>[8 marks]</i></li>
+    </ol>
+    <span class="reveal-btn">Ver pauta</span>
+    <div class="q-a"><b>Pauta (1):</b> ① las computadoras embebidas están dentro de casi todo (autos, electrodomésticos, equipos médicos) — sin chips no hay producto final; ② efecto en cadena global: precios, empleo y plazos (concepto de <i>sistemas</i>: un nodo crítico afecta a todo el sistema). <b>Pauta (2):</b> a favor de diversificar — resiliencia, soberanía tecnológica, menos riesgo geopolítico; en contra — fábricas de chips cuestan miles de millones y requieren décadas de especialización, duplicarlas es ineficiente; conclusión matizada: diversificar proveedores y guardar reservas estratégicas sin cerrar el comercio.</div>
+  </div>
+
+  <div class="ficha u4">
+    <div class="ficha-head"><span class="ficha-num">FICHA 3</span><span class="ficha-title">Computación cuántica</span><span class="ficha-en">quantum computing</span></div>
+    <div class="ficha-def"><b>Definición del libro:</b> la tecnología que <b>usa las propiedades de la física cuántica para almacenar datos y realizar cálculos</b>, creando hardware cuántico capaz de resolver problemas complejos <b>más rápido que los supercomputadores existentes</b>.</div>
+    <ul>
+      <li><b>Qubits frente a bits:</b> el bit clásico es 1 o 0 (encendido/apagado). El <b>qubit</b> sigue las leyes de la mecánica cuántica: puede estar <b>encendido y apagado a la vez, o en algún punto intermedio — eso es la superposición</b>.</li>
+      <li><b>Qué permite:</b> convivir con la incertidumbre y <b>analizar múltiples opciones al mismo tiempo</b>, resolviendo en instantes problemas que a los supercomputadores actuales les tomarían <b>cientos de años</b>.</li>
+      <li><b>Campos de investigación del libro:</b> baterías, <b>ciberseguridad</b>, desarrollo de fármacos, modelización financiera, predicción del clima, inteligencia artificial, optimización del tráfico y <b>fertilizantes más limpios</b>.</li>
+      <li><b>Caso del libro 1 (Daimler):</b> simular moléculas de <b>baterías de litio-azufre</b> de próxima generación y modelar su momento dipolar: millones de reacciones químicas simuladas para decidir <b>qué experimentos probar en el laboratorio</b>.</li>
+      <li><b>Caso del libro 2 (ExxonMobil + IBM):</b> usar computación cuántica para modelar la <b>planificación logística marítima</b> de combustibles y reducir emisiones de carbono (desafío HL 5.3B).</li>
+    </ul>
+  </div>
+
+  <div class="info-card">
+    <h4>Caso inédito 3 &middot; La cuántica contra el candado digital: criptografía post-cuántica <span class="en-tag" style="font-weight:600;color:#7C3AED">(para el examen)</span></h4>
+    <p>La mayor parte de la confidencialidad de internet (bancos, mensajes, estados) descansa en cifrados que una computadora cuántica madura podría <b>romper en horas</b>. Por eso en <b>agosto de 2024 el NIST de EE.&nbsp;UU. publicó los tres primeros estándares mundiales de criptografía post-cuántica</b> (FIPS 203, 204 y 205, basados en algoritmos como ML-KEM). Ya existe una táctica llamada <i>«harvest now, decrypt later»</i>: robar hoy datos cifrados esperando descifrarlos mañana.</p>
+    <ol class="pq">
+      <li><b>Describe</b> how quantum computing differs from classical computing, using the terms <i>bit</i> and <i>qubit</i>. <i>[4 marks]</i></li>
+      <li><b>Discuss</b> the impacts and implications of quantum computing for two stakeholders: individuals and governments. <i>[8 marks]</i></li>
+    </ol>
+    <span class="reveal-btn">Ver pauta</span>
+    <div class="q-a"><b>Pauta (1):</b> bit = 1 o 0 (encendido/apagado); qubit = ambos estados a la vez o intermedio (superposición) &rarr; analiza múltiples opciones simultáneamente y resuelve en minutos lo que a un supercomputador tomaría cientos de años. <b>Pauta (2):</b> individuos — protección de datos médicos/financieros (positivo: nuevos estándares; negativo: vigilancia y fraude si se rompen cifrados); gobiernos — seguridad nacional, ciberseguridad crítica (defensa y ataque); dilema de valores: seguridad colectiva frente a privacidad individual; cita Daimler/ExxonMobil como usos pacíficos y FIPS 203&ndash;205 como intervención.</div>
+  </div>
+
+  <div class="quiz-card q4">
+    <h4>Autoevaluación rápida &middot; Bloque 4</h4>
+    <ol>
+      <li>Asigna a cada generación su tecnología: tubos de vacío, transistores, circuitos integrados, microprocesadores, IA/cuántica. <i>(1.ª &rarr; 5.ª en ese orden)</i></li>
+      <li>¿Qué cambió en la 3.ª generación respecto de la entrada de datos? <i>(fin de las tarjetas perforadas: teclado, ratón y sistema operativo)</i></li>
+      <li>¿Cuál es la meta de la 5.ª generación según el libro? <i>(lenguaje natural como entrada —reconocimiento de voz— y que las computadoras aprendan por sí mismas)</i></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════ BLOQUE 5 · IMPACTOS Y DILEMAS ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Bloque 5 &middot; Capa transversal</div>
+    <div class="section-title">Repercusiones y dilemas de cada tecnología</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">El IB nunca pregunta «¿qué es un CPU?» a secas: pregunta <b>qué implica</b> para personas y comunidades. Esta tabla cruza las tecnologías de 3.3 con sus <b>impactos positivos</b>, <b>riesgos</b> y el <b>dilema</b> que un examinador espera que discutas con un ejemplo real. Úsala como banco de argumentos para cualquier pregunta extendida (Paper 1c, 8 pts; Paper 2 Q4, 12 pts).</p>
+
+  <table class="cmp bigtable">
+    <tr><th style="width:17%">Tecnología (3.3)</th><th style="width:28%">Impactos positivos</th><th style="width:28%">Riesgos y costos</th><th>Dilema ético central</th></tr>
+    <tr><td><b>Embebidas / IoT</b></td><td>Automatización cotidiana (lavadoras, autos), eficiencia, seguridad funcional (resisten entornos duros)</td><td>Contraseñas por defecto, sin actualizaciones; botnets como <b>Mirai</b> (2016) esclavizaron >100 000 dispositivos IoT para tumbar servicios globales</td><td>¿Quién es responsable de un objeto «inteligente» inseguro: el fabricante, el dueño o el proveedor de red?</td></tr>
+    <tr><td><b>Móviles y wearables</b></td><td>Salud monitoreada (diabetes), GPS y mapas, comunicación ubicua, inclusión financiera</td><td>Datos biométricos y de ubicación continuos; baterías de litio que envejecen; e-waste (los residuos electrónicos son el flujo de residuos de mayor crecimiento)</td><td>¿Hasta dónde puede una empresa recopilar datos del cuerpo y del movimiento de una persona?</td></tr>
+    <tr><td><b>Mainframes y centros de datos</b></td><td>Servicios esenciales a miles de usuarios a la vez (banca, salud); Natick demostró eficiencia y fiabilidad</td><td>~200 TWh anuales; ~0,3% de las emisiones globales de CO<sub>2</sub>; las TIC >2%; enfriamiento intensivo en agua</td><td>Crecimiento digital frente a sostenibilidad: ¿se puede «verde» la nube? (5.3B)</td></tr>
+    <tr><td><b>Software propietario vs. libre</b></td><td>Propietario: soporte y actualizaciones garantizadas; Libre: personalización, costo cero, comunidades</td><td>Propietario: dependencia del proveedor, precios; Libre: sin garantía de soporte ni de ausencia de errores</td><td>¿Debe el código crítico de una sociedad (salud, votación) ser auditable por cualquiera?</td></tr>
+    <tr><td><b>Malware y ciberseguridad</b></td><td>La amenaza impulsa antivirus, actualizaciones, educación digital (software de utilidad)</td><td>5 600 millones de ataques en 2020; fraudes como <b>Grifthorse</b> (200 apps); pérdida financiera y de privacidad</td><td>¿Responsabilidad de la plataforma que gana comisión, del desarrollador o del usuario descuidado?</td></tr>
+    <tr><td><b>Computación cuántica</b></td><td>Baterías mejores (Daimler), fármacos, clima, logística con menos CO<sub>2</sub> (ExxonMobil+IBM)</td><td>Puede romper el cifrado actual; «harvest now, decrypt later»; carrera militar cuántica</td><td>Seguridad colectiva frente a privacidad individual: ¿quién posee el poder de descifrar?</td></tr>
+  </table>
+
+  <div class="info-card">
+    <h4>Caso inédito 4 &middot; «Una Laptop por Niño» en Perú: ¿hardware iguala oportunidades? <span class="en-tag" style="font-weight:600;color:#7C3AED">(para el examen)</span></h4>
+    <p>Perú ejecutó entre 2007 y mediados de la década de 2010 uno de los mayores despliegues del mundo del programa OLPC (<i>One Laptop per Child</i>): cerca de <b>900 000 laptops XO</b> entregadas a escolares de primaria, muchas en zonas rurales. Las evaluaciones independientes (p. ej., del BID) hallaron <b>acceso y uso claramente aumentados, pero efectos modestos</b> en aprendizaje: el dispositivo sin formación docente, conectividad y contenido local no basta.</p>
+    <ol class="pq">
+      <li><b>Outline</b> two intended impacts of distributing personal computers to school children. <i>[4 marks]</i></li>
+      <li><b>Discuss</b> why providing devices alone may not reduce digital inequality, with reference to people and communities. <i>[8 marks]</i></li>
+    </ol>
+    <span class="reveal-btn">Ver pauta</span>
+    <div class="q-a"><b>Pauta (1):</b> ① acceso a la tecnología para todos (cerrar la brecha de acceso); ② apoyo al aprendizaje y habilidades digitales desde la escuela. <b>Pauta (2):</b> PEEL — la desigualdad es multidimensional: conectividad y electricidad rural, formación docente, idioma y pertinencia cultural (enlace 4.1 Cultura), mantenimiento y obsolescencia del hardware; los beneficiarios directos (niños con laptops) frente a comunidades sin infraestructura; conclusión: el dispositivo es condición necesaria pero no suficiente.</div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat"><div class="st-n">8&times;</div><div class="st-t">más confiable: el centro de datos sumergido de Microsoft (Proyecto Natick, 2018) frente a los de tierra</div></div>
+    <div class="stat"><div class="st-n">200</div><div class="st-t">apps maliciosas eliminadas por Google en septiembre de 2021 (campaña Grifthorse)</div></div>
+    <div class="stat"><div class="st-n">7,7 M</div><div class="st-t">vehículos no producidos en 2021 por la escasez de chips (estimación AlixPartners)</div></div>
+    <div class="stat"><div class="st-n">900 000</div><div class="st-t">laptops XO repartidas por Perú: uno de los mayores despliegues OLPC del mundo</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ MAPA MENTAL 2 · ANATOMÍA (full-bleed) ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k2">Mapa mental 2 de 3 &middot; 3.3B + 3.3C</span>
+    <div class="map-title">Anatomía de una computadora</div>
+    <div class="map-intro">El modelo común a todos los dispositivos: qué entra, quién procesa, dónde se guarda y cómo el software y el código lo hacen funcionar. Útil para las preguntas «explain the role of…».</div>
+  </div>
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u1">Entrada<small>INPUT</small></div>
+        <div class="children">
+          <div class="leaf">Teclado · ratón</div>
+          <div class="leaf">Pantalla táctil</div>
+          <div class="leaf">Micrófono · sensores</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u2">Procesamiento<small>PROCESS</small></div>
+        <div class="children">
+          <div class="leaf">CPU: reloj · caché · núcleos</div>
+          <div class="leaf">RAM: corto plazo</div>
+          <div class="leaf">GPU: gráficos y video</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u4">Almacenam. y energía<small>STORAGE · POWER</small></div>
+        <div class="children">
+          <div class="leaf">HDD / SSD no volátiles</div>
+          <div class="leaf">Fuente AC &rarr; DC</div>
+          <div class="leaf">Litio: energía química</div>
+        </div>
+      </div>
+    </div>
+    <div class="root-node">ANATOMÍA DE<br>UNA COMPUTADORA<small>3.3B COMPONENTS</small></div>
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u1">Salida<small>OUTPUT</small></div>
+        <div class="children">
+          <div class="leaf">Monitor · impresora</div>
+          <div class="leaf">Parlantes · luces LED</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u2">Software<small>3.3B</small></div>
+        <div class="children">
+          <div class="leaf">SO: Windows, Linux, iOS…</div>
+          <div class="leaf">UI: GUI · voz · háptica</div>
+          <div class="leaf">Utilidad y aplicación</div>
+          <div class="leaf">Open vs. propietario</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u3">Código<small>3.3C</small></div>
+        <div class="children">
+          <div class="leaf">Alto nivel (humanos)</div>
+          <div class="leaf">Compilador &rarr; binario</div>
+          <div class="leaf">Máquina: 0 y 1 (hardware)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:var(--u1)"></span> Entrada / salida</span>
+    <span class="lg"><span class="dot" style="background:var(--u2)"></span> Procesamiento y software</span>
+    <span class="lg"><span class="dot" style="background:var(--u3)"></span> Código</span>
+    <span class="lg"><span class="dot" style="background:var(--u4)"></span> Almacenamiento y energía</span>
+  </div>
+</div>
+
+<!-- ═══════════════ MAPA MENTAL 3 · EVOLUCIÓN (full-bleed) ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k4">Mapa mental 3 de 3 &middot; 3.3D</span>
+    <div class="map-title">Cinco generaciones de la computación</div>
+    <div class="map-intro">La historia de la computación se define por los <b>desgloses tecnológicos</b> de cada época, que el libro organiza en generaciones. Memoriza para cada una: años, tecnología de hardware y lenguajes.</div>
+  </div>
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u4">5.ª generación<small>2010&ndash;hoy</small></div>
+        <div class="children">
+          <div class="leaf">IA; superconductores</div>
+          <div class="leaf">Procesamiento paralelo</div>
+          <div class="leaf">Cuántica y nanotecnología</div>
+          <div class="leaf">Meta: voz y aprendizaje</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u4">4.ª generación<small>1971&ndash;2010</small></div>
+        <div class="children">
+          <div class="leaf">Microprocesadores en un chip</div>
+          <div class="leaf">RAM, CPU, HDD</div>
+          <div class="leaf">Python, C#, Java, JavaScript</div>
+          <div class="leaf">PC con GUI</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u4">3.ª generación<small>1964&ndash;71</small></div>
+        <div class="children">
+          <div class="leaf">Circuitos integrados (chips de silicio)</div>
+          <div class="leaf">Varias apps a la vez</div>
+          <div class="leaf">Teclado y ratón + SO</div>
+          <div class="leaf">FORTRAN, BASIC, COBOL, Pascal</div>
+        </div>
+      </div>
+    </div>
+    <div class="root-node">5 GENERACIONES<small>EVOLUCIÓN DE LA COMPUTACIÓN · 3.3D</small></div>
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u4">2.ª generación<small>1956&ndash;63</small></div>
+        <div class="children">
+          <div class="leaf">Transistores sustituyen a los tubos</div>
+          <div class="leaf">Más pequeñas, fiables, eficientes</div>
+          <div class="leaf">Ensamblador; COBOL, FORTRAN</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u4">1.ª generación<small>1940&ndash;46</small></div>
+        <div class="children">
+          <div class="leaf">Tubos de vacío y tambores magnéticos</div>
+          <div class="leaf">Una actividad a la vez</div>
+          <div class="leaf">Días programando en lenguaje máquina</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-navy">Leyes y frontera</div>
+        <div class="children">
+          <div class="leaf">Ley de Moore (1965)</div>
+          <div class="leaf">Qubits y superposición</div>
+          <div class="leaf">Daimler · ExxonMobil+IBM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:var(--u4)"></span> Generaciones 1&ndash;5</span>
+    <span class="lg"><span class="dot" style="background:var(--navy2)"></span> Leyes y tecnologías fronterizas</span>
+    <span class="lg" style="margin-left:auto">Fecha clave extra: 1965 &middot; Gordon E. Moore formula su ley en Intel</span>
+  </div>
+</div>
+
+<!-- ═══════════════ FICHAS RÁPIDAS ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Repaso activo &middot; memoria a corto plazo</div>
+    <div class="section-title">21 fichas rápidas <span class="en-term">(flashcards)</span></div>
+    <div class="divider"></div>
+  </div>
+  <p class="body-text">Tápate la respuesta y recítala en voz alta; luego voltea la tarjeta (clic en la versión HTML) para comprobar. Si fallas, vuelve a la ficha del bloque correspondiente. Colores: <b>azul = 3.3A</b> tipos, <b>violeta = 3.3B</b> componentes, <b>teal = 3.3C</b> código, <b>ámbar = 3.3D</b> evolución.</p>
+
+  <div class="fc-grid">
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">¿Qué es una computadora, según la definición del libro?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Máquina o dispositivo que <b>procesa datos, realiza cálculos y ejecuta operaciones</b> basadas en algoritmos provistos por software y hardware; <b>introduce, procesa, almacena y produce una salida</b>.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">¿Qué es una computadora embebida y dónde la encuentras?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Hardware + software para una tarea específica incorporados a un sistema electrónico o mecánico</b>: lavadoras, microondas, consolas, cámaras; en un auto, resistiendo el calor del motor.</div></div></div></div>
+    <div class="fc"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">¿Qué es una PC y por qué sigue viva en las empresas?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Computadora de propósito general para uso individual</b> (hogar, inicios de los 1980). En empresas: fácil de <b>personalizar y actualizar</b> y los datos corporativos <b>no «salen por la puerta»</b>.</div></div></div></div>
+    <div class="fc f2"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">¿Qué hace la CPU y qué tres factores determinan su rendimiento?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Ejecuta y controla las instrucciones</b> («los cerebros principales»). Rendimiento: <b>velocidad de reloj</b> (hertz), <b>caché</b> y <b>número de núcleos</b> (p. ej. quad core).</div></div></div></div>
+    <div class="fc f2"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">RAM frente a almacenamiento secundario: ¿la diferencia clave?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>RAM:</b> memoria de <b>corto plazo</b>, guarda datos temporalmente mientras se procesan o se ven (volátil). <b>Secundario (HDD/SSD):</b> <b>no volátil y de largo plazo</b>, guarda programas y datos hasta que se necesitan.</div></div></div></div>
+    <div class="fc f2"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">¿Qué hace la GPU y a quién le importa?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Contiene un circuito que <b>acelera el renderizado de imágenes y video, liberando al CPU</b> para otras tareas. Clave para <b>juegos con gráficos de alta calidad y edición de video</b> (se puede actualizar como tarjeta aparte).</div></div></div></div>
+    <div class="fc f2"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">¿Qué es la placa madre?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>La placa de circuitos que permite que los datos viajen hacia los distintos componentes</b> de la computadora; algunas traen sonido y gráficos integrados.</div></div></div></div>
+    <div class="fc f2"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">¿Cómo funcionan las baterías de iones de litio?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Son <b>pequeños contenedores de energía química</b>; al cargar, la electricidad <b>restablece una reacción química</b> interna. Mucha energía en poco tamaño: ideales para portátiles y teléfonos.</div></div></div></div>
+    <div class="fc f2"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">¿Qué es un sistema operativo y cuáles son populares?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Gestiona hardware, software y memoria y provee la interfaz de usuario.</b> Populares: <b>Windows, Linux, MacOS, Android, iOS</b>. Mueve datos entre RAM y memoria virtual y usa <b>device drivers</b>.</div></div></div></div>
+    <div class="fc f2"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">Nombra las tres formas de interfaz de usuario.</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>GUI</b> (íconos y enlaces, tabletas), <b>por voz</b> (asistentes virtuales como Alexa) y <b>háptica</b> (sensaciones corporales; guante que vibra en un juego de carreras en VR). Objetivo: experiencia <b>sencilla, intuitiva, mínimo esfuerzo</b>.</div></div></div></div>
+    <div class="fc f2"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">Software de utilidad frente a software de aplicación.</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Utilidad:</b> tareas útiles para <b>analizar, configurar o mantener</b> la computadora (archivos con el SO; compresión o antivirus aparte). <b>Aplicación:</b> sirve a un <b>propósito específico</b> — procesador de texto, editor de video.</div></div></div></div>
+    <div class="fc f2"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">¿Qué es el malware y qué cinco tipos menciona el libro?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Software escrito para robar datos o dañar computadoras/sistemas de TI</b>, disfrazado de archivos o enlaces inofensivos. Tipos: <b>virus, gusanos, spyware, adware, ransomware</b>. 2020: 5 600 M de ataques, 678 M de variantes.</div></div></div></div>
+    <div class="fc f2"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">Open-source frente a propietario: dos diferencias.</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Open-source:</b> gratis, sin copyright, código <b>modificable</b> por la comunidad; sin garantía de soporte ni de cero errores. <b>Propietario:</b> pago de licencia/suscripción, <b>actualizaciones y ayuda</b>; código <b>cerrado</b> y compartición restringida.</div></div></div></div>
+    <div class="fc f3"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">¿Qué es el código de máquina?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>«Object code»: instrucciones binarias (0 y 1) o hexadecimales que la computadora responde directamente.</b> <b>Cada tipo de computadora tiene el suyo</b>; a los humanos «tomaba días programar en él».</div></div></div></div>
+    <div class="fc f3"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">¿Para qué se usa el lenguaje ensamblador?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Para escribir código de hardware especial o que una tarea se realice muy rápido.</b> Bajo nivel: <b>requiere traducirse a código de máquina</b>; introducido en la 2.ª generación.</div></div></div></div>
+    <div class="fc f3"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">¿Qué hace el compilador, paso a paso?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Traduce el código del lenguaje fuente (p. ej. Java) al código objeto en binario</b> y lo guarda en un archivo de programa; al ejecutarlo, <b>el SO abre el archivo, lee y ejecuta las instrucciones binarias</b>.</div></div></div></div>
+    <div class="fc f4"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">Ley de Moore: definición y autor.</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>El número de transistores en un circuito integrado denso se duplica cada dos años.</b> La formuló <b>Gordon E. Moore en 1965</b> observando la fabricación de chips en Intel.</div></div></div></div>
+    <div class="fc f4"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">Asocia cada generación con su hardware (1.ª a 5.ª).</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>1.ª</b> tubos de vacío · <b>2.ª</b> transistores · <b>3.ª</b> circuitos integrados · <b>4.ª</b> microprocesadores · <b>5.ª</b> IA, superconductores, paralelismo, cuántica (2010&ndash;hoy).</div></div></div></div>
+    <div class="fc f4"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">¿Qué es un qubit y qué es la superposición?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Unidad de la computación cuántica: a diferencia del bit (1 o 0), puede estar <b>encendido y apagado a la vez, o en un punto intermedio</b> (superposición) &rarr; <b>analiza múltiples opciones al mismo tiempo</b>.</div></div></div></div>
+    <div class="fc f4"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">¿Qué meta persigue la 5.ª generación según el libro?</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a">Que las computadoras usen <b>lenguaje natural como entrada</b> (reconocimiento de voz) y que <b>aprendan por sí mismas</b> — junto a superconductores, paralelismo, cuántica y nanotecnología.</div></div></div></div>
+    <div class="fc f4"><div class="fc-inner"><div class="fc-face fc-front"><div class="fc-q">Dime un uso real de la computación cuántica del libro.</div><div class="fc-hint">Clic para voltear</div></div><div class="fc-face fc-back"><div class="fc-a"><b>Daimler:</b> simular millones de reacciones químicas para diseñar <b>baterías de litio-azufre</b> (modelar el momento dipolar). <b>ExxonMobil + IBM:</b> modelar <b>routing marítimo</b> para reducir CO<sub>2</sub>.</div></div></div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ QUIZ INTERACTIVO ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Repaso activo &middot; autocorrección</div>
+    <div class="section-title">Quiz del tema 3.3</div>
+    <div class="divider"></div>
+  </div>
+  <p class="body-text"><span class="only-screen" style="color:#334155">Responde todo y compara: el quiz se corrige solo (verde = correcto, rojo = revísalo).</span><span class="only-print" style="color:#334155">Responde primero en una hoja aparte; las respuestas quedan impresas debajo de cada pregunta.</span></p>
+
+  <div class="qz-part">Parte A &middot; Verdadero o falso</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt"><b>1.</b> El primer reloj calculadora (1975) muestra que la tecnología vestible ya era popular hace décadas.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Verdadero.</b> El libro: «wearable technology was popular in 1975 with the introduction of the first calculator watch».</div>
+
+  <div class="vf-row" data-ans="F"><div class="vf-txt"><b>2.</b> La RAM es memoria de largo plazo: conserva los datos incluso con la computadora apagada.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Falso.</b> La RAM es <b>corto plazo</b>: guarda datos temporalmente <b>mientras se procesan o se ven en pantalla</b>. La memoria de largo plazo (no volátil) es el <b>almacenamiento secundario</b> (HDD/SSD).</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt"><b>3.</b> La GPU acelera el renderizado de imágenes y video y así libera al CPU para otras tareas.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Verdadero.</b> Es literal la definición del libro; por eso gamers y editores de video actualizan tarjetas gráficas.</div>
+
+  <div class="vf-row" data-ans="F"><div class="vf-txt"><b>4.</b> Si pago una licencia, el software propietario me garantiza que estará libre de errores.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Falso.</b> La <b>sin garantía de errores</b> es la desventaja del <b>open-source</b>. El propietario ofrece, a cambio del pago, <b>actualizaciones y ayuda</b> de la empresa — pero no «cero errores».</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt"><b>5.</b> En computación cuántica, un qubit puede estar encendido y apagado a la vez.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Verdadero.</b> Es la <b>superposición</b>: el qubit sigue la mecánica cuántica y puede estar «on and off, or somewhere in between», lo que permite analizar múltiples opciones al mismo tiempo.</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt"><b>6.</b> Microsoft sumergió un centro de datos cerca de las islas Orkney y resultó ocho veces más confiable que uno en tierra.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Verdadero.</b> Proyecto <b>Natick</b> (2018): 117 pies bajo el mar, enfriamiento natural por aguas frías y <b>8&times; más fiabilidad</b>.</div>
+
+  <div class="qz-part">Parte B &middot; Opción múltiple</div>
+
+  <div class="mc-q" data-ans="C"><div class="mc-txt"><b>7.</b> Un jugador (gamer) quiere que su partida cargue rápido y sin cortes. ¿Qué combinación de componentes debería optimizar?</div>
+    <div class="opts"><span class="mc-opt" data-k="A">A · Impresora y parlantes</span><span class="mc-opt" data-k="B">B · Batería y cargador</span><span class="mc-opt" data-k="C">C · CPU (reloj, caché, núcleos), RAM y GPU</span><span class="mc-opt" data-k="D">D · Micrófono y cámara</span></div></div>
+  <div class="q-a"><b>C.</b> El procesamiento depende del <b>CPU</b> (velocidad de reloj, caché, núcleos) con la <b>RAM</b> sosteniendo los datos en uso, y el renderizado gráfico lo acelera la <b>GPU</b>. (Pregunta del libro, Paper 1: «Explain three components… when playing a computer game» [6 marks].)</div>
+
+  <div class="mc-q" data-ans="B"><div class="mc-txt"><b>8.</b> ¿Cuál de estos ejemplos es una computadora embebida?</div>
+    <div class="opts"><span class="mc-opt" data-k="A">A · La PC de escritorio del laboratorio</span><span class="mc-opt" data-k="B">B · El controlador dentro de una lavadora</span><span class="mc-opt" data-k="C">C · El mainframe de un banco</span><span class="mc-opt" data-k="D">D · La tableta de un estudiante</span></div></div>
+  <div class="q-a"><b>B.</b> Embebida = <b>hardware + software para una tarea específica</b> incorporada a un sistema electrónico o mecánico (lavadoras, microondas, autos). Las demás son computadoras de propósito general o servidores.</div>
+
+  <div class="mc-q" data-ans="A"><div class="mc-txt"><b>9.</b> Según la estadística del libro (2019&ndash;2020), ¿qué tendencia describen los datos de acceso a internet?</div>
+    <div class="opts"><span class="mc-opt" data-k="A">A · El móvil gana participación; el escritorio baja, aunque sus usuarios pasan más tiempo por sitio</span><span class="mc-opt" data-k="B">B · La tableta se convierte en el dispositivo dominante</span><span class="mc-opt" data-k="C">C · El escritorio recupera terreno frente al móvil</span><span class="mc-opt" data-k="D">D · Todos los dispositivos pierden visitas por igual</span></div></div>
+  <div class="q-a"><b>A.</b> Visitas totales: 37,5 billones (2019) &rarr; 30,2 billones (2020); escritorio 32%&rarr;29%, móvil 63%&rarr;~68%, tableta 5%&rarr;3%; pero el <b>tiempo promedio por sitio</b> es mayor en escritorio (351 s vs 160 s). (Pregunta del libro, Paper 2 [4 marks].)</div>
+
+  <div class="mc-q" data-ans="D"><div class="mc-txt"><b>10.</b> ¿Cuál de las siguientes NO es una interfaz de usuario descrita en el libro?</div>
+    <div class="opts"><span class="mc-opt" data-k="A">A · Gráfica (GUI) con íconos y enlaces</span><span class="mc-opt" data-k="B">B · Activada por voz, como Alexa</span><span class="mc-opt" data-k="C">C · Háptica, con sensaciones corporales</span><span class="mc-opt" data-k="D">D · Telepática, por pensamiento</span></div></div>
+  <div class="q-a"><b>D.</b> El libro describe GUI, voz y háptica (sensores &rarr; señales eléctricas &rarr; respuesta al cuerpo). La «telepática» no existe en el material.</div>
+
+  <div class="mc-q" data-ans="B"><div class="mc-txt"><b>11.</b> Un programa escrito en Java debe ejecutarse en la computadora. ¿Qué ocurre primero?</div>
+    <div class="opts"><span class="mc-opt" data-k="A">A · El usuario lo abre con doble clic y basta</span><span class="mc-opt" data-k="B">B · El compilador traduce el código fuente a código objeto binario y lo guarda en un archivo</span><span class="mc-opt" data-k="C">C · La RAM lo borra para liberar espacio</span><span class="mc-opt" data-k="D">D · El ensamblador lo convierte en Java</span></div></div>
+  <div class="q-a"><b>B.</b> El <b>compilador</b> traduce el lenguaje fuente al <b>código objeto en binario</b> y lo guarda; solo entonces el <b>SO</b> abre el archivo, lee y ejecuta las instrucciones.</div>
+
+  <div class="mc-q" data-ans="C"><div class="mc-txt"><b>12.</b> ¿Qué generación introdujo los circuitos integrados y abandonó las tarjetas perforadas?</div>
+    <div class="opts"><span class="mc-opt" data-k="A">A · 1.ª (1940&ndash;46)</span><span class="mc-opt" data-k="B">B · 2.ª (1956&ndash;63)</span><span class="mc-opt" data-k="C">C · 3.ª (1964&ndash;71)</span><span class="mc-opt" data-k="D">D · 4.ª (1971&ndash;2010)</span></div></div>
+  <div class="q-a"><b>C.</b> La 3.ª generación miniaturizó los transistores en <b>chips de silicio</b>, permitió varias aplicaciones a la vez y trajo <b>teclado, ratón y sistema operativo</b>. En ella Moore formuló su ley (1965).</div>
+
+  <div class="mc-q" data-ans="A"><div class="mc-txt"><b>13.</b> La campaña Grifthorse (2021) demostró que el malware puede&hellip;</div>
+    <div class="opts"><span class="mc-opt" data-k="A">A · Disfrazarse de apps inofensivas en tiendas oficiales y suscribir a víctimas a servicios de SMS fraudulentos</span><span class="mc-opt" data-k="B">B · Infectar solo computadoras sin antivirus</span><span class="mc-opt" data-k="C">C · Funcionar sin descargar nada</span><span class="mc-opt" data-k="D">D · Dañar el hardware físicamente hasta inutilizarlo</span></div></div>
+  <div class="q-a"><b>A.</b> 200 apps aparentemente útiles («Handy Translator Pro») pedían el número de teléfono con «premios» y cobraban <b>SMS fraudulentos</b>. El malware «aparece como archivos o enlaces inofensivos».</div>
+
+  <div class="mc-q" data-ans="D"><div class="mc-txt"><b>14.</b> ¿Qué característica de la computación cuántica aprovecha ExxonMobil con IBM para su routing marítimo?</div>
+    <div class="opts"><span class="mc-opt" data-k="A">A · Que los qubits nunca fallan</span><span class="mc-opt" data-k="B">B · Que usa tarjetas perforadas más rápidas</span><span class="mc-opt" data-k="C">C · Que consume menos electricidad por ley</span><span class="mc-opt" data-k="D">D · La superposición: analizar múltiples opciones al mismo tiempo</span></div></div>
+  <div class="q-a"><b>D.</b> Con millones de rutas posibles, la superposición permite <b>evaluar múltiples opciones simultáneamente</b> y encontrar rutas más eficientes (menos CO<sub>2</sub>) — lo mismo que Daimler aplica a reacciones químicas de baterías.</div>
+
+  <div class="qz-part">Parte C &middot; Relaciona</div>
+
+  <table class="cmp d4" style="max-width:100%">
+    <tr><th style="width:50%">Columna A</th><th>Columna B</th></tr>
+    <tr><td><b>1.</b> Gordon E. Moore</td><td><b>a.</b> Memoria integrada al CPU mientras procesa</td></tr>
+    <tr><td><b>2.</b> Caché</td><td><b>b.</b> Traduce el código fuente a código objeto binario</td></tr>
+    <tr><td><b>3.</b> Compilador</td><td><b>c.</b> Transistores se duplican cada dos años (1965)</td></tr>
+    <tr><td><b>4.</b> UNIVAC</td><td><b>d.</b> Computadora de la 1.ª generación (tubos de vacío)</td></tr>
+  </table>
+  <span class="reveal-btn">Ver pauta</span>
+  <div class="q-a"><b>Pauta:</b> 1&ndash;c (Moore formuló en 1965 la ley de los transistores en Intel), 2&ndash;a (la caché guarda temporalmente los datos mientras se procesan), 3&ndash;b (compilador: fuente &rarr; objeto binario en archivo de programa), 4&ndash;d (UNIVAC, con tubos de vacío y tambores magnéticos).</div>
+
+  <div class="qz-part">Parte D &middot; Las preguntas de examen del libro sobre 3.3</div>
+  <div class="info-card">
+    <h4>Conjunto del libro, con referencia de pauta</h4>
+    <ol style="margin-left:17px">
+      <li style="font-size:11.5px;margin-bottom:4px;color:#334155"><b>Paper 2:</b> «Explain two trends in the use of desktop, mobile and tablet devices when used to access the internet» <i>[4 marks]</i> — pauta en la pregunta 9 de la Parte B.</li>
+      <li style="font-size:11.5px;margin-bottom:4px;color:#334155"><b>Paper 1 (core):</b> «Identify two input devices that would be used by a gamer» <i>[2 marks]</i> — p. ej. <b>joystick/mando, ratón, teclado, pantalla táctil</b> (dispositivos de entrada del libro).</li>
+      <li style="font-size:11.5px;color:#334155"><b>Paper 1 (core):</b> «Explain three components of a computer that would need to be optimized when playing a computer game» <i>[6 marks]</i> — pauta en la pregunta 7 de la Parte B.</li>
+    </ol>
+    <p class="ic-sub">Recuerda el verbo: <b>identify</b> (1 dato por punto), <b>explain</b> (dato + razón, 2 pts por componente), <b>explain trends</b> (dato + dirección + posible causa).</p>
+  </div>
+</div>
+
+<!-- ═══════════════ CIERRE ═══════════════ -->
+<div class="ending">
+  <div class="end-quote">&ldquo;Las computadoras han evolucionado con el tiempo y son cada vez más ubicuas en la vida cotidiana de las personas y las comunidades.&rdquo;
+    <span style="display:block;font-size:12px;font-family:'Inter','Liberation Sans',sans-serif;margin-top:12px;font-style:normal;color:#93A9C9">— Comprensión esperada de la sección 3.3 (understandings, p. 92)</span></div>
+  <div class="end-checks">
+    <div class="end-check"><span class="tick">&#10003;</span><p><b>Defino</b> computadora, embebida, PC, mainframe y servidor con las palabras del libro.</p></div>
+    <div class="end-check"><span class="tick">&#10003;</span><p><b>Explico</b> el modelo entrada&ndash;proceso&ndash;salida y los componentes: CPU (reloj, caché, núcleos), RAM, GPU, almacenamiento y energía.</p></div>
+    <div class="end-check"><span class="tick">&#10003;</span><p><b>Distingo</b> SO, interfaz (GUI/voz/háptica), utilidad, aplicación, open-source vs. propietario y malware.</p></div>
+    <div class="end-check"><span class="tick">&#10003;</span><p><b>Recito</b> la ruta del código: alto nivel &rarr; compilador &rarr; código objeto &rarr; SO ejecuta; y las 5 generaciones con sus años.</p></div>
+    <div class="end-check"><span class="tick">&#10003;</span><p><b>Analizo</b> repercusiones y dilemas: energía de centros de datos, e-waste, wearables y privacidad, malware, cuántica y cifrado.</p></div>
+    <div class="end-check"><span class="tick">&#10003;</span><p><b>Resuelvo</b> un caso inédito con la cadena: tecnología &rarr; repercusiones &rarr; dilema &rarr; concepto y contexto del curso.</p></div>
+  </div>
+  <div class="end-foot">Material de repaso NM &middot; Sociedad Digital IB &middot; Contenido 3.3 <i>Computing devices</i> — basado en Bomfim et al., <i>Digital Society</i>, Hodder Education 2022 (pp.&nbsp;92&ndash;105). Excluye monografía, evaluación interna y Paper 3. Los cuatro casos marcados «inédito» son escenarios creados para este repaso (datos verificados de fuentes públicas: DGCCRF 2020, CISA/Cloudflare 2016, AlixPartners 2021, NIST 2024, BID/OLPC). En la versión HTML las fichas rápidas, las pautas y el quiz son interactivos.</div>
+</div>
+
+<script>
+/* ═══ Conectores recursivos para todos los mapas (adaptado de mindmap-css v4-fix) ═══ */
+function drawLinesForMap(map) {
+  if (!map) return;
+  const cRect = map.getBoundingClientRect();
+  const old = map.querySelector('svg.lines');
+  if (old) old.remove();
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.classList.add('lines');
+  svg.setAttribute('width', cRect.width);
+  svg.setAttribute('height', cRect.height);
+  svg.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:1;';
+  let lineCount = 0;
+
+  function rel(el) {
+    const r = el.getBoundingClientRect();
+    return { cy: r.top - cRect.top + r.height / 2,
+             left: r.left - cRect.left, right: r.right - cRect.left };
+  }
+  function drawLine(x1, y1, x2, y2, color, width) {
+    const l = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    l.setAttribute('x1', Math.round(x1)); l.setAttribute('y1', Math.round(y1));
+    l.setAttribute('x2', Math.round(x2)); l.setAttribute('y2', Math.round(y2));
+    l.setAttribute('stroke', color); l.setAttribute('stroke-width', width);
+    l.setAttribute('stroke-linecap', 'round');
+    svg.appendChild(l); lineCount++;
+  }
+  const lineStyles = [
+    { color: '#64748B', width: 2.5 },
+    { color: '#94A3B8', width: 2 },
+    { color: '#A8B4C2', width: 1.5 },
+    { color: '#B8C2CC', width: 1.2 },
+    { color: '#CBD5E1', width: 1 }
+  ];
+  function getLineStyle(depth) {
+    const s = lineStyles[Math.min(depth, lineStyles.length - 1)];
+    return { color: s.color, width: s.width };
+  }
+  function connect(parentEl, childEls, dir, depth) {
+    if (!childEls.length) return;
+    const style = getLineStyle(depth);
+    const p = rel(parentEl);
+    const startX = dir === 'left' ? p.left : p.right;
+    const startY = p.cy;
+    if (childEls.length === 1) {
+      const c = rel(childEls[0]);
+      const endX = dir === 'left' ? c.right : c.left;
+      const midY = Math.round((startY + c.cy) / 2);
+      drawLine(startX, midY, endX, midY, style.color, style.width);
+      return;
+    }
+    let closestEdge;
+    if (dir === 'left') closestEdge = Math.max.apply(null, childEls.map(ch => rel(ch).right));
+    else closestEdge = Math.min.apply(null, childEls.map(ch => rel(ch).left));
+    const childClearance = 14;
+    const midpoint = startX + (closestEdge - startX) / 2;
+    const midFromChild = dir === 'left' ? closestEdge + childClearance : closestEdge - childClearance;
+    const midX = dir === 'left' ? Math.min(midpoint, midFromChild) : Math.max(midpoint, midFromChild);
+    drawLine(startX, startY, midX, startY, style.color, style.width);
+    const allCYs = childEls.map(ch => rel(ch).cy);
+    const minY = Math.min.apply(null, [startY].concat(allCYs));
+    const maxY = Math.max.apply(null, [startY].concat(allCYs));
+    drawLine(midX, minY, midX, maxY, style.color, style.width);
+    childEls.forEach(ch => {
+      const c = rel(ch);
+      const endX = dir === 'left' ? c.right : c.left;
+      drawLine(midX, c.cy, endX, c.cy, style.color, style.width);
+    });
+  }
+  const NODE_SEL = '.branch-node, .sub-node, .leaf, .deep-node';
+  function processChildren(parentNodeEl, containerEl, depth, dir) {
+    if (!containerEl) return;
+    const childNodeEls = [];
+    for (const wrapper of containerEl.children) {
+      const nodeEl = wrapper.matches && wrapper.matches(NODE_SEL) ? wrapper : wrapper.querySelector(NODE_SEL);
+      if (nodeEl) childNodeEls.push(nodeEl);
+    }
+    if (!childNodeEls.length) return;
+    connect(parentNodeEl, childNodeEls, dir, depth);
+  }
+  const rootNode = map.querySelector('.root-node');
+  if (!rootNode) return;
+  const leftBranches = map.querySelectorAll('.left-branches > .left-branch');
+  const leftNodes = [];
+  leftBranches.forEach(b => { const n = b.querySelector('.branch-node'); if (n) leftNodes.push(n); });
+  if (leftNodes.length) connect(rootNode, leftNodes, 'left', 0);
+  leftBranches.forEach(b => {
+    const n = b.querySelector('.branch-node');
+    if (n) processChildren(n, b.querySelector(':scope > .children'), 1, 'left');
+  });
+  const rightBranches = map.querySelectorAll('.right-branches > .right-branch');
+  const rightNodes = [];
+  rightBranches.forEach(b => { const n = b.querySelector('.branch-node'); if (n) rightNodes.push(n); });
+  if (rightNodes.length) connect(rootNode, rightNodes, 'right', 0);
+  rightBranches.forEach(b => {
+    const n = b.querySelector('.branch-node');
+    if (n) processChildren(n, b.querySelector(':scope > .children'), 1, 'right');
+  });
+  map.insertBefore(svg, map.firstChild);
+}
+function drawAllMaps() {
+  document.querySelectorAll('.mindmap').forEach(m => drawLinesForMap(m));
+}
+window.addEventListener('load', () => {
+  setTimeout(drawAllMaps, 250);
+  setTimeout(drawAllMaps, 1200);
+});
+
+/* ═══ Interactividad (solo navegador; el PDF se genera antes de que el usuario interactúe) ═══ */
+document.querySelectorAll('.fc').forEach(function (c) {
+  c.addEventListener('click', function () { c.classList.toggle('flipped'); });
+});
+document.querySelectorAll('.reveal-btn').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var a = b.nextElementSibling;
+    if (!a || !a.classList.contains('q-a')) return;
+    var open = a.classList.toggle('open');
+    b.textContent = open ? 'Ocultar pauta' : 'Ver pauta';
+  });
+});
+document.querySelectorAll('.vf-row').forEach(function (row) {
+  var ans = (row.getAttribute('data-ans') || '').trim().toUpperCase();
+  row.querySelectorAll('.vf-btn').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      row.querySelectorAll('.vf-btn').forEach(function (x) { x.classList.remove('sel'); });
+      btn.classList.add('sel');
+      row.classList.remove('ok', 'bad');
+      void row.offsetWidth;
+      row.classList.add(btn.textContent.trim().toUpperCase() === ans ? 'ok' : 'bad');
+      var a = row.nextElementSibling;
+      if (a && a.classList.contains('q-a')) a.classList.add('open');
+    });
+  });
+});
+document.querySelectorAll('.mc-q').forEach(function (q) {
+  var ans = (q.getAttribute('data-ans') || '').trim().toUpperCase();
+  var opts = q.querySelectorAll('.mc-opt');
+  opts.forEach(function (o) {
+    o.addEventListener('click', function () {
+      opts.forEach(function (x) { x.classList.remove('sel', 'right', 'wrong'); });
+      o.classList.add('sel');
+      opts.forEach(function (x) {
+        var xl = (x.getAttribute('data-k') || '').trim().toUpperCase();
+        if (xl === ans) x.classList.add('right');
+        else if (x === o) x.classList.add('wrong');
+      });
+      var a = q.nextElementSibling;
+      if (a && a.classList.contains('q-a')) a.classList.add('open');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
