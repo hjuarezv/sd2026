@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>3.4 Redes e Internet — Material de repaso IB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<script>
+/* Este documento no contiene fórmulas matemáticas. Los "US$" son moneda, no delimitadores:
+   se registra un stub para que el conversor no inyecte KaTeX ni reescriba montos. */
+window.renderMathInElement = function () {};
+</script>
+<style>
+/* ═══════════ PÁGINAS ═══════════ */
+@page { size: 794px 1123px; margin: 48px 0 52px 0; }
+@page fullbleed { size: 794px 1123px; margin: 0; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #F8FAFC; --card: #FFFFFF; --ink: #1E293B; --muted: #64748B;
+  --line: #E2E8F0; --navy: #1E3A5F; --navy2: #2D4A6F;
+  --u1: #3B82F6; --u1-bg: #EFF6FF; --u1-tx: #1E40AF;
+  --u2: #8B5CF6; --u2-bg: #F5F3FF; --u2-tx: #5B21B6;
+  --u3: #14B8A6; --u3-bg: #F0FDFA; --u3-tx: #134E4A;
+  --u4: #F59E0B; --u4-bg: #FFF7ED; --u4-tx: #92400E;
+  --slate: #64748B; --slate-bg: #F1F5F9; --slate-tx: #334155;
+}
+html, body {
+  margin: 0; padding: 0; width: 794px;
+  background: var(--bg); color: var(--ink);
+  font-family: 'Inter', 'Liberation Sans', sans-serif;
+  font-size: 12.5px; line-height: 1.55;
+  overflow-wrap: break-word;
+}
+@media screen {
+  html { height: auto; display: flex; justify-content: center; background: #E2E8F0; }
+  body { transform: scale(1); transform-origin: top center; margin: 20px auto; box-shadow: 0 2px 24px rgba(15,23,42,.18); }
+}
+svg text { font-family: 'Inter', 'Liberation Sans', sans-serif; }
+
+/* ═══════════ PORTADA / CIERRE (full-bleed) ═══════════ */
+.cover {
+  page: fullbleed; width: 794px; height: 1123px;
+  background: linear-gradient(158deg, #16283F 0%, #1E3A5F 46%, #2D4A6F 100%);
+  color: #F1F5F9; position: relative;
+  display: flex; flex-direction: column;
+  padding: 54px 58px; break-after: page;
+}
+.cover .deco-circle { position: absolute; border-radius: 50%; border: 1.5px solid rgba(148,163,184,.28); }
+.cover .dc1 { width: 300px; height: 300px; right: 40px; top: 60px; }
+.cover .dc2 { width: 190px; height: 190px; right: 118px; top: 138px; border-color: rgba(148,163,184,.18); }
+.cover .dc3 { width: 120px; height: 120px; left: 44px; bottom: 150px; border-color: rgba(148,163,184,.15); }
+.cover-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+  color: #93C5FD; text-transform: uppercase;
+}
+.cover-badge::before { content: ''; width: 34px; height: 2px; background: #3B82F6; }
+.cover-center { margin: auto 0; position: relative; z-index: 2; }
+.cover-kicker { font-size: 12px; font-weight: 600; letter-spacing: 3px; color: #A5B4CC; text-transform: uppercase; margin-bottom: 16px; }
+.cover-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 64px; font-weight: 800; line-height: 1.04; color: #FFFFFF; margin-bottom: 10px;
+}
+.cover-sub { font-size: 19px; font-weight: 500; color: #C7D2E4; margin-bottom: 6px; }
+.cover-sub-en { font-size: 13px; color: #8FA3C2; font-style: italic; margin-bottom: 30px; }
+.cover-chips { display: flex; flex-wrap: wrap; gap: 10px; max-width: 100%; }
+.cchip {
+  background: rgba(59,130,246,.13); border: 1px solid rgba(147,197,253,.35);
+  color: #DCE7F7; border-radius: 20px; padding: 7px 15px;
+  font-size: 11.5px; font-weight: 600;
+}
+.cchip b { color: #FFFFFF; font-weight: 800; }
+.cover-3cs {
+  margin-top: 34px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 16px 18px; border: 1px solid rgba(148,163,184,.25); border-radius: 12px;
+  background: rgba(15,23,42,.25); max-width: 100%;
+}
+.cover-3cs .box { border-radius: 8px; padding: 8px 13px; font-size: 11.5px; font-weight: 700; letter-spacing: .4px; }
+.cover-3cs .arrow { color: #64748B; font-size: 13px; font-weight: 400; }
+.bx1 { background: rgba(59,130,246,.22); color: #BFDBFE; }
+.bx2 { background: rgba(139,92,246,.22); color: #DDD6FE; }
+.bx3 { background: rgba(20,184,166,.22); color: #99F6E4; }
+.bx4 { background: rgba(245,158,11,.20); color: #FDE68A; }
+.cover-foot { position: relative; z-index: 2; }
+.cover-scope { font-size: 11px; color: #94A7C4; line-height: 1.6; border-top: 1px solid rgba(148,163,184,.22); padding-top: 16px; }
+.cover-scope b { color: #CBD8EC; font-weight: 600; }
+.cover-edition { margin-top: 12px; font-size: 10.5px; color: #6E82A3; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 600; }
+
+/* ═══════════ CONTENIDO (flujo) ═══════════ */
+.main-content { padding: 0 56px; }
+.section-head { break-after: avoid; break-inside: avoid; margin-bottom: 10px; }
+.section-kicker { font-size: 10.5px; font-weight: 800; letter-spacing: 2.2px; text-transform: uppercase; color: var(--u1); margin-bottom: 4px; }
+.section-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 25px; font-weight: 800; color: var(--ink); line-height: 1.12;
+}
+.section-sub { font-size: 12.5px; color: var(--muted); margin-top: 5px; }
+.divider { height: 3px; width: 56px; background: var(--u1); border-radius: 2px; margin: 9px 0 3px; }
+p.body-text { font-size: 12px; color: #334155; margin-bottom: 7px; }
+p.body-text b { color: var(--ink); }
+.new-page { break-before: page; }
+.en-term { color: var(--muted); font-style: italic; }
+
+/* Tarjetas informativas */
+.info-card {
+  break-inside: avoid; background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; padding: 11px 14px; margin-bottom: 8px;
+}
+.info-card h4 { font-size: 12.5px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+.info-card p { font-size: 11.5px; color: #475569; }
+.info-card .ic-sub { font-size: 10.8px; color: var(--muted); margin-top: 3px; }
+
+/* Tarjetas de concepto en grilla */
+.cs-grid { display: flex; flex-wrap: wrap; gap: 9px; max-width: 100%; margin: 4px 0 10px; }
+.cs-card {
+  flex: 1 1 150px; min-width: 140px; max-width: 100%;
+  border-radius: 10px; padding: 11px 13px; border: 1px solid var(--line); break-inside: avoid;
+}
+.cs-card .cs-name { font-size: 12.5px; font-weight: 800; margin-bottom: 3px; }
+.cs-card p { font-size: 11px; line-height: 1.45; color: #475569; }
+.cs-1 { background: var(--u1-bg); } .cs-1 .cs-name { color: var(--u1-tx); }
+.cs-2 { background: var(--u2-bg); } .cs-2 .cs-name { color: var(--u2-tx); }
+.cs-3 { background: var(--u3-bg); } .cs-3 .cs-name { color: var(--u3-tx); }
+.cs-4 { background: var(--u4-bg); } .cs-4 .cs-name { color: var(--u4-tx); }
+
+/* ═══════════ TARJETA DE TECNOLOGÍA (definición + funcionamiento + oportunidades/impactos/dilemas) ═══════════ */
+.tcard {
+  break-inside: avoid; background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 9px 13px; margin-bottom: 7px;
+}
+.tcard-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 3px; }
+.tcard-num {
+  font-size: 9.5px; font-weight: 800; letter-spacing: .6px; color: #fff;
+  background: var(--u1); border-radius: 5px; padding: 2px 7px;
+}
+.tcard.u2 .tcard-num { background: var(--u2); }
+.tcard.u3 .tcard-num { background: var(--u3); }
+.tcard.u4 .tcard-num { background: var(--u4); }
+.tcard-title { font-size: 15px; font-weight: 800; color: var(--ink); }
+.tcard-en { font-size: 11px; color: var(--muted); font-style: italic; }
+.trow { display: flex; gap: 9px; padding: 3.5px 0; }
+.trow + .trow { border-top: 1px dashed #EEF2F7; }
+.tlabel {
+  flex: 0 0 94px; font-size: 9px; font-weight: 800; letter-spacing: .7px;
+  text-transform: uppercase; color: var(--u1-tx); padding-top: 2px;
+}
+.tlabel.fun { color: var(--u2-tx); }
+.tlabel.opp { color: var(--u3-tx); }
+.tlabel.imp { color: var(--navy); }
+.tlabel.warn { color: var(--u4-tx); }
+.tbody { flex: 1; font-size: 11px; color: #475569; line-height: 1.42; }
+.tbody b { color: var(--ink); }
+.tbody ul { list-style: none; margin: 1px 0; }
+.tbody li { padding-left: 12px; position: relative; margin-bottom: 2px; }
+.tbody li::before {
+  content: ''; position: absolute; left: 0; top: 7px;
+  width: 4px; height: 4px; border-radius: 50%; background: var(--u1);
+}
+.tbody li b { color: var(--ink); font-weight: 700; }
+
+/* ═══════════ GRÁFICOS ILUSTRATIVOS (SVG) ═══════════ */
+.svg-wrap {
+  break-inside: avoid; background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 8px 10px 5px; margin: 4px 0 8px;
+}
+.svg-wrap svg { display: block; width: 100%; height: auto; }
+.svg-cap { text-align: center; font-size: 9.5px; color: var(--muted); margin-top: 3px; }
+
+/* Tablas de examen */
+table.exam { width: 100%; border-collapse: collapse; margin: 6px 0 10px; font-size: 10.3px; break-inside: avoid; }
+table.exam th {
+  background: var(--navy); color: #fff; font-weight: 700;
+  padding: 6px 8px; text-align: left; font-size: 10px;
+}
+table.exam td { border: 1px solid var(--line); padding: 5px 8px; color: #334155; vertical-align: top; }
+table.exam tr:nth-child(even) td { background: #F8FAFC; }
+table.exam td b { color: var(--ink); }
+table.exam .en-term { font-size: 8.8px; white-space: nowrap; }
+table.tall { break-inside: auto; }
+table.tall tr { break-inside: avoid; }
+table.tall td { padding: 4px 7px; line-height: 1.35; font-size: 10px; }
+
+/* ═══════════ PÁGINAS DE MAPAS (full-bleed) ═══════════ */
+.map-page {
+  page: fullbleed; width: 794px; height: 1123px;
+  break-after: page; padding: 26px 20px 20px;
+  background: #FFFFFF; position: relative;
+  display: flex; flex-direction: column;
+}
+.map-head { margin-bottom: 6px; padding: 0 6px; }
+.map-kicker {
+  display: inline-block; font-size: 10px; font-weight: 800;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--u1-tx); background: var(--u1-bg);
+  border: 1px solid #BFDBFE; border-radius: 12px; padding: 3px 11px;
+}
+.map-kicker.k2 { color: var(--u2-tx); background: var(--u2-bg); border-color: #DDD6FE; }
+.map-kicker.k3 { color: var(--u3-tx); background: var(--u3-bg); border-color: #99F6E4; }
+.map-kicker.k4 { color: var(--u4-tx); background: var(--u4-bg); border-color: #FDE68A; }
+.map-kicker.k0 { color: var(--navy); background: #EDF2F9; border-color: #C9D7E8; }
+.map-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 25px; font-weight: 800; color: var(--ink); margin-top: 7px; line-height: 1.1;
+}
+.map-intro { font-size: 11.5px; color: var(--muted); margin-top: 4px; max-width: 640px; }
+
+.mindmap { position: relative; break-inside: avoid; display: flex; justify-content: center; align-items: center; flex: 1 1 auto; padding: 10px 0 6px; }
+.mindmap > svg.lines { position: absolute; top: 0; left: 0; pointer-events: none; z-index: 0; }
+.root-node {
+  background: linear-gradient(135deg, #1E3A5F, #2D4A6F);
+  color: #fff; font-size: 16.5px; font-weight: 800; line-height: 1.2;
+  padding: 15px 17px; border-radius: 13px; text-align: center;
+  white-space: nowrap; flex-shrink: 0; align-self: center;
+  box-shadow: 0 4px 12px rgba(30,58,95,.25); position: relative; z-index: 2;
+}
+.root-node small { display: block; font-size: 10px; font-weight: 600; color: #B7C6DC; letter-spacing: 1.5px; margin-top: 2px; }
+.branch-node {
+  font-size: 12.5px; font-weight: 700; line-height: 1.2;
+  padding: 8px 12px; border-radius: 8px; border: 2px solid;
+  white-space: normal; max-width: 142px; text-align: center;
+  flex-shrink: 0; position: relative; z-index: 2;
+}
+.branch-node small { display: block; font-size: 10px; font-weight: 600; opacity: .8; }
+.leaf {
+  font-size: 11.5px; font-weight: 500; color: #475569;
+  padding: 4.5px 11px; background: #FAFBFC;
+  border-radius: 11px; border: 1px solid #E2E8F0;
+  line-height: 1.3; white-space: normal; max-width: 138px;
+  width: fit-content; position: relative; z-index: 2;
+}
+.children { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.right-branches { display: flex; flex-direction: column; gap: 18px; }
+.right-branch { display: flex; align-items: flex-start; }
+.right-branch > .children { margin-left: 16px; padding-left: 8px; align-items: flex-start; }
+.left-branches { display: flex; flex-direction: column; gap: 18px; }
+.left-branch { display: flex; align-items: flex-start; flex-direction: row-reverse; }
+.left-branch > .children { margin-right: 16px; padding-right: 8px; align-items: flex-end; }
+.b-u1 { background: var(--u1-bg); border-color: var(--u1); color: var(--u1-tx); }
+.b-u2 { background: var(--u2-bg); border-color: var(--u2); color: var(--u2-tx); }
+.b-u3 { background: var(--u3-bg); border-color: var(--u3); color: var(--u3-tx); }
+.b-u4 { background: var(--u4-bg); border-color: var(--u4); color: var(--u4-tx); }
+.b-navy { background: #EDF2F9; border-color: var(--navy2); color: var(--navy); }
+.b-slate { background: var(--slate-bg); border-color: var(--slate); color: var(--slate-tx); }
+.map-legend {
+  position: absolute; left: 20px; right: 20px; bottom: 18px;
+  display: flex; flex-wrap: wrap; gap: 7px 14px; align-items: center;
+  font-size: 10px; color: var(--muted);
+  border-top: 1px solid var(--line); padding-top: 10px;
+}
+.map-legend .lg { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; }
+.map-legend .dot { width: 9px; height: 9px; border-radius: 3px; }
+
+/* ═══════════ INTERACTIVIDAD Y NUEVOS COMPONENTES ═══════════ */
+.only-print { display: none; }
+@media print {
+  .only-print { display: block; }
+  .only-screen { display: none !important; }
+}
+
+/* Caso de práctica (inédito, estilo examen) */
+.practice {
+  break-inside: avoid; background: #FBFAFF;
+  border: 1.5px dashed #A78BFA; border-radius: 10px;
+  padding: 11px 14px 10px; margin: 9px 0 12px;
+}
+.practice-tag { display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: 1.6px; color: var(--u2-tx); text-transform: uppercase; margin-bottom: 3px; }
+.practice h4 { font-size: 13.5px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+.practice p.pctx { font-size: 11.4px; color: #475569; line-height: 1.5; margin-bottom: 6px; }
+.practice ol.pq { margin-left: 17px; margin-bottom: 3px; }
+.practice ol.pq li { font-size: 11.4px; color: #334155; margin-bottom: 3px; }
+.practice ol.pq i { color: var(--muted); }
+
+/* Botón de pauta + respuesta desplegable */
+.reveal-btn {
+  display: inline-block; margin-top: 5px; font-size: 10px; font-weight: 800;
+  letter-spacing: .8px; text-transform: uppercase; color: var(--u2-tx);
+  background: var(--u2-bg); border: 1px solid #DDD6FE; border-radius: 8px;
+  padding: 4px 12px; cursor: pointer; user-select: none;
+}
+.q-a {
+  display: none; background: #ECFDF5; border: 1px solid #A7F3D0;
+  border-radius: 8px; padding: 7px 11px; margin-top: 6px;
+  font-size: 10.6px; color: #065F46; line-height: 1.52; break-inside: avoid;
+}
+.q-a b { color: #064E3B; }
+.q-a.open { display: block; }
+@media print { .q-a { display: block !important; } .reveal-btn { display: none !important; } }
+
+/* Quiz: verdadero/falso */
+.qz-part { font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: var(--navy); margin: 13px 0 4px; break-after: avoid; }
+.vf-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; break-inside: avoid; }
+.vf-row .vf-txt { flex: 1; font-size: 11.5px; color: #334155; }
+.vf-opts { display: flex; gap: 6px; flex: 0 0 auto; }
+.vf-btn {
+  font-size: 10px; font-weight: 800; border: 1.5px solid var(--line);
+  background: #fff; color: var(--muted); border-radius: 7px; padding: 2.5px 11px; cursor: pointer;
+}
+.vf-btn.sel { border-color: var(--u1); color: var(--u1-tx); background: var(--u1-bg); }
+.vf-row.ok .vf-btn.sel { border-color: #16A34A; color: #166534; background: #DCFCE7; }
+.vf-row.bad .vf-btn.sel { border-color: #DC2626; color: #991B1B; background: #FEE2E2; }
+
+/* Quiz: opción múltiple */
+.mc-q { padding: 5px 0; break-inside: avoid; }
+.mc-q .mc-txt { font-size: 11.5px; color: #334155; }
+.mc-q .opts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px; max-width: 100%; }
+.mc-opt {
+  font-size: 10.5px; border: 1.5px solid var(--line); background: #fff;
+  color: #475569; border-radius: 8px; padding: 3px 11px; cursor: pointer; white-space: nowrap;
+}
+.mc-opt.sel { border-color: var(--u1); color: var(--u1-tx); background: var(--u1-bg); font-weight: 700; }
+.mc-opt.right { border-color: #16A34A; background: #DCFCE7; color: #166534; font-weight: 700; }
+.mc-opt.wrong { border-color: #DC2626; background: #FEE2E2; color: #991B1B; }
+
+/* Fichas rápidas (flashcards interactivas) */
+.fc-grid { display: flex; flex-wrap: wrap; gap: 6px; margin: 7px 0 3px; max-width: 100%; }
+.fc { flex: 1 1 30.5%; min-width: 212px; max-width: 100%; break-inside: avoid; }
+.fc-inner { transform-style: preserve-3d; }
+.fc-face { border-radius: 10px; padding: 6.5px 10px; }
+.fc-front { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--u1); }
+.fc-back { background: var(--u1-bg); border: 1px solid #BFDBFE; border-top: 1px dashed #93C5FD; }
+.fc.f2 .fc-front { border-top-color: var(--u2); }
+.fc.f2 .fc-back { background: var(--u2-bg); border-color: #DDD6FE; border-top-color: #C4B5FD; }
+.fc.f3 .fc-front { border-top-color: var(--u3); }
+.fc.f3 .fc-back { background: var(--u3-bg); border-color: #99F6E4; border-top-color: #5EEAD4; }
+.fc.f4 .fc-front { border-top-color: var(--u4); }
+.fc.f4 .fc-back { background: var(--u4-bg); border-color: #FDE68A; border-top-color: #FCD34D; }
+.fc-q { font-size: 10.6px; font-weight: 700; color: var(--ink); line-height: 1.33; }
+.fc-a { font-size: 9.7px; color: #1E40AF; line-height: 1.38; }
+.fc-a b { color: #172554; }
+.fc.f2 .fc-a { color: var(--u2-tx); } .fc.f2 .fc-a b { color: #4C1D95; }
+.fc.f3 .fc-a { color: var(--u3-tx); } .fc.f3 .fc-a b { color: #134E4A; }
+.fc.f4 .fc-a { color: var(--u4-tx); } .fc.f4 .fc-a b { color: #78350F; }
+.fc-hint { font-size: 8.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .9px; margin-top: 5px; font-weight: 700; }
+@media screen {
+  .fc { height: 134px; cursor: pointer; perspective: 1000px; }
+  .fc-inner { position: relative; width: 100%; height: 100%; transition: transform .45s; }
+  .fc.flipped .fc-inner { transform: rotateY(180deg); }
+  .fc-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; }
+  .fc-back { transform: rotateY(180deg); }
+}
+@media print {
+  .fc-face + .fc-face { margin-top: 3px; }
+  .fc-hint { display: none; }
+}
+
+/* Cierre */
+.ending {
+  page: fullbleed; width: 794px; height: 1123px; break-before: page;
+  background: linear-gradient(158deg, #16283F 0%, #1E3A5F 46%, #2D4A6F 100%);
+  color: #F1F5F9; display: flex; flex-direction: column; justify-content: center;
+  padding: 60px; position: relative;
+}
+.end-quote {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 26px; font-weight: 600; font-style: italic;
+  line-height: 1.4; color: #E2E8F0; max-width: 560px; margin-bottom: 34px;
+}
+.end-checks { display: flex; flex-direction: column; gap: 10px; max-width: 560px; }
+.end-check {
+  display: flex; gap: 11px; align-items: flex-start;
+  border: 1px solid rgba(148,163,184,.28); border-radius: 10px;
+  padding: 11px 14px; background: rgba(15,23,42,.28);
+}
+.end-check .tick {
+  width: 19px; height: 19px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(59,130,246,.25); border: 1.5px solid #60A5FA;
+  color: #BFDBFE; font-size: 11px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.end-check p { font-size: 12px; color: #C7D2E4; }
+.end-check p b { color: #fff; }
+.end-foot { position: absolute; bottom: 52px; left: 60px; right: 60px;
+  border-top: 1px solid rgba(148,163,184,.22); padding-top: 14px;
+  font-size: 10px; color: #7C90B0; line-height: 1.6; }
+</style>
+</head>
+<body>
+<!-- ═══════════════ PORTADA ═══════════════ -->
+<div class="cover">
+  <div class="deco-circle dc1"></div>
+  <div class="deco-circle dc2"></div>
+  <div class="deco-circle dc3"></div>
+  <div class="cover-badge">IB Diploma Programme &middot; Digital Society</div>
+  <div class="cover-center">
+    <div class="cover-kicker">Material de repaso integral &middot; Nivel Medio (NM/SL)</div>
+    <div class="cover-title">3.4<br>Redes e Internet</div>
+    <div class="cover-sub">Networks and the internet: tipos, componentes, protocolos, web y dilemas</div>
+    <div class="cover-sub-en">Review guide with mind maps, illustrative charts, interactive flashcards &amp; new exam cases</div>
+    <div class="cover-chips">
+      <span class="cchip"><b>7</b> subsecciones (3.4A&ndash;G)</span>
+      <span class="cchip"><b>2</b> mapas mentales</span>
+      <span class="cchip"><b>8</b> gráficos ilustrativos</span>
+      <span class="cchip"><b>18</b> fichas interactivas</span>
+      <span class="cchip"><b>12</b> preguntas de quiz</span>
+      <span class="cchip"><b>3</b> casos nuevos para el examen</span>
+    </div>
+    <div class="cover-3cs">
+      <span class="box bx1">Tipos y componentes (3.4A&ndash;B)</span><span class="arrow">+</span>
+      <span class="box bx2">Características y web (3.4C&ndash;E)</span><span class="arrow">+</span>
+      <span class="box bx3">Evolución (3.4F)</span><span class="arrow">&rarr;</span>
+      <span class="box bx4">Dilemas (3.4G)</span>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <div class="cover-scope">
+      <b>Alcance del material:</b> solo la sección 3.4 <i>Networks and the internet</i> del libro — tipos y componentes de redes,
+      características (protocolos, capacidad, compresión, neutralidad, seguridad), proveedores y servicios, la World Wide Web,
+      la evolución de internet (Web 1.0&rarr;3.0 e IoT) y los dilemas de internet. Cada tecnología incluye sus
+      <b>oportunidades, impactos y dilemas</b>, con casos del libro y tres escenarios inéditos estilo examen.
+      No incluye la monografía (extended essay), la evaluación interna ni el Paper 3.
+    </div>
+    <div class="cover-edition">Basado en Bomfim et al. &middot; Digital Society &middot; Hodder Education 2022 (pp.&nbsp;106&ndash;126)</div>
+  </div>
+</div>
+
+<!-- ═══════════════ INTRODUCCIÓN ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Guía rápida</div>
+    <div class="section-title">Cómo usar este material</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Según el libro, desde que nos despertamos hasta que ponemos el teléfono a cargar, nuestras vidas dependen de las <b>redes</b> (networks). Este capítulo 3.4 responde a siete preguntas: <b>qué tipos de redes existen</b> (3.4A), <b>con qué componentes se construyen</b> (3.4B), <b>qué características tienen</b> (3.4C), <b>quién provee los servicios</b> (3.4D), <b>qué es la World Wide Web</b> (3.4E), <b>cómo evolucionó internet</b> (3.4F) y <b>qué dilemas genera</b> (3.4G). El hilo conductor del capítulo son las preguntas de Sir Tim Berners-Lee: <i>¿está la web cumpliendo su visión o «internet está roto»?</i></p>
+
+  <p class="body-text">Las <b>comprensiones esenciales</b> (understandings) que el IB espera al terminar el capítulo son tres: <b>(1)</b> las redes conectan computadoras, personas y comunidades, permitiendo crear, acceder y compartir datos e información de forma <b>distribuida</b>; <b>(2)</b> las redes e internet son rasgos definitorios de la sociedad digital que han <b>evolucionado</b> con el tiempo; <b>(3)</b> implican <b>oportunidades y dilemas significativos</b> para la vida en la sociedad digital. En el examen, este contenido aparece en <b>Paper 1</b> (escenarios: identificar tecnologías, explicar protocolos, discutir dilemas) y en <b>Paper 2</b> (fuentes con cifras de uso de redes), siempre conectado con los impactos para <b>personas y comunidades</b>.</p>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-1">
+      <div class="cs-name">3.4A&ndash;B &middot; Qué es una red</div>
+      <p>Tipos por tamaño (PAN&rarr;WAN), conectividad (cable, Wi-Fi, nube) y compartición (cliente-servidor, P2P); componentes: NIC, router, módem, WAP, hub y switch.</p>
+    </div>
+    <div class="cs-card cs-2">
+      <div class="cs-name">3.4C&ndash;E &middot; Cómo funciona</div>
+      <p>Protocolos y 4 capas, TCP/IP, DNS, capacidad, compresión, neutralidad, seguridad; proveedores (MSP, ISP, VoIP) y la tríada URL&middot;HTTP&middot;HTML.</p>
+    </div>
+    <div class="cs-card cs-3">
+      <div class="cs-name">3.4F &middot; Cómo evolucionó</div>
+      <p>De ARPANET (1969) a la Web 2.0 social y la Web 3.0 semántica con IA; el Internet de las Cosas (IoT) conecta billones de dispositivos.</p>
+    </div>
+    <div class="cs-card cs-4">
+      <div class="cs-name">3.4G &middot; A qué dilemas da lugar</div>
+      <p>Spam, hacking, phishing, virus, ransomware, DDOS; anonimato, trolls, robo de identidad, derecho al olvido y vigilancia.</p>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h4>Método de repaso sugerido (3 pasos)</h4>
+    <p><b>1) Mapas primero:</b> estudia los dos mapas mentales (visión general y dilemas) para fijar la estructura completa. &nbsp;<b>2) Tarjetas después:</b> memoriza las definiciones exactas del libro —los exámenes valoran la terminología precisa— y fíjate en la franja <b>Oportunidades / Impactos / Dilemas</b> de cada tecnología. &nbsp;<b>3) Autoevalúa al final:</b> usa las fichas interactivas, el quiz y los tres casos inéditos; en la versión HTML puedes voltear las fichas y desplegar las pautas con un clic.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Leyenda de las tarjetas de tecnología</h4>
+    <p>Cada tecnología del capítulo se presenta en una tarjeta con filas fijas: <b>Definición</b> (cita del libro), <b>Funcionamiento</b>, <b>Caso real</b> cuando existe, y la franja <b>Oportunidades</b> (lo que habilita de bueno), <b>Impactos</b> (efectos positivos y negativos para personas y comunidades) y <b>Dilemas</b> (tensiones éticas que el IB espera que discutas con las 3Cs: conceptos, contenido, contextos).</p>
+  </div>
+</div>
+
+<!-- ═══════════════ MAPA GENERAL ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k0">Visión general</span>
+    <div class="map-title">La sección 3.4 completa en un mapa</div>
+    <div class="map-intro">Las siete subsecciones del capítulo y sus conceptos clave. Usa este mapa como índice visual: cada rama corresponde a una o más páginas de este material.</div>
+  </div>
+
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u1">3.4A&ndash;B Tipos y componentes</div>
+        <div class="children">
+          <div class="leaf">PAN &middot; LAN &middot; MAN &middot; WAN</div>
+          <div class="leaf">Cableada &middot; Wi-Fi &middot; Nube</div>
+          <div class="leaf">Cliente-servidor &middot; P2P</div>
+          <div class="leaf">NIC &middot; MAC &middot; router &middot; módem</div>
+          <div class="leaf">WAP &middot; hub &middot; switch</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u2">3.4C Características</div>
+        <div class="children">
+          <div class="leaf">Protocolos &middot; 4 capas &middot; TCP/IP</div>
+          <div class="leaf">IP &middot; DHCP &middot; DNS</div>
+          <div class="leaf">Ancho de banda y velocidad</div>
+          <div class="leaf">Compresión lossy / lossless</div>
+          <div class="leaf">Neutralidad de red</div>
+          <div class="leaf">MFA &middot; firewall &middot; proxy &middot; cifrado</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="root-node">3.4 REDES<br>E INTERNET<small>networks &amp; the internet</small></div>
+
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u3">3.4D&ndash;E Proveedores y web</div>
+        <div class="children">
+          <div class="leaf">MSP &middot; 4G/5G &middot; VoIP</div>
+          <div class="leaf">ISP: acceso, correo, hosting</div>
+          <div class="leaf">Internet &ne; WWW</div>
+          <div class="leaf">URL &middot; HTTP/HTTPS &middot; HTML</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-navy">3.4F Evolución</div>
+        <div class="children">
+          <div class="leaf">1965 UCLA&ndash;Stanford &middot; 1969 ARPANET</div>
+          <div class="leaf">1989 WWW &middot; 1994 W3C</div>
+          <div class="leaf">Web 1.0 &rarr; 2.0 &rarr; 3.0</div>
+          <div class="leaf">IoT: hogar y ciudad inteligentes</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u4">3.4G Dilemas</div>
+        <div class="children">
+          <div class="leaf">Spam &middot; hacking &middot; phishing</div>
+          <div class="leaf">Virus &middot; ransomware &middot; DDOS</div>
+          <div class="leaf">Anonimato &middot; trolls &middot; robo de identidad</div>
+          <div class="leaf">Derecho al olvido &middot; vigilancia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:#3B82F6"></span> Tipos y componentes</span>
+    <span class="lg"><span class="dot" style="background:#8B5CF6"></span> Características</span>
+    <span class="lg"><span class="dot" style="background:#14B8A6"></span> Proveedores y web</span>
+    <span class="lg"><span class="dot" style="background:#1E3A5F"></span> Evolución</span>
+    <span class="lg"><span class="dot" style="background:#F59E0B"></span> Dilemas</span>
+    <span class="lg" style="margin-left:auto">Comprensiones: redes distribuidas &middot; evolución &middot; oportunidades y dilemas</span>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.4A · REDES POR TAMAÑO ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.4A &middot; Types of computing networks</div>
+    <div class="section-title">Tipos de redes: por tamaño</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">El libro define una <b>red</b> (network) como <i>«una serie de nodos (puntos de conexión) interconectados capaces de transmitir, recibir e intercambiar datos»</i>; los datos pueden ser texto, sonido, imágenes o vídeo, y los nodos pueden ser computadoras, servidores o routers. Las redes se clasifican de <b>tres maneras</b>: por tamaño físico, por tipo de conectividad y por cómo se comparten los datos.</p>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 152" xmlns="http://www.w3.org/2000/svg">
+      <rect x="3" y="4" width="676" height="144" rx="14" fill="#F8FAFC" stroke="#1E3A5F" stroke-width="1.6"/>
+      <text x="16" y="24" font-size="11.5" font-weight="800" fill="#1E3A5F">WAN &middot; red de área amplia</text>
+      <text x="630" y="24" font-size="9.5" fill="#64748B" text-anchor="end">nacional / internacional &middot; el mayor ejemplo: internet</text>
+      <rect x="11" y="32" width="660" height="108" rx="12" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1.4"/>
+      <text x="22" y="50" font-size="11" font-weight="800" fill="#5B21B6">MAN &middot; red metropolitana</text>
+      <text x="620" y="50" font-size="9.5" fill="#64748B" text-anchor="end">una ciudad &middot; entre 5 y 50 km</text>
+      <rect x="19" y="58" width="644" height="74" rx="10" fill="#F0FDFA" stroke="#14B8A6" stroke-width="1.4"/>
+      <text x="28" y="75" font-size="10.5" font-weight="800" fill="#134E4A">LAN &middot; red local</text>
+      <text x="612" y="75" font-size="9.5" fill="#64748B" text-anchor="end">un solo sitio: hogar, oficina, colegio</text>
+      <rect x="27" y="82" width="628" height="42" rx="8" fill="#FFF7ED" stroke="#F59E0B" stroke-width="1.4"/>
+      <text x="341" y="100" font-size="10" font-weight="800" fill="#92400E" text-anchor="middle">PAN &middot; red personal: dispositivos alrededor de una persona (reloj de salud &rarr; teléfono &rarr; portátil)</text>
+    </svg>
+    <div class="svg-cap">G1 &middot; Escala de redes por tamaño: cada tipo puede contener a los menores (adaptado del libro, 3.4A)</div>
+  </div>
+
+  <table class="exam">
+    <tr><th style="width:14%">Tipo</th><th style="width:34%">Definición del libro</th><th style="width:26%">Ejemplos del libro</th><th>Dato clave</th></tr>
+    <tr><td><b>PAN</b> <span class="en-term">personal area network</span></td><td>El tipo de red más pequeño: dispositivos conectados en la proximidad cercana de un individuo.</td><td>Teléfono e impresora conectados a un portátil; reloj de salud que sincroniza con el teléfono.</td><td>Conexión inalámbrica de corto alcance.</td></tr>
+    <tr><td><b>LAN</b> <span class="en-term">local area network</span></td><td>Grupo de computadoras o dispositivos conectados en un solo sitio.</td><td>Hogar con 2&ndash;3 usuarios; oficina o colegio con cientos, para compartir impresora, datos o internet.</td><td>Se crea para <b>compartir recursos</b>.</td></tr>
+    <tr><td><b>MAN</b> <span class="en-term">metropolitan area network</span></td><td>Red que cubre un área geográfica mayor, como una ciudad.</td><td>Wi-Fi gratuito municipal; semáforos y parquímetros conectados en red.</td><td>Cubre <b>5&ndash;50 km</b>; futuro: infraestructura de vehículos autónomos.</td></tr>
+    <tr><td><b>WAN</b> <span class="en-term">wide area network</span></td><td>Red nacional o internacional; el mayor ejemplo es internet.</td><td>Empresa con oficinas en varias ciudades conectadas para compartir aplicaciones y datos centrales.</td><td>Se protege con <b>VPN</b> o <b>línea dedicada</b> del ISP.</td></tr>
+  </table>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4A</span><span class="tcard-title">WAN: la red de redes</span><span class="tcard-en">wide area network</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«Red nacional o internacional; el mayor ejemplo es internet»</i> — una colección de redes y tecnologías de red que vincula a <b>miles de millones de usuarios</b> en el mundo.</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">Suele ser una <b>colección de LANs</b> conectadas por telecomunicaciones públicas o por una línea dedicada arrendada al ISP: todas las oficinas acceden a los mismos datos sin servidor por ubicación. La conexión pública se asegura con una <b>VPN (red privada virtual)</b>.</div></div>
+    <div class="trow"><div class="tlabel case">Caso real</div><div class="tbody"><b>Wi-Fi gratuito en Nueva York:</b> la ciudad ofrece Wi-Fi a todos los residentes y conecta inalámbricamente <b>semáforos y parquímetros</b> — un MAN como servicio público.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Escala global a bajo costo marginal: trabajo remoto entre ciudades, servicios centralizados y acceso público a internet (menos <b>brecha digital</b>).</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Positivos: colaboración internacional y acceso a servicios. Negativos: dependencia crítica de la conectividad y exposición de grandes volúmenes de datos a amenazas externas.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Espacio:</b> ¿quién tiene derecho a la conectividad (ciudadanos vs. operadoras)? <b>Poder:</b> el ISP de una WAN puede decidir rutas, precios y acceso — la base del dilema de la <b>neutralidad de red</b> (3.4C).</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.4A · CONECTIVIDAD Y COMPARTICIÓN ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.4A &middot; Conectividad y compartición de datos</div>
+    <div class="section-title">Cómo se conectan y comparten las redes</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4A</span><span class="tcard-title">Conectividad: cableada &middot; inalámbrica &middot; nube</span><span class="tcard-en">wired &middot; wireless &middot; cloud</span></div>
+    <div class="trow"><div class="tlabel">Cableada</div><div class="tbody">Cables <b>ethernet de cobre</b> (puerto ethernet o tarjeta de red) y hoy <b>fibra óptica</b>, que ofrece mejor conectividad a mayores distancias y mayor velocidad. Empresas y gobiernos la prefieren por <b>fiable, rápida y segura</b> — aunque la tecnología inalámbrica erosiona lentamente esas ventajas.</div></div>
+    <div class="trow"><div class="tlabel fun">Inalámbrica</div><div class="tbody">La tecnología <b>Wi-Fi</b> conecta dispositivos con tarjetas de red inalámbricas a un <b>punto de acceso (WAP)</b> o router inalámbrico mediante <b>señales de radio</b>. Fácil de instalar y flexible; ojo: los puntos de acceso siguen cableados al <b>backbone</b> — solo los dispositivos finales son inalámbricos.</div></div>
+    <div class="trow"><div class="tlabel fun">Nube</div><div class="tbody"><i>«Incorpora algunas o todas las capacidades de la red en una plataforma de nube pública o privada»</i>: los puntos de acceso siguen en el sitio, pero la <b>gestión y los datos se alojan fuera</b> (off-site). Se configura vía la <b>dirección IP</b> del hardware controlador; facilita el despliegue, ahorra costos y da <b>escalabilidad</b>.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">La nube permite que un colegio o PyME gestione toda su red sin personal experto en sitio; la fibra acerca gigabits al hogar (FTTH); el Wi-Fi democratiza el acceso en espacios públicos.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Positivos: flexibilidad y reducción de costos de infraestructura. Negativos: el Wi-Fi es interceptable si no se cifra; la nube traslada el control de datos críticos a terceros.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Sistemas:</b> conveniencia de la nube vs. dependencia de un proveedor externo (¿y si falla o sube precios?). <b>Valores y ética:</b> quién responde cuando el proveedor de la nube sufre una brecha de seguridad.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4A</span><span class="tcard-title">Compartir datos: cliente-servidor vs. entre iguales</span><span class="tcard-en">client-server vs. peer-to-peer (P2P)</span></div>
+    <div class="trow"><div class="tlabel">Cliente-servidor</div><div class="tbody"><i>«Los datos se almacenan centralizadamente en un servidor y se da acceso a cada dispositivo (cliente) conectado»</i>. El servidor puede estar en la organización o en la nube. Ventaja: prioriza <b>asegurar y respaldar</b> los datos. Desventajas: costoso de configurar, requiere personal experto y <b>ancho de banda</b> suficiente para todos los clientes a la vez.</div></div>
+    <div class="trow"><div class="tlabel fun">P2P (entre iguales)</div><div class="tbody"><i>«Red descentralizada en la que cada computadora es igualmente responsable de almacenar y compartir los datos»</i>. No depende de un solo servidor y es fácil de montar, pero es <b>mucho más difícil de gestionar y controlar la seguridad</b>. Usos: compartir archivos grandes, descargas de videojuegos (Blizzard, Wargaming) y las <b>criptomonedas</b>.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">P2P abarató distribuir contenido enorme (cultural, científico), pero también permitió compartir ilegalmente <b>contenido con copyright</b> (películas, música); su naturaleza descentralizada hace muy difícil que las autoridades la cierren.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Poder y valores:</b> ¿quién controla los datos, el servidor central o la multitud? El P2P protege contra censura y cortes únicos, pero facilita la piratería y escapa al control legal. <b>Espacio:</b> la nube centraliza; el P2P distribuye — dos visiones opuestas de internet.</div></div>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 210" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="330" height="196" rx="12" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.4"/>
+      <text x="169" y="26" font-size="11.5" font-weight="800" fill="#1E40AF" text-anchor="middle">Cliente&ndash;servidor (centralizado)</text>
+      <rect x="134" y="60" width="70" height="30" rx="7" fill="#1E3A5F"/>
+      <text x="169" y="79" font-size="10.5" font-weight="800" fill="#fff" text-anchor="middle">Servidor</text>
+      <circle cx="70" cy="150" r="17" fill="#fff" stroke="#3B82F6" stroke-width="2"/>
+      <circle cx="169" cy="158" r="17" fill="#fff" stroke="#3B82F6" stroke-width="2"/>
+      <circle cx="268" cy="150" r="17" fill="#fff" stroke="#3B82F6" stroke-width="2"/>
+      <text x="70" y="154" font-size="9" fill="#1E40AF" text-anchor="middle" font-weight="700">C1</text>
+      <text x="169" y="162" font-size="9" fill="#1E40AF" text-anchor="middle" font-weight="700">C2</text>
+      <text x="268" y="154" font-size="9" fill="#1E40AF" text-anchor="middle" font-weight="700">C3</text>
+      <line x1="90" y1="138" x2="145" y2="90" stroke="#3B82F6" stroke-width="1.8"/>
+      <line x1="169" y1="141" x2="169" y2="90" stroke="#3B82F6" stroke-width="1.8"/>
+      <line x1="248" y1="138" x2="193" y2="90" stroke="#3B82F6" stroke-width="1.8"/>
+      <text x="169" y="192" font-size="9.5" fill="#475569" text-anchor="middle">Todos los datos viven en el servidor</text>
+      <rect x="348" y="4" width="330" height="196" rx="12" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1.4"/>
+      <text x="513" y="26" font-size="11.5" font-weight="800" fill="#134E4A" text-anchor="middle">P2P &middot; entre iguales (descentralizado)</text>
+      <circle cx="440" cy="75" r="17" fill="#fff" stroke="#14B8A6" stroke-width="2"/>
+      <circle cx="586" cy="75" r="17" fill="#fff" stroke="#14B8A6" stroke-width="2"/>
+      <circle cx="440" cy="150" r="17" fill="#fff" stroke="#14B8A6" stroke-width="2"/>
+      <circle cx="586" cy="150" r="17" fill="#fff" stroke="#14B8A6" stroke-width="2"/>
+      <text x="440" y="79" font-size="9" fill="#134E4A" text-anchor="middle" font-weight="700">P1</text>
+      <text x="586" y="79" font-size="9" fill="#134E4A" text-anchor="middle" font-weight="700">P2</text>
+      <text x="440" y="154" font-size="9" fill="#134E4A" text-anchor="middle" font-weight="700">P3</text>
+      <text x="586" y="154" font-size="9" fill="#134E4A" text-anchor="middle" font-weight="700">P4</text>
+      <line x1="457" y1="75" x2="569" y2="75" stroke="#14B8A6" stroke-width="1.6"/>
+      <line x1="440" y1="92" x2="440" y2="133" stroke="#14B8A6" stroke-width="1.6"/>
+      <line x1="586" y1="92" x2="586" y2="133" stroke="#14B8A6" stroke-width="1.6"/>
+      <line x1="452" y1="88" x2="574" y2="137" stroke="#14B8A6" stroke-width="1.6"/>
+      <line x1="574" y1="88" x2="452" y2="137" stroke="#14B8A6" stroke-width="1.6"/>
+      <text x="513" y="192" font-size="9.5" fill="#475569" text-anchor="middle">Cada par guarda y comparte: sin servidor central</text>
+    </svg>
+    <div class="svg-cap">G2 &middot; Dos arquitecturas de compartición de datos (adaptado del libro, 3.4A)</div>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.4B · COMPONENTES ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.4B &middot; Components of computing networks</div>
+    <div class="section-title">Componentes de una red</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Para conectarse en red, cada dispositivo necesita <b>hardware especializado</b> — del chip dentro de tu computadora al router que saca los datos de casa.</p>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4B</span><span class="tcard-title">Tarjeta de red y dirección MAC</span><span class="tcard-en">NIC &middot; MAC address</span></div>
+    <div class="trow"><div class="tlabel">Definiciones</div><div class="tbody"><b>NIC:</b> <i>«dispositivo responsable de convertir los datos en una señal digital y comunicarlos a la red»</i> (puede ser cableada o inalámbrica). <b>MAC:</b> <i>«identificador único asignado a cada pieza de hardware»</i>, fijado por el fabricante con <b>48 bits en hexadecimal</b>.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">La MAC permite <b>identificar y filtrar dispositivos</b> legítimos en la red (control de acceso).</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">Como la MAC es única y permanente, puede usarse para <b>rastrear</b> un equipo entre redes — por eso existen técnicas de «spoofing» (suplantación de MAC) y <b>identidad</b> en la red.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4B</span><span class="tcard-title">Router y módem</span><span class="tcard-en">router &middot; modem</span></div>
+    <div class="trow"><div class="tlabel">Definiciones</div><div class="tbody"><b>Router:</b> <i>«tecnología que transfiere datos de una red a otra por la ruta más eficiente disponible»</i>. <b>Módem:</b> <i>«dispositivo que convierte datos digitales en analógicos para transmitirlos por línea telefónica»</i>.</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">En casa: el router <b>reenvía el paquete al módem</b> y de ahí al ISP — por eso en una red doméstica basta un router. Con fibra óptica (FTTH, <i>fibre to the home</i>), el ISP instala router y módem de fibra para velocidades mucho mayores.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">El enrutado inteligente es lo que hace posible que <b>internet funcione a escala global</b>: cada paquete encuentra su camino entre millones de redes.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">El router doméstico es la <b>puerta de entrada</b> de la red: si está sin actualizar o con contraseña por defecto, todo lo demás queda expuesto (véanse los dilemas de 3.4G).</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4B</span><span class="tcard-title">Punto de acceso inalámbrico</span><span class="tcard-en">WAP &middot; wireless access point</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«Dispositivo que crea una red local inalámbrica para mejorar la cobertura en todo un edificio»</i>.</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">Se colocan <b>estratégicamente</b> por el colegio u oficina; usan canales de radio dedicados y cada WAP se conecta <b>por cable</b> a un switch o hub: incluso una red inalámbrica tiene componentes cableados.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Cobertura completa en campus grandes y aprendizaje en cualquier aula; base de las redes educativas y corporativas modernas.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">Más cobertura = más superficie de ataque (redes «gemelas» falsas); y el uso personal intensivo en redes escolares plantea límites de <b>privacidad y supervisión</b>.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4B</span><span class="tcard-title">Hub vs. switch</span><span class="tcard-en">concentrador vs. conmutador</span></div>
+    <div class="trow"><div class="tlabel">Definiciones</div><div class="tbody"><b>Hub:</b> <i>«dispositivo de red que difunde (broadcast) los datos a todos los dispositivos de la red»</i>. <b>Switch:</b> <i>«dispositivo que reenvía los paquetes de datos de forma más eficiente que un hub»</i>.</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">El hub es el <b>menos inteligente</b>: envía datos innecesarios y consume mucho ancho de banda, aunque es fácil de configurar (p. ej., conectar consolas para un multijugador local). La mayoría de las LAN usan <b>switches</b>: más potentes, dan al administrador <b>mayor control</b> sobre cómo se comparten los datos.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">Un hub reenvía a todos: cualquiera puede «escuchar» tráfico que no le corresponde (<b>confidencialidad</b>). El switch mejora seguridad y rendimiento a cambio de más costo y gestión.</div></div>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 82" xmlns="http://www.w3.org/2000/svg">
+      <rect x="6" y="18" width="112" height="52" rx="9" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+      <text x="62" y="40" font-size="10.5" font-weight="800" fill="#1E40AF" text-anchor="middle">Dispositivo</text>
+      <text x="62" y="56" font-size="9" fill="#475569" text-anchor="middle">con NIC y MAC</text>
+      <rect x="150" y="18" width="96" height="52" rx="9" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1.5"/>
+      <text x="198" y="40" font-size="10.5" font-weight="800" fill="#5B21B6" text-anchor="middle">Router</text>
+      <text x="198" y="56" font-size="9" fill="#475569" text-anchor="middle">ruta eficiente</text>
+      <rect x="278" y="18" width="96" height="52" rx="9" fill="#F0FDFA" stroke="#14B8A6" stroke-width="1.5"/>
+      <text x="326" y="40" font-size="10.5" font-weight="800" fill="#134E4A" text-anchor="middle">Módem</text>
+      <text x="326" y="56" font-size="9" fill="#475569" text-anchor="middle">digital &harr; analógico</text>
+      <rect x="406" y="18" width="96" height="52" rx="9" fill="#FFF7ED" stroke="#F59E0B" stroke-width="1.5"/>
+      <text x="454" y="40" font-size="10.5" font-weight="800" fill="#92400E" text-anchor="middle">ISP</text>
+      <text x="454" y="56" font-size="9" fill="#475569" text-anchor="middle">acceso y servicios</text>
+      <rect x="534" y="18" width="142" height="52" rx="9" fill="#1E3A5F"/>
+      <text x="605" y="40" font-size="10.5" font-weight="800" fill="#fff" text-anchor="middle">Internet</text>
+      <text x="605" y="56" font-size="9" fill="#B7C6DC" text-anchor="middle">miles de millones de usuarios</text>
+      <line x1="118" y1="44" x2="148" y2="44" stroke="#94A3B8" stroke-width="2"/>
+      <polygon points="148,40 156,44 148,48" fill="#94A3B8"/>
+      <line x1="246" y1="44" x2="276" y2="44" stroke="#94A3B8" stroke-width="2"/>
+      <polygon points="276,40 284,44 276,48" fill="#94A3B8"/>
+      <line x1="374" y1="44" x2="404" y2="44" stroke="#94A3B8" stroke-width="2"/>
+      <polygon points="404,40 412,44 404,48" fill="#94A3B8"/>
+      <line x1="502" y1="44" x2="532" y2="44" stroke="#94A3B8" stroke-width="2"/>
+      <polygon points="532,40 540,44 532,48" fill="#94A3B8"/>
+    </svg>
+    <div class="svg-cap">G3 &middot; La cadena de una red doméstica: dispositivo &rarr; router &rarr; módem &rarr; ISP &rarr; internet; en redes grandes, los dispositivos pasan antes por un WAP conectado por cable a un switch o hub (libro, 3.4B)</div>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.4C · PROTOCOLOS Y ESTÁNDARES ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.4C &middot; Characteristics of computing networks</div>
+    <div class="section-title">Estándares, protocolos y direcciones</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">No es un logro menor que los datos viajen por el mundo usando tecnologías de fabricantes distintos: esto es posible por la <b>interoperabilidad</b> — <i>«permite que diferentes tecnologías o sistemas digitales se conecten e intercambien datos sin restricciones»</i> — y por un conjunto común de <b>protocolos de red</b>: <i>«reglas acordadas que establecen cómo formatear, enviar y recibir datos»</i>. Ambos lados de la comunicación deben aceptar y seguir las reglas.</p>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 196" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="6" width="300" height="38" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+      <text x="20" y="24" font-size="10.5" font-weight="800" fill="#1E40AF">1 &middot; Capa de aplicación</text>
+      <text x="20" y="38" font-size="9" fill="#475569">protocolos de las aplicaciones &middot; ej.: el navegador, HTTP</text>
+      <rect x="4" y="50" width="300" height="38" rx="8" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1.5"/>
+      <text x="20" y="68" font-size="10.5" font-weight="800" fill="#5B21B6">2 &middot; Capa de transporte</text>
+      <text x="20" y="82" font-size="9" fill="#475569">TCP y UDP: divide los datos en paquetes con instrucciones</text>
+      <rect x="4" y="94" width="300" height="38" rx="8" fill="#F0FDFA" stroke="#14B8A6" stroke-width="1.5"/>
+      <text x="20" y="112" font-size="10.5" font-weight="800" fill="#134E4A">3 &middot; Capa de internet</text>
+      <text x="20" y="126" font-size="9" fill="#475569">IP: añade direcciones de origen y destino y enruta</text>
+      <rect x="4" y="138" width="300" height="38" rx="8" fill="#FFF7ED" stroke="#F59E0B" stroke-width="1.5"/>
+      <text x="20" y="156" font-size="10.5" font-weight="800" fill="#92400E">4 &middot; Capa física de red</text>
+      <text x="20" y="170" font-size="9" fill="#475569">tecnologías que trabajan juntas &middot; ej.: ethernet, Wi-Fi</text>
+      <line x1="322" y1="25" x2="640" y2="25" stroke="#E2E8F0" stroke-width="1.2"/>
+      <line x1="322" y1="69" x2="640" y2="69" stroke="#E2E8F0" stroke-width="1.2"/>
+      <line x1="322" y1="113" x2="640" y2="113" stroke="#E2E8F0" stroke-width="1.2"/>
+      <line x1="322" y1="157" x2="640" y2="157" stroke="#E2E8F0" stroke-width="1.2"/>
+      <text x="336" y="29" font-size="9.3" fill="#334155">Donde viven los servicios que usas (web, correo, streaming)</text>
+      <text x="336" y="73" font-size="9.3" fill="#334155">Analogía del libro: enviar un gran mosaico por correo —</text>
+      <text x="336" y="86" font-size="9.3" fill="#334155">se envía por piezas con instrucciones para reensamblarlo</text>
+      <text x="336" y="117" font-size="9.3" fill="#334155">Cada paquete lleva la IP del remitente y del destinatario</text>
+      <text x="336" y="161" font-size="9.3" fill="#334155">Los cables y señales por los que viajan los bits</text>
+      <text x="341" y="190" font-size="9.5" fill="#64748B" text-anchor="middle" font-weight="700">Las cuatro capas facilitan la implantación de estándares (libro, 3.4C)</text>
+    </svg>
+    <div class="svg-cap">G4 &middot; El modelo de cuatro capas de los protocolos de red (adaptado del libro, 3.4C)</div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4C</span><span class="tcard-title">TCP/IP y las direcciones</span><span class="tcard-en">TCP/IP &middot; IP address &middot; DHCP</span></div>
+    <div class="trow"><div class="tlabel">Definiciones</div><div class="tbody"><b>TCP/IP:</b> <i>«protocolo que define hacia dónde y desde dónde se envían los datos (IP) y cómo se dividen en paquetes antes de enviarlos (TCP)»</i>. <b>Dirección IP:</b> <i>«dirección numérica lógica que se asigna a cada nodo de una red»</i>.</div></div>
+    <div class="trow"><div class="tlabel fun">IP vs. MAC</div><div class="tbody">La <b>MAC la fija el fabricante</b> (permanente); la <b>IP es lógica</b> y la asigna el <b>DHCP</b> (protocolo de configuración dinámica de host) cada vez que el dispositivo se conecta. Los <b>servidores web suelen tener IP fija</b> para ser siempre encontrables.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">La separación en capas permite innovar por partes (Wi-Fi nuevo sin cambiar el web) y conectar tecnologías de cualquier fabricante — la razón por la que internet creció.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Identidad y poder:</b> las IP permiten atribuir actividades a personas (y también censurar o bloquear por IP); los gobiernos discuten hasta dónde puede llegar ese rastreo.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4C</span><span class="tcard-title">El servidor de nombres de dominio</span><span class="tcard-en">DNS &middot; domain name server</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«Servidor que traduce nombres de dominio en direcciones IP»</i> — gracias a él no hay que memorizar números para entrar a un sitio web.</div></div>
+    <div class="trow"><div class="tlabel case">Ejemplo del libro</div><div class="tbody">Escribes <b>twitter.com</b> en el navegador &rarr; la petición va al DNS &rarr; busca la IP en su base de datos de IP públicas &rarr; el paquete se reenvía a <b>104.244.42.1</b>, la IP de Twitter.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Positivo: usabilidad universal de internet. Negativo: quien controla el DNS puede <b>bloquear o redirigir</b> sitios (censura, secuestro de DNS).</div></div>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 118" xmlns="http://www.w3.org/2000/svg">
+      <rect x="6" y="14" width="140" height="56" rx="9" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+      <text x="76" y="36" font-size="9.8" font-weight="800" fill="#1E40AF" text-anchor="middle">1 &middot; Escribes</text>
+      <text x="76" y="52" font-size="10.5" font-weight="800" fill="#1E3A5F" text-anchor="middle">twitter.com</text>
+      <rect x="186" y="14" width="140" height="56" rx="9" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1.5"/>
+      <text x="256" y="36" font-size="9.8" font-weight="800" fill="#5B21B6" text-anchor="middle">2 &middot; Petición al DNS</text>
+      <text x="256" y="52" font-size="9" fill="#475569" text-anchor="middle">base de datos de IP públicas</text>
+      <rect x="366" y="14" width="140" height="56" rx="9" fill="#F0FDFA" stroke="#14B8A6" stroke-width="1.5"/>
+      <text x="436" y="36" font-size="9.8" font-weight="800" fill="#134E4A" text-anchor="middle">3 &middot; Devuelve la IP</text>
+      <text x="436" y="52" font-size="10" font-weight="800" fill="#1E3A5F" text-anchor="middle">104.244.42.1</text>
+      <rect x="546" y="14" width="130" height="56" rx="9" fill="#FFF7ED" stroke="#F59E0B" stroke-width="1.5"/>
+      <text x="611" y="36" font-size="9.8" font-weight="800" fill="#92400E" text-anchor="middle">4 &middot; El paquete viaja</text>
+      <text x="611" y="52" font-size="9" fill="#475569" text-anchor="middle">al servidor web de destino</text>
+      <line x1="146" y1="42" x2="182" y2="42" stroke="#94A3B8" stroke-width="2"/>
+      <polygon points="182,38 190,42 182,46" fill="#94A3B8"/>
+      <line x1="326" y1="42" x2="362" y2="42" stroke="#94A3B8" stroke-width="2"/>
+      <polygon points="362,38 370,42 362,46" fill="#94A3B8"/>
+      <line x1="506" y1="42" x2="542" y2="42" stroke="#94A3B8" stroke-width="2"/>
+      <polygon points="542,38 550,42 542,46" fill="#94A3B8"/>
+      <text x="341" y="98" font-size="9.5" fill="#64748B" text-anchor="middle">Sin DNS tendrías que memorizar la IP de cada sitio que visitas (libro, 3.4C)</text>
+    </svg>
+    <div class="svg-cap">G5 &middot; Resolución DNS paso a paso, con el ejemplo del libro</div>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.4C · CAPACIDAD, COMPRESIÓN Y NEUTRALIDAD ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.4C &middot; Capacidad, compresión y neutralidad</div>
+    <div class="section-title">Cuánto viajan los datos y a qué precio</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4C</span><span class="tcard-title">Ancho de banda vs. velocidad</span><span class="tcard-en">bandwidth vs. speed</span></div>
+    <div class="trow"><div class="tlabel">Definiciones</div><div class="tbody"><b>Ancho de banda:</b> <i>«la tasa máxima de transferencia de datos en un momento dado, medida en hercios (Hz)»</i> — cuántos datos pueden moverse a la vez. <b>Velocidad:</b> <i>«el tiempo que tardan los datos en transferirse, medido en megabits por segundo (Mbps)»</i> — se hablan juntos, pero <b>son distintos</b>.</div></div>
+    <div class="trow"><div class="tlabel case">Caso real</div><div class="tbody"><b>Streaming de la UEFA Euro 2020</b> (junio&ndash;julio 2021): se esperaban <b>1.900 millones de espectadores</b>, en <b>229 áreas</b>, con <b>137 socios de emisión</b>, <b>3.500 horas</b> de contenido y <b>36 cámaras</b> por partido. El proveedor debe garantizar ancho de banda para su audiencia — si no: la rueda del «buffering» (<i>throbber</i>).</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Sin ancho de banda suficiente quedan fuera los eventos masivos y el estudio en línea; la demanda de streaming impulsa la inversión en fibra y 5G (contexto económico).</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4C</span><span class="tcard-title">Compresión de datos</span><span class="tcard-en">data compression &middot; lossy &middot; lossless</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«Proceso que reduce el tamaño de un archivo recodificándolo para usar menos bits de almacenamiento que el original»</i> — hace más eficiente <b>almacenar y transmitir</b> (vídeo y música en streaming).</div></div>
+    <div class="trow"><div class="tlabel fun">Dos tipos</div><div class="tbody"><b>Con pérdida (lossy)</b> — p. ej. <b>JPG, MP4</b>: elimina permanentemente datos poco perceptibles. <b>Sin pérdida (lossless)</b> — p. ej. <b>PNG, BMP</b>: reduce el tamaño sin perder datos; el archivo puede restaurarse a su estado original.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Positivo: streaming masivo y ahorro de almacenamiento. Negativo: los formatos con pérdida degradan calidad de forma permanente — irrelevante para un meme, crítico para un documento histórico o médico.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Valores:</b> ¿cuánta calidad se puede sacrificar por velocidad? En diagnóstico por imagen o conservación digital, la pérdida de datos no es negociable.</div></div>
+  </div>
+
+  <div class="tcard u4">
+    <div class="tcard-head"><span class="tcard-num">3.4C</span><span class="tcard-title">Neutralidad de red: el gran dilema</span><span class="tcard-en">net neutrality</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«El concepto de que todas las solicitudes de datos en internet deben ser tratadas de igual forma por los proveedores de servicios de internet (ISP)»</i> — un internet libre y sin restricciones.</div></div>
+    <div class="trow"><div class="tlabel fun">El contraejemplo</div><div class="tbody"><b>Parcialidad de red (net partiality):</b> si el ISP de tu colegio diera acceso gratuito y rápido a los 10 sitios más visitados del colegio, todos accederían mucho más rápido a los materiales — ventaja clara, pero rompe la igualdad de trato.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">El libro advierte una <b>«pendiente resbaladiza»</b>: las telecomunicaciones podrían controlar quién accede a qué sitio y a qué velocidad — cobrando a empresas por trato preferente y a usuarios por contenido específico. <i>«Este no es el internet que Sir Tim Berners-Lee tenía en mente»</i>. <b>Debate:</b> Obama era pro-neutralidad; Trump, contra.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Con neutralidad: igualdad de oportunidades para PyMEs, creadores y escuelas. Sin ella: los que pagan llegan primero — concentra el <b>poder</b> en operadoras y grandes plataformas.</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.4C · SEGURIDAD ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.4C &middot; Seguridad de las redes</div>
+    <div class="section-title">Proteger la red por dentro y por fuera</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Compartir datos entre usuarios, dispositivos y ubicaciones crea <b>riesgo</b>: profesionales de redes protegen las redes de amenazas internas y externas, y cada individuo — con su móvil, su <b>nevera inteligente</b> (IoT) o su PC — también debe ser responsable de su nivel de seguridad.</p>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4C</span><span class="tcard-title">Control de acceso y MFA</span><span class="tcard-en">authentication &middot; multi-factor authentication</span></div>
+    <div class="trow"><div class="tlabel">Funcionamiento</div><div class="tbody">Base: usuario único y <b>contraseña fuerte</b>. El <b>administrador de red</b> define qué archivos son accesibles y con qué permiso (<b>solo lectura</b> o <b>control total</b>). La <b>MFA</b>: <i>«uso de múltiples métodos de autenticación para verificar la identidad»</i> — dos o más credenciales independientes.</div></div>
+    <div class="trow"><div class="tlabel fun">Los 3 factores</div><div class="tbody"><b>Físicos:</b> token, tarjeta o SMS. <b>Inherentes al usuario:</b> biometría (p. ej. <i>faceprint</i>; conecta con los pasaportes biométricos de 4.6B). <b>Conocidos solo por el usuario:</b> PIN o frase.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">La MFA bloquea la mayoría de los accesos por contraseñas robadas (ingeniería social) — la medida más costo-efectiva para usuarios comunes.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">La biometría es cómoda pero <b>no se puede cambiar</b> si se filtra como una contraseña; ¿a quién se entrega la plantilla de tu rostro? (<b>identidad y privacidad</b>).</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4C</span><span class="tcard-title">Firewall y servidor proxy</span><span class="tcard-en">firewall &middot; proxy server</span></div>
+    <div class="trow"><div class="tlabel">Definiciones</div><div class="tbody"><b>Firewall:</b> <i>«hardware o software diseñado para bloquear el acceso no autorizado a una red inspeccionando el tráfico entrante y saliente»</i> — acepta o rechaza según reglas definidas. <b>Proxy:</b> <i>«sistema que actúa como intermediario entre el cliente y la internet, proporcionando una capa adicional de seguridad»</i>.</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">El proxy se instala en la <b>pasarela (gateway)</b>: reenvía solicitudes usando un <b>ID de red anónimo</b> en vez de la IP real, y puede <b>filtrar contenido</b> por palabras clave o <b>listas negras</b> de sitios. El firewall puede ser hardware (grandes organizaciones) o software del sistema operativo.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Positivo: barrera estructural contra intrusiones y control de contenidos indeseados en escuelas. Negativo: filtrado excesivo puede bloquear recursos legítimos de estudio (tensión con la <b>expresión</b>).</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4C</span><span class="tcard-title">Cifrado: la última línea</span><span class="tcard-en">encryption &middot; WPA</span></div>
+    <div class="trow"><div class="tlabel">Funcionamiento</div><div class="tbody">¿Y si la pasarela falla y alguien accede a los archivos? El <b>cifrado</b> asegura los datos: <b>cifrando el almacenamiento del servidor</b> y <b>cifrando la conexión inalámbrica con WPA</b> (<i>Wi-Fi protected access</i>), los datos robados resultan ilegibles.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Permite banca, salud y mensajería privadas sobre una red pública: la confianza en internet depende del cifrado.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Poder:</b> el mismo cifrado protege a víctimas y a criminales — los gobiernos piden «puertas traseras» y los expertos advierten que debilitan la seguridad de todos.</div></div>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 112" xmlns="http://www.w3.org/2000/svg">
+      <rect x="6" y="14" width="96" height="52" rx="9" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5"/>
+      <text x="54" y="36" font-size="9.8" font-weight="800" fill="#991B1B" text-anchor="middle">Amenaza</text>
+      <text x="54" y="52" font-size="9" fill="#7F1D1D" text-anchor="middle">hacker &middot; malware</text>
+      <rect x="134" y="14" width="118" height="52" rx="9" fill="#FFF7ED" stroke="#F59E0B" stroke-width="1.5"/>
+      <text x="193" y="36" font-size="9.8" font-weight="800" fill="#92400E" text-anchor="middle">Firewall</text>
+      <text x="193" y="52" font-size="9" fill="#475569" text-anchor="middle">inspecciona el tráfico</text>
+      <rect x="284" y="14" width="110" height="52" rx="9" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1.5"/>
+      <text x="339" y="36" font-size="9.8" font-weight="800" fill="#5B21B6" text-anchor="middle">Proxy</text>
+      <text x="339" y="52" font-size="9" fill="#475569" text-anchor="middle">intermediario anónimo</text>
+      <rect x="426" y="14" width="112" height="52" rx="9" fill="#F0FDFA" stroke="#14B8A6" stroke-width="1.5"/>
+      <text x="482" y="36" font-size="9.8" font-weight="800" fill="#134E4A" text-anchor="middle">MFA</text>
+      <text x="482" y="52" font-size="9" fill="#475569" text-anchor="middle">token + biometría + PIN</text>
+      <rect x="570" y="14" width="106" height="52" rx="9" fill="#1E3A5F"/>
+      <text x="623" y="36" font-size="9.8" font-weight="800" fill="#fff" text-anchor="middle">Datos cifrados</text>
+      <text x="623" y="52" font-size="9" fill="#B7C6DC" text-anchor="middle">WPA &middot; servidor</text>
+      <line x1="102" y1="40" x2="130" y2="40" stroke="#94A3B8" stroke-width="2"/>
+      <polygon points="130,36 138,40 130,44" fill="#94A3B8"/>
+      <line x1="252" y1="40" x2="280" y2="40" stroke="#94A3B8" stroke-width="2"/>
+      <polygon points="280,36 288,40 280,44" fill="#94A3B8"/>
+      <line x1="394" y1="40" x2="422" y2="40" stroke="#94A3B8" stroke-width="2"/>
+      <polygon points="422,36 430,40 422,44" fill="#94A3B8"/>
+      <line x1="538" y1="40" x2="566" y2="40" stroke="#94A3B8" stroke-width="2"/>
+      <polygon points="566,36 574,40 566,44" fill="#94A3B8"/>
+      <text x="341" y="94" font-size="9.5" fill="#64748B" text-anchor="middle">Defensas en profundidad: cada capa filtra o bloquea antes de que la amenaza llegue a los datos (libro, 3.4C)</text>
+    </svg>
+    <div class="svg-cap">G6 &middot; Las capas de seguridad de una red (adaptado del libro, 3.4C)</div>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.4D–E · PROVEEDORES Y LA WEB ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.4D &middot; Computing network providers and services</div>
+    <div class="section-title">Quién provee la conexión</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Falta un elemento para acceder a los recursos globales: <b>la suscripción</b> a un proveedor de servicios móviles (MSP) o de internet (ISP).</p>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4D</span><span class="tcard-title">Proveedor de servicios móviles (MSP)</span><span class="tcard-en">mobile service provider</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«Empresa que ofrece conexión celular a los abonados de telefonía móvil»</i> — también llamada operadora (<i>mobile carrier</i>).</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">Compra una <b>licencia para transmitir señales de radio</b> en una banda de frecuencia (ej. del libro: <b>1800&ndash;2100 MHz</b>, para altas velocidades). Las redes se nombran <b>4G o 5G</b> — la «G» es de <i>generation</i>. Con el servicio: llamadas, SMS y datos.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Lleva internet donde nunca llegó el cable (el móvil es la primera puerta a internet en muchos países en desarrollo — <b>espacio y equidad</b>).</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody"><b>Poder:</b> pocas operadoras controlan licencias y precios; en zonas rurales, la cobertura decide quién participa en la sociedad digital.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4D</span><span class="tcard-title">Voz sobre protocolo de internet</span><span class="tcard-en">VoIP &middot; voice over internet protocol</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«Permite a los usuarios realizar llamadas de voz usando una conexión a internet de banda ancha en lugar de una línea telefónica analógica»</i>. Ejemplos del libro: <b>Skype, WhatsApp y Facebook Messenger</b>.</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">Llamada móvil tradicional: el audio viaja <b>de torre celular a torre celular</b>. VoIP: el audio se transforma en <b>paquetes digitales que viajan por internet</b> entre dos dispositivos cualesquiera.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Llamadas internacionales casi gratis: mantiene conectadas a familias migrantes y barata la educación a distancia (contexto social y económico).</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Positivo: comunicación universal a bajo costo. Negativo: presiona el modelo de negocio de telefonía tradicional y depende de internet estable (si la red falla, no hay llamada de emergencia).</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4D</span><span class="tcard-title">Proveedor de servicios de internet (ISP)</span><span class="tcard-en">internet service provider</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«Empresa que proporciona acceso a internet y otros servicios relacionados a sus clientes»</i>.</div></div>
+    <div class="trow"><div class="tlabel fun">Servicios</div><div class="tbody">Además del acceso que habilita navegar, comprar, compartir archivos y videoconferir: <b>correo electrónico</b>, <b>registro de dominios</b> y <b>alojamiento web (web hosting)</b>.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">El ISP es la <b>puerta</b> de internet: puede priorizar, filtrar y vigilar el tráfico — el corazón del debate de la <b>neutralidad de red</b> (3.4C) y del <b>poder</b> sobre la información.</div></div>
+  </div>
+
+  <div class="info-card">
+    <h4>Indagación del libro (3.4D + concepto 2.3 identidad)</h4>
+    <p><i>«¿Cuál es la relación entre las redes, los servicios de red y nuestra identidad?»</i> — comparar los paquetes de dos MSP y dos ISP locales, decidir la mejor oferta y crear un <b>pitch de ascensor</b> para convencer a un amigo de cambiarse de operadora. Preguntas guía: ¿cómo se usan las redes para construir la identidad de una persona?, ¿en qué se diferencian las identidades en esas redes de las del mundo real?, ¿cómo pueden usarse las redes para <b>ocultar o distorsionar</b> la identidad?, ¿qué daños y beneficios genera usarlas para desarrollarla?</p>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.4E · WORLD WIDE WEB ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.4E &middot; The World Wide Web</div>
+    <div class="section-title">Internet no es la World Wide Web</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4E</span><span class="tcard-title">Internet &ne; World Wide Web</span><span class="tcard-en">the net vs. the web</span></div>
+    <div class="trow"><div class="tlabel">Definiciones</div><div class="tbody"><b>Internet:</b> <i>«la colección global de redes y tecnologías de red que vincula a miles de millones de usuarios»</i> (la infraestructura). <b>WWW:</b> <i>«los sitios web y servicios web alojados en servidores web, identificados por su URL»</i> (el contenido). En el día a día se usan como sinónimos — <b>no lo son</b>.</div></div>
+    <div class="trow"><div class="tlabel fun">La tríada web</div><div class="tbody">Tres tecnologías hacen posible la interoperabilidad de la web: <b>URL</b> (dirección única de cada recurso), <b>HTTP/HTTPS</b> (cómo se transmiten los recursos entre navegador y servidor) y <b>HTML</b> (el formato de las páginas y de sus enlaces).</div></div>
+    <div class="trow"><div class="tlabel case">Dato clave</div><div class="tbody">HTTPS es hoy <b>requisito de muchos navegadores</b>: las empresas de hosting añadieron <b>certificados de seguridad</b> para que los datos sensibles viajen <b>cifrados</b>.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Cualquiera puede publicar a escala global sin pedir permiso: la web es el mayor espacio público de la historia (<b>expresión</b>).</div></div>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 178" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="674" height="58" rx="11" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1.5"/>
+      <text x="20" y="26" font-size="11" font-weight="800" fill="#5B21B6">WWW &middot; el contenido</text>
+      <text x="20" y="44" font-size="9.3" fill="#475569">sitios web y servicios alojados en servidores web, identificados por su URL (ej.: https://example.com) &middot; HTML &middot; HTTP/HTTPS</text>
+      <rect x="262" y="74" width="158" height="30" rx="15" fill="#1E3A5F"/>
+      <text x="341" y="93" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">Navegador web</text>
+      <line x1="341" y1="70" x2="341" y2="74" stroke="#94A3B8" stroke-width="2"/>
+      <line x1="341" y1="104" x2="341" y2="108" stroke="#94A3B8" stroke-width="2"/>
+      <polygon points="337,72 345,72 341,66" fill="#94A3B8"/>
+      <polygon points="337,106 345,106 341,112" fill="#94A3B8"/>
+      <text x="560" y="93" font-size="9.3" fill="#475569">accede a los recursos</text>
+      <rect x="4" y="116" width="674" height="58" rx="11" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+      <text x="20" y="138" font-size="11" font-weight="800" fill="#1E40AF">INTERNET &middot; la infraestructura</text>
+      <text x="20" y="156" font-size="9.3" fill="#475569">colección global de redes y tecnologías: computadoras, servidores, routers, cables, WAP, ISP &middot; el mayor ejemplo de WAN</text>
+      <circle cx="640" cy="145" r="7" fill="#3B82F6"/><circle cx="612" cy="158" r="7" fill="#8B5CF6"/><circle cx="666" cy="160" r="7" fill="#14B8A6"/>
+      <line x1="647" y1="146" x2="605" y2="157" stroke="#94A3B8" stroke-width="1.4"/>
+      <line x1="645" y1="150" x2="660" y2="158" stroke="#94A3B8" stroke-width="1.4"/>
+    </svg>
+    <div class="svg-cap">G7 &middot; Internet (infraestructura) y WWW (contenido) no son lo mismo (adaptado del libro, 3.4E)</div>
+  </div>
+
+  <div class="info-card">
+    <h4>Sir Tim Berners-Lee y el W3C</h4>
+    <p>Inventó la <b>WWW en 1989</b> con la propuesta de que la información compartida se estructurara y <b>enlazara</b> de una forma nueva, más rápida y fácil de acceder. En <b>1994</b> se fundó el <b>World Wide Web Consortium (W3C)</b> para promover la evolución de la web y garantizar la <b>interoperabilidad</b>: coordina el desarrollo de la tecnología y de los estándares con procesos basados en el acuerdo de miembros de organizaciones de todo el mundo. Al escribirse el libro, <b>Berners-Lee era su director</b>. Su pregunta recurrente — ¿la web cumple su visión o internet está roto? — atraviesa todo el capítulo.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.4F · EVOLUCIÓN ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.4F &middot; Evolution of the internet and the web</div>
+    <div class="section-title">De ARPANET a la Web 3.0</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text"><b>Internet existió antes que la web.</b> El libro sitúa el inicio en 1965 (primer mensaje entre UCLA y Stanford: el primer intento provocó un fallo del sistema) y la consolidación en 1969 con <b>ARPANET</b>. La web llegó en 1989. Esta evolución es una de las comprensiones esenciales del capítulo (<b>cambio</b>).</p>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 682 236" xmlns="http://www.w3.org/2000/svg">
+      <line x1="26" y1="120" x2="656" y2="120" stroke="#CBD5E1" stroke-width="3"/>
+      <circle cx="60" cy="120" r="6" fill="#3B82F6"/>
+      <text x="60" y="98" font-size="10" font-weight="800" fill="#1E40AF" text-anchor="middle">1965</text>
+      <text x="60" y="112" font-size="8.8" fill="#475569" text-anchor="middle">UCLA &rarr; Stanford:</text>
+      <text x="60" y="141" font-size="8.8" fill="#475569" text-anchor="middle">primer mensaje entre</text>
+      <text x="60" y="153" font-size="8.8" fill="#475569" text-anchor="middle">dos computadoras</text>
+      <circle cx="160" cy="120" r="6" fill="#3B82F6"/>
+      <text x="160" y="98" font-size="10" font-weight="800" fill="#1E40AF" text-anchor="middle">1969</text>
+      <text x="160" y="112" font-size="8.8" fill="#475569" text-anchor="middle">ARPANET</text>
+      <text x="160" y="141" font-size="8.8" fill="#475569" text-anchor="middle">30 instituciones;</text>
+      <text x="160" y="153" font-size="8.8" fill="#475569" text-anchor="middle">Hawái, Noruega, Reino Unido;</text>
+      <text x="160" y="165" font-size="8.8" fill="#475569" text-anchor="middle">TCP/IP; operativa hasta 1990</text>
+      <circle cx="288" cy="120" r="6" fill="#8B5CF6"/>
+      <text x="288" y="98" font-size="10" font-weight="800" fill="#5B21B6" text-anchor="middle">1989</text>
+      <text x="288" y="112" font-size="8.8" fill="#475569" text-anchor="middle">WWW — Tim Berners-Lee</text>
+      <text x="288" y="141" font-size="8.8" fill="#475569" text-anchor="middle">información estructurada</text>
+      <text x="288" y="153" font-size="8.8" fill="#475569" text-anchor="middle">y enlazada + navegador</text>
+      <circle cx="404" cy="120" r="6" fill="#8B5CF6"/>
+      <text x="404" y="98" font-size="10" font-weight="800" fill="#5B21B6" text-anchor="middle">1993&rarr;96</text>
+      <text x="404" y="112" font-size="8.8" fill="#475569" text-anchor="middle">130 &rarr; 100.000 sitios web</text>
+      <text x="404" y="141" font-size="8.8" fill="#475569" text-anchor="middle">1994: se funda el W3C</text>
+      <text x="404" y="153" font-size="8.8" fill="#475569" text-anchor="middle">(estándares e interoperabilidad)</text>
+      <circle cx="520" cy="120" r="6" fill="#14B8A6"/>
+      <text x="520" y="98" font-size="10" font-weight="800" fill="#134E4A" text-anchor="middle">~2000</text>
+      <text x="520" y="112" font-size="8.8" fill="#475569" text-anchor="middle">Web 2.0 &laquo;web social&raquo;</text>
+      <text x="520" y="141" font-size="8.8" fill="#475569" text-anchor="middle">XML y RSS; redes sociales,</text>
+      <text x="520" y="153" font-size="8.8" fill="#475569" text-anchor="middle">blogs, podcasts, etiquetado</text>
+      <circle cx="622" cy="120" r="6" fill="#F59E0B"/>
+      <text x="622" y="98" font-size="10" font-weight="800" fill="#92400E" text-anchor="middle">2020+</text>
+      <text x="622" y="112" font-size="8.8" fill="#475569" text-anchor="middle">Web 3.0 semántica</text>
+      <text x="622" y="141" font-size="8.8" fill="#475569" text-anchor="middle">IA y lenguaje natural,</text>
+      <text x="622" y="153" font-size="8.8" fill="#475569" text-anchor="middle">gráficos 3D, IoT</text>
+      <text x="60" y="205" font-size="9.3" fill="#334155">Crecimiento: de 2.000 a 30.000 nodos hizo evidente que internet necesitaba ser más fácil de usar (libro, 3.4F)</text>
+    </svg>
+    <div class="svg-cap">G8 &middot; Línea de tiempo de la evolución de internet y la web, con las fechas y cifras del libro (3.4F)</div>
+  </div>
+
+  <table class="exam">
+    <tr><th style="width:15%">Etapa</th><th style="width:44%">Características (libro)</th><th>Tecnologías y ejemplos</th></tr>
+    <tr><td><b>Web 1.0</b><br><span class="en-term">hasta ~2000</span></td><td>La web «en manos de una élite que sabía programar en HTML»; sitios <b>estáticos</b> que no cambiaban con frecuencia (cada cambio requería un programador).</td><td>Páginas HTML fijas; el usuario solo lee.</td></tr>
+    <tr><td><b>Web 2.0</b><br><span class="en-term">desde ~2000</span></td><td>La <b>«web social»</b>: los usuarios generan su propio contenido sin ser programadores; contenido <b>dinámico</b> separado del formato.</td><td>XML y RSS; redes sociales, blogs, podcasts, marcado social y etiquetado (<i>tagging</i>). Conecta con el capítulo 3.7.</td></tr>
+    <tr><td><b>Web 3.0</b><br><span class="en-term">2020+</span></td><td>El foco pasa a la <b>capa back end</b>: la «web semántica», más <b>inteligente</b>, que entiende el <b>significado</b> de las palabras al crear, compartir y buscar contenido.</td><td>IA y procesamiento de lenguaje natural (NLP), gráficos 3D interactivos, mercado del IoT en crecimiento.</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════ 3.4F · INTERNET DE LAS COSAS ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.4F &middot; Internet of things (IoT)</div>
+    <div class="section-title">El internet de las cosas</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4F</span><span class="tcard-title">Internet de las cosas</span><span class="tcard-en">internet of things (IoT)</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«Dispositivos conectados a internet que recogen y comparten datos»</i>. Hoy son <b>miles de millones</b>, y no solo teléfonos y portátiles: desde <b>una bombilla inteligente hasta el motor de un avión de reacción</b>.</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">Los dispositivos usan <b>sensores</b> para recoger datos y comunicarse entre sí por la red, a menudo para <b>dar asistencia o aumentar la eficiencia</b>. Ejemplos: electrodomésticos inteligentes, <b>vehículos autónomos</b>, <b>hogar inteligente</b> (bombillas controladas por teléfono, cerraduras que permiten a los repartidores dejar paquetes).</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Hogares más eficientes energéticamente, ciudades que gestionan tráfico y energía en tiempo real (conexión con los MAN), salud preventiva con monitoreo continuo.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Positivos: comodidad, ahorro, automatización. Negativos: cada objeto conectado es una posible <b>puerta de entrada</b> (recordar: la nevera inteligente apareció ya en seguridad, 3.4C) y produce flujos de datos personales constantes.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">El libro es explícito: aunque el IoT promete hogares y entornos más inteligentes, <b>la privacidad y la seguridad siguen siendo preocupaciones reales</b>. ¿Quién escucha por el altavoz inteligente? ¿Se pueden parchear miles de objetos baratos? (<b>valores y ética</b>).</div></div>
+  </div>
+
+  <div class="info-card">
+    <h4>Indagaciones del libro (3.4F) — posibles en el examen por su enfoque</h4>
+    <p><b>1) Con 4.1B Hogar, ocio y turismo:</b> <i>«¿Cómo está afectando la introducción de las tecnologías de hogar inteligente a las familias y sus amistades?»</i> — fase <b>explorar</b>: encuestar a familia y amigos sobre qué tecnologías usan, experiencias positivas y preocupaciones, y evaluar la efectividad de la investigación primaria.</p>
+    <p class="ic-sub"><b>2) Con el concepto 2.1 Cambio:</b> elegir una tecnología de la Web 2.0 o 3.0 y responder con investigación secundaria: ¿por qué ocurrió el cambio (necesidad o deseo; forzado u opcional)?, ¿hubo progreso?, ¿en qué medida fue disruptivo?, ¿fue predecible?, ¿fue beneficioso a nivel <b>personal, local y global</b>?</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Conexión TOK &middot; conocimiento y tecnología</h4>
+    <p>La evolución de las redes dio acceso a una <b>tremenda cantidad de conocimiento</b>, pero <i>¿cómo sabemos cuánto de él es verdadero?</i> ¿Pueden seguir usándose los términos «hecho» y «verdad»? ¿Cómo cambia internet lo que significa «saber» algo? ¿Qué papel tuvieron las redes en el <b>acceso desigual al conocimiento</b>? ¿Cómo cambian las comunidades creadas por la tecnología a las comunidades que conocen?</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Perfil del aprendiz &middot; íntegro (principled)</h4>
+    <p>En esta unidad investigas tecnologías que impactan muchas vidas: <b>¿eres un usuario de internet íntegro?</b> ¿Cómo aseguras que tu propio uso de internet respete a las personas a tu alrededor?</p>
+  </div>
+</div>
+
+<!-- ═══════════════ MAPA DE DILEMAS ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k4">3.4G &middot; Internet dilemmas</span>
+    <div class="map-title">Los dilemas de internet en un mapa</div>
+    <div class="map-intro">Las amenazas han crecido <b>exponencialmente</b> por la facilidad de conectar dispositivos a internet. El mapa organiza las 11 definiciones del libro (◆), las medidas de protección y las consecuencias sociales.</div>
+  </div>
+
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u4">Amenazas a los datos</div>
+        <div class="children">
+          <div class="leaf">Spam (45% del correo, 2021)</div>
+          <div class="leaf">Hacking + ingeniería social</div>
+          <div class="leaf">Phishing</div>
+          <div class="leaf">Virus</div>
+          <div class="leaf">Ransomware</div>
+          <div class="leaf">DDOS (ejército de bots)</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u1">Protección</div>
+        <div class="children">
+          <div class="leaf">Filtros de correo</div>
+          <div class="leaf">Antivirus y firewall</div>
+          <div class="leaf">Parches y actualizaciones</div>
+          <div class="leaf">MFA &middot; proxy &middot; cifrado/WPA</div>
+          <div class="leaf">GDPR y derecho al olvido</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="root-node">3.4G<br>DILEMAS<small>internet dilemmas</small></div>
+
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u3">Consecuencias sociales</div>
+        <div class="children">
+          <div class="leaf">Anonimato: protege y habilita trolls</div>
+          <div class="leaf">Trolls: acoso (1 de 3 en Australia)</div>
+          <div class="leaf">Robo de identidad (US$56 mM, 2020)</div>
+          <div class="leaf">Vigilancia: CCTV, drones, ubicación</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u2">Casos clave del libro</div>
+        <div class="children">
+          <div class="leaf">WannaCry: 230.000 equipos</div>
+          <div class="leaf">Bangladesh Bank: US$1.000 M</div>
+          <div class="leaf">Google/Facebook: US$100 M</div>
+          <div class="leaf">Log4J &middot; Amazon DDOS &middot; Meris</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-navy">Conexiones</div>
+        <div class="children">
+          <div class="leaf">3.1 Datos: privacidad (top tip)</div>
+          <div class="leaf">HL: redes como intervención (India)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:#F59E0B"></span> Amenazas (definiciones ◆)</span>
+    <span class="lg"><span class="dot" style="background:#3B82F6"></span> Protección</span>
+    <span class="lg"><span class="dot" style="background:#14B8A6"></span> Consecuencias para personas</span>
+    <span class="lg"><span class="dot" style="background:#8B5CF6"></span> Casos del libro</span>
+    <span class="lg" style="margin-left:auto">Cada amenaza de la izquierda tiene una medida de protección al lado</span>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.4G · AMENAZAS I ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.4G &middot; Internet dilemmas &middot; entender los riesgos</div>
+    <div class="section-title">Amenazas a los datos (I)</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Las redes de casa y del trabajo deben ser seguras: proteger hardware y datos frente a <b>pérdida, daño y mal uso</b>, sin impedir que las personas compartan lo que necesitan. Muchas amenazas son externas y crecen con cada dispositivo nuevo conectado.</p>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4G</span><span class="tcard-title">Spam</span><span class="tcard-en">spamming</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«Envío de correos no solicitados, principalmente con fines publicitarios»</i>.</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">Los <b>filtros de correo</b> modernos bloquean la mayor parte antes de la bandeja de entrada, pero según <b>Statista (marzo 2021) el 45% del tráfico de correo mundial era spam</b>.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Ruido, estafas y phishing camuflados; consume ancho de banda y tiempo. Es la puerta de entrada más común de las demás amenazas.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4G</span><span class="tcard-title">Hackeo</span><span class="tcard-en">hacking</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«Acceso no autorizado a una computadora o red»</i> — logrado de muchas maneras.</div></div>
+    <div class="trow"><div class="tlabel fun">3 vías del libro</div><div class="tbody"><b>1) Ingeniería social:</b> manipular a un usuario para que entregue credenciales (p. ej., haciéndose pasar por personal de TI en «mantenimiento de rutina»). <b>2) Hackear un sitio:</b> acceder a la base de datos de usuarios o redirigir a un sitio falso. <b>3) Explotar una falla:</b> entrar por redes sin antimalware, antivirus o firewall adecuados.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">El «hacking ético» (pentesting) ayuda a organizaciones a encontrar sus fallas antes que los criminales.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">El factor humano es el más débil: la <b>educación</b> en seguridad importa tanto como la tecnología. ¿Se criminaliza igual al hacker curioso y al criminal? (<b>valores</b>).</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4G</span><span class="tcard-title">Phishing</span><span class="tcard-en">phishing</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«Tipo de ingeniería social que consiste en enviar correos fraudulentos diseñados para engañar a los usuarios y que revelen información sensible»</i>.</div></div>
+    <div class="trow"><div class="tlabel case">Caso real</div><div class="tbody"><b>Phishing a Google y Facebook (2013&ndash;2015):</b> Evaldas Rimasauskas creó una <b>empresa falsa</b> que simulaba ser un fabricante de computadoras proveedor de ambas; envió <b>facturas falsas</b> que los empleados pagaron sin sospechar: <b>US$100 millones</b> estafados antes de ser capturado.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Incluso a las empresas más sofisticadas las engaña la factura «normal»: el costo se mide en dinero, reputación y confianza.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4G</span><span class="tcard-title">Virus</span><span class="tcard-en">virus</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«Tipo de software malicioso compuesto por pequeños fragmentos de código, a menudo adjuntos a programas legítimos o correos»</i>.</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">Al <b>ejecutar el programa o abrir el adjunto</b>, el virus se activa y <b>se propaga por todo el equipo</b>. Caso: en el hackeo al <b>Banco de Bangladesh (2016)</b>, el grupo Lazarus entró con el <b>CV de un «pasante» que contenía un virus</b>.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">La confianza social (abrir el CV de un candidato) se convierte en vector de ataque: ¿cómo equilibrar apertura y precaución?</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ 3.4G · AMENAZAS II + CASOS ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.4G &middot; Internet dilemmas</div>
+    <div class="section-title">Amenazas (II) y los casos del libro</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4G</span><span class="tcard-title">Ransomware</span><span class="tcard-en">ransomware</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«Malware que infecta una computadora, bloquea al usuario fuera de su propio dispositivo y exige un pago para desbloquearlo»</i>.</div></div>
+    <div class="trow"><div class="tlabel fun">Vías de activación</div><div class="tbody">Clic en un <b>adjunto de correo</b>, oculto en una <b>descarga</b>, o al visitar un <b>sitio o enlace malicioso</b>. El rescate se suele exigir en <b>Bitcoin</b>.</div></div>
+    <div class="trow"><div class="tlabel case">Caso real</div><div class="tbody"><b>WannaCry (mayo 2017):</b> afectó <b>230.000 computadoras</b> en el mundo aprovechando una vulnerabilidad de Windows que <b>Microsoft ya había parcheado</b> — muchas organizaciones no habían actualizado. <b>Un tercio de los hospitales británicos</b> fue afectado y se aplazaron operaciones que salvaban vidas; pérdidas estimadas: <b>US$4.000 millones</b>.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">¿Pagar o no pagar el rescate? Financiar a criminales incentiva más ataques; no pagar puede costar vidas (hospitales). Y el parche existía: la negligencia organizacional también es parte del problema.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4G</span><span class="tcard-title">Denegación de servicio distribuida</span><span class="tcard-en">DDOS &middot; distributed denial of service</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><i>«Saturar un sitio o servicio para que no esté disponible para sus usuarios previstos»</i>.</div></div>
+    <div class="trow"><div class="tlabel fun">Funcionamiento</div><div class="tbody">El hacker instruye a su <b>«ejército» de computadoras infectadas (bots)</b> para que se conecten al servidor objetivo <b>al mismo tiempo</b>; el servidor no soporta el pico y <b>cae</b> para todos.</div></div>
+    <div class="trow"><div class="tlabel case">Casos reales</div><div class="tbody"><b>Amazon (feb. 2020):</b> un DDOS a Amazon Web Services hizo que los negocios alojados <b>perdieran ingresos y reputación</b> mientras sus sitios estuvieron caídos. <b>Meris Botnet (2021):</b> uno de los mayores botnets — <b>250.000 dispositivos infectados</b> — fue parcialmente derribado por Rostelecom (Rusia).</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Con la nube, un ataque a un «edificio» digital afecta a todos sus inquilinos: la interconexión es también <b>interdependencia del riesgo</b>.</div></div>
+  </div>
+
+  <table class="exam">
+    <tr><th style="width:22%">Caso del libro</th><th style="width:13%">Año</th><th style="width:16%">Amenaza</th><th>Cifra clave</th></tr>
+    <tr><td><b>Google y Facebook</b> (Evaldas Rimasauskas, Lithuania)</td><td>2013&ndash;2015</td><td>Phishing / ingeniería social</td><td><b>US$100 millones</b> pagados en facturas falsas.</td></tr>
+    <tr><td><b>Log4J («Log4shell»)</b></td><td>Dic. 2021</td><td>Explotación de falla (Java)</td><td>Vulnerabilidad grave que afectó a redes corporativas (incl. sitios de <b>Minecraft</b>); Apache emitió un parche.</td></tr>
+    <tr><td><b>Banco de Bangladesh</b> (grupo Lazarus, Corea del Norte)</td><td>2016</td><td>Virus + ingeniería social</td><td>Objetivo de <b>US$1.000 millones</b>; entrada por el CV de un «pasante»; desactivaron la impresora que respaldaba las transacciones.</td></tr>
+    <tr><td><b>WannaCry</b></td><td>Mayo 2017</td><td>Ransomware</td><td><b>230.000 equipos</b>, un tercio de los hospitales del Reino Unido, <b>US$4.000 millones</b> en pérdidas.</td></tr>
+    <tr><td><b>Amazon Web Services</b></td><td>Feb. 2020</td><td>DDOS</td><td>Sitios caídos: <b>ingresos y reputación</b> perdidos para los negocios alojados.</td></tr>
+    <tr><td><b>Meris Botnet</b> (Rostelecom)</td><td>2021</td><td>Botnet / DDOS</td><td><b>250.000 dispositivos</b> infectados; parcialmente desmantelado.</td></tr>
+    <tr><td><b>Acoso en línea (Australia)</b></td><td>2019</td><td>Trolls</td><td><b>1 de cada 3 australianos</b> acosado; costo de <b>A$3.700 millones</b> en salud e ingresos.</td></tr>
+    <tr><td><b>Robo de identidad (EE.&nbsp;UU.)</b></td><td>2020</td><td>Robo de identidad</td><td><b>US$56.000 millones</b> y <b>más de 49 millones</b> de víctimas (brechas de datos y llamadas de estafadores).</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════ 3.4G · CONSECUENCIAS ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">3.4G &middot; Consecuencias de los riesgos</div>
+    <div class="section-title">Anonimato, identidad y vigilancia</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4G</span><span class="tcard-title">Anonimato y trolls</span><span class="tcard-en">anonymity &middot; internet trolls</span></div>
+    <div class="trow"><div class="tlabel">Definiciones</div><div class="tbody"><b>Anonimato:</b> <i>«uso de la tecnología digital para ocultar la verdadera identidad de una persona»</i>. <b>Troll:</b> <i>«persona que deja mensajes intencionadamente provocadores u ofensivos para llamar la atención, causar problemas o molestar»</i>.</div></div>
+    <div class="trow"><div class="tlabel fun">Dos caras</div><div class="tbody">El anonimato es la forma más extrema de privacidad: da <b>confianza para expresarse sin miedo</b> a represalias y protege del robo de identidad. Pero también empodera a <b>ciberacosadores y trolls</b> — a los que atacan a influencers con seguidores masivos y a los que disfrutan causando daño (cuanto más respondes, más atacan).</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">El trolling causa <b>sueño alterado, baja autoestima y autolesiones</b>. En Australia, 1 de cada 3 personas sufrió acoso en línea y le costó al país <b>A$3.700 millones</b> en salud e ingresos perdidos (2019).</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">Mismo anonimato, dos efectos: protege al disidente y arma al acosador. ¿Identidad obligatoria en línea? Tensión directa entre <b>expresión</b> y <b>seguridad</b>.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4G</span><span class="tcard-title">Robo de identidad y derecho al olvido</span><span class="tcard-en">identity theft &middot; right to be forgotten</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><b>Robo de identidad:</b> <i>«cuando alguien roba tu información personal con la intención de cometer fraude»</i> — por ejemplo, solicitar una tarjeta de crédito o acceder a servicios médicos a tu nombre.</div></div>
+    <div class="trow"><div class="tlabel case">Cifras</div><div class="tbody">En <b>2020</b> costó a los estadounidenses <b>US$56.000 millones</b> con <b>más de 49 millones de víctimas</b>; las vías más comunes: <b>brechas de datos</b> y estafadores que se hacen pasar por agencias gubernamentales o minoristas.</div></div>
+    <div class="trow"><div class="tlabel fun">GDPR</div><div class="tbody">Con miles de sitios pidiendo registro, ¿qué pasa con nuestros datos cuando dejamos de usar un servicio? El <b>GDPR</b> (Europa) aplica el <b>derecho al olvido</b>: puedes exigir el borrado si los datos <b>ya no son necesarios</b>, <b>retiraste el consentimiento</b>, <b>no hay razón legítima</b> para conservarlos (o se obtuvieron ilegalmente), o <b>te opones</b> al marketing directo.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">¿Se puede borrar un dato que ya se copió mil veces? El derecho al olvido choca con la naturaleza distribuida de la red y con la libertad de información (<b>poder</b>).</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">3.4G</span><span class="tcard-title">Vigilancia</span><span class="tcard-en">surveillance</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody">Para el libro: <i>«la observación estrecha de una persona o grupo de personas»</i> — con una gama creciente de tecnologías directas e indirectas.</div></div>
+    <div class="trow"><div class="tlabel fun">6 formas</div><div class="tbody"><b>1)</b> CCTV y cámaras de red (video 24-7 en cruces y autopistas). <b>2)</b> Monitoreo gubernamental de comunicaciones («seguridad nacional» que puede llegar a ciudadanos ordinarios). <b>3)</b> Drones. <b>4)</b> Cámaras portables (de la policía a la GoPro) que graban <b>sin tu conocimiento o consentimiento</b>. <b>5)</b> Servicios de ubicación del móvil (mejoran la app pero revelan tu posición en tiempo real). <b>6)</b> Hogar inteligente y apps de rastreo COVID (muchos no tuvieron otra opción).</div></div>
+    <div class="trow"><div class="tlabel case">Cifra</div><div class="tbody"><b>16 de las 20 ciudades más vigiladas del mundo están en China</b> (cámaras por 1.000 habitantes, Comparitech 2020); fuera de China: Londres, Indore, Hyderabad y Delhi.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilemas</div><div class="tbody">Combinadas con <b>reconocimiento facial e IA</b>, las preocupaciones de privacidad aumentan: seguridad de la mayoría vs. privacidad del individuo (<b>poder y espacio</b>).</div></div>
+  </div>
+
+  <div class="info-card">
+    <h4>Top tip del libro + indagación HL</h4>
+    <p><b>Top tip:</b> hay muchas similitudes entre los dilemas de este capítulo y los del capítulo <b>3.1 Data and data analysis</b> (privacidad) — úsalos para dar profundidad interconectada en el examen.</p>
+    <p class="ic-sub"><b>Indagación extendida HL</b> (3.4G + 3.4E con 5.1A Desigualdades y 4.2C): durante la segunda ola de COVID-19 en <b>India</b>, no había forma eficiente de emparejar <b>tanques de oxígeno</b> con pacientes; las <b>redes sociales</b> y los «SOS tweets» <b>empoderaron a personas ordinarias</b> para encontrar oxígeno — las redes como <b>intervención</b> ante desigualdades globales. Pregunta guía: ¿cómo se usaron las redes sociales como intervención para resolver la escasez de oxígeno?</p>
+  </div>
+</div>
+
+<!-- ═══════════════ SÍNTESIS OID ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Síntesis para el examen</div>
+    <div class="section-title">Oportunidades, impactos y dilemas por tecnología</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">La pregunta típica del IB no es «¿qué es X?» sino «<b>discute los impactos y dilemas de X para personas y comunidades</b>». Esta tabla condensa la franja OID de todas las tarjetas para repaso rápido.</p>
+
+  <div class="info-card">
+    <h4>Cómo usar la tabla en el examen</h4>
+    <p><b>Paper 1:</b> elige la fila de la tecnología del escenario y desarrolla <b>impactos positivos y negativos para dos grupos de interés</b> (stakeholders) — por ejemplo, pacientes y administradores en un hospital con ransomware. <b>Paper 2:</b> conecta las cifras de las fuentes (p. ej., 45% de spam, 1.900 M de espectadores) con las oportunidades e impactos de la tabla, y evalúa con un contra-argumento.</p>
+  </div>
+
+  <table class="exam tall">
+    <tr><th style="width:17%">Tecnología</th><th style="width:27%">Oportunidades</th><th style="width:28%">Impactos (+ / &minus;)</th><th>Dilemas principales</th></tr>
+    <tr><td><b>WAN / internet</b></td><td>Escala global, servicios centralizados, Wi-Fi público (Nueva York) que reduce brecha digital.</td><td>+ Colaboración internacional &middot; &minus; dependencia crítica y exposición a amenazas externas.</td><td>¿Quién decide rutas y precios? Neutralidad de red; conectividad como derecho (espacio).</td></tr>
+    <tr><td><b>Cableada / Wi-Fi / nube</b></td><td>Fibra (FTTH), flexibilidad Wi-Fi, redes gestionadas en nube con escalabilidad.</td><td>+ Costos y despliegue menores &middot; &minus; interceptación y dependencia del proveedor.</td><td>Conveniencia de la nube vs. control de los datos; ¿quién responde ante una brecha del proveedor?</td></tr>
+    <tr><td><b>Cliente-servidor vs. P2P</b></td><td>Respaldo centralizado vs. resiliencia sin servidor único (criptomonedas, juegos).</td><td>+ Compartición masiva de recursos &middot; &minus; piratería de contenido con copyright difícil de cerrar.</td><td>¿Poder centralizado o distribuido? Control legal vs. resistencia a la censura.</td></tr>
+    <tr><td><b>Protocolos (TCP/IP, DNS)</b></td><td>Interoperabilidad universal: cualquier fabricante puede conectarse.</td><td>+ Internet funcionó y creció &middot; &minus; bloqueo/censura por IP o DNS.</td><td>Identidad rastreable por IP; quién controla el DNS controla el acceso.</td></tr>
+    <tr><td><b>Capacidad y compresión</b></td><td>Streaming masivo (Euro 2020: 1.900 M de espectadores), ahorro de almacenamiento.</td><td>+ Eventos globales en vivo &middot; &minus; pérdida de calidad permanente (lossy) y exclusión de quien no tiene banda.</td><td>¿Cuánta calidad se sacrifica por velocidad? Igualdad de acceso al ancho de banda.</td></tr>
+    <tr><td><b>Neutralidad de red</b></td><td>Internet libre e igualitario para PyMEs, escuelas y creadores.</td><td>+ Igualdad de trato &middot; &minus; tratos preferentes («fast lanes») que concentran poder.</td><td>Pendiente resbaladiza: cobrar por prioridad rompe la visión de Berners-Lee.</td></tr>
+    <tr><td><b>Seguridad (MFA, firewall, proxy, cifrado)</b></td><td>Confianza para banca, salud y mensajería privada.</td><td>+ Barreras contra intrusiones &middot; &minus; biometría irreversible; filtrado excesivo.</td><td>¿Puertas traseras para gobiernos? Vigilancia vs. privacidad; expresión vs. control.</td></tr>
+    <tr><td><b>MSP / VoIP / ISP</b></td><td>Cobertura donde no hay cable; llamadas casi gratis; todo en un ISP.</td><td>+ Inclusión digital y conexión familiar &middot; &minus; oligopolios; emergencia depende de la red.</td><td>Licencias y precios en pocas manos; el ISP como puerta que prioriza, filtra y vigila.</td></tr>
+    <tr><td><b>Web (URL·HTTP·HTML)</b></td><td>Cualquiera publica a escala global; HTTPS cifra por defecto.</td><td>+ Mayor espacio público de la historia &middot; &minus; desinformación y contenido dañino.</td><td>Libertad de expresión vs. daño; ¿cómo sabemos qué conocimiento es verdadero? (TOK).</td></tr>
+    <tr><td><b>Web 1.0&rarr;2.0&rarr;3.0</b></td><td>De leer a crear (Web 2.0) y a que la web «entienda» (3.0, IA/NLP).</td><td>+ Democratización de la publicación &middot; &minus; dependencia de plataformas y algoritmos.</td><td>¿Quién posee el contenido generado por los usuarios? Cambio beneficioso ¿para quién?</td></tr>
+    <tr><td><b>IoT</b></td><td>Eficiencia energética, hogares y ciudades inteligentes, salud preventiva.</td><td>+ Comodidad y ahorro &middot; &minus; miles de millones de objetos con seguridad débil.</td><td>Privacidad y seguridad «reales que deben abordarse» (libro): ¿quién escucha por tu casa?</td></tr>
+    <tr><td><b>Amenazas (3.4G)</b></td><td>Conocimiento de riesgos &rarr; culturas de seguridad (parches, MFA, filtros).</td><td>&minus; Pérdidas de US$ miles de millones (WannaCry, robo de identidad); salud mental (trolls).</td><td>¿Pagar rescates? Anonimato: protege al disidente y arma al acosador; derecho al olvido vs. memoria.</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════ FICHAS INTERACTIVAS ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Repaso activo &middot; fichas interactivas</div>
+    <div class="section-title">18 fichas de repaso rápido</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text"><b class="only-screen">Haz clic en cada ficha para voltearla y comprobar tu respuesta.</b><span class="only-print">Cada ficha muestra la pregunta y, debajo, la respuesta para autoevaluación.</span></p>
+  <div class="fc-grid">
+    <div class="fc">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">Define <b>red (network)</b> según el libro.</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a">«Serie de <b>nodos</b> (puntos de conexión) interconectados capaces de <b>transmitir, recibir e intercambiar datos</b>» (texto, sonido, imágenes, vídeo). Nodos: computadoras, servidores, routers.</div></div>
+      </div>
+    </div>
+    <div class="fc f2">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">¿Qué significa cada sigla: <b>PAN, LAN, MAN, WAN</b>? Da un ejemplo cada una.</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a"><b>PAN:</b> personal (reloj&rarr;teléfono). <b>LAN:</b> local, un sitio (colegio). <b>MAN:</b> metropolitana, 5&ndash;50 km (Wi-Fi de NYC). <b>WAN:</b> nacional/internacional — internet.</div></div>
+      </div>
+    </div>
+    <div class="fc f3">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">Diferencia <b>internet</b> y <b>World Wide Web</b>.</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a"><b>Internet</b> = la infraestructura (redes y tecnologías que vinculan a miles de millones de usuarios). <b>WWW</b> = el contenido (sitios y servicios web alojados en servidores, identificados por URL, accedidos con navegador).</div></div>
+      </div>
+    </div>
+    <div class="fc f3">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">¿Cuál es la <b>tríada de la web</b> y qué hace cada parte?</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a"><b>URL:</b> dirección única de cada recurso. <b>HTTP/HTTPS:</b> cómo se transmiten los recursos entre navegador y servidor. <b>HTML:</b> el formato de las páginas y sus enlaces.</div></div>
+      </div>
+    </div>
+    <div class="fc f2">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">Define <b>protocolo de red</b> y <b>interoperabilidad</b>.</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a"><b>Protocolo:</b> «conjunto de reglas acordadas que establecen cómo formatear, enviar y recibir datos». <b>Interoperabilidad:</b> «permite que diferentes tecnologías o sistemas se conecten e intercambien datos sin restricciones».</div></div>
+      </div>
+    </div>
+    <div class="fc">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">¿Qué hace el <b>TCP</b> y qué hace el <b>IP</b> en TCP/IP?</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a"><b>IP</b> define <b>de dónde a dónde</b> van los datos; <b>TCP</b> define <b>cómo se dividen en paquetes</b> antes de enviarlos (con instrucciones para reensamblarlos, como un mosaico por correo).</div></div>
+      </div>
+    </div>
+    <div class="fc f2">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">Diferencia <b>MAC</b> y <b>dirección IP</b>.</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a"><b>MAC:</b> identificador único y permanente de cada hardware, fijado por el <b>fabricante</b> (48 bits hexadecimales). <b>IP:</b> dirección numérica <b>lógica</b>, asignada por el <b>DHCP</b> cada vez que te conectas.</div></div>
+      </div>
+    </div>
+    <div class="fc f2">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">¿Qué es el <b>DNS</b> y cómo funciona con twitter.com?</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a">«Servidor que <b>traduce nombres de dominio en direcciones IP</b>». Escribes twitter.com &rarr; el DNS busca en su base de datos &rarr; devuelve la IP <b>104.244.42.1</b> &rarr; el paquete viaja ahí.</div></div>
+      </div>
+    </div>
+    <div class="fc f2">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">Diferencia <b>ancho de banda</b> y <b>velocidad</b>.</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a"><b>Ancho de banda:</b> tasa máxima de transferencia <b>a la vez</b>, en <b>hercios (Hz)</b>. <b>Velocidad:</b> tiempo que tardan los datos, en <b>Mbps</b>. Se hablan juntos, pero son distintos.</div></div>
+      </div>
+    </div>
+    <div class="fc f2">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">Compresión <b>lossy</b> vs. <b>lossless</b>: qué hacen y ejemplos.</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a"><b>Lossy:</b> elimina permanentemente datos poco perceptibles (<b>JPG, MP4</b>). <b>Lossless:</b> reduce el tamaño sin perder datos; se puede restaurar el original (<b>PNG, BMP</b>).</div></div>
+      </div>
+    </div>
+    <div class="fc f4">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">Define <b>neutralidad de red</b> y su riesgo («pendiente resbaladiza»).</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a">«Todas las solicitudes de datos deben ser <b>tratadas de igual forma</b> por los ISP». Riesgo: cobrar por trato preferente y controlar quién accede a qué — «no es el internet que Berners-Lee tenía en mente».</div></div>
+      </div>
+    </div>
+    <div class="fc f2">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">MFA: definición y los 3 tipos de credenciales.</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a">«Uso de <b>múltiples métodos de autenticación</b> para verificar la identidad»: <b>físicos</b> (token, tarjeta, SMS), <b>inherentes</b> (biometría, faceprint) y <b>conocidos</b> (PIN o frase).</div></div>
+      </div>
+    </div>
+    <div class="fc">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">Define <b>firewall</b> y <b>servidor proxy</b>.</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a"><b>Firewall:</b> «hardware o software que bloquea el acceso no autorizado <b>inspeccionando el tráfico entrante y saliente</b>». <b>Proxy:</b> «intermediario entre el cliente y la internet que da una capa adicional de seguridad» (ID anónimo, listas negras).</div></div>
+      </div>
+    </div>
+    <div class="fc f3">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">Diferencia llamada móvil tradicional y <b>VoIP</b>.</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a">Tradicional: audio <b>de torre celular a torre celular</b>. <b>VoIP:</b> el audio se convierte en <b>paquetes digitales que viajan por internet</b> (Skype, WhatsApp, Messenger).</div></div>
+      </div>
+    </div>
+    <div class="fc">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">Hub vs. <b>switch</b>: ¿cuál es más inteligente y por qué?</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a"><b>Hub:</b> difunde los datos a <b>todos</b> (gasta ancho de banda; fácil de configurar). <b>Switch:</b> «reenvía los paquetes de forma más eficiente que un hub» y da al administrador más control. Las LAN modernas usan switches.</div></div>
+      </div>
+    </div>
+    <div class="fc f4">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">Define <b>ransomware</b> y cita el caso WannaCry con cifras.</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a">«Malware que <b>bloquea al usuario fuera de su dispositivo y exige un pago</b>». WannaCry (2017): <b>230.000 equipos</b>, un tercio de los hospitales británicos, <b>US$4.000 millones</b>; el parche existía — no lo habían instalado.</div></div>
+      </div>
+    </div>
+    <div class="fc f4">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">¿Cómo funciona un ataque <b>DDOS</b>?</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a">«Saturar un sitio para que no esté disponible para sus usuarios»: el hacker ordena a su <b>ejército de computadoras infectadas (bots)</b> conectarse <b>al mismo tiempo</b>; el servidor colapsa. Casos: Amazon (2020), Meris (250.000 dispositivos).</div></div>
+      </div>
+    </div>
+    <div class="fc f4">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-q">Define <b>anonymity</b>, <b>identity theft</b> y el <b>derecho al olvido</b> (GDPR).</div><div class="fc-hint">clic para voltear</div></div>
+        <div class="fc-face fc-back"><div class="fc-a"><b>Anonimato:</b> «usar la tecnología para ocultar tu verdadera identidad». <b>Robo de identidad:</b> «robar tu información personal para cometer fraude» (US$56.000 M en EE.&nbsp;UU., 2020). <b>Derecho al olvido:</b> exigir el borrado de tus datos (GDPR) si ya no son necesarios, retiraste el consentimiento o no hay razón legítima.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ QUIZ ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Repaso activo &middot; autoevaluación</div>
+    <div class="section-title">Quiz interactivo</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text"><b class="only-screen">Elige una opción y el sistema te dirá si acertaste.</b><span class="only-print">Las respuestas correctas aparecen al final de cada pregunta.</span> 12 preguntas basadas en el contenido del libro.</p>
+
+  <div class="qz-part">Parte 1 &middot; Verdadero o falso</div>
+  <div class="vf-row" data-ans="V"><div class="vf-txt">1. Una red inalámbrica todavía tiene componentes cableados: los WAP se conectan por cable a un switch o hub.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Verdadero.</b> El libro aclara que solo los dispositivos finales se conectan por radio; los puntos de acceso van cableados al backbone.</div>
+
+  <div class="vf-row" data-ans="F"><div class="vf-txt">2. La dirección MAC se asigna cada vez que un dispositivo se conecta a una red.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Falso.</b> Eso es la dirección IP (asignada por el DHCP). La MAC la fija el fabricante (48 bits, hexadecimal).</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt">3. En una red P2P cada computadora es igualmente responsable de almacenar y compartir los datos.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Verdadero.</b> Es la definición del libro: red <b>descentralizada</b> sin servidor único.</div>
+
+  <div class="vf-row" data-ans="F"><div class="vf-txt">4. El ancho de banda se mide en megabits por segundo (Mbps).</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Falso.</b> El ancho de banda se mide en <b>hercios (Hz)</b>; la velocidad se mide en <b>Mbps</b>. Es una confusión clásica que el libro corrige.</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt">5. HTTPS es hoy requisito de muchos navegadores, lo que obligó a los hosting a añadir certificados de seguridad.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Verdadero.</b> Así, cuando los usuarios transfieren datos sensibles, estos quedan cifrados.</div>
+
+  <div class="vf-row" data-ans="V"><div class="vf-txt">6. La primera transmisión de red (UCLA&rarr;Stanford, 1965) provocó un fallo del sistema en el primer intento.</div><div class="vf-opts"><span class="vf-btn">V</span><span class="vf-btn">F</span></div></div>
+  <div class="q-a"><b>Verdadero.</b> El segundo intento fue más exitoso y condujo a ARPANET (1969).</div>
+
+  <div class="qz-part">Parte 2 &middot; Opción múltiple</div>
+  <div class="mc-q" data-ans="B">
+    <div class="mc-txt">7. ¿Cuál es la definición correcta de <b>router</b>?</div>
+    <div class="opts"><span class="mc-opt" data-k="A">Convierte datos digitales en analógicos</span><span class="mc-opt" data-k="B">Transfiere datos entre redes por la ruta más eficiente</span><span class="mc-opt" data-k="C">Difunde los datos a todos los dispositivos</span><span class="mc-opt" data-k="D">Crea una WLAN para cubrir un edificio</span></div>
+  </div>
+  <div class="q-a"><b>B.</b> La A es el módem, la C el hub y la D el WAP. El router reenvía paquetes entre redes por la ruta más eficiente.</div>
+
+  <div class="mc-q" data-ans="C">
+    <div class="mc-txt">8. Según el libro, ¿qué porcentaje del tráfico de correo era spam en marzo de 2021?</div>
+    <div class="opts"><span class="mc-opt" data-k="A">15%</span><span class="mc-opt" data-k="B">30%</span><span class="mc-opt" data-k="C">45%</span><span class="mc-opt" data-k="D">60%</span></div>
+  </div>
+  <div class="q-a"><b>C.</b> 45% (Statista, marzo 2021), pese al filtrado moderno.</div>
+
+  <div class="mc-q" data-ans="A">
+    <div class="mc-txt">9. ¿Cuántos sitios web había en 1993 y en 1996?</div>
+    <div class="opts"><span class="mc-opt" data-k="A">130 &rarr; 100.000</span><span class="mc-opt" data-k="B">1.000 &rarr; 10.000</span><span class="mc-opt" data-k="C">130 &rarr; 30.000</span><span class="mc-opt" data-k="D">2.000 &rarr; 30.000</span></div>
+  </div>
+  <div class="q-a"><b>A.</b> De 130 (1993) a 100.000 (1996). La cifra «2.000&rarr;30.000 nodos» corresponde al crecimiento de ARPANET/internet.</div>
+
+  <div class="mc-q" data-ans="D">
+    <div class="mc-txt">10. ¿Qué caso del libro combina ingeniería social, un CV con virus y una impresora desactivada?</div>
+    <div class="opts"><span class="mc-opt" data-k="A">WannaCry</span><span class="mc-opt" data-k="B">Log4J</span><span class="mc-opt" data-k="C">DDOS a Amazon</span><span class="mc-opt" data-k="D">Banco de Bangladesh</span></div>
+  </div>
+  <div class="q-a"><b>D.</b> Bangladesh Bank (2016, grupo Lazarus): pasante falso + CV con virus + impresora fuera de servicio (respaldo en papel de las transacciones).</div>
+
+  <div class="mc-q" data-ans="B">
+    <div class="mc-txt">11. ¿Cuántas de las 20 ciudades más vigiladas del mundo están en China (Comparitech, 2020)?</div>
+    <div class="opts"><span class="mc-opt" data-k="A">8</span><span class="mc-opt" data-k="B">16</span><span class="mc-opt" data-k="C">12</span><span class="mc-opt" data-k="D">20</span></div>
+  </div>
+  <div class="q-a"><b>B.</b> 16 de 20 (por cámaras cada 1.000 habitantes); fuera de China: Londres, Indore, Hyderabad y Delhi.</div>
+
+  <div class="mc-q" data-ans="C">
+    <div class="mc-txt">12. ¿Qué caracteriza a la Web 3.0 según el libro?</div>
+    <div class="opts"><span class="mc-opt" data-k="A">Sitios estáticos creados por programadores</span><span class="mc-opt" data-k="B">Redes sociales y blogs</span><span class="mc-opt" data-k="C">Web semántica con IA y lenguaje natural</span><span class="mc-opt" data-k="D">Correo electrónico y FTP</span></div>
+  </div>
+  <div class="q-a"><b>C.</b> El foco pasa al back end: comprensión del significado (semántica), IA/NLP, gráficos 3D e IoT. La A es Web 1.0 y la B, Web 2.0.</div>
+
+  <div class="qz-part">Parte 3 &middot; Preguntas de práctica del libro (Paper 1, nivel NM)</div>
+  <div class="practice">
+    <div class="practice-tag">Exam practice &middot; libro, 3.4C</div>
+    <ol class="pq">
+      <li><b>Identifica</b> dos tecnologías de hardware usadas para formar una LAN. <i>[2 puntos]</i></li>
+      <li><b>Describe</b> dos características de una red. <i>[4 puntos]</i></li>
+      <li><b>Explica</b> tres medidas que un administrador de red debería tomar para aumentar el rendimiento de la red. <i>[6 puntos]</i></li>
+    </ol>
+    <span class="reveal-btn">Ver pauta</span>
+    <div class="q-a"><b>Pauta:</b> (1) switch, router, cables ethernet/fibra, WAP, tarjetas de red (NIC) — dos bastan con mención breve. (2) elegir y desarrollar dos: tamaño (PAN&rarr;WAN), conectividad (cableada/inalámbrica/nube), compartición (cliente-servidor/P2P), ancho de banda, velocidad, seguridad. (3) tres medidas justificadas: pasar de hub a switch (menos tráfico innecesario), aumentar ancho de banda o pasar a fibra, usar compresión lossy para medios, segmentar la red con WAP bien ubicados, mantener parches (evita reinfecciones que degradan el servicio) — cada una con «por qué» + ejemplo.</div>
+  </div>
+</div>
+
+<!-- ═══════════════ NUEVOS CASOS PARA EL EXAMEN ═══════════════ -->
+<div class="main-content new-page">
+  <div class="section-head">
+    <div class="section-kicker">Nuevos casos &middot; inéditos, estilo examen IB</div>
+    <div class="section-title">Tres escenarios que podrían aparecer en el examen</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">El IB presenta <b>escenarios nuevos</b> y pide transferir el contenido del curso. Estos tres casos, creados para este repaso, combinan 3.4 con conceptos y contextos: practica respondiendo antes de abrir la pauta.</p>
+
+  <div class="practice">
+    <div class="practice-tag">Caso inédito 1 &middot; 3.4A + 3.4D + concepto 2.3 identidad</div>
+    <h4>La red comunitaria de Nueva Esperanza</h4>
+    <p class="pctx">Nueva Esperanza, un pueblo rural de la sierra, no recibe la cobertura de las grandes operadoras. Una asociación de padres instaló una red que conecta la escuela, la posta y 40 familias: antenas en el cerro forman una red de pueblo (uno de los tipos de red por tamaño), con enlaces de radio licenciados hacia un ISP regional. Para llamar a sus familiares en la capital, los vecinos usan llamadas por internet; el comité gestiona contraseñas, y el colegio mantiene su propia base de datos de notas en un servidor local con copias diarias. Una ONG propone ahora migrar la gestión de la red a una plataforma en la nube para ahorrar costos.</p>
+    <ol class="pq">
+      <li><b>Identifica</b> dos tipos de red presentes en el escenario. <i>[2]</i></li>
+      <li><b>Describe</b> cómo el servicio de llamadas del pueblo difiere de la telefonía móvil tradicional. <i>[4]</i></li>
+      <li><b>Explica</b> dos ventajas y dos riesgos de migrar la gestión de la red a la nube para esta comunidad. <i>[6]</i></li>
+    </ol>
+    <span class="reveal-btn">Ver pauta</span>
+    <div class="q-a"><b>Pauta:</b> (1) LAN (red del colegio con su servidor) y MAN (red que cubre el pueblo); también aceptable WAN hacia el ISP regional. (2) VoIP: el audio se convierte en <b>paquetes digitales que viajan por internet</b>, en vez de transferirse de torre celular a torre celular; usa la banda ancha de la red comunitaria (Skype/WhatsApp son ejemplos). (3) Ventajas: configuración remota vía IP (sin técnico en sitio), ahorro de costos y escalabilidad. Riesgos: dependencia del enlace al ISP (si falla, todo el pueblo queda sin gestión), datos de menores en servidores externos (privacidad), y costo recurrente en dólares que puede encarecer la cuota — discusión con stakeholders (comité, familias, ONG).</div>
+  </div>
+
+  <div class="practice">
+    <div class="practice-tag">Caso inédito 2 &middot; 3.4C + 3.4G + contexto 4.4 salud</div>
+    <h4>Ransomware en la red del Hospital San Rafael</h4>
+    <p class="pctx">El Hospital San Rafael modernizó su LAN: switch en cada piso, WAP en urgencias y un firewall perimetral. Un empleado abrió un correo que simulaba venir del ministerio de salud; el adjunto instaló un ransomware que cifró los registros de citas y exigió un rescate en criptomoneda. El hospital tardó tres días en restaurar la red desde los respaldos; durante ese tiempo se reprogramaron cirugías no urgentes. La auditoría posterior encontró que el software de red no recibía parches desde hacía 14 meses y que solo el área de finanzas usaba autenticación multifactor.</p>
+    <ol class="pq">
+      <li><b>Define</b> los términos <i>ransomware</i> e <i>ingeniería social</i>. <i>[4]</i></li>
+      <li><b>Explica</b> cómo el correo del «ministerio» logró burlar el firewall del hospital. <i>[4]</i></li>
+      <li><b>Discute</b> dos medidas que el hospital debería adoptar y los posibles efectos negativos de cada una para el personal. <i>[8]</i></li>
+    </ol>
+    <span class="reveal-btn">Ver pauta</span>
+    <div class="q-a"><b>Pauta:</b> (1) definiciones del libro: ransomware «malware que bloquea al usuario fuera de su dispositivo y exige pago para desbloquearlo»; ingeniería social «manipular a un usuario para que comparta información confidencial con un fraude». (2) El firewall inspecciona tráfico <b>de red</b>, pero el adjunto llegó por <b>correo electrónico legítimo</b> (canal permitido) y explotó al usuario, no a la red — sin parches y sin MFA, el malware se propagó. (3) Medidas posibles: MFA para todo el personal (efecto negativo: fricción diaria, retrasos en urgencias), actualizaciones automáticas con ventana de mantenimiento (negativo: reinicios en pleno turno), capacitación antiphishing (negativo: tiempo), segmentación de red y respaldos offline (negativo: costo). Discusión: pacientes vs. administradores vs. personal clínico; paralelo directo con WannaCry y los hospitales del Reino Unido.</div>
+  </div>
+
+  <div class="practice">
+    <div class="practice-tag">Caso inédito 3 &middot; 3.4C + 3.4E + concepto 2.5 poder</div>
+    <h4>AndesNet y la final universitaria en streaming</h4>
+    <p class="pctx">El ISP AndesNet patrocina la final del campeonato universitario de fútbol y ofrece, gratis, una plataforma de streaming propia con «velocidad turbo», mientras las demás plataformas de video navegan a velocidad reducida en horas punta. Los estudiantes se quejan: para estudiar usan plataformas educativas de video que ahora cargan lento. AndesNet responde que el tráfico saturaba su red y que sin patrocinios «nadie podría ver nada». Un grupo de estudiantes prepara un debate para el consejo de telecomunicaciones.</p>
+    <ol class="pq">
+      <li><b>Identifica</b> el concepto que la práctica de AndesNet cuestiona y defínelo. <i>[2]</i></li>
+      <li><b>Explica</b> por qué el streaming de un evento masivo exige tanto ancho de banda, usando una cifra del libro como referencia. <i>[4]</i></li>
+      <li><b>Discute</b> el escenario desde dos perspectivas: la del ISP y la de un estudiante que estudia con videos en línea. <i>[8]</i></li>
+    </ol>
+    <span class="reveal-btn">Ver pauta</span>
+    <div class="q-a"><b>Pauta:</b> (1) <b>neutralidad de red</b>: «todas las solicitudes de datos deben ser tratadas de igual forma por los ISP» — AndesNet practica la <b>parcialidad de red</b> (como el ejemplo del colegio en el libro). (2) El video en vivo consume la tasa máxima de transferencia simultánea para miles/millones de usuarios a la vez: en la Euro 2020 se esperaban <b>1.900 millones de espectadores</b> en 229 áreas con 3.500 horas de contenido — por eso el proveedor debe dimensionar el ancho de banda de su audiencia (si no: buffering). (3) ISP: inversión, congestión real, patrocinio financia red (argumento económico y de gestión). Estudiante: igualdad de acceso al conocimiento, ventaja injusta para el contenido del patrocinador, «pendiente resbaladiza» de pagar por prioridad, «no es el internet que Berners-Lee tenía en mente». Conclusión equilibrada: regulación vs. libre mercado, con ejemplos (Obama vs. Trump en el libro).</div>
+  </div>
+
+  <div class="info-card">
+    <h4>Cómo atacar cualquier caso nuevo (checklist de transferencia)</h4>
+    <p><b>1)</b> Subraya las tecnologías de red presentes (tipos, componentes, protocolos). &nbsp;<b>2)</b> Identifica a los <b>grupos de interés</b> y qué ganan o pierden. &nbsp;<b>3)</b> Usa las definiciones exactas del libro (los términos precisos puntúan). &nbsp;<b>4)</b> Aporta oportunidad + impacto + dilema (franja OID) y un <b>contra-argumento</b>. &nbsp;<b>5)</b> Conecta con un caso real del libro (WannaCry, Euro 2020, India&hellip;) como evidencia.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ CIERRE ═══════════════ -->
+<div class="ending">
+  <div class="end-quote">«Las redes e internet son rasgos definitorios de la sociedad digital&hellip; ¿está la web cumpliendo la visión de Sir Tim Berners-Lee, o internet está roto?»</div>
+  <div class="end-checks">
+    <div class="end-check"><span class="tick">1</span><p>Puedo <b>clasificar redes</b> por tamaño, conectividad y compartición, y nombrar sus componentes (NIC, router, módem, WAP, hub, switch).</p></div>
+    <div class="end-check"><span class="tick">2</span><p>Explico <b>protocolos y direcciones</b> (TCP/IP, IP vs. MAC, DHCP, DNS), ancho de banda vs. velocidad, compresión y neutralidad.</p></div>
+    <div class="end-check"><span class="tick">3</span><p>Diferencio <b>internet de la WWW</b> y recito la tríada URL&middot;HTTP/HTTPS&middot;HTML.</p></div>
+    <div class="end-check"><span class="tick">4</span><p>Narro la <b>evolución</b> (1965&rarr;ARPANET&rarr;WWW&rarr;Web 2.0&rarr;3.0&rarr;IoT) con fechas y cifras del libro.</p></div>
+    <div class="end-check"><span class="tick">5</span><p>Defino las <b>11 amenazas y consecuencias</b> (spam, hacking, phishing, virus, ransomware, DDOS, anonimato, trolls, robo de identidad, GDPR, vigilancia) y las emparejo con su protección.</p></div>
+    <div class="end-check"><span class="tick">6</span><p>Para cada tecnología, desarrollo <b>oportunidades, impactos y dilemas</b> con las 3Cs y un caso real — listo para cualquier escenario nuevo del examen.</p></div>
+  </div>
+  <div class="end-foot">Material de repaso NM &middot; Sociedad Digital IB &middot; Contenido 3.4 <i>Networks and the internet</i> — basado en Bomfim et al., <i>Digital Society</i>, Hodder Education 2022 (pp.&nbsp;106&ndash;126). Excluye monografía (extended essay), evaluación interna y Paper 3. Los tres casos marcados «inédito» son escenarios creados para este repaso; todas las definiciones, cifras y casos citados proceden del libro. En la versión HTML las fichas rápidas, las pautas y el quiz son interactivos.</div>
+</div>
+
+<script>
+/* ═══ Conectores recursivos para los mapas mentales ═══ */
+function drawLinesForMap(map) {
+  if (!map) return;
+  const cRect = map.getBoundingClientRect();
+  const old = map.querySelector('svg.lines');
+  if (old) old.remove();
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.classList.add('lines');
+  svg.setAttribute('width', cRect.width);
+  svg.setAttribute('height', cRect.height);
+  svg.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:1;';
+  function rel(el) {
+    const r = el.getBoundingClientRect();
+    return { cy: r.top - cRect.top + r.height / 2,
+             left: r.left - cRect.left, right: r.right - cRect.left };
+  }
+  function drawLine(x1, y1, x2, y2, color, width) {
+    const l = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    l.setAttribute('x1', Math.round(x1)); l.setAttribute('y1', Math.round(y1));
+    l.setAttribute('x2', Math.round(x2)); l.setAttribute('y2', Math.round(y2));
+    l.setAttribute('stroke', color); l.setAttribute('stroke-width', width);
+    l.setAttribute('stroke-linecap', 'round');
+    svg.appendChild(l);
+  }
+  const lineStyles = [
+    { color: '#64748B', width: 2.5 },
+    { color: '#94A3B8', width: 2 },
+    { color: '#A8B4C2', width: 1.5 },
+    { color: '#B8C2CC', width: 1.2 },
+    { color: '#CBD5E1', width: 1 }
+  ];
+  function getLineStyle(depth) {
+    const s = lineStyles[Math.min(depth, lineStyles.length - 1)];
+    return { color: s.color, width: s.width };
+  }
+  function connect(parentEl, childEls, dir, depth) {
+    if (!childEls.length) return;
+    const style = getLineStyle(depth);
+    const p = rel(parentEl);
+    const startX = dir === 'left' ? p.left : p.right;
+    const startY = p.cy;
+    if (childEls.length === 1) {
+      const c = rel(childEls[0]);
+      const endX = dir === 'left' ? c.right : c.left;
+      const midY = Math.round((startY + c.cy) / 2);
+      drawLine(startX, midY, endX, midY, style.color, style.width);
+      return;
+    }
+    let closestEdge;
+    if (dir === 'left') closestEdge = Math.max.apply(null, childEls.map(ch => rel(ch).right));
+    else closestEdge = Math.min.apply(null, childEls.map(ch => rel(ch).left));
+    const childClearance = 14;
+    const midpoint = startX + (closestEdge - startX) / 2;
+    const midFromChild = dir === 'left' ? closestEdge + childClearance : closestEdge - childClearance;
+    const midX = dir === 'left' ? Math.min(midpoint, midFromChild) : Math.max(midpoint, midFromChild);
+    drawLine(startX, startY, midX, startY, style.color, style.width);
+    const allCYs = childEls.map(ch => rel(ch).cy);
+    const minY = Math.min.apply(null, [startY].concat(allCYs));
+    const maxY = Math.max.apply(null, [startY].concat(allCYs));
+    drawLine(midX, minY, midX, maxY, style.color, style.width);
+    childEls.forEach(ch => {
+      const c = rel(ch);
+      const endX = dir === 'left' ? c.right : c.left;
+      drawLine(midX, c.cy, endX, c.cy, style.color, style.width);
+    });
+  }
+  const NODE_SEL = '.branch-node, .sub-node, .leaf, .deep-node';
+  function processChildren(parentNodeEl, containerEl, depth, dir) {
+    if (!containerEl) return;
+    const childNodeEls = [];
+    for (const wrapper of containerEl.children) {
+      const nodeEl = wrapper.matches && wrapper.matches(NODE_SEL) ? wrapper : wrapper.querySelector(NODE_SEL);
+      if (nodeEl) childNodeEls.push(nodeEl);
+    }
+    if (!childNodeEls.length) return;
+    connect(parentNodeEl, childNodeEls, dir, depth);
+  }
+  const rootNode = map.querySelector('.root-node');
+  if (!rootNode) return;
+  const leftBranches = map.querySelectorAll('.left-branches > .left-branch');
+  const leftNodes = [];
+  leftBranches.forEach(b => { const n = b.querySelector('.branch-node'); if (n) leftNodes.push(n); });
+  if (leftNodes.length) connect(rootNode, leftNodes, 'left', 0);
+  leftBranches.forEach(b => {
+    const n = b.querySelector('.branch-node');
+    if (n) processChildren(n, b.querySelector(':scope > .children'), 1, 'left');
+  });
+  const rightBranches = map.querySelectorAll('.right-branches > .right-branch');
+  const rightNodes = [];
+  rightBranches.forEach(b => { const n = b.querySelector('.branch-node'); if (n) rightNodes.push(n); });
+  if (rightNodes.length) connect(rootNode, rightNodes, 'right', 0);
+  rightBranches.forEach(b => {
+    const n = b.querySelector('.branch-node');
+    if (n) processChildren(n, b.querySelector(':scope > .children'), 1, 'right');
+  });
+  map.insertBefore(svg, map.firstChild);
+}
+function drawAllMaps() {
+  document.querySelectorAll('.mindmap').forEach(m => drawLinesForMap(m));
+}
+window.addEventListener('load', () => {
+  setTimeout(drawAllMaps, 250);
+  setTimeout(drawAllMaps, 1200);
+});
+
+/* ═══ Interactividad (solo navegador; el PDF se genera en modo impresión) ═══ */
+document.querySelectorAll('.fc').forEach(function (c) {
+  c.addEventListener('click', function () { c.classList.toggle('flipped'); });
+});
+document.querySelectorAll('.reveal-btn').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var a = b.nextElementSibling;
+    if (!a || !a.classList.contains('q-a')) return;
+    var open = a.classList.toggle('open');
+    b.textContent = open ? 'Ocultar pauta' : 'Ver pauta';
+  });
+});
+document.querySelectorAll('.vf-row').forEach(function (row) {
+  var ans = (row.getAttribute('data-ans') || '').trim().toUpperCase();
+  row.querySelectorAll('.vf-btn').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      row.querySelectorAll('.vf-btn').forEach(function (x) { x.classList.remove('sel'); });
+      btn.classList.add('sel');
+      row.classList.remove('ok', 'bad');
+      void row.offsetWidth;
+      row.classList.add(btn.textContent.trim().toUpperCase() === ans ? 'ok' : 'bad');
+      var a = row.nextElementSibling;
+      if (a && a.classList.contains('q-a')) a.classList.add('open');
+    });
+  });
+});
+document.querySelectorAll('.mc-q').forEach(function (q) {
+  var ans = (q.getAttribute('data-ans') || '').trim().toUpperCase();
+  var opts = q.querySelectorAll('.mc-opt');
+  opts.forEach(function (o) {
+    o.addEventListener('click', function () {
+      opts.forEach(function (x) { x.classList.remove('sel', 'right', 'wrong'); });
+      o.classList.add('sel');
+      opts.forEach(function (x) {
+        var xl = (x.getAttribute('data-k') || '').trim().toUpperCase();
+        if (xl === ans) x.classList.add('right');
+        else if (x === o) x.classList.add('wrong');
+      });
+      var a = q.nextElementSibling;
+      if (a && a.classList.contains('q-a')) a.classList.add('open');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
