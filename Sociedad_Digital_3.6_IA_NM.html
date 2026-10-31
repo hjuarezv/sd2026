@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>3.6 Inteligencia Artificial — Material de repaso IB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<script>
+/* Este documento no contiene fórmulas matemáticas: se registra un stub para que
+   el conversor no inyecte KaTeX ni reescriba cifras como "75 millones" o "30%". */
+window.renderMathInElement = function () {};
+</script>
+<style>
+/* ═══════════ PÁGINAS ═══════════ */
+@page { size: 794px 1123px; margin: 48px 0 52px 0; }
+@page fullbleed { size: 794px 1123px; margin: 0; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #F8FAFC; --card: #FFFFFF; --ink: #1E293B; --muted: #64748B;
+  --line: #E2E8F0; --navy: #1E3A5F; --navy2: #2D4A6F;
+  --u1: #3B82F6; --u1-bg: #EFF6FF; --u1-tx: #1E40AF;
+  --u2: #8B5CF6; --u2-bg: #F5F3FF; --u2-tx: #5B21B6;
+  --u3: #14B8A6; --u3-bg: #F0FDFA; --u3-tx: #134E4A;
+  --u4: #F59E0B; --u4-bg: #FFF7ED; --u4-tx: #92400E;
+  --slate: #64748B; --slate-bg: #F1F5F9; --slate-tx: #334155;
+}
+html, body {
+  margin: 0; padding: 0; width: 794px;
+  background: var(--bg); color: var(--ink);
+  font-family: 'Inter', 'Liberation Sans', sans-serif;
+  font-size: 12.5px; line-height: 1.55;
+  overflow-wrap: break-word;
+}
+@media screen {
+  html { height: auto; display: flex; justify-content: center; background: #E2E8F0; }
+  body { transform: scale(1); transform-origin: top center; margin: 20px auto; box-shadow: 0 2px 24px rgba(15,23,42,.18); }
+}
+svg text { font-family: 'Inter', 'Liberation Sans', sans-serif; }
+
+/* ═══════════ PORTADA / CIERRE (full-bleed) ═══════════ */
+.cover {
+  page: fullbleed; width: 794px; height: 1123px;
+  background: linear-gradient(158deg, #16283F 0%, #1E3A5F 46%, #2D4A6F 100%);
+  color: #F1F5F9; position: relative;
+  display: flex; flex-direction: column;
+  padding: 54px 58px; break-after: page;
+}
+.cover .deco-circle { position: absolute; border-radius: 50%; border: 1.5px solid rgba(148,163,184,.28); }
+.cover .dc1 { width: 300px; height: 300px; right: 40px; top: 60px; }
+.cover .dc2 { width: 190px; height: 190px; right: 118px; top: 138px; border-color: rgba(148,163,184,.18); }
+.cover .dc3 { width: 120px; height: 120px; left: 44px; bottom: 150px; border-color: rgba(148,163,184,.15); }
+.cover-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+  color: #93C5FD; text-transform: uppercase;
+}
+.cover-badge::before { content: ''; width: 34px; height: 2px; background: #3B82F6; }
+.cover-center { margin: auto 0; position: relative; z-index: 2; }
+.cover-kicker { font-size: 12px; font-weight: 600; letter-spacing: 3px; color: #A5B4CC; text-transform: uppercase; margin-bottom: 16px; }
+.cover-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 58px; font-weight: 800; line-height: 1.06; color: #FFFFFF; margin-bottom: 10px;
+}
+.cover-sub { font-size: 18px; font-weight: 500; color: #C7D2E4; margin-bottom: 6px; }
+.cover-sub-en { font-size: 13px; color: #8FA3C2; font-style: italic; margin-bottom: 30px; }
+.cover-chips { display: flex; flex-wrap: wrap; gap: 10px; max-width: 100%; }
+.cchip {
+  background: rgba(59,130,246,.13); border: 1px solid rgba(147,197,253,.35);
+  color: #DCE7F7; border-radius: 20px; padding: 7px 15px;
+  font-size: 11.5px; font-weight: 600;
+}
+.cchip b { color: #FFFFFF; font-weight: 800; }
+.cover-3cs {
+  margin-top: 34px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 16px 18px; border: 1px solid rgba(148,163,184,.25); border-radius: 12px;
+  background: rgba(15,23,42,.25); max-width: 100%;
+}
+.cover-3cs .box { border-radius: 8px; padding: 8px 13px; font-size: 11.5px; font-weight: 700; letter-spacing: .4px; }
+.cover-3cs .arrow { color: #64748B; font-size: 13px; font-weight: 400; }
+.bx1 { background: rgba(59,130,246,.22); color: #BFDBFE; }
+.bx2 { background: rgba(139,92,246,.22); color: #DDD6FE; }
+.bx3 { background: rgba(20,184,166,.22); color: #99F6E4; }
+.bx4 { background: rgba(245,158,11,.20); color: #FDE68A; }
+.cover-foot { position: relative; z-index: 2; }
+.cover-scope { font-size: 11px; color: #94A7C4; line-height: 1.6; border-top: 1px solid rgba(148,163,184,.22); padding-top: 16px; }
+.cover-scope b { color: #CBD8EC; font-weight: 600; }
+.cover-edition { margin-top: 12px; font-size: 10.5px; color: #6E82A3; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 600; }
+
+/* ═══════════ CONTENIDO (flujo) ═══════════ */
+.main-content { padding: 0 56px; }
+.section-head { break-after: avoid; break-inside: avoid; margin-bottom: 10px; }
+.section-kicker { font-size: 10.5px; font-weight: 800; letter-spacing: 2.2px; text-transform: uppercase; color: var(--u1); margin-bottom: 4px; }
+.section-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 25px; font-weight: 800; color: var(--ink); line-height: 1.12;
+}
+.section-sub { font-size: 12.5px; color: var(--muted); margin-top: 5px; }
+.divider { height: 3px; width: 56px; background: var(--u1); border-radius: 2px; margin: 9px 0 3px; }
+p.body-text { font-size: 12px; color: #334155; margin-bottom: 7px; }
+p.body-text b { color: var(--ink); }
+.new-page { break-before: page; }
+.en-term { color: var(--muted); font-style: italic; }
+
+/* Tarjetas informativas */
+.info-card {
+  break-inside: avoid; background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; padding: 11px 14px; margin-bottom: 8px;
+}
+.info-card h4 { font-size: 12.5px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+.info-card p { font-size: 11.5px; color: #475569; }
+.info-card .ic-sub { font-size: 10.8px; color: var(--muted); margin-top: 3px; }
+
+/* Tarjetas de concepto en grilla */
+.cs-grid { display: flex; flex-wrap: wrap; gap: 9px; max-width: 100%; margin: 4px 0 10px; }
+.cs-card {
+  flex: 1 1 150px; min-width: 140px; max-width: 100%;
+  border-radius: 10px; padding: 11px 13px; border: 1px solid var(--line); break-inside: avoid;
+}
+.cs-card .cs-name { font-size: 12.5px; font-weight: 800; margin-bottom: 3px; }
+.cs-card p { font-size: 11px; line-height: 1.45; color: #475569; }
+.cs-1 { background: var(--u1-bg); } .cs-1 .cs-name { color: var(--u1-tx); }
+.cs-2 { background: var(--u2-bg); } .cs-2 .cs-name { color: var(--u2-tx); }
+.cs-3 { background: var(--u3-bg); } .cs-3 .cs-name { color: var(--u3-tx); }
+.cs-4 { background: var(--u4-bg); } .cs-4 .cs-name { color: var(--u4-tx); }
+
+/* ═══════════ TARJETA DE TECNOLOGÍA (definición + funcionamiento + oportunidades/impactos/dilemas) ═══════════ */
+.tcard {
+  break-inside: avoid; background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 9px 13px; margin-bottom: 7px;
+}
+.tcard-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 3px; }
+.tcard-num {
+  font-size: 9.5px; font-weight: 800; letter-spacing: .6px; color: #fff;
+  background: var(--u1); border-radius: 5px; padding: 2px 7px;
+}
+.tcard.u2 .tcard-num { background: var(--u2); }
+.tcard.u3 .tcard-num { background: var(--u3); }
+.tcard.u4 .tcard-num { background: var(--u4); }
+.tcard-num.u2 { background: var(--u2) !important; }
+.tcard-num.u3 { background: var(--u3) !important; }
+.tcard-num.u4 { background: var(--u4) !important; }
+.tcard-title { font-size: 15px; font-weight: 800; color: var(--ink); }
+.tcard-en { font-size: 11px; color: var(--muted); font-style: italic; }
+.trow { display: flex; gap: 9px; padding: 3.5px 0; }
+.trow + .trow { border-top: 1px dashed #EEF2F7; }
+.tlabel {
+  flex: 0 0 94px; font-size: 9px; font-weight: 800; letter-spacing: .7px;
+  text-transform: uppercase; color: var(--u1-tx); padding-top: 2px;
+}
+.tlabel.fun { color: var(--u2-tx); }
+.tlabel.opp { color: var(--u3-tx); }
+.tlabel.imp { color: var(--navy); }
+.tlabel.warn { color: var(--u4-tx); }
+.tlabel.case { color: var(--u3-tx); }
+.tbody { flex: 1; font-size: 11px; color: #475569; line-height: 1.42; }
+.tbody b { color: var(--ink); }
+.tbody ul { list-style: none; margin: 1px 0; }
+.tbody li { padding-left: 12px; position: relative; margin-bottom: 2px; }
+.tbody li::before {
+  content: ''; position: absolute; left: 0; top: 7px;
+  width: 4px; height: 4px; border-radius: 50%; background: var(--u1);
+}
+.tbody li b { color: var(--ink); font-weight: 700; }
+
+/* ═══════════ GRÁFICOS ILUSTRATIVOS (SVG) ═══════════ */
+.svg-wrap {
+  break-inside: avoid; background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 8px 10px 5px; margin: 4px 0 8px;
+}
+.svg-wrap svg { display: block; width: 100%; height: auto; }
+.svg-cap { text-align: center; font-size: 9.5px; color: var(--muted); margin-top: 3px; }
+
+/* Paneles de tipos de aprendizaje */
+.ml-grid { display: flex; gap: 9px; max-width: 100%; margin: 6px 0 10px; break-inside: avoid; }
+.ml-panel { flex: 1 1 0; min-width: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 9px 11px 7px; }
+.ml-panel h4 { font-size: 12px; font-weight: 800; margin-bottom: 1px; }
+.ml-panel .ml-en { font-size: 9.5px; color: var(--muted); font-style: italic; margin-bottom: 4px; }
+.ml-panel p { font-size: 10px; color: #475569; line-height: 1.4; }
+.ml-panel .ml-app { font-size: 9.3px; color: var(--muted); margin-top: 4px; line-height: 1.35; }
+.ml-panel .ml-app b { color: var(--ink); }
+.ml-panel svg { display: block; width: 100%; height: auto; margin: 4px 0 5px; }
+
+/* Tablas de examen */
+table.exam { width: 100%; border-collapse: collapse; margin: 6px 0 10px; font-size: 10.3px; break-inside: avoid; }
+table.exam th {
+  background: var(--navy); color: #fff; font-weight: 700;
+  padding: 6px 8px; text-align: left; font-size: 10px;
+}
+table.exam td { border: 1px solid var(--line); padding: 5px 8px; color: #334155; vertical-align: top; }
+table.exam tr:nth-child(even) td { background: #F8FAFC; }
+table.exam td b { color: var(--ink); }
+table.exam .en-term { font-size: 8.8px; white-space: nowrap; }
+table.tall { break-inside: auto; }
+table.tall tr { break-inside: avoid; }
+table.tall td { padding: 4px 7px; line-height: 1.35; font-size: 10px; }
+
+/* ═══════════ PÁGINAS DE MAPAS (full-bleed) ═══════════ */
+.map-page {
+  page: fullbleed; width: 794px; height: 1123px;
+  break-after: page; padding: 26px 20px 20px;
+  background: #FFFFFF; position: relative;
+  display: flex; flex-direction: column;
+}
+.map-head { margin-bottom: 6px; padding: 0 6px; }
+.map-kicker {
+  display: inline-block; font-size: 10px; font-weight: 800;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--u1-tx); background: var(--u1-bg);
+  border: 1px solid #BFDBFE; border-radius: 12px; padding: 3px 11px;
+}
+.map-kicker.k2 { color: var(--u2-tx); background: var(--u2-bg); border-color: #DDD6FE; }
+.map-kicker.k3 { color: var(--u3-tx); background: var(--u3-bg); border-color: #99F6E4; }
+.map-kicker.k4 { color: var(--u4-tx); background: var(--u4-bg); border-color: #FDE68A; }
+.map-kicker.k0 { color: var(--navy); background: #EDF2F9; border-color: #C9D7E8; }
+.map-title {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 25px; font-weight: 800; color: var(--ink); margin-top: 7px; line-height: 1.1;
+}
+.map-intro { font-size: 11.5px; color: var(--muted); margin-top: 4px; max-width: 640px; }
+
+.mindmap { position: relative; break-inside: avoid; display: flex; justify-content: center; align-items: center; flex: 1 1 auto; padding: 10px 0 6px; }
+.mindmap > svg.lines { position: absolute; top: 0; left: 0; pointer-events: none; z-index: 0; }
+.root-node {
+  background: linear-gradient(135deg, #1E3A5F, #2D4A6F);
+  color: #fff; font-size: 16.5px; font-weight: 800; line-height: 1.2;
+  padding: 15px 17px; border-radius: 13px; text-align: center;
+  white-space: nowrap; flex-shrink: 0; align-self: center;
+  box-shadow: 0 4px 12px rgba(30,58,95,.25); position: relative; z-index: 2;
+}
+.root-node small { display: block; font-size: 10px; font-weight: 600; color: #B7C6DC; letter-spacing: 1.5px; margin-top: 2px; }
+.branch-node {
+  font-size: 12.5px; font-weight: 700; line-height: 1.2;
+  padding: 8px 12px; border-radius: 8px; border: 2px solid;
+  white-space: normal; max-width: 142px; text-align: center;
+  flex-shrink: 0; position: relative; z-index: 2;
+}
+.branch-node small { display: block; font-size: 10px; font-weight: 600; opacity: .8; }
+.leaf {
+  font-size: 11.5px; font-weight: 500; color: #475569;
+  padding: 4.5px 11px; background: #FAFBFC;
+  border-radius: 11px; border: 1px solid #E2E8F0;
+  line-height: 1.3; white-space: normal; max-width: 138px;
+  width: fit-content; position: relative; z-index: 2;
+}
+.children { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.right-branches { display: flex; flex-direction: column; gap: 18px; }
+.right-branch { display: flex; align-items: flex-start; }
+.right-branch > .children { margin-left: 16px; padding-left: 8px; align-items: flex-start; }
+.left-branches { display: flex; flex-direction: column; gap: 18px; }
+.left-branch { display: flex; align-items: flex-start; flex-direction: row-reverse; }
+.left-branch > .children { margin-right: 16px; padding-right: 8px; align-items: flex-end; }
+.b-u1 { background: var(--u1-bg); border-color: var(--u1); color: var(--u1-tx); }
+.b-u2 { background: var(--u2-bg); border-color: var(--u2); color: var(--u2-tx); }
+.b-u3 { background: var(--u3-bg); border-color: var(--u3); color: var(--u3-tx); }
+.b-u4 { background: var(--u4-bg); border-color: var(--u4); color: var(--u4-tx); }
+.b-navy { background: #EDF2F9; border-color: var(--navy2); color: var(--navy); }
+.b-slate { background: var(--slate-bg); border-color: var(--slate); color: var(--slate-tx); }
+.map-legend {
+  position: absolute; left: 20px; right: 20px; bottom: 18px;
+  display: flex; flex-wrap: wrap; gap: 7px 14px; align-items: center;
+  font-size: 10px; color: var(--muted);
+  border-top: 1px solid var(--line); padding-top: 10px;
+}
+.map-legend .lg { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; }
+.map-legend .dot { width: 9px; height: 9px; border-radius: 3px; }
+
+/* ═══════════ INTERACTIVIDAD Y NUEVOS COMPONENTES ═══════════ */
+.only-print { display: none; }
+@media print {
+  .only-print { display: block; }
+  .only-screen { display: none !important; }
+}
+
+/* Simulador de red neuronal */
+.sim-box { break-inside: avoid; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin: 4px 0 8px; }
+.sim-controls { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; margin: 8px 0 4px; max-width: 100%; }
+.sim-btn {
+  font-size: 10.5px; font-weight: 800; border: 1.5px solid var(--u1);
+  background: var(--u1-bg); color: var(--u1-tx); border-radius: 8px;
+  padding: 5px 12px; cursor: pointer;
+}
+.sim-btn.alt { border-color: var(--u3); background: var(--u3-bg); color: var(--u3-tx); }
+.sim-btn.warn { border-color: var(--u4); background: var(--u4-bg); color: var(--u4-tx); }
+.sim-chip {
+  font-size: 10px; font-weight: 700; border: 1.5px solid var(--line);
+  background: #fff; color: var(--muted); border-radius: 14px; padding: 3px 10px; cursor: pointer;
+}
+.sim-chip.sel { border-color: var(--navy); color: #fff; background: var(--navy); }
+.sim-stat {
+  display: inline-flex; flex-direction: column; background: #F8FAFC;
+  border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px; min-width: 88px;
+}
+.sim-stat .n { font-size: 14px; font-weight: 800; color: var(--navy); }
+.sim-stat .l { font-size: 8.5px; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); font-weight: 700; }
+.sim-slider { display: flex; align-items: center; gap: 6px; font-size: 10.5px; color: #475569; font-weight: 700; }
+.sim-slider input { width: 110px; accent-color: var(--u1); }
+.sim-weights { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+.sim-weights table { border-collapse: collapse; font-size: 9.3px; }
+.sim-weights th { background: #EDF2F9; color: var(--navy); padding: 2.5px 7px; border: 1px solid var(--line); font-size: 8.8px; }
+.sim-weights td { border: 1px solid var(--line); padding: 2.5px 7px; color: #334155; font-variant-numeric: tabular-nums; }
+table.sim-tb { width: 100%; border-collapse: collapse; font-size: 10.2px; margin-top: 4px; }
+table.sim-tb th { background: var(--navy); color: #fff; padding: 4px 8px; font-size: 9.5px; text-align: left; }
+table.sim-tb td { border: 1px solid var(--line); padding: 3.5px 8px; color: #334155; font-variant-numeric: tabular-nums; }
+table.sim-tb td.ok { color: #15803D; font-weight: 800; }
+table.sim-tb td.no { color: #B91C1C; font-weight: 800; }
+.sim-note { font-size: 9.8px; color: var(--muted); margin-top: 5px; line-height: 1.45; }
+
+/* Caso de práctica (inédito, estilo examen) */
+.practice {
+  break-inside: avoid; background: #FBFAFF;
+  border: 1.5px dashed #A78BFA; border-radius: 10px;
+  padding: 11px 14px 10px; margin: 9px 0 12px;
+}
+.practice-tag { display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: 1.6px; color: var(--u2-tx); text-transform: uppercase; margin-bottom: 3px; }
+.practice h4 { font-size: 13.5px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+.practice p.pctx { font-size: 11.4px; color: #475569; line-height: 1.5; margin-bottom: 6px; }
+.practice ol.pq { margin-left: 17px; margin-bottom: 3px; }
+.practice ol.pq li { font-size: 11.4px; color: #334155; margin-bottom: 3px; }
+.practice ol.pq i { color: var(--muted); }
+
+/* Fuente estilo Paper 2 */
+.psource {
+  break-inside: avoid; background: #F8FAFC; border: 1px solid var(--line);
+  border-left: 4px solid var(--navy); border-radius: 8px;
+  padding: 9px 13px; margin: 7px 0;
+}
+.psource .ps-tag { font-size: 9px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--navy); margin-bottom: 2px; }
+.psource p { font-size: 10.8px; color: #475569; line-height: 1.5; }
+.psource .ps-src { font-size: 9px; color: var(--muted); font-style: italic; margin-top: 4px; }
+
+/* Botón de pauta + respuesta desplegable */
+.reveal-btn {
+  display: inline-block; margin-top: 5px; font-size: 10px; font-weight: 800;
+  letter-spacing: .8px; text-transform: uppercase; color: var(--u2-tx);
+  background: var(--u2-bg); border: 1px solid #DDD6FE; border-radius: 8px;
+  padding: 4px 12px; cursor: pointer; user-select: none;
+}
+.q-a {
+  display: none; background: #ECFDF5; border: 1px solid #A7F3D0;
+  border-radius: 8px; padding: 7px 11px; margin-top: 6px;
+  font-size: 10.6px; color: #065F46; line-height: 1.52; break-inside: avoid;
+}
+.q-a b { color: #064E3B; }
+.q-a.open { display: block; }
+@media print { .q-a { display: block !important; } .reveal-btn { display: none !important; } }
+
+/* Quiz: verdadero/falso */
+.qz-part { font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: var(--navy); margin: 13px 0 4px; break-after: avoid; }
+.vf-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; break-inside: avoid; }
+.vf-row .vf-txt { flex: 1; font-size: 11.5px; color: #334155; }
+.vf-opts { display: flex; gap: 6px; flex: 0 0 auto; }
+.vf-btn {
+  font-size: 10px; font-weight: 800; border: 1.5px solid var(--line);
+  background: #fff; color: var(--muted); border-radius: 7px; padding: 2.5px 11px; cursor: pointer;
+}
+.vf-btn.sel { border-color: var(--u1); color: var(--u1-tx); background: var(--u1-bg); }
+.vf-row.ok .vf-btn.sel { border-color: #16A34A; color: #166534; background: #DCFCE7; }
+.vf-row.bad .vf-btn.sel { border-color: #DC2626; color: #991B1B; background: #FEE2E2; }
+
+/* Quiz: opción múltiple */
+.mc-q { padding: 5px 0; break-inside: avoid; }
+.mc-q .mc-txt { font-size: 11.5px; color: #334155; }
+.mc-q .opts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px; max-width: 100%; }
+.mc-opt {
+  font-size: 10.5px; border: 1.5px solid var(--line); background: #fff;
+  color: #475569; border-radius: 8px; padding: 3px 11px; cursor: pointer; white-space: nowrap;
+}
+.mc-opt.sel { border-color: var(--u1); color: var(--u1-tx); background: var(--u1-bg); font-weight: 700; }
+.mc-opt.right { border-color: #16A34A; background: #DCFCE7; color: #166534; font-weight: 700; }
+.mc-opt.wrong { border-color: #DC2626; background: #FEE2E2; color: #991B1B; }
+
+/* Fichas rápidas (flashcards interactivas) */
+.fc-grid { display: flex; flex-wrap: wrap; gap: 6px; margin: 7px 0 3px; max-width: 100%; }
+.fc { flex: 1 1 30.5%; min-width: 212px; max-width: 100%; break-inside: avoid; }
+.fc-inner { transform-style: preserve-3d; }
+.fc-face { border-radius: 10px; padding: 6.5px 10px; }
+.fc-front { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--u1); }
+.fc-back { background: var(--u1-bg); border: 1px solid #BFDBFE; border-top: 1px dashed #93C5FD; }
+.fc.f2 .fc-front { border-top-color: var(--u2); }
+.fc.f2 .fc-back { background: var(--u2-bg); border-color: #DDD6FE; border-top-color: #C4B5FD; }
+.fc.f3 .fc-front { border-top-color: var(--u3); }
+.fc.f3 .fc-back { background: var(--u3-bg); border-color: #99F6E4; border-top-color: #5EEAD4; }
+.fc.f4 .fc-front { border-top-color: var(--u4); }
+.fc.f4 .fc-back { background: var(--u4-bg); border-color: #FDE68A; border-top-color: #FCD34D; }
+.fc-q { font-size: 10.6px; font-weight: 700; color: var(--ink); line-height: 1.33; }
+.fc-a { font-size: 9.7px; color: #1E40AF; line-height: 1.38; }
+.fc-a b { color: #172554; }
+.fc.f2 .fc-a { color: var(--u2-tx); } .fc.f2 .fc-a b { color: #4C1D95; }
+.fc.f3 .fc-a { color: var(--u3-tx); } .fc.f3 .fc-a b { color: #134E4A; }
+.fc.f4 .fc-a { color: var(--u4-tx); } .fc.f4 .fc-a b { color: #78350F; }
+.fc-hint { font-size: 8.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .9px; margin-top: 5px; font-weight: 700; }
+@media screen {
+  .fc { height: 134px; cursor: pointer; perspective: 1000px; }
+  .fc-inner { position: relative; width: 100%; height: 100%; transition: transform .45s; }
+  .fc.flipped .fc-inner { transform: rotateY(180deg); }
+  .fc-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; }
+  .fc-back { transform: rotateY(180deg); }
+}
+@media print {
+  .fc-face + .fc-face { margin-top: 3px; }
+  .fc-hint { display: none; }
+}
+
+/* Cierre */
+.ending {
+  page: fullbleed; width: 794px; height: 1123px; break-before: page;
+  background: linear-gradient(158deg, #16283F 0%, #1E3A5F 46%, #2D4A6F 100%);
+  color: #F1F5F9; display: flex; flex-direction: column; justify-content: center;
+  padding: 60px; position: relative;
+}
+.end-quote {
+  font-family: 'Playfair Display', 'Liberation Serif', serif;
+  font-size: 25px; font-weight: 600; font-style: italic;
+  line-height: 1.4; color: #E2E8F0; max-width: 580px; margin-bottom: 34px;
+}
+.end-checks { display: flex; flex-direction: column; gap: 10px; max-width: 580px; }
+.end-check {
+  display: flex; gap: 11px; align-items: flex-start;
+  border: 1px solid rgba(148,163,184,.28); border-radius: 10px;
+  padding: 11px 14px; background: rgba(15,23,42,.28);
+}
+.end-check .tick {
+  width: 19px; height: 19px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(59,130,246,.25); border: 1.5px solid #60A5FA;
+  color: #BFDBFE; font-size: 11px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.end-check p { font-size: 12px; color: #C7D2E4; }
+.end-check p b { color: #fff; }
+.end-foot { position: absolute; bottom: 52px; left: 60px; right: 60px;
+  border-top: 1px solid rgba(148,163,184,.22); padding-top: 14px;
+  font-size: 10px; color: #7C90B0; line-height: 1.6; }
+</style>
+</head>
+<body>
+<!-- ═══════════════ PORTADA ═══════════════ -->
+<div class="cover">
+  <div class="deco-circle dc1"></div>
+  <div class="deco-circle dc2"></div>
+  <div class="deco-circle dc3"></div>
+  <div class="cover-badge">IB Diploma Programme &middot; Digital Society</div>
+  <div class="cover-center">
+    <div class="cover-kicker">Material de repaso integral &middot; Nivel Medio (NM/SL)</div>
+    <div class="cover-title">3.6<br>Inteligencia Artificial</div>
+    <div class="cover-sub">IA: tipos, machine learning, redes neuronales, evolución y dilemas</div>
+    <div class="cover-sub-en">Review guide with mind maps, charts, flashcards, a neural network simulator &amp; new exam cases</div>
+    <div class="cover-chips">
+      <span class="cchip"><b>5</b> subsecciones (3.6A&ndash;E)</span>
+      <span class="cchip"><b>2</b> mapas mentales</span>
+      <span class="cchip"><b>7</b> gráficos ilustrativos</span>
+      <span class="cchip"><b>24</b> fichas interactivas</span>
+      <span class="cchip"><b>14</b> preguntas de quiz</span>
+      <span class="cchip"><b>1</b> simulador de red neuronal</span>
+      <span class="cchip"><b>3</b> casos nuevos para el examen</span>
+    </div>
+    <div class="cover-3cs">
+      <span class="box bx1">Tipos de IA (3.6A)</span><span class="arrow">+</span>
+      <span class="box bx2">Machine learning (3.6B)</span><span class="arrow">+</span>
+      <span class="box bx3">Redes neuronales (3.6C)</span><span class="arrow">&rarr;</span>
+      <span class="box bx4">Evolución y dilemas (3.6D&ndash;E)</span>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <div class="cover-scope">
+      <b>Alcance del material:</b> solo la sección 3.6 <i>Artificial intelligence</i> del libro — los tipos de IA y el test de Turing (3.6A),
+      los tipos y usos del <i>machine learning</i> con ejemplos visuales (3.6B), las redes neuronales artificiales y su funcionamiento,
+      con un <b>simulador interactivo</b> para entender sus componentes y cómo aprende (3.6C), la evolución de la IA con sus inviernos y
+      veranos (3.6D) y los seis dilemas: sesgo, rendición de cuentas, transparencia, carbono, leyes y empleo (3.6E). Cada tecnología
+      incluye sus <b>oportunidades, impactos y dilemas</b>, con casos del libro y tres escenarios inéditos estilo examen.
+      No incluye la monografía (extended essay), la evaluación interna ni el Paper 3.
+    </div>
+    <div class="cover-edition">Basado en Bomfim et al. &middot; Digital Society &middot; Hodder Education 2022 (pp.&nbsp;146&ndash;165)</div>
+  </div>
+</div>
+
+<!-- ═══════════════ INTRODUCCIÓN ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Guía rápida</div>
+    <div class="section-title">Cómo usar este material</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Para el libro, la <b>inteligencia artificial</b> <span class="en-term">(artificial intelligence, AI)</span> involucra a <b>agentes, dispositivos o sistemas que se adaptan para realizar tareas</b> (o que parecen hacerlo) <b>que antes requerían los procesos cognitivos y creativos de los seres humanos</b>. Hemos entrado en la <b>quinta generación de la computación</b>: la IA, aunque nació de la ciencia ficción y del trabajo de <b>Alan Turing</b>, hoy vence a humanos en juegos (AlphaGo) y está en todas partes, «desde lo que vemos y qué publicaciones aparecen, hasta el alcance de nuestros empleos». Lo esencial para el examen: la IA <b>se adapta mediante el aprendizaje</b>, y ese aprendizaje depende de los <b>datos (3.1)</b> y los <b>algoritmos (3.2)</b>.</p>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-1">
+      <div class="cs-name">3.6A &middot; Tipos <span class="en-term">(types)</span></div>
+      <p>Test de Turing y CAPTCHA; IA débil/estrecha, específica de dominio, fuerte (AGI), súper IA y singularidad; sistemas expertos.</p>
+    </div>
+    <div class="cs-card cs-2">
+      <div class="cs-name">3.6B &middot; Machine learning</div>
+      <p>Elementos clave del ML; supervisado, no supervisado, por refuerzo y deep learning; PLN, visión, voz, sentimiento y patrones.</p>
+    </div>
+    <div class="cs-card cs-3">
+      <div class="cs-name">3.6C &middot; Redes neuronales</div>
+      <p>Nodos, capas, pesos y funciones de activación; ventajas; GitHub Codex; simulador interactivo para ver cómo aprende una red.</p>
+    </div>
+    <div class="cs-card cs-4">
+      <div class="cs-name">3.6D &middot; Evolución <span class="en-term">(evolution)</span></div>
+      <p>De Dartmouth (1956) a T-NLG (2020): auge, inviernos y veranos de la IA; cibernética, singularidad y multiplicidad.</p>
+    </div>
+    <div class="cs-card cs-4">
+      <div class="cs-name">3.6E &middot; Dilemas <span class="en-term">(dilemmas)</span></div>
+      <p>Sesgo y equidad, rendición de cuentas, transparencia, huella de carbono, leyes desiguales y automatización del empleo.</p>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h4>Objetivos del capítulo (understandings) y método de repaso en 3 pasos</h4>
+    <p>Al terminar el capítulo debes comprender que: <b>1)</b> la IA involucra agentes, dispositivos o sistemas que se adaptan para realizar tareas que antes requerían procesos cognitivos y creativos humanos; <b>2)</b> existen varios tipos de IA —existentes, emergentes o propuestos— cuyas categorías <b>se solapan o se cuestionan</b>; <b>3)</b> la IA ha evolucionado con el tiempo e introduce <b>oportunidades y dilemas significativos</b> para la sociedad digital.</p>
+    <p style="margin-top:5px"><b>Método:</b> <b>1) Mapa primero</b> — fija la estructura con el mapa mental de la página siguiente. &nbsp;<b>2) Simulador y fichas</b> — experimenta con la red neuronal (versión HTML) y memoriza las definiciones del libro. &nbsp;<b>3) Quiz y casos al final</b> — responde el quiz interactivo y practica los 3 escenarios inéditos: el IB puede presentar <b>ejemplos nuevos</b> del mismo contenido.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>Datos clave para memorizar <span class="en-term">(cifras que el libro usa como evidencia)</span></h4>
+    <p>Test de Turing: <b>1950</b>, «Computing Machinery and Intelligence», confundir al ordenador con un humano <b>&gt;30%</b> del tiempo en <b>5 minutos</b> &middot; chatbot que pasó: <b>Eugene Goostman</b> (2012, 60+ años después) &middot; Conferencia de Dartmouth: <b>1956</b> &middot; primer sistema experto <b>Dendral</b>: <b>1965</b> &middot; primer invierno de la IA: <b>1974&ndash;1980</b> &middot; Deep Blue vence a Kasparov: <b>1997</b> &middot; deep learning (U. de Toronto): <b>2006</b> &middot; Watson gana Jeopardy: <b>2011</b> &middot; AlphaGo vence al campeón de Go: <b>2016</b> &middot; Microsoft T-NLG: <b>2020</b> &middot; singularidad prevista por Kurzweil: <b>2045</b>.</p>
+    <p style="margin-top:4px">Twitter: <b>10&nbsp;000</b> imágenes analizadas (sesgo, 2021) &middot; Tay retirada tras <b>16 horas</b> &middot; Uber: <b>6</b> semáforos en rojo (2016) &middot; Google modificó su algoritmo <b>3200 veces</b> en 2018 &middot; entrenar una red neuronal emite tanto carbono como <b>un coche</b> (U. de Massachusetts Amherst) &middot; sobre armas autónomas letales (LAWS): solo <b>Bélgica</b> con ley, <b>13</b> países en discusión &middot; solo <b>24</b> países con leyes para vehículos autónomos &middot; WEF: la IA reemplazará <b>75 millones</b> de empleos y creará <b>133 millones</b> para 2025 &middot; <b>2,7 millones</b> de robots industriales en manufactura (2020) &middot; hotel FlyZoo de Alibaba: <b>290</b> habitaciones.</p>
+  </div>
+</div>
+<!-- ═══════════════ MAPA GENERAL ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k0">Visión general</span>
+    <div class="map-title">El capítulo 3.6 en un mapa</div>
+    <div class="map-intro">Cinco subsecciones: los tipos de IA y el test de Turing (A), el machine learning y sus usos (B), las redes neuronales artificiales (C), la evolución de la IA (D) y los dilemas que genera (E). Memoriza esta estructura: en Paper 1 y 2 las preguntas combinan subsecciones con conceptos y contextos.</div>
+  </div>
+
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u1">Tipos de IA <small>3.6A</small></div>
+        <div class="children">
+          <div class="leaf">Débil/estrecha: Netflix, Siri</div>
+          <div class="leaf">Dominio: AlphaGo, cáncer</div>
+          <div class="leaf">Fuerte/AGI: conciencia</div>
+          <div class="leaf">Súper IA &middot; singularidad</div>
+        </div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u2">Machine learning <small>3.6B</small></div>
+        <div class="children">
+          <div class="leaf">Supervisado: datos etiquetados</div>
+          <div class="leaf">No supervisado: clústeres</div>
+          <div class="leaf">Refuerzo: recompensa</div>
+          <div class="leaf">Deep learning: &gt;3 capas</div>
+          <div class="leaf">PLN &middot; visión &middot; voz &middot; sentimiento</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="root-node">3.6<br>INTELIGENCIA<br>ARTIFICIAL<small>artificial intelligence</small></div>
+
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u3">Redes neuronales <small>3.6C</small></div>
+        <div class="children">
+          <div class="leaf">Entrada &rarr; oculta &rarr; salida</div>
+          <div class="leaf">Pesos y activación</div>
+          <div class="leaf">Ventaja: no lineal</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-navy">Evolución <small>3.6D</small></div>
+        <div class="children">
+          <div class="leaf">Dartmouth 1956</div>
+          <div class="leaf">Inviernos y veranos</div>
+          <div class="leaf">1997 &rarr; 2020: hitos</div>
+        </div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-u4">Dilemas <small>3.6E</small></div>
+        <div class="children">
+          <div class="leaf">Sesgo &middot; cuentas &middot; caja negra</div>
+          <div class="leaf">Carbono y leyes desiguales</div>
+          <div class="leaf">Empleo: 75M vs 133M</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:#3B82F6"></span> Tipos de IA</span>
+    <span class="lg"><span class="dot" style="background:#8B5CF6"></span> Aprendizaje automático</span>
+    <span class="lg"><span class="dot" style="background:#14B8A6"></span> Redes neuronales</span>
+    <span class="lg"><span class="dot" style="background:#1E3A5F"></span> Evolución histórica</span>
+    <span class="lg"><span class="dot" style="background:#F59E0B"></span> Dilemas y ética</span>
+    <span class="lg" style="margin-left:auto">Fuente: Bomfim et al. (2022), pp. 146&ndash;165</span>
+  </div>
+</div>
+<!-- ═══════════════ 3.6A · TIPOS DE IA ═══════════════ -->
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">3.6A &middot; Types of AI</div>
+    <div class="section-title">¿Qué es la inteligencia artificial?</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Buscar «inteligencia» arroja términos como <b>razonamiento abstracto, representación mental, resolución de problemas, toma de decisiones, conocimiento emocional, creatividad y adaptación</b>. Dada la complejidad de nuestros cerebros, desarrollar IA es difícil; el libro señala tres problemas inherentes: la <b>mayoría de las personas no puede describir cómo hace las cosas</b>; existe una <b>diferencia entre la estructura del cerebro humano</b> y sus capacidades frente a las de un ordenador; y <b>la mejor forma de hacerlo para una máquina suele ser distinta</b> a la de un humano.</p>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">CONCEPTO CLAVE</span><span class="tcard-title">Test de Turing</span><span class="tcard-en">Turing Test (1950)</span></div>
+    <div class="trow"><div class="tlabel fun">Funciona</div><div class="tbody">Alan Turing lo propuso en su artículo <i>«Computing Machinery and Intelligence»</i> (1950), a partir del juego <b>«The Imitation Game»</b>: un <b>interrogador</b> conversa por texto hasta <b>5 minutos</b> con jugadores tras una pantalla; uno de ellos es un ordenador (un chatbot). <b>Si el interrogador confunde al ordenador con un humano más del 30% del tiempo, el ordenador supera el test.</b></div></div>
+    <div class="trow"><div class="tlabel imp">Historia</div><div class="tbody">Se usó con los primeros chatbots, como <b>ELIZA</b> (años 60). El <b>Loebner Prize</b> fue un concurso anual para evaluar máquinas conversacionales. Tardó <b>más de 60 años</b> en superarse: en <b>2012</b>, el chatbot <b>Eugene Goostman</b>, que se hacía pasar por un niño ucraniano de 13 años, convenció al interrogador — con polémica, porque «engañó» actuando como un adolescente.</div></div>
+    <div class="trow"><div class="tlabel warn">Límites</div><div class="tbody">Solo puede probar el <b>procesamiento de lenguaje natural</b>; aun así sigue siendo popular porque ofrece una <b>prueba sencilla</b> aplicable a una situación compleja.</div></div>
+  </div>
+
+  <div class="info-card">
+    <h4>CAPTCHA <span class="en-term">(Completely Automated Public Turing Test to Tell Computers and Humans Apart)</span></h4>
+    <p>Una <b>forma moderna del test de Turing</b>. Se usa al registrarse en un sitio web para que el usuario <b>demuestre que es humano y no un bot</b>. Pregunta ATL del libro: ¿cómo ha evolucionado el CAPTCHA y qué relación tiene ese cambio con el machine learning que estudias en 3.6B? (Los bots aprenden a resolverlo; los retos se endurecen.)</p>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num u-none">PREGUNTAS DEL LIBRO</span><span class="tcard-title">Para reflexionar antes de estudiar</span></div>
+    <div class="trow"><div class="tlabel">ATL</div><div class="tbody">¿Qué es fácil para un humano pero difícil para un ordenador? &middot; ¿Qué es más fácil para un ordenador que para un humano? &middot; ¿Qué significa «inteligencia humana»? &middot; ¿Qué significa «inteligencia artificial»? Estas preguntas son material típico de introducción en Paper 1.</div></div>
+  </div>
+
+  <div class="new-page"></div>
+
+  <div class="section-head">
+    <div class="section-kicker">3.6A &middot; Types of AI</div>
+    <div class="section-title">Los tipos de IA: de la débil a la súper IA</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Es importante reconocer que <b>existen diferentes tipos de IA</b> y que sus categorías <b>se solapan o son objeto de debate</b>. La IA que encontramos a diario es muy distinta a la que imagina la ciencia ficción.</p>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-1">
+      <div class="cs-name">IA débil / estrecha <span class="en-term">(weak / narrow AI)</span></div>
+      <p>IA con una <b>función limitada</b> o que solo puede realizar <b>una tarea específica</b>. Ejemplos: Netflix (recomendar qué ver), programas de ajedrez, la búsqueda de Google, <b>Siri y Alexa</b>, vehículos autónomos, motores de recomendación y reconocimiento facial. Completan tareas <b>más rápido que los humanos</b> y descubren patrones en el <b>big data</b>.</p>
+    </div>
+    <div class="cs-card cs-2">
+      <div class="cs-name">IA específica de dominio <span class="en-term">(domain-specific AI)</span></div>
+      <p>IA que <b>realiza tareas mejor que los humanos en ciertos dominios</b>: detectar cáncer mejor que un médico, o <b>AlphaGo</b> (DeepMind) venciendo al campeón mundial de Go. <b>No</b> basta para considerarla IA fuerte.</p>
+    </div>
+    <div class="cs-card cs-3">
+      <div class="cs-name">IA fuerte <span class="en-term">(strong / full AI &middot; AGI)</span></div>
+      <p><b>Inteligencia artificial general</b>: máquinas capaces de desarrollar <b>conciencia</b>, tomar decisiones mejor que los humanos, demostrar <b>autoconciencia y emociones</b>, y tener plenas capacidades cognitivas humanas. <b>Aún no existe</b>.</p>
+    </div>
+    <div class="cs-card cs-4">
+      <div class="cs-name">Súper IA <span class="en-term">(super AI)</span></div>
+      <p>IA que <b>supera la inteligencia humana</b>. Cuando llegue ese punto existen temores —como en la ciencia ficción— de que las máquinas <b>se subleven contra la humanidad</b>.</p>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h4>Singularidad <span class="en-term">(singularity)</span></h4>
+    <p>El <b>futuro hipotético</b> en que la IA se vuelve tan avanzada que es <b>superior a la inteligencia humana</b>; la <b>nanotecnología</b> se percibe como una tecnología clave para lograrlo. El concepto y el término fueron <b>popularizados por Vernor Vinge (1993)</b>; <b>Ray Kurzweil</b>, en <i>The singularity is near</i> (2005), predijo que se alcanzaría en <b>2045</b> con una súper IA.</p>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 680 118" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="gradSpec" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#3B82F6"/><stop offset="0.35" stop-color="#8B5CF6"/>
+          <stop offset="0.7" stop-color="#14B8A6"/><stop offset="1" stop-color="#F59E0B"/>
+        </linearGradient>
+        <marker id="arrW" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0,0 L8,4.5 L0,9 Z" fill="url(#gradSpec)"/>
+        </marker>
+      </defs>
+      <line x1="30" y1="44" x2="645" y2="44" stroke="url(#gradSpec)" stroke-width="7" marker-end="url(#arrW)" stroke-linecap="round"/>
+      <g font-size="10.5" font-weight="800" text-anchor="middle">
+        <rect x="42" y="62" width="104" height="34" rx="8" fill="#EFF6FF" stroke="#3B82F6"/><text x="94" y="76" fill="#1E40AF">IA débil</text><text x="94" y="89" fill="#64748B" font-size="8.5" font-weight="600">hoy &middot; 1 tarea</text>
+        <rect x="176" y="62" width="118" height="34" rx="8" fill="#F5F3FF" stroke="#8B5CF6"/><text x="235" y="76" fill="#5B21B6">Dominio</text><text x="235" y="89" fill="#64748B" font-size="8.5" font-weight="600">mejor que humanos</text>
+        <rect x="324" y="62" width="104" height="34" rx="8" fill="#F0FDFA" stroke="#14B8A6"/><text x="376" y="76" fill="#134E4A">Fuerte (AGI)</text><text x="376" y="89" fill="#64748B" font-size="8.5" font-weight="600">hipotética</text>
+        <rect x="458" y="62" width="92" height="34" rx="8" fill="#FFF7ED" stroke="#F59E0B"/><text x="504" y="76" fill="#92400E">Súper IA</text><text x="504" y="89" fill="#64748B" font-size="8.5" font-weight="600">supera al humano</text>
+        <rect x="578" y="62" width="98" height="34" rx="8" fill="#16283F" stroke="#16283F"/><text x="627" y="76" fill="#fff">Singularidad</text><text x="627" y="89" fill="#B7C6DC" font-size="8.5" font-weight="600">Kurzweil: 2045</text>
+      </g>
+      <text x="30" y="22" font-size="9" font-weight="800" letter-spacing="1.5" fill="#64748B">ESPECTRO DE LA INTELIGENCIA ARTIFICIAL (según el libro)</text>
+      <text x="30" y="112" font-size="8.5" fill="#94A3B8">AlphaGo es «específica de dominio»: mejor que cualquier humano en Go, pero no puede hacer nada más.</text>
+    </svg>
+    <div class="svg-cap">Figura 1 &middot; Del IA débil a la singularidad: la IA que existe hoy está a la izquierda del espectro.</div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">TECNOLOGÍA 1</span><span class="tcard-title">Sistemas expertos</span><span class="tcard-en">expert systems</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody">Sistema informático que <b>actúa como un experto humano en un área específica</b>. Se usa para <b>asesorar a no expertos cuando no hay un experto humano disponible</b>. Es un ejemplo de <b>IA específica de dominio</b>.</div></div>
+    <div class="trow"><div class="tlabel fun">Funciona</div><div class="tbody"><b>Tres componentes:</b> <b>1) Base de conocimiento:</b> hechos y reglas, creada por un <b>ingeniero de conocimiento</b> que recopila la información de expertos humanos. <b>2) Motor de inferencia:</b> usa reglas programadas para interpretar y evaluar los hechos; aplica lógica con sentencias <b>si/entonces</b>, lógica <b>booleana</b> y <b>difusa</b> (fuzzy), mediante <b>encadenamiento hacia adelante o hacia atrás</b>. <b>3) Interfaz de usuario:</b> permite al no experto hacer preguntas y recibir asesoramiento.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody"><ul><li>Lleva experiencia especializada a donde <b>no hay expertos</b> disponibles.</li><li>Usos según el libro: <b>diagnóstico médico y de coches</b>, ingeniería petrolera, <b>asesoría financiera</b> e identificación de objetos desconocidos.</li></ul></div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Su auge en los <b>años 80</b> atrajo financiación de empresas y gobiernos; el <b>colapso del mercado</b> de sistemas expertos trajo consigo el <b>segundo invierno de la IA</b> (ver 3.6D). ¿Sustituyen o apoyan al experto humano?</div></div>
+    <div class="trow"><div class="tlabel warn">Dilema</div><div class="tbody">Pregunta de reflexión del libro: <b>¿hasta qué punto deberían usarse los sistemas expertos para reemplazar o para apoyar a los expertos humanos?</b></div></div>
+    <div class="trow"><div class="tlabel case">Caso</div><div class="tbody"><b>Dendral (1965)</b>, el primer sistema experto, desarrollado por <b>Edward Feigenbaum y Joshua Lederberg</b> en la Universidad de Stanford para <b>analizar compuestos químicos</b>.</div></div>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 680 168" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arrB" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 Z" fill="#1E3A5F"/></marker>
+        <marker id="arrG" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 Z" fill="#94A3B8"/></marker>
+      </defs>
+      <g font-size="10.5" font-weight="700" text-anchor="middle">
+        <rect x="24" y="62" width="112" height="44" rx="9" fill="#F8FAFC" stroke="#94A3B8"/><text x="80" y="81" fill="#334155">Usuario</text><text x="80" y="95" fill="#334155">no experto</text>
+        <rect x="188" y="62" width="118" height="44" rx="9" fill="#EFF6FF" stroke="#3B82F6"/><text x="247" y="81" fill="#1E40AF">Interfaz de</text><text x="247" y="95" fill="#1E40AF">usuario</text>
+        <rect x="366" y="62" width="122" height="44" rx="9" fill="#F5F3FF" stroke="#8B5CF6"/><text x="427" y="81" fill="#5B21B6">Motor de</text><text x="427" y="95" fill="#5B21B6">inferencia</text>
+        <rect x="548" y="62" width="116" height="44" rx="9" fill="#F0FDFA" stroke="#14B8A6"/><text x="606" y="81" fill="#134E4A">Base de</text><text x="606" y="95" fill="#134E4A">conocimiento</text>
+      </g>
+      <g stroke="#1E3A5F" stroke-width="1.8" fill="none">
+        <line x1="136" y1="78" x2="184" y2="78" marker-end="url(#arrB)"/>
+        <line x1="306" y1="78" x2="362" y2="78" marker-end="url(#arrB)"/>
+        <line x1="488" y1="74" x2="544" y2="74" marker-end="url(#arrB)"/>
+        <line x1="544" y1="94" x2="488" y2="94" marker-end="url(#arrG)"/>
+      </g>
+      <g font-size="8.5" fill="#64748B" text-anchor="middle">
+        <text x="160" y="70">consulta</text><text x="334" y="70">pregunta</text>
+        <text x="516" y="66">consulta hechos</text><text x="516" y="108">devuelve reglas</text>
+        <text x="427" y="122" font-weight="800" fill="#5B21B6">lógica si/entonces &middot; booleana &middot; difusa (fuzzy)</text>
+        <text x="427" y="134">encadenamiento hacia adelante o hacia atrás</text>
+        <text x="606" y="128" font-weight="700" fill="#134E4A">hechos y reglas</text>
+        <text x="606" y="140">del ingeniero de conocimiento</text>
+        <text x="247" y="122" font-weight="700" fill="#1E40AF">consejo / asesoramiento</text>
+        <text x="247" y="134">hacia el usuario</text>
+      </g>
+      <text x="24" y="20" font-size="9" font-weight="800" letter-spacing="1.5" fill="#64748B">COMPONENTES DE UN SISTEMA EXPERTO (según el diagrama del libro)</text>
+      <text x="24" y="158" font-size="8.5" fill="#94A3B8">El experto humano alimenta la base de conocimiento a través del ingeniero de conocimiento; el motor de inferencia razona sobre ella.</text>
+    </svg>
+    <div class="svg-cap">Figura 2 &middot; Cómo funciona un sistema experto: la «experiencia» vive en la base de conocimiento y se aplica con reglas lógicas.</div>
+  </div>
+<!-- ═══════════════ 3.6B · MACHINE LEARNING ═══════════════ -->
+<div class="new-page"></div>
+<div class="section-head">
+  <div class="section-kicker">3.6B &middot; Types and uses of machine learning</div>
+  <div class="section-title">Machine learning: cómo aprende una máquina</div>
+  <div class="divider"></div>
+</div>
+
+<p class="body-text">¿En qué se diferencia el <b>machine learning</b> <span class="en-term">(aprendizaje automático)</span> de la IA, las redes neuronales y el deep learning? El libro los ordena como <b>muñecas rusas</b>: la IA contiene al machine learning; este usa <b>redes neuronales</b>; y las redes neuronales son la <b>columna vertebral del deep learning</b>. Los <b>elementos clave</b> del machine learning según el libro son cuatro:</p>
+
+<div class="cs-grid">
+  <div class="cs-card cs-1"><div class="cs-name">1 &middot; Datos de entrenamiento</div><p>Necesita un buen conjunto de datos, llamados <b>datos de entrenamiento</b> <span class="en-term">(training data)</span>.</p></div>
+  <div class="cs-card cs-2"><div class="cs-name">2 &middot; Algoritmo</div><p>Usa algoritmos —basados en un <b>modelo informático</b>— para examinar los datos y comprenderlos.</p></div>
+  <div class="cs-card cs-3"><div class="cs-name">3 &middot; Predicción</div><p>Los datos se introducen en el algoritmo para <b>hacer una predicción</b>.</p></div>
+  <div class="cs-card cs-4"><div class="cs-name">4 &middot; Evaluación y retorno</div><p>La predicción se <b>evalúa</b>; si es inexacta, esos datos se <b>retroalimentan</b> al sistema para actualizar el modelo o algoritmo.</p></div>
+</div>
+
+<div class="svg-wrap">
+  <svg viewBox="0 0 680 132" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="cyc" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 Z" fill="#1E3A5F"/></marker>
+      <marker id="cycB" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 Z" fill="#F59E0B"/></marker>
+    </defs>
+    <g font-size="10.5" font-weight="700" text-anchor="middle">
+      <rect x="20" y="40" width="140" height="52" rx="9" fill="#EFF6FF" stroke="#3B82F6"/><text x="90" y="62" fill="#1E40AF">Datos de</text><text x="90" y="76" fill="#1E40AF">entrenamiento</text>
+      <rect x="200" y="40" width="140" height="52" rx="9" fill="#F5F3FF" stroke="#8B5CF6"/><text x="270" y="62" fill="#5B21B6">Entrenar el</text><text x="270" y="76" fill="#5B21B6">algoritmo</text>
+      <rect x="380" y="40" width="130" height="52" rx="9" fill="#F0FDFA" stroke="#14B8A6"/><text x="445" y="62" fill="#134E4A">Evaluar la</text><text x="445" y="76" fill="#134E4A">predicción</text>
+      <rect x="550" y="40" width="110" height="52" rx="9" fill="#FFF7ED" stroke="#F59E0B"/><text x="605" y="62" fill="#92400E">Predicción</text><text x="605" y="76" fill="#92400E">con nuevos datos</text>
+    </g>
+    <g stroke="#1E3A5F" stroke-width="1.8" fill="none">
+      <line x1="160" y1="66" x2="196" y2="66" marker-end="url(#cyc)"/>
+      <line x1="340" y1="66" x2="376" y2="66" marker-end="url(#cyc)"/>
+      <line x1="510" y1="66" x2="546" y2="66" marker-end="url(#cyc)"/>
+    </g>
+    <path d="M 605 96 L 605 116 L 270 116 L 270 96" stroke="#F59E0B" stroke-width="1.8" fill="none" stroke-dasharray="5 3" marker-end="url(#cycB)"/>
+    <text x="438" y="112" font-size="9" font-weight="800" fill="#92400E" text-anchor="middle">si es inexacta, se retroalimenta y se actualiza el modelo</text>
+    <text x="20" y="20" font-size="9" font-weight="800" letter-spacing="1.5" fill="#64748B">¿CÓMO FUNCIONA EL MACHINE LEARNING? (según el diagrama del libro)</text>
+  </svg>
+  <div class="svg-cap">Figura 3 &middot; El ciclo del machine learning: entrenar &rarr; predecir &rarr; evaluar &rarr; retroalimentar. ¿Reconoces el vínculo con el ciclo de vida de los datos (3.1)?</div>
+</div>
+
+<div class="new-page"></div>
+
+<div class="section-head">
+  <div class="section-kicker">3.6B &middot; Types of machine learning</div>
+  <div class="section-title">Los cuatro tipos de aprendizaje</div>
+  <div class="divider"></div>
+</div>
+
+<table class="exam tall">
+  <tr><th style="width:15%">Tipo</th><th style="width:29%">¿Cómo aprende?</th><th style="width:22%">Algoritmos clave</th><th style="width:34%">Aplicaciones (del libro)</th></tr>
+  <tr>
+    <td><b>Supervisado</b> <span class="en-term">supervised</span></td>
+    <td>El <b>más simple</b>: aprende <b>por ejemplo</b>. Los datos de entrenamiento son <b>entradas emparejadas con salidas correctas</b> (etiquetadas). Busca patrones que se correlacionan con la salida deseada; luego etiqueta entradas nuevas que nunca ha visto. «Supervisado» porque se entrena <b>con salidas conocidas</b>.</td>
+    <td><b>Clasificación</b>: asigna una categoría según el entrenamiento. <b>Regresión</b>: predice a partir de la relación entre variables (ventas, notas).</td>
+    <td>Filtros <b>antispam</b>, detección de <b>fraude</b>, reconocimiento de <b>escritura a mano</b>. Caso: el buscador de Google.</td>
+  </tr>
+  <tr>
+    <td><b>No supervisado</b> <span class="en-term">unsupervised</span></td>
+    <td>Encuentra <b>patrones subyacentes</b> en datos <b>sin etiquetas</b>: usa las características de los datos para descubrir <b>patrones ocultos que un humano no percibiría</b>.</td>
+    <td><b>Análisis de clústeres</b> <span class="en-term">cluster analysis</span>: agrupa los datos.</td>
+    <td>Análisis de <b>redes sociales</b>, <b>segmentación de mercados</b>.</td>
+  </tr>
+  <tr>
+    <td><b>Por refuerzo</b> <span class="en-term">reinforced</span></td>
+    <td>Se basa en <b>recompensar el comportamiento positivo</b>: recompensa si actúa bien, <b>penaliza</b> si falla. El <b>agente de software</b> decide para <b>maximizar su recompensa</b> y sigue adaptándose al entorno. Requiere <b>muchos datos</b>.</td>
+    <td>Agente + entorno + recompensa <span class="en-term">reward</span>.</td>
+    <td><b>Vehículos autónomos</b>, mantenimiento predictivo, <b>juegos</b>, robótica.</td>
+  </tr>
+  <tr>
+    <td><b>Deep learning</b></td>
+    <td>ML para <b>problemas más complejos</b>: no exige datos estructurados y usa <b>redes neuronales artificiales</b>. Una red de <b>más de tres capas</b> ya se considera deep learning.</td>
+    <td>Redes neuronales profundas (ver 3.6C).</td>
+    <td>Reconocimiento <b>facial</b> y de imágenes, <b>PLN</b>, reconocimiento de <b>voz</b>.</td>
+  </tr>
+</table>
+
+<div class="ml-grid">
+  <div class="ml-panel" style="border-top:3px solid var(--u1)">
+    <h4 style="color:var(--u1-tx)">Supervisado</h4>
+    <div class="ml-en">supervised learning &middot; «aprende con etiquetas»</div>
+    <svg viewBox="0 0 200 118" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="38" cy="42" r="9" fill="#3B82F6"/><circle cx="60" cy="30" r="9" fill="#3B82F6"/>
+      <circle cx="52" cy="62" r="9" fill="#3B82F6"/><circle cx="76" cy="50" r="9" fill="#3B82F6"/>
+      <circle cx="128" cy="66" r="9" fill="#F59E0B"/><circle cx="150" cy="52" r="9" fill="#F59E0B"/>
+      <circle cx="144" cy="86" r="9" fill="#F59E0B"/><circle cx="166" cy="74" r="9" fill="#F59E0B"/>
+      <line x1="88" y1="8" x2="102" y2="110" stroke="#1E3A5F" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="14" y="108" font-size="9" font-weight="800" fill="#1E40AF">manzana</text>
+      <text x="118" y="108" font-size="9" font-weight="800" fill="#92400E">naranja</text>
+      <text x="100" y="14" font-size="8" fill="#64748B" text-anchor="middle">frontera aprendida</text>
+    </svg>
+    <p>Cada ejemplo trae su <b>etiqueta correcta</b> («esto es una manzana»); el algoritmo ajusta la frontera entre categorías hasta clasificar bien los nuevos.</p>
+    <p class="ml-app"><b>En el libro:</b> antispam, fraude, escritura a mano.</p>
+  </div>
+  <div class="ml-panel" style="border-top:3px solid var(--u2)">
+    <h4 style="color:var(--u2-tx)">No supervisado</h4>
+    <div class="ml-en">unsupervised learning &middot; «descubre grupos»</div>
+    <svg viewBox="0 0 200 118" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="52" cy="45" rx="34" ry="26" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="5 3"/>
+      <ellipse cx="146" cy="40" rx="30" ry="24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="5 3"/>
+      <ellipse cx="102" cy="92" rx="30" ry="19" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="5 3"/>
+      <circle cx="42" cy="38" r="5.5" fill="#8B5CF6"/><circle cx="58" cy="52" r="5.5" fill="#8B5CF6"/><circle cx="66" cy="34" r="5.5" fill="#8B5CF6"/><circle cx="40" cy="56" r="5.5" fill="#8B5CF6"/>
+      <circle cx="140" cy="34" r="5.5" fill="#8B5CF6"/><circle cx="156" cy="48" r="5.5" fill="#8B5CF6"/><circle cx="150" cy="28" r="5.5" fill="#8B5CF6"/>
+      <circle cx="94" cy="88" r="5.5" fill="#8B5CF6"/><circle cx="112" cy="96" r="5.5" fill="#8B5CF6"/><circle cx="104" cy="78" r="5.5" fill="#8B5CF6"/>
+      <text x="52" y="16" font-size="8.5" font-weight="700" fill="#5B21B6" text-anchor="middle">clúster A</text>
+      <text x="146" y="12" font-size="8.5" font-weight="700" fill="#5B21B6" text-anchor="middle">clúster B</text>
+      <text x="102" y="115" font-size="8.5" font-weight="700" fill="#5B21B6" text-anchor="middle">clúster C</text>
+    </svg>
+    <p>Sin etiquetas: el algoritmo <b>agrupa</b> por similitud y revela patrones que <b>un humano no ve</b>.</p>
+    <p class="ml-app"><b>En el libro:</b> redes sociales, segmentación de mercado.</p>
+  </div>
+  <div class="ml-panel" style="border-top:3px solid var(--u3)">
+    <h4 style="color:var(--u3-tx)">Por refuerzo</h4>
+    <div class="ml-en">reinforced learning &middot; «prueba, error y recompensa»</div>
+    <svg viewBox="0 0 200 118" xmlns="http://www.w3.org/2000/svg">
+      <defs><marker id="rf1" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto"><path d="M0,0 L6,3.5 L0,7 Z" fill="#14B8A6"/></marker></defs>
+      <rect x="16" y="42" width="58" height="34" rx="8" fill="#F0FDFA" stroke="#14B8A6"/><text x="45" y="62" font-size="9.5" font-weight="800" fill="#134E4A" text-anchor="middle">Agente</text>
+      <rect x="126" y="42" width="58" height="34" rx="8" fill="#EDF2F9" stroke="#1E3A5F"/><text x="155" y="62" font-size="9.5" font-weight="800" fill="#1E3A5F" text-anchor="middle">Entorno</text>
+      <path d="M 78 52 L 122 52" stroke="#14B8A6" stroke-width="1.8" fill="none" marker-end="url(#rf1)"/>
+      <path d="M 122 68 L 78 68" stroke="#14B8A6" stroke-width="1.8" fill="none" marker-end="url(#rf1)"/>
+      <text x="100" y="47" font-size="7.5" fill="#134E4A" text-anchor="middle" font-weight="700">acción</text>
+      <text x="100" y="80" font-size="7.5" fill="#134E4A" text-anchor="middle" font-weight="700">estado</text>
+      <text x="155" y="30" font-size="9" font-weight="800" fill="#15803D" text-anchor="middle">+ recompensa</text>
+      <text x="155" y="96" font-size="9" font-weight="800" fill="#B91C1C" text-anchor="middle">− penalización</text>
+      <text x="45" y="96" font-size="8" fill="#64748B" text-anchor="middle">maximiza su</text>
+      <text x="45" y="106" font-size="8" fill="#64748B" text-anchor="middle">recompensa</text>
+    </svg>
+    <p>El agente <b>actúa en un entorno</b>: gana recompensa si acierta y penalización si falla; se <b>adapta</b> hasta dominar la tarea. Necesita <b>muchos datos</b>.</p>
+    <p class="ml-app"><b>En el libro:</b> vehículos autónomos, juegos, robótica.</p>
+  </div>
+</div>
+<div class="svg-cap" style="margin:-2px 0 8px">Figura 4 &middot; Ejemplos visuales de los tipos de aprendizaje del machine learning, con las aplicaciones citadas por el libro. El <b>deep learning</b> no es un cuarto método de entrenamiento sino la escala: redes de <b>más de 3 capas</b> para problemas complejos (ver 3.6C).</div>
+
+<div class="tcard">
+  <div class="tcard-head"><span class="tcard-num">CASO DEL LIBRO</span><span class="tcard-title">Google y la desinformación (aprendizaje supervisado)</span></div>
+  <div class="trow"><div class="tlabel case">Caso</div><div class="tbody">En junio de <b>2020</b>, el gobierno del Reino Unido publicó un informe sobre la lucha contra la <b>desinformación en línea</b>: muchas plataformas usan <b>algoritmos de caja negra</b> para decidir qué contenido muestra. La investigación concluyó que <b>Google usa aprendizaje supervisado</b>: <b>evaluadores humanos</b> crean buenos conjuntos de entrenamiento calificando la <b>calidad, reputación y utilidad</b> de las páginas; incluso califican sitios y rankings a mano para influir en el algoritmo. Dato: Google modificó su algoritmo <b>3200 veces en 2018</b>.</div></div>
+  <div class="trow"><div class="tlabel warn">Dilema</div><div class="tbody">Si los evaluadores humanos «guían» al algoritmo, ¿dónde queda la <b>transparencia</b> de la caja negra (3.6E)? ¿Quién vigila el sesgo de los evaluadores?</div></div>
+</div>
+
+<div class="new-page"></div>
+
+<div class="section-head">
+  <div class="section-kicker">3.6B &middot; Uses of machine learning</div>
+  <div class="section-title">Usos del machine learning: cinco tecnologías</div>
+  <div class="divider"></div>
+</div>
+
+<p class="body-text">El libro detalla cinco familias de uso del machine learning. Para cada una: qué es, cómo funciona y sus <b>oportunidades, impactos y dilemas</b>.</p>
+
+<div class="tcard">
+  <div class="tcard-head"><span class="tcard-num">TECNOLOGÍA 2</span><span class="tcard-title">Reconocimiento de patrones</span><span class="tcard-en">pattern recognition</span></div>
+  <div class="trow"><div class="tlabel">Definición</div><div class="tbody">Usa algoritmos de ML para <b>reconocer patrones</b>: tanto <b>patrones físicos observables</b> como <b>matemáticos</b>. Se usa para muchos propósitos distintos.</div></div>
+  <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody"><b>Analítica de datos</b> (data analytics): <b>pronóstico bursátil</b> (analiza los cambios de valores de la bolsa para predecir) e <b>investigación de audiencias</b> como <b>Google Analytics</b>, que analiza datos de usuarios para <b>segmentar mercados</b>.</div></div>
+  <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Las pymes pueden <b>prever ventas</b> sin contratar expertos; los gobiernos pueden analizar datos de salud — pero las predicciones financieras automatizadas pueden amplificar errores en cascada.</div></div>
+  <div class="trow"><div class="tlabel warn">Dilema</div><div class="tbody">Predecir el mercado con patrones del pasado: ¿y si el patrón <b>sesga</b> contra escenarios o poblaciones que no estaban en los datos?</div></div>
+</div>
+
+<div class="tcard">
+  <div class="tcard-head"><span class="tcard-num">TECNOLOGÍA 3</span><span class="tcard-title">Procesamiento de lenguaje natural</span><span class="tcard-en">natural language processing (NLP)</span></div>
+  <div class="trow"><div class="tlabel">Definición</div><div class="tbody">Usa ML para <b>enseñar a un ordenador a entender el lenguaje humano</b>. Tiene múltiples usos hoy:</div></div>
+  <div class="trow"><div class="tlabel fun">Funciona</div><div class="tbody"><ul>
+    <li><b>Análisis de texto:</b> convierte datos no estructurados en estructurados (analizar encuestas o notas de llamadas de clientes).</li>
+    <li><b>Detección de plagio:</b> compara el texto con fuentes web, p. ej. <b>Turnitin</b>.</li>
+    <li><b>Generación de texto</b> para <b>chatbots</b> de servicio al cliente en sitios web.</li>
+    <li><b>Traducción de texto:</b> análisis de texto + sustitución de palabras + análisis de sentimiento, p. ej. <b>Google Translate</b>.</li>
+    <li><b>Corrección de texto:</b> apps de gramática como <b>Grammarly</b>.</li>
+  </ul></div></div>
+  <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Comunicación entre idiomas, atención al cliente 24/7, apoyo educativo inmediato. Es la tecnología detrás de los <b>tutores conversacionales</b> y los asistentes de escritura.</div></div>
+  <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Cambia profesiones completas (traductores, redactores, atención al cliente) y <b>cómo producimos conocimiento</b> (pregunta TOK del libro: ¿deberíamos redefinir nuestro concepto humano de conocimiento por los avances de la IA?).</div></div>
+  <div class="trow"><div class="tlabel warn">Dilema</div><div class="tbody">Un chatbot «entiende» de verdad o <b>simula</b> entender? El test de Turing solo comprueba la apariencia del lenguaje.</div></div>
+</div>
+
+<div class="tcard">
+  <div class="tcard-head"><span class="tcard-num">TECNOLOGÍA 4</span><span class="tcard-title">Reconocimiento de imágenes y facial</span><span class="tcard-en">image &amp; facial recognition</span></div>
+  <div class="trow"><div class="tlabel">Definición</div><div class="tbody">Se usa para <b>entender qué hay en una imagen</b>, describirla y hacerla <b>más buscable</b>. Dos usos según el libro:</div></div>
+  <div class="trow"><div class="tlabel fun">Funciona</div><div class="tbody"><b>Búsqueda de imágenes:</b> Google combina reconocimiento de patrones y <b>metadatos</b>. <b>Reconocimiento facial:</b> identifica a una persona a partir de su <b>faceprint</b> (plantilla única de su rostro), para <b>desbloquear el teléfono</b> o <b>encontrar a alguien en una multitud</b>.</div></div>
+  <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Seguridad y comodidad (desbloqueo biométrico), organización de millones de fotos, búsqueda visual. Base del <b>acceso facial a habitaciones y ascensores</b> del hotel FlyZoo (3.6E).</div></div>
+  <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">El libro (TOK) advierte: los sistemas de IA que <b>pretenden determinar la conducta de una persona mediante reconocimiento facial</b> pueden llevar a la <b>discriminación</b>. También aparece en vigilancia con cámaras CCTV 24/7.</div></div>
+  <div class="trow"><div class="tlabel warn">Dilema</div><div class="tbody"><b>Sesgo y privacidad:</b> ¿quién consiente que tu rostro sea «dato de entrenamiento»? ¿Qué pasa si el sistema falla más con ciertas pieles (caso Twitter, 3.6E)?</div></div>
+</div>
+
+<div class="tcard">
+  <div class="tcard-head"><span class="tcard-num">TECNOLOGÍA 5</span><span class="tcard-title">Reconocimiento de voz y sonido</span><span class="tcard-en">voice &amp; sound recognition</span></div>
+  <div class="trow"><div class="tlabel">Definición</div><div class="tbody">Analiza <b>patrones de sonido</b> que se convierten en texto y se aplican al <b>PLN</b>.</div></div>
+  <div class="trow"><div class="tlabel fun">Funciona</div><div class="tbody"><b>Asistentes de IA</b> (Siri, Alexa): el usuario interactúa con <b>comandos de voz</b>. <b>Voz a texto y texto a voz:</b> convertir palabras habladas en texto en pantalla y viceversa; ejemplo del libro: <b>subtítulos automáticos</b> en sitios de video como <b>YouTube</b>.</div></div>
+  <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody"><b>Accesibilidad</b> (personas con discapacidad visual o motriz), manos libres al conducir, subtitulado instantáneo y traducción hablada.</div></div>
+  <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Los asistentes escuchan de forma permanente: el <b>dato de voz es dato personal</b>; los hogares conectados dependen de empresas privadas para interactuar.</div></div>
+  <div class="trow"><div class="tlabel warn">Dilema</div><div class="tbody">¿<b>Escuchar implica grabar?</b> La frontera entre comodidad y vigilancia doméstica.</div></div>
+</div>
+
+<div class="tcard">
+  <div class="tcard-head"><span class="tcard-num">TECNOLOGÍA 6</span><span class="tcard-title">Análisis de sentimiento</span><span class="tcard-en">sentiment analysis</span></div>
+  <div class="trow"><div class="tlabel">Definición</div><div class="tbody">Interpreta el <b>estado de ánimo o la intención</b> de una persona usando reconocimiento de patrones. Común en <b>investigación de audiencias</b> y plataformas de <b>gestión de relaciones con clientes</b> (CRM).</div></div>
+  <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody">Las empresas entienden <b>en tiempo real</b> la respuesta de los clientes a un producto o servicio y ajustan campañas al instante.</div></div>
+  <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Las decisiones de marketing se basan en <b>publicaciones y comentarios de consumidores</b> en redes sociales: tu opinión pública se convierte en dato comercial.</div></div>
+  <div class="trow"><div class="tlabel warn">Dilema</div><div class="tbody">¿Puede un algoritmo <b>leer emociones</b> de verdad? El sarcasmo, el contexto cultural y los sesgos del idioma pueden distorsionar la lectura del «sentimiento».</div></div>
+  <div class="trow"><div class="tlabel case">Caso</div><div class="tbody"><b>KFC</b> usó análisis de sentimiento para <b>monitorear su marca</b> y gestionar su reputación: revisó el éxito de su campaña publicitaria (con <b>RoboCop</b> en los anuncios) a partir de las reacciones de los consumidores en redes sociales y tomó decisiones basadas en esas perspectivas.</div></div>
+</div>
+<!-- ═══════════════ 3.6C · REDES NEURONALES ═══════════════ -->
+<div class="new-page"></div>
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">3.6C &middot; Uses of artificial neural networks</div>
+    <div class="section-title">Redes neuronales artificiales</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Las <b>redes neuronales</b> <span class="en-term">(neural networks)</span> son <b>sistemas con nodos interconectados que funcionan de manera similar a las neuronas del cerebro humano</b>. Los nodos se <b>activan cuando hay suficiente entrada</b>, que a su vez alimenta a la siguiente serie de nodos — según cuántas capas haya — hasta producir una salida. Las conexiones entre estas neuronas artificiales actúan como las <b>sinapsis reales</b>: las señales pasan de una capa oculta a otra, <b>procesándose a medida que viajan</b> desde la primera capa de entrada hasta la última de salida. Cuando reciben un estímulo, las neuronas hacen <b>cálculos matemáticos</b> para decidir si hay información suficiente para pasarla adelante: los datos de entrada <b>se suman</b> y, si la suma <b>supera un valor umbral</b> <span class="en-term">(threshold)</span>, la neurona <b>«se dispara»</b> <span class="en-term">(fires)</span> y activa a las neuronas conectadas.</p>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 680 236" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#C9D7E8" stroke-width="1">
+        <!-- entrada -> oculta -->
+        <line x1="70" y1="45" x2="340" y2="30"/><line x1="70" y1="45" x2="340" y2="80"/><line x1="70" y1="45" x2="340" y2="130"/><line x1="70" y1="45" x2="340" y2="180"/>
+        <line x1="70" y1="105" x2="340" y2="30"/><line x1="70" y1="105" x2="340" y2="80"/><line x1="70" y1="105" x2="340" y2="130"/><line x1="70" y1="105" x2="340" y2="180"/>
+        <line x1="70" y1="165" x2="340" y2="30"/><line x1="70" y1="165" x2="340" y2="80"/><line x1="70" y1="165" x2="340" y2="130"/><line x1="70" y1="165" x2="340" y2="180"/>
+        <!-- oculta -> salida -->
+        <line x1="340" y1="30" x2="610" y2="75"/><line x1="340" y1="30" x2="610" y2="135"/>
+        <line x1="340" y1="80" x2="610" y2="75"/><line x1="340" y1="80" x2="610" y2="135"/>
+        <line x1="340" y1="130" x2="610" y2="75"/><line x1="340" y1="130" x2="610" y2="135"/>
+        <line x1="340" y1="180" x2="610" y2="75"/><line x1="340" y1="180" x2="610" y2="135"/>
+      </g>
+      <g stroke="#94A3B8" stroke-width="1.6">
+        <line x1="70" y1="45" x2="340" y2="80"/><line x1="70" y1="105" x2="340" y2="130"/>
+        <line x1="340" y1="130" x2="610" y2="135"/><line x1="340" y1="180" x2="610" y2="75"/>
+      </g>
+      <g font-size="10" font-weight="700" text-anchor="middle">
+        <circle cx="70" cy="45" r="15" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/><text x="70" y="49" fill="#1E40AF">x1</text>
+        <circle cx="70" cy="105" r="15" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/><text x="70" y="109" fill="#1E40AF">x2</text>
+        <circle cx="70" cy="165" r="15" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/><text x="70" y="169" fill="#1E40AF">x3</text>
+        <circle cx="340" cy="30" r="15" fill="#F0FDFA" stroke="#14B8A6" stroke-width="2"/><text x="340" y="34" fill="#134E4A">h1</text>
+        <circle cx="340" cy="80" r="15" fill="#F0FDFA" stroke="#14B8A6" stroke-width="2.5"/><text x="340" y="84" fill="#134E4A">h2</text>
+        <circle cx="340" cy="130" r="15" fill="#F0FDFA" stroke="#14B8A6" stroke-width="2"/><text x="340" y="134" fill="#134E4A">h3</text>
+        <circle cx="340" cy="180" r="15" fill="#F0FDFA" stroke="#14B8A6" stroke-width="2"/><text x="340" y="184" fill="#134E4A">h4</text>
+        <circle cx="610" cy="75" r="15" fill="#FFF7ED" stroke="#F59E0B" stroke-width="2"/><text x="610" y="79" fill="#92400E">y1</text>
+        <circle cx="610" cy="135" r="15" fill="#FFF7ED" stroke="#F59E0B" stroke-width="2"/><text x="610" y="139" fill="#92400E">y2</text>
+      </g>
+      <circle cx="340" cy="80" r="21" fill="none" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <g font-size="8.5" fill="#64748B" text-anchor="middle" font-weight="700">
+        <text x="70" y="205">CAPA DE ENTRADA</text>
+        <text x="340" y="225">CAPAS OCULTAS</text>
+        <text x="610" y="180">CAPA DE SALIDA</text>
+      </g>
+      <g font-size="8.3" fill="#475569" text-anchor="middle">
+        <text x="70" y="216">recibe los datos</text>
+        <text x="340" y="36">procesamiento con</text>
+        <text x="340" y="46">conexiones ponderadas</text>
+        <text x="610" y="191">entrega las salidas</text>
+      </g>
+      <text x="20" y="18" font-size="9" font-weight="800" letter-spacing="1.5" fill="#64748B">UNA RED NEURONAL SIMPLE (estilo figura del libro: 3 entradas &rarr; capas ocultas &rarr; 2 salidas)</text>
+    </svg>
+    <div class="svg-cap">Figura 5 &middot; La neurona <b>h2</b> (anillada) suma sus entradas ponderadas (w&middot;x) y, si el resultado supera el <b>umbral</b>, «se dispara» hacia la siguiente capa. Una red de <b>más de 3 capas</b> ya es <b>deep learning</b>.</div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">TECNOLOGÍA 7</span><span class="tcard-title">Redes neuronales artificiales</span><span class="tcard-en">artificial neural networks</span></div>
+    <div class="trow"><div class="tlabel fun">Funciona</div><div class="tbody"><b>Los 6 pasos del libro:</b> <b>1)</b> los datos entran por la <b>capa de entrada</b>, que se comunica con las capas ocultas; <b>2)</b> el procesamiento ocurre en las <b>capas ocultas</b> mediante un sistema de <b>conexiones ponderadas</b>; <b>3)</b> los nodos ocultos combinan los datos con <b>coeficientes</b> y asignan <b>pesos</b> a las entradas; <b>4)</b> los <b>productos entrada&times;peso se suman</b>; <b>5)</b> la suma pasa por la <b>función de activación</b>, que determina hasta qué punto la señal debe avanzar para afectar la salida final; <b>6)</b> las capas ocultas se enlazan a la <b>capa de salida</b>, donde se recuperan las salidas.</div></div>
+    <div class="trow"><div class="tlabel opp">Oportunidades</div><div class="tbody"><b>Las 3 ventajas clave del libro:</b> <b>1)</b> aprenden y modelan relaciones <b>no lineales y complejas</b> (¡la vida real no es lineal!); <b>2)</b> <b>generalizan</b>: infieren relaciones a partir de datos no vistos; <b>3)</b> <b>no imponen restricciones</b> a la variable de entrada. Hoy se usan en <b>procesamiento de imágenes</b> y <b>pronósticos</b>.</div></div>
+    <div class="trow"><div class="tlabel imp">Impactos</div><div class="tbody">Son el motor del <b>deep learning</b> y del auge actual de la IA: diagnóstico de cáncer en RMN, traducción, conducción autónoma. También son el origen del problema de la <b>caja negra</b> (3.6E) y de la <b>huella de carbono</b> del entrenamiento.</div></div>
+    <div class="trow"><div class="tlabel warn">Dilema</div><div class="tbody">Cuanto más profundas son las redes, <b>más difícil explicar sus decisiones</b>: «a diferencia de los programas tradicionales, los desarrolladores no pueden simplemente examinar el código para buscar errores».</div></div>
+    <div class="trow"><div class="tlabel case">Caso</div><div class="tbody"><b>GitHub Codex:</b> usa una <b>gran red neuronal</b> para predecir texto y código informático; aprende de <b>miles de millones de líneas de código</b> almacenadas en GitHub... que <b>no todas están libres de errores</b>.</div></div>
+  </div>
+
+  <div class="new-page"></div>
+
+  <!-- ═══════════ SIMULADOR ═══════════ -->
+  <div class="section-head">
+    <div class="section-kicker">3.6C &middot; Simulador interactivo</div>
+    <div class="section-title">Simulador de red neuronal: mira cómo aprende</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Una red diminuta de <b>2 entradas &rarr; 3 neuronas ocultas &rarr; 1 salida</b> aprende una regla lógica. <b>Componentes que puedes observar:</b> <b>neuronas</b> (círculos), <b>pesos</b> (líneas: azul = positivo, ámbar = negativo; el grosor = magnitud), <b>sesgos</b> (líneas discontinuas), la <b>función de activación</b> (sigmoide, dentro de cada neurona) y la <b>salida</b> &lt;0,5 o &ge;0,5. <b>En el HTML:</b> escoge la tarea, entrena y observa cómo la <b>pérdida</b> baja y las predicciones se corrigen.</p>
+
+  <div class="sim-box">
+    <svg id="nn-svg" viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg"></svg>
+    <div class="svg-cap">Figura 6 &middot; Red 2&ndash;3&ndash;1 en vivo. El valor dentro de cada neurona es su <b>activación</b> (salida de la sigmoide) para la muestra seleccionada.</div>
+  </div>
+
+  <div class="sim-controls only-screen">
+    <span style="font-size:9px;font-weight:800;letter-spacing:1px;color:var(--muted);text-transform:uppercase">Tarea:</span>
+    <button class="sim-chip" data-ds="AND">A Y B (AND)</button>
+    <button class="sim-chip" data-ds="OR">A O B (OR)</button>
+    <button class="sim-chip sel" data-ds="XOR">A XOR B</button>
+    <span style="flex:1"></span>
+    <span class="sim-slider"><span>Tasa de aprendizaje</span><input type="range" id="sim-lr" min="0.2" max="3" step="0.1" value="2"><span id="sim-lr-v">2.0</span></span>
+  </div>
+  <div class="sim-controls only-screen">
+    <button class="sim-btn" id="sim-step">Entrenar 1 época</button>
+    <button class="sim-btn" id="sim-100">Entrenar 100 épocas</button>
+    <button class="sim-btn alt" id="sim-auto">&#9654; Auto-entrenar</button>
+    <button class="sim-btn warn" id="sim-reset">Reiniciar pesos</button>
+    <span style="flex:1"></span>
+    <span style="font-size:9px;font-weight:800;letter-spacing:1px;color:var(--muted);text-transform:uppercase">Muestra:</span>
+    <button class="sim-chip" data-sm="0">0 &middot; 0</button>
+    <button class="sim-chip" data-sm="1">0 &middot; 1</button>
+    <button class="sim-chip" data-sm="2">1 &middot; 0</button>
+    <button class="sim-chip sel" data-sm="3">1 &middot; 1</button>
+  </div>
+
+  <div class="sim-controls">
+    <span class="sim-stat"><span class="n" id="st-epoch">0</span><span class="l">Épocas</span></span>
+    <span class="sim-stat"><span class="n" id="st-loss">—</span><span class="l">Pérdida (MSE)</span></span>
+    <span class="sim-stat"><span class="n" id="st-acc">0/4</span><span class="l">Aciertos</span></span>
+    <span class="only-print" style="font-size:9.8px;color:var(--muted);align-self:center">Estado impreso: red entrenada con XOR durante miles de épocas (versión HTML: tú controlas el entrenamiento).</span>
+  </div>
+
+  <div class="sim-weights">
+    <table id="w1-tb">
+      <tr><th>Peso &rarr;</th><th>x1</th><th>x2</th><th>sesgo</th></tr>
+      <tr><td><b>h1</b></td><td>—</td><td>—</td><td>—</td></tr>
+      <tr><td><b>h2</b></td><td>—</td><td>—</td><td>—</td></tr>
+      <tr><td><b>h3</b></td><td>—</td><td>—</td><td>—</td></tr>
+    </table>
+    <table id="w2-tb">
+      <tr><th>Peso &rarr;</th><th>h1</th><th>h2</th><th>h3</th><th>sesgo</th></tr>
+      <tr><td><b>&ycirc;</b></td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+    </table>
+    <div style="flex:1;min-width:180px">
+      <svg id="loss-svg" viewBox="0 0 340 92" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block"></svg>
+    </div>
+  </div>
+
+  <table class="sim-tb" id="pred-tb">
+    <tr><th>Entradas (x1 &middot; x2)</th><th>Objetivo</th><th>Salida de la red</th><th>¿Correcto?</th></tr>
+    <tr data-r="0"><td>0 &middot; 0</td><td>0</td><td>—</td><td>—</td></tr>
+    <tr data-r="1"><td>0 &middot; 1</td><td>1</td><td>—</td><td>—</td></tr>
+    <tr data-r="2"><td>1 &middot; 0</td><td>1</td><td>—</td><td>—</td></tr>
+    <tr data-r="3"><td>1 &middot; 1</td><td>0</td><td>—</td><td>—</td></tr>
+  </table>
+  <p class="sim-note">Tabla mostrada para la tarea <b>XOR</b> (al cambiar de tarea en el HTML, la tabla se actualiza con los objetivos nuevos).</p>
+
+  <div class="info-card">
+    <h4>Cómo aprende esta red: los 4 pasos del entrenamiento</h4>
+    <p><b>1 &middot; Propagación hacia adelante</b> <span class="en-term">(forward pass)</span>: cada neurona suma sus entradas &times; pesos + sesgo y aplica la <b>función de activación</b> (sigmoide); la señal avanza capa por capa. <b>2 &middot; Medir el error</b>: la <b>pérdida</b> (MSE, error cuadrático medio) compara la salida con el objetivo. <b>3 &middot; Retropropagación</b> <span class="en-term">(backpropagation)</span>: el error viaja <b>hacia atrás</b> por la red y cada peso recibe una «culpa» proporcional a su aporte. <b>4 &middot; Ajuste por descenso de gradiente</b>: cada peso se corrige <b>peso &larr; peso + tasa &times; se&ntilde;al de error</b>; se repite por <b>épocas</b> (vueltas completas a los datos) hasta que las 4 predicciones aciertan.</p>
+    <p class="ic-sub">Vocabulario del libro &harr; del simulador: <b>umbral</b> (threshold) &harr; <b>sesgo</b> (bias); «la neurona se dispara» &harr; activaci&oacute;n &gt; 0,5; <b>conexiones ponderadas</b> &harr; las l&iacute;neas con pesos de la figura.</p>
+  </div>
+
+  <div class="practice">
+    <span class="practice-tag">Preguntas guía del simulador</span>
+    <h4>Experimenta y responde (versión HTML)</h4>
+    <ol class="pq">
+      <li>Entrena <b>AND</b> y luego <b>XOR</b>. ¿Por qué XOR necesita obligatoriamente la capa oculta? <i>(Pista: XOR no se puede separar con una sola línea recta.)</i></li>
+      <li>Baja la <b>tasa de aprendizaje</b> a 0,2 y entrena. ¿Qué le pasa a la velocidad de aprendizaje? Súbela a 3: ¿la pérdida se vuelve inestable?</li>
+      <li>Si tras reiniciar la red «no aprende» (la pérdida se estanca), ¿qué le está pasando? <i>(Mínimo local: reinicia los pesos.)</i></li>
+    </ol>
+    <button class="reveal-btn">Ver pauta</button>
+    <div class="q-a"><b>Pauta:</b> 1) Con solo entradas y salida, la frontera es una línea recta: AND y OR son separables así, pero XOR no (sus casos «1» están en diagonal), por eso la capa oculta crea nuevas dimensiones de decisión. 2) Con tasa baja los pasos de corrección son diminutos: el aprendizaje es lento; con tasa muy alta los pesos «sobresaltan» y la pérdida oscila o se dispara. 3) La red cayó en un <b>mínimo local</b> de la función de pérdida: por eso los prácticos reinician con otros pesos aleatorios — la inicialización importa.</div>
+  </div>
+</div>
+<!-- ═══════════════ 3.6D · EVOLUCIÓN ═══════════════ -->
+<div class="new-page"></div>
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">3.6D &middot; Evolution of AI</div>
+    <div class="section-title">La evolución de la IA: auge, inviernos y veranos</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Aunque la <b>quinta generación de la computación</b> se dice iniciada en <b>2010</b>, las raíces de la IA son mucho más antiguas: entre los años <b>1940 y 1960</b> existía el deseo de unir la funcionalidad de las máquinas y los seres orgánicos. La investigación oficial comenzó en la <b>Conferencia de Dartmouth (1956)</b>, que buscaba unificar los estudios de <b>cibernética, automatización y procesamiento complejo</b> para lograr máquinas que «piensen». Investigadores clave: <b>Norbert Wiener</b> (pionero de la cibernética), <b>John McCarthy</b>, <b>Marvin Minsky</b> y <b>Claude Shannon</b>; en los años 50, <b>Alan Turing</b> fue de los primeros en proponer que las máquinas podrían pensar.</p>
+
+  <div class="info-card">
+    <h4>Cibernética <span class="en-term">(cybernetics)</span></h4>
+    <p>El estudio de la <b>comunicación y el control</b> tanto en los seres vivos como en las máquinas, especialmente los <b>sistemas de control automático</b> como el <b>sistema nervioso humano</b> y los sistemas de comunicación <b>mecánico-eléctricos</b>.</p>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 680 168" xmlns="http://www.w3.org/2000/svg">
+      <rect x="176" y="52" width="53" height="46" fill="#FEE2E2" opacity="0.75"/>
+      <rect x="330" y="52" width="53" height="46" fill="#FEE2E2" opacity="0.75"/>
+      <line x1="30" y1="98" x2="650" y2="98" stroke="#1E3A5F" stroke-width="2"/>
+      <g font-size="8" fill="#94A3B8" text-anchor="middle">
+        <text x="30" y="112">1950</text><text x="118" y="112">1960</text><text x="206" y="112">1970</text><text x="295" y="112">1980</text><text x="383" y="112">1990</text><text x="471" y="112">2000</text><text x="559" y="112">2010</text><text x="647" y="112">2020</text>
+      </g>
+      <g stroke="#CBD5E1" stroke-width="1">
+        <line x1="30" y1="52" x2="30" y2="98"/><line x1="118" y1="52" x2="118" y2="98"/><line x1="206" y1="52" x2="206" y2="98"/><line x1="295" y1="52" x2="295" y2="98"/><line x1="383" y1="52" x2="383" y2="98"/><line x1="471" y1="52" x2="471" y2="98"/><line x1="559" y1="52" x2="559" y2="98"/><line x1="647" y1="52" x2="647" y2="98"/>
+      </g>
+      <g font-size="8.6" font-weight="800" fill="#B91C1C" text-anchor="middle">
+        <text x="203" y="66">Invierno I</text><text x="203" y="76">1974–80</text>
+        <text x="357" y="66">Invierno II</text><text x="357" y="76">fines de los 80</text>
+      </g>
+      <g font-size="8.6" font-weight="800" fill="#15803D" text-anchor="middle">
+        <text x="85" y="66">Primer auge</text><text x="85" y="76">prototipos, 50s–60s</text>
+        <text x="478" y="66">Segundo auge</text><text x="478" y="76">sistemas expertos</text>
+        <text x="600" y="66">Verano: ML</text><text x="600" y="76">y deep learning</text>
+      </g>
+      <g>
+        <circle cx="30" cy="30" r="4" fill="#1E3A5F"/><text x="30" y="22" font-size="8.4" font-weight="700" fill="#1E3A5F" text-anchor="middle">1950 · Test de Turing</text>
+        <circle cx="83" cy="88" r="4" fill="#1E3A5F"/><text x="83" y="134" font-size="8.4" font-weight="700" fill="#1E3A5F" text-anchor="middle">1956 · Dartmouth</text>
+        <circle cx="165" cy="30" r="4" fill="#1E3A5F"/><text x="165" y="22" font-size="8.4" font-weight="700" fill="#1E3A5F" text-anchor="middle">1965 · Dendral</text>
+        <circle cx="418" cy="30" r="4" fill="#1E3A5F"/><text x="418" y="22" font-size="8.4" font-weight="700" fill="#1E3A5F" text-anchor="middle">1997 · Deep Blue &gt; Kasparov</text>
+        <circle cx="500" cy="88" r="4" fill="#1E3A5F"/><text x="500" y="134" font-size="8.4" font-weight="700" fill="#1E3A5F" text-anchor="middle">2006 · deep learning (Toronto)</text>
+        <circle cx="541" cy="30" r="4" fill="#1E3A5F"/><text x="541" y="22" font-size="8.4" font-weight="700" fill="#1E3A5F" text-anchor="middle">2011 · Watson gana Jeopardy</text>
+        <circle cx="594" cy="88" r="4" fill="#1E3A5F"/><text x="594" y="134" font-size="8.4" font-weight="700" fill="#1E3A5F" text-anchor="middle">2016 · AlphaGo &gt; campeón de Go</text>
+        <circle cx="647" cy="30" r="4" fill="#1E3A5F"/><text x="643" y="22" font-size="8.4" font-weight="700" fill="#1E3A5F" text-anchor="middle">2020 · T-NLG</text>
+      </g>
+      <g stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 2">
+        <line x1="30" y1="34" x2="30" y2="52"/><line x1="165" y1="34" x2="165" y2="52"/><line x1="418" y1="34" x2="418" y2="52"/><line x1="541" y1="34" x2="541" y2="52"/><line x1="647" y1="34" x2="647" y2="52"/>
+        <line x1="83" y1="92" x2="83" y2="98"/><line x1="500" y1="92" x2="500" y2="98"/><line x1="594" y1="92" x2="594" y2="98"/>
+      </g>
+      <text x="30" y="158" font-size="8.5" fill="#94A3B8">Las bandas rojas son los <tspan font-weight="700">inviernos de la IA</tspan>: periodos en que la financiaci&oacute;n y el inter&eacute;s por investigar y desarrollar IA se reducen.</text>
+    </svg>
+    <div class="svg-cap">Figura 7 &middot; Línea de tiempo de la IA según el libro: los auge prometen, los inviernos corrigen, los datos y los chips encienden el verano actual.</div>
+  </div>
+
+  <div class="cs-grid">
+    <div class="cs-card cs-4">
+      <div class="cs-name">Invierno I (1974&ndash;1980)</div>
+      <p>Los investigadores habían hecho <b>promesas que no se cumplieron</b>; muchas agencias <b>recortaron la financiación</b>.</p>
+    </div>
+    <div class="cs-card cs-4">
+      <div class="cs-name">Segundo auge (años 80&ndash;90)</div>
+      <p>Los <b>sistemas expertos</b>, capaces de «copiar la toma de decisiones humana», atrajeron financiación de empresas y gobiernos.</p>
+    </div>
+    <div class="cs-card cs-4">
+      <div class="cs-name">Invierno II</div>
+      <p>El <b>mercado de sistemas expertos colapsó</b> y arrastró consigo un segundo invierno de la IA.</p>
+    </div>
+    <div class="cs-card cs-3">
+      <div class="cs-name">Verano actual (2000s&ndash;)</div>
+      <p>Dos factores lo explican: <b>big data</b> (disponibilidad y acceso a masas de datos) y el avance de las <b>tarjetas gráficas y microprocesadores</b> (capacidad de procesamiento).</p>
+    </div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">CONCEPTOS</span><span class="tcard-title">Ciencia ficción, singularidad y multiplicidad</span></div>
+    <div class="trow"><div class="tlabel imp">Ficción</div><div class="tbody">Una de las visiones más violentas de un mundo dominado por la IA: <i>I have no mouth and I must scream</i> de <b>Harlan Ellison (1967)</b>, donde una IA extermina a la humanidad salvo cinco personas. Ellison entendió que una máquina <b>sentiente</b> enfrentaría los mismos horrores que un humano sentiente.</div></div>
+    <div class="trow"><div class="tlabel fun">Singularidad</div><div class="tbody"><b>Vernor Vinge (1993)</b> popularizó el término; <b>Ray Kurzweil</b> (<i>The singularity is near</i>, 2005) predijo que llegaría en <b>2045</b> con una súper IA. Preocupación asociada: que muchos empleos humanos sean reemplazados (fabricación con fábricas de robots).</div></div>
+    <div class="trow"><div class="tlabel opp">Multiplicidad</div><div class="tbody"><b>Ken Goldberg</b>, robotista de la Universidad de California en Berkeley: en lugar de reemplazar todos los empleos, la IA y los robots se desarrollarán para <b>trabar junto a las personas</b>. Él llama a ese futuro <b>multiplicidad</b> <span class="en-term">(multiplicity)</span>.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num">PAPER 2 &middot; FUENTE A</span><span class="tcard-title">«La visión sobre la AGI está sobrevalorada»</span></div>
+    <div class="trow"><div class="tlabel case">Fuente</div><div class="tbody">Artículo adaptado de la BBC (el libro lo usa como fuente de práctica de Paper 2). Al inicio de la década de 2010, <b>DeepMind</b> decía que la <b>AGI</b> se desarrollaría en algún momento: máquinas «igual de inteligentes que los humanos en todo».</div></div>
+    <div class="trow"><div class="tlabel imp">Crítica</div><div class="tbody">Investigadores de IA (anónimos) afirman que esas declaraciones fueron <b>sobrevaloradas (overhyped)</b> y que la sociedad entra en una fase de escepticismo: hay una <b>«sensación general de meseta»</b> y la percepción pública de la IA es cada vez más oscura — «el público cree que la IA es una tecnología siniestra». Anuncian otro posible <b>invierno de la IA</b>.</div></div>
+    <div class="trow"><div class="tlabel opp">Respuesta</div><div class="tbody">DeepMind se mantiene optimista: «<b>solo estamos rascando la superficie</b> de lo que puede ser posible». Lo cierto: las máquinas ya dominan actividades complejas — jugar Go, <b>identificar rostros, plantas y animales</b>, <b>traducir</b> a casi todos los idiomas y <b>conducir coches</b>.</div></div>
+    <div class="trow"><div class="tlabel warn">Pregunta</div><div class="tbody">Pregunta de examen del libro (12 marcas): <i>«Con referencia a las fuentes y a tus conocimientos, discute si los cambios en la IA han sido <b>incrementales o radicales</b>»</i> — practícala con los casos nuevos del final.</div></div>
+  </div>
+</div>
+<!-- ═══════════════ 3.6E · DILEMAS ═══════════════ -->
+<div class="new-page"></div>
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">3.6E &middot; AI dilemmas</div>
+    <div class="section-title">Los dilemas de la IA (y sus oportunidades)</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Primero las <b>oportunidades</b>, tal como las enumera el libro: la IA <b>automatiza el descubrimiento de datos</b> y ciertas tareas informáticas <b>de forma más fiable y sin cansarse</b> (p. ej., detectar transacciones fraudulentas <b>24/7</b> y enviar alertas para intervención humana); <b>añade inteligencia a productos existentes</b> (electrodomésticos, seguridad); al <b>aprender y analizar datos con más profundidad</b> clasifica y predice con más fiabilidad; y el deep learning la hizo tan precisa que la medicina ya la usa para <b>analizar resonancias magnéticas en busca de cáncer</b>. Con los datos adecuados y una IA sofisticada, «se obtienen cada vez más respuestas». Pero su diseño y uso generan <b>seis dilemas globales</b>:</p>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num u1">DILEMA 1</span><span class="tcard-title">Equidad y sesgo</span><span class="tcard-en">fairness and bias</span></div>
+    <div class="trow"><div class="tlabel fun">Causa</div><div class="tbody">La IA <b>aprende de los conjuntos de datos que recibe</b>: cualquier inexactitud de esos datos <b>se refleja en los resultados</b>. Es visible en sistemas diseñados con <b>datos o algoritmos sesgados</b>.</div></div>
+    <div class="trow"><div class="tlabel imp">Responsable</div><div class="tbody">Los diseñadores y desarrolladores deben <b>minimizar el sesgo algorítmico</b> mediante investigación y recopilación de datos que <b>represente a toda la población</b>.</div></div>
+    <div class="trow"><div class="tlabel case">Caso</div><div class="tbody"><b>Twitter (mayo de 2021):</b> un estudio con <b>10&nbsp;000 imágenes</b> halló sesgo en el algoritmo que recorta las fotos: elegía con más fiabilidad <b>rostros de piel clara</b> que de piel oscura. Twitter <b>retiró la herramienta</b> de su app móvil.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num u2">DILEMA 2</span><span class="tcard-title">Rendición de cuentas en el diseño y el uso</span><span class="tcard-en">accountability</span></div>
+    <div class="trow"><div class="tlabel fun">Causa</div><div class="tbody">Los desarrolladores son <b>responsables del diseño, el desarrollo, los resultados y el impacto</b> del sistema. Dos preguntas del libro: <b>1)</b> ¿Cómo cambia la rendición de cuentas si el <b>usuario final</b> tiene más influencia sobre el sistema? <b>2)</b> ¿Cómo cambia si la IA <b>apoya decisiones o decide por sí sola</b>?</div></div>
+    <div class="trow"><div class="tlabel case">Caso 1</div><div class="tbody"><b>Tay (Microsoft):</b> chatbot que imitaba el lenguaje de los <b>millennials de 18 a 24 años</b> y aprendía de las conversaciones. Los usuarios lo <b>provocaron a propósito</b> con temas inapropiados y Tay los repitió: fue <b>retirado tras solo 16 horas</b>. ¿Culpa del usuario que envenenó el aprendizaje o del diseño?</div></div>
+    <div class="trow"><div class="tlabel case">Caso 2</div><div class="tbody"><b>Vehículos autónomos de Uber (San Francisco, 2016):</b> durante las pruebas un vehículo <b>decidió no detenerse en 6 semáforos en rojo</b> (con sensores, mapas en red y un conductor de respaldo). Muestra lo difícil que es determinar <b>quién responde cuando la tecnología falla</b>; Uber lo atribuyó al <b>conductor</b>.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num u3">DILEMA 3</span><span class="tcard-title">Transparencia en el diseño y el uso</span><span class="en-term">transparency &middot; «black box»</span></div>
+    <div class="trow"><div class="tlabel fun">Causa</div><div class="tbody">La IA debe diseñarse para que los humanos <b>entiendan fácilmente su proceso de decisión</b>, vean cómo se forman sus conclusiones y <b>sepan cuándo interactúan con una IA</b>: eso genera confianza. Pero con el deep learning, los desarrolladores quizá <b>no puedan explicar la naturaleza de «caja negra»</b>: no se puede «simplemente examinar el código» para ver el razonamiento. <b>Los 4 problemas del libro:</b> 1) <b>algoritmos inexplicables</b>; 2) <b>falta de visibilidad</b> sobre el origen y la limpieza de los datos de entrenamiento; 3) <b>falta de visibilidad</b> sobre qué aspectos de datos (¡pueden ser petabytes!) se usaron; 4) <b>mala gestión de versiones</b> del modelo.</div></div>
+    <div class="trow"><div class="tlabel case">Caso</div><div class="tbody"><b>Apple Card (noviembre de 2019):</b> el regulador financiero de EE.&nbsp;UU. investigó reclamos de <b>límites de crédito distintos para hombres y mujeres</b>. La causa fue incierta: se especuló con <b>datos sesgados</b> o <b>falta de transparencia</b> del algoritmo.</div></div>
+    <div class="trow"><div class="tlabel warn">Contrapeso</div><div class="tbody">La transparencia también tiene debilidades: si se entiende cómo decide la IA, es <b>más fácil que los hackers la evadan</b> y que los <b>competidores roben los algoritmos</b>. Tema de debate del libro: ¿debería la IA ser más transparente?</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num u4">DILEMA 4</span><span class="tcard-title">La huella de carbono de la IA</span><span class="tcard-en">carbon footprint</span></div>
+    <div class="trow"><div class="tlabel fun">Causa</div><div class="tbody">La Universidad de Massachusetts Amherst estimó que las <b>emisiones de carbono de entrenar una red neuronal equivalen a las de un coche</b>. Factores que influyen: el <b>algoritmo y su tiempo de entrenamiento</b>, la <b>unidad de procesamiento</b>, la <b>eficiencia energética del centro de datos</b> y el <b>tipo de energía</b> que usa.</div></div>
+    <div class="trow"><div class="tlabel opp">Respuesta</div><div class="tbody"><b>CodeCarbon</b>, un proyecto de <b>código abierto</b>, estima la huella de carbono de la computación para ayudar a los científicos de datos a tomar <b>decisiones más ecológicas</b>.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num u1">DILEMA 5</span><span class="tcard-title">Leyes, regulaciones y gobernanza desiguales</span></div>
+    <div class="trow"><div class="tlabel fun">Causa</div><div class="tbody">El <b>ritmo de adopción</b> presiona a las regulaciones: <b>las leyes no alcanzan a la tecnología</b>. El informe de <b>Cognilytica</b> (inicios de 2020) concluyó que muchos países <b>no se apresuran a legislar</b>: esperan a ver cómo se usa la tecnología antes de dictar leyes significativas.</div></div>
+    <div class="trow"><div class="tlabel imp">Datos</div><div class="tbody"><b>Armas autónomas letales (LAWS):</b> al momento del informe solo <b>Bélgica</b> había aprobado legislación y <b>13 países</b> mantenían discusiones. <b>Vehículos autónomos:</b> solo <b>24 países</b> tenían leyes que permitieran operarlos. Las empresas quedan en un <b>dilema</b>: sin leyes, su tecnología puede no ser legal de operar.</div></div>
+    <div class="trow"><div class="tlabel warn">Datos personales</div><div class="tbody">La IA necesita <b>grandes conjuntos de datos de entrenamiento</b> que suelen incluir <b>datos de personas</b> recogidos por sus sistemas: es esencial cumplir las <b>leyes de protección de datos</b>.</div></div>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-head"><span class="tcard-num u2">DILEMA 6</span><span class="tcard-title">Automatización y desplazamiento humano</span><span class="tcard-en">automation &amp; displacement</span></div>
+    <div class="trow"><div class="tlabel">Definición</div><div class="tbody"><b>Automatización:</b> el <b>mayor uso de tecnología en un proceso</b>, lo que <b>reduce la necesidad de intervención humana</b>.</div></div>
+    <div class="trow"><div class="tlabel fun">Cifras</div><div class="tbody">El <b>Foro Económico Mundial</b> (WEF) predijo que la IA podría reemplazar <b>75 millones de empleos para 2025</b> — pero también <b>crear 133 millones</b> (balance neto: <b>+58 millones</b>). En 2020 había <b>2,7 millones de robots industriales</b> en la manufactura (trabajo pesado y de alta precisión); también se perdieron empleos en preparación de alimentos, construcción y conducción.</div></div>
+    <div class="trow"><div class="tlabel imp">Quiénes</div><div class="tbody">Los más vulnerables: personas con <b>calificaciones de nivel bajo</b>. Los más educados deberán <b>adaptarse</b> o asumir roles directivos que exigen <b>juicio humano</b>. Menos afectados: <b>salud, educación, servicios científicos y técnicos</b>; y los empleos que exigen <b>cuidado y comprensión</b> (cuidar personas mayores) seguirán en demanda, sobre todo con poblaciones envejecidas.</div></div>
+    <div class="trow"><div class="tlabel case">Caso</div><div class="tbody"><b>FlyZoo Hotel (Alibaba, Hangzhou):</b> hotel de <b>290 habitaciones</b> «del futuro»: kioscos de <b>autoservicio</b> para el check-in, apps con IA para reservar, <b>reconocimiento facial</b> para entrar a habitaciones y ascensores, <b>asistente de voz</b> en cada cuarto (temperatura, luz, entretenimiento) y <b>robots</b> de room service y conserjería. Objetivo: mejor servicio, <b>menos costos de personal</b> y liberar al staff para un trato más individualizado.</div></div>
+  </div>
+
+  <div class="info-card">
+    <h4>Esquema O-I-D para el examen: cómo organizar cualquier respuesta sobre una tecnología de IA</h4>
+    <p><b>Oportunidades</b> (qué gana la sociedad: automatización 24/7, experiencia donde no hay expertos, accesibilidad, medicina) &rarr; <b>Impactos</b> (cómo cambia la vida de <b>personas y comunidades concretas</b>: pacientes, trabajadores, consumidores) &rarr; <b>Dilemas</b> (qué tensión ética genera: sesgo, cuentas, transparencia, carbono, leyes, empleo). En Paper 1, las preguntas «to what extent» se responden mejor <b>pesando ambos lados</b> con estos marcos y <b>evidencia con cifras</b> del libro.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ MAPA DE DILEMAS ═══════════════ -->
+<div class="map-page">
+  <div class="map-head">
+    <span class="map-kicker k4">Dilemas &middot; 3.6E</span>
+    <div class="map-title">Los 6 dilemas de la IA en un mapa</div>
+    <div class="map-intro">Cada dilema con su evidencia del libro. En el examen, empareja dilema + tecnología (facial, vehículos autónomos, chatbots, LAWS) + stakeholders (pacientes, trabajadores, usuarios).</div>
+  </div>
+
+  <div class="mindmap">
+    <div class="left-branches">
+      <div class="left-branch">
+        <div class="branch-node b-u1">Sesgo <small>datos no representativos</small></div>
+        <div class="children"><div class="leaf">Twitter 2021: 10 000 imágenes</div><div class="leaf">Piel clara vs oscura</div><div class="leaf">Representar a toda la población</div></div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u2">Rendición de cuentas <small>accountability</small></div>
+        <div class="children"><div class="leaf">Tay: retirado en 16 horas</div><div class="leaf">Uber 2016: 6 semáforos</div><div class="leaf">¿Usuario, conductor o diseñador?</div></div>
+      </div>
+      <div class="left-branch">
+        <div class="branch-node b-u3">Transparencia <small>caja negra</small></div>
+        <div class="children"><div class="leaf">Apple Card: límites por género</div><div class="leaf">4 problemas del libro</div><div class="leaf">Riesgo: hackers y copias</div></div>
+      </div>
+    </div>
+
+    <div class="root-node">DILEMAS<br>DE LA IA<small>3.6E</small></div>
+
+    <div class="right-branches">
+      <div class="right-branch">
+        <div class="branch-node b-u4">Huella de carbono <small>entrenar = un coche</small></div>
+        <div class="children"><div class="leaf">U. de Massachusetts Amherst</div><div class="leaf">Factores: GPU, data center</div><div class="leaf">CodeCarbon (open source)</div></div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-navy">Leyes desiguales <small>la ley va detrás</small></div>
+        <div class="children"><div class="leaf">LAWS: solo Bélgica</div><div class="leaf">Vehículos autónomos: 24 países</div><div class="leaf">Protección de datos</div></div>
+      </div>
+      <div class="right-branch">
+        <div class="branch-node b-slate">Empleo <small>automatización</small></div>
+        <div class="children"><div class="leaf">75M reemplazos / 133M nuevos</div><div class="leaf">2,7M robots industriales</div><div class="leaf">FlyZoo: 290 habitaciones</div><div class="leaf">Multiplicidad (Goldberg)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-legend">
+    <span class="lg"><span class="dot" style="background:#3B82F6"></span> Equidad</span>
+    <span class="lg"><span class="dot" style="background:#8B5CF6"></span> Cuentas</span>
+    <span class="lg"><span class="dot" style="background:#14B8A6"></span> Transparencia</span>
+    <span class="lg"><span class="dot" style="background:#F59E0B"></span> Carbono</span>
+    <span class="lg"><span class="dot" style="background:#1E3A5F"></span> Leyes</span>
+    <span class="lg"><span class="dot" style="background:#64748B"></span> Empleo</span>
+    <span class="lg" style="margin-left:auto">Casos: Twitter &middot; Tay &middot; Uber &middot; Apple Card &middot; UMass &middot; Cognilytica &middot; WEF &middot; FlyZoo</span>
+  </div>
+</div>
+<!-- ═══════════════ FICHAS INTERACTIVAS ═══════════════ -->
+<div class="new-page"></div>
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Repaso &middot; Terminología</div>
+    <div class="section-title">Fichas de repaso interactivas</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text"><b>Cómo usarlas:</b> en la <b>versión HTML</b>, haz clic en cada ficha para voltearla y comprobar tu respuesta; en la <b>versión PDF</b>, tapa la definición verde y recítala en voz alta antes de mirar. Los exámenes premian la <b>terminología precisa del libro</b>.</p>
+
+  <div class="qz-part">Bloque 1 &middot; Tipos de IA (3.6A)</div>
+  <div class="fc-grid">
+    <div class="fc"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Inteligencia artificial (IA)</div><div class="fc-hint">clic para voltear</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Agentes, dispositivos o sistemas que <b>se adaptan para realizar tareas</b> (o que parecen hacerlo) que antes requerían los <b>procesos cognitivos y creativos de los seres humanos</b>.</div></div>
+    </div></div>
+    <div class="fc"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">IA débil / estrecha</div><div class="fc-hint">weak / narrow AI</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">IA con una <b>función limitada</b> o que solo puede realizar <b>una tarea específica</b>. Ejemplos: Netflix, ajedrez, búsqueda de Google, Siri, Alexa, vehículos autónomos, reconocimiento facial.</div></div>
+    </div></div>
+    <div class="fc"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">IA específica de dominio</div><div class="fc-hint">domain-specific AI</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">IA que realiza tareas <b>mejor que los humanos en ciertos dominios</b>: detectar cáncer mejor que médicos o <b>AlphaGo</b> venciendo al campeón de Go. No basta para ser IA fuerte.</div></div>
+    </div></div>
+    <div class="fc"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">IA fuerte (AGI)</div><div class="fc-hint">strong / full AI</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">IA capaz de desarrollar <b>conciencia</b> y decidir mejor que los humanos; demostraría <b>autoconciencia y emociones</b> y tendría <b>plenas capacidades cognitivas humanas</b>. También llamada IA general.</div></div>
+    </div></div>
+    <div class="fc"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Súper IA</div><div class="fc-hint">super AI</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">IA que <b>supera la inteligencia humana</b>. Llegado ese punto existen temores, propios de la ciencia ficción, de que las máquinas <b>se subleven contra la humanidad</b>.</div></div>
+    </div></div>
+    <div class="fc"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Singularidad</div><div class="fc-hint">singularity</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Futuro hipotético</b> en que la IA es tan avanzada que es <b>superior a la inteligencia humana</b>; la nanotecnología como tecnología clave. Vinge la popularizó (1993); Kurzweil la prevé para <b>2045</b>.</div></div>
+    </div></div>
+  </div>
+
+  <div class="qz-part">Bloque 2 &middot; Machine learning (3.6B)</div>
+  <div class="fc-grid">
+    <div class="fc f2"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Datos de entrenamiento</div><div class="fc-hint">training data</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">El <b>buen conjunto de datos</b> que necesita todo sistema de machine learning para aprender; el algoritmo examina estos datos, predice, evalúa y <b>retroalimenta</b> el modelo.</div></div>
+    </div></div>
+    <div class="fc f2"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Aprendizaje supervisado</div><div class="fc-hint">supervised learning</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">El <b>más simple</b>: aprende <b>por ejemplo</b>, con entradas <b>emparejadas con salidas correctas</b>. Algoritmos de <b>clasificación</b> y <b>regresión</b>. Usos: antispam, fraude, escritura a mano.</div></div>
+    </div></div>
+    <div class="fc f2"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Aprendizaje no supervisado</div><div class="fc-hint">unsupervised learning</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Encuentra <b>patrones subyacentes</b> en datos <b>sin etiquetas</b> usando sus características; el <b>análisis de clústeres</b> agrupa los datos. Usos: redes sociales, segmentación de mercados.</div></div>
+    </div></div>
+    <div class="fc f2"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Aprendizaje por refuerzo</div><div class="fc-hint">reinforced learning</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Se entrena <b>recompensando el comportamiento correcto</b> y penalizando el incorrecto; el <b>agente</b> decide para <b>maximizar su recompensa</b> y se adapta al entorno. Usos: vehículos autónomos, juegos, robótica.</div></div>
+    </div></div>
+    <div class="fc f2"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Deep learning</div><div class="fc-hint">aprendizaje profundo</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">ML para <b>problemas más complejos</b>: no exige datos estructurados y usa <b>redes neuronales</b>. Una red de <b>más de tres capas</b> ya es deep learning. Usos: facial, imágenes, PLN, voz.</div></div>
+    </div></div>
+    <div class="fc f2"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Automatización</div><div class="fc-hint">automation</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">El <b>mayor uso de tecnología en un proceso</b>, que <b>reduce la necesidad de intervención humana</b>. Puede reemplazar, apoyar o crear empleos (WEF: −75M / +133M).</div></div>
+    </div></div>
+  </div>
+
+  <div class="qz-part">Bloque 3 &middot; Redes neuronales y sistemas expertos (3.6A&ndash;C)</div>
+  <div class="fc-grid">
+    <div class="fc f3"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Red neuronal artificial</div><div class="fc-hint">neural network</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Sistema de <b>nodos interconectados</b> que funciona como las <b>neuronas del cerebro</b>: se activan con suficiente entrada y transmiten señales como <b>sinapsis</b>, de capa en capa, hasta la salida.</div></div>
+    </div></div>
+    <div class="fc f3"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Función de activación</div><div class="fc-hint">activation function</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Recibe la <b>suma de los productos entrada&times;peso</b> y determina <b>hasta qué punto la señal debe seguir avanzando</b> para afectar la salida final. En el simulador: sigmoide.</div></div>
+    </div></div>
+    <div class="fc f3"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Umbral</div><div class="fc-hint">threshold &middot; «disparo»</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Valor que la <b>suma de las entradas</b> de una neurona debe <b>superar para que «se dispare»</b> y active a las neuronas conectadas. Su versión práctica moderna es el <b>sesgo (bias)</b>.</div></div>
+    </div></div>
+    <div class="fc f3"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Sistema experto</div><div class="fc-hint">expert system</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Sistema informático que <b>actúa como un experto humano</b> en un área específica; <b>asesora a no expertos</b> cuando no hay experto disponible. Componentes: base de conocimiento, motor de inferencia e interfaz.</div></div>
+    </div></div>
+    <div class="fc f3"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Base de conocimiento</div><div class="fc-hint">knowledge base</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Los <b>hechos y las reglas</b> de un sistema experto; la crea el <b>ingeniero de conocimiento</b> recopilando la información de expertos humanos.</div></div>
+    </div></div>
+    <div class="fc f3"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Motor de inferencia</div><div class="fc-hint">inference engine</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Parte del sistema experto que <b>interpreta y evalúa</b> los hechos con <b>reglas programadas</b>: lógica <b>si/entonces</b>, booleana y difusa, mediante <b>encadenamiento hacia adelante o hacia atrás</b>.</div></div>
+    </div></div>
+  </div>
+
+  <div class="qz-part">Bloque 4 &middot; Evolución y dilemas (3.6D&ndash;E)</div>
+  <div class="fc-grid">
+    <div class="fc f4"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Test de Turing</div><div class="fc-hint">Turing Test &middot; 1950</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Juego de imitación: un interrogador chatea <b>5 minutos</b> con humanos y un chatbot; si confunde al ordenador con un humano <b>más del 30%</b> del tiempo, la máquina «pasa». Solo prueba el <b>PLN</b>.</div></div>
+    </div></div>
+    <div class="fc f4"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Cibernética</div><div class="fc-hint">cybernetics</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Estudio de la <b>comunicación y el control</b> en seres vivos y máquinas, especialmente <b>sistemas de control automático</b> como el sistema nervioso humano y la comunicación mecánico-eléctrica.</div></div>
+    </div></div>
+    <div class="fc f4"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Invierno de la IA</div><div class="fc-hint">AI winter</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Periodo en que la <b>financiación y el interés</b> por investigar y desarrollar IA <b>se reducen</b>. Invierno I: <b>1974&ndash;1980</b> (promesas incumplidas); Invierno II: tras el colapso del mercado de <b>sistemas expertos</b>.</div></div>
+    </div></div>
+    <div class="fc f4"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Multiplicidad</div><div class="fc-hint">multiplicity &middot; Ken Goldberg</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Futuro en el que la IA y los robots <b>trabajan junto a las personas</b> en lugar de reemplazarlas; lo propone el robotista <b>Ken Goldberg</b> (UC Berkeley) frente al temor al desempleo masivo.</div></div>
+    </div></div>
+    <div class="fc f4"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">Caja negra</div><div class="fc-hint">black box</div></div>
+      <div class="fc-face fc-back"><div class="fc-a">Cuando la IA emite una conclusión (clasificación o regresión) <b>sin que se entienda cómo llegó a ella</b>. Genera 4 problemas de transparencia: algoritmo inexplicable, datos opacos, selección opaca, versiones.</div></div>
+    </div></div>
+    <div class="fc f4"><div class="fc-inner">
+      <div class="fc-face fc-front"><div class="fc-q">LAWS</div><div class="fc-hint">lethal autonomous weapons systems</div></div>
+      <div class="fc-face fc-back"><div class="fc-a"><b>Armas autónomas letales</b>: área con atención regulatoria creciente. Al momento del informe Cognilytica, solo <b>Bélgica</b> tenía legislación y <b>13 países</b> discutían el tema.</div></div>
+    </div></div>
+  </div>
+
+  <div class="new-page"></div>
+
+  <!-- ═══════════════ QUIZ ═══════════════ -->
+  <div class="section-head">
+    <div class="section-kicker">Repaso &middot; Autoevaluación</div>
+    <div class="section-title">Quiz interactivo</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Responde sin mirar tus fichas. En el HTML verás al instante si acertaste; en el PDF, las respuestas aparecen en el recuadro verde de cada pregunta.</p>
+
+  <div class="qz-part">Verdadero o falso <span class="en-term">(clic en tu respuesta)</span></div>
+
+  <div class="vf-row" data-ans="V">
+    <div class="vf-txt">1. El test de Turing solo puede evaluar el procesamiento de lenguaje natural.</div>
+    <div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div>
+  </div>
+  <div class="q-a"><b>Verdadero.</b> El libro lo indica explícitamente: aun así sigue popular porque ofrece una prueba sencilla para una situación compleja.</div>
+
+  <div class="vf-row" data-ans="F">
+    <div class="vf-txt">2. AlphaGo es un ejemplo de IA fuerte (AGI).</div>
+    <div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div>
+  </div>
+  <div class="q-a"><b>Falso.</b> AlphaGo es IA <b>específica de dominio</b>: vence al campeón mundial de Go, pero no demuestra conciencia ni capacidades humanas plenas.</div>
+
+  <div class="vf-row" data-ans="F">
+    <div class="vf-txt">3. El aprendizaje no supervisado usa conjuntos de datos etiquetados.</div>
+    <div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div>
+  </div>
+  <div class="q-a"><b>Falso.</b> Usa datos <b>sin etiquetas</b>: busca patrones ocultos con análisis de clústeres. El etiquetado es propio del aprendizaje <b>supervisado</b>.</div>
+
+  <div class="vf-row" data-ans="F">
+    <div class="vf-txt">4. ELIZA fue el primer chatbot en superar el test de Turing.</div>
+    <div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div>
+  </div>
+  <div class="q-a"><b>Falso.</b> ELIZA (años 60) fue de los primeros chatbots evaluados con el test, pero quien lo superó —con polémica— fue <b>Eugene Goostman</b> (2012), más de 60 años después de la propuesta de Turing.</div>
+
+  <div class="vf-row" data-ans="V">
+    <div class="vf-txt">5. Entrenar una red neuronal puede emitir tanto carbono como un coche.</div>
+    <div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div>
+  </div>
+  <div class="q-a"><b>Verdadero.</b> Estimación de la Universidad de Massachusetts Amherst citada por el libro; de ahí proyectos como <b>CodeCarbon</b>.</div>
+
+  <div class="vf-row" data-ans="V">
+    <div class="vf-txt">6. El WEF prevé que la IA reemplace 75 millones de empleos y cree 133 millones para 2025.</div>
+    <div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div>
+  </div>
+  <div class="q-a"><b>Verdadero.</b> Balance neto positivo: <b>+58 millones</b>. Aun así, los más vulnerables son quienes tienen calificaciones de nivel bajo.</div>
+
+  <div class="vf-row" data-ans="V">
+    <div class="vf-txt">7. El chatbot Tay fue retirado de Twitter tras 16 horas.</div>
+    <div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div>
+  </div>
+  <div class="q-a"><b>Verdadero.</b> Los usuarios lo provocaron deliberadamente y repitió sus comentarios inapropiados: caso clásico de dilema de <b>rendición de cuentas</b>.</div>
+
+  <div class="vf-row" data-ans="F">
+    <div class="vf-txt">8. En las pruebas de Uber (2016), la responsabilidad por saltarse 6 semáforos en rojo se atribuyó al programador.</div>
+    <div class="vf-opts"><button class="vf-btn">V</button><button class="vf-btn">F</button></div>
+  </div>
+  <div class="q-a"><b>Falso.</b> Uber lo atribuyó al <b>conductor</b>. El caso ilustra lo difícil que es determinar quién responde cuando la tecnología falla.</div>
+
+  <div class="qz-part">Opción múltiple</div>
+
+  <div class="mc-q" data-ans="B">
+    <div class="mc-txt">9. ¿Cuál de los siguientes es el mejor ejemplo de <b>IA débil/estrecha</b>?</div>
+    <div class="opts">
+      <button class="mc-opt" data-k="A">Un sistema con conciencia y emociones</button>
+      <button class="mc-opt" data-k="B">El motor de recomendaciones de Netflix</button>
+      <button class="mc-opt" data-k="C">Una máquina que supera a toda la humanidad</button>
+      <button class="mc-opt" data-k="D">AlphaGo venciendo al campeón de Go</button>
+    </div>
+  </div>
+  <div class="q-a"><b>B.</b> Netflix solo hace una tarea (recomendar qué ver). D describe IA específica de dominio; A y C corresponden a IA fuerte y súper IA, que no existen hoy.</div>
+
+  <div class="mc-q" data-ans="C">
+    <div class="mc-txt">10. Una red neuronal de <b>más de tres capas</b> se considera:</div>
+    <div class="opts">
+      <button class="mc-opt" data-k="A">Un sistema experto</button>
+      <button class="mc-opt" data-k="B">Aprendizaje por refuerzo</button>
+      <button class="mc-opt" data-k="C">Un algoritmo de deep learning</button>
+      <button class="mc-opt" data-k="D">Aprendizaje no supervisado</button>
+    </div>
+  </div>
+  <div class="q-a"><b>C.</b> El libro define deep learning así; usa redes neuronales para problemas complejos sin exigir datos estructurados.</div>
+
+  <div class="mc-q" data-ans="A">
+    <div class="mc-txt">11. En el motor de inferencia de un sistema experto, la lógica se aplica con:</div>
+    <div class="opts">
+      <button class="mc-opt" data-k="A">Sentencias si/entonces, lógica booleana y lógica difusa</button>
+      <button class="mc-opt" data-k="B">Clústeres y regresiones</button>
+      <button class="mc-opt" data-k="C">Funciones de activación y sesgos</button>
+      <button class="mc-opt" data-k="D">Recompensas y penalizaciones</button>
+    </div>
+  </div>
+  <div class="q-a"><b>A.</b> Además usa <b>encadenamiento hacia adelante o hacia atrás</b>. C pertenece a las redes neuronales y D al aprendizaje por refuerzo.</div>
+
+  <div class="mc-q" data-ans="D">
+    <div class="mc-txt">12. Según el informe de Cognilytica citado por el libro, sobre las armas autónomas letales (LAWS):</div>
+    <div class="opts">
+      <button class="mc-opt" data-k="A">Ya existen leyes en la mayoría de países</button>
+      <button class="mc-opt" data-k="B">Ningún país ha aprobado legislación</button>
+      <button class="mc-opt" data-k="C">13 países ya las prohíben por ley</button>
+      <button class="mc-opt" data-k="D">Solo Bélgica había aprobado legislación y 13 países discutían</button>
+    </div>
+  </div>
+  <div class="q-a"><b>D.</b> Ejemplo del dilema de <b>leyes y gobernanza desiguales</b>: la tecnología avanza más rápido que la regulación.</div>
+
+  <div class="mc-q" data-ans="B">
+    <div class="mc-txt">13. ¿Quién popularizó el concepto de <b>singularidad</b> y quién predijo su llegada para 2045?</div>
+    <div class="opts">
+      <button class="mc-opt" data-k="A">Turing (1950) y McCarthy (1956)</button>
+      <button class="mc-opt" data-k="B">Vernor Vinge (1993) y Ray Kurzweil (2005)</button>
+      <button class="mc-opt" data-k="C">Wiener y Shannon</button>
+      <button class="mc-opt" data-k="D">Goldberg y Minsky</button>
+    </div>
+  </div>
+  <div class="q-a"><b>B.</b> Vinge popularizó el término en 1993; Kurzweil, en <i>The singularity is near</i> (2005), lo previó para 2045 con súper IA.</div>
+
+  <div class="mc-q" data-ans="C">
+    <div class="mc-txt">14. Dos factores que explican el «verano» actual de la IA son:</div>
+    <div class="opts">
+      <button class="mc-opt" data-k="A">Menos datos y chips más lentos</button>
+      <button class="mc-opt" data-k="B">La nanotecnología y los robots</button>
+      <button class="mc-opt" data-k="C">El big data y el avance de tarjetas gráficas/microprocesadores</button>
+      <button class="mc-opt" data-k="D">Los sistemas expertos y el Loebner Prize</button>
+    </div>
+  </div>
+  <div class="q-a"><b>C.</b> Disponibilidad de masas de datos (big data) + mayor capacidad de procesamiento (GPU y microprocesadores) encendieron el auge del ML y el deep learning.</div>
+</div>
+<!-- ═══════════════ CASOS NUEVOS ═══════════════ -->
+<div class="new-page"></div>
+<div class="main-content">
+  <div class="section-head">
+    <div class="section-kicker">Práctica &middot; Escenarios inéditos</div>
+    <div class="section-title">Casos nuevos para el examen (estilo IB)</div>
+    <div class="divider"></div>
+  </div>
+
+  <p class="body-text">Tres escenarios <b>inéditos</b> creados con el contenido de 3.6, en el estilo del IB: contextos nuevos que aplican <b>exactamente</b> los conceptos del libro. Practícalos con el esquema <b>Oportunidades &rarr; Impactos &rarr; Dilemas</b> y con cifras como evidencia. En el HTML, pulsa «Ver pauta» para corregirte.</p>
+
+  <div class="practice">
+    <span class="practice-tag">Caso nuevo 1 &middot; Estilo Paper 1 (educaci&oacute;n &middot; PLN)</span>
+    <h4>TutorIA: el tutor conversacional del colegio Andino</h4>
+    <p class="pctx">Un colegio privado de Lima implementa <b>TutorIA</b>, un chatbot basado en <b>PLN</b> que ayuda a estudiantes de 14 a 18 años con sus dudas de matemáticas e historia, disponible <b>24/7</b>. El sistema se entrenó con <b>aprendizaje supervisado</b> usando miles de conversaciones reales de clases anteriores —etiquetadas como «respuesta útil» o «no útil»— y con los materiales del colegio. Tras un semestre, la dirección informa que el <b>78%</b> de los estudiantes lo usa semanalmente y que los docentes dedican menos tiempo a repetir explicaciones; sin embargo, tres familias denuncian que el chatbot <b>no explica cómo llega a sus respuestas</b> y que las conversaciones de sus hijos se usan para <b>reentrenar el modelo</b> sin consentimiento explícito.</p>
+    <ol class="pq">
+      <li>Identifica <b>dos tipos de IA</b> presentes en TutorIA. <i>[2 marcas]</i></li>
+      <li>Explica <b>dos oportunidades</b> que TutorIA aporta a la comunidad educativa. <i>[4 marcas]</i></li>
+      <li>Con referencia al caso, explica el dilema de <b>transparencia</b> y el de <b>protección de datos</b>. <i>[6 marcas]</i></li>
+      <li>«Los tutores humanos deberían ser reemplazados por chatbots como TutorIA.» <b>Hasta qué punto</b> estás de acuerdo. <i>[8 marcas]</i></li>
+    </ol>
+    <button class="reveal-btn">Ver pauta</button>
+    <div class="q-a"><b>Pauta:</b> 1) IA débil/estrecha (una tarea: tutoría conversacional) y, dentro de ella, un sistema con <b>PLN</b> entrenado con <b>aprendizaje supervisado</b> (conversaciones etiquetadas). 2) Oportunidades: apoyo <b>24/7</b> sin cansarse (automatización fiable) y <b>personalización</b> —libera a los docentes para tareas de mayor juicio humano (multiplicidad). 3) Transparencia: los usuarios «no pueden ver cómo se formó la respuesta» (caja negra; los 4 problemas del libro aplican: algoritmo inexplicable, datos de entrenamiento opacos). Datos: las conversaciones son <b>datos personales de menores</b> usados para reentrenar sin consentimiento — las leyes de protección de datos deben cumplirse (dilema 5). 4) Respuesta equilibrada: reconocer eficiencia y acceso, pero la IA «solo realiza tareas estrechas» mientras la tutoría exige <b>juicio, cuidado y comprensión</b> (el libro: esos empleos seguirán en demanda); conclusión razonada: reemplazo parcial, no total.</div>
+  </div>
+
+  <div class="practice">
+    <span class="practice-tag">Caso nuevo 2 &middot; Estilo Paper 1 (agricultura &middot; visi&oacute;n por computadora)</span>
+    <h4>AgroSens: visión artificial para la papa andina</h4>
+    <p class="pctx">Una cooperativa de Huancayo adopta <b>AgroSens</b>, una app de <b>reconocimiento de imágenes</b> que detecta el <b>tizón tardío</b> en las hojas de papa a partir de una foto tomada con el celular. El modelo es una <b>red neuronal profunda</b> (deep learning) entrenada con <b>50&nbsp;000 fotos etiquetadas</b> —«sana» o «enferma»— recogidas en Europa y Asia. En campo, la app acierta el <b>92%</b> con variedades comerciales, pero apenas el <b>61%</b> con <b>papas nativas peruanas</b>, cuyo aspecto difiere. Un diagnóstico falso negativo puede arruinar una cosecha entera; un falso positivo obliga a gastar en fungicidas innecesarios. El entrenamiento en la nube también fue cuestionado por su <b>huella de carbono</b>, y el gobierno aún <b>no regula</b> el uso de drones para fotografiar campos ajenos.</p>
+    <ol class="pq">
+      <li>Describe cómo AgroSens usa el <b>aprendizaje supervisado</b> y por qué el deep learning es adecuado aquí. <i>[4 marcas]</i></li>
+      <li>Explica <b>por qué el modelo falla</b> con las papas nativas y nombra el dilema que esto ilustra. <i>[4 marcas]</i></li>
+      <li>Analiza los <b>impactos</b> de AgroSens en <b>dos stakeholders</b> (por ejemplo, pequeños agricultores y agrónomos). <i>[6 marcas]</i></li>
+      <li>Hasta qué punto las tecnologías como AgroSens <b>son un bien para las comunidades rurales</b>. <i>[8 marcas]</i></li>
+    </ol>
+    <button class="reveal-btn">Ver pauta</button>
+    <div class="q-a"><b>Pauta:</b> 1) Supervisado: entradas (fotos) emparejadas con salidas correctas (etiquetas «sana/enferma»); deep learning es adecuado porque las imágenes son <b>datos no estructurados</b> y la red profunda (&gt;3 capas) captura <b>relaciones no lineales</b> complejas (ventaja 1 del libro). 2) Falla porque el <b>conjunto de entrenamiento no representa a toda la población</b> (fotos de Europa/Asia, no de papas nativas peruanas): es exactamente el dilema de <b>sesgo y equidad</b> (caso Twitter: datos no representativos &rarr; resultados sesgados). 3) Agricultores: detección temprana y menos fungicidas (oportunidad), pero riesgo de pérdidas por falsos diagnósticos (¿quién responde?, accountability). Agrónomos: su rol cambia de diagnosticar a validar y corregir al sistema (multiplicidad). 4) Ponderación: seguridad alimentaria y acceso a «experiencia» donde no hay expertos (como los sistemas expertos del libro) vs. sesgo, carbono del entrenamiento y vacíos legales (drones sin regulación).</div>
+  </div>
+
+  <div class="new-page"></div>
+
+  <div class="practice">
+    <span class="practice-tag">Caso nuevo 3 &middot; Estilo Paper 2 (empleo &middot; dos fuentes)</span>
+    <h4>ReclutaPro: el algoritmo que filtra currículos</h4>
+    <p class="pctx">La multinacional retail <b>MegaStore</b> usa <b>ReclutaPro</b> para filtrar los currículos de sus 200&nbsp;000 postulantes anuales. El sistema, entrenado con aprendizaje supervisado sobre <b>contrataciones históricas de la empresa</b>, descarta automáticamente a los candidatos con menor «puntaje de afinidad»; la etapa final sigue siendo humana. Usa las dos fuentes y tus conocimientos de 3.6.</p>
+    <div class="psource">
+      <div class="ps-tag">Fuente A &middot; Comunicado de MegaStore</div>
+      <p>«ReclutaPro redujo el tiempo de preselección en un <b>40%</b> y nos permite evaluar a candidatos que un reclutador humano nunca llegaría a leer. Nuestras auditorías internas confirman que el sistema <b>trata a todos los postulantes con los mismos criterios</b>: es más equitativo que el sesgo humano inconsciente. Por razones de <b>propiedad intelectual</b> y seguridad, los detalles del modelo no pueden hacerse públicos.»</p>
+      <p class="ps-src">Departamento de Recursos Humanos de MegaStore, comunicado de prensa.</p>
+    </div>
+    <div class="psource">
+      <div class="ps-tag">Fuente B &middot; Artículo de investigadoras universitarias</div>
+      <p>«Entrenar con <b>contrataciones históricas</b> significa aprender de <b>decisiones pasadas sesgadas</b>: en nuestra prueba, el sistema penalizaba currículos con <b>periodos de inactividad laboral</b> —frecuentes en quienes ejercen cuidados— y las candidatas rechazadas <b>no reciben explicación alguna</b>. ReclutaPro es una <b>caja negra</b>: ni siquiera MegaStore puede mostrar cómo se calcula el «puntaje de afinidad». Sin transparencia no hay rendición de cuentas.»</p>
+      <p class="ps-src">Equipo de ética algorítmica, Universidad Nacional (artículo de opinión).</p>
+    </div>
+    <ol class="pq">
+      <li><b>a)</b> Identifica <b>dos características</b> del sistema ReclutaPro mencionadas en las fuentes. <i>[2 marcas]</i> &nbsp; <b>b)</b> Explica la diferencia entre el <b>sesgo humano inconsciente</b> (Fuente A) y el <b>sesgo algorítmico</b> (Fuente B). <i>[4 marcas]</i></li>
+      <li><b>c)</b> Compara las <b>afirmaciones y perspectivas</b> de las dos fuentes sobre la equidad y la transparencia del sistema, y los impactos que la IA tendrá sobre los postulantes. <i>[6 marcas]</i></li>
+      <li><b>d)</b> Con referencia a las fuentes y tus conocimientos de 3.6, <b>discute</b> si los sistemas de IA como ReclutaPro deberían estar obligados a ser <b>totalmente transparentes</b>. <i>[12 marcas]</i></li>
+    </ol>
+    <button class="reveal-btn">Ver pauta</button>
+    <div class="q-a"><b>Pauta:</b> a) Aprendizaje supervisado con datos históricos; descarte automático pre-humano / caja negra sin explicaciones. b) El sesgo humano es inconsciente y variable; el algorítmico <b>se aprende de los datos</b> (entrenamiento con decisiones pasadas no representativas) y <b>se replica a escala</b>, de modo que cualquier inexactitud «se refleja en los resultados» (libro, dilema 1). c) Fuente A (empresa): uniformidad = equidad, eficiencia +40%, acceso a más candidatos; pide confidencialidad comercial. Fuente B (académicas): los datos históricos transmiten discriminación (cuidados/inactividad), no hay rendición de cuentas sin transparencia; impacto en postulantes: rechazos sin explicación, exclusión estructural. Ponderar origen, propósito y sesgo de cada fuente. d) Discusión de 12 marcas: usar el dilema 3 del libro — la transparencia genera confianza y permite auditar (Apple Card), pero el propio libro advierte sus riesgos: <b>hackers</b> que evaden el sistema y <b>competidores que roban algoritmos</b> (argumento de la Fuente A); proponer posición con matices (transparencia para reguladores/auditores, no divulgación total), evidencia con casos (Twitter, Apple Card, Tay, Uber) y conclusión razonada.</div>
+  </div>
+
+  <div class="info-card">
+    <h4>Práctica de examen &middot; Preguntas del propio libro (3.6, Paper 1 core)</h4>
+    <p><b>1.</b> Identifica dos tipos de inteligencia artificial. <i>[2 marcas]</i> &nbsp; <b>2.</b> Describe dos usos del machine learning. <i>[4 marcas]</i> &nbsp; <b>3.</b> Distingue entre dos tipos de machine learning. <i>[6 marcas]</i> &nbsp; <b>4.</b> Para un contexto de tu elección, ¿hasta qué punto la IA ha tenido un impacto positivo? <i>[8 marcas]</i></p>
+    <p class="ic-sub">Usa la <b>terminología exacta del libro</b> (débil/estrecha, específica de dominio, AGI, supervisado, no supervisado, refuerzo, deep learning) y sustenta con <b>casos y cifras</b>: AlphaGo, Twitter 2021, Tay 16 horas, Uber 2016, WEF 75M/133M, hotel FlyZoo, UMass/carbono, Bélgica/LAWS, 24 países/vehículos autónomos.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ CIERRE ═══════════════ -->
+<div class="ending">
+  <div class="end-quote">«La IA involucra a agentes, dispositivos o sistemas que se adaptan para realizar tareas que antes requerían los procesos cognitivos y creativos de los seres humanos.»</div>
+  <div class="end-checks">
+    <div class="end-check"><div class="tick">1</div><p><b>Dominas la terminología:</b> IA débil &rarr; dominio &rarr; fuerte (AGI) &rarr; súper IA, singularidad, sistemas expertos, test de Turing y CAPTCHA.</p></div>
+    <div class="end-check"><div class="tick">2</div><p><b>Explicas el machine learning:</b> sus 4 elementos, los 3 tipos de aprendizaje + deep learning, y sus usos: patrones, PLN, imágenes, voz y sentimiento.</p></div>
+    <div class="end-check"><div class="tick">3</div><p><b>Entiendes la red neuronal:</b> capas, pesos, sesgo y función de activación — y viste cómo aprende con el simulador (propagación, pérdida, retropropagación, épocas).</p></div>
+    <div class="end-check"><div class="tick">4</div><p><b>Ubicas la evolución:</b> Dartmouth 1956, inviernos y veranos, Deep Blue &rarr; AlphaGo &rarr; T-NLG, y el debate sobre la AGI.</p></div>
+    <div class="end-check"><div class="tick">5</div><p><b>Argumentas los 6 dilemas</b> con evidencia (sesgo, cuentas, transparencia, carbono, leyes, empleo) y el esquema O-I-D para el examen.</p></div>
+  </div>
+  <div class="end-foot">Sociedad Digital NM &middot; Material de repaso de la sección 3.6 Inteligencia Artificial &middot; Basado en Bomfim et al., <i>Digital Society</i>, Hodder Education 2022, pp. 146&ndash;165 &middot; Las versiones HTML de este material incluyen el simulador de red neuronal, las fichas volteables y el quiz autocorregido.</div>
+</div>
+<script>
+/* ═══ Conectores recursivos para los mapas mentales ═══ */
+function drawLinesForMap(map) {
+  if (!map) return;
+  const cRect = map.getBoundingClientRect();
+  const old = map.querySelector('svg.lines');
+  if (old) old.remove();
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.classList.add('lines');
+  svg.setAttribute('width', cRect.width);
+  svg.setAttribute('height', cRect.height);
+  svg.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:1;';
+  function rel(el) {
+    const r = el.getBoundingClientRect();
+    return { cy: r.top - cRect.top + r.height / 2,
+             left: r.left - cRect.left, right: r.right - cRect.left };
+  }
+  function drawLine(x1, y1, x2, y2, color, width) {
+    const l = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    l.setAttribute('x1', Math.round(x1)); l.setAttribute('y1', Math.round(y1));
+    l.setAttribute('x2', Math.round(x2)); l.setAttribute('y2', Math.round(y2));
+    l.setAttribute('stroke', color); l.setAttribute('stroke-width', width);
+    l.setAttribute('stroke-linecap', 'round');
+    svg.appendChild(l);
+  }
+  const lineStyles = [
+    { color: '#64748B', width: 2.5 },
+    { color: '#94A3B8', width: 2 },
+    { color: '#A8B4C2', width: 1.5 },
+    { color: '#B8C2CC', width: 1.2 },
+    { color: '#CBD5E1', width: 1 }
+  ];
+  function getLineStyle(depth) {
+    const s = lineStyles[Math.min(depth, lineStyles.length - 1)];
+    return { color: s.color, width: s.width };
+  }
+  function connect(parentEl, childEls, dir, depth) {
+    if (!childEls.length) return;
+    const style = getLineStyle(depth);
+    const p = rel(parentEl);
+    const startX = dir === 'left' ? p.left : p.right;
+    const startY = p.cy;
+    if (childEls.length === 1) {
+      const c = rel(childEls[0]);
+      const endX = dir === 'left' ? c.right : c.left;
+      const midY = Math.round((startY + c.cy) / 2);
+      drawLine(startX, midY, endX, midY, style.color, style.width);
+      return;
+    }
+    let closestEdge;
+    if (dir === 'left') closestEdge = Math.max.apply(null, childEls.map(ch => rel(ch).right));
+    else closestEdge = Math.min.apply(null, childEls.map(ch => rel(ch).left));
+    const childClearance = 14;
+    const midpoint = startX + (closestEdge - startX) / 2;
+    const midFromChild = dir === 'left' ? closestEdge + childClearance : closestEdge - childClearance;
+    const midX = dir === 'left' ? Math.min(midpoint, midFromChild) : Math.max(midpoint, midFromChild);
+    drawLine(startX, startY, midX, startY, style.color, style.width);
+    const allCYs = childEls.map(ch => rel(ch).cy);
+    const minY = Math.min.apply(null, [startY].concat(allCYs));
+    const maxY = Math.max.apply(null, [startY].concat(allCYs));
+    drawLine(midX, minY, midX, maxY, style.color, style.width);
+    childEls.forEach(ch => {
+      const c = rel(ch);
+      const endX = dir === 'left' ? c.right : c.left;
+      drawLine(midX, c.cy, endX, c.cy, style.color, style.width);
+    });
+  }
+  const NODE_SEL = '.branch-node, .sub-node, .leaf, .deep-node';
+  function processChildren(parentNodeEl, containerEl, depth, dir) {
+    if (!containerEl) return;
+    const childNodeEls = [];
+    for (const wrapper of containerEl.children) {
+      const nodeEl = wrapper.matches && wrapper.matches(NODE_SEL) ? wrapper : wrapper.querySelector(NODE_SEL);
+      if (nodeEl) childNodeEls.push(nodeEl);
+    }
+    if (!childNodeEls.length) return;
+    connect(parentNodeEl, childNodeEls, dir, depth);
+  }
+  const rootNode = map.querySelector('.root-node');
+  if (!rootNode) return;
+  const leftBranches = map.querySelectorAll('.left-branches > .left-branch');
+  const leftNodes = [];
+  leftBranches.forEach(b => { const n = b.querySelector('.branch-node'); if (n) leftNodes.push(n); });
+  if (leftNodes.length) connect(rootNode, leftNodes, 'left', 0);
+  leftBranches.forEach(b => {
+    const n = b.querySelector('.branch-node');
+    if (n) processChildren(n, b.querySelector(':scope > .children'), 1, 'left');
+  });
+  const rightBranches = map.querySelectorAll('.right-branches > .right-branch');
+  const rightNodes = [];
+  rightBranches.forEach(b => { const n = b.querySelector('.branch-node'); if (n) rightNodes.push(n); });
+  if (rightNodes.length) connect(rootNode, rightNodes, 'right', 0);
+  rightBranches.forEach(b => {
+    const n = b.querySelector('.branch-node');
+    if (n) processChildren(n, b.querySelector(':scope > .children'), 1, 'right');
+  });
+  map.insertBefore(svg, map.firstChild);
+}
+function drawAllMaps() {
+  document.querySelectorAll('.mindmap').forEach(m => drawLinesForMap(m));
+}
+window.addEventListener('load', () => {
+  setTimeout(drawAllMaps, 250);
+  setTimeout(drawAllMaps, 1200);
+});
+
+/* ═══ Interactividad general (solo navegador; el PDF se genera en modo impresión) ═══ */
+document.querySelectorAll('.fc').forEach(function (c) {
+  c.addEventListener('click', function () { c.classList.toggle('flipped'); });
+});
+document.querySelectorAll('.reveal-btn').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var a = b.nextElementSibling;
+    if (!a || !a.classList.contains('q-a')) return;
+    var open = a.classList.toggle('open');
+    b.textContent = open ? 'Ocultar pauta' : 'Ver pauta';
+  });
+});
+document.querySelectorAll('.vf-row').forEach(function (row) {
+  var ans = (row.getAttribute('data-ans') || '').trim().toUpperCase();
+  row.querySelectorAll('.vf-btn').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      row.querySelectorAll('.vf-btn').forEach(function (x) { x.classList.remove('sel'); });
+      btn.classList.add('sel');
+      row.classList.remove('ok', 'bad');
+      void row.offsetWidth;
+      row.classList.add(btn.textContent.trim().toUpperCase() === ans ? 'ok' : 'bad');
+      var a = row.nextElementSibling;
+      if (a && a.classList.contains('q-a')) a.classList.add('open');
+    });
+  });
+});
+document.querySelectorAll('.mc-q').forEach(function (q) {
+  var ans = (q.getAttribute('data-ans') || '').trim().toUpperCase();
+  var opts = q.querySelectorAll('.mc-opt');
+  opts.forEach(function (o) {
+    o.addEventListener('click', function () {
+      opts.forEach(function (x) { x.classList.remove('sel', 'right', 'wrong'); });
+      o.classList.add('sel');
+      opts.forEach(function (x) {
+        var xl = (x.getAttribute('data-k') || '').trim().toUpperCase();
+        if (xl === ans) x.classList.add('right');
+        else if (x === o) x.classList.add('wrong');
+      });
+      var a = q.nextElementSibling;
+      if (a && a.classList.contains('q-a')) a.classList.add('open');
+    });
+  });
+});
+
+/* ═══════════════════════════════════════════════════════════════
+   SIMULADOR DE RED NEURONAL (2 entradas · 3 ocultas · 1 salida)
+   Objetivo didáctico: ver los componentes (neuronas, pesos, sesgos,
+   función de activación) y cómo aprende (propagación, pérdida,
+   retropropagación y ajuste por épocas).
+   ═══════════════════════════════════════════════════════════════ */
+(function () {
+  var PRINT_MODE = window.matchMedia('print').matches;
+  var DATA = {
+    AND: [[0,0,0],[0,1,0],[1,0,0],[1,1,1]],
+    OR:  [[0,0,0],[0,1,1],[1,0,1],[1,1,1]],
+    XOR: [[0,0,0],[0,1,1],[1,0,1],[1,1,0]]
+  };
+  var ds = 'XOR', lr = 2.0, sampleIdx = 3, epoch = 0, loss = null, hist = [], timer = null;
+  var W1 = [[0,0],[0,0],[0,0]], B1 = [0,0,0], V = [0,0,0], B2 = 0;
+
+  function mulberry32(seed) {
+    return function () {
+      seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+      var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function reseed(seed) {
+    var rnd = mulberry32(seed);
+    for (var j = 0; j < 3; j++) {
+      W1[j][0] = (rnd() * 3 - 1.5); W1[j][1] = (rnd() * 3 - 1.5); B1[j] = (rnd() * 1.6 - 0.8);
+      V[j] = (rnd() * 3 - 1.5);
+    }
+    B2 = (rnd() * 1.6 - 0.8);
+  }
+  function sig(z) { return 1 / (1 + Math.exp(-z)); }
+  function forward(x1, x2) {
+    var ah = [], j;
+    for (j = 0; j < 3; j++) ah[j] = sig(W1[j][0] * x1 + W1[j][1] * x2 + B1[j]);
+    var zo = V[0] * ah[0] + V[1] * ah[1] + V[2] * ah[2] + B2;
+    return { ah: ah, y: sig(zo) };
+  }
+  function trainEpoch() {
+    var set = DATA[ds], mse = 0, s, j;
+    for (s = 0; s < 4; s++) {
+      var x1 = set[s][0], x2 = set[s][1], t = set[s][2];
+      var f = forward(x1, x2);
+      var err = f.y - t;
+      mse += err * err;
+      var dO = err * f.y * (1 - f.y);
+      for (j = 0; j < 3; j++) {
+        var dH = dO * V[j] * f.ah[j] * (1 - f.ah[j]);
+        V[j] -= lr * dO * f.ah[j];
+        W1[j][0] -= lr * dH * x1;
+        W1[j][1] -= lr * dH * x2;
+        B1[j] -= lr * dH;
+      }
+      B2 -= lr * dO;
+    }
+    loss = mse / 4; epoch++;
+    hist.push(loss); if (hist.length > 20000) hist.shift();
+  }
+  function accuracy() {
+    var set = DATA[ds], ok = 0, s;
+    for (s = 0; s < 4; s++) {
+      var f = forward(set[s][0], set[s][1]);
+      if ((f.y >= 0.5 ? 1 : 0) === set[s][2]) ok++;
+    }
+    return ok;
+  }
+
+  /* ── Dibujo de la red ── */
+  var POS = {
+    x1: [80, 70], x2: [80, 150], bH: [80, 235],
+    h: [[330, 50], [330, 150], [330, 250]],
+    bO: [560, 60], y: [560, 150]
+  };
+  function wStyle(w) {
+    var col = w >= 0 ? '#3B82F6' : '#F59E0B';
+    var sw = Math.max(0.8, Math.min(5, Math.abs(w) * 2));
+    return { stroke: col, 'stroke-width': sw };
+  }
+  function attrs(el, a) { for (var k in a) el.setAttribute(k, a[k]); }
+  function line(x1, y1, x2, y2, w, dashed) {
+    var l = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    var st = wStyle(w);
+    attrs(l, { x1: x1, y1: y1, x2: x2, y2: y2, stroke: st.stroke, 'stroke-width': st['stroke-width'], 'stroke-linecap': 'round' });
+    if (dashed) l.setAttribute('stroke-dasharray', '4 3');
+    svg.appendChild(l);
+  }
+  function node(x, y, r, fillOp, stroke, label, value, labelDy, small) {
+    var c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    attrs(c, { cx: x, cy: y, r: r, fill: '#FFFFFF', 'fill-opacity': (0.12 + 0.88 * fillOp).toFixed(3), stroke: stroke, 'stroke-width': 2 });
+    svg.appendChild(c);
+    var t1 = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    attrs(t1, { x: x, y: y + 4, 'text-anchor': 'middle', 'font-size': small ? 9 : 11, 'font-weight': 800, fill: '#1E293B' });
+    t1.textContent = value;
+    svg.appendChild(t1);
+    if (label) {
+      var t2 = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      attrs(t2, { x: x, y: y + (labelDy || 30), 'text-anchor': 'middle', 'font-size': 8.5, 'font-weight': 700, fill: '#64748B' });
+      t2.textContent = label;
+      svg.appendChild(t2);
+    }
+  }
+  var svg = document.getElementById('nn-svg');
+  function renderNet() {
+    if (!svg) return;
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    var set = DATA[ds], sm = set[sampleIdx];
+    var f = forward(sm[0], sm[1]);
+    var txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    attrs(txt, { x: 18, y: 16, 'font-size': 8.5, 'font-weight': 700, fill: '#64748B' });
+    txt.textContent = 'l\u00ednea s\u00f3lida = peso (azul + / \u00e1mbar \u2212) \u00b7 grosor = magnitud \u00b7 discontinua = sesgo (bias)';
+    svg.appendChild(txt);
+    line(POS.x1[0], POS.x1[1], POS.h[0][0], POS.h[0][1], W1[0][0]);
+    line(POS.x1[0], POS.x1[1], POS.h[1][0], POS.h[1][1], W1[1][0]);
+    line(POS.x1[0], POS.x1[1], POS.h[2][0], POS.h[2][1], W1[2][0]);
+    line(POS.x2[0], POS.x2[1], POS.h[0][0], POS.h[0][1], W1[0][1]);
+    line(POS.x2[0], POS.x2[1], POS.h[1][0], POS.h[1][1], W1[1][1]);
+    line(POS.x2[0], POS.x2[1], POS.h[2][0], POS.h[2][1], W1[2][1]);
+    line(POS.bH[0], POS.bH[1], POS.h[0][0], POS.h[0][1], B1[0], true);
+    line(POS.bH[0], POS.bH[1], POS.h[1][0], POS.h[1][1], B1[1], true);
+    line(POS.bH[0], POS.bH[1], POS.h[2][0], POS.h[2][1], B1[2], true);
+    line(POS.h[0][0], POS.h[0][1], POS.y[0], POS.y[1], V[0]);
+    line(POS.h[1][0], POS.h[1][1], POS.y[0], POS.y[1], V[1]);
+    line(POS.h[2][0], POS.h[2][1], POS.y[0], POS.y[1], V[2]);
+    line(POS.bO[0], POS.bO[1], POS.y[0], POS.y[1], B2, true);
+    node(POS.x1[0], POS.x1[1], 17, sm[0], '#3B82F6', 'x1', 'x = ' + sm[0], 32);
+    node(POS.x2[0], POS.x2[1], 17, sm[1], '#3B82F6', 'x2', 'x = ' + sm[1], 32);
+    node(POS.bH[0], POS.bH[1], 12, 1, '#94A3B8', 'sesgo', '1', 30, true);
+    for (var j = 0; j < 3; j++) {
+      node(POS.h[j][0], POS.h[j][1], 17, f.ah[j], '#14B8A6', 'h' + (j + 1), f.ah[j].toFixed(2), (j === 2 ? 28 : 32));
+    }
+    node(POS.bO[0], POS.bO[1], 12, 1, '#94A3B8', null, '1', 0, true);
+    var lb = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    attrs(lb, { x: POS.bO[0] + 22, y: POS.bO[1] + 4, 'font-size': 8.5, 'font-weight': 700, fill: '#64748B' });
+    lb.textContent = 'sesgo';
+    svg.appendChild(lb);
+    node(POS.y[0], POS.y[1], 18, f.y, '#F59E0B', '\u0177 (salida)', f.y.toFixed(2), 34);
+    var cap = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    attrs(cap, { x: 80, y: 296, 'text-anchor': 'middle', 'font-size': 8.5, 'font-weight': 800, fill: '#94A3B8' });
+    cap.textContent = 'ENTRADA';
+    svg.appendChild(cap);
+    var cap2 = cap.cloneNode(); cap2.setAttribute('x', 330); cap2.textContent = 'CAPA OCULTA \u00b7 procesamiento';
+    svg.appendChild(cap2);
+    var cap3 = cap.cloneNode(); cap3.setAttribute('x', 560); cap3.textContent = 'SALIDA';
+    svg.appendChild(cap3);
+  }
+  /* ── Tablas y estadísticas ── */
+  function fmt(n) { return (n >= 0 ? '\u00a0' : '') + n.toFixed(2); }
+  function renderTables() {
+    var set = DATA[ds], i, j;
+    var t1 = document.getElementById('w1-tb');
+    if (t1) {
+      var rows = t1.querySelectorAll('tr');
+      for (j = 0; j < 3; j++) {
+        var cells = rows[j + 1].querySelectorAll('td');
+        cells[0].textContent = fmt(W1[j][0]); cells[1].textContent = fmt(W1[j][1]); cells[2].textContent = fmt(B1[j]);
+      }
+    }
+    var t2 = document.getElementById('w2-tb');
+    if (t2) {
+      var r = t2.querySelectorAll('tr')[1].querySelectorAll('td');
+      r[0].textContent = fmt(V[0]); r[1].textContent = fmt(V[1]); r[2].textContent = fmt(V[2]); r[3].textContent = fmt(B2);
+    }
+    var tb = document.getElementById('pred-tb'), ok = 0;
+    if (tb) {
+      var trs = tb.querySelectorAll('tr[data-r]');
+      for (s = 0; s < 4; s++) {
+        var f2 = forward(set[s][0], set[s][1]);
+        var good = (f2.y >= 0.5 ? 1 : 0) === set[s][2];
+        if (good) ok++;
+        var td = trs[s].querySelectorAll('td');
+        td[1].textContent = set[s][2];
+        td[2].textContent = f2.y.toFixed(3);
+        td[3].textContent = good ? '\u2713' : '\u2717';
+        td[3].className = good ? 'ok' : 'no';
+      }
+    }
+    var se = document.getElementById('st-epoch'), sl = document.getElementById('st-loss'), sa = document.getElementById('st-acc');
+    if (se) se.textContent = epoch;
+    if (sl) sl.textContent = loss === null ? '\u2014' : loss.toFixed(4);
+    if (sa) sa.textContent = ok + '/4';
+  }
+  /* ── Curva de pérdida ── */
+  var lossSvg = document.getElementById('loss-svg');
+  function renderLoss() {
+    if (!lossSvg) return;
+    while (lossSvg.firstChild) lossSvg.removeChild(lossSvg.firstChild);
+    var W = 340, H = 92, padL = 30, padR = 8, padT = 14, padB = 16;
+    function el(n, a, txt) {
+      var e = document.createElementNS('http://www.w3.org/2000/svg', n);
+      attrs(e, a); if (txt) e.textContent = txt; lossSvg.appendChild(e);
+    }
+    el('rect', { x: 0, y: 0, width: W, height: H, fill: '#F8FAFC', rx: 6, stroke: '#E2E8F0' });
+    if (hist.length < 2) {
+      el('text', { x: W / 2, y: H / 2, 'text-anchor': 'middle', 'font-size': 9, fill: '#94A3B8', 'font-weight': 700 }, 'entrena la red para ver la curva de p\u00e9rdida');
+      return;
+    }
+    var maxL = Math.max.apply(null, hist.concat([0.05]));
+    var n = hist.length, K = Math.min(120, n), pts = [];
+    for (var i = 0; i < K; i++) {
+      var idx = Math.round(i * (n - 1) / (K - 1));
+      var x = padL + i * (W - padL - padR) / (K - 1);
+      var y = H - padB - (hist[idx] / maxL) * (H - padT - padB);
+      pts.push(x.toFixed(1) + ',' + y.toFixed(1));
+    }
+    el('line', { x1: padL, y1: H - padB, x2: W - padR, y2: H - padB, stroke: '#CBD5E1', 'stroke-width': 1 });
+    el('line', { x1: padL, y1: padT, x2: padL, y2: H - padB, stroke: '#CBD5E1', 'stroke-width': 1 });
+    el('polyline', { points: pts.join(' '), fill: 'none', stroke: '#3B82F6', 'stroke-width': 2, 'stroke-linejoin': 'round' });
+    el('text', { x: padL, y: 10, 'font-size': 8, 'font-weight': 800, fill: '#64748B' }, 'p\u00e9rdida (MSE) por \u00e9poca \u2014 actual: ' + (loss === null ? '\u2014' : loss.toFixed(4)));
+    el('text', { x: W - padR, y: H - 4, 'text-anchor': 'end', 'font-size': 7.5, fill: '#94A3B8' }, '\u00e9poca ' + epoch);
+  }
+  function renderAll() { renderNet(); renderTables(); renderLoss(); }
+
+  /* ── Controles ── */
+  function stopAuto() {
+    if (timer) { clearInterval(timer); timer = null; }
+    var b = document.getElementById('sim-auto');
+    if (b) b.innerHTML = '&#9654; Auto-entrenar';
+  }
+  document.querySelectorAll('.sim-chip[data-ds]').forEach(function (ch) {
+    ch.addEventListener('click', function () {
+      document.querySelectorAll('.sim-chip[data-ds]').forEach(function (x) { x.classList.remove('sel'); });
+      ch.classList.add('sel');
+      ds = ch.getAttribute('data-ds');
+      renderAll();
+    });
+  });
+  document.querySelectorAll('.sim-chip[data-sm]').forEach(function (ch) {
+    ch.addEventListener('click', function () {
+      document.querySelectorAll('.sim-chip[data-sm]').forEach(function (x) { x.classList.remove('sel'); });
+      ch.classList.add('sel');
+      sampleIdx = parseInt(ch.getAttribute('data-sm'), 10);
+      renderNet();
+    });
+  });
+  var lrIn = document.getElementById('sim-lr');
+  if (lrIn) {
+    lrIn.addEventListener('input', function () {
+      lr = parseFloat(lrIn.value);
+      var v = document.getElementById('sim-lr-v');
+      if (v) v.textContent = lr.toFixed(1);
+    });
+  }
+  var bStep = document.getElementById('sim-step');
+  if (bStep) bStep.addEventListener('click', function () { stopAuto(); trainEpoch(); renderAll(); });
+  var b100 = document.getElementById('sim-100');
+  if (b100) b100.addEventListener('click', function () { stopAuto(); for (var i = 0; i < 100; i++) trainEpoch(); renderAll(); });
+  var bAuto = document.getElementById('sim-auto');
+  if (bAuto) bAuto.addEventListener('click', function () {
+    if (timer) { stopAuto(); return; }
+    timer = setInterval(function () {
+      for (var i = 0; i < 5; i++) trainEpoch();
+      renderAll();
+    }, 60);
+    bAuto.innerHTML = '&#10074;&#10074; Pausar';
+  });
+  var bReset = document.getElementById('sim-reset');
+  if (bReset) bReset.addEventListener('click', function () {
+    stopAuto();
+    reseed((Math.random() * 1e9) | 0);
+    epoch = 0; loss = null; hist = [];
+    renderAll();
+  });
+
+  /* ── Arranque ── */
+  reseed(20250311);
+  if (PRINT_MODE) {
+    /* Versión PDF: entrena XOR hasta precisión perfecta para dejar un estado final ilustrativo */
+    var intento = 0;
+    while (accuracy() < 4 && intento < 10) {
+      epoch = 0; hist = []; reseed(20250311 + intento * 7);
+      var guard = 0;
+      while (accuracy() < 4 && guard < 20000) { trainEpoch(); guard++; }
+      if (accuracy() === 4) { for (var k2 = 0; k2 < 2000; k2++) trainEpoch(); }
+      intento++;
+    }
+  }
+  renderAll();
+})();
+</script>
+
+</body>
+</html>
